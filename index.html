@@ -57,8 +57,8 @@ $(document).ready(function() {
       },
       templates: {
         suggestion: function(datum) {
-          var link = '/' + datum.f + '.html#line-' + datum.l;
-          return '<div><a onclick="console.log(\'pushing\', \'' + link + '\'); history.pushState(null, \'\', \'' + link + '\'); return true;" target="i" href="' +  link + '">' + datum.s + '</a></div>';
+          var link = '/python-xr/' + datum.f + '.html#line-' + datum.l;
+          return '<div><a onclick="history.pushState(null, \'\', \'' + link + '\'); return true;" target="i" href="' +  link + '">' + datum.s + '</a></div>';
         }
       }
     });

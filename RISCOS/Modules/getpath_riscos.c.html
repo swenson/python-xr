@@ -142,62 +142,62 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-60">60</a></pre></div></td><td class="code"><div class="source"><span class="filename">RISCOS/Modules/getpath_riscos.c</span><pre><span></span><a name="line-1"></a><span class="cp">#include</span> <span class="cpf">&quot;Python.h&quot;</span><span class="cp"></span>
 <a name="line-2"></a><span class="cp">#include</span> <span class="cpf">&quot;osdefs.h&quot;</span><span class="cp"></span>
 <a name="line-3"></a>
-<a name="line-4"></a><span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Makefile.html#line-104">exec_prefix</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Modules/getpath.c.html#line-130">progpath</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="o">=</span><span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">;</span>
+<a name="line-4"></a><span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/object.h.html#line-521">prefix</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Makefile.html#line-104">exec_prefix</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-130">progpath</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="o">=</span><span class="nb"><a href="/python-xr/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">;</span>
 <a name="line-5"></a>
 <a name="line-6"></a><span class="k">static</span> <span class="kt">void</span>
-<a name="line-7"></a><span class="nf"><a href="/./Modules/getpath.c.html#line-386">calculate_path</a></span><span class="p">()</span>
+<a name="line-7"></a><span class="nf"><a href="/python-xr/./Modules/getpath.c.html#line-386">calculate_path</a></span><span class="p">()</span>
 <a name="line-8"></a><span class="p">{</span>
-<a name="line-9"></a>    <span class="kt">char</span> <span class="o">*</span><span class="n">pypath</span> <span class="o">=</span> <span class="n"><a href="/./Lib/ntpath.py.html#line-337">getenv</a></span><span class="p">(</span><span class="s">&quot;Python$Path&quot;</span><span class="p">);</span>
+<a name="line-9"></a>    <span class="kt">char</span> <span class="o">*</span><span class="n">pypath</span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Lib/ntpath.py.html#line-337">getenv</a></span><span class="p">(</span><span class="s">&quot;Python$Path&quot;</span><span class="p">);</span>
 <a name="line-10"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">pypath</span><span class="p">)</span> <span class="p">{</span>
 <a name="line-11"></a>        <span class="kt">int</span> <span class="n">pathlen</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">pypath</span><span class="p">);</span>
-<a name="line-12"></a>        <span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/multiprocessing/heap.py.html#line-214">malloc</a></span><span class="p">(</span><span class="n">pathlen</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-<a name="line-13"></a>        <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
-<a name="line-14"></a>            <span class="n">strncpy</span><span class="p">(</span><span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">,</span> <span class="n">pypath</span><span class="p">,</span> <span class="n">pathlen</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<a name="line-12"></a>        <span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Lib/multiprocessing/heap.py.html#line-214">malloc</a></span><span class="p">(</span><span class="n">pathlen</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<a name="line-13"></a>        <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
+<a name="line-14"></a>            <span class="n">strncpy</span><span class="p">(</span><span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">,</span> <span class="n">pypath</span><span class="p">,</span> <span class="n">pathlen</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
 <a name="line-15"></a>        <span class="k">else</span> <span class="p">{</span>
-<a name="line-16"></a>            <span class="n">fprintf</span><span class="p">(</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">stderr</a></span><span class="p">,</span>
+<a name="line-16"></a>            <span class="n">fprintf</span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/classes/bitvec.py.html#line-7">stderr</a></span><span class="p">,</span>
 <a name="line-17"></a>                <span class="s">&quot;Not enough memory for dynamic PYTHONPATH.</span><span class="se">\n</span><span class="s">&quot;</span>
 <a name="line-18"></a>                <span class="s">&quot;Using default static PYTHONPATH.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <a name="line-19"></a>        <span class="p">}</span>
 <a name="line-20"></a>    <span class="p">}</span>
-<a name="line-21"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
-<a name="line-22"></a>        <span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span> <span class="o">=</span> <span class="s">&quot;&lt;Python$Dir&gt;.Lib&quot;</span><span class="p">;</span>
-<a name="line-23"></a>    <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span> <span class="o">=</span> <span class="s">&quot;&lt;Python$Dir&gt;&quot;</span><span class="p">;</span>
-<a name="line-24"></a>    <span class="n"><a href="/./Makefile.html#line-104">exec_prefix</a></span> <span class="o">=</span> <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">;</span>
-<a name="line-25"></a>    <span class="n"><a href="/./Modules/getpath.c.html#line-130">progpath</a></span> <span class="o">=</span> <span class="n"><a href="/./Python/pythonrun.c.html#line-679">Py_GetProgramName</a></span><span class="p">();</span>
+<a name="line-21"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
+<a name="line-22"></a>        <span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span> <span class="o">=</span> <span class="s">&quot;&lt;Python$Dir&gt;.Lib&quot;</span><span class="p">;</span>
+<a name="line-23"></a>    <span class="n"><a href="/python-xr/./Include/object.h.html#line-521">prefix</a></span> <span class="o">=</span> <span class="s">&quot;&lt;Python$Dir&gt;&quot;</span><span class="p">;</span>
+<a name="line-24"></a>    <span class="n"><a href="/python-xr/./Makefile.html#line-104">exec_prefix</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Include/object.h.html#line-521">prefix</a></span><span class="p">;</span>
+<a name="line-25"></a>    <span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-130">progpath</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Python/pythonrun.c.html#line-679">Py_GetProgramName</a></span><span class="p">();</span>
 <a name="line-26"></a><span class="p">}</span>
 <a name="line-27"></a>
 <a name="line-28"></a><span class="cm">/* External interface */</span>
 <a name="line-29"></a>
 <a name="line-30"></a><span class="kt">char</span> <span class="o">*</span>
-<a name="line-31"></a><span class="nf"><a href="/./Modules/getpath.c.html#line-678">Py_GetPath</a></span><span class="p">()</span>
+<a name="line-31"></a><span class="nf"><a href="/python-xr/./Modules/getpath.c.html#line-678">Py_GetPath</a></span><span class="p">()</span>
 <a name="line-32"></a><span class="p">{</span>
-<a name="line-33"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
-<a name="line-34"></a>        <span class="n"><a href="/./Modules/getpath.c.html#line-386">calculate_path</a></span><span class="p">();</span>
-<a name="line-35"></a>    <span class="k">return</span> <span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">;</span>
+<a name="line-33"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
+<a name="line-34"></a>        <span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-386">calculate_path</a></span><span class="p">();</span>
+<a name="line-35"></a>    <span class="k">return</span> <span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">;</span>
 <a name="line-36"></a><span class="p">}</span>
 <a name="line-37"></a>
 <a name="line-38"></a><span class="kt">char</span> <span class="o">*</span>
-<a name="line-39"></a><span class="nf"><a href="/./Modules/getpath.c.html#line-686">Py_GetPrefix</a></span><span class="p">()</span>
+<a name="line-39"></a><span class="nf"><a href="/python-xr/./Modules/getpath.c.html#line-686">Py_GetPrefix</a></span><span class="p">()</span>
 <a name="line-40"></a><span class="p">{</span>
-<a name="line-41"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
-<a name="line-42"></a>        <span class="n"><a href="/./Modules/getpath.c.html#line-386">calculate_path</a></span><span class="p">();</span>
-<a name="line-43"></a>    <span class="k">return</span> <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">;</span>
+<a name="line-41"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
+<a name="line-42"></a>        <span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-386">calculate_path</a></span><span class="p">();</span>
+<a name="line-43"></a>    <span class="k">return</span> <span class="n"><a href="/python-xr/./Include/object.h.html#line-521">prefix</a></span><span class="p">;</span>
 <a name="line-44"></a><span class="p">}</span>
 <a name="line-45"></a>
 <a name="line-46"></a><span class="kt">char</span> <span class="o">*</span>
-<a name="line-47"></a><span class="nf"><a href="/./Modules/getpath.c.html#line-694">Py_GetExecPrefix</a></span><span class="p">()</span>
+<a name="line-47"></a><span class="nf"><a href="/python-xr/./Modules/getpath.c.html#line-694">Py_GetExecPrefix</a></span><span class="p">()</span>
 <a name="line-48"></a><span class="p">{</span>
-<a name="line-49"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
-<a name="line-50"></a>        <span class="n"><a href="/./Modules/getpath.c.html#line-386">calculate_path</a></span><span class="p">();</span>
-<a name="line-51"></a>    <span class="k">return</span> <span class="n"><a href="/./Makefile.html#line-104">exec_prefix</a></span><span class="p">;</span>
+<a name="line-49"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
+<a name="line-50"></a>        <span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-386">calculate_path</a></span><span class="p">();</span>
+<a name="line-51"></a>    <span class="k">return</span> <span class="n"><a href="/python-xr/./Makefile.html#line-104">exec_prefix</a></span><span class="p">;</span>
 <a name="line-52"></a><span class="p">}</span>
 <a name="line-53"></a>
 <a name="line-54"></a><span class="kt">char</span> <span class="o">*</span>
-<a name="line-55"></a><span class="nf"><a href="/./Modules/getpath.c.html#line-702">Py_GetProgramFullPath</a></span><span class="p">()</span>
+<a name="line-55"></a><span class="nf"><a href="/python-xr/./Modules/getpath.c.html#line-702">Py_GetProgramFullPath</a></span><span class="p">()</span>
 <a name="line-56"></a><span class="p">{</span>
-<a name="line-57"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
-<a name="line-58"></a>        <span class="n"><a href="/./Modules/getpath.c.html#line-386">calculate_path</a></span><span class="p">();</span>
-<a name="line-59"></a>    <span class="k">return</span> <span class="n"><a href="/./Modules/getpath.c.html#line-130">progpath</a></span><span class="p">;</span>
+<a name="line-57"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-131">module_search_path</a></span><span class="p">)</span>
+<a name="line-58"></a>        <span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-386">calculate_path</a></span><span class="p">();</span>
+<a name="line-59"></a>    <span class="k">return</span> <span class="n"><a href="/python-xr/./Modules/getpath.c.html#line-130">progpath</a></span><span class="p">;</span>
 <a name="line-60"></a><span class="p">}</span>
 </pre></div>
 </td></tr></table></body>

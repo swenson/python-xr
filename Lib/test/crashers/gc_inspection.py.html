@@ -130,19 +130,19 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-17"></a><span class="sd">&quot;gc.get_referrers() is dangerous, use only for debugging&quot;.</span>
 <a name="line-18"></a><span class="sd">&quot;&quot;&quot;</span>
 <a name="line-19"></a>
-<a name="line-20"></a><span class="kn">import</span> <span class="nn"><a href="/./Doc/includes/mp_benchmarks.py.html#line-8">gc</a></span>
+<a name="line-20"></a><span class="kn">import</span> <span class="nn"><a href="/python-xr/./Doc/includes/mp_benchmarks.py.html#line-8">gc</a></span>
 <a name="line-21"></a>
 <a name="line-22"></a>
-<a name="line-23"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">():</span>
-<a name="line-24"></a>    <span class="n"><a href="/./Lib/pickle.py.html#line-876">marker</a></span> <span class="o">=</span> <span class="nb"><a href="/./Include/asdl.h.html#line-6">object</a></span><span class="p">()</span>
-<a name="line-25"></a>    <span class="k">yield</span> <span class="n"><a href="/./Lib/pickle.py.html#line-876">marker</a></span>
+<a name="line-23"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">():</span>
+<a name="line-24"></a>    <span class="n"><a href="/python-xr/./Lib/pickle.py.html#line-876">marker</a></span> <span class="o">=</span> <span class="nb"><a href="/python-xr/./Include/asdl.h.html#line-6">object</a></span><span class="p">()</span>
+<a name="line-25"></a>    <span class="k">yield</span> <span class="n"><a href="/python-xr/./Lib/pickle.py.html#line-876">marker</a></span>
 <a name="line-26"></a>    <span class="c1"># now the marker is in the tuple being constructed</span>
-<a name="line-27"></a>    <span class="p">[</span><span class="n">tup</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n"><a href="/./Demo/threads/fcmp.py.html#line-26">x</a></span> <span class="k">for</span> <span class="n"><a href="/./Demo/threads/fcmp.py.html#line-26">x</a></span> <span class="ow">in</span> <span class="n"><a href="/./Doc/includes/mp_benchmarks.py.html#line-8">gc</a></span><span class="o">.</span><span class="n">get_referrers</span><span class="p">(</span><span class="n"><a href="/./Lib/pickle.py.html#line-876">marker</a></span><span class="p">)</span> <span class="k">if</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">(</span><span class="n"><a href="/./Demo/threads/fcmp.py.html#line-26">x</a></span><span class="p">)</span> <span class="ow">is</span> <span class="nb"><a href="/./Modules/_tkinter.c.html#line-3315">tuple</a></span><span class="p">]</span>
+<a name="line-27"></a>    <span class="p">[</span><span class="n">tup</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n"><a href="/python-xr/./Demo/threads/fcmp.py.html#line-26">x</a></span> <span class="k">for</span> <span class="n"><a href="/python-xr/./Demo/threads/fcmp.py.html#line-26">x</a></span> <span class="ow">in</span> <span class="n"><a href="/python-xr/./Doc/includes/mp_benchmarks.py.html#line-8">gc</a></span><span class="o">.</span><span class="n">get_referrers</span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/pickle.py.html#line-876">marker</a></span><span class="p">)</span> <span class="k">if</span> <span class="nb"><a href="/python-xr/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/threads/fcmp.py.html#line-26">x</a></span><span class="p">)</span> <span class="ow">is</span> <span class="nb"><a href="/python-xr/./Modules/_tkinter.c.html#line-3315">tuple</a></span><span class="p">]</span>
 <a name="line-28"></a>    <span class="k">print</span> <span class="n">tup</span>
 <a name="line-29"></a>    <span class="k">print</span> <span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <a name="line-30"></a>
 <a name="line-31"></a>
-<a name="line-32"></a><span class="nb"><a href="/./Modules/_tkinter.c.html#line-3315">tuple</a></span><span class="p">(</span><span class="n"><a href="/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">())</span>
+<a name="line-32"></a><span class="nb"><a href="/python-xr/./Modules/_tkinter.c.html#line-3315">tuple</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">())</span>
 </pre></div>
 </td></tr></table></body>
 </html>

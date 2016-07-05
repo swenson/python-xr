@@ -101,24 +101,24 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-19">19</a>
 <a href="#line-20">20</a>
 <a href="#line-21">21</a></pre></div></td><td class="code"><div class="source"><span class="filename">PC/VC6/_ssl.mak</span><pre><span></span><a name="line-1"></a><span class="err">!IFDEF</span> <span class="err">DEBUG</span>
-<a name="line-2"></a><span class="nv"><a href="/./Lib/test/test_StringIO.py.html#line-150">MODULE</a></span><span class="o">=</span>_ssl_d.pyd
-<a name="line-3"></a><span class="nv"><a href="/./PC/VC6/_ssl.mak.html#line-4">TEMP_DIR</a></span><span class="o">=</span>x86-temp-debug/_ssl
-<a name="line-4"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-18">CFLAGS</a></span><span class="o">=</span>/Od /Zi /MDd /LDd /DDEBUG /D_DEBUG /DWIN32
-<a name="line-5"></a><span class="nv"><a href="/./PC/VC6/_ssl.mak.html#line-11">LFLAGS</a></span><span class="o">=</span>/nodefaultlib:<span class="s2">&quot;msvcrt&quot;</span>
+<a name="line-2"></a><span class="nv"><a href="/python-xr/./Lib/test/test_StringIO.py.html#line-150">MODULE</a></span><span class="o">=</span>_ssl_d.pyd
+<a name="line-3"></a><span class="nv"><a href="/python-xr/./PC/VC6/_ssl.mak.html#line-4">TEMP_DIR</a></span><span class="o">=</span>x86-temp-debug/_ssl
+<a name="line-4"></a><span class="nv"><a href="/python-xr/./Demo/embed/Makefile.html#line-18">CFLAGS</a></span><span class="o">=</span>/Od /Zi /MDd /LDd /DDEBUG /D_DEBUG /DWIN32
+<a name="line-5"></a><span class="nv"><a href="/python-xr/./PC/VC6/_ssl.mak.html#line-11">LFLAGS</a></span><span class="o">=</span>/nodefaultlib:<span class="s2">&quot;msvcrt&quot;</span>
 <a name="line-6"></a><span class="err">!ELSE</span>
-<a name="line-7"></a><span class="nv"><a href="/./Lib/test/test_StringIO.py.html#line-150">MODULE</a></span><span class="o">=</span>_ssl.pyd
-<a name="line-8"></a><span class="nv"><a href="/./PC/VC6/_ssl.mak.html#line-4">TEMP_DIR</a></span><span class="o">=</span>x86-temp-release/_ssl
-<a name="line-9"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-18">CFLAGS</a></span><span class="o">=</span>/Ox /MD /LD /DWIN32
-<a name="line-10"></a><span class="nv"><a href="/./PC/VC6/_ssl.mak.html#line-11">LFLAGS</a></span><span class="o">=</span>
+<a name="line-7"></a><span class="nv"><a href="/python-xr/./Lib/test/test_StringIO.py.html#line-150">MODULE</a></span><span class="o">=</span>_ssl.pyd
+<a name="line-8"></a><span class="nv"><a href="/python-xr/./PC/VC6/_ssl.mak.html#line-4">TEMP_DIR</a></span><span class="o">=</span>x86-temp-release/_ssl
+<a name="line-9"></a><span class="nv"><a href="/python-xr/./Demo/embed/Makefile.html#line-18">CFLAGS</a></span><span class="o">=</span>/Ox /MD /LD /DWIN32
+<a name="line-10"></a><span class="nv"><a href="/python-xr/./PC/VC6/_ssl.mak.html#line-11">LFLAGS</a></span><span class="o">=</span>
 <a name="line-11"></a><span class="err">!ENDIF</span>
 <a name="line-12"></a>
-<a name="line-13"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-17">INCLUDES</a></span><span class="o">=</span>-I ../../Include -I .. -I <span class="k">$(</span>SSL_DIR<span class="k">)</span>/inc32
-<a name="line-14"></a><span class="nv"><a href="/./PC/VC6/_ssl.mak.html#line-15">SSL_LIB_DIR</a></span><span class="o">=</span><span class="k">$(</span>SSL_DIR<span class="k">)</span>/out32
-<a name="line-15"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-25">LIBS</a></span><span class="o">=</span>gdi32.lib wsock32.lib user32.lib advapi32.lib /libpath:<span class="k">$(</span>SSL_LIB_DIR<span class="k">)</span> libeay32.lib ssleay32.lib
+<a name="line-13"></a><span class="nv"><a href="/python-xr/./Demo/embed/Makefile.html#line-17">INCLUDES</a></span><span class="o">=</span>-I ../../Include -I .. -I <span class="k">$(</span>SSL_DIR<span class="k">)</span>/inc32
+<a name="line-14"></a><span class="nv"><a href="/python-xr/./PC/VC6/_ssl.mak.html#line-15">SSL_LIB_DIR</a></span><span class="o">=</span><span class="k">$(</span>SSL_DIR<span class="k">)</span>/out32
+<a name="line-15"></a><span class="nv"><a href="/python-xr/./Demo/embed/Makefile.html#line-25">LIBS</a></span><span class="o">=</span>gdi32.lib wsock32.lib user32.lib advapi32.lib /libpath:<span class="k">$(</span>SSL_LIB_DIR<span class="k">)</span> libeay32.lib ssleay32.lib
 <a name="line-16"></a>
-<a name="line-17"></a><span class="nv"><a href="/./Lib/pipes.py.html#line-73">SOURCE</a></span><span class="o">=</span>../../Modules/_ssl.c <span class="k">$(</span>SSL_LIB_DIR<span class="k">)</span>/libeay32.lib <span class="k">$(</span>SSL_LIB_DIR<span class="k">)</span>/ssleay32.lib
+<a name="line-17"></a><span class="nv"><a href="/python-xr/./Lib/pipes.py.html#line-73">SOURCE</a></span><span class="o">=</span>../../Modules/_ssl.c <span class="k">$(</span>SSL_LIB_DIR<span class="k">)</span>/libeay32.lib <span class="k">$(</span>SSL_LIB_DIR<span class="k">)</span>/ssleay32.lib
 <a name="line-18"></a>
-<a name="line-19"></a><span class="nf">$(MODULE)</span><span class="o">:</span> <span class="k">$(</span><span class="nv"><a href="/./Lib/pipes.py.html#line-73">SOURCE</a></span><span class="k">)</span> ../*.<span class="n"><a href="/./Demo/turtle/tdemo_chaos.py.html#line-17">h</a></span> ../../<span class="n">Include</span>/*.<span class="n"><a href="/./Demo/turtle/tdemo_chaos.py.html#line-17">h</a></span>
+<a name="line-19"></a><span class="nf">$(MODULE)</span><span class="o">:</span> <span class="k">$(</span><span class="nv"><a href="/python-xr/./Lib/pipes.py.html#line-73">SOURCE</a></span><span class="k">)</span> ../*.<span class="n"><a href="/python-xr/./Demo/turtle/tdemo_chaos.py.html#line-17">h</a></span> ../../<span class="n">Include</span>/*.<span class="n"><a href="/python-xr/./Demo/turtle/tdemo_chaos.py.html#line-17">h</a></span>
 <a name="line-20"></a>    @if not exist <span class="s2">&quot;</span><span class="k">$(</span>TEMP_DIR<span class="k">)</span><span class="s2">/.&quot;</span> mkdir <span class="s2">&quot;</span><span class="k">$(</span>TEMP_DIR<span class="k">)</span><span class="s2">&quot;</span>
 <a name="line-21"></a>    cl /nologo <span class="k">$(</span>SOURCE<span class="k">)</span> <span class="k">$(</span>CFLAGS<span class="k">)</span> /Fo<span class="k">$(</span>TEMP_DIR<span class="k">)</span><span class="se">\$</span>*.obj <span class="k">$(</span>INCLUDES<span class="k">)</span> /link /out:<span class="k">$(</span>MODULE<span class="k">)</span> <span class="k">$(</span>LIBS<span class="k">)</span> <span class="k">$(</span>LFLAGS<span class="k">)</span>
 </pre></div>

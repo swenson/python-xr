@@ -142,67 +142,67 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-60">60</a>
 <a href="#line-61">61</a>
 <a href="#line-62">62</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/plat-irix5/GET.py</span><pre><span></span><a name="line-1"></a><span class="c1"># Symbols from &lt;gl/get.h&gt;</span>
-<a name="line-2"></a><span class="kn">from</span> <span class="nn"><a href="/./Demo/tkinter/ttk/treeview_multicolumn.py.html#line-100">warnings</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/Bastion.py.html#line-28">warnpy3k</a></span>
-<a name="line-3"></a><span class="n"><a href="/./Lib/Bastion.py.html#line-28">warnpy3k</a></span><span class="p">(</span><span class="s2">&quot;the GET module has been removed in Python 3.0&quot;</span><span class="p">,</span> <span class="n"><a href="/./Lib/mimetools.py.html#line-15">stacklevel</a></span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<a name="line-4"></a><span class="k">del</span> <span class="n"><a href="/./Lib/Bastion.py.html#line-28">warnpy3k</a></span>
+<a name="line-2"></a><span class="kn">from</span> <span class="nn"><a href="/python-xr/./Demo/tkinter/ttk/treeview_multicolumn.py.html#line-100">warnings</a></span> <span class="kn">import</span> <span class="n"><a href="/python-xr/./Lib/Bastion.py.html#line-28">warnpy3k</a></span>
+<a name="line-3"></a><span class="n"><a href="/python-xr/./Lib/Bastion.py.html#line-28">warnpy3k</a></span><span class="p">(</span><span class="s2">&quot;the GET module has been removed in Python 3.0&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/mimetools.py.html#line-15">stacklevel</a></span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a name="line-4"></a><span class="k">del</span> <span class="n"><a href="/python-xr/./Lib/Bastion.py.html#line-28">warnpy3k</a></span>
 <a name="line-5"></a>
-<a name="line-6"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-6">BCKBUFFER</a></span> <span class="o">=</span> <span class="mh">0x1</span>
-<a name="line-7"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-7">FRNTBUFFER</a></span> <span class="o">=</span> <span class="mh">0x2</span>
-<a name="line-8"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-8">DRAWZBUFFER</a></span> <span class="o">=</span> <span class="mh">0x4</span>
-<a name="line-9"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-9">DMRGB</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-10"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-10">DMSINGLE</a></span> <span class="o">=</span> <span class="mi">1</span>
-<a name="line-11"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-11">DMDOUBLE</a></span> <span class="o">=</span> <span class="mi">2</span>
-<a name="line-12"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-12">DMRGBDOUBLE</a></span> <span class="o">=</span> <span class="mi">5</span>
-<a name="line-13"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-13">HZ30</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-14"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-14">HZ60</a></span> <span class="o">=</span> <span class="mi">1</span>
-<a name="line-15"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-15">NTSC</a></span> <span class="o">=</span> <span class="mi">2</span>
-<a name="line-16"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-16">HDTV</a></span> <span class="o">=</span> <span class="mi">3</span>
-<a name="line-17"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-17">VGA</a></span> <span class="o">=</span> <span class="mi">4</span>
-<a name="line-18"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-18">IRIS3K</a></span> <span class="o">=</span> <span class="mi">5</span>
-<a name="line-19"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-19">PR60</a></span> <span class="o">=</span> <span class="mi">6</span>
-<a name="line-20"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-20">PAL</a></span> <span class="o">=</span> <span class="mi">9</span>
-<a name="line-21"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-21">HZ30_SG</a></span> <span class="o">=</span> <span class="mi">11</span>
-<a name="line-22"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-22">A343</a></span> <span class="o">=</span> <span class="mi">14</span>
-<a name="line-23"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-23">STR_RECT</a></span> <span class="o">=</span> <span class="mi">15</span>
-<a name="line-24"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-24">VOF0</a></span> <span class="o">=</span> <span class="mi">16</span>
-<a name="line-25"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-25">VOF1</a></span> <span class="o">=</span> <span class="mi">17</span>
-<a name="line-26"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-26">VOF2</a></span> <span class="o">=</span> <span class="mi">18</span>
-<a name="line-27"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-27">VOF3</a></span> <span class="o">=</span> <span class="mi">19</span>
-<a name="line-28"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-28">SGI0</a></span> <span class="o">=</span> <span class="mi">20</span>
-<a name="line-29"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-29">SGI1</a></span> <span class="o">=</span> <span class="mi">21</span>
-<a name="line-30"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-30">SGI2</a></span> <span class="o">=</span> <span class="mi">22</span>
-<a name="line-31"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-31">HZ72</a></span> <span class="o">=</span> <span class="mi">23</span>
-<a name="line-32"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-32">GL_VIDEO_REG</a></span> <span class="o">=</span> <span class="mh">0x00800000</span>
-<a name="line-33"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-33">GLV_GENLOCK</a></span> <span class="o">=</span> <span class="mh">0x00000001</span>
-<a name="line-34"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-34">GLV_UNBLANK</a></span> <span class="o">=</span> <span class="mh">0x00000002</span>
-<a name="line-35"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-35">GLV_SRED</a></span> <span class="o">=</span> <span class="mh">0x00000004</span>
-<a name="line-36"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-36">GLV_SGREEN</a></span> <span class="o">=</span> <span class="mh">0x00000008</span>
-<a name="line-37"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-37">GLV_SBLUE</a></span> <span class="o">=</span> <span class="mh">0x00000010</span>
-<a name="line-38"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-38">GLV_SALPHA</a></span> <span class="o">=</span> <span class="mh">0x00000020</span>
-<a name="line-39"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-39">GLV_TTLGENLOCK</a></span> <span class="o">=</span> <span class="mh">0x00000080</span>
-<a name="line-40"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-40">GLV_TTLSYNC</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-39">GLV_TTLGENLOCK</a></span>
-<a name="line-41"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-41">GLV_GREENGENLOCK</a></span> <span class="o">=</span> <span class="mh">0x0000100</span>
-<a name="line-42"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-42">LEFTPLANE</a></span> <span class="o">=</span> <span class="mh">0x0001</span>
-<a name="line-43"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-43">RIGHTPLANE</a></span> <span class="o">=</span> <span class="mh">0x0002</span>
-<a name="line-44"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-44">BOTTOMPLANE</a></span> <span class="o">=</span> <span class="mh">0x0004</span>
-<a name="line-45"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-45">TOPPLANE</a></span> <span class="o">=</span> <span class="mh">0x0008</span>
-<a name="line-46"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-46">NEARPLANE</a></span> <span class="o">=</span> <span class="mh">0x0010</span>
-<a name="line-47"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-47">FARPLANE</a></span> <span class="o">=</span> <span class="mh">0x0020</span>
+<a name="line-6"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-6">BCKBUFFER</a></span> <span class="o">=</span> <span class="mh">0x1</span>
+<a name="line-7"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-7">FRNTBUFFER</a></span> <span class="o">=</span> <span class="mh">0x2</span>
+<a name="line-8"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-8">DRAWZBUFFER</a></span> <span class="o">=</span> <span class="mh">0x4</span>
+<a name="line-9"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-9">DMRGB</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-10"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-10">DMSINGLE</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-11"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-11">DMDOUBLE</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-12"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-12">DMRGBDOUBLE</a></span> <span class="o">=</span> <span class="mi">5</span>
+<a name="line-13"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-13">HZ30</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-14"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-14">HZ60</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-15"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-15">NTSC</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-16"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-16">HDTV</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-17"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-17">VGA</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-18"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-18">IRIS3K</a></span> <span class="o">=</span> <span class="mi">5</span>
+<a name="line-19"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-19">PR60</a></span> <span class="o">=</span> <span class="mi">6</span>
+<a name="line-20"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-20">PAL</a></span> <span class="o">=</span> <span class="mi">9</span>
+<a name="line-21"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-21">HZ30_SG</a></span> <span class="o">=</span> <span class="mi">11</span>
+<a name="line-22"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-22">A343</a></span> <span class="o">=</span> <span class="mi">14</span>
+<a name="line-23"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-23">STR_RECT</a></span> <span class="o">=</span> <span class="mi">15</span>
+<a name="line-24"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-24">VOF0</a></span> <span class="o">=</span> <span class="mi">16</span>
+<a name="line-25"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-25">VOF1</a></span> <span class="o">=</span> <span class="mi">17</span>
+<a name="line-26"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-26">VOF2</a></span> <span class="o">=</span> <span class="mi">18</span>
+<a name="line-27"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-27">VOF3</a></span> <span class="o">=</span> <span class="mi">19</span>
+<a name="line-28"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-28">SGI0</a></span> <span class="o">=</span> <span class="mi">20</span>
+<a name="line-29"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-29">SGI1</a></span> <span class="o">=</span> <span class="mi">21</span>
+<a name="line-30"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-30">SGI2</a></span> <span class="o">=</span> <span class="mi">22</span>
+<a name="line-31"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-31">HZ72</a></span> <span class="o">=</span> <span class="mi">23</span>
+<a name="line-32"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-32">GL_VIDEO_REG</a></span> <span class="o">=</span> <span class="mh">0x00800000</span>
+<a name="line-33"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-33">GLV_GENLOCK</a></span> <span class="o">=</span> <span class="mh">0x00000001</span>
+<a name="line-34"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-34">GLV_UNBLANK</a></span> <span class="o">=</span> <span class="mh">0x00000002</span>
+<a name="line-35"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-35">GLV_SRED</a></span> <span class="o">=</span> <span class="mh">0x00000004</span>
+<a name="line-36"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-36">GLV_SGREEN</a></span> <span class="o">=</span> <span class="mh">0x00000008</span>
+<a name="line-37"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-37">GLV_SBLUE</a></span> <span class="o">=</span> <span class="mh">0x00000010</span>
+<a name="line-38"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-38">GLV_SALPHA</a></span> <span class="o">=</span> <span class="mh">0x00000020</span>
+<a name="line-39"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-39">GLV_TTLGENLOCK</a></span> <span class="o">=</span> <span class="mh">0x00000080</span>
+<a name="line-40"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-40">GLV_TTLSYNC</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-39">GLV_TTLGENLOCK</a></span>
+<a name="line-41"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-41">GLV_GREENGENLOCK</a></span> <span class="o">=</span> <span class="mh">0x0000100</span>
+<a name="line-42"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-42">LEFTPLANE</a></span> <span class="o">=</span> <span class="mh">0x0001</span>
+<a name="line-43"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-43">RIGHTPLANE</a></span> <span class="o">=</span> <span class="mh">0x0002</span>
+<a name="line-44"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-44">BOTTOMPLANE</a></span> <span class="o">=</span> <span class="mh">0x0004</span>
+<a name="line-45"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-45">TOPPLANE</a></span> <span class="o">=</span> <span class="mh">0x0008</span>
+<a name="line-46"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-46">NEARPLANE</a></span> <span class="o">=</span> <span class="mh">0x0010</span>
+<a name="line-47"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-47">FARPLANE</a></span> <span class="o">=</span> <span class="mh">0x0020</span>
 <a name="line-48"></a><span class="c1">## GETDEF = __GL_GET_H__</span>
-<a name="line-49"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-49">NOBUFFER</a></span> <span class="o">=</span> <span class="mh">0x0</span>
-<a name="line-50"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-50">BOTHBUFFERS</a></span> <span class="o">=</span> <span class="mh">0x3</span>
-<a name="line-51"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-51">DMINTENSITYSINGLE</a></span> <span class="o">=</span> <span class="mi">3</span>
-<a name="line-52"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-52">DMINTENSITYDOUBLE</a></span> <span class="o">=</span> <span class="mi">4</span>
-<a name="line-53"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-53">MONSPECIAL</a></span> <span class="o">=</span> <span class="mh">0x20</span>
-<a name="line-54"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-54">HZ50</a></span> <span class="o">=</span> <span class="mi">3</span>
-<a name="line-55"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-55">MONA</a></span> <span class="o">=</span> <span class="mi">5</span>
-<a name="line-56"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-56">MONB</a></span> <span class="o">=</span> <span class="mi">6</span>
-<a name="line-57"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-57">MONC</a></span> <span class="o">=</span> <span class="mi">7</span>
-<a name="line-58"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-58">MOND</a></span> <span class="o">=</span> <span class="mi">8</span>
-<a name="line-59"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-59">MON_ALL</a></span> <span class="o">=</span> <span class="mi">12</span>
-<a name="line-60"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-60">MON_GEN_ALL</a></span> <span class="o">=</span> <span class="mi">13</span>
-<a name="line-61"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-61">CMAPMULTI</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-62"></a><span class="n"><a href="/./Lib/plat-irix5/GET.py.html#line-62">CMAPONE</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-49"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-49">NOBUFFER</a></span> <span class="o">=</span> <span class="mh">0x0</span>
+<a name="line-50"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-50">BOTHBUFFERS</a></span> <span class="o">=</span> <span class="mh">0x3</span>
+<a name="line-51"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-51">DMINTENSITYSINGLE</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-52"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-52">DMINTENSITYDOUBLE</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-53"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-53">MONSPECIAL</a></span> <span class="o">=</span> <span class="mh">0x20</span>
+<a name="line-54"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-54">HZ50</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-55"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-55">MONA</a></span> <span class="o">=</span> <span class="mi">5</span>
+<a name="line-56"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-56">MONB</a></span> <span class="o">=</span> <span class="mi">6</span>
+<a name="line-57"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-57">MONC</a></span> <span class="o">=</span> <span class="mi">7</span>
+<a name="line-58"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-58">MOND</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-59"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-59">MON_ALL</a></span> <span class="o">=</span> <span class="mi">12</span>
+<a name="line-60"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-60">MON_GEN_ALL</a></span> <span class="o">=</span> <span class="mi">13</span>
+<a name="line-61"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-61">CMAPMULTI</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-62"></a><span class="n"><a href="/python-xr/./Lib/plat-irix5/GET.py.html#line-62">CMAPONE</a></span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </td></tr></table></body>
 </html>

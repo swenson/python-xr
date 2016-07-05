@@ -112,7 +112,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-7"></a><span class="cp">#endif</span>
 <a name="line-8"></a>
 <a name="line-9"></a><span class="kt">int</span>
-<a name="line-10"></a><span class="nf"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">(</span><span class="kt">int</span> <span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">)</span>
+<a name="line-10"></a><span class="nf"><a href="/python-xr/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">(</span><span class="kt">int</span> <span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n"><a href="/python-xr/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">)</span>
 <a name="line-11"></a><span class="p">{</span>
 <a name="line-12"></a>	<span class="cm">/* 754 requires that FP exceptions run in &quot;no stop&quot; mode by default,</span>
 <a name="line-13"></a><span class="cm">	 * and until C vendors implement C99&#39;s ways to control FP exceptions,</span>
@@ -120,12 +120,12 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-15"></a><span class="cm">	 * exceptions by default.  Here we disable them.</span>
 <a name="line-16"></a><span class="cm">	 */</span>
 <a name="line-17"></a><span class="cp">#ifdef __FreeBSD__</span>
-<a name="line-18"></a>	<span class="n">fp_except_t</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">;</span>
+<a name="line-18"></a>	<span class="n">fp_except_t</span> <span class="n"><a href="/python-xr/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">;</span>
 <a name="line-19"></a>
-<a name="line-20"></a>	<span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">=</span> <span class="n">fpgetmask</span><span class="p">();</span>
-<a name="line-21"></a>	<span class="n">fpsetmask</span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">FP_X_OFL</span><span class="p">);</span>
+<a name="line-20"></a>	<span class="n"><a href="/python-xr/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">=</span> <span class="n">fpgetmask</span><span class="p">();</span>
+<a name="line-21"></a>	<span class="n">fpsetmask</span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">FP_X_OFL</span><span class="p">);</span>
 <a name="line-22"></a><span class="cp">#endif</span>
-<a name="line-23"></a>	<span class="k">return</span> <span class="n"><a href="/./Modules/main.c.html#line-239">Py_Main</a></span><span class="p">(</span><span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">);</span>
+<a name="line-23"></a>	<span class="k">return</span> <span class="n"><a href="/python-xr/./Modules/main.c.html#line-239">Py_Main</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">);</span>
 <a name="line-24"></a><span class="p">}</span>
 </pre></div>
 </td></tr></table></body>

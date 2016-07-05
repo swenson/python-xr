@@ -100,12 +100,12 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-5"></a><span class="cp">#include</span> <span class="cpf">&quot;patchlevel.h&quot;</span><span class="cp"></span>
 <a name="line-6"></a>
 <a name="line-7"></a><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span>
-<a name="line-8"></a><span class="nf"><a href="/./Python/getversion.c.html#line-9">Py_GetVersion</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="line-8"></a><span class="nf"><a href="/python-xr/./Python/getversion.c.html#line-9">Py_GetVersion</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <a name="line-9"></a><span class="p">{</span>
-<a name="line-10"></a>	<span class="k">static</span> <span class="kt">char</span> <span class="n"><a href="/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">[</span><span class="mi">250</span><span class="p">];</span>
-<a name="line-11"></a>	<span class="n"><a href="/./Python/mysnprintf.c.html#line-42">PyOS_snprintf</a></span><span class="p">(</span><span class="n"><a href="/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n"><a href="/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">),</span> <span class="s">&quot;%.80s (%.80s) %.80s&quot;</span><span class="p">,</span>
-<a name="line-12"></a>		      <span class="n"><a href="/./Include/patchlevel.h.html#line-30">PY_VERSION</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/getbuildinfo.c.html#line-43">Py_GetBuildInfo</a></span><span class="p">(),</span> <span class="n"><a href="/./Python/getcompiler.c.html#line-25">Py_GetCompiler</a></span><span class="p">());</span>
-<a name="line-13"></a>	<span class="k">return</span> <span class="n"><a href="/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">;</span>
+<a name="line-10"></a>	<span class="k">static</span> <span class="kt">char</span> <span class="n"><a href="/python-xr/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">[</span><span class="mi">250</span><span class="p">];</span>
+<a name="line-11"></a>	<span class="n"><a href="/python-xr/./Python/mysnprintf.c.html#line-42">PyOS_snprintf</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">),</span> <span class="s">&quot;%.80s (%.80s) %.80s&quot;</span><span class="p">,</span>
+<a name="line-12"></a>		      <span class="n"><a href="/python-xr/./Include/patchlevel.h.html#line-30">PY_VERSION</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Modules/getbuildinfo.c.html#line-43">Py_GetBuildInfo</a></span><span class="p">(),</span> <span class="n"><a href="/python-xr/./Python/getcompiler.c.html#line-25">Py_GetCompiler</a></span><span class="p">());</span>
+<a name="line-13"></a>	<span class="k">return</span> <span class="n"><a href="/python-xr/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">;</span>
 <a name="line-14"></a><span class="p">}</span>
 </pre></div>
 </td></tr></table></body>

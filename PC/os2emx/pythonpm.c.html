@@ -232,25 +232,25 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-27"></a><span class="cm">/* use structure to pass command line to Python thread */</span>
 <a name="line-28"></a><span class="k">typedef</span> <span class="k">struct</span>
 <a name="line-29"></a><span class="p">{</span>
-<a name="line-30"></a>    <span class="kt">int</span> <span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">;</span>
-<a name="line-31"></a>    <span class="kt">char</span> <span class="o">**</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">;</span>
-<a name="line-32"></a>    <span class="n"><a href="/./Lib/ctypes/test/test_callbacks.py.html#line-202">HWND</a></span> <span class="n"><a href="/./Lib/idlelib/SearchDialogBase.py.html#line-3">Frame</a></span><span class="p">;</span>
-<a name="line-33"></a>    <span class="kt">int</span> <span class="n"><a href="/./Lib/smtpd.py.html#line-542">running</a></span><span class="p">;</span>
-<a name="line-34"></a><span class="p">}</span> <span class="n"><a href="/./Include/graminit.h.html#line-77">arglist</a></span><span class="p">;</span>
+<a name="line-30"></a>    <span class="kt">int</span> <span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">;</span>
+<a name="line-31"></a>    <span class="kt">char</span> <span class="o">**</span><span class="n"><a href="/python-xr/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">;</span>
+<a name="line-32"></a>    <span class="n"><a href="/python-xr/./Lib/ctypes/test/test_callbacks.py.html#line-202">HWND</a></span> <span class="n"><a href="/python-xr/./Lib/idlelib/SearchDialogBase.py.html#line-3">Frame</a></span><span class="p">;</span>
+<a name="line-33"></a>    <span class="kt">int</span> <span class="n"><a href="/python-xr/./Lib/smtpd.py.html#line-542">running</a></span><span class="p">;</span>
+<a name="line-34"></a><span class="p">}</span> <span class="n"><a href="/python-xr/./Include/graminit.h.html#line-77">arglist</a></span><span class="p">;</span>
 <a name="line-35"></a>
 <a name="line-36"></a><span class="cm">/* make this a global to simplify access.</span>
 <a name="line-37"></a><span class="cm"> * it should only be set from the Python thread, or by the code that</span>
 <a name="line-38"></a><span class="cm"> * initiates the Python thread when the thread cannot be created.</span>
 <a name="line-39"></a><span class="cm"> */</span>
-<a name="line-40"></a><span class="kt">int</span> <span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-40">PythonRC</a></span><span class="p">;</span>
+<a name="line-40"></a><span class="kt">int</span> <span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-40">PythonRC</a></span><span class="p">;</span>
 <a name="line-41"></a>
-<a name="line-42"></a><span class="k">extern</span> <span class="nf"><a href="/./Include/Python.h.html#line-65">DL_EXPORT</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Modules/main.c.html#line-239">Py_Main</a></span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="p">);</span>
-<a name="line-43"></a><span class="kt">void</span> <span class="nf"><a href="/./PC/os2emx/pythonpm.c.html#line-103">PythonThread</a></span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-42"></a><span class="k">extern</span> <span class="nf"><a href="/python-xr/./Include/Python.h.html#line-65">DL_EXPORT</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/python-xr/./Modules/main.c.html#line-239">Py_Main</a></span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="p">);</span>
+<a name="line-43"></a><span class="kt">void</span> <span class="nf"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-103">PythonThread</a></span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
 <a name="line-44"></a>
 <a name="line-45"></a><span class="kt">int</span>
-<a name="line-46"></a><span class="nf"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">(</span><span class="kt">int</span> <span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">)</span>
+<a name="line-46"></a><span class="nf"><a href="/python-xr/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">(</span><span class="kt">int</span> <span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n"><a href="/python-xr/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">)</span>
 <a name="line-47"></a><span class="p">{</span>
-<a name="line-48"></a>    <span class="n"><a href="/./Lib/ctypes/wintypes.py.html#line-28">ULONG</a></span> <span class="n">FrameFlags</span> <span class="o">=</span> <span class="n">FCF_TITLEBAR</span> <span class="o">|</span>
+<a name="line-48"></a>    <span class="n"><a href="/python-xr/./Lib/ctypes/wintypes.py.html#line-28">ULONG</a></span> <span class="n">FrameFlags</span> <span class="o">=</span> <span class="n">FCF_TITLEBAR</span> <span class="o">|</span>
 <a name="line-49"></a>                       <span class="n">FCF_SYSMENU</span> <span class="o">|</span>
 <a name="line-50"></a>                       <span class="n">FCF_SIZEBORDER</span> <span class="o">|</span>
 <a name="line-51"></a>                       <span class="n">FCF_HIDEBUTTON</span> <span class="o">|</span>
@@ -258,9 +258,9 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-53"></a>                       <span class="n">FCF_TASKLIST</span><span class="p">;</span>
 <a name="line-54"></a>    <span class="n">HAB</span> <span class="n">hab</span><span class="p">;</span>
 <a name="line-55"></a>    <span class="n">HMQ</span> <span class="n">hmq</span><span class="p">;</span>
-<a name="line-56"></a>    <span class="n"><a href="/./Lib/ctypes/test/test_callbacks.py.html#line-202">HWND</a></span> <span class="n"><a href="/./Demo/pdist/client.py.html#line-14">Client</a></span><span class="p">;</span>
+<a name="line-56"></a>    <span class="n"><a href="/python-xr/./Lib/ctypes/test/test_callbacks.py.html#line-202">HWND</a></span> <span class="n"><a href="/python-xr/./Demo/pdist/client.py.html#line-14">Client</a></span><span class="p">;</span>
 <a name="line-57"></a>    <span class="n">QMSG</span> <span class="n">qmsg</span><span class="p">;</span>
-<a name="line-58"></a>    <span class="n"><a href="/./Include/graminit.h.html#line-77">arglist</a></span> <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">;</span>
+<a name="line-58"></a>    <span class="n"><a href="/python-xr/./Include/graminit.h.html#line-77">arglist</a></span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">;</span>
 <a name="line-59"></a>    <span class="kt">int</span> <span class="n">python_tid</span><span class="p">;</span>
 <a name="line-60"></a>
 <a name="line-61"></a>    <span class="cm">/* init PM and create message queue */</span>
@@ -268,60 +268,60 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-63"></a>    <span class="n">hmq</span> <span class="o">=</span> <span class="n">WinCreateMsgQueue</span><span class="p">(</span><span class="n">hab</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 <a name="line-64"></a>
 <a name="line-65"></a>    <span class="cm">/* create a (hidden) Window to house the window procedure */</span>
-<a name="line-66"></a>    <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/./Lib/idlelib/SearchDialogBase.py.html#line-3">Frame</a></span> <span class="o">=</span> <span class="n">WinCreateStdWindow</span><span class="p">(</span><span class="n">HWND_DESKTOP</span><span class="p">,</span>
+<a name="line-66"></a>    <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/python-xr/./Lib/idlelib/SearchDialogBase.py.html#line-3">Frame</a></span> <span class="o">=</span> <span class="n">WinCreateStdWindow</span><span class="p">(</span><span class="n">HWND_DESKTOP</span><span class="p">,</span>
 <a name="line-67"></a>                                    <span class="mi">0</span><span class="p">,</span>
 <a name="line-68"></a>                                    <span class="o">&amp;</span><span class="n">FrameFlags</span><span class="p">,</span>
-<a name="line-69"></a>                                    <span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">,</span>
+<a name="line-69"></a>                                    <span class="nb"><a href="/python-xr/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">,</span>
 <a name="line-70"></a>                                    <span class="s">&quot;PythonPM&quot;</span><span class="p">,</span>
 <a name="line-71"></a>                                    <span class="mi">0L</span><span class="p">,</span>
 <a name="line-72"></a>                                    <span class="mi">0</span><span class="p">,</span>
 <a name="line-73"></a>                                    <span class="mi">0</span><span class="p">,</span>
-<a name="line-74"></a>                                    <span class="o">&amp;</span><span class="n"><a href="/./Demo/pdist/client.py.html#line-14">Client</a></span><span class="p">);</span>
+<a name="line-74"></a>                                    <span class="o">&amp;</span><span class="n"><a href="/python-xr/./Demo/pdist/client.py.html#line-14">Client</a></span><span class="p">);</span>
 <a name="line-75"></a>
 <a name="line-76"></a>    <span class="cm">/* run Python interpreter in a thread */</span>
-<a name="line-77"></a>    <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span> <span class="o">=</span> <span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">;</span>
-<a name="line-78"></a>    <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">;</span>
-<a name="line-79"></a>    <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/./Lib/smtpd.py.html#line-542">running</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<a name="line-80"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">==</span> <span class="p">(</span><span class="n">python_tid</span> <span class="o">=</span> <span class="n">_beginthread</span><span class="p">(</span><span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-103">PythonThread</a></span><span class="p">,</span> <span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">,</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span> <span class="o">&amp;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">)))</span>
+<a name="line-77"></a>    <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">;</span>
+<a name="line-78"></a>    <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/python-xr/./Demo/md5test/md5driver.py.html#line-3">argv</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">;</span>
+<a name="line-79"></a>    <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/python-xr/./Lib/smtpd.py.html#line-542">running</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-80"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">==</span> <span class="p">(</span><span class="n">python_tid</span> <span class="o">=</span> <span class="n">_beginthread</span><span class="p">(</span><span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-103">PythonThread</a></span><span class="p">,</span> <span class="nb"><a href="/python-xr/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">,</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span> <span class="o">&amp;</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">)))</span>
 <a name="line-81"></a>    <span class="p">{</span>
 <a name="line-82"></a>        <span class="cm">/* couldn&#39;t start thread */</span>
 <a name="line-83"></a>        <span class="n">WinAlarm</span><span class="p">(</span><span class="n">HWND_DESKTOP</span><span class="p">,</span> <span class="n">WA_ERROR</span><span class="p">);</span>
-<a name="line-84"></a>        <span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-40">PythonRC</a></span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-84"></a>        <span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-40">PythonRC</a></span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <a name="line-85"></a>    <span class="p">}</span>
 <a name="line-86"></a>    <span class="k">else</span>
 <a name="line-87"></a>    <span class="p">{</span>
 <a name="line-88"></a>        <span class="cm">/* process PM messages, until Python exits */</span>
 <a name="line-89"></a>        <span class="k">while</span> <span class="p">(</span><span class="n">WinGetMsg</span><span class="p">(</span><span class="n">hab</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">qmsg</span><span class="p">,</span> <span class="n">NULLHANDLE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <a name="line-90"></a>            <span class="n">WinDispatchMsg</span><span class="p">(</span><span class="n">hab</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">qmsg</span><span class="p">);</span>
-<a name="line-91"></a>        <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/./Lib/smtpd.py.html#line-542">running</a></span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<a name="line-91"></a>        <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/python-xr/./Lib/smtpd.py.html#line-542">running</a></span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 <a name="line-92"></a>            <span class="n">DosKillThread</span><span class="p">(</span><span class="n">python_tid</span><span class="p">);</span>
 <a name="line-93"></a>    <span class="p">}</span>
 <a name="line-94"></a>
 <a name="line-95"></a>    <span class="cm">/* destroy window, shutdown message queue and PM */</span>
-<a name="line-96"></a>    <span class="n">WinDestroyWindow</span><span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/./Lib/idlelib/SearchDialogBase.py.html#line-3">Frame</a></span><span class="p">);</span>
+<a name="line-96"></a>    <span class="n">WinDestroyWindow</span><span class="p">(</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">.</span><span class="n"><a href="/python-xr/./Lib/idlelib/SearchDialogBase.py.html#line-3">Frame</a></span><span class="p">);</span>
 <a name="line-97"></a>    <span class="n">WinDestroyMsgQueue</span><span class="p">(</span><span class="n">hmq</span><span class="p">);</span>
 <a name="line-98"></a>    <span class="n">WinTerminate</span><span class="p">(</span><span class="n">hab</span><span class="p">);</span>
 <a name="line-99"></a>
-<a name="line-100"></a>    <span class="k">return</span> <span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-40">PythonRC</a></span><span class="p">;</span>
+<a name="line-100"></a>    <span class="k">return</span> <span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-40">PythonRC</a></span><span class="p">;</span>
 <a name="line-101"></a><span class="p">}</span>
 <a name="line-102"></a>
-<a name="line-103"></a><span class="kt">void</span> <span class="nf"><a href="/./PC/os2emx/pythonpm.c.html#line-103">PythonThread</a></span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">argl</span><span class="p">)</span>
+<a name="line-103"></a><span class="kt">void</span> <span class="nf"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-103">PythonThread</a></span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">argl</span><span class="p">)</span>
 <a name="line-104"></a><span class="p">{</span>
 <a name="line-105"></a>    <span class="n">HAB</span> <span class="n">hab</span><span class="p">;</span>
-<a name="line-106"></a>    <span class="n"><a href="/./Include/graminit.h.html#line-77">arglist</a></span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">;</span>
+<a name="line-106"></a>    <span class="n"><a href="/python-xr/./Include/graminit.h.html#line-77">arglist</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">;</span>
 <a name="line-107"></a>
 <a name="line-108"></a>    <span class="cm">/* PM initialisation */</span>
 <a name="line-109"></a>    <span class="n">hab</span> <span class="o">=</span> <span class="n">WinInitialize</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <a name="line-110"></a>
 <a name="line-111"></a>    <span class="cm">/* start Python */</span>
-<a name="line-112"></a>    <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/graminit.h.html#line-77">arglist</a></span> <span class="o">*</span><span class="p">)</span><span class="n">argl</span><span class="p">;</span>
-<a name="line-113"></a>    <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/smtpd.py.html#line-542">running</a></span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<a name="line-114"></a>    <span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-40">PythonRC</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/main.c.html#line-239">Py_Main</a></span><span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="o">-&gt;</span><span class="n"><a href="/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">);</span>
+<a name="line-112"></a>    <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/python-xr/./Include/graminit.h.html#line-77">arglist</a></span> <span class="o">*</span><span class="p">)</span><span class="n">argl</span><span class="p">;</span>
+<a name="line-113"></a>    <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="o">-&gt;</span><span class="n"><a href="/python-xr/./Lib/smtpd.py.html#line-542">running</a></span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-114"></a>    <span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-40">PythonRC</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Modules/main.c.html#line-239">Py_Main</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="o">-&gt;</span><span class="n"><a href="/python-xr/./PC/os2emx/pythonpm.c.html#line-30">argc</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="o">-&gt;</span><span class="n"><a href="/python-xr/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">);</span>
 <a name="line-115"></a>
 <a name="line-116"></a>    <span class="cm">/* enter a critical section and send the termination message */</span>
 <a name="line-117"></a>    <span class="n">DosEnterCritSec</span><span class="p">();</span>
-<a name="line-118"></a>    <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/smtpd.py.html#line-542">running</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<a name="line-119"></a>    <span class="n">WinPostMsg</span><span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/idlelib/SearchDialogBase.py.html#line-3">Frame</a></span><span class="p">,</span> <span class="n">WM_QUIT</span><span class="p">,</span> <span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">,</span> <span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">);</span>
+<a name="line-118"></a>    <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="o">-&gt;</span><span class="n"><a href="/python-xr/./Lib/smtpd.py.html#line-542">running</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-119"></a>    <span class="n">WinPostMsg</span><span class="p">(</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="o">-&gt;</span><span class="n"><a href="/python-xr/./Lib/idlelib/SearchDialogBase.py.html#line-3">Frame</a></span><span class="p">,</span> <span class="n">WM_QUIT</span><span class="p">,</span> <span class="nb"><a href="/python-xr/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">,</span> <span class="nb"><a href="/python-xr/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">);</span>
 <a name="line-120"></a>
 <a name="line-121"></a>    <span class="cm">/* shutdown PM and terminate thread */</span>
 <a name="line-122"></a>    <span class="n">WinTerminate</span><span class="p">(</span><span class="n">hab</span><span class="p">);</span>

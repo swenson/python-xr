@@ -163,11 +163,11 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-81">81</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/test/test_cl.py</span><pre><span></span><a name="line-1"></a><span class="sd">&quot;&quot;&quot;Whimpy test script for the cl module</span>
 <a name="line-2"></a><span class="sd">   Roger E. Masse</span>
 <a name="line-3"></a><span class="sd">&quot;&quot;&quot;</span>
-<a name="line-4"></a><span class="kn">from</span> <span class="nn">test.test_support</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/ihooks.py.html#line-362">import_module</a></span>
+<a name="line-4"></a><span class="kn">from</span> <span class="nn">test.test_support</span> <span class="kn">import</span> <span class="n"><a href="/python-xr/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-362">import_module</a></span>
 <a name="line-5"></a>
-<a name="line-6"></a><span class="n"><a href="/./Lib/aifc.py.html#line-331">cl</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/ihooks.py.html#line-362">import_module</a></span><span class="p">(</span><span class="s1">&#39;cl&#39;</span><span class="p">)</span>
+<a name="line-6"></a><span class="n"><a href="/python-xr/./Lib/aifc.py.html#line-331">cl</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-362">import_module</a></span><span class="p">(</span><span class="s1">&#39;cl&#39;</span><span class="p">)</span>
 <a name="line-7"></a>
-<a name="line-8"></a><span class="n"><a href="/./Lib/test/test_cl.py.html#line-8">clattrs</a></span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ADDED_ALGORITHM_ERROR&#39;</span><span class="p">,</span> <span class="s1">&#39;ALAW&#39;</span><span class="p">,</span> <span class="s1">&#39;ALGORITHM_ID&#39;</span><span class="p">,</span>
+<a name="line-8"></a><span class="n"><a href="/python-xr/./Lib/test/test_cl.py.html#line-8">clattrs</a></span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ADDED_ALGORITHM_ERROR&#39;</span><span class="p">,</span> <span class="s1">&#39;ALAW&#39;</span><span class="p">,</span> <span class="s1">&#39;ALGORITHM_ID&#39;</span><span class="p">,</span>
 <a name="line-9"></a><span class="s1">&#39;ALGORITHM_VERSION&#39;</span><span class="p">,</span> <span class="s1">&#39;AUDIO&#39;</span><span class="p">,</span> <span class="s1">&#39;AWARE_ERROR&#39;</span><span class="p">,</span> <span class="s1">&#39;AWARE_MPEG_AUDIO&#39;</span><span class="p">,</span>
 <a name="line-10"></a><span class="s1">&#39;AWARE_MULTIRATE&#39;</span><span class="p">,</span> <span class="s1">&#39;AWCMP_CONST_QUAL&#39;</span><span class="p">,</span> <span class="s1">&#39;AWCMP_FIXED_RATE&#39;</span><span class="p">,</span>
 <a name="line-11"></a><span class="s1">&#39;AWCMP_INDEPENDENT&#39;</span><span class="p">,</span> <span class="s1">&#39;AWCMP_JOINT_STEREO&#39;</span><span class="p">,</span> <span class="s1">&#39;AWCMP_LOSSLESS&#39;</span><span class="p">,</span>
@@ -228,19 +228,19 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-66"></a><span class="c1"># This is a very inobtrusive test for the existence of the cl</span>
 <a name="line-67"></a><span class="c1"># module and all its attributes.</span>
 <a name="line-68"></a>
-<a name="line-69"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">():</span>
+<a name="line-69"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">():</span>
 <a name="line-70"></a>    <span class="c1"># touch all the attributes of al without doing anything</span>
-<a name="line-71"></a>    <span class="k">if</span> <span class="n"><a href="/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">:</span>
+<a name="line-71"></a>    <span class="k">if</span> <span class="n"><a href="/python-xr/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">:</span>
 <a name="line-72"></a>        <span class="k">print</span> <span class="s1">&#39;Touching cl module attributes...&#39;</span>
-<a name="line-73"></a>    <span class="k">for</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-285">attr</a></span> <span class="ow">in</span> <span class="n"><a href="/./Lib/test/test_cl.py.html#line-8">clattrs</a></span><span class="p">:</span>
-<a name="line-74"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">:</span>
-<a name="line-75"></a>            <span class="k">print</span> <span class="s1">&#39;touching: &#39;</span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-285">attr</a></span>
-<a name="line-76"></a>        <span class="nb"><a href="/./Objects/stringlib/string_format.h.html#line-232">getattr</a></span><span class="p">(</span><span class="n"><a href="/./Lib/aifc.py.html#line-331">cl</a></span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-285">attr</a></span><span class="p">)</span>
+<a name="line-73"></a>    <span class="k">for</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-285">attr</a></span> <span class="ow">in</span> <span class="n"><a href="/python-xr/./Lib/test/test_cl.py.html#line-8">clattrs</a></span><span class="p">:</span>
+<a name="line-74"></a>        <span class="k">if</span> <span class="n"><a href="/python-xr/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">:</span>
+<a name="line-75"></a>            <span class="k">print</span> <span class="s1">&#39;touching: &#39;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-285">attr</a></span>
+<a name="line-76"></a>        <span class="nb"><a href="/python-xr/./Objects/stringlib/string_format.h.html#line-232">getattr</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/aifc.py.html#line-331">cl</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-285">attr</a></span><span class="p">)</span>
 <a name="line-77"></a>
 <a name="line-78"></a>
 <a name="line-79"></a>
-<a name="line-80"></a><span class="k">if</span> <span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a name="line-81"></a>    <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">()</span>
+<a name="line-80"></a><span class="k">if</span> <span class="n"><a href="/python-xr/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="line-81"></a>    <span class="n"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">()</span>
 </pre></div>
 </td></tr></table></body>
 </html>

@@ -131,43 +131,43 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-4"></a><span class="cm">*/</span>
 <a name="line-5"></a>
 <a name="line-6"></a><span class="k">enum</span> <span class="p">{</span>
-<a name="line-7"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-7">BT_NONXML</a></span><span class="p">,</span>
-<a name="line-8"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-8">BT_MALFORM</a></span><span class="p">,</span>
-<a name="line-9"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-9">BT_LT</a></span><span class="p">,</span>
-<a name="line-10"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-10">BT_AMP</a></span><span class="p">,</span>
-<a name="line-11"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-11">BT_RSQB</a></span><span class="p">,</span>
-<a name="line-12"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-12">BT_LEAD2</a></span><span class="p">,</span>
-<a name="line-13"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-13">BT_LEAD3</a></span><span class="p">,</span>
-<a name="line-14"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-14">BT_LEAD4</a></span><span class="p">,</span>
-<a name="line-15"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-15">BT_TRAIL</a></span><span class="p">,</span>
-<a name="line-16"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-16">BT_CR</a></span><span class="p">,</span>
-<a name="line-17"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-17">BT_LF</a></span><span class="p">,</span>
-<a name="line-18"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-18">BT_GT</a></span><span class="p">,</span>
-<a name="line-19"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-19">BT_QUOT</a></span><span class="p">,</span>
-<a name="line-20"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-20">BT_APOS</a></span><span class="p">,</span>
-<a name="line-21"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-21">BT_EQUALS</a></span><span class="p">,</span>
-<a name="line-22"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-22">BT_QUEST</a></span><span class="p">,</span>
-<a name="line-23"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-23">BT_EXCL</a></span><span class="p">,</span>
-<a name="line-24"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-24">BT_SOL</a></span><span class="p">,</span>
-<a name="line-25"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-25">BT_SEMI</a></span><span class="p">,</span>
-<a name="line-26"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-26">BT_NUM</a></span><span class="p">,</span>
-<a name="line-27"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-27">BT_LSQB</a></span><span class="p">,</span>
-<a name="line-28"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-28">BT_S</a></span><span class="p">,</span>
-<a name="line-29"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-29">BT_NMSTRT</a></span><span class="p">,</span>
-<a name="line-30"></a>  <span class="n"><a href="/./Modules/expat/xmltok.c.html#line-396">BT_COLON</a></span><span class="p">,</span>
-<a name="line-31"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-31">BT_HEX</a></span><span class="p">,</span>
-<a name="line-32"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-32">BT_DIGIT</a></span><span class="p">,</span>
-<a name="line-33"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-33">BT_NAME</a></span><span class="p">,</span>
-<a name="line-34"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-34">BT_MINUS</a></span><span class="p">,</span>
-<a name="line-35"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-35">BT_OTHER</a></span><span class="p">,</span> <span class="cm">/* known not to be a name or name start character */</span>
-<a name="line-36"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-36">BT_NONASCII</a></span><span class="p">,</span> <span class="cm">/* might be a name or name start character */</span>
-<a name="line-37"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-37">BT_PERCNT</a></span><span class="p">,</span>
-<a name="line-38"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-38">BT_LPAR</a></span><span class="p">,</span>
-<a name="line-39"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-39">BT_RPAR</a></span><span class="p">,</span>
-<a name="line-40"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-40">BT_AST</a></span><span class="p">,</span>
-<a name="line-41"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-41">BT_PLUS</a></span><span class="p">,</span>
-<a name="line-42"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-42">BT_COMMA</a></span><span class="p">,</span>
-<a name="line-43"></a>  <span class="n"><a href="/./Modules/expat/xmltok_impl.h.html#line-43">BT_VERBAR</a></span>
+<a name="line-7"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-7">BT_NONXML</a></span><span class="p">,</span>
+<a name="line-8"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-8">BT_MALFORM</a></span><span class="p">,</span>
+<a name="line-9"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-9">BT_LT</a></span><span class="p">,</span>
+<a name="line-10"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-10">BT_AMP</a></span><span class="p">,</span>
+<a name="line-11"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-11">BT_RSQB</a></span><span class="p">,</span>
+<a name="line-12"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-12">BT_LEAD2</a></span><span class="p">,</span>
+<a name="line-13"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-13">BT_LEAD3</a></span><span class="p">,</span>
+<a name="line-14"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-14">BT_LEAD4</a></span><span class="p">,</span>
+<a name="line-15"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-15">BT_TRAIL</a></span><span class="p">,</span>
+<a name="line-16"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-16">BT_CR</a></span><span class="p">,</span>
+<a name="line-17"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-17">BT_LF</a></span><span class="p">,</span>
+<a name="line-18"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-18">BT_GT</a></span><span class="p">,</span>
+<a name="line-19"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-19">BT_QUOT</a></span><span class="p">,</span>
+<a name="line-20"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-20">BT_APOS</a></span><span class="p">,</span>
+<a name="line-21"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-21">BT_EQUALS</a></span><span class="p">,</span>
+<a name="line-22"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-22">BT_QUEST</a></span><span class="p">,</span>
+<a name="line-23"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-23">BT_EXCL</a></span><span class="p">,</span>
+<a name="line-24"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-24">BT_SOL</a></span><span class="p">,</span>
+<a name="line-25"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-25">BT_SEMI</a></span><span class="p">,</span>
+<a name="line-26"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-26">BT_NUM</a></span><span class="p">,</span>
+<a name="line-27"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-27">BT_LSQB</a></span><span class="p">,</span>
+<a name="line-28"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-28">BT_S</a></span><span class="p">,</span>
+<a name="line-29"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-29">BT_NMSTRT</a></span><span class="p">,</span>
+<a name="line-30"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok.c.html#line-396">BT_COLON</a></span><span class="p">,</span>
+<a name="line-31"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-31">BT_HEX</a></span><span class="p">,</span>
+<a name="line-32"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-32">BT_DIGIT</a></span><span class="p">,</span>
+<a name="line-33"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-33">BT_NAME</a></span><span class="p">,</span>
+<a name="line-34"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-34">BT_MINUS</a></span><span class="p">,</span>
+<a name="line-35"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-35">BT_OTHER</a></span><span class="p">,</span> <span class="cm">/* known not to be a name or name start character */</span>
+<a name="line-36"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-36">BT_NONASCII</a></span><span class="p">,</span> <span class="cm">/* might be a name or name start character */</span>
+<a name="line-37"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-37">BT_PERCNT</a></span><span class="p">,</span>
+<a name="line-38"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-38">BT_LPAR</a></span><span class="p">,</span>
+<a name="line-39"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-39">BT_RPAR</a></span><span class="p">,</span>
+<a name="line-40"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-40">BT_AST</a></span><span class="p">,</span>
+<a name="line-41"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-41">BT_PLUS</a></span><span class="p">,</span>
+<a name="line-42"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-42">BT_COMMA</a></span><span class="p">,</span>
+<a name="line-43"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmltok_impl.h.html#line-43">BT_VERBAR</a></span>
 <a name="line-44"></a><span class="p">};</span>
 <a name="line-45"></a>
 <a name="line-46"></a><span class="cp">#include</span> <span class="cpf">&lt;stddef.h&gt;</span><span class="cp"></span>

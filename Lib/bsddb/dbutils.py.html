@@ -188,27 +188,27 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-24"></a><span class="c1"># import the time.sleep function in a namespace safe way to allow</span>
 <a name="line-25"></a><span class="c1"># &quot;from bsddb.dbutils import *&quot;</span>
 <a name="line-26"></a><span class="c1">#</span>
-<a name="line-27"></a><span class="kn">from</span> <span class="nn"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span> <span class="kn">import</span> <span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-166">sleep</a></span> <span class="k">as</span> <span class="n"><a href="/./Lib/bsddb/dbutils.py.html#line-27">_sleep</a></span>
+<a name="line-27"></a><span class="kn">from</span> <span class="nn"><a href="/python-xr/./Demo/classes/Dates.py.html#line-173">time</a></span> <span class="kn">import</span> <span class="n"><a href="/python-xr/./Demo/pdist/cvslock.py.html#line-166">sleep</a></span> <span class="k">as</span> <span class="n"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-27">_sleep</a></span>
 <a name="line-28"></a>
-<a name="line-29"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span>
-<a name="line-30"></a><span class="n"><a href="/./Lib/__future__.py.html#line-114">absolute_import</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/bsddb/__init__.py.html#line-43">version_info</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span>
-<a name="line-31"></a><span class="k">if</span> <span class="n"><a href="/./Lib/__future__.py.html#line-114">absolute_import</a></span> <span class="p">:</span>
+<a name="line-29"></a><span class="kn">import</span> <span class="nn"><a href="/python-xr/./Demo/cgi/wiki.py.html#line-3">sys</a></span>
+<a name="line-30"></a><span class="n"><a href="/python-xr/./Lib/__future__.py.html#line-114">absolute_import</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/python-xr/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/bsddb/__init__.py.html#line-43">version_info</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span>
+<a name="line-31"></a><span class="k">if</span> <span class="n"><a href="/python-xr/./Lib/__future__.py.html#line-114">absolute_import</a></span> <span class="p">:</span>
 <a name="line-32"></a>    <span class="c1"># Because this syntaxis is not valid before Python 2.5</span>
 <a name="line-33"></a>    <span class="k">exec</span><span class="p">(</span><span class="s2">&quot;from . import db&quot;</span><span class="p">)</span>
 <a name="line-34"></a><span class="k">else</span> <span class="p">:</span>
-<a name="line-35"></a>    <span class="kn">import</span> <span class="nn"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span>
+<a name="line-35"></a>    <span class="kn">import</span> <span class="nn"><a href="/python-xr/./Lib/bsddb/dbobj.py.html#line-28">db</a></span>
 <a name="line-36"></a>
 <a name="line-37"></a><span class="c1"># always sleep at least N seconds between retrys</span>
-<a name="line-38"></a><span class="n"><a href="/./Lib/bsddb/dbutils.py.html#line-38">_deadlock_MinSleepTime</a></span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mi">128</span>
+<a name="line-38"></a><span class="n"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-38">_deadlock_MinSleepTime</a></span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mi">128</span>
 <a name="line-39"></a><span class="c1"># never sleep more than N seconds between retrys</span>
-<a name="line-40"></a><span class="n"><a href="/./Lib/bsddb/dbutils.py.html#line-40">_deadlock_MaxSleepTime</a></span> <span class="o">=</span> <span class="mf">3.14159</span>
+<a name="line-40"></a><span class="n"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-40">_deadlock_MaxSleepTime</a></span> <span class="o">=</span> <span class="mf">3.14159</span>
 <a name="line-41"></a>
 <a name="line-42"></a><span class="c1"># Assign a file object to this for a &quot;sleeping&quot; message to be written to it</span>
 <a name="line-43"></a><span class="c1"># each retry</span>
-<a name="line-44"></a><span class="n"><a href="/./Lib/bsddb/dbutils.py.html#line-44">_deadlock_VerboseFile</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-44"></a><span class="n"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-44">_deadlock_VerboseFile</a></span> <span class="o">=</span> <span class="bp"><a href="/python-xr/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
 <a name="line-45"></a>
 <a name="line-46"></a>
-<a name="line-47"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/bsddb/dbutils.py.html#line-47">DeadlockWrap</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-3">function</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Lib/test/test_shelve.py.html#line-133">_args</a></span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">):</span>
+<a name="line-47"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-47">DeadlockWrap</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/newmetaclasses/Eiffel.py.html#line-3">function</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Lib/test/test_shelve.py.html#line-133">_args</a></span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">):</span>
 <a name="line-48"></a>    <span class="sd">&quot;&quot;&quot;DeadlockWrap(function, *_args, **_kwargs) - automatically retries</span>
 <a name="line-49"></a><span class="sd">    function in case of a database deadlock.</span>
 <a name="line-50"></a>
@@ -223,22 +223,22 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-59"></a><span class="sd">        d.open(...)</span>
 <a name="line-60"></a><span class="sd">        DeadlockWrap(d.put, &quot;foo&quot;, data=&quot;bar&quot;)  # set key &quot;foo&quot; to &quot;bar&quot;</span>
 <a name="line-61"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a name="line-62"></a>    <span class="n">sleeptime</span> <span class="o">=</span> <span class="n"><a href="/./Lib/bsddb/dbutils.py.html#line-38">_deadlock_MinSleepTime</a></span>
-<a name="line-63"></a>    <span class="n">max_retries</span> <span class="o">=</span> <span class="n">_kwargs</span><span class="o">.</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-203">get</a></span><span class="p">(</span><span class="s1">&#39;max_retries&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-62"></a>    <span class="n">sleeptime</span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-38">_deadlock_MinSleepTime</a></span>
+<a name="line-63"></a>    <span class="n">max_retries</span> <span class="o">=</span> <span class="n">_kwargs</span><span class="o">.</span><span class="n"><a href="/python-xr/./Demo/metaclasses/Synch.py.html#line-203">get</a></span><span class="p">(</span><span class="s1">&#39;max_retries&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <a name="line-64"></a>    <span class="k">if</span> <span class="s1">&#39;max_retries&#39;</span> <span class="ow">in</span> <span class="n">_kwargs</span><span class="p">:</span>
 <a name="line-65"></a>        <span class="k">del</span> <span class="n">_kwargs</span><span class="p">[</span><span class="s1">&#39;max_retries&#39;</span><span class="p">]</span>
 <a name="line-66"></a>    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
 <a name="line-67"></a>        <span class="k">try</span><span class="p">:</span>
-<a name="line-68"></a>            <span class="k">return</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-3">function</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Lib/test/test_shelve.py.html#line-133">_args</a></span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span>
-<a name="line-69"></a>        <span class="k">except</span> <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_bsddb.c.html#line-161">DBLockDeadlockError</a></span><span class="p">:</span>
-<a name="line-70"></a>            <span class="k">if</span> <span class="n"><a href="/./Lib/bsddb/dbutils.py.html#line-44">_deadlock_VerboseFile</a></span><span class="p">:</span>
-<a name="line-71"></a>                <span class="n"><a href="/./Lib/bsddb/dbutils.py.html#line-44">_deadlock_VerboseFile</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span>
+<a name="line-68"></a>            <span class="k">return</span> <span class="n"><a href="/python-xr/./Demo/newmetaclasses/Eiffel.py.html#line-3">function</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/python-xr/./Lib/test/test_shelve.py.html#line-133">_args</a></span><span class="p">,</span> <span class="o">**</span><span class="n">_kwargs</span><span class="p">)</span>
+<a name="line-69"></a>        <span class="k">except</span> <span class="n"><a href="/python-xr/./Lib/bsddb/dbobj.py.html#line-28">db</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Modules/_bsddb.c.html#line-161">DBLockDeadlockError</a></span><span class="p">:</span>
+<a name="line-70"></a>            <span class="k">if</span> <span class="n"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-44">_deadlock_VerboseFile</a></span><span class="p">:</span>
+<a name="line-71"></a>                <span class="n"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-44">_deadlock_VerboseFile</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span>
 <a name="line-72"></a>                    <span class="s1">&#39;dbutils.DeadlockWrap: sleeping </span><span class="si">%1.3f</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">sleeptime</span><span class="p">)</span>
-<a name="line-73"></a>            <span class="n"><a href="/./Lib/bsddb/dbutils.py.html#line-27">_sleep</a></span><span class="p">(</span><span class="n">sleeptime</span><span class="p">)</span>
+<a name="line-73"></a>            <span class="n"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-27">_sleep</a></span><span class="p">(</span><span class="n">sleeptime</span><span class="p">)</span>
 <a name="line-74"></a>            <span class="c1"># exponential backoff in the sleep time</span>
 <a name="line-75"></a>            <span class="n">sleeptime</span> <span class="o">*=</span> <span class="mi">2</span>
-<a name="line-76"></a>            <span class="k">if</span> <span class="n">sleeptime</span> <span class="o">&gt;</span> <span class="n"><a href="/./Lib/bsddb/dbutils.py.html#line-40">_deadlock_MaxSleepTime</a></span><span class="p">:</span>
-<a name="line-77"></a>                <span class="n">sleeptime</span> <span class="o">=</span> <span class="n"><a href="/./Lib/bsddb/dbutils.py.html#line-40">_deadlock_MaxSleepTime</a></span>
+<a name="line-76"></a>            <span class="k">if</span> <span class="n">sleeptime</span> <span class="o">&gt;</span> <span class="n"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-40">_deadlock_MaxSleepTime</a></span><span class="p">:</span>
+<a name="line-77"></a>                <span class="n">sleeptime</span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Lib/bsddb/dbutils.py.html#line-40">_deadlock_MaxSleepTime</a></span>
 <a name="line-78"></a>            <span class="n">max_retries</span> <span class="o">-=</span> <span class="mi">1</span>
 <a name="line-79"></a>            <span class="k">if</span> <span class="n">max_retries</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
 <a name="line-80"></a>                <span class="k">raise</span>

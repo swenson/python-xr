@@ -138,61 +138,61 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-56">56</a>
 <a href="#line-57">57</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/plat-mac/Carbon/TextEdit.py</span><pre><span></span><a name="line-1"></a><span class="c1"># Generated from &#39;TextEdit.h&#39;</span>
 <a name="line-2"></a>
-<a name="line-3"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-3">teJustLeft</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-4"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-4">teJustCenter</a></span> <span class="o">=</span> <span class="mi">1</span>
-<a name="line-5"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-5">teJustRight</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<a name="line-6"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-6">teForceLeft</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
-<a name="line-7"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-7">teFlushDefault</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-8"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-8">teCenter</a></span> <span class="o">=</span> <span class="mi">1</span>
-<a name="line-9"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-9">teFlushRight</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<a name="line-10"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-10">teFlushLeft</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
-<a name="line-11"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-11">fontBit</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-12"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-12">faceBit</a></span> <span class="o">=</span> <span class="mi">1</span>
-<a name="line-13"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-13">sizeBit</a></span> <span class="o">=</span> <span class="mi">2</span>
-<a name="line-14"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-14">clrBit</a></span> <span class="o">=</span> <span class="mi">3</span>
-<a name="line-15"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-15">addSizeBit</a></span> <span class="o">=</span> <span class="mi">4</span>
-<a name="line-16"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-16">toggleBit</a></span> <span class="o">=</span> <span class="mi">5</span>
-<a name="line-17"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-17">doFont</a></span> <span class="o">=</span> <span class="mi">1</span>
-<a name="line-18"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-18">doFace</a></span> <span class="o">=</span> <span class="mi">2</span>
-<a name="line-19"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-19">doSize</a></span> <span class="o">=</span> <span class="mi">4</span>
-<a name="line-20"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-20">doColor</a></span> <span class="o">=</span> <span class="mi">8</span>
-<a name="line-21"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-21">doAll</a></span> <span class="o">=</span> <span class="mi">15</span>
-<a name="line-22"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-22">addSize</a></span> <span class="o">=</span> <span class="mi">16</span>
-<a name="line-23"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-23">doToggle</a></span> <span class="o">=</span> <span class="mi">32</span>
-<a name="line-24"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-24">EOLHook</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-25"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-25">DRAWHook</a></span> <span class="o">=</span> <span class="mi">4</span>
-<a name="line-26"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-26">WIDTHHook</a></span> <span class="o">=</span> <span class="mi">8</span>
-<a name="line-27"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-27">HITTESTHook</a></span> <span class="o">=</span> <span class="mi">12</span>
-<a name="line-28"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-28">nWIDTHHook</a></span> <span class="o">=</span> <span class="mi">24</span>
-<a name="line-29"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-29">TextWidthHook</a></span> <span class="o">=</span> <span class="mi">28</span>
-<a name="line-30"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-30">intEOLHook</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-31"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-31">intDrawHook</a></span> <span class="o">=</span> <span class="mi">1</span>
-<a name="line-32"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-32">intWidthHook</a></span> <span class="o">=</span> <span class="mi">2</span>
-<a name="line-33"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-33">intHitTestHook</a></span> <span class="o">=</span> <span class="mi">3</span>
-<a name="line-34"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-34">intNWidthHook</a></span> <span class="o">=</span> <span class="mi">6</span>
-<a name="line-35"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-35">intTextWidthHook</a></span> <span class="o">=</span> <span class="mi">7</span>
-<a name="line-36"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-36">intInlineInputTSMTEPreUpdateHook</a></span> <span class="o">=</span> <span class="mi">8</span>
-<a name="line-37"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-37">intInlineInputTSMTEPostUpdateHook</a></span> <span class="o">=</span> <span class="mi">9</span>
-<a name="line-38"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-38">teFAutoScroll</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-39"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-39">teFTextBuffering</a></span> <span class="o">=</span> <span class="mi">1</span>
-<a name="line-40"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-40">teFOutlineHilite</a></span> <span class="o">=</span> <span class="mi">2</span>
-<a name="line-41"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-41">teFInlineInput</a></span> <span class="o">=</span> <span class="mi">3</span>
-<a name="line-42"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-42">teFUseWhiteBackground</a></span> <span class="o">=</span> <span class="mi">4</span>
-<a name="line-43"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-43">teFUseInlineInput</a></span> <span class="o">=</span> <span class="mi">5</span>
-<a name="line-44"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-44">teFInlineInputAutoScroll</a></span> <span class="o">=</span> <span class="mi">6</span>
-<a name="line-45"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-45">teFIdleWithEventLoopTimer</a></span> <span class="o">=</span> <span class="mi">7</span>
-<a name="line-46"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-46">teBitClear</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-47"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-47">teBitSet</a></span> <span class="o">=</span> <span class="mi">1</span>
-<a name="line-48"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-48">teBitTest</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<a name="line-49"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-49">teWordSelect</a></span> <span class="o">=</span> <span class="mi">4</span>
-<a name="line-50"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-50">teWordDrag</a></span> <span class="o">=</span> <span class="mi">8</span>
-<a name="line-51"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-51">teFromFind</a></span> <span class="o">=</span> <span class="mi">12</span>
-<a name="line-52"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-52">teFromRecal</a></span> <span class="o">=</span> <span class="mi">16</span>
-<a name="line-53"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-53">teFind</a></span> <span class="o">=</span> <span class="mi">0</span>
-<a name="line-54"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-54">teHighlight</a></span> <span class="o">=</span> <span class="mi">1</span>
-<a name="line-55"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-55">teDraw</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<a name="line-56"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-56">teCaret</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
-<a name="line-57"></a><span class="n"><a href="/./Lib/plat-mac/Carbon/TextEdit.py.html#line-57">teFUseTextServices</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-3"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-3">teJustLeft</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-4"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-4">teJustCenter</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-5"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-5">teJustRight</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="line-6"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-6">teForceLeft</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<a name="line-7"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-7">teFlushDefault</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-8"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-8">teCenter</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-9"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-9">teFlushRight</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="line-10"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-10">teFlushLeft</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<a name="line-11"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-11">fontBit</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-12"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-12">faceBit</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-13"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-13">sizeBit</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-14"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-14">clrBit</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-15"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-15">addSizeBit</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-16"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-16">toggleBit</a></span> <span class="o">=</span> <span class="mi">5</span>
+<a name="line-17"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-17">doFont</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-18"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-18">doFace</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-19"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-19">doSize</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-20"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-20">doColor</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-21"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-21">doAll</a></span> <span class="o">=</span> <span class="mi">15</span>
+<a name="line-22"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-22">addSize</a></span> <span class="o">=</span> <span class="mi">16</span>
+<a name="line-23"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-23">doToggle</a></span> <span class="o">=</span> <span class="mi">32</span>
+<a name="line-24"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-24">EOLHook</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-25"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-25">DRAWHook</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-26"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-26">WIDTHHook</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-27"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-27">HITTESTHook</a></span> <span class="o">=</span> <span class="mi">12</span>
+<a name="line-28"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-28">nWIDTHHook</a></span> <span class="o">=</span> <span class="mi">24</span>
+<a name="line-29"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-29">TextWidthHook</a></span> <span class="o">=</span> <span class="mi">28</span>
+<a name="line-30"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-30">intEOLHook</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-31"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-31">intDrawHook</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-32"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-32">intWidthHook</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-33"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-33">intHitTestHook</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-34"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-34">intNWidthHook</a></span> <span class="o">=</span> <span class="mi">6</span>
+<a name="line-35"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-35">intTextWidthHook</a></span> <span class="o">=</span> <span class="mi">7</span>
+<a name="line-36"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-36">intInlineInputTSMTEPreUpdateHook</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-37"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-37">intInlineInputTSMTEPostUpdateHook</a></span> <span class="o">=</span> <span class="mi">9</span>
+<a name="line-38"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-38">teFAutoScroll</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-39"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-39">teFTextBuffering</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-40"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-40">teFOutlineHilite</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-41"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-41">teFInlineInput</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-42"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-42">teFUseWhiteBackground</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-43"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-43">teFUseInlineInput</a></span> <span class="o">=</span> <span class="mi">5</span>
+<a name="line-44"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-44">teFInlineInputAutoScroll</a></span> <span class="o">=</span> <span class="mi">6</span>
+<a name="line-45"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-45">teFIdleWithEventLoopTimer</a></span> <span class="o">=</span> <span class="mi">7</span>
+<a name="line-46"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-46">teBitClear</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-47"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-47">teBitSet</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-48"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-48">teBitTest</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="line-49"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-49">teWordSelect</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-50"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-50">teWordDrag</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-51"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-51">teFromFind</a></span> <span class="o">=</span> <span class="mi">12</span>
+<a name="line-52"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-52">teFromRecal</a></span> <span class="o">=</span> <span class="mi">16</span>
+<a name="line-53"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-53">teFind</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-54"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-54">teHighlight</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-55"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-55">teDraw</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="line-56"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-56">teCaret</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<a name="line-57"></a><span class="n"><a href="/python-xr/./Lib/plat-mac/Carbon/TextEdit.py.html#line-57">teFUseTextServices</a></span> <span class="o">=</span> <span class="mi">4</span>
 </pre></div>
 </td></tr></table></body>
 </html>

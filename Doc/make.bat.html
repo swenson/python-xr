@@ -208,27 +208,27 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-3"></a>
 <a name="line-4"></a><span class="k">pushd</span> <span class="nv">%~dp0</span>
 <a name="line-5"></a>
-<a name="line-6"></a><span class="k">set</span> <span class="nv"><a href="/./Doc/make.bat.html#line-6">this</a></span><span class="p">=</span><span class="nv">%~n0</span>
+<a name="line-6"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./Doc/make.bat.html#line-6">this</a></span><span class="p">=</span><span class="nv">%~n0</span>
 <a name="line-7"></a>
-<a name="line-8"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%SPHINXBUILD%</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./Doc/Makefile.html#line-8">SPHINXBUILD</a></span><span class="p">=</span>sphinx-build
-<a name="line-9"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%PYTHON%</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./Doc/Makefile.html#line-7">PYTHON</a></span><span class="p">=</span>py
+<a name="line-8"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%SPHINXBUILD%</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">set</span> <span class="nv"><a href="/python-xr/./Doc/Makefile.html#line-8">SPHINXBUILD</a></span><span class="p">=</span>sphinx-build
+<a name="line-9"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%PYTHON%</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">set</span> <span class="nv"><a href="/python-xr/./Doc/Makefile.html#line-7">PYTHON</a></span><span class="p">=</span>py
 <a name="line-10"></a>
-<a name="line-11"></a><span class="k">if</span> <span class="k">DEFINED</span> <span class="nv">ProgramFiles(x86)</span> <span class="k">set</span> <span class="nv"><a href="/./Doc/make.bat.html#line-11">_PRGMFLS</a></span><span class="p">=</span><span class="nv">%ProgramFiles(x86)%</span>
-<a name="line-12"></a><span class="k">if</span> <span class="k">NOT</span> <span class="k">DEFINED</span> <span class="nv">ProgramFiles(x86)</span> <span class="k">set</span> <span class="nv"><a href="/./Doc/make.bat.html#line-11">_PRGMFLS</a></span><span class="p">=</span><span class="nv">%ProgramFiles%</span>
-<a name="line-13"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%HTMLHELP%</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./Doc/make.bat.html#line-13">HTMLHELP</a></span><span class="p">=</span><span class="nv">%_PRGMFLS%</span>\HTML Help Workshop\hhc.exe
+<a name="line-11"></a><span class="k">if</span> <span class="k">DEFINED</span> <span class="nv">ProgramFiles(x86)</span> <span class="k">set</span> <span class="nv"><a href="/python-xr/./Doc/make.bat.html#line-11">_PRGMFLS</a></span><span class="p">=</span><span class="nv">%ProgramFiles(x86)%</span>
+<a name="line-12"></a><span class="k">if</span> <span class="k">NOT</span> <span class="k">DEFINED</span> <span class="nv">ProgramFiles(x86)</span> <span class="k">set</span> <span class="nv"><a href="/python-xr/./Doc/make.bat.html#line-11">_PRGMFLS</a></span><span class="p">=</span><span class="nv">%ProgramFiles%</span>
+<a name="line-13"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%HTMLHELP%</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">set</span> <span class="nv"><a href="/python-xr/./Doc/make.bat.html#line-13">HTMLHELP</a></span><span class="p">=</span><span class="nv">%_PRGMFLS%</span>\HTML Help Workshop\hhc.exe
 <a name="line-14"></a>
-<a name="line-15"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%DISTVERSION%</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="k">/f</span> <span class="s2">&quot;usebackq&quot;</span> <span class="se">%%</span>v <span class="k">in</span> <span class="p">(</span><span class="sb">`</span><span class="nv">%PYTHON%</span><span class="sb"> tools/extensions/patchlevel.py`</span><span class="p">)</span> <span class="k">do</span> <span class="k">set</span> <span class="nv"><a href="/./Doc/Makefile.html#line-11">DISTVERSION</a></span><span class="p">=</span><span class="se">%%</span>v
+<a name="line-15"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%DISTVERSION%</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="k">/f</span> <span class="s2">&quot;usebackq&quot;</span> <span class="se">%%</span>v <span class="k">in</span> <span class="p">(</span><span class="sb">`</span><span class="nv">%PYTHON%</span><span class="sb"> tools/extensions/patchlevel.py`</span><span class="p">)</span> <span class="k">do</span> <span class="k">set</span> <span class="nv"><a href="/python-xr/./Doc/Makefile.html#line-11">DISTVERSION</a></span><span class="p">=</span><span class="se">%%</span>v
 <a name="line-16"></a>
-<a name="line-17"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%BUILDDIR%</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./Doc/make.bat.html#line-17">BUILDDIR</a></span><span class="p">=</span>build
+<a name="line-17"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%BUILDDIR%</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">set</span> <span class="nv"><a href="/python-xr/./Doc/make.bat.html#line-17">BUILDDIR</a></span><span class="p">=</span>build
 <a name="line-18"></a>
 <a name="line-19"></a><span class="c1">rem Targets that don&#39;t require sphinx-build</span>
-<a name="line-20"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-48">help</a></span>
-<a name="line-21"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;help&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-48">help</a></span>
-<a name="line-22"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;check&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/./Demo/pdist/FSProxy.py.html#line-79">check</a></span>
-<a name="line-23"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;serve&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-119">serve</a></span>
+<a name="line-20"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-48">help</a></span>
+<a name="line-21"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;help&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-48">help</a></span>
+<a name="line-22"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;check&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/python-xr/./Demo/pdist/FSProxy.py.html#line-79">check</a></span>
+<a name="line-23"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;serve&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-119">serve</a></span>
 <a name="line-24"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;clean&quot;</span> <span class="p">(</span>
 <a name="line-25"></a>    <span class="k">rmdir</span> /q /s <span class="nv">%BUILDDIR%</span>
-<a name="line-26"></a>    <span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-26"></a>    <span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-123">end</a></span>
 <a name="line-27"></a><span class="p">)</span>
 <a name="line-28"></a>
 <a name="line-29"></a><span class="nv">%SPHINXBUILD%</span> <span class="mi">2</span><span class="p">&gt;</span> nul
@@ -241,16 +241,16 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-36"></a>    <span class="k">echo</span>.
 <a name="line-37"></a>    <span class="k">echo</span>.If you don&#39;t have Sphinx installed, grab it from
 <a name="line-38"></a>    <span class="k">echo</span>.http://sphinx-doc.org/
-<a name="line-39"></a>    <span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-39"></a>    <span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-123">end</a></span>
 <a name="line-40"></a><span class="p">)</span>
 <a name="line-41"></a>
 <a name="line-42"></a><span class="c1">rem Targets that do require sphinx-build and have their own label</span>
-<a name="line-43"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;htmlview&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-102">htmlview</a></span>
+<a name="line-43"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;htmlview&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-102">htmlview</a></span>
 <a name="line-44"></a>
 <a name="line-45"></a><span class="c1">rem Everything else</span>
-<a name="line-46"></a><span class="k">goto</span> <span class="nl"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>
+<a name="line-46"></a><span class="k">goto</span> <span class="nl"><a href="/python-xr/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>
 <a name="line-47"></a>
-<a name="line-48"></a><span class="p">:</span><span class="nl"><a href="/./Doc/make.bat.html#line-48">help</a></span>
+<a name="line-48"></a><span class="p">:</span><span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-48">help</a></span>
 <a name="line-49"></a><span class="k">echo</span>.usage: <span class="nv">%this%</span> BUILDER [filename ...]
 <a name="line-50"></a><span class="k">echo</span>.
 <a name="line-51"></a><span class="k">echo</span>.Call <span class="nv">%this%</span> with the desired Sphinx builder as the first argument, e.g.
@@ -272,11 +272,11 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-67"></a><span class="k">echo</span>.a legitimate command for calling sphinx-build, or that sphinx-build is
 <a name="line-68"></a><span class="k">echo</span>.on your PATH if SPHINXBUILD is not set.  Options for sphinx-build can
 <a name="line-69"></a><span class="k">echo</span>.be passed by setting the SPHINXOPTS environment variable.
-<a name="line-70"></a><span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-70"></a><span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-123">end</a></span>
 <a name="line-71"></a>
-<a name="line-72"></a><span class="p">:</span><span class="nl"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>
+<a name="line-72"></a><span class="p">:</span><span class="nl"><a href="/python-xr/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>
 <a name="line-73"></a><span class="k">if</span> <span class="k">NOT</span> <span class="s2">&quot;</span><span class="nv">%PAPER%</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="p">(</span>
-<a name="line-74"></a>    <span class="k">set</span> <span class="nv"><a href="/./Doc/make.bat.html#line-74">SPHINXOPTS</a></span><span class="p">=</span>-D latex_paper_size=<span class="nv">%PAPER%</span> <span class="nv">%SPHINXOPTS%</span>
+<a name="line-74"></a>    <span class="k">set</span> <span class="nv"><a href="/python-xr/./Doc/make.bat.html#line-74">SPHINXOPTS</a></span><span class="p">=</span>-D latex_paper_size=<span class="nv">%PAPER%</span> <span class="nv">%SPHINXOPTS%</span>
 <a name="line-75"></a><span class="p">)</span>
 <a name="line-76"></a>cmd /C <span class="nv">%SPHINXBUILD%</span> <span class="nv">%SPHINXOPTS%</span> -b<span class="nv">%1</span> -dbuild\doctrees . <span class="nv">%BUILDDIR%</span>\<span class="nv">%*</span>
 <a name="line-77"></a>
@@ -288,7 +288,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-83"></a>        <span class="k">echo</span>.http://msdn.microsoft.com/en-us/library/ms669985
 <a name="line-84"></a>        <span class="c1">rem Set errorlevel to 1 and exit</span>
 <a name="line-85"></a>        cmd /C exit /b 1
-<a name="line-86"></a>        <span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-86"></a>        <span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-123">end</a></span>
 <a name="line-87"></a>    <span class="p">)</span>
 <a name="line-88"></a>    cmd /C <span class="s2">&quot;</span><span class="nv">%HTMLHELP%</span><span class="s2">&quot;</span> build\htmlhelp\python<span class="nv">%DISTVERSION:.=%</span>.hhp
 <a name="line-89"></a>    <span class="c1">rem hhc.exe seems to always exit with code 1, reset to 0 for less than 2</span>
@@ -302,9 +302,9 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-97"></a><span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
 <a name="line-98"></a>    <span class="k">echo</span>.Build succeeded. All output should be in <span class="nv">%BUILDDIR%</span>\<span class="nv">%1</span>
 <a name="line-99"></a><span class="p">)</span>
-<a name="line-100"></a><span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-100"></a><span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-123">end</a></span>
 <a name="line-101"></a>
-<a name="line-102"></a><span class="p">:</span><span class="nl"><a href="/./Doc/make.bat.html#line-102">htmlview</a></span>
+<a name="line-102"></a><span class="p">:</span><span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-102">htmlview</a></span>
 <a name="line-103"></a><span class="k">if</span> <span class="k">NOT</span> <span class="s2">&quot;</span><span class="nv">%2</span><span class="s2">&quot;</span> <span class="ow">EQU</span> <span class="s2">&quot;&quot;</span> <span class="p">(</span>
 <a name="line-104"></a>    <span class="k">echo</span>.Can&#39;t specify filenames to build with htmlview target, ignoring.
 <a name="line-105"></a><span class="p">)</span>
@@ -315,17 +315,17 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-110"></a>    <span class="k">start</span> <span class="nv">%BUILDDIR%</span>\html\index.html
 <a name="line-111"></a><span class="p">)</span>
 <a name="line-112"></a>
-<a name="line-113"></a><span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-113"></a><span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-123">end</a></span>
 <a name="line-114"></a>
-<a name="line-115"></a><span class="p">:</span><span class="nl"><a href="/./Demo/pdist/FSProxy.py.html#line-79">check</a></span>
+<a name="line-115"></a><span class="p">:</span><span class="nl"><a href="/python-xr/./Demo/pdist/FSProxy.py.html#line-79">check</a></span>
 <a name="line-116"></a>cmd /C <span class="nv">%PYTHON%</span> tools\rstlint.py -i tools
-<a name="line-117"></a><span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-117"></a><span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-123">end</a></span>
 <a name="line-118"></a>
-<a name="line-119"></a><span class="p">:</span><span class="nl"><a href="/./Doc/make.bat.html#line-119">serve</a></span>
+<a name="line-119"></a><span class="p">:</span><span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-119">serve</a></span>
 <a name="line-120"></a>cmd /C <span class="nv">%PYTHON%</span> ..\Tools\scripts\serve.py <span class="nv">%BUILDDIR%</span>\html
-<a name="line-121"></a><span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-121"></a><span class="k">goto</span> <span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-123">end</a></span>
 <a name="line-122"></a>
-<a name="line-123"></a><span class="p">:</span><span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-123"></a><span class="p">:</span><span class="nl"><a href="/python-xr/./Doc/make.bat.html#line-123">end</a></span>
 <a name="line-124"></a><span class="k">popd</span>
 </pre></div>
 </td></tr></table></body>

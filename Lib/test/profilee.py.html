@@ -207,107 +207,107 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-11"></a><span class="sd">changed.</span>
 <a name="line-12"></a><span class="sd">&quot;&quot;&quot;</span>
 <a name="line-13"></a>
-<a name="line-14"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span>
+<a name="line-14"></a><span class="kn">import</span> <span class="nn"><a href="/python-xr/./Demo/cgi/wiki.py.html#line-3">sys</a></span>
 <a name="line-15"></a>
 <a name="line-16"></a><span class="c1"># In order to have reproducible time, we simulate a timer in the global</span>
 <a name="line-17"></a><span class="c1"># variable &#39;TICKS&#39;, which represents simulated time in milliseconds.</span>
 <a name="line-18"></a><span class="c1"># (We can&#39;t use a helper function increment the timer since it would be</span>
 <a name="line-19"></a><span class="c1"># included in the profile and would appear to consume all the time.)</span>
-<a name="line-20"></a><span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">=</span> <span class="mi">42000</span>
+<a name="line-20"></a><span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">=</span> <span class="mi">42000</span>
 <a name="line-21"></a>
-<a name="line-22"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/profilee.py.html#line-22">timer</a></span><span class="p">():</span>
-<a name="line-23"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
+<a name="line-22"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/profilee.py.html#line-22">timer</a></span><span class="p">():</span>
+<a name="line-23"></a>    <span class="k">return</span> <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
 <a name="line-24"></a>
-<a name="line-25"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/profilee.py.html#line-25">testfunc</a></span><span class="p">():</span>
+<a name="line-25"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/profilee.py.html#line-25">testfunc</a></span><span class="p">():</span>
 <a name="line-26"></a>    <span class="c1"># 1 call</span>
 <a name="line-27"></a>    <span class="c1"># 1000 ticks total: 270 ticks local, 730 ticks in subfunctions</span>
-<a name="line-28"></a>    <span class="k">global</span> <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
-<a name="line-29"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">99</span>
-<a name="line-30"></a>    <span class="n"><a href="/./Lib/contextlib.py.html#line-83">helper</a></span><span class="p">()</span>                            <span class="c1"># 300</span>
-<a name="line-31"></a>    <span class="n"><a href="/./Lib/contextlib.py.html#line-83">helper</a></span><span class="p">()</span>                            <span class="c1"># 300</span>
-<a name="line-32"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">171</span>
-<a name="line-33"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-35">factorial</a></span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>                       <span class="c1"># 130</span>
+<a name="line-28"></a>    <span class="k">global</span> <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
+<a name="line-29"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">99</span>
+<a name="line-30"></a>    <span class="n"><a href="/python-xr/./Lib/contextlib.py.html#line-83">helper</a></span><span class="p">()</span>                            <span class="c1"># 300</span>
+<a name="line-31"></a>    <span class="n"><a href="/python-xr/./Lib/contextlib.py.html#line-83">helper</a></span><span class="p">()</span>                            <span class="c1"># 300</span>
+<a name="line-32"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">171</span>
+<a name="line-33"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-35">factorial</a></span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>                       <span class="c1"># 130</span>
 <a name="line-34"></a>
-<a name="line-35"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/profilee.py.html#line-35">factorial</a></span><span class="p">(</span><span class="n"><a href="/./Demo/scripts/beer.py.html#line-7">n</a></span><span class="p">):</span>
+<a name="line-35"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/profilee.py.html#line-35">factorial</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/scripts/beer.py.html#line-7">n</a></span><span class="p">):</span>
 <a name="line-36"></a>    <span class="c1"># 23 calls total</span>
 <a name="line-37"></a>    <span class="c1"># 170 ticks total, 150 ticks local</span>
 <a name="line-38"></a>    <span class="c1"># 3 primitive calls, 130, 20 and 20 ticks total</span>
 <a name="line-39"></a>    <span class="c1"># including 116, 17, 17 ticks local</span>
-<a name="line-40"></a>    <span class="k">global</span> <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
-<a name="line-41"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/scripts/beer.py.html#line-7">n</a></span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<a name="line-42"></a>        <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="n"><a href="/./Demo/scripts/beer.py.html#line-7">n</a></span>
-<a name="line-43"></a>        <span class="k">return</span> <span class="n"><a href="/./Doc/includes/mp_pool.py.html#line-27">mul</a></span><span class="p">(</span><span class="n"><a href="/./Demo/scripts/beer.py.html#line-7">n</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/test/profilee.py.html#line-35">factorial</a></span><span class="p">(</span><span class="n"><a href="/./Demo/scripts/beer.py.html#line-7">n</a></span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<a name="line-40"></a>    <span class="k">global</span> <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
+<a name="line-41"></a>    <span class="k">if</span> <span class="n"><a href="/python-xr/./Demo/scripts/beer.py.html#line-7">n</a></span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a name="line-42"></a>        <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="n"><a href="/python-xr/./Demo/scripts/beer.py.html#line-7">n</a></span>
+<a name="line-43"></a>        <span class="k">return</span> <span class="n"><a href="/python-xr/./Doc/includes/mp_pool.py.html#line-27">mul</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/scripts/beer.py.html#line-7">n</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-35">factorial</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/scripts/beer.py.html#line-7">n</a></span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 <a name="line-44"></a>    <span class="k">else</span><span class="p">:</span>
-<a name="line-45"></a>        <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">11</span>
+<a name="line-45"></a>        <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">11</span>
 <a name="line-46"></a>        <span class="k">return</span> <span class="mi">1</span>
 <a name="line-47"></a>
-<a name="line-48"></a><span class="k">def</span> <span class="nf"><a href="/./Doc/includes/mp_pool.py.html#line-27">mul</a></span><span class="p">(</span><span class="n"><a href="/./Lib/lib2to3/tests/test_util.py.html#line-139">a</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span><span class="p">):</span>
+<a name="line-48"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Doc/includes/mp_pool.py.html#line-27">mul</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/lib2to3/tests/test_util.py.html#line-139">a</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span><span class="p">):</span>
 <a name="line-49"></a>    <span class="c1"># 20 calls</span>
 <a name="line-50"></a>    <span class="c1"># 1 tick, local</span>
-<a name="line-51"></a>    <span class="k">global</span> <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
-<a name="line-52"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">1</span>
-<a name="line-53"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/lib2to3/tests/test_util.py.html#line-139">a</a></span> <span class="o">*</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span>
+<a name="line-51"></a>    <span class="k">global</span> <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
+<a name="line-52"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="line-53"></a>    <span class="k">return</span> <span class="n"><a href="/python-xr/./Lib/lib2to3/tests/test_util.py.html#line-139">a</a></span> <span class="o">*</span> <span class="n"><a href="/python-xr/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span>
 <a name="line-54"></a>
-<a name="line-55"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/contextlib.py.html#line-83">helper</a></span><span class="p">():</span>
+<a name="line-55"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/contextlib.py.html#line-83">helper</a></span><span class="p">():</span>
 <a name="line-56"></a>    <span class="c1"># 2 calls</span>
 <a name="line-57"></a>    <span class="c1"># 300 ticks total: 20 ticks local, 260 ticks in subfunctions</span>
-<a name="line-58"></a>    <span class="k">global</span> <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
-<a name="line-59"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">1</span>
-<a name="line-60"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-73">helper1</a></span><span class="p">()</span>                           <span class="c1"># 30</span>
-<a name="line-61"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">2</span>
-<a name="line-62"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-73">helper1</a></span><span class="p">()</span>                           <span class="c1"># 30</span>
-<a name="line-63"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">6</span>
-<a name="line-64"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-88">helper2</a></span><span class="p">()</span>                           <span class="c1"># 50</span>
-<a name="line-65"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">3</span>
-<a name="line-66"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-88">helper2</a></span><span class="p">()</span>                           <span class="c1"># 50</span>
-<a name="line-67"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">2</span>
-<a name="line-68"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-88">helper2</a></span><span class="p">()</span>                           <span class="c1"># 50</span>
-<a name="line-69"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">5</span>
-<a name="line-70"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-84">helper2_indirect</a></span><span class="p">()</span>                  <span class="c1"># 70</span>
-<a name="line-71"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="line-58"></a>    <span class="k">global</span> <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
+<a name="line-59"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="line-60"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-73">helper1</a></span><span class="p">()</span>                           <span class="c1"># 30</span>
+<a name="line-61"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">2</span>
+<a name="line-62"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-73">helper1</a></span><span class="p">()</span>                           <span class="c1"># 30</span>
+<a name="line-63"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">6</span>
+<a name="line-64"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-88">helper2</a></span><span class="p">()</span>                           <span class="c1"># 50</span>
+<a name="line-65"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">3</span>
+<a name="line-66"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-88">helper2</a></span><span class="p">()</span>                           <span class="c1"># 50</span>
+<a name="line-67"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">2</span>
+<a name="line-68"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-88">helper2</a></span><span class="p">()</span>                           <span class="c1"># 50</span>
+<a name="line-69"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">5</span>
+<a name="line-70"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-84">helper2_indirect</a></span><span class="p">()</span>                  <span class="c1"># 70</span>
+<a name="line-71"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">1</span>
 <a name="line-72"></a>
-<a name="line-73"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/profilee.py.html#line-73">helper1</a></span><span class="p">():</span>
+<a name="line-73"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/profilee.py.html#line-73">helper1</a></span><span class="p">():</span>
 <a name="line-74"></a>    <span class="c1"># 4 calls</span>
 <a name="line-75"></a>    <span class="c1"># 30 ticks total: 29 ticks local, 1 tick in subfunctions</span>
-<a name="line-76"></a>    <span class="k">global</span> <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
-<a name="line-77"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">10</span>
-<a name="line-78"></a>    <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/metaclasses/Eiffel.py.html#line-101">C</a></span><span class="p">(),</span> <span class="s2">&quot;foo&quot;</span><span class="p">)</span>                 <span class="c1"># 1</span>
-<a name="line-79"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">19</span>
-<a name="line-80"></a>    <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-32">lst</a></span> <span class="o">=</span> <span class="p">[]</span>
-<a name="line-81"></a>    <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-32">lst</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>                      <span class="c1"># 0</span>
-<a name="line-82"></a>    <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/fixes/fix_sys_exc.py.html#line-16">exc_info</a></span><span class="p">()</span>                      <span class="c1"># 0</span>
+<a name="line-76"></a>    <span class="k">global</span> <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
+<a name="line-77"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">10</span>
+<a name="line-78"></a>    <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/metaclasses/Eiffel.py.html#line-101">C</a></span><span class="p">(),</span> <span class="s2">&quot;foo&quot;</span><span class="p">)</span>                 <span class="c1"># 1</span>
+<a name="line-79"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">19</span>
+<a name="line-80"></a>    <span class="n"><a href="/python-xr/./Lib/test/crashers/borrowed_ref_2.py.html#line-32">lst</a></span> <span class="o">=</span> <span class="p">[]</span>
+<a name="line-81"></a>    <span class="n"><a href="/python-xr/./Lib/test/crashers/borrowed_ref_2.py.html#line-32">lst</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>                      <span class="c1"># 0</span>
+<a name="line-82"></a>    <span class="n"><a href="/python-xr/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/lib2to3/fixes/fix_sys_exc.py.html#line-16">exc_info</a></span><span class="p">()</span>                      <span class="c1"># 0</span>
 <a name="line-83"></a>
-<a name="line-84"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/profilee.py.html#line-84">helper2_indirect</a></span><span class="p">():</span>
-<a name="line-85"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-88">helper2</a></span><span class="p">()</span>                           <span class="c1"># 50</span>
-<a name="line-86"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-35">factorial</a></span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                        <span class="c1"># 20</span>
+<a name="line-84"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/profilee.py.html#line-84">helper2_indirect</a></span><span class="p">():</span>
+<a name="line-85"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-88">helper2</a></span><span class="p">()</span>                           <span class="c1"># 50</span>
+<a name="line-86"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-35">factorial</a></span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                        <span class="c1"># 20</span>
 <a name="line-87"></a>
-<a name="line-88"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/profilee.py.html#line-88">helper2</a></span><span class="p">():</span>
+<a name="line-88"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/profilee.py.html#line-88">helper2</a></span><span class="p">():</span>
 <a name="line-89"></a>    <span class="c1"># 8 calls</span>
 <a name="line-90"></a>    <span class="c1"># 50 ticks local: 39 ticks local, 11 ticks in subfunctions</span>
-<a name="line-91"></a>    <span class="k">global</span> <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
-<a name="line-92"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">11</span>
-<a name="line-93"></a>    <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/metaclasses/Eiffel.py.html#line-101">C</a></span><span class="p">(),</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>                 <span class="c1"># 1</span>
-<a name="line-94"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">13</span>
-<a name="line-95"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-98">subhelper</a></span><span class="p">()</span>                         <span class="c1"># 10</span>
-<a name="line-96"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">15</span>
+<a name="line-91"></a>    <span class="k">global</span> <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
+<a name="line-92"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">11</span>
+<a name="line-93"></a>    <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/metaclasses/Eiffel.py.html#line-101">C</a></span><span class="p">(),</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>                 <span class="c1"># 1</span>
+<a name="line-94"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">13</span>
+<a name="line-95"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-98">subhelper</a></span><span class="p">()</span>                         <span class="c1"># 10</span>
+<a name="line-96"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">15</span>
 <a name="line-97"></a>
-<a name="line-98"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/profilee.py.html#line-98">subhelper</a></span><span class="p">():</span>
+<a name="line-98"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/profilee.py.html#line-98">subhelper</a></span><span class="p">():</span>
 <a name="line-99"></a>    <span class="c1"># 8 calls</span>
 <a name="line-100"></a>    <span class="c1"># 10 ticks total: 8 ticks local, 2 ticks in subfunctions</span>
-<a name="line-101"></a>    <span class="k">global</span> <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
-<a name="line-102"></a>    <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">2</span>
-<a name="line-103"></a>    <span class="k">for</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>                  <span class="c1"># 0</span>
+<a name="line-101"></a>    <span class="k">global</span> <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
+<a name="line-102"></a>    <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">2</span>
+<a name="line-103"></a>    <span class="k">for</span> <span class="n"><a href="/python-xr/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>                  <span class="c1"># 0</span>
 <a name="line-104"></a>        <span class="k">try</span><span class="p">:</span>
-<a name="line-105"></a>            <span class="n"><a href="/./Demo/metaclasses/Eiffel.py.html#line-101">C</a></span><span class="p">()</span><span class="o">.</span><span class="n"><a href="/./Lib/bdb.py.html#line-632">foo</a></span>                     <span class="c1"># 1 x 2</span>
+<a name="line-105"></a>            <span class="n"><a href="/python-xr/./Demo/metaclasses/Eiffel.py.html#line-101">C</a></span><span class="p">()</span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/bdb.py.html#line-632">foo</a></span>                     <span class="c1"># 1 x 2</span>
 <a name="line-106"></a>        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-<a name="line-107"></a>            <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">3</span>                  <span class="c1"># 3 x 2</span>
+<a name="line-107"></a>            <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">3</span>                  <span class="c1"># 3 x 2</span>
 <a name="line-108"></a>
-<a name="line-109"></a><span class="k">class</span> <span class="nc"><a href="/./Demo/metaclasses/Eiffel.py.html#line-101">C</a></span><span class="p">:</span>
-<a name="line-110"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/metaclasses/Enum.py.html#line-48">__getattr__</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">):</span>
+<a name="line-109"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Demo/metaclasses/Eiffel.py.html#line-101">C</a></span><span class="p">:</span>
+<a name="line-110"></a>    <span class="k">def</span> <span class="nf"><a href="/python-xr/./Demo/metaclasses/Enum.py.html#line-48">__getattr__</a></span><span class="p">(</span><span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">):</span>
 <a name="line-111"></a>        <span class="c1"># 28 calls</span>
 <a name="line-112"></a>        <span class="c1"># 1 tick, local</span>
-<a name="line-113"></a>        <span class="k">global</span> <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
-<a name="line-114"></a>        <span class="n"><a href="/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="line-113"></a>        <span class="k">global</span> <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span>
+<a name="line-114"></a>        <span class="n"><a href="/python-xr/./Lib/test/profilee.py.html#line-20">TICKS</a></span> <span class="o">+=</span> <span class="mi">1</span>
 <a name="line-115"></a>        <span class="k">raise</span> <span class="ne">AttributeError</span>
 </pre></div>
 </td></tr></table></body>

@@ -213,90 +213,90 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-18"></a><span class="cp">#endif</span>
 <a name="line-19"></a>
 <a name="line-20"></a><span class="k">enum</span> <span class="p">{</span>
-<a name="line-21"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-21">XML_ROLE_ERROR</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-<a name="line-22"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-22">XML_ROLE_NONE</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-<a name="line-23"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-23">XML_ROLE_XML_DECL</a></span><span class="p">,</span>
-<a name="line-24"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-24">XML_ROLE_INSTANCE_START</a></span><span class="p">,</span>
-<a name="line-25"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-25">XML_ROLE_DOCTYPE_NONE</a></span><span class="p">,</span>
-<a name="line-26"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-26">XML_ROLE_DOCTYPE_NAME</a></span><span class="p">,</span>
-<a name="line-27"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-27">XML_ROLE_DOCTYPE_SYSTEM_ID</a></span><span class="p">,</span>
-<a name="line-28"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-28">XML_ROLE_DOCTYPE_PUBLIC_ID</a></span><span class="p">,</span>
-<a name="line-29"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-29">XML_ROLE_DOCTYPE_INTERNAL_SUBSET</a></span><span class="p">,</span>
-<a name="line-30"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-30">XML_ROLE_DOCTYPE_CLOSE</a></span><span class="p">,</span>
-<a name="line-31"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-31">XML_ROLE_GENERAL_ENTITY_NAME</a></span><span class="p">,</span>
-<a name="line-32"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-32">XML_ROLE_PARAM_ENTITY_NAME</a></span><span class="p">,</span>
-<a name="line-33"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-33">XML_ROLE_ENTITY_NONE</a></span><span class="p">,</span>
-<a name="line-34"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-34">XML_ROLE_ENTITY_VALUE</a></span><span class="p">,</span>
-<a name="line-35"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-35">XML_ROLE_ENTITY_SYSTEM_ID</a></span><span class="p">,</span>
-<a name="line-36"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-36">XML_ROLE_ENTITY_PUBLIC_ID</a></span><span class="p">,</span>
-<a name="line-37"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-37">XML_ROLE_ENTITY_COMPLETE</a></span><span class="p">,</span>
-<a name="line-38"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-38">XML_ROLE_ENTITY_NOTATION_NAME</a></span><span class="p">,</span>
-<a name="line-39"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-39">XML_ROLE_NOTATION_NONE</a></span><span class="p">,</span>
-<a name="line-40"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-40">XML_ROLE_NOTATION_NAME</a></span><span class="p">,</span>
-<a name="line-41"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-41">XML_ROLE_NOTATION_SYSTEM_ID</a></span><span class="p">,</span>
-<a name="line-42"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-42">XML_ROLE_NOTATION_NO_SYSTEM_ID</a></span><span class="p">,</span>
-<a name="line-43"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-43">XML_ROLE_NOTATION_PUBLIC_ID</a></span><span class="p">,</span>
-<a name="line-44"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-44">XML_ROLE_ATTRIBUTE_NAME</a></span><span class="p">,</span>
-<a name="line-45"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-45">XML_ROLE_ATTRIBUTE_TYPE_CDATA</a></span><span class="p">,</span>
-<a name="line-46"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-46">XML_ROLE_ATTRIBUTE_TYPE_ID</a></span><span class="p">,</span>
-<a name="line-47"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-47">XML_ROLE_ATTRIBUTE_TYPE_IDREF</a></span><span class="p">,</span>
-<a name="line-48"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-48">XML_ROLE_ATTRIBUTE_TYPE_IDREFS</a></span><span class="p">,</span>
-<a name="line-49"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-49">XML_ROLE_ATTRIBUTE_TYPE_ENTITY</a></span><span class="p">,</span>
-<a name="line-50"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-50">XML_ROLE_ATTRIBUTE_TYPE_ENTITIES</a></span><span class="p">,</span>
-<a name="line-51"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-51">XML_ROLE_ATTRIBUTE_TYPE_NMTOKEN</a></span><span class="p">,</span>
-<a name="line-52"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-52">XML_ROLE_ATTRIBUTE_TYPE_NMTOKENS</a></span><span class="p">,</span>
-<a name="line-53"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-53">XML_ROLE_ATTRIBUTE_ENUM_VALUE</a></span><span class="p">,</span>
-<a name="line-54"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-54">XML_ROLE_ATTRIBUTE_NOTATION_VALUE</a></span><span class="p">,</span>
-<a name="line-55"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-55">XML_ROLE_ATTLIST_NONE</a></span><span class="p">,</span>
-<a name="line-56"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-56">XML_ROLE_ATTLIST_ELEMENT_NAME</a></span><span class="p">,</span>
-<a name="line-57"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-57">XML_ROLE_IMPLIED_ATTRIBUTE_VALUE</a></span><span class="p">,</span>
-<a name="line-58"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-58">XML_ROLE_REQUIRED_ATTRIBUTE_VALUE</a></span><span class="p">,</span>
-<a name="line-59"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-59">XML_ROLE_DEFAULT_ATTRIBUTE_VALUE</a></span><span class="p">,</span>
-<a name="line-60"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-60">XML_ROLE_FIXED_ATTRIBUTE_VALUE</a></span><span class="p">,</span>
-<a name="line-61"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-61">XML_ROLE_ELEMENT_NONE</a></span><span class="p">,</span>
-<a name="line-62"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-62">XML_ROLE_ELEMENT_NAME</a></span><span class="p">,</span>
-<a name="line-63"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-63">XML_ROLE_CONTENT_ANY</a></span><span class="p">,</span>
-<a name="line-64"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-64">XML_ROLE_CONTENT_EMPTY</a></span><span class="p">,</span>
-<a name="line-65"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-65">XML_ROLE_CONTENT_PCDATA</a></span><span class="p">,</span>
-<a name="line-66"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-66">XML_ROLE_GROUP_OPEN</a></span><span class="p">,</span>
-<a name="line-67"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-67">XML_ROLE_GROUP_CLOSE</a></span><span class="p">,</span>
-<a name="line-68"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-68">XML_ROLE_GROUP_CLOSE_REP</a></span><span class="p">,</span>
-<a name="line-69"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-69">XML_ROLE_GROUP_CLOSE_OPT</a></span><span class="p">,</span>
-<a name="line-70"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-70">XML_ROLE_GROUP_CLOSE_PLUS</a></span><span class="p">,</span>
-<a name="line-71"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-71">XML_ROLE_GROUP_CHOICE</a></span><span class="p">,</span>
-<a name="line-72"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-72">XML_ROLE_GROUP_SEQUENCE</a></span><span class="p">,</span>
-<a name="line-73"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-73">XML_ROLE_CONTENT_ELEMENT</a></span><span class="p">,</span>
-<a name="line-74"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-74">XML_ROLE_CONTENT_ELEMENT_REP</a></span><span class="p">,</span>
-<a name="line-75"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-75">XML_ROLE_CONTENT_ELEMENT_OPT</a></span><span class="p">,</span>
-<a name="line-76"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-76">XML_ROLE_CONTENT_ELEMENT_PLUS</a></span><span class="p">,</span>
-<a name="line-77"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-77">XML_ROLE_PI</a></span><span class="p">,</span>
-<a name="line-78"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-78">XML_ROLE_COMMENT</a></span><span class="p">,</span>
+<a name="line-21"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-21">XML_ROLE_ERROR</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<a name="line-22"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-22">XML_ROLE_NONE</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+<a name="line-23"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-23">XML_ROLE_XML_DECL</a></span><span class="p">,</span>
+<a name="line-24"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-24">XML_ROLE_INSTANCE_START</a></span><span class="p">,</span>
+<a name="line-25"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-25">XML_ROLE_DOCTYPE_NONE</a></span><span class="p">,</span>
+<a name="line-26"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-26">XML_ROLE_DOCTYPE_NAME</a></span><span class="p">,</span>
+<a name="line-27"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-27">XML_ROLE_DOCTYPE_SYSTEM_ID</a></span><span class="p">,</span>
+<a name="line-28"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-28">XML_ROLE_DOCTYPE_PUBLIC_ID</a></span><span class="p">,</span>
+<a name="line-29"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-29">XML_ROLE_DOCTYPE_INTERNAL_SUBSET</a></span><span class="p">,</span>
+<a name="line-30"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-30">XML_ROLE_DOCTYPE_CLOSE</a></span><span class="p">,</span>
+<a name="line-31"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-31">XML_ROLE_GENERAL_ENTITY_NAME</a></span><span class="p">,</span>
+<a name="line-32"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-32">XML_ROLE_PARAM_ENTITY_NAME</a></span><span class="p">,</span>
+<a name="line-33"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-33">XML_ROLE_ENTITY_NONE</a></span><span class="p">,</span>
+<a name="line-34"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-34">XML_ROLE_ENTITY_VALUE</a></span><span class="p">,</span>
+<a name="line-35"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-35">XML_ROLE_ENTITY_SYSTEM_ID</a></span><span class="p">,</span>
+<a name="line-36"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-36">XML_ROLE_ENTITY_PUBLIC_ID</a></span><span class="p">,</span>
+<a name="line-37"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-37">XML_ROLE_ENTITY_COMPLETE</a></span><span class="p">,</span>
+<a name="line-38"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-38">XML_ROLE_ENTITY_NOTATION_NAME</a></span><span class="p">,</span>
+<a name="line-39"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-39">XML_ROLE_NOTATION_NONE</a></span><span class="p">,</span>
+<a name="line-40"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-40">XML_ROLE_NOTATION_NAME</a></span><span class="p">,</span>
+<a name="line-41"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-41">XML_ROLE_NOTATION_SYSTEM_ID</a></span><span class="p">,</span>
+<a name="line-42"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-42">XML_ROLE_NOTATION_NO_SYSTEM_ID</a></span><span class="p">,</span>
+<a name="line-43"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-43">XML_ROLE_NOTATION_PUBLIC_ID</a></span><span class="p">,</span>
+<a name="line-44"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-44">XML_ROLE_ATTRIBUTE_NAME</a></span><span class="p">,</span>
+<a name="line-45"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-45">XML_ROLE_ATTRIBUTE_TYPE_CDATA</a></span><span class="p">,</span>
+<a name="line-46"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-46">XML_ROLE_ATTRIBUTE_TYPE_ID</a></span><span class="p">,</span>
+<a name="line-47"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-47">XML_ROLE_ATTRIBUTE_TYPE_IDREF</a></span><span class="p">,</span>
+<a name="line-48"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-48">XML_ROLE_ATTRIBUTE_TYPE_IDREFS</a></span><span class="p">,</span>
+<a name="line-49"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-49">XML_ROLE_ATTRIBUTE_TYPE_ENTITY</a></span><span class="p">,</span>
+<a name="line-50"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-50">XML_ROLE_ATTRIBUTE_TYPE_ENTITIES</a></span><span class="p">,</span>
+<a name="line-51"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-51">XML_ROLE_ATTRIBUTE_TYPE_NMTOKEN</a></span><span class="p">,</span>
+<a name="line-52"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-52">XML_ROLE_ATTRIBUTE_TYPE_NMTOKENS</a></span><span class="p">,</span>
+<a name="line-53"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-53">XML_ROLE_ATTRIBUTE_ENUM_VALUE</a></span><span class="p">,</span>
+<a name="line-54"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-54">XML_ROLE_ATTRIBUTE_NOTATION_VALUE</a></span><span class="p">,</span>
+<a name="line-55"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-55">XML_ROLE_ATTLIST_NONE</a></span><span class="p">,</span>
+<a name="line-56"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-56">XML_ROLE_ATTLIST_ELEMENT_NAME</a></span><span class="p">,</span>
+<a name="line-57"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-57">XML_ROLE_IMPLIED_ATTRIBUTE_VALUE</a></span><span class="p">,</span>
+<a name="line-58"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-58">XML_ROLE_REQUIRED_ATTRIBUTE_VALUE</a></span><span class="p">,</span>
+<a name="line-59"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-59">XML_ROLE_DEFAULT_ATTRIBUTE_VALUE</a></span><span class="p">,</span>
+<a name="line-60"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-60">XML_ROLE_FIXED_ATTRIBUTE_VALUE</a></span><span class="p">,</span>
+<a name="line-61"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-61">XML_ROLE_ELEMENT_NONE</a></span><span class="p">,</span>
+<a name="line-62"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-62">XML_ROLE_ELEMENT_NAME</a></span><span class="p">,</span>
+<a name="line-63"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-63">XML_ROLE_CONTENT_ANY</a></span><span class="p">,</span>
+<a name="line-64"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-64">XML_ROLE_CONTENT_EMPTY</a></span><span class="p">,</span>
+<a name="line-65"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-65">XML_ROLE_CONTENT_PCDATA</a></span><span class="p">,</span>
+<a name="line-66"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-66">XML_ROLE_GROUP_OPEN</a></span><span class="p">,</span>
+<a name="line-67"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-67">XML_ROLE_GROUP_CLOSE</a></span><span class="p">,</span>
+<a name="line-68"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-68">XML_ROLE_GROUP_CLOSE_REP</a></span><span class="p">,</span>
+<a name="line-69"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-69">XML_ROLE_GROUP_CLOSE_OPT</a></span><span class="p">,</span>
+<a name="line-70"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-70">XML_ROLE_GROUP_CLOSE_PLUS</a></span><span class="p">,</span>
+<a name="line-71"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-71">XML_ROLE_GROUP_CHOICE</a></span><span class="p">,</span>
+<a name="line-72"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-72">XML_ROLE_GROUP_SEQUENCE</a></span><span class="p">,</span>
+<a name="line-73"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-73">XML_ROLE_CONTENT_ELEMENT</a></span><span class="p">,</span>
+<a name="line-74"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-74">XML_ROLE_CONTENT_ELEMENT_REP</a></span><span class="p">,</span>
+<a name="line-75"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-75">XML_ROLE_CONTENT_ELEMENT_OPT</a></span><span class="p">,</span>
+<a name="line-76"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-76">XML_ROLE_CONTENT_ELEMENT_PLUS</a></span><span class="p">,</span>
+<a name="line-77"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-77">XML_ROLE_PI</a></span><span class="p">,</span>
+<a name="line-78"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-78">XML_ROLE_COMMENT</a></span><span class="p">,</span>
 <a name="line-79"></a><span class="cp">#ifdef XML_DTD</span>
-<a name="line-80"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-80">XML_ROLE_TEXT_DECL</a></span><span class="p">,</span>
-<a name="line-81"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-81">XML_ROLE_IGNORE_SECT</a></span><span class="p">,</span>
-<a name="line-82"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-82">XML_ROLE_INNER_PARAM_ENTITY_REF</a></span><span class="p">,</span>
+<a name="line-80"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-80">XML_ROLE_TEXT_DECL</a></span><span class="p">,</span>
+<a name="line-81"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-81">XML_ROLE_IGNORE_SECT</a></span><span class="p">,</span>
+<a name="line-82"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-82">XML_ROLE_INNER_PARAM_ENTITY_REF</a></span><span class="p">,</span>
 <a name="line-83"></a><span class="cp">#endif </span><span class="cm">/* XML_DTD */</span><span class="cp"></span>
-<a name="line-84"></a>  <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-84">XML_ROLE_PARAM_ENTITY_REF</a></span>
+<a name="line-84"></a>  <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-84">XML_ROLE_PARAM_ENTITY_REF</a></span>
 <a name="line-85"></a><span class="p">};</span>
 <a name="line-86"></a>
-<a name="line-87"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-87">prolog_state</a></span> <span class="p">{</span>
-<a name="line-88"></a>  <span class="kt">int</span> <span class="p">(</span><span class="n"><a href="/./Modules/expat/internal.h.html#line-52">PTRCALL</a></span> <span class="o">*</span><span class="n"><a href="/./Demo/xml/elem_count.py.html#line-9">handler</a></span><span class="p">)</span> <span class="p">(</span><span class="k">struct</span> <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-87">prolog_state</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/shoddy.c.html#line-5">state</a></span><span class="p">,</span>
+<a name="line-87"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-87">prolog_state</a></span> <span class="p">{</span>
+<a name="line-88"></a>  <span class="kt">int</span> <span class="p">(</span><span class="n"><a href="/python-xr/./Modules/expat/internal.h.html#line-52">PTRCALL</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Demo/xml/elem_count.py.html#line-9">handler</a></span><span class="p">)</span> <span class="p">(</span><span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-87">prolog_state</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Doc/includes/shoddy.c.html#line-5">state</a></span><span class="p">,</span>
 <a name="line-89"></a>                          <span class="kt">int</span> <span class="n">tok</span><span class="p">,</span>
-<a name="line-90"></a>                          <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="p">,</span>
-<a name="line-91"></a>                          <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">,</span>
-<a name="line-92"></a>                          <span class="k">const</span> <span class="n"><a href="/./Lib/tarfile.py.html#line-160">ENCODING</a></span> <span class="o">*</span><span class="n"><a href="/./Modules/expat/xmltok.c.html#line-1086">enc</a></span><span class="p">);</span>
-<a name="line-93"></a>  <span class="kt">unsigned</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-165">level</a></span><span class="p">;</span>
-<a name="line-94"></a>  <span class="kt">int</span> <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-94">role_none</a></span><span class="p">;</span>
+<a name="line-90"></a>                          <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="p">,</span>
+<a name="line-91"></a>                          <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Doc/make.bat.html#line-123">end</a></span><span class="p">,</span>
+<a name="line-92"></a>                          <span class="k">const</span> <span class="n"><a href="/python-xr/./Lib/tarfile.py.html#line-160">ENCODING</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Modules/expat/xmltok.c.html#line-1086">enc</a></span><span class="p">);</span>
+<a name="line-93"></a>  <span class="kt">unsigned</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-165">level</a></span><span class="p">;</span>
+<a name="line-94"></a>  <span class="kt">int</span> <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-94">role_none</a></span><span class="p">;</span>
 <a name="line-95"></a><span class="cp">#ifdef XML_DTD</span>
-<a name="line-96"></a>  <span class="kt">unsigned</span> <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-96">includeLevel</a></span><span class="p">;</span>
-<a name="line-97"></a>  <span class="kt">int</span> <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-97">documentEntity</a></span><span class="p">;</span>
-<a name="line-98"></a>  <span class="kt">int</span> <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-98">inEntityValue</a></span><span class="p">;</span>
+<a name="line-96"></a>  <span class="kt">unsigned</span> <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-96">includeLevel</a></span><span class="p">;</span>
+<a name="line-97"></a>  <span class="kt">int</span> <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-97">documentEntity</a></span><span class="p">;</span>
+<a name="line-98"></a>  <span class="kt">int</span> <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-98">inEntityValue</a></span><span class="p">;</span>
 <a name="line-99"></a><span class="cp">#endif </span><span class="cm">/* XML_DTD */</span><span class="cp"></span>
-<a name="line-100"></a><span class="p">}</span> <span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-100">PROLOG_STATE</a></span><span class="p">;</span>
+<a name="line-100"></a><span class="p">}</span> <span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-100">PROLOG_STATE</a></span><span class="p">;</span>
 <a name="line-101"></a>
-<a name="line-102"></a><span class="kt">void</span> <span class="nf"><a href="/./Modules/expat/pyexpatns.h.html#line-79">XmlPrologStateInit</a></span><span class="p">(</span><span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-100">PROLOG_STATE</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-102"></a><span class="kt">void</span> <span class="nf"><a href="/python-xr/./Modules/expat/pyexpatns.h.html#line-79">XmlPrologStateInit</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-100">PROLOG_STATE</a></span> <span class="o">*</span><span class="p">);</span>
 <a name="line-103"></a><span class="cp">#ifdef XML_DTD</span>
-<a name="line-104"></a><span class="kt">void</span> <span class="nf"><a href="/./Modules/expat/pyexpatns.h.html#line-80">XmlPrologStateInitExternalEntity</a></span><span class="p">(</span><span class="n"><a href="/./Modules/expat/xmlrole.h.html#line-100">PROLOG_STATE</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-104"></a><span class="kt">void</span> <span class="nf"><a href="/python-xr/./Modules/expat/pyexpatns.h.html#line-80">XmlPrologStateInitExternalEntity</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Modules/expat/xmlrole.h.html#line-100">PROLOG_STATE</a></span> <span class="o">*</span><span class="p">);</span>
 <a name="line-105"></a><span class="cp">#endif </span><span class="cm">/* XML_DTD */</span><span class="cp"></span>
 <a name="line-106"></a>
 <a name="line-107"></a><span class="cp">#define XmlTokenRole(state, tok, ptr, end, enc) \</span>

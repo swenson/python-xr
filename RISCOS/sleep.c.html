@@ -129,37 +129,37 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-7"></a><span class="cp">#include</span> <span class="cpf">&quot;Python.h&quot;</span><span class="cp"></span>
 <a name="line-8"></a>
 <a name="line-9"></a>
-<a name="line-10"></a><span class="kt">int</span> <span class="nf"><a href="/./RISCOS/sleep.c.html#line-10">riscos_sleep</a></span><span class="p">(</span><span class="kt">double</span> <span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-1220">delay</a></span><span class="p">)</span>
+<a name="line-10"></a><span class="kt">int</span> <span class="nf"><a href="/python-xr/./RISCOS/sleep.c.html#line-10">riscos_sleep</a></span><span class="p">(</span><span class="kt">double</span> <span class="n"><a href="/python-xr/./Lib/lib-tk/turtle.py.html#line-1220">delay</a></span><span class="p">)</span>
 <a name="line-11"></a><span class="p">{</span>
-<a name="line-12"></a>    <span class="n">os_t</span> <span class="n">starttime</span><span class="p">,</span> <span class="n">endtime</span><span class="p">,</span> <span class="n"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="p">;</span> <span class="cm">/* monotonic times (centiseconds) */</span>
-<a name="line-13"></a>    <span class="kt">int</span> <span class="o">*</span><span class="n">pollword</span><span class="p">,</span> <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span><span class="p">;</span>
+<a name="line-12"></a>    <span class="n">os_t</span> <span class="n">starttime</span><span class="p">,</span> <span class="n">endtime</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="p">;</span> <span class="cm">/* monotonic times (centiseconds) */</span>
+<a name="line-13"></a>    <span class="kt">int</span> <span class="o">*</span><span class="n">pollword</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span><span class="p">;</span>
 <a name="line-14"></a>    <span class="n">osbool</span> <span class="n">claimed</span><span class="p">;</span>
 <a name="line-15"></a>
 <a name="line-16"></a>    <span class="cm">/* calculate end time */</span>
 <a name="line-17"></a>    <span class="n">starttime</span> <span class="o">=</span> <span class="n">os_read_monotonic_time</span><span class="p">();</span>
-<a name="line-18"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">starttime</span> <span class="o">+</span> <span class="mf">100.0</span><span class="o">*</span><span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-1220">delay</a></span> <span class="o">&gt;</span><span class="n"><a href="/./Include/pyport.h.html#line-859">INT_MAX</a></span><span class="p">)</span>
-<a name="line-19"></a>        <span class="n">endtime</span> <span class="o">=</span> <span class="n"><a href="/./Include/pyport.h.html#line-859">INT_MAX</a></span><span class="p">;</span>
+<a name="line-18"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">starttime</span> <span class="o">+</span> <span class="mf">100.0</span><span class="o">*</span><span class="n"><a href="/python-xr/./Lib/lib-tk/turtle.py.html#line-1220">delay</a></span> <span class="o">&gt;</span><span class="n"><a href="/python-xr/./Include/pyport.h.html#line-859">INT_MAX</a></span><span class="p">)</span>
+<a name="line-19"></a>        <span class="n">endtime</span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Include/pyport.h.html#line-859">INT_MAX</a></span><span class="p">;</span>
 <a name="line-20"></a>    <span class="k">else</span>
-<a name="line-21"></a>        <span class="n">endtime</span> <span class="o">=</span> <span class="p">(</span><span class="n">os_t</span><span class="p">)(</span><span class="n">starttime</span> <span class="o">+</span> <span class="mf">100.0</span><span class="o">*</span><span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-1220">delay</a></span><span class="p">);</span>
+<a name="line-21"></a>        <span class="n">endtime</span> <span class="o">=</span> <span class="p">(</span><span class="n">os_t</span><span class="p">)(</span><span class="n">starttime</span> <span class="o">+</span> <span class="mf">100.0</span><span class="o">*</span><span class="n"><a href="/python-xr/./Lib/lib-tk/turtle.py.html#line-1220">delay</a></span><span class="p">);</span>
 <a name="line-22"></a>
 <a name="line-23"></a>    <span class="cm">/* allocate (in RMA) and set pollword for xupcall_sleep */</span>
 <a name="line-24"></a>    <span class="n">pollword</span> <span class="o">=</span> <span class="n">osmodule_alloc</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 <a name="line-25"></a>    <span class="o">*</span><span class="n">pollword</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <a name="line-26"></a>
-<a name="line-27"></a>    <span class="n"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span> <span class="o">=</span> <span class="n">starttime</span><span class="p">;</span>
-<a name="line-28"></a>    <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<a name="line-29"></a>    <span class="k">while</span> <span class="p">(</span> <span class="n"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="o">&lt;</span><span class="n">endtime</span> <span class="o">&amp;&amp;</span> <span class="n"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="o">&gt;=</span><span class="n">starttime</span> <span class="p">)</span> <span class="p">{</span>
+<a name="line-27"></a>    <span class="n"><a href="/python-xr/./Demo/classes/Dates.py.html#line-173">time</a></span> <span class="o">=</span> <span class="n">starttime</span><span class="p">;</span>
+<a name="line-28"></a>    <span class="n"><a href="/python-xr/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-29"></a>    <span class="k">while</span> <span class="p">(</span> <span class="n"><a href="/python-xr/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="o">&lt;</span><span class="n">endtime</span> <span class="o">&amp;&amp;</span> <span class="n"><a href="/python-xr/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="o">&gt;=</span><span class="n">starttime</span> <span class="p">)</span> <span class="p">{</span>
 <a name="line-30"></a>        <span class="n">xupcall_sleep</span> <span class="p">(</span><span class="n">pollword</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">claimed</span><span class="p">);</span>
-<a name="line-31"></a>        <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/signalmodule.c.html#line-893">PyErr_CheckSignals</a></span><span class="p">())</span> <span class="p">{</span>
-<a name="line-32"></a>            <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-31"></a>        <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/python-xr/./Modules/signalmodule.c.html#line-893">PyErr_CheckSignals</a></span><span class="p">())</span> <span class="p">{</span>
+<a name="line-32"></a>            <span class="n"><a href="/python-xr/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <a name="line-33"></a>            <span class="k">break</span><span class="p">;</span>
 <a name="line-34"></a>        <span class="p">}</span>
-<a name="line-35"></a>        <span class="n"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span> <span class="o">=</span> <span class="n">os_read_monotonic_time</span><span class="p">();</span>
+<a name="line-35"></a>        <span class="n"><a href="/python-xr/./Demo/classes/Dates.py.html#line-173">time</a></span> <span class="o">=</span> <span class="n">os_read_monotonic_time</span><span class="p">();</span>
 <a name="line-36"></a>    <span class="p">}</span>
 <a name="line-37"></a>
 <a name="line-38"></a>    <span class="cm">/* deallocate pollword */</span>
 <a name="line-39"></a>    <span class="n">osmodule_free</span><span class="p">(</span><span class="n">pollword</span><span class="p">);</span>
-<a name="line-40"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span><span class="p">;</span>
+<a name="line-40"></a>    <span class="k">return</span> <span class="n"><a href="/python-xr/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span><span class="p">;</span>
 <a name="line-41"></a><span class="p">}</span>
 </pre></div>
 </td></tr></table></body>

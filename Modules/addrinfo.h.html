@@ -381,15 +381,15 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-124"></a><span class="cp">#endif </span><span class="cm">/* !HAVE_GETNAMEINFO */</span><span class="cp"></span>
 <a name="line-125"></a>
 <a name="line-126"></a><span class="cp">#ifndef HAVE_ADDRINFO</span>
-<a name="line-127"></a><span class="k">struct</span> <span class="n"><a href="/./Modules/addrinfo.h.html#line-127">addrinfo</a></span> <span class="p">{</span>
-<a name="line-128"></a>    <span class="kt">int</span>         <span class="n"><a href="/./Modules/addrinfo.h.html#line-128">ai_flags</a></span><span class="p">;</span>       <span class="cm">/* AI_PASSIVE, AI_CANONNAME */</span>
-<a name="line-129"></a>    <span class="kt">int</span>         <span class="n"><a href="/./Modules/addrinfo.h.html#line-129">ai_family</a></span><span class="p">;</span>      <span class="cm">/* PF_xxx */</span>
-<a name="line-130"></a>    <span class="kt">int</span>         <span class="n"><a href="/./Modules/addrinfo.h.html#line-130">ai_socktype</a></span><span class="p">;</span>    <span class="cm">/* SOCK_xxx */</span>
-<a name="line-131"></a>    <span class="kt">int</span>         <span class="n"><a href="/./Modules/addrinfo.h.html#line-131">ai_protocol</a></span><span class="p">;</span>    <span class="cm">/* 0 or IPPROTO_xxx for IPv4 and IPv6 */</span>
-<a name="line-132"></a>    <span class="kt">size_t</span>      <span class="n"><a href="/./Modules/addrinfo.h.html#line-132">ai_addrlen</a></span><span class="p">;</span>     <span class="cm">/* length of ai_addr */</span>
-<a name="line-133"></a>    <span class="kt">char</span>        <span class="o">*</span><span class="n"><a href="/./Modules/addrinfo.h.html#line-133">ai_canonname</a></span><span class="p">;</span>  <span class="cm">/* canonical name for hostname */</span>
-<a name="line-134"></a>    <span class="k">struct</span> <span class="n">sockaddr</span> <span class="o">*</span><span class="n"><a href="/./Modules/addrinfo.h.html#line-134">ai_addr</a></span><span class="p">;</span>           <span class="cm">/* binary address */</span>
-<a name="line-135"></a>    <span class="k">struct</span> <span class="n"><a href="/./Modules/addrinfo.h.html#line-127">addrinfo</a></span> <span class="o">*</span><span class="n"><a href="/./Modules/addrinfo.h.html#line-135">ai_next</a></span><span class="p">;</span>           <span class="cm">/* next structure in linked list */</span>
+<a name="line-127"></a><span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-127">addrinfo</a></span> <span class="p">{</span>
+<a name="line-128"></a>    <span class="kt">int</span>         <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-128">ai_flags</a></span><span class="p">;</span>       <span class="cm">/* AI_PASSIVE, AI_CANONNAME */</span>
+<a name="line-129"></a>    <span class="kt">int</span>         <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-129">ai_family</a></span><span class="p">;</span>      <span class="cm">/* PF_xxx */</span>
+<a name="line-130"></a>    <span class="kt">int</span>         <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-130">ai_socktype</a></span><span class="p">;</span>    <span class="cm">/* SOCK_xxx */</span>
+<a name="line-131"></a>    <span class="kt">int</span>         <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-131">ai_protocol</a></span><span class="p">;</span>    <span class="cm">/* 0 or IPPROTO_xxx for IPv4 and IPv6 */</span>
+<a name="line-132"></a>    <span class="kt">size_t</span>      <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-132">ai_addrlen</a></span><span class="p">;</span>     <span class="cm">/* length of ai_addr */</span>
+<a name="line-133"></a>    <span class="kt">char</span>        <span class="o">*</span><span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-133">ai_canonname</a></span><span class="p">;</span>  <span class="cm">/* canonical name for hostname */</span>
+<a name="line-134"></a>    <span class="k">struct</span> <span class="n">sockaddr</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-134">ai_addr</a></span><span class="p">;</span>           <span class="cm">/* binary address */</span>
+<a name="line-135"></a>    <span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-127">addrinfo</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-135">ai_next</a></span><span class="p">;</span>           <span class="cm">/* next structure in linked list */</span>
 <a name="line-136"></a><span class="p">};</span>
 <a name="line-137"></a><span class="cp">#endif </span><span class="cm">/* !HAVE_ADDRINFO */</span><span class="cp"></span>
 <a name="line-138"></a>
@@ -407,27 +407,27 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-150"></a><span class="cp">#define _SS_PAD2SIZE    (_SS_MAXSIZE - sizeof(u_char) * 2 - \</span>
 <a name="line-151"></a><span class="cp">                _SS_PAD1SIZE - _SS_ALIGNSIZE)</span>
 <a name="line-152"></a>
-<a name="line-153"></a><span class="k">struct</span> <span class="n"><a href="/./Modules/addrinfo.h.html#line-153">sockaddr_storage</a></span> <span class="p">{</span>
+<a name="line-153"></a><span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-153">sockaddr_storage</a></span> <span class="p">{</span>
 <a name="line-154"></a><span class="cp">#ifdef HAVE_SOCKADDR_SA_LEN</span>
-<a name="line-155"></a>    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n"><a href="/./Modules/addrinfo.h.html#line-155">ss_len</a></span><span class="p">;</span>               <span class="cm">/* address length */</span>
-<a name="line-156"></a>    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n"><a href="/./Modules/addrinfo.h.html#line-156">ss_family</a></span><span class="p">;</span>            <span class="cm">/* address family */</span>
+<a name="line-155"></a>    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-155">ss_len</a></span><span class="p">;</span>               <span class="cm">/* address length */</span>
+<a name="line-156"></a>    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-156">ss_family</a></span><span class="p">;</span>            <span class="cm">/* address family */</span>
 <a name="line-157"></a><span class="cp">#else</span>
-<a name="line-158"></a>    <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n"><a href="/./Modules/addrinfo.h.html#line-156">ss_family</a></span><span class="p">;</span>           <span class="cm">/* address family */</span>
+<a name="line-158"></a>    <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-156">ss_family</a></span><span class="p">;</span>           <span class="cm">/* address family */</span>
 <a name="line-159"></a><span class="cp">#endif </span><span class="cm">/* HAVE_SOCKADDR_SA_LEN */</span><span class="cp"></span>
-<a name="line-160"></a>    <span class="kt">char</span>        <span class="n"><a href="/./Modules/addrinfo.h.html#line-160">__ss_pad1</a></span><span class="p">[</span><span class="n"><a href="/./Modules/addrinfo.h.html#line-149">_SS_PAD1SIZE</a></span><span class="p">];</span>
+<a name="line-160"></a>    <span class="kt">char</span>        <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-160">__ss_pad1</a></span><span class="p">[</span><span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-149">_SS_PAD1SIZE</a></span><span class="p">];</span>
 <a name="line-161"></a><span class="cp">#ifdef HAVE_LONG_LONG</span>
-<a name="line-162"></a>    <span class="n"><a href="/./Include/longobject.h.html#line-50">PY_LONG_LONG</a></span> <span class="n"><a href="/./Modules/addrinfo.h.html#line-162">__ss_align</a></span><span class="p">;</span>            <span class="cm">/* force desired structure storage alignment */</span>
+<a name="line-162"></a>    <span class="n"><a href="/python-xr/./Include/longobject.h.html#line-50">PY_LONG_LONG</a></span> <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-162">__ss_align</a></span><span class="p">;</span>            <span class="cm">/* force desired structure storage alignment */</span>
 <a name="line-163"></a><span class="cp">#else</span>
-<a name="line-164"></a>    <span class="kt">double</span> <span class="n"><a href="/./Modules/addrinfo.h.html#line-162">__ss_align</a></span><span class="p">;</span>          <span class="cm">/* force desired structure storage alignment */</span>
+<a name="line-164"></a>    <span class="kt">double</span> <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-162">__ss_align</a></span><span class="p">;</span>          <span class="cm">/* force desired structure storage alignment */</span>
 <a name="line-165"></a><span class="cp">#endif </span><span class="cm">/* HAVE_LONG_LONG */</span><span class="cp"></span>
-<a name="line-166"></a>    <span class="kt">char</span>        <span class="n"><a href="/./Modules/addrinfo.h.html#line-166">__ss_pad2</a></span><span class="p">[</span><span class="n"><a href="/./Modules/addrinfo.h.html#line-150">_SS_PAD2SIZE</a></span><span class="p">];</span>
+<a name="line-166"></a>    <span class="kt">char</span>        <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-166">__ss_pad2</a></span><span class="p">[</span><span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-150">_SS_PAD2SIZE</a></span><span class="p">];</span>
 <a name="line-167"></a><span class="p">};</span>
 <a name="line-168"></a><span class="cp">#endif </span><span class="cm">/* !HAVE_SOCKADDR_STORAGE */</span><span class="cp"></span>
 <a name="line-169"></a>
 <a name="line-170"></a><span class="cp">#ifdef __cplusplus</span>
 <a name="line-171"></a><span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
 <a name="line-172"></a><span class="cp">#endif</span>
-<a name="line-173"></a><span class="k">extern</span> <span class="kt">void</span> <span class="n">freehostent</span> <span class="n"><a href="/./Include/pyport.h.html#line-47">Py_PROTO</a></span><span class="p">((</span><span class="k">struct</span> <span class="n"><a href="/./Lib/lib2to3/tests/data/infinite_recursion.py.html#line-336">hostent</a></span> <span class="o">*</span><span class="p">));</span>
+<a name="line-173"></a><span class="k">extern</span> <span class="kt">void</span> <span class="n">freehostent</span> <span class="n"><a href="/python-xr/./Include/pyport.h.html#line-47">Py_PROTO</a></span><span class="p">((</span><span class="k">struct</span> <span class="n"><a href="/python-xr/./Lib/lib2to3/tests/data/infinite_recursion.py.html#line-336">hostent</a></span> <span class="o">*</span><span class="p">));</span>
 <a name="line-174"></a><span class="cp">#ifdef __cplusplus</span>
 <a name="line-175"></a><span class="p">}</span>
 <a name="line-176"></a><span class="cp">#endif</span>

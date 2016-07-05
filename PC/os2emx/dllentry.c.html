@@ -130,7 +130,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-7"></a><span class="cp">#define REF(s)  extern void s(); void *____ref_##s = &amp;s;</span>
 <a name="line-8"></a>
 <a name="line-9"></a><span class="cm">/* Make references to imported symbols to pull them from static library */</span>
-<a name="line-10"></a><span class="n"><a href="/./PC/os2emx/dllentry.c.html#line-7">REF</a></span><span class="p">(</span><span class="n"><a href="/./Modules/main.c.html#line-239">Py_Main</a></span><span class="p">);</span>
+<a name="line-10"></a><span class="n"><a href="/python-xr/./PC/os2emx/dllentry.c.html#line-7">REF</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Modules/main.c.html#line-239">Py_Main</a></span><span class="p">);</span>
 <a name="line-11"></a>
 <a name="line-12"></a><span class="cp">#include</span> <span class="cpf">&lt;signal.h&gt;</span><span class="cp"></span>
 <a name="line-13"></a>
@@ -139,7 +139,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-16"></a><span class="k">extern</span> <span class="kt">void</span> <span class="nf">__ctordtorInit</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 <a name="line-17"></a><span class="k">extern</span> <span class="kt">void</span> <span class="nf">__ctordtorTerm</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 <a name="line-18"></a>
-<a name="line-19"></a><span class="kt">unsigned</span> <span class="kt">long</span> <span class="nf"><a href="/./PC/os2emx/dllentry.c.html#line-19">_DLL_InitTerm</a></span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">mod_handle</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">flag</span><span class="p">)</span>
+<a name="line-19"></a><span class="kt">unsigned</span> <span class="kt">long</span> <span class="nf"><a href="/python-xr/./PC/os2emx/dllentry.c.html#line-19">_DLL_InitTerm</a></span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">mod_handle</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">flag</span><span class="p">)</span>
 <a name="line-20"></a><span class="p">{</span>
 <a name="line-21"></a>    <span class="k">switch</span> <span class="p">(</span><span class="n">flag</span><span class="p">)</span>
 <a name="line-22"></a>    <span class="p">{</span>
@@ -149,8 +149,8 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-26"></a>            <span class="n">__ctordtorInit</span><span class="p">();</span>
 <a name="line-27"></a>
 <a name="line-28"></a>            <span class="cm">/* Ignore fatal signals */</span>
-<a name="line-29"></a>            <span class="n"><a href="/./Demo/threads/sync.py.html#line-334">signal</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-irix6/FILE.py.html#line-87">SIGSEGV</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-irix6/FILE.py.html#line-343">SIG_IGN</a></span><span class="p">);</span>
-<a name="line-30"></a>            <span class="n"><a href="/./Demo/threads/sync.py.html#line-334">signal</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-irix6/FILE.py.html#line-84">SIGFPE</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-irix6/FILE.py.html#line-343">SIG_IGN</a></span><span class="p">);</span>
+<a name="line-29"></a>            <span class="n"><a href="/python-xr/./Demo/threads/sync.py.html#line-334">signal</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/plat-irix6/FILE.py.html#line-87">SIGSEGV</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/plat-irix6/FILE.py.html#line-343">SIG_IGN</a></span><span class="p">);</span>
+<a name="line-30"></a>            <span class="n"><a href="/python-xr/./Demo/threads/sync.py.html#line-334">signal</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/plat-irix6/FILE.py.html#line-84">SIGFPE</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/plat-irix6/FILE.py.html#line-343">SIG_IGN</a></span><span class="p">);</span>
 <a name="line-31"></a>
 <a name="line-32"></a>            <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
 <a name="line-33"></a>

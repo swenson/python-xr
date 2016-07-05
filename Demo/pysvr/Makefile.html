@@ -142,18 +142,18 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-4"></a><span class="c"># Also see ## comments for tailoring.</span>
 <a name="line-5"></a>
 <a name="line-6"></a><span class="c"># Which C compiler</span>
-<a name="line-7"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-6">CC</a></span><span class="o">=</span>gcc
+<a name="line-7"></a><span class="nv"><a href="/python-xr/./Demo/embed/Makefile.html#line-6">CC</a></span><span class="o">=</span>gcc
 <a name="line-8"></a><span class="c">##PURIFY=/usr/local/pure/purify</span>
-<a name="line-9"></a><span class="nv"><a href="/./Demo/pysvr/Makefile.html#line-9">LINKCC</a></span><span class="o">=</span><span class="k">$(</span>PURIFY<span class="k">)</span> <span class="k">$(</span>CC<span class="k">)</span>
+<a name="line-9"></a><span class="nv"><a href="/python-xr/./Demo/pysvr/Makefile.html#line-9">LINKCC</a></span><span class="o">=</span><span class="k">$(</span>PURIFY<span class="k">)</span> <span class="k">$(</span>CC<span class="k">)</span>
 <a name="line-10"></a>
 <a name="line-11"></a><span class="c"># Optimization preferences</span>
-<a name="line-12"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-16">OPT</a></span><span class="o">=</span>-g
+<a name="line-12"></a><span class="nv"><a href="/python-xr/./Demo/embed/Makefile.html#line-16">OPT</a></span><span class="o">=</span>-g
 <a name="line-13"></a>
 <a name="line-14"></a><span class="c"># Which Python version we&#39;re using</span>
-<a name="line-15"></a><span class="nv"><a href="/./Demo/pysvr/Makefile.html#line-15">VER</a></span><span class="o">=</span>2.2
+<a name="line-15"></a><span class="nv"><a href="/python-xr/./Demo/pysvr/Makefile.html#line-15">VER</a></span><span class="o">=</span>2.2
 <a name="line-16"></a>
 <a name="line-17"></a><span class="c"># Expressions using the above definitions</span>
-<a name="line-18"></a><span class="nv"><a href="/./Demo/pysvr/Makefile.html#line-18">PYVER</a></span><span class="o">=</span>python<span class="k">$(</span>VER<span class="k">)</span>
+<a name="line-18"></a><span class="nv"><a href="/python-xr/./Demo/pysvr/Makefile.html#line-18">PYVER</a></span><span class="o">=</span>python<span class="k">$(</span>VER<span class="k">)</span>
 <a name="line-19"></a>
 <a name="line-20"></a><span class="c"># Use these defs when compiling against installed Python</span>
 <a name="line-21"></a><span class="c">##INST=/usr/local</span>
@@ -162,36 +162,36 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-24"></a><span class="c">##PYLIBS=$(PYC)/lib$(PYVER).a</span>
 <a name="line-25"></a>
 <a name="line-26"></a><span class="c"># Use these defs when compiling against built Python</span>
-<a name="line-27"></a><span class="nv"><a href="/./Demo/pysvr/Makefile.html#line-27">PLAT</a></span><span class="o">=</span>linux
-<a name="line-28"></a><span class="nv"><a href="/./Demo/pysvr/Makefile.html#line-28">PYINCL</a></span><span class="o">=</span>-I../../Include -I../../<span class="k">$(</span>PLAT<span class="k">)</span>
-<a name="line-29"></a><span class="nv"><a href="/./Demo/pysvr/Makefile.html#line-29">PYLIBS</a></span><span class="o">=</span>../../<span class="k">$(</span>PLAT<span class="k">)</span>/lib<span class="k">$(</span>PYVER<span class="k">)</span>.a
+<a name="line-27"></a><span class="nv"><a href="/python-xr/./Demo/pysvr/Makefile.html#line-27">PLAT</a></span><span class="o">=</span>linux
+<a name="line-28"></a><span class="nv"><a href="/python-xr/./Demo/pysvr/Makefile.html#line-28">PYINCL</a></span><span class="o">=</span>-I../../Include -I../../<span class="k">$(</span>PLAT<span class="k">)</span>
+<a name="line-29"></a><span class="nv"><a href="/python-xr/./Demo/pysvr/Makefile.html#line-29">PYLIBS</a></span><span class="o">=</span>../../<span class="k">$(</span>PLAT<span class="k">)</span>/lib<span class="k">$(</span>PYVER<span class="k">)</span>.a
 <a name="line-30"></a>
 <a name="line-31"></a><span class="c"># Libraries to link with -- very installation dependent</span>
 <a name="line-32"></a><span class="c"># (See LIBS= in Modules/Makefile in build tree)</span>
-<a name="line-33"></a><span class="nv"><a href="/./Demo/pysvr/Makefile.html#line-33">RLLIBS</a></span><span class="o">=</span>-lreadline -ltermcap
-<a name="line-34"></a><span class="nv"><a href="/./Demo/pysvr/Makefile.html#line-34">OTHERLIBS</a></span><span class="o">=</span>-lnsl -lpthread -ldl -lm -ldb -lutil
+<a name="line-33"></a><span class="nv"><a href="/python-xr/./Demo/pysvr/Makefile.html#line-33">RLLIBS</a></span><span class="o">=</span>-lreadline -ltermcap
+<a name="line-34"></a><span class="nv"><a href="/python-xr/./Demo/pysvr/Makefile.html#line-34">OTHERLIBS</a></span><span class="o">=</span>-lnsl -lpthread -ldl -lm -ldb -lutil
 <a name="line-35"></a>
 <a name="line-36"></a><span class="c"># Compilation and link flags -- no need to change normally</span>
-<a name="line-37"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-18">CFLAGS</a></span><span class="o">=</span><span class="k">$(</span>OPT<span class="k">)</span>
-<a name="line-38"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-19">CPPFLAGS</a></span><span class="o">=</span><span class="k">$(</span>PYINCL<span class="k">)</span>
-<a name="line-39"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-25">LIBS</a></span><span class="o">=</span><span class="k">$(</span>PYLIBS<span class="k">)</span> <span class="k">$(</span>RLLIBS<span class="k">)</span> <span class="k">$(</span>OTHERLIBS<span class="k">)</span>
+<a name="line-37"></a><span class="nv"><a href="/python-xr/./Demo/embed/Makefile.html#line-18">CFLAGS</a></span><span class="o">=</span><span class="k">$(</span>OPT<span class="k">)</span>
+<a name="line-38"></a><span class="nv"><a href="/python-xr/./Demo/embed/Makefile.html#line-19">CPPFLAGS</a></span><span class="o">=</span><span class="k">$(</span>PYINCL<span class="k">)</span>
+<a name="line-39"></a><span class="nv"><a href="/python-xr/./Demo/embed/Makefile.html#line-25">LIBS</a></span><span class="o">=</span><span class="k">$(</span>PYLIBS<span class="k">)</span> <span class="k">$(</span>RLLIBS<span class="k">)</span> <span class="k">$(</span>OTHERLIBS<span class="k">)</span>
 <a name="line-40"></a>
 <a name="line-41"></a><span class="c"># Default port for the pysvr application</span>
-<a name="line-42"></a><span class="nv"><a href="/./Demo/pdist/rcsclient.py.html#line-16">PORT</a></span><span class="o">=</span>4000
+<a name="line-42"></a><span class="nv"><a href="/python-xr/./Demo/pdist/rcsclient.py.html#line-16">PORT</a></span><span class="o">=</span>4000
 <a name="line-43"></a>
 <a name="line-44"></a><span class="c"># Default target</span>
-<a name="line-45"></a><span class="nf"><a href="/./Tools/faqwiz/faqwiz.py.html#line-15">all</a></span><span class="o">:</span> <span class="n">pysvr</span>
+<a name="line-45"></a><span class="nf"><a href="/python-xr/./Tools/faqwiz/faqwiz.py.html#line-15">all</a></span><span class="o">:</span> <span class="n">pysvr</span>
 <a name="line-46"></a>
 <a name="line-47"></a><span class="c"># Target to build pysvr</span>
-<a name="line-48"></a><span class="nf">pysvr</span><span class="o">:</span> <span class="n">pysvr</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span> <span class="k">$(</span><span class="nv">PYOBJS</span><span class="k">)</span> <span class="k">$(</span><span class="nv"><a href="/./Demo/pysvr/Makefile.html#line-29">PYLIBS</a></span><span class="k">)</span>
+<a name="line-48"></a><span class="nf">pysvr</span><span class="o">:</span> <span class="n">pysvr</span>.<span class="n"><a href="/python-xr/./Include/abstract.h.html#line-1045">o</a></span> <span class="k">$(</span><span class="nv">PYOBJS</span><span class="k">)</span> <span class="k">$(</span><span class="nv"><a href="/python-xr/./Demo/pysvr/Makefile.html#line-29">PYLIBS</a></span><span class="k">)</span>
 <a name="line-49"></a>	<span class="k">$(</span>LINKCC<span class="k">)</span> pysvr.o <span class="k">$(</span>LIBS<span class="k">)</span> -o pysvr
 <a name="line-50"></a>
 <a name="line-51"></a><span class="c"># Target to build and run pysvr</span>
-<a name="line-52"></a><span class="nf"><a href="/./Demo/pdist/cmdfw.py.html#line-39">run</a></span><span class="o">:</span> <span class="n">pysvr</span>
+<a name="line-52"></a><span class="nf"><a href="/python-xr/./Demo/pdist/cmdfw.py.html#line-39">run</a></span><span class="o">:</span> <span class="n">pysvr</span>
 <a name="line-53"></a>	pysvr <span class="k">$(</span>PORT<span class="k">)</span>
 <a name="line-54"></a>
 <a name="line-55"></a><span class="c"># Target to clean up the directory</span>
-<a name="line-56"></a><span class="nf"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span><span class="o">:</span>
+<a name="line-56"></a><span class="nf"><a href="/python-xr/./Lib/distutils/command/clean.py.html#line-14">clean</a></span><span class="o">:</span>
 <a name="line-57"></a>	-rm -f pysvr *.o *~ core
 </pre></div>
 </td></tr></table></body>

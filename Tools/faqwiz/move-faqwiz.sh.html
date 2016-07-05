@@ -146,17 +146,17 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-11"></a>
 <a name="line-12"></a><span class="k">if</span> <span class="o">[</span> x<span class="nv">$2</span> <span class="o">=</span> x <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 <a name="line-13"></a>    <span class="nb">echo</span> <span class="s2">&quot;Need 2 args: original_version final_version.&quot;</span>
-<a name="line-14"></a>    <span class="nb"><a href="/./Lib/argparse.py.html#line-2359">exit</a></span> 2
+<a name="line-14"></a>    <span class="nb"><a href="/python-xr/./Lib/argparse.py.html#line-2359">exit</a></span> 2
 <a name="line-15"></a><span class="k">fi</span>
 <a name="line-16"></a>
 <a name="line-17"></a><span class="k">if</span> <span class="o">[</span> ! -d data -o ! -d data/RCS <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 <a name="line-18"></a>    <span class="nb">echo</span> <span class="s2">&quot;Run this inside the faqwiz data/ directory&#39;s parent dir.&quot;</span>
-<a name="line-19"></a>    <span class="nb"><a href="/./Lib/argparse.py.html#line-2359">exit</a></span> 2
+<a name="line-19"></a>    <span class="nb"><a href="/python-xr/./Lib/argparse.py.html#line-2359">exit</a></span> 2
 <a name="line-20"></a><span class="k">fi</span>
 <a name="line-21"></a>
 <a name="line-22"></a>cut_n_pad<span class="o">()</span> <span class="o">{</span>
-<a name="line-23"></a>    <span class="nv"><a href="/./Demo/tkinter/guido/rmt.py.html#line-29">t</a></span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$1</span> <span class="p">|</span> cut -d. -f <span class="nv">$2</span><span class="sb">`</span>
-<a name="line-24"></a>    <span class="nb"><a href="/./Lib/plat-irix5/panel.py.html#line-282">export</a></span> <span class="nv">$3</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$t</span> <span class="p">|</span> awk <span class="s2">&quot;{ tmp = \\</span><span class="nv">$0</span><span class="s2">; l = length(tmp); for (i = 0; i &lt; </span><span class="nv">$2</span><span class="s2">-l+1; i++) { tmp = &quot;</span>0<span class="s2">&quot;.tmp } print tmp  }&quot;</span><span class="sb">`</span>
+<a name="line-23"></a>    <span class="nv"><a href="/python-xr/./Demo/tkinter/guido/rmt.py.html#line-29">t</a></span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$1</span> <span class="p">|</span> cut -d. -f <span class="nv">$2</span><span class="sb">`</span>
+<a name="line-24"></a>    <span class="nb"><a href="/python-xr/./Lib/plat-irix5/panel.py.html#line-282">export</a></span> <span class="nv">$3</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$t</span> <span class="p">|</span> awk <span class="s2">&quot;{ tmp = \\</span><span class="nv">$0</span><span class="s2">; l = length(tmp); for (i = 0; i &lt; </span><span class="nv">$2</span><span class="s2">-l+1; i++) { tmp = &quot;</span>0<span class="s2">&quot;.tmp } print tmp  }&quot;</span><span class="sb">`</span>
 <a name="line-25"></a><span class="o">}</span>
 <a name="line-26"></a>
 <a name="line-27"></a>cut_n_pad <span class="nv">$1</span> <span class="m">1</span> prefix1
@@ -164,27 +164,27 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-29"></a>cut_n_pad <span class="nv">$2</span> <span class="m">1</span> prefix2
 <a name="line-30"></a>cut_n_pad <span class="nv">$2</span> <span class="m">2</span> suffix2
 <a name="line-31"></a><span class="k">if</span> which tempfile &gt;/dev/null<span class="p">;</span> <span class="k">then</span>
-<a name="line-32"></a>    <span class="nv"><a href="/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="o">=</span><span class="k">$(</span>tempfile -d .<span class="k">)</span>
+<a name="line-32"></a>    <span class="nv"><a href="/python-xr/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="o">=</span><span class="k">$(</span>tempfile -d .<span class="k">)</span>
 <a name="line-33"></a><span class="k">elif</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$RANDOM</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<a name="line-34"></a>    <span class="nv"><a href="/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="o">=</span>tmp<span class="nv">$RANDOM</span>.tmp
+<a name="line-34"></a>    <span class="nv"><a href="/python-xr/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="o">=</span>tmp<span class="nv">$RANDOM</span>.tmp
 <a name="line-35"></a><span class="k">else</span>
-<a name="line-36"></a>    <span class="nv"><a href="/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="o">=</span>tmp<span class="nv">$$</span>.tmp
+<a name="line-36"></a>    <span class="nv"><a href="/python-xr/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="o">=</span>tmp<span class="nv">$$</span>.tmp
 <a name="line-37"></a><span class="k">fi</span>
 <a name="line-38"></a><span class="nv">file1</span><span class="o">=</span>faq<span class="nv">$prefix1</span>.<span class="nv">$suffix1</span>.htp
 <a name="line-39"></a><span class="nv">file2</span><span class="o">=</span>faq<span class="nv">$prefix2</span>.<span class="nv">$suffix2</span>.htp
 <a name="line-40"></a>
 <a name="line-41"></a><span class="nb">echo</span> <span class="s2">&quot;Moving FAQ question </span><span class="nv">$prefix1</span><span class="s2">.</span><span class="nv">$suffix1</span><span class="s2"> to </span><span class="nv">$prefix2</span><span class="s2">.</span><span class="nv">$suffix2</span><span class="s2">&quot;</span> 
 <a name="line-42"></a>
-<a name="line-43"></a>sed -e <span class="s2">&quot;s/</span><span class="nv">$1</span><span class="s2">\./</span><span class="nv">$2</span><span class="s2">\./g&quot;</span> data/<span class="nv">$file1</span> &gt; <span class="si">${</span><span class="nv"><a href="/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="si">}</span>1
-<a name="line-44"></a>sed -e <span class="s2">&quot;s/</span><span class="nv">$1</span><span class="s2">\./</span><span class="nv">$2</span><span class="s2">\./g&quot;</span> data/RCS/<span class="nv">$file1</span>,v &gt; <span class="si">${</span><span class="nv"><a href="/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="si">}</span>2
+<a name="line-43"></a>sed -e <span class="s2">&quot;s/</span><span class="nv">$1</span><span class="s2">\./</span><span class="nv">$2</span><span class="s2">\./g&quot;</span> data/<span class="nv">$file1</span> &gt; <span class="si">${</span><span class="nv"><a href="/python-xr/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="si">}</span>1
+<a name="line-44"></a>sed -e <span class="s2">&quot;s/</span><span class="nv">$1</span><span class="s2">\./</span><span class="nv">$2</span><span class="s2">\./g&quot;</span> data/RCS/<span class="nv">$file1</span>,v &gt; <span class="si">${</span><span class="nv"><a href="/python-xr/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="si">}</span>2
 <a name="line-45"></a>
 <a name="line-46"></a><span class="k">if</span> <span class="o">[</span> -f data/<span class="nv">$file2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 <a name="line-47"></a>    <span class="nb">echo</span> <span class="s2">&quot;Target FAQ exists. Won&#39;t clobber.&quot;</span>
-<a name="line-48"></a>    <span class="nb"><a href="/./Lib/argparse.py.html#line-2359">exit</a></span> 2
+<a name="line-48"></a>    <span class="nb"><a href="/python-xr/./Lib/argparse.py.html#line-2359">exit</a></span> 2
 <a name="line-49"></a><span class="k">fi</span>
 <a name="line-50"></a>
-<a name="line-51"></a>mv <span class="si">${</span><span class="nv"><a href="/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="si">}</span><span class="m">1</span> data/<span class="nv">$file2</span>
-<a name="line-52"></a>mv <span class="si">${</span><span class="nv"><a href="/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="si">}</span><span class="m">2</span> data/RCS/<span class="nv">$file2</span>,v
+<a name="line-51"></a>mv <span class="si">${</span><span class="nv"><a href="/python-xr/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="si">}</span><span class="m">1</span> data/<span class="nv">$file2</span>
+<a name="line-52"></a>mv <span class="si">${</span><span class="nv"><a href="/python-xr/./Lib/platform.py.html#line-378">tmpfile</a></span><span class="si">}</span><span class="m">2</span> data/RCS/<span class="nv">$file2</span>,v
 <a name="line-53"></a>mv data/<span class="nv">$file1</span> data/<span class="nv">$file1</span>.orig
 <a name="line-54"></a>mv data/RCS/<span class="nv">$file1</span>,v data/RCS/<span class="nv">$file1</span>,v.orig
 </pre></div>

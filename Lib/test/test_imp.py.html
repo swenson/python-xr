@@ -160,56 +160,56 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-78">78</a>
 <a href="#line-79">79</a>
 <a href="#line-80">80</a>
-<a href="#line-81">81</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/test/test_imp.py</span><pre><span></span><a name="line-1"></a><span class="kn">import</span> <span class="nn"><a href="/./Lib/compileall.py.html#line-17">imp</a></span>
-<a name="line-2"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span>
-<a name="line-3"></a><span class="kn">from</span> <span class="nn"><a href="/./Demo/classes/Complex.py.html#line-245">test</a></span> <span class="kn">import</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span>
+<a href="#line-81">81</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/test/test_imp.py</span><pre><span></span><a name="line-1"></a><span class="kn">import</span> <span class="nn"><a href="/python-xr/./Lib/compileall.py.html#line-17">imp</a></span>
+<a name="line-2"></a><span class="kn">import</span> <span class="nn"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span>
+<a name="line-3"></a><span class="kn">from</span> <span class="nn"><a href="/python-xr/./Demo/classes/Complex.py.html#line-245">test</a></span> <span class="kn">import</span> <span class="n"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span>
 <a name="line-4"></a>
 <a name="line-5"></a><span class="k">try</span><span class="p">:</span>
-<a name="line-6"></a>    <span class="kn">import</span> <span class="nn"><a href="/./Demo/metaclasses/Synch.py.html#line-7">thread</a></span>
+<a name="line-6"></a>    <span class="kn">import</span> <span class="nn"><a href="/python-xr/./Demo/metaclasses/Synch.py.html#line-7">thread</a></span>
 <a name="line-7"></a><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<a name="line-8"></a>    <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-7">thread</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-8"></a>    <span class="n"><a href="/python-xr/./Demo/metaclasses/Synch.py.html#line-7">thread</a></span> <span class="o">=</span> <span class="bp"><a href="/python-xr/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
 <a name="line-9"></a>
-<a name="line-10"></a><span class="nd">@unittest.skipUnless</span><span class="p">(</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-7">thread</a></span><span class="p">,</span> <span class="s1">&#39;threading not available&#39;</span><span class="p">)</span>
-<a name="line-11"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/test/lock_tests.py.html#line-151">LockTests</a></span><span class="p">(</span><span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span><span class="o">.</span><span class="n"><a href="/./Lib/ctypes/test/test_delattr.py.html#line-7">TestCase</a></span><span class="p">):</span>
+<a name="line-10"></a><span class="nd">@unittest.skipUnless</span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/metaclasses/Synch.py.html#line-7">thread</a></span><span class="p">,</span> <span class="s1">&#39;threading not available&#39;</span><span class="p">)</span>
+<a name="line-11"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/test/lock_tests.py.html#line-151">LockTests</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/ctypes/test/test_delattr.py.html#line-7">TestCase</a></span><span class="p">):</span>
 <a name="line-12"></a>
 <a name="line-13"></a>    <span class="sd">&quot;&quot;&quot;Very basic test of import lock functions.&quot;&quot;&quot;</span>
 <a name="line-14"></a>
-<a name="line-15"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_imp.py.html#line-15">verify_lock_state</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Include/parsetok.h.html#line-17">expected</a></span><span class="p">):</span>
-<a name="line-16"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_argparse.py.html#line-23">assertEqual</a></span><span class="p">(</span><span class="n"><a href="/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n">lock_held</span><span class="p">(),</span> <span class="n"><a href="/./Include/parsetok.h.html#line-17">expected</a></span><span class="p">,</span>
-<a name="line-17"></a>                             <span class="s2">&quot;expected imp.lock_held() to be </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n"><a href="/./Include/parsetok.h.html#line-17">expected</a></span><span class="p">)</span>
-<a name="line-18"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_imp.py.html#line-18">testLock</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
-<a name="line-19"></a>        <span class="n"><a href="/./Lib/test/pystone.py.html#line-35">LOOPS</a></span> <span class="o">=</span> <span class="mi">50</span>
+<a name="line-15"></a>    <span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/test_imp.py.html#line-15">verify_lock_state</a></span><span class="p">(</span><span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Include/parsetok.h.html#line-17">expected</a></span><span class="p">):</span>
+<a name="line-16"></a>        <span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/test/test_argparse.py.html#line-23">assertEqual</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n">lock_held</span><span class="p">(),</span> <span class="n"><a href="/python-xr/./Include/parsetok.h.html#line-17">expected</a></span><span class="p">,</span>
+<a name="line-17"></a>                             <span class="s2">&quot;expected imp.lock_held() to be </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n"><a href="/python-xr/./Include/parsetok.h.html#line-17">expected</a></span><span class="p">)</span>
+<a name="line-18"></a>    <span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/test_imp.py.html#line-18">testLock</a></span><span class="p">(</span><span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-19"></a>        <span class="n"><a href="/python-xr/./Lib/test/pystone.py.html#line-35">LOOPS</a></span> <span class="o">=</span> <span class="mi">50</span>
 <a name="line-20"></a>
 <a name="line-21"></a>        <span class="c1"># The import lock may already be held, e.g. if the test suite is run</span>
 <a name="line-22"></a>        <span class="c1"># via &quot;import test.autotest&quot;.</span>
-<a name="line-23"></a>        <span class="n">lock_held_at_start</span> <span class="o">=</span> <span class="n"><a href="/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n">lock_held</span><span class="p">()</span>
-<a name="line-24"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_imp.py.html#line-15">verify_lock_state</a></span><span class="p">(</span><span class="n">lock_held_at_start</span><span class="p">)</span>
+<a name="line-23"></a>        <span class="n">lock_held_at_start</span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n">lock_held</span><span class="p">()</span>
+<a name="line-24"></a>        <span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/test/test_imp.py.html#line-15">verify_lock_state</a></span><span class="p">(</span><span class="n">lock_held_at_start</span><span class="p">)</span>
 <a name="line-25"></a>
-<a name="line-26"></a>        <span class="k">for</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n"><a href="/./Lib/test/pystone.py.html#line-35">LOOPS</a></span><span class="p">):</span>
-<a name="line-27"></a>            <span class="n"><a href="/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n">acquire_lock</span><span class="p">()</span>
-<a name="line-28"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_imp.py.html#line-15">verify_lock_state</a></span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<a name="line-26"></a>        <span class="k">for</span> <span class="n"><a href="/python-xr/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/test/pystone.py.html#line-35">LOOPS</a></span><span class="p">):</span>
+<a name="line-27"></a>            <span class="n"><a href="/python-xr/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n">acquire_lock</span><span class="p">()</span>
+<a name="line-28"></a>            <span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/test/test_imp.py.html#line-15">verify_lock_state</a></span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 <a name="line-29"></a>
-<a name="line-30"></a>        <span class="k">for</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n"><a href="/./Lib/test/pystone.py.html#line-35">LOOPS</a></span><span class="p">):</span>
-<a name="line-31"></a>            <span class="n"><a href="/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n">release_lock</span><span class="p">()</span>
+<a name="line-30"></a>        <span class="k">for</span> <span class="n"><a href="/python-xr/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/test/pystone.py.html#line-35">LOOPS</a></span><span class="p">):</span>
+<a name="line-31"></a>            <span class="n"><a href="/python-xr/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n">release_lock</span><span class="p">()</span>
 <a name="line-32"></a>
 <a name="line-33"></a>        <span class="c1"># The original state should be restored now.</span>
-<a name="line-34"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_imp.py.html#line-15">verify_lock_state</a></span><span class="p">(</span><span class="n">lock_held_at_start</span><span class="p">)</span>
+<a name="line-34"></a>        <span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/test/test_imp.py.html#line-15">verify_lock_state</a></span><span class="p">(</span><span class="n">lock_held_at_start</span><span class="p">)</span>
 <a name="line-35"></a>
 <a name="line-36"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">lock_held_at_start</span><span class="p">:</span>
 <a name="line-37"></a>            <span class="k">try</span><span class="p">:</span>
-<a name="line-38"></a>                <span class="n"><a href="/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n">release_lock</span><span class="p">()</span>
+<a name="line-38"></a>                <span class="n"><a href="/python-xr/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n">release_lock</span><span class="p">()</span>
 <a name="line-39"></a>            <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
 <a name="line-40"></a>                <span class="k">pass</span>
 <a name="line-41"></a>            <span class="k">else</span><span class="p">:</span>
-<a name="line-42"></a>                <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/pydoc.py.html#line-369">fail</a></span><span class="p">(</span><span class="s2">&quot;release_lock() without lock should raise &quot;</span>
+<a name="line-42"></a>                <span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/pydoc.py.html#line-369">fail</a></span><span class="p">(</span><span class="s2">&quot;release_lock() without lock should raise &quot;</span>
 <a name="line-43"></a>                            <span class="s2">&quot;RuntimeError&quot;</span><span class="p">)</span>
 <a name="line-44"></a>
-<a name="line-45"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/test/test_imp.py.html#line-45">ReloadTests</a></span><span class="p">(</span><span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span><span class="o">.</span><span class="n"><a href="/./Lib/ctypes/test/test_delattr.py.html#line-7">TestCase</a></span><span class="p">):</span>
+<a name="line-45"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/test/test_imp.py.html#line-45">ReloadTests</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/ctypes/test/test_delattr.py.html#line-7">TestCase</a></span><span class="p">):</span>
 <a name="line-46"></a>
 <a name="line-47"></a>    <span class="sd">&quot;&quot;&quot;Very basic tests to make sure that imp.reload() operates just like</span>
 <a name="line-48"></a><span class="sd">    reload().&quot;&quot;&quot;</span>
 <a name="line-49"></a>
-<a name="line-50"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_imp.py.html#line-50">test_source</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-50"></a>    <span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/test_imp.py.html#line-50">test_source</a></span><span class="p">(</span><span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
 <a name="line-51"></a>        <span class="c1"># XXX (ncoghlan): It would be nice to use test_support.CleanImport</span>
 <a name="line-52"></a>        <span class="c1"># here, but that breaks because the os module registers some</span>
 <a name="line-53"></a>        <span class="c1"># handlers in copy_reg on import. Since CleanImport doesn&#39;t</span>
@@ -217,30 +217,30 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-55"></a>        <span class="c1"># state after reversion. Reinitialising the module contents</span>
 <a name="line-56"></a>        <span class="c1"># and just reverting os.environ to its previous state is an OK</span>
 <a name="line-57"></a>        <span class="c1"># workaround</span>
-<a name="line-58"></a>        <span class="k">with</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/tests/test_unixccompiler.py.html#line-5">EnvironmentVarGuard</a></span><span class="p">():</span>
-<a name="line-59"></a>            <span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span>
-<a name="line-60"></a>            <span class="n"><a href="/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n"><a href="/./Lib/ihooks.py.html#line-371">reload</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="p">)</span>
+<a name="line-58"></a>        <span class="k">with</span> <span class="n"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/distutils/tests/test_unixccompiler.py.html#line-5">EnvironmentVarGuard</a></span><span class="p">():</span>
+<a name="line-59"></a>            <span class="kn">import</span> <span class="nn"><a href="/python-xr/./Demo/cgi/wiki.py.html#line-3">os</a></span>
+<a name="line-60"></a>            <span class="n"><a href="/python-xr/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-371">reload</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="p">)</span>
 <a name="line-61"></a>
-<a name="line-62"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_imp.py.html#line-62">test_extension</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
-<a name="line-63"></a>        <span class="k">with</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_py3kwarn.py.html#line-3">CleanImport</a></span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">):</span>
-<a name="line-64"></a>            <span class="kn">import</span> <span class="nn"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span>
-<a name="line-65"></a>            <span class="n"><a href="/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n"><a href="/./Lib/ihooks.py.html#line-371">reload</a></span><span class="p">(</span><span class="n"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="p">)</span>
+<a name="line-62"></a>    <span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/test_imp.py.html#line-62">test_extension</a></span><span class="p">(</span><span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-63"></a>        <span class="k">with</span> <span class="n"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/test/test_py3kwarn.py.html#line-3">CleanImport</a></span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">):</span>
+<a name="line-64"></a>            <span class="kn">import</span> <span class="nn"><a href="/python-xr/./Demo/classes/Dates.py.html#line-173">time</a></span>
+<a name="line-65"></a>            <span class="n"><a href="/python-xr/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-371">reload</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="p">)</span>
 <a name="line-66"></a>
-<a name="line-67"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_imp.py.html#line-67">test_builtin</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
-<a name="line-68"></a>        <span class="k">with</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_py3kwarn.py.html#line-3">CleanImport</a></span><span class="p">(</span><span class="s1">&#39;marshal&#39;</span><span class="p">):</span>
-<a name="line-69"></a>            <span class="kn">import</span> <span class="nn"><a href="/./Lib/cProfile.py.html#line-84">marshal</a></span>
-<a name="line-70"></a>            <span class="n"><a href="/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n"><a href="/./Lib/ihooks.py.html#line-371">reload</a></span><span class="p">(</span><span class="n"><a href="/./Lib/cProfile.py.html#line-84">marshal</a></span><span class="p">)</span>
+<a name="line-67"></a>    <span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/test_imp.py.html#line-67">test_builtin</a></span><span class="p">(</span><span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-68"></a>        <span class="k">with</span> <span class="n"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/test/test_py3kwarn.py.html#line-3">CleanImport</a></span><span class="p">(</span><span class="s1">&#39;marshal&#39;</span><span class="p">):</span>
+<a name="line-69"></a>            <span class="kn">import</span> <span class="nn"><a href="/python-xr/./Lib/cProfile.py.html#line-84">marshal</a></span>
+<a name="line-70"></a>            <span class="n"><a href="/python-xr/./Lib/compileall.py.html#line-17">imp</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-371">reload</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/cProfile.py.html#line-84">marshal</a></span><span class="p">)</span>
 <a name="line-71"></a>
 <a name="line-72"></a>
-<a name="line-73"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">():</span>
-<a name="line-74"></a>    <span class="n"><a href="/./Lib/imghdr.py.html#line-33">tests</a></span> <span class="o">=</span> <span class="p">[</span>
-<a name="line-75"></a>        <span class="n"><a href="/./Lib/test/test_imp.py.html#line-45">ReloadTests</a></span><span class="p">,</span>
-<a name="line-76"></a>        <span class="n"><a href="/./Lib/test/lock_tests.py.html#line-151">LockTests</a></span><span class="p">,</span>
+<a name="line-73"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">():</span>
+<a name="line-74"></a>    <span class="n"><a href="/python-xr/./Lib/imghdr.py.html#line-33">tests</a></span> <span class="o">=</span> <span class="p">[</span>
+<a name="line-75"></a>        <span class="n"><a href="/python-xr/./Lib/test/test_imp.py.html#line-45">ReloadTests</a></span><span class="p">,</span>
+<a name="line-76"></a>        <span class="n"><a href="/python-xr/./Lib/test/lock_tests.py.html#line-151">LockTests</a></span><span class="p">,</span>
 <a name="line-77"></a>    <span class="p">]</span>
-<a name="line-78"></a>    <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/tests/__init__.py.html#line-18">run_unittest</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Lib/imghdr.py.html#line-33">tests</a></span><span class="p">)</span>
+<a name="line-78"></a>    <span class="n"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/distutils/tests/__init__.py.html#line-18">run_unittest</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/python-xr/./Lib/imghdr.py.html#line-33">tests</a></span><span class="p">)</span>
 <a name="line-79"></a>
-<a name="line-80"></a><span class="k">if</span> <span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a name="line-81"></a>    <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">()</span>
+<a name="line-80"></a><span class="k">if</span> <span class="n"><a href="/python-xr/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a name="line-81"></a>    <span class="n"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">()</span>
 </pre></div>
 </td></tr></table></body>
 </html>

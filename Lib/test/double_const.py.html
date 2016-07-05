@@ -109,7 +109,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-27">27</a>
 <a href="#line-28">28</a>
 <a href="#line-29">29</a>
-<a href="#line-30">30</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/test/double_const.py</span><pre><span></span><a name="line-1"></a><span class="kn">from</span> <span class="nn">test.test_support</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/test/double_const.py.html#line-1">TestFailed</a></span>
+<a href="#line-30">30</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/test/double_const.py</span><pre><span></span><a name="line-1"></a><span class="kn">from</span> <span class="nn">test.test_support</span> <span class="kn">import</span> <span class="n"><a href="/python-xr/./Lib/test/double_const.py.html#line-1">TestFailed</a></span>
 <a name="line-2"></a>
 <a name="line-3"></a><span class="c1"># A test for SF bug 422177:  manifest float constants varied way too much in</span>
 <a name="line-4"></a><span class="c1"># precision depending on whether Python was loading a module for the first</span>
@@ -120,25 +120,25 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-9"></a><span class="c1"># the marshal format for doubles.  It&#39;s also possible that repr() doesn&#39;t</span>
 <a name="line-10"></a><span class="c1"># produce enough digits to get reasonable precision for this box.</span>
 <a name="line-11"></a>
-<a name="line-12"></a><span class="n"><a href="/./Lib/test/double_const.py.html#line-12">PI</a></span>    <span class="o">=</span> <span class="mf">3.14159265358979324</span>
-<a name="line-13"></a><span class="n"><a href="/./Lib/random.py.html#line-59">TWOPI</a></span> <span class="o">=</span> <span class="mf">6.28318530717958648</span>
+<a name="line-12"></a><span class="n"><a href="/python-xr/./Lib/test/double_const.py.html#line-12">PI</a></span>    <span class="o">=</span> <span class="mf">3.14159265358979324</span>
+<a name="line-13"></a><span class="n"><a href="/python-xr/./Lib/random.py.html#line-59">TWOPI</a></span> <span class="o">=</span> <span class="mf">6.28318530717958648</span>
 <a name="line-14"></a>
-<a name="line-15"></a><span class="n"><a href="/./Lib/test/double_const.py.html#line-15">PI_str</a></span>    <span class="o">=</span> <span class="s2">&quot;3.14159265358979324&quot;</span>
-<a name="line-16"></a><span class="n"><a href="/./Lib/test/double_const.py.html#line-16">TWOPI_str</a></span> <span class="o">=</span> <span class="s2">&quot;6.28318530717958648&quot;</span>
+<a name="line-15"></a><span class="n"><a href="/python-xr/./Lib/test/double_const.py.html#line-15">PI_str</a></span>    <span class="o">=</span> <span class="s2">&quot;3.14159265358979324&quot;</span>
+<a name="line-16"></a><span class="n"><a href="/python-xr/./Lib/test/double_const.py.html#line-16">TWOPI_str</a></span> <span class="o">=</span> <span class="s2">&quot;6.28318530717958648&quot;</span>
 <a name="line-17"></a>
 <a name="line-18"></a><span class="c1"># Verify that the double x is within a few bits of eval(x_str).</span>
-<a name="line-19"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/double_const.py.html#line-19">check_ok</a></span><span class="p">(</span><span class="n"><a href="/./Demo/threads/fcmp.py.html#line-26">x</a></span><span class="p">,</span> <span class="n">x_str</span><span class="p">):</span>
-<a name="line-20"></a>    <span class="k">assert</span> <span class="n"><a href="/./Demo/threads/fcmp.py.html#line-26">x</a></span> <span class="o">&gt;</span> <span class="mf">0.0</span>
-<a name="line-21"></a>    <span class="n"><a href="/./Lib/atexit.py.html#line-57">x2</a></span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">x_str</span><span class="p">)</span>
-<a name="line-22"></a>    <span class="k">assert</span> <span class="n"><a href="/./Lib/atexit.py.html#line-57">x2</a></span> <span class="o">&gt;</span> <span class="mf">0.0</span>
-<a name="line-23"></a>    <span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-156">diff</a></span> <span class="o">=</span> <span class="nb"><a href="/./Lib/decimal.py.html#line-3958">abs</a></span><span class="p">(</span><span class="n"><a href="/./Demo/threads/fcmp.py.html#line-26">x</a></span> <span class="o">-</span> <span class="n"><a href="/./Lib/atexit.py.html#line-57">x2</a></span><span class="p">)</span>
+<a name="line-19"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/test/double_const.py.html#line-19">check_ok</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/threads/fcmp.py.html#line-26">x</a></span><span class="p">,</span> <span class="n">x_str</span><span class="p">):</span>
+<a name="line-20"></a>    <span class="k">assert</span> <span class="n"><a href="/python-xr/./Demo/threads/fcmp.py.html#line-26">x</a></span> <span class="o">&gt;</span> <span class="mf">0.0</span>
+<a name="line-21"></a>    <span class="n"><a href="/python-xr/./Lib/atexit.py.html#line-57">x2</a></span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">x_str</span><span class="p">)</span>
+<a name="line-22"></a>    <span class="k">assert</span> <span class="n"><a href="/python-xr/./Lib/atexit.py.html#line-57">x2</a></span> <span class="o">&gt;</span> <span class="mf">0.0</span>
+<a name="line-23"></a>    <span class="n"><a href="/python-xr/./Demo/pdist/rcvs.py.html#line-156">diff</a></span> <span class="o">=</span> <span class="nb"><a href="/python-xr/./Lib/decimal.py.html#line-3958">abs</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/threads/fcmp.py.html#line-26">x</a></span> <span class="o">-</span> <span class="n"><a href="/python-xr/./Lib/atexit.py.html#line-57">x2</a></span><span class="p">)</span>
 <a name="line-24"></a>    <span class="c1"># If diff is no larger than 3 ULP (wrt x2), then diff/8 is no larger</span>
 <a name="line-25"></a>    <span class="c1"># than 0.375 ULP, so adding diff/8 to x2 should have no effect.</span>
-<a name="line-26"></a>    <span class="k">if</span> <span class="n"><a href="/./Lib/atexit.py.html#line-57">x2</a></span> <span class="o">+</span> <span class="p">(</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-156">diff</a></span> <span class="o">/</span> <span class="mf">8.</span><span class="p">)</span> <span class="o">!=</span> <span class="n"><a href="/./Lib/atexit.py.html#line-57">x2</a></span><span class="p">:</span>
-<a name="line-27"></a>        <span class="k">raise</span> <span class="n"><a href="/./Lib/test/double_const.py.html#line-1">TestFailed</a></span><span class="p">(</span><span class="s2">&quot;Manifest const </span><span class="si">%s</span><span class="s2"> lost too much precision &quot;</span> <span class="o">%</span> <span class="n">x_str</span><span class="p">)</span>
+<a name="line-26"></a>    <span class="k">if</span> <span class="n"><a href="/python-xr/./Lib/atexit.py.html#line-57">x2</a></span> <span class="o">+</span> <span class="p">(</span><span class="n"><a href="/python-xr/./Demo/pdist/rcvs.py.html#line-156">diff</a></span> <span class="o">/</span> <span class="mf">8.</span><span class="p">)</span> <span class="o">!=</span> <span class="n"><a href="/python-xr/./Lib/atexit.py.html#line-57">x2</a></span><span class="p">:</span>
+<a name="line-27"></a>        <span class="k">raise</span> <span class="n"><a href="/python-xr/./Lib/test/double_const.py.html#line-1">TestFailed</a></span><span class="p">(</span><span class="s2">&quot;Manifest const </span><span class="si">%s</span><span class="s2"> lost too much precision &quot;</span> <span class="o">%</span> <span class="n">x_str</span><span class="p">)</span>
 <a name="line-28"></a>
-<a name="line-29"></a><span class="n"><a href="/./Lib/test/double_const.py.html#line-19">check_ok</a></span><span class="p">(</span><span class="n"><a href="/./Lib/test/double_const.py.html#line-12">PI</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/test/double_const.py.html#line-15">PI_str</a></span><span class="p">)</span>
-<a name="line-30"></a><span class="n"><a href="/./Lib/test/double_const.py.html#line-19">check_ok</a></span><span class="p">(</span><span class="n"><a href="/./Lib/random.py.html#line-59">TWOPI</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/test/double_const.py.html#line-16">TWOPI_str</a></span><span class="p">)</span>
+<a name="line-29"></a><span class="n"><a href="/python-xr/./Lib/test/double_const.py.html#line-19">check_ok</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/test/double_const.py.html#line-12">PI</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/test/double_const.py.html#line-15">PI_str</a></span><span class="p">)</span>
+<a name="line-30"></a><span class="n"><a href="/python-xr/./Lib/test/double_const.py.html#line-19">check_ok</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/random.py.html#line-59">TWOPI</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/test/double_const.py.html#line-16">TWOPI_str</a></span><span class="p">)</span>
 </pre></div>
 </td></tr></table></body>
 </html>

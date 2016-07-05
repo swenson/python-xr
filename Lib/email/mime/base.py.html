@@ -111,26 +111,26 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-4"></a>
 <a name="line-5"></a><span class="sd">&quot;&quot;&quot;Base class for MIME specializations.&quot;&quot;&quot;</span>
 <a name="line-6"></a>
-<a name="line-7"></a><span class="n"><a href="/./Demo/tkinter/ttk/plastik_theme.py.html#line-27">__all__</a></span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MIMEBase&#39;</span><span class="p">]</span>
+<a name="line-7"></a><span class="n"><a href="/python-xr/./Demo/tkinter/ttk/plastik_theme.py.html#line-27">__all__</a></span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MIMEBase&#39;</span><span class="p">]</span>
 <a name="line-8"></a>
-<a name="line-9"></a><span class="kn">from</span> <span class="nn"><a href="/./Doc/includes/email-unpack.py.html#line-7">email</a></span> <span class="kn">import</span> <span class="n"><a href="/./Demo/scripts/mboxconvert.py.html#line-81">message</a></span>
+<a name="line-9"></a><span class="kn">from</span> <span class="nn"><a href="/python-xr/./Doc/includes/email-unpack.py.html#line-7">email</a></span> <span class="kn">import</span> <span class="n"><a href="/python-xr/./Demo/scripts/mboxconvert.py.html#line-81">message</a></span>
 <a name="line-10"></a>
 <a name="line-11"></a>
 <a name="line-12"></a>
-<a name="line-13"></a><span class="k">class</span> <span class="nc"><a href="/./Doc/includes/email-dir.py.html#line-16">MIMEBase</a></span><span class="p">(</span><span class="n"><a href="/./Demo/scripts/mboxconvert.py.html#line-81">message</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">):</span>
+<a name="line-13"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Doc/includes/email-dir.py.html#line-16">MIMEBase</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/scripts/mboxconvert.py.html#line-81">message</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">):</span>
 <a name="line-14"></a>    <span class="sd">&quot;&quot;&quot;Base class for MIME specializations.&quot;&quot;&quot;</span>
 <a name="line-15"></a>
-<a name="line-16"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/cgi/wiki.py.html#line-21">__init__</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n">_maintype</span><span class="p">,</span> <span class="n">_subtype</span><span class="p">,</span> <span class="o">**</span><span class="n">_params</span><span class="p">):</span>
+<a name="line-16"></a>    <span class="k">def</span> <span class="nf"><a href="/python-xr/./Demo/cgi/wiki.py.html#line-21">__init__</a></span><span class="p">(</span><span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n">_maintype</span><span class="p">,</span> <span class="n">_subtype</span><span class="p">,</span> <span class="o">**</span><span class="n">_params</span><span class="p">):</span>
 <a name="line-17"></a>        <span class="sd">&quot;&quot;&quot;This constructor adds a Content-Type: and a MIME-Version: header.</span>
 <a name="line-18"></a>
 <a name="line-19"></a><span class="sd">        The Content-Type: header is taken from the _maintype and _subtype</span>
 <a name="line-20"></a><span class="sd">        arguments.  Additional parameters for this header are taken from the</span>
 <a name="line-21"></a><span class="sd">        keyword arguments.</span>
 <a name="line-22"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a name="line-23"></a>        <span class="n"><a href="/./Demo/scripts/mboxconvert.py.html#line-81">message</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="o">.</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-21">__init__</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">)</span>
+<a name="line-23"></a>        <span class="n"><a href="/python-xr/./Demo/scripts/mboxconvert.py.html#line-81">message</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Demo/cgi/wiki.py.html#line-21">__init__</a></span><span class="p">(</span><span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">)</span>
 <a name="line-24"></a>        <span class="n">ctype</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_maintype</span><span class="p">,</span> <span class="n">_subtype</span><span class="p">)</span>
-<a name="line-25"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/email/message.py.html#line-388">add_header</a></span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="n">ctype</span><span class="p">,</span> <span class="o">**</span><span class="n">_params</span><span class="p">)</span>
-<a name="line-26"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">[</span><span class="s1">&#39;MIME-Version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span>
+<a name="line-25"></a>        <span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/email/message.py.html#line-388">add_header</a></span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="n">ctype</span><span class="p">,</span> <span class="o">**</span><span class="n">_params</span><span class="p">)</span>
+<a name="line-26"></a>        <span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">[</span><span class="s1">&#39;MIME-Version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span>
 </pre></div>
 </td></tr></table></body>
 </html>

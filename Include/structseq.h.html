@@ -127,29 +127,29 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-6"></a><span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
 <a name="line-7"></a><span class="cp">#endif</span>
 <a name="line-8"></a>
-<a name="line-9"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="n"><a href="/./Include/structseq.h.html#line-10">PyStructSequence_Field</a></span> <span class="p">{</span>
-<a name="line-10"></a>	<span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">;</span>
-<a name="line-11"></a>	<span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Include/descrobject.h.html#line-15">doc</a></span><span class="p">;</span>
-<a name="line-12"></a><span class="p">}</span> <span class="n"><a href="/./Include/structseq.h.html#line-10">PyStructSequence_Field</a></span><span class="p">;</span>
+<a name="line-9"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="n"><a href="/python-xr/./Include/structseq.h.html#line-10">PyStructSequence_Field</a></span> <span class="p">{</span>
+<a name="line-10"></a>	<span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">;</span>
+<a name="line-11"></a>	<span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/descrobject.h.html#line-15">doc</a></span><span class="p">;</span>
+<a name="line-12"></a><span class="p">}</span> <span class="n"><a href="/python-xr/./Include/structseq.h.html#line-10">PyStructSequence_Field</a></span><span class="p">;</span>
 <a name="line-13"></a>
-<a name="line-14"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="n"><a href="/./Include/structseq.h.html#line-15">PyStructSequence_Desc</a></span> <span class="p">{</span>
-<a name="line-15"></a>	<span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">;</span>
-<a name="line-16"></a>	<span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Include/descrobject.h.html#line-15">doc</a></span><span class="p">;</span>
-<a name="line-17"></a>	<span class="k">struct</span> <span class="n"><a href="/./Include/structseq.h.html#line-10">PyStructSequence_Field</a></span> <span class="o">*</span><span class="n"><a href="/./Include/structseq.h.html#line-18">fields</a></span><span class="p">;</span>
-<a name="line-18"></a>	<span class="kt">int</span> <span class="n"><a href="/./Include/structseq.h.html#line-19">n_in_sequence</a></span><span class="p">;</span>
-<a name="line-19"></a><span class="p">}</span> <span class="n"><a href="/./Include/structseq.h.html#line-15">PyStructSequence_Desc</a></span><span class="p">;</span>
+<a name="line-14"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="n"><a href="/python-xr/./Include/structseq.h.html#line-15">PyStructSequence_Desc</a></span> <span class="p">{</span>
+<a name="line-15"></a>	<span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">;</span>
+<a name="line-16"></a>	<span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/descrobject.h.html#line-15">doc</a></span><span class="p">;</span>
+<a name="line-17"></a>	<span class="k">struct</span> <span class="n"><a href="/python-xr/./Include/structseq.h.html#line-10">PyStructSequence_Field</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/structseq.h.html#line-18">fields</a></span><span class="p">;</span>
+<a name="line-18"></a>	<span class="kt">int</span> <span class="n"><a href="/python-xr/./Include/structseq.h.html#line-19">n_in_sequence</a></span><span class="p">;</span>
+<a name="line-19"></a><span class="p">}</span> <span class="n"><a href="/python-xr/./Include/structseq.h.html#line-15">PyStructSequence_Desc</a></span><span class="p">;</span>
 <a name="line-20"></a>
-<a name="line-21"></a><span class="k">extern</span> <span class="kt">char</span><span class="o">*</span> <span class="n"><a href="/./Objects/structseq.c.html#line-14">PyStructSequence_UnnamedField</a></span><span class="p">;</span>
+<a name="line-21"></a><span class="k">extern</span> <span class="kt">char</span><span class="o">*</span> <span class="n"><a href="/python-xr/./Objects/structseq.c.html#line-14">PyStructSequence_UnnamedField</a></span><span class="p">;</span>
 <a name="line-22"></a>
-<a name="line-23"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/structseq.c.html#line-477">PyStructSequence_InitType</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span>
-<a name="line-24"></a>					   <span class="n"><a href="/./Include/structseq.h.html#line-15">PyStructSequence_Desc</a></span> <span class="o">*</span><span class="n"><a href="/./Include/cobject.h.html#line-81">desc</a></span><span class="p">);</span>
+<a name="line-23"></a><span class="n"><a href="/python-xr/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/python-xr/./Objects/structseq.c.html#line-477">PyStructSequence_InitType</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span>
+<a name="line-24"></a>					   <span class="n"><a href="/python-xr/./Include/structseq.h.html#line-15">PyStructSequence_Desc</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/cobject.h.html#line-81">desc</a></span><span class="p">);</span>
 <a name="line-25"></a>
-<a name="line-26"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/structseq.c.html#line-30">PyStructSequence_New</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span><span class="o">*</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">);</span>
+<a name="line-26"></a><span class="n"><a href="/python-xr/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/python-xr/./Objects/structseq.c.html#line-30">PyStructSequence_New</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span><span class="o">*</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">);</span>
 <a name="line-27"></a>
 <a name="line-28"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
-<a name="line-29"></a>	<span class="n"><a href="/./Include/object.h.html#line-96">PyObject_VAR_HEAD</a></span>
-<a name="line-30"></a>	<span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Include/listobject.h.html#line-25">ob_item</a></span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<a name="line-31"></a><span class="p">}</span> <span class="n"><a href="/./Include/structseq.h.html#line-32">PyStructSequence</a></span><span class="p">;</span>
+<a name="line-29"></a>	<span class="n"><a href="/python-xr/./Include/object.h.html#line-96">PyObject_VAR_HEAD</a></span>
+<a name="line-30"></a>	<span class="n"><a href="/python-xr/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/listobject.h.html#line-25">ob_item</a></span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<a name="line-31"></a><span class="p">}</span> <span class="n"><a href="/python-xr/./Include/structseq.h.html#line-32">PyStructSequence</a></span><span class="p">;</span>
 <a name="line-32"></a>
 <a name="line-33"></a><span class="cm">/* Macro, *only* to be used to fill in brand new objects */</span>
 <a name="line-34"></a><span class="cp">#define PyStructSequence_SET_ITEM(op, i, v) \</span>

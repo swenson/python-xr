@@ -218,7 +218,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-4"></a><span class="cp">#include</span> <span class="cpf">&lt;limits.h&gt;</span><span class="cp"></span>
 <a name="line-5"></a><span class="cp">#include</span> <span class="cpf">&lt;pydebug.h&gt;</span><span class="cp"></span>
 <a name="line-6"></a>
-<a name="line-7"></a><span class="kt">long</span> <span class="nf"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-7"></a><span class="kt">long</span> <span class="nf"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 <a name="line-8"></a>
 <a name="line-9"></a><span class="cm">/*</span>
 <a name="line-10"></a><span class="cm"> * Change all headers to pure ANSI as no one will use K&amp;R style on an</span>
@@ -228,49 +228,49 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-14"></a><span class="cm">/*</span>
 <a name="line-15"></a><span class="cm"> * Initialization of the C package, should not be needed.</span>
 <a name="line-16"></a><span class="cm"> */</span>
-<a name="line-17"></a><span class="k">static</span> <span class="kt">void</span> <span class="nf"><a href="/./Python/thread_atheos.h.html#line-85">PyThread__init_thread</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="line-17"></a><span class="k">static</span> <span class="kt">void</span> <span class="nf"><a href="/python-xr/./Python/thread_atheos.h.html#line-85">PyThread__init_thread</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <a name="line-18"></a><span class="p">{</span>
 <a name="line-19"></a><span class="p">}</span>
 <a name="line-20"></a>
 <a name="line-21"></a><span class="cm">/*</span>
 <a name="line-22"></a><span class="cm"> * Thread support.</span>
 <a name="line-23"></a><span class="cm"> */</span>
-<a name="line-24"></a><span class="kt">long</span> <span class="nf"><a href="/./Python/thread_atheos.h.html#line-99">PyThread_start_new_thread</a></span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="p">),</span> <span class="kt">void</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-365">arg</a></span><span class="p">)</span>
+<a name="line-24"></a><span class="kt">long</span> <span class="nf"><a href="/python-xr/./Python/thread_atheos.h.html#line-99">PyThread_start_new_thread</a></span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="p">),</span> <span class="kt">void</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-365">arg</a></span><span class="p">)</span>
 <a name="line-25"></a><span class="p">{</span>
-<a name="line-26"></a>    <span class="kt">long</span> <span class="n"><a href="/./Lib/copy.py.html#line-178">rv</a></span><span class="p">;</span>
-<a name="line-27"></a>    <span class="kt">int</span> <span class="n"><a href="/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<a name="line-26"></a>    <span class="kt">long</span> <span class="n"><a href="/python-xr/./Lib/copy.py.html#line-178">rv</a></span><span class="p">;</span>
+<a name="line-27"></a>    <span class="kt">int</span> <span class="n"><a href="/python-xr/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
 <a name="line-28"></a>
-<a name="line-29"></a>    <span class="n"><a href="/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_start_new_thread called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">()));</span>
-<a name="line-30"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/./Modules/_lsprof.c.html#line-535">initialized</a></span><span class="p">)</span>
-<a name="line-31"></a>        <span class="n"><a href="/./Python/thread.c.html#line-79">PyThread_init_thread</a></span><span class="p">();</span>
+<a name="line-29"></a>    <span class="n"><a href="/python-xr/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_start_new_thread called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">()));</span>
+<a name="line-30"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/python-xr/./Modules/_lsprof.c.html#line-535">initialized</a></span><span class="p">)</span>
+<a name="line-31"></a>        <span class="n"><a href="/python-xr/./Python/thread.c.html#line-79">PyThread_init_thread</a></span><span class="p">();</span>
 <a name="line-32"></a>
-<a name="line-33"></a>    <span class="n"><a href="/./Lib/copy.py.html#line-178">rv</a></span> <span class="o">=</span> <span class="n">_beginthread</span><span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-365">arg</a></span><span class="p">);</span> <span class="cm">/* use default stack size */</span>
+<a name="line-33"></a>    <span class="n"><a href="/python-xr/./Lib/copy.py.html#line-178">rv</a></span> <span class="o">=</span> <span class="n">_beginthread</span><span class="p">(</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-365">arg</a></span><span class="p">);</span> <span class="cm">/* use default stack size */</span>
 <a name="line-34"></a>
-<a name="line-35"></a>    <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Lib/copy.py.html#line-178">rv</a></span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-36"></a>        <span class="n"><a href="/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<a name="line-37"></a>        <span class="n"><a href="/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_start_new_thread succeeded:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">()));</span>
+<a name="line-35"></a>    <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/python-xr/./Lib/copy.py.html#line-178">rv</a></span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-36"></a>        <span class="n"><a href="/python-xr/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-37"></a>        <span class="n"><a href="/python-xr/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_start_new_thread succeeded:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">()));</span>
 <a name="line-38"></a>    <span class="p">}</span>
 <a name="line-39"></a>
-<a name="line-40"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span><span class="p">;</span>
+<a name="line-40"></a>    <span class="k">return</span> <span class="n"><a href="/python-xr/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span><span class="p">;</span>
 <a name="line-41"></a><span class="p">}</span>
 <a name="line-42"></a>
 <a name="line-43"></a><span class="cm">/*</span>
 <a name="line-44"></a><span class="cm"> * Return the thread Id instead of an handle. The Id is said to uniquely identify the</span>
 <a name="line-45"></a><span class="cm"> * thread in the system</span>
 <a name="line-46"></a><span class="cm"> */</span>
-<a name="line-47"></a><span class="kt">long</span> <span class="nf"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="line-47"></a><span class="kt">long</span> <span class="nf"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <a name="line-48"></a><span class="p">{</span>
-<a name="line-49"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/./Modules/_lsprof.c.html#line-535">initialized</a></span><span class="p">)</span>
-<a name="line-50"></a>        <span class="n"><a href="/./Python/thread.c.html#line-79">PyThread_init_thread</a></span><span class="p">();</span>
+<a name="line-49"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/python-xr/./Modules/_lsprof.c.html#line-535">initialized</a></span><span class="p">)</span>
+<a name="line-50"></a>        <span class="n"><a href="/python-xr/./Python/thread.c.html#line-79">PyThread_init_thread</a></span><span class="p">();</span>
 <a name="line-51"></a>
 <a name="line-52"></a>    <span class="k">return</span> <span class="n">GetCurrentThreadId</span><span class="p">();</span>
 <a name="line-53"></a><span class="p">}</span>
 <a name="line-54"></a>
-<a name="line-55"></a><span class="kt">void</span> <span class="nf"><a href="/./Python/thread_atheos.h.html#line-131">PyThread_exit_thread</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="line-55"></a><span class="kt">void</span> <span class="nf"><a href="/python-xr/./Python/thread_atheos.h.html#line-131">PyThread_exit_thread</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <a name="line-56"></a><span class="p">{</span>
-<a name="line-57"></a>    <span class="n"><a href="/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_exit_thread called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">()));</span>
-<a name="line-58"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/./Modules/_lsprof.c.html#line-535">initialized</a></span><span class="p">)</span>
-<a name="line-59"></a>        <span class="n"><a href="/./Lib/argparse.py.html#line-2359">exit</a></span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a name="line-57"></a>    <span class="n"><a href="/python-xr/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_exit_thread called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">()));</span>
+<a name="line-58"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/python-xr/./Modules/_lsprof.c.html#line-535">initialized</a></span><span class="p">)</span>
+<a name="line-59"></a>        <span class="n"><a href="/python-xr/./Lib/argparse.py.html#line-2359">exit</a></span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <a name="line-60"></a>    <span class="n">_endthread</span><span class="p">();</span>
 <a name="line-61"></a><span class="p">}</span>
 <a name="line-62"></a>
@@ -279,27 +279,27 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-65"></a><span class="cm"> * CE doesnt support semaphores.  Therefore we use some hacks to</span>
 <a name="line-66"></a><span class="cm"> * simulate the non reentrant requirements of Python locks</span>
 <a name="line-67"></a><span class="cm"> */</span>
-<a name="line-68"></a><span class="n"><a href="/./Include/pythread.h.html#line-18">PyThread_type_lock</a></span> <span class="nf"><a href="/./Python/thread_atheos.h.html#line-153">PyThread_allocate_lock</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="line-68"></a><span class="n"><a href="/python-xr/./Include/pythread.h.html#line-18">PyThread_type_lock</a></span> <span class="nf"><a href="/python-xr/./Python/thread_atheos.h.html#line-153">PyThread_allocate_lock</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <a name="line-69"></a><span class="p">{</span>
-<a name="line-70"></a>    <span class="n"><a href="/./Lib/ctypes/wintypes.py.html#line-63">HANDLE</a></span> <span class="n">aLock</span><span class="p">;</span>
+<a name="line-70"></a>    <span class="n"><a href="/python-xr/./Lib/ctypes/wintypes.py.html#line-63">HANDLE</a></span> <span class="n">aLock</span><span class="p">;</span>
 <a name="line-71"></a>
-<a name="line-72"></a>    <span class="n"><a href="/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;PyThread_allocate_lock called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">));</span>
-<a name="line-73"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/./Modules/_lsprof.c.html#line-535">initialized</a></span><span class="p">)</span>
-<a name="line-74"></a>    <span class="n"><a href="/./Python/thread.c.html#line-79">PyThread_init_thread</a></span><span class="p">();</span>
+<a name="line-72"></a>    <span class="n"><a href="/python-xr/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;PyThread_allocate_lock called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">));</span>
+<a name="line-73"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/python-xr/./Modules/_lsprof.c.html#line-535">initialized</a></span><span class="p">)</span>
+<a name="line-74"></a>    <span class="n"><a href="/python-xr/./Python/thread.c.html#line-79">PyThread_init_thread</a></span><span class="p">();</span>
 <a name="line-75"></a>
-<a name="line-76"></a>    <span class="n">aLock</span> <span class="o">=</span> <span class="n">CreateEvent</span><span class="p">(</span><span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">,</span>           <span class="cm">/* Security attributes      */</span>
+<a name="line-76"></a>    <span class="n">aLock</span> <span class="o">=</span> <span class="n">CreateEvent</span><span class="p">(</span><span class="nb"><a href="/python-xr/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">,</span>           <span class="cm">/* Security attributes      */</span>
 <a name="line-77"></a>            <span class="mi">0</span><span class="p">,</span>              <span class="cm">/* Manual-Reset               */</span>
 <a name="line-78"></a>                        <span class="mi">1</span><span class="p">,</span>              <span class="cm">/* Is initially signalled  */</span>
-<a name="line-79"></a>            <span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">);</span>          <span class="cm">/* Name of event            */</span>
+<a name="line-79"></a>            <span class="nb"><a href="/python-xr/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">);</span>          <span class="cm">/* Name of event            */</span>
 <a name="line-80"></a>
-<a name="line-81"></a>    <span class="n"><a href="/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_allocate_lock() -&gt; %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span> <span class="n">aLock</span><span class="p">));</span>
+<a name="line-81"></a>    <span class="n"><a href="/python-xr/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_allocate_lock() -&gt; %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span> <span class="n">aLock</span><span class="p">));</span>
 <a name="line-82"></a>
-<a name="line-83"></a>    <span class="k">return</span> <span class="p">(</span><span class="n"><a href="/./Include/pythread.h.html#line-18">PyThread_type_lock</a></span><span class="p">)</span> <span class="n">aLock</span><span class="p">;</span>
+<a name="line-83"></a>    <span class="k">return</span> <span class="p">(</span><span class="n"><a href="/python-xr/./Include/pythread.h.html#line-18">PyThread_type_lock</a></span><span class="p">)</span> <span class="n">aLock</span><span class="p">;</span>
 <a name="line-84"></a><span class="p">}</span>
 <a name="line-85"></a>
-<a name="line-86"></a><span class="kt">void</span> <span class="nf"><a href="/./Python/thread_atheos.h.html#line-197">PyThread_free_lock</a></span><span class="p">(</span><span class="n"><a href="/./Include/pythread.h.html#line-18">PyThread_type_lock</a></span> <span class="n">aLock</span><span class="p">)</span>
+<a name="line-86"></a><span class="kt">void</span> <span class="nf"><a href="/python-xr/./Python/thread_atheos.h.html#line-197">PyThread_free_lock</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Include/pythread.h.html#line-18">PyThread_type_lock</a></span> <span class="n">aLock</span><span class="p">)</span>
 <a name="line-87"></a><span class="p">{</span>
-<a name="line-88"></a>    <span class="n"><a href="/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_free_lock(%p) called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span><span class="n">aLock</span><span class="p">));</span>
+<a name="line-88"></a>    <span class="n"><a href="/python-xr/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_free_lock(%p) called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span><span class="n">aLock</span><span class="p">));</span>
 <a name="line-89"></a>
 <a name="line-90"></a>    <span class="n">CloseHandle</span><span class="p">(</span><span class="n">aLock</span><span class="p">);</span>
 <a name="line-91"></a><span class="p">}</span>
@@ -310,19 +310,19 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-96"></a><span class="cm"> * and 0 if the lock was not acquired. This means a 0 is returned</span>
 <a name="line-97"></a><span class="cm"> * if the lock has already been acquired by this thread!</span>
 <a name="line-98"></a><span class="cm"> */</span>
-<a name="line-99"></a><span class="kt">int</span> <span class="nf"><a href="/./Python/thread_atheos.h.html#line-216">PyThread_acquire_lock</a></span><span class="p">(</span><span class="n"><a href="/./Include/pythread.h.html#line-18">PyThread_type_lock</a></span> <span class="n">aLock</span><span class="p">,</span> <span class="kt">int</span> <span class="n">waitflag</span><span class="p">)</span>
+<a name="line-99"></a><span class="kt">int</span> <span class="nf"><a href="/python-xr/./Python/thread_atheos.h.html#line-216">PyThread_acquire_lock</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Include/pythread.h.html#line-18">PyThread_type_lock</a></span> <span class="n">aLock</span><span class="p">,</span> <span class="kt">int</span> <span class="n">waitflag</span><span class="p">)</span>
 <a name="line-100"></a><span class="p">{</span>
-<a name="line-101"></a>    <span class="kt">int</span> <span class="n"><a href="/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<a name="line-102"></a>    <span class="n"><a href="/./Lib/ctypes/wintypes.py.html#line-10">DWORD</a></span> <span class="n">waitResult</span><span class="p">;</span>
+<a name="line-101"></a>    <span class="kt">int</span> <span class="n"><a href="/python-xr/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-102"></a>    <span class="n"><a href="/python-xr/./Lib/ctypes/wintypes.py.html#line-10">DWORD</a></span> <span class="n">waitResult</span><span class="p">;</span>
 <a name="line-103"></a>
-<a name="line-104"></a>    <span class="n"><a href="/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_acquire_lock(%p, %d) called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span><span class="n">aLock</span><span class="p">,</span> <span class="n">waitflag</span><span class="p">));</span>
+<a name="line-104"></a>    <span class="n"><a href="/python-xr/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_acquire_lock(%p, %d) called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span><span class="n">aLock</span><span class="p">,</span> <span class="n">waitflag</span><span class="p">));</span>
 <a name="line-105"></a>
 <a name="line-106"></a><span class="cp">#ifndef DEBUG</span>
 <a name="line-107"></a>    <span class="n">waitResult</span> <span class="o">=</span> <span class="n">WaitForSingleObject</span><span class="p">(</span><span class="n">aLock</span><span class="p">,</span> <span class="p">(</span><span class="n">waitflag</span> <span class="o">?</span> <span class="nl">INFINITE</span> <span class="p">:</span> <span class="mi">0</span><span class="p">));</span>
 <a name="line-108"></a><span class="cp">#else</span>
 <a name="line-109"></a>    <span class="cm">/* To aid in debugging, we regularly wake up.  This allows us to</span>
 <a name="line-110"></a><span class="cm">    break into the debugger */</span>
-<a name="line-111"></a>    <span class="k">while</span> <span class="p">(</span><span class="n"><a href="/./Lib/pickle.py.html#line-144">TRUE</a></span><span class="p">)</span> <span class="p">{</span>
+<a name="line-111"></a>    <span class="k">while</span> <span class="p">(</span><span class="n"><a href="/python-xr/./Lib/pickle.py.html#line-144">TRUE</a></span><span class="p">)</span> <span class="p">{</span>
 <a name="line-112"></a>        <span class="n">waitResult</span> <span class="o">=</span> <span class="n">WaitForSingleObject</span><span class="p">(</span><span class="n">aLock</span><span class="p">,</span> <span class="n">waitflag</span> <span class="o">?</span> <span class="mi">3000</span> <span class="o">:</span> <span class="mi">0</span><span class="p">);</span>
 <a name="line-113"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">waitflag</span><span class="o">==</span><span class="mi">0</span> <span class="o">||</span> <span class="p">(</span><span class="n">waitflag</span> <span class="o">&amp;&amp;</span> <span class="n">waitResult</span> <span class="o">==</span> <span class="n">WAIT_OBJECT_0</span><span class="p">))</span>
 <a name="line-114"></a>            <span class="k">break</span><span class="p">;</span>
@@ -330,20 +330,20 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-116"></a><span class="cp">#endif</span>
 <a name="line-117"></a>
 <a name="line-118"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">waitResult</span> <span class="o">!=</span> <span class="n">WAIT_OBJECT_0</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-119"></a>                <span class="n"><a href="/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    <span class="cm">/* We failed */</span>
+<a name="line-119"></a>                <span class="n"><a href="/python-xr/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    <span class="cm">/* We failed */</span>
 <a name="line-120"></a>    <span class="p">}</span>
 <a name="line-121"></a>
-<a name="line-122"></a>    <span class="n"><a href="/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_acquire_lock(%p, %d) -&gt; %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span><span class="n">aLock</span><span class="p">,</span> <span class="n">waitflag</span><span class="p">,</span> <span class="n"><a href="/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span><span class="p">));</span>
+<a name="line-122"></a>    <span class="n"><a href="/python-xr/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_acquire_lock(%p, %d) -&gt; %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span><span class="n">aLock</span><span class="p">,</span> <span class="n">waitflag</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span><span class="p">));</span>
 <a name="line-123"></a>
-<a name="line-124"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span><span class="p">;</span>
+<a name="line-124"></a>    <span class="k">return</span> <span class="n"><a href="/python-xr/./Lib/unittest/test/test_runner.py.html#line-97">success</a></span><span class="p">;</span>
 <a name="line-125"></a><span class="p">}</span>
 <a name="line-126"></a>
-<a name="line-127"></a><span class="kt">void</span> <span class="nf"><a href="/./Python/thread_atheos.h.html#line-244">PyThread_release_lock</a></span><span class="p">(</span><span class="n"><a href="/./Include/pythread.h.html#line-18">PyThread_type_lock</a></span> <span class="n">aLock</span><span class="p">)</span>
+<a name="line-127"></a><span class="kt">void</span> <span class="nf"><a href="/python-xr/./Python/thread_atheos.h.html#line-244">PyThread_release_lock</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Include/pythread.h.html#line-18">PyThread_type_lock</a></span> <span class="n">aLock</span><span class="p">)</span>
 <a name="line-128"></a><span class="p">{</span>
-<a name="line-129"></a>    <span class="n"><a href="/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_release_lock(%p) called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span><span class="n">aLock</span><span class="p">));</span>
+<a name="line-129"></a>    <span class="n"><a href="/python-xr/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: PyThread_release_lock(%p) called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span><span class="n">aLock</span><span class="p">));</span>
 <a name="line-130"></a>
 <a name="line-131"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">SetEvent</span><span class="p">(</span><span class="n">aLock</span><span class="p">))</span>
-<a name="line-132"></a>    <span class="n"><a href="/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: Could not PyThread_release_lock(%p) error: %l</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span> <span class="n">aLock</span><span class="p">,</span> <span class="n">GetLastError</span><span class="p">()));</span>
+<a name="line-132"></a>    <span class="n"><a href="/python-xr/./Python/thread.c.html#line-67">dprintf</a></span><span class="p">((</span><span class="s">&quot;%ld: Could not PyThread_release_lock(%p) error: %l</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Python/thread_atheos.h.html#line-125">PyThread_get_thread_ident</a></span><span class="p">(),</span> <span class="n">aLock</span><span class="p">,</span> <span class="n">GetLastError</span><span class="p">()));</span>
 <a name="line-133"></a><span class="p">}</span>
 </pre></div>
 </td></tr></table></body>

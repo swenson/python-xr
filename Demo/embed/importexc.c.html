@@ -98,18 +98,18 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-16">16</a>
 <a href="#line-17">17</a></pre></div></td><td class="code"><div class="source"><span class="filename">Demo/embed/importexc.c</span><pre><span></span><a name="line-1"></a><span class="cp">#include</span> <span class="cpf">&lt;Python.h&gt;</span><span class="cp"></span>
 <a name="line-2"></a>
-<a name="line-3"></a><span class="kt">char</span><span class="o">*</span> <span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span> <span class="o">=</span> <span class="s">&quot;import exceptions&quot;</span><span class="p">;</span>
+<a name="line-3"></a><span class="kt">char</span><span class="o">*</span> <span class="n"><a href="/python-xr/./Demo/embed/importexc.c.html#line-3">cmd</a></span> <span class="o">=</span> <span class="s">&quot;import exceptions&quot;</span><span class="p">;</span>
 <a name="line-4"></a>
-<a name="line-5"></a><span class="kt">int</span> <span class="nf"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">()</span>
+<a name="line-5"></a><span class="kt">int</span> <span class="nf"><a href="/python-xr/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">()</span>
 <a name="line-6"></a><span class="p">{</span>
-<a name="line-7"></a>	<span class="n"><a href="/./Python/pythonrun.c.html#line-379">Py_Initialize</a></span><span class="p">();</span>
-<a name="line-8"></a>	<span class="n"><a href="/./Python/ceval.c.html#line-249">PyEval_InitThreads</a></span><span class="p">();</span>
-<a name="line-9"></a>	<span class="n"><a href="/./Include/pythonrun.h.html#line-90">PyRun_SimpleString</a></span><span class="p">(</span><span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span><span class="p">);</span>
-<a name="line-10"></a>	<span class="n"><a href="/./Python/pythonrun.c.html#line-652">Py_EndInterpreter</a></span><span class="p">(</span><span class="n"><a href="/./Python/pystate.c.html#line-327">PyThreadState_Get</a></span><span class="p">());</span>
+<a name="line-7"></a>	<span class="n"><a href="/python-xr/./Python/pythonrun.c.html#line-379">Py_Initialize</a></span><span class="p">();</span>
+<a name="line-8"></a>	<span class="n"><a href="/python-xr/./Python/ceval.c.html#line-249">PyEval_InitThreads</a></span><span class="p">();</span>
+<a name="line-9"></a>	<span class="n"><a href="/python-xr/./Include/pythonrun.h.html#line-90">PyRun_SimpleString</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/embed/importexc.c.html#line-3">cmd</a></span><span class="p">);</span>
+<a name="line-10"></a>	<span class="n"><a href="/python-xr/./Python/pythonrun.c.html#line-652">Py_EndInterpreter</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Python/pystate.c.html#line-327">PyThreadState_Get</a></span><span class="p">());</span>
 <a name="line-11"></a>
-<a name="line-12"></a>	<span class="n"><a href="/./Python/pythonrun.c.html#line-576">Py_NewInterpreter</a></span><span class="p">();</span>
-<a name="line-13"></a>	<span class="n"><a href="/./Include/pythonrun.h.html#line-90">PyRun_SimpleString</a></span><span class="p">(</span><span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span><span class="p">);</span>
-<a name="line-14"></a>	<span class="n"><a href="/./Python/pythonrun.c.html#line-404">Py_Finalize</a></span><span class="p">();</span>
+<a name="line-12"></a>	<span class="n"><a href="/python-xr/./Python/pythonrun.c.html#line-576">Py_NewInterpreter</a></span><span class="p">();</span>
+<a name="line-13"></a>	<span class="n"><a href="/python-xr/./Include/pythonrun.h.html#line-90">PyRun_SimpleString</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/embed/importexc.c.html#line-3">cmd</a></span><span class="p">);</span>
+<a name="line-14"></a>	<span class="n"><a href="/python-xr/./Python/pythonrun.c.html#line-404">Py_Finalize</a></span><span class="p">();</span>
 <a name="line-15"></a>
 <a name="line-16"></a>	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <a name="line-17"></a><span class="p">}</span>

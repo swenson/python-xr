@@ -111,11 +111,11 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-29">29</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/test/test_cd.py</span><pre><span></span><a name="line-1"></a><span class="sd">&quot;&quot;&quot;Whimpy test script for the cd module</span>
 <a name="line-2"></a><span class="sd">   Roger E. Masse</span>
 <a name="line-3"></a><span class="sd">&quot;&quot;&quot;</span>
-<a name="line-4"></a><span class="kn">from</span> <span class="nn">test.test_support</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/ihooks.py.html#line-362">import_module</a></span>
+<a name="line-4"></a><span class="kn">from</span> <span class="nn">test.test_support</span> <span class="kn">import</span> <span class="n"><a href="/python-xr/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-362">import_module</a></span>
 <a name="line-5"></a>
-<a name="line-6"></a><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-91">cd</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/ihooks.py.html#line-362">import_module</a></span><span class="p">(</span><span class="s1">&#39;cd&#39;</span><span class="p">)</span>
+<a name="line-6"></a><span class="n"><a href="/python-xr/./Demo/pdist/FSProxy.py.html#line-91">cd</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-362">import_module</a></span><span class="p">(</span><span class="s1">&#39;cd&#39;</span><span class="p">)</span>
 <a name="line-7"></a>
-<a name="line-8"></a><span class="n"><a href="/./Lib/test/test_cd.py.html#line-8">cdattrs</a></span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;BLOCKSIZE&#39;</span><span class="p">,</span> <span class="s1">&#39;CDROM&#39;</span><span class="p">,</span> <span class="s1">&#39;DATASIZE&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">,</span> <span class="s1">&#39;NODISC&#39;</span><span class="p">,</span> <span class="s1">&#39;PAUSED&#39;</span><span class="p">,</span> <span class="s1">&#39;PLAYING&#39;</span><span class="p">,</span> <span class="s1">&#39;READY&#39;</span><span class="p">,</span>
+<a name="line-8"></a><span class="n"><a href="/python-xr/./Lib/test/test_cd.py.html#line-8">cdattrs</a></span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;BLOCKSIZE&#39;</span><span class="p">,</span> <span class="s1">&#39;CDROM&#39;</span><span class="p">,</span> <span class="s1">&#39;DATASIZE&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">,</span> <span class="s1">&#39;NODISC&#39;</span><span class="p">,</span> <span class="s1">&#39;PAUSED&#39;</span><span class="p">,</span> <span class="s1">&#39;PLAYING&#39;</span><span class="p">,</span> <span class="s1">&#39;READY&#39;</span><span class="p">,</span>
 <a name="line-9"></a>           <span class="s1">&#39;STILL&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s1">&#39;__name__&#39;</span><span class="p">,</span> <span class="s1">&#39;atime&#39;</span><span class="p">,</span> <span class="s1">&#39;audio&#39;</span><span class="p">,</span> <span class="s1">&#39;catalog&#39;</span><span class="p">,</span> <span class="s1">&#39;control&#39;</span><span class="p">,</span> <span class="s1">&#39;createparser&#39;</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span>
 <a name="line-10"></a>           <span class="s1">&#39;ident&#39;</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="s1">&#39;msftoframe&#39;</span><span class="p">,</span> <span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="s1">&#39;pnum&#39;</span><span class="p">,</span> <span class="s1">&#39;ptime&#39;</span><span class="p">]</span>
 <a name="line-11"></a>
@@ -124,19 +124,19 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-14"></a><span class="c1"># attributes.  More comprehensive examples can be found in Demo/cd and</span>
 <a name="line-15"></a><span class="c1"># require that you have a CD and a CD ROM drive</span>
 <a name="line-16"></a>
-<a name="line-17"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">():</span>
+<a name="line-17"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">():</span>
 <a name="line-18"></a>    <span class="c1"># touch all the attributes of cd without doing anything</span>
-<a name="line-19"></a>    <span class="k">if</span> <span class="n"><a href="/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">:</span>
+<a name="line-19"></a>    <span class="k">if</span> <span class="n"><a href="/python-xr/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">:</span>
 <a name="line-20"></a>        <span class="k">print</span> <span class="s1">&#39;Touching cd module attributes...&#39;</span>
-<a name="line-21"></a>    <span class="k">for</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-285">attr</a></span> <span class="ow">in</span> <span class="n"><a href="/./Lib/test/test_cd.py.html#line-8">cdattrs</a></span><span class="p">:</span>
-<a name="line-22"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">:</span>
-<a name="line-23"></a>            <span class="k">print</span> <span class="s1">&#39;touching: &#39;</span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-285">attr</a></span>
-<a name="line-24"></a>        <span class="nb"><a href="/./Objects/stringlib/string_format.h.html#line-232">getattr</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-91">cd</a></span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-285">attr</a></span><span class="p">)</span>
+<a name="line-21"></a>    <span class="k">for</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-285">attr</a></span> <span class="ow">in</span> <span class="n"><a href="/python-xr/./Lib/test/test_cd.py.html#line-8">cdattrs</a></span><span class="p">:</span>
+<a name="line-22"></a>        <span class="k">if</span> <span class="n"><a href="/python-xr/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">:</span>
+<a name="line-23"></a>            <span class="k">print</span> <span class="s1">&#39;touching: &#39;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-285">attr</a></span>
+<a name="line-24"></a>        <span class="nb"><a href="/python-xr/./Objects/stringlib/string_format.h.html#line-232">getattr</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Demo/pdist/FSProxy.py.html#line-91">cd</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-285">attr</a></span><span class="p">)</span>
 <a name="line-25"></a>
 <a name="line-26"></a>
 <a name="line-27"></a>
-<a name="line-28"></a><span class="k">if</span> <span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a name="line-29"></a>    <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">()</span>
+<a name="line-28"></a><span class="k">if</span> <span class="n"><a href="/python-xr/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="line-29"></a>    <span class="n"><a href="/python-xr/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">()</span>
 </pre></div>
 </td></tr></table></body>
 </html>

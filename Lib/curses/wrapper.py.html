@@ -138,9 +138,9 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-7"></a>
 <a name="line-8"></a><span class="sd">&quot;&quot;&quot;</span>
 <a name="line-9"></a>
-<a name="line-10"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span>
+<a name="line-10"></a><span class="kn">import</span> <span class="nn"><a href="/python-xr/./Demo/curses/life.py.html#line-21">curses</a></span>
 <a name="line-11"></a>
-<a name="line-12"></a><span class="k">def</span> <span class="nf"><a href="/./Include/descrobject.h.html#line-29">wrapper</a></span><span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">,</span> <span class="o">**</span><span class="n"><a href="/./Modules/operator.c.html#line-778">kwds</a></span><span class="p">):</span>
+<a name="line-12"></a><span class="k">def</span> <span class="nf"><a href="/python-xr/./Include/descrobject.h.html#line-29">wrapper</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">,</span> <span class="o">**</span><span class="n"><a href="/python-xr/./Modules/operator.c.html#line-778">kwds</a></span><span class="p">):</span>
 <a name="line-13"></a>    <span class="sd">&quot;&quot;&quot;Wrapper function that initializes curses and calls another function,</span>
 <a name="line-14"></a><span class="sd">    restoring normal keyboard/screen behavior on error.</span>
 <a name="line-15"></a><span class="sd">    The callable object &#39;func&#39; is then passed the main window &#39;stdscr&#39;</span>
@@ -150,12 +150,12 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-19"></a>
 <a name="line-20"></a>    <span class="k">try</span><span class="p">:</span>
 <a name="line-21"></a>        <span class="c1"># Initialize curses</span>
-<a name="line-22"></a>        <span class="n">stdscr</span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Lib/curses/__init__.py.html#line-28">initscr</a></span><span class="p">()</span>
+<a name="line-22"></a>        <span class="n">stdscr</span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/curses/__init__.py.html#line-28">initscr</a></span><span class="p">()</span>
 <a name="line-23"></a>
 <a name="line-24"></a>        <span class="c1"># Turn off echoing of keys, and enter cbreak mode,</span>
 <a name="line-25"></a>        <span class="c1"># where no buffering is performed on keyboard input</span>
-<a name="line-26"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">noecho</span><span class="p">()</span>
-<a name="line-27"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">cbreak</span><span class="p">()</span>
+<a name="line-26"></a>        <span class="n"><a href="/python-xr/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">noecho</span><span class="p">()</span>
+<a name="line-27"></a>        <span class="n"><a href="/python-xr/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">cbreak</span><span class="p">()</span>
 <a name="line-28"></a>
 <a name="line-29"></a>        <span class="c1"># In keypad mode, escape sequences for special keys</span>
 <a name="line-30"></a>        <span class="c1"># (like the cursor keys) will be interpreted and</span>
@@ -167,18 +167,18 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-36"></a>        <span class="c1"># works around a minor bit of over-conscientiousness in the curses</span>
 <a name="line-37"></a>        <span class="c1"># module -- the error return from C start_color() is ignorable.</span>
 <a name="line-38"></a>        <span class="k">try</span><span class="p">:</span>
-<a name="line-39"></a>            <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Lib/curses/__init__.py.html#line-45">start_color</a></span><span class="p">()</span>
+<a name="line-39"></a>            <span class="n"><a href="/python-xr/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/curses/__init__.py.html#line-45">start_color</a></span><span class="p">()</span>
 <a name="line-40"></a>        <span class="k">except</span><span class="p">:</span>
 <a name="line-41"></a>            <span class="k">pass</span>
 <a name="line-42"></a>
-<a name="line-43"></a>        <span class="k">return</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">,</span> <span class="o">**</span><span class="n"><a href="/./Modules/operator.c.html#line-778">kwds</a></span><span class="p">)</span>
+<a name="line-43"></a>        <span class="k">return</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">,</span> <span class="o">**</span><span class="n"><a href="/python-xr/./Modules/operator.c.html#line-778">kwds</a></span><span class="p">)</span>
 <a name="line-44"></a>    <span class="k">finally</span><span class="p">:</span>
 <a name="line-45"></a>        <span class="c1"># Set everything back to normal</span>
-<a name="line-46"></a>        <span class="k">if</span> <span class="s1">&#39;stdscr&#39;</span> <span class="ow">in</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-171">locals</a></span><span class="p">():</span>
+<a name="line-46"></a>        <span class="k">if</span> <span class="s1">&#39;stdscr&#39;</span> <span class="ow">in</span> <span class="nb"><a href="/python-xr/./Include/Python-ast.h.html#line-171">locals</a></span><span class="p">():</span>
 <a name="line-47"></a>            <span class="n">stdscr</span><span class="o">.</span><span class="n">keypad</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<a name="line-48"></a>            <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">echo</span><span class="p">()</span>
-<a name="line-49"></a>            <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">nocbreak</span><span class="p">()</span>
-<a name="line-50"></a>            <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">endwin</span><span class="p">()</span>
+<a name="line-48"></a>            <span class="n"><a href="/python-xr/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">echo</span><span class="p">()</span>
+<a name="line-49"></a>            <span class="n"><a href="/python-xr/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">nocbreak</span><span class="p">()</span>
+<a name="line-50"></a>            <span class="n"><a href="/python-xr/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">endwin</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></body>
 </html>

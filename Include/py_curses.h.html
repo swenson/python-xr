@@ -327,9 +327,9 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-73"></a><span class="cm">/* Type declarations */</span>
 <a name="line-74"></a>
 <a name="line-75"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
-<a name="line-76"></a>	<span class="n"><a href="/./Include/object.h.html#line-78">PyObject_HEAD</a></span>
-<a name="line-77"></a>	<span class="n"><a href="/./Lib/lib-tk/Tix.py.html#line-39">WINDOW</a></span> <span class="o">*</span><span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="p">;</span>
-<a name="line-78"></a><span class="p">}</span> <span class="n"><a href="/./Include/py_curses.h.html#line-79">PyCursesWindowObject</a></span><span class="p">;</span>
+<a name="line-76"></a>	<span class="n"><a href="/python-xr/./Include/object.h.html#line-78">PyObject_HEAD</a></span>
+<a name="line-77"></a>	<span class="n"><a href="/python-xr/./Lib/lib-tk/Tix.py.html#line-39">WINDOW</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="p">;</span>
+<a name="line-78"></a><span class="p">}</span> <span class="n"><a href="/python-xr/./Include/py_curses.h.html#line-79">PyCursesWindowObject</a></span><span class="p">;</span>
 <a name="line-79"></a>
 <a name="line-80"></a><span class="cp">#define PyCursesWindow_Check(v)	 (Py_TYPE(v) == &amp;PyCursesWindow_Type)</span>
 <a name="line-81"></a>
@@ -342,7 +342,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-88"></a><span class="cp">#else</span>
 <a name="line-89"></a><span class="cm">/* This section is used in modules that use the _cursesmodule API */</span>
 <a name="line-90"></a>
-<a name="line-91"></a><span class="k">static</span> <span class="kt">void</span> <span class="o">**</span><span class="n"><a href="/./Include/py_curses.h.html#line-92">PyCurses_API</a></span><span class="p">;</span>
+<a name="line-91"></a><span class="k">static</span> <span class="kt">void</span> <span class="o">**</span><span class="n"><a href="/python-xr/./Include/py_curses.h.html#line-92">PyCurses_API</a></span><span class="p">;</span>
 <a name="line-92"></a>
 <a name="line-93"></a><span class="cp">#define PyCursesWindow_Type (*(PyTypeObject *) PyCurses_API[0])</span>
 <a name="line-94"></a><span class="cp">#define PyCursesSetupTermCalled  {if (! ((int (*)(void))PyCurses_API[1]) () ) return NULL;}</span>
@@ -355,8 +355,8 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-101"></a><span class="cp">#endif</span>
 <a name="line-102"></a>
 <a name="line-103"></a><span class="cm">/* general error messages */</span>
-<a name="line-104"></a><span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Include/py_curses.h.html#line-105">catchall_ERR</a></span>  <span class="o">=</span> <span class="s">&quot;curses function returned ERR&quot;</span><span class="p">;</span>
-<a name="line-105"></a><span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Include/py_curses.h.html#line-106">catchall_NULL</a></span> <span class="o">=</span> <span class="s">&quot;curses function returned NULL&quot;</span><span class="p">;</span>
+<a name="line-104"></a><span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/py_curses.h.html#line-105">catchall_ERR</a></span>  <span class="o">=</span> <span class="s">&quot;curses function returned ERR&quot;</span><span class="p">;</span>
+<a name="line-105"></a><span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/py_curses.h.html#line-106">catchall_NULL</a></span> <span class="o">=</span> <span class="s">&quot;curses function returned NULL&quot;</span><span class="p">;</span>
 <a name="line-106"></a>
 <a name="line-107"></a><span class="cm">/* Function Prototype Macros - They are ugly but very, very useful. ;-)</span>
 <a name="line-108"></a>

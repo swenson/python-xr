@@ -386,9 +386,9 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-129"></a><span class="cp">#include</span> <span class="cpf">&lt;signal.h&gt;</span><span class="cp"></span>
 <a name="line-130"></a><span class="cp">#include</span> <span class="cpf">&lt;setjmp.h&gt;</span><span class="cp"></span>
 <a name="line-131"></a><span class="cp">#include</span> <span class="cpf">&lt;math.h&gt;</span><span class="cp"></span>
-<a name="line-132"></a><span class="k">extern</span> <span class="kt">jmp_buf</span> <span class="n"><a href="/./Modules/fpectlmodule.c.html#line-84">PyFPE_jbuf</a></span><span class="p">;</span>
-<a name="line-133"></a><span class="k">extern</span> <span class="kt">int</span> <span class="n"><a href="/./Modules/fpectlmodule.c.html#line-85">PyFPE_counter</a></span><span class="p">;</span>
-<a name="line-134"></a><span class="k">extern</span> <span class="kt">double</span> <span class="nf"><a href="/./Python/pyfpe.c.html#line-20">PyFPE_dummy</a></span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-132"></a><span class="k">extern</span> <span class="kt">jmp_buf</span> <span class="n"><a href="/python-xr/./Modules/fpectlmodule.c.html#line-84">PyFPE_jbuf</a></span><span class="p">;</span>
+<a name="line-133"></a><span class="k">extern</span> <span class="kt">int</span> <span class="n"><a href="/python-xr/./Modules/fpectlmodule.c.html#line-85">PyFPE_counter</a></span><span class="p">;</span>
+<a name="line-134"></a><span class="k">extern</span> <span class="kt">double</span> <span class="nf"><a href="/python-xr/./Python/pyfpe.c.html#line-20">PyFPE_dummy</a></span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
 <a name="line-135"></a>
 <a name="line-136"></a><span class="cp">#define PyFPE_START_PROTECT(err_string, leave_stmt) \</span>
 <a name="line-137"></a><span class="cp">if (!PyFPE_counter++ &amp;&amp; setjmp(PyFPE_jbuf)) { \</span>

@@ -105,32 +105,32 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-23">23</a>
 <a href="#line-24">24</a>
 <a href="#line-25">25</a>
-<a href="#line-26">26</a></pre></div></td><td class="code"><div class="source"><span class="filename">Doc/includes/sqlite3/load_extension.py</span><pre><span></span><a name="line-1"></a><span class="kn">import</span> <span class="nn"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-1">sqlite3</a></span>
+<a href="#line-26">26</a></pre></div></td><td class="code"><div class="source"><span class="filename">Doc/includes/sqlite3/load_extension.py</span><pre><span></span><a name="line-1"></a><span class="kn">import</span> <span class="nn"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-1">sqlite3</a></span>
 <a name="line-2"></a>
-<a name="line-3"></a><span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span> <span class="o">=</span> <span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-1">sqlite3</a></span><span class="o">.</span><span class="n"><a href="/./Lib/asyncore.py.html#line-344">connect</a></span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+<a name="line-3"></a><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-1">sqlite3</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/asyncore.py.html#line-344">connect</a></span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
 <a name="line-4"></a>
 <a name="line-5"></a><span class="c1"># enable extension loading</span>
-<a name="line-6"></a><span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n">enable_load_extension</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<a name="line-6"></a><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n">enable_load_extension</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 <a name="line-7"></a>
 <a name="line-8"></a><span class="c1"># Load the fulltext search extension</span>
-<a name="line-9"></a><span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n"><a href="/./Demo/sockets/rpythond.py.html#line-37">execute</a></span><span class="p">(</span><span class="s2">&quot;select load_extension(&#39;./fts3.so&#39;)&quot;</span><span class="p">)</span>
+<a name="line-9"></a><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Demo/sockets/rpythond.py.html#line-37">execute</a></span><span class="p">(</span><span class="s2">&quot;select load_extension(&#39;./fts3.so&#39;)&quot;</span><span class="p">)</span>
 <a name="line-10"></a>
 <a name="line-11"></a><span class="c1"># alternatively you can load the extension using an API call:</span>
 <a name="line-12"></a><span class="c1"># con.load_extension(&quot;./fts3.so&quot;)</span>
 <a name="line-13"></a>
 <a name="line-14"></a><span class="c1"># disable extension laoding again</span>
-<a name="line-15"></a><span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n">enable_load_extension</span><span class="p">(</span><span class="bp"><a href="/./Lib/plat-mac/bundlebuilder.py.html#line-925">False</a></span><span class="p">)</span>
+<a name="line-15"></a><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n">enable_load_extension</span><span class="p">(</span><span class="bp"><a href="/python-xr/./Lib/plat-mac/bundlebuilder.py.html#line-925">False</a></span><span class="p">)</span>
 <a name="line-16"></a>
 <a name="line-17"></a><span class="c1"># example from SQLite wiki</span>
-<a name="line-18"></a><span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n"><a href="/./Demo/sockets/rpythond.py.html#line-37">execute</a></span><span class="p">(</span><span class="s2">&quot;create virtual table recipe using fts3(name, ingredients)&quot;</span><span class="p">)</span>
-<a name="line-19"></a><span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n">executescript</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<a name="line-18"></a><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Demo/sockets/rpythond.py.html#line-37">execute</a></span><span class="p">(</span><span class="s2">&quot;create virtual table recipe using fts3(name, ingredients)&quot;</span><span class="p">)</span>
+<a name="line-19"></a><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n">executescript</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <a name="line-20"></a><span class="s2">    insert into recipe (name, ingredients) values (&#39;broccoli stew&#39;, &#39;broccoli peppers cheese tomatoes&#39;);</span>
 <a name="line-21"></a><span class="s2">    insert into recipe (name, ingredients) values (&#39;pumpkin stew&#39;, &#39;pumpkin onions garlic celery&#39;);</span>
 <a name="line-22"></a><span class="s2">    insert into recipe (name, ingredients) values (&#39;broccoli pie&#39;, &#39;broccoli cheese onions flour&#39;);</span>
 <a name="line-23"></a><span class="s2">    insert into recipe (name, ingredients) values (&#39;pumpkin pie&#39;, &#39;pumpkin sugar flour butter&#39;);</span>
 <a name="line-24"></a><span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
-<a name="line-25"></a><span class="k">for</span> <span class="n"><a href="/./Doc/includes/sqlite3/pysqlite_datetime.py.html#line-13">row</a></span> <span class="ow">in</span> <span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n"><a href="/./Demo/sockets/rpythond.py.html#line-37">execute</a></span><span class="p">(</span><span class="s2">&quot;select rowid, name, ingredients from recipe where name match &#39;pie&#39;&quot;</span><span class="p">):</span>
-<a name="line-26"></a>    <span class="k">print</span> <span class="n"><a href="/./Doc/includes/sqlite3/pysqlite_datetime.py.html#line-13">row</a></span>
+<a name="line-25"></a><span class="k">for</span> <span class="n"><a href="/python-xr/./Doc/includes/sqlite3/pysqlite_datetime.py.html#line-13">row</a></span> <span class="ow">in</span> <span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Demo/sockets/rpythond.py.html#line-37">execute</a></span><span class="p">(</span><span class="s2">&quot;select rowid, name, ingredients from recipe where name match &#39;pie&#39;&quot;</span><span class="p">):</span>
+<a name="line-26"></a>    <span class="k">print</span> <span class="n"><a href="/python-xr/./Doc/includes/sqlite3/pysqlite_datetime.py.html#line-13">row</a></span>
 </pre></div>
 </td></tr></table></body>
 </html>

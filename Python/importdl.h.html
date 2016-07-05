@@ -141,28 +141,28 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-7"></a>
 <a name="line-8"></a>
 <a name="line-9"></a><span class="cm">/* Definitions for dynamic loading of extension modules */</span>
-<a name="line-10"></a><span class="k">enum</span> <span class="n"><a href="/./Python/importdl.h.html#line-10">filetype</a></span> <span class="p">{</span>
-<a name="line-11"></a>    <span class="n"><a href="/./Python/importdl.h.html#line-11">SEARCH_ERROR</a></span><span class="p">,</span>
-<a name="line-12"></a>    <span class="n"><a href="/./Lib/ihooks.py.html#line-67">PY_SOURCE</a></span><span class="p">,</span>
-<a name="line-13"></a>    <span class="n"><a href="/./Lib/ihooks.py.html#line-67">PY_COMPILED</a></span><span class="p">,</span>
-<a name="line-14"></a>    <span class="n"><a href="/./Lib/ihooks.py.html#line-67">C_EXTENSION</a></span><span class="p">,</span>
-<a name="line-15"></a>    <span class="n"><a href="/./Python/importdl.h.html#line-15">PY_RESOURCE</a></span><span class="p">,</span> <span class="cm">/* Mac only */</span>
-<a name="line-16"></a>    <span class="n"><a href="/./Lib/ihooks.py.html#line-68">PKG_DIRECTORY</a></span><span class="p">,</span>
-<a name="line-17"></a>    <span class="n"><a href="/./Lib/ihooks.py.html#line-68">C_BUILTIN</a></span><span class="p">,</span>
-<a name="line-18"></a>    <span class="n"><a href="/./Lib/ihooks.py.html#line-68">PY_FROZEN</a></span><span class="p">,</span>
-<a name="line-19"></a>    <span class="n"><a href="/./Python/importdl.h.html#line-19">PY_CODERESOURCE</a></span><span class="p">,</span> <span class="cm">/* Mac only */</span>
-<a name="line-20"></a>    <span class="n"><a href="/./Python/importdl.h.html#line-20">IMP_HOOK</a></span>
+<a name="line-10"></a><span class="k">enum</span> <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-10">filetype</a></span> <span class="p">{</span>
+<a name="line-11"></a>    <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-11">SEARCH_ERROR</a></span><span class="p">,</span>
+<a name="line-12"></a>    <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-67">PY_SOURCE</a></span><span class="p">,</span>
+<a name="line-13"></a>    <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-67">PY_COMPILED</a></span><span class="p">,</span>
+<a name="line-14"></a>    <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-67">C_EXTENSION</a></span><span class="p">,</span>
+<a name="line-15"></a>    <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-15">PY_RESOURCE</a></span><span class="p">,</span> <span class="cm">/* Mac only */</span>
+<a name="line-16"></a>    <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-68">PKG_DIRECTORY</a></span><span class="p">,</span>
+<a name="line-17"></a>    <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-68">C_BUILTIN</a></span><span class="p">,</span>
+<a name="line-18"></a>    <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-68">PY_FROZEN</a></span><span class="p">,</span>
+<a name="line-19"></a>    <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-19">PY_CODERESOURCE</a></span><span class="p">,</span> <span class="cm">/* Mac only */</span>
+<a name="line-20"></a>    <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-20">IMP_HOOK</a></span>
 <a name="line-21"></a><span class="p">};</span>
 <a name="line-22"></a>
-<a name="line-23"></a><span class="k">struct</span> <span class="n"><a href="/./Python/importdl.h.html#line-23">filedescr</a></span> <span class="p">{</span>
-<a name="line-24"></a>    <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-522">suffix</a></span><span class="p">;</span>
-<a name="line-25"></a>    <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Demo/scripts/script.py.html#line-20">mode</a></span><span class="p">;</span>
-<a name="line-26"></a>    <span class="k">enum</span> <span class="n"><a href="/./Python/importdl.h.html#line-10">filetype</a></span> <span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">;</span>
+<a name="line-23"></a><span class="k">struct</span> <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-23">filedescr</a></span> <span class="p">{</span>
+<a name="line-24"></a>    <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/object.h.html#line-522">suffix</a></span><span class="p">;</span>
+<a name="line-25"></a>    <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Demo/scripts/script.py.html#line-20">mode</a></span><span class="p">;</span>
+<a name="line-26"></a>    <span class="k">enum</span> <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-10">filetype</a></span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">;</span>
 <a name="line-27"></a><span class="p">};</span>
-<a name="line-28"></a><span class="k">extern</span> <span class="k">struct</span> <span class="n"><a href="/./Python/importdl.h.html#line-23">filedescr</a></span> <span class="o">*</span> <span class="n"><a href="/./Python/import.c.html#line-98">_PyImport_Filetab</a></span><span class="p">;</span>
-<a name="line-29"></a><span class="k">extern</span> <span class="k">const</span> <span class="k">struct</span> <span class="n"><a href="/./Python/importdl.h.html#line-23">filedescr</a></span> <span class="n"><a href="/./Python/dynload_aix.c.html#line-29">_PyImport_DynLoadFiletab</a></span><span class="p">[];</span>
+<a name="line-28"></a><span class="k">extern</span> <span class="k">struct</span> <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-23">filedescr</a></span> <span class="o">*</span> <span class="n"><a href="/python-xr/./Python/import.c.html#line-98">_PyImport_Filetab</a></span><span class="p">;</span>
+<a name="line-29"></a><span class="k">extern</span> <span class="k">const</span> <span class="k">struct</span> <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-23">filedescr</a></span> <span class="n"><a href="/python-xr/./Python/dynload_aix.c.html#line-29">_PyImport_DynLoadFiletab</a></span><span class="p">[];</span>
 <a name="line-30"></a>
-<a name="line-31"></a><span class="k">extern</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="nf"><a href="/./Python/importdl.c.html#line-22">_PyImport_LoadDynamicModule</a></span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pathname</span><span class="p">,</span>
+<a name="line-31"></a><span class="k">extern</span> <span class="n"><a href="/python-xr/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="nf"><a href="/python-xr/./Python/importdl.c.html#line-22">_PyImport_LoadDynamicModule</a></span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/python-xr/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pathname</span><span class="p">,</span>
 <a name="line-32"></a>                                             <span class="kt">FILE</span> <span class="o">*</span><span class="p">);</span>
 <a name="line-33"></a>
 <a name="line-34"></a><span class="cm">/* Max length of module suffix searched for -- accommodates &quot;module.slb&quot; */</span>
@@ -170,13 +170,13 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-36"></a>
 <a name="line-37"></a><span class="cp">#ifdef MS_WINDOWS</span>
 <a name="line-38"></a><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp"></span>
-<a name="line-39"></a><span class="k">typedef</span> <span class="n">FARPROC</span> <span class="n"><a href="/./Python/importdl.h.html#line-39">dl_funcptr</a></span><span class="p">;</span>
+<a name="line-39"></a><span class="k">typedef</span> <span class="n">FARPROC</span> <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-39">dl_funcptr</a></span><span class="p">;</span>
 <a name="line-40"></a><span class="cp">#else</span>
 <a name="line-41"></a><span class="cp">#if defined(PYOS_OS2) &amp;&amp; !defined(PYCC_GCC)</span>
 <a name="line-42"></a><span class="cp">#include</span> <span class="cpf">&lt;os2def.h&gt;</span><span class="cp"></span>
-<a name="line-43"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span> <span class="n">APIENTRY</span> <span class="n"><a href="/./Python/importdl.h.html#line-39">dl_funcptr</a></span><span class="p">)();</span>
+<a name="line-43"></a><span class="k">typedef</span> <span class="nf"><a href="/python-xr/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span> <span class="n">APIENTRY</span> <span class="n"><a href="/python-xr/./Python/importdl.h.html#line-39">dl_funcptr</a></span><span class="p">)();</span>
 <a name="line-44"></a><span class="cp">#else</span>
-<a name="line-45"></a><span class="k">typedef</span> <span class="nf"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-185">void</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Python/importdl.h.html#line-39">dl_funcptr</a></span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-45"></a><span class="k">typedef</span> <span class="nf"><a href="/python-xr/./Tools/bgen/bgen/bgenType.py.html#line-185">void</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/python-xr/./Python/importdl.h.html#line-39">dl_funcptr</a></span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
 <a name="line-46"></a><span class="cp">#endif</span>
 <a name="line-47"></a><span class="cp">#endif</span>
 <a name="line-48"></a>

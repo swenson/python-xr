@@ -235,12 +235,12 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-153">153</a>
 <a href="#line-154">154</a>
 <a href="#line-155">155</a>
-<a href="#line-156">156</a></pre></div></td><td class="code"><div class="source"><span class="filename">Modules/_ctypes/libffi_msvc/win64.asm</span><pre><span></span><a name="line-1"></a><span class="nf"><a href="/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-20">PUBLIC</a></span>	<span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-75">ffi_call_AMD64</a></span>
+<a href="#line-156">156</a></pre></div></td><td class="code"><div class="source"><span class="filename">Modules/_ctypes/libffi_msvc/win64.asm</span><pre><span></span><a name="line-1"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-20">PUBLIC</a></span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-75">ffi_call_AMD64</a></span>
 <a name="line-2"></a>
-<a name="line-3"></a><span class="nf"><a href="/./Modules/_ctypes/libffi/src/x86/win32.S.html#line-46">EXTRN</a></span>	<span class="nv">__chkstk</span><span class="p">:</span><span class="nv">NEAR</span>
-<a name="line-4"></a><span class="nf"><a href="/./Modules/_ctypes/libffi/src/x86/win32.S.html#line-46">EXTRN</a></span>	<span class="nv"><a href="/./Modules/_ctypes/libffi/src/avr32/sysv.S.html#line-143">ffi_closure_SYSV</a></span><span class="p">:</span><span class="nv">NEAR</span>
+<a name="line-3"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win32.S.html#line-46">EXTRN</a></span>	<span class="nv">__chkstk</span><span class="p">:</span><span class="nv">NEAR</span>
+<a name="line-4"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win32.S.html#line-46">EXTRN</a></span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/avr32/sysv.S.html#line-143">ffi_closure_SYSV</a></span><span class="p">:</span><span class="nv">NEAR</span>
 <a name="line-5"></a>
-<a name="line-6"></a><span class="nf"><a href="/./Modules/_ctypes/libffi/src/x86/win32.S.html#line-48">_TEXT</a></span>	<span class="ow">SEG</span><span class="nv">MENT</span>
+<a name="line-6"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win32.S.html#line-48">_TEXT</a></span>	<span class="ow">SEG</span><span class="nv">MENT</span>
 <a name="line-7"></a>
 <a name="line-8"></a><span class="c1">;;; ffi_closure_OUTER will be called with these registers set:</span>
 <a name="line-9"></a><span class="c1">;;;    rax points to &#39;closure&#39;</span>
@@ -250,98 +250,98 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-13"></a><span class="c1">;;; It must move the parameters passed in registers to their stack location,</span>
 <a name="line-14"></a><span class="c1">;;; call ffi_closure_SYSV for the actual work, then return the result.</span>
 <a name="line-15"></a><span class="c1">;;; </span>
-<a name="line-16"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-16">ffi_closure_OUTER</a></span> <span class="nv">PROC</span> <span class="nv"><a href="/./Lib/plat-irix5/CL_old.py.html#line-188">FRAME</a></span>
+<a name="line-16"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-16">ffi_closure_OUTER</a></span> <span class="nv">PROC</span> <span class="nv"><a href="/python-xr/./Lib/plat-irix5/CL_old.py.html#line-188">FRAME</a></span>
 <a name="line-17"></a>	<span class="c1">;; save actual arguments to their stack space.</span>
-<a name="line-18"></a>	<span class="nf"><a href="/./Demo/classes/Complex.py.html#line-245">test</a></span>	<span class="nv">r11</span><span class="p">,</span> <span class="mi">1</span>
-<a name="line-19"></a>	<span class="nf">jne</span>	<span class="nv"><a href="/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-41">first_is_float</a></span>	
+<a name="line-18"></a>	<span class="nf"><a href="/python-xr/./Demo/classes/Complex.py.html#line-245">test</a></span>	<span class="nv">r11</span><span class="p">,</span> <span class="mi">1</span>
+<a name="line-19"></a>	<span class="nf">jne</span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-41">first_is_float</a></span>	
 <a name="line-20"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">8</span><span class="p">],</span> <span class="nb">rcx</span>
-<a name="line-21"></a>	<span class="nf">jmp</span>	<span class="nv"><a href="/./Lib/test/test_generators.py.html#line-1189">second</a></span>
+<a name="line-21"></a>	<span class="nf">jmp</span>	<span class="nv"><a href="/python-xr/./Lib/test/test_generators.py.html#line-1189">second</a></span>
 <a name="line-22"></a><span class="nl">first_is_float:</span>
 <a name="line-23"></a>	<span class="nf">movlpd</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">8</span><span class="p">],</span> <span class="nv">xmm0</span>
 <a name="line-24"></a>
 <a name="line-25"></a><span class="nl">second:</span>
-<a name="line-26"></a>	<span class="nf"><a href="/./Demo/classes/Complex.py.html#line-245">test</a></span>	<span class="nv">r11</span><span class="p">,</span> <span class="mi">2</span>
-<a name="line-27"></a>	<span class="nf">jne</span>	<span class="nv"><a href="/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-49">second_is_float</a></span>	
+<a name="line-26"></a>	<span class="nf"><a href="/python-xr/./Demo/classes/Complex.py.html#line-245">test</a></span>	<span class="nv">r11</span><span class="p">,</span> <span class="mi">2</span>
+<a name="line-27"></a>	<span class="nf">jne</span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-49">second_is_float</a></span>	
 <a name="line-28"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">16</span><span class="p">],</span> <span class="nb">rdx</span>
-<a name="line-29"></a>	<span class="nf">jmp</span>	<span class="nv"><a href="/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-52">third</a></span>
+<a name="line-29"></a>	<span class="nf">jmp</span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-52">third</a></span>
 <a name="line-30"></a><span class="nl">second_is_float:</span>
 <a name="line-31"></a>	<span class="nf">movlpd</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">16</span><span class="p">],</span> <span class="nv">xmm1</span>
 <a name="line-32"></a>
 <a name="line-33"></a><span class="nl">third:</span>
-<a name="line-34"></a>	<span class="nf"><a href="/./Demo/classes/Complex.py.html#line-245">test</a></span>	<span class="nv">r11</span><span class="p">,</span> <span class="mi">4</span>
-<a name="line-35"></a>	<span class="nf">jne</span>	<span class="nv"><a href="/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-57">third_is_float</a></span>	
-<a name="line-36"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">24</span><span class="p">],</span> <span class="nv"><a href="/./Modules/_ctypes/libffi/src/powerpc/darwin.S.html#line-81">r8</a></span>
-<a name="line-37"></a>	<span class="nf">jmp</span>	<span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-41">forth</a></span>
+<a name="line-34"></a>	<span class="nf"><a href="/python-xr/./Demo/classes/Complex.py.html#line-245">test</a></span>	<span class="nv">r11</span><span class="p">,</span> <span class="mi">4</span>
+<a name="line-35"></a>	<span class="nf">jne</span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-57">third_is_float</a></span>	
+<a name="line-36"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">24</span><span class="p">],</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/powerpc/darwin.S.html#line-81">r8</a></span>
+<a name="line-37"></a>	<span class="nf">jmp</span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-41">forth</a></span>
 <a name="line-38"></a><span class="nl">third_is_float:</span>
 <a name="line-39"></a>	<span class="nf">movlpd</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">24</span><span class="p">],</span> <span class="nv">xmm2</span>
 <a name="line-40"></a>
 <a name="line-41"></a><span class="nl">forth:</span>
-<a name="line-42"></a>	<span class="nf"><a href="/./Demo/classes/Complex.py.html#line-245">test</a></span>	<span class="nv">r11</span><span class="p">,</span> <span class="mi">8</span>
-<a name="line-43"></a>	<span class="nf">jne</span>	<span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-46">forth_is_float</a></span>	
-<a name="line-44"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">32</span><span class="p">],</span> <span class="nv"><a href="/./Modules/_ctypes/libffi/src/nios2/sysv.S.html#line-124">r9</a></span>
-<a name="line-45"></a>	<span class="nf">jmp</span>	<span class="nv"><a href="/./Demo/rpc/xdr.py.html#line-101">done</a></span>
+<a name="line-42"></a>	<span class="nf"><a href="/python-xr/./Demo/classes/Complex.py.html#line-245">test</a></span>	<span class="nv">r11</span><span class="p">,</span> <span class="mi">8</span>
+<a name="line-43"></a>	<span class="nf">jne</span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-46">forth_is_float</a></span>	
+<a name="line-44"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">32</span><span class="p">],</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/nios2/sysv.S.html#line-124">r9</a></span>
+<a name="line-45"></a>	<span class="nf">jmp</span>	<span class="nv"><a href="/python-xr/./Demo/rpc/xdr.py.html#line-101">done</a></span>
 <a name="line-46"></a><span class="nl">forth_is_float:</span>
 <a name="line-47"></a>	<span class="nf">movlpd</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">32</span><span class="p">],</span> <span class="nv">xmm3</span>
 <a name="line-48"></a>
 <a name="line-49"></a><span class="nl">done:</span>
 <a name="line-50"></a><span class="nf">.ALLOCSTACK</span> <span class="mi">40</span>
-<a name="line-51"></a>	<span class="nf"><a href="/./Lib/distutils/msvc9compiler.py.html#line-167">sub</a></span>	<span class="nb">rsp</span><span class="p">,</span> <span class="mi">40</span>
+<a name="line-51"></a>	<span class="nf"><a href="/python-xr/./Lib/distutils/msvc9compiler.py.html#line-167">sub</a></span>	<span class="nb">rsp</span><span class="p">,</span> <span class="mi">40</span>
 <a name="line-52"></a><span class="nf">.ENDPROLOG</span>
 <a name="line-53"></a>	<span class="nf">mov</span>	<span class="nb">rcx</span><span class="p">,</span> <span class="nb">rax</span>	<span class="c1">; context is first parameter</span>
 <a name="line-54"></a>	<span class="nf">mov</span>	<span class="nb">rdx</span><span class="p">,</span> <span class="nb">rsp</span>	<span class="c1">; stack is second parameter</span>
-<a name="line-55"></a>	<span class="nf"><a href="/./Demo/pdist/rcvs.py.html#line-206">add</a></span>	<span class="nb">rdx</span><span class="p">,</span> <span class="mi">40</span>		<span class="c1">; correct our own area</span>
-<a name="line-56"></a>	<span class="nf">mov</span>	<span class="nb">rax</span><span class="p">,</span> <span class="nv"><a href="/./Modules/_ctypes/libffi/src/avr32/sysv.S.html#line-143">ffi_closure_SYSV</a></span>
-<a name="line-57"></a>	<span class="nf"><a href="/./Lib/cgitb.py.html#line-126">call</a></span>	<span class="nb">rax</span>		<span class="c1">; call the real closure function</span>
+<a name="line-55"></a>	<span class="nf"><a href="/python-xr/./Demo/pdist/rcvs.py.html#line-206">add</a></span>	<span class="nb">rdx</span><span class="p">,</span> <span class="mi">40</span>		<span class="c1">; correct our own area</span>
+<a name="line-56"></a>	<span class="nf">mov</span>	<span class="nb">rax</span><span class="p">,</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/avr32/sysv.S.html#line-143">ffi_closure_SYSV</a></span>
+<a name="line-57"></a>	<span class="nf"><a href="/python-xr/./Lib/cgitb.py.html#line-126">call</a></span>	<span class="nb">rax</span>		<span class="c1">; call the real closure function</span>
 <a name="line-58"></a>	<span class="c1">;; Here, code is missing that handles float return values</span>
-<a name="line-59"></a>	<span class="nf"><a href="/./Demo/pdist/rcvs.py.html#line-206">add</a></span>	<span class="nb">rsp</span><span class="p">,</span> <span class="mi">40</span>
+<a name="line-59"></a>	<span class="nf"><a href="/python-xr/./Demo/pdist/rcvs.py.html#line-206">add</a></span>	<span class="nb">rsp</span><span class="p">,</span> <span class="mi">40</span>
 <a name="line-60"></a>	<span class="nf">movd</span>	<span class="nv">xmm0</span><span class="p">,</span> <span class="nb">rax</span>	<span class="c1">; In case the closure returned a float.</span>
-<a name="line-61"></a>	<span class="nf"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span>	<span class="mi">0</span>
-<a name="line-62"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-16">ffi_closure_OUTER</a></span> <span class="nv">ENDP</span>
+<a name="line-61"></a>	<span class="nf"><a href="/python-xr/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span>	<span class="mi">0</span>
+<a name="line-62"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-16">ffi_closure_OUTER</a></span> <span class="nv">ENDP</span>
 <a name="line-63"></a>
 <a name="line-64"></a>
 <a name="line-65"></a><span class="c1">;;; ffi_call_AMD64</span>
 <a name="line-66"></a>
-<a name="line-67"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-67">stack$</a></span> <span class="err">=</span> <span class="mi">0</span>
-<a name="line-68"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-68">prepfunc$</a></span> <span class="err">=</span> <span class="mi">32</span>
-<a name="line-69"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-69">ecif$</a></span> <span class="err">=</span> <span class="mi">40</span>
-<a name="line-70"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-70">bytes$</a></span> <span class="err">=</span> <span class="mi">48</span>
-<a name="line-71"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-71">flags$</a></span> <span class="err">=</span> <span class="mi">56</span>
-<a name="line-72"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-72">rvalue$</a></span> <span class="err">=</span> <span class="mi">64</span>
-<a name="line-73"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-73">fn$</a></span> <span class="err">=</span> <span class="mi">72</span>
+<a name="line-67"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-67">stack$</a></span> <span class="err">=</span> <span class="mi">0</span>
+<a name="line-68"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-68">prepfunc$</a></span> <span class="err">=</span> <span class="mi">32</span>
+<a name="line-69"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-69">ecif$</a></span> <span class="err">=</span> <span class="mi">40</span>
+<a name="line-70"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-70">bytes$</a></span> <span class="err">=</span> <span class="mi">48</span>
+<a name="line-71"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-71">flags$</a></span> <span class="err">=</span> <span class="mi">56</span>
+<a name="line-72"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-72">rvalue$</a></span> <span class="err">=</span> <span class="mi">64</span>
+<a name="line-73"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-73">fn$</a></span> <span class="err">=</span> <span class="mi">72</span>
 <a name="line-74"></a>
-<a name="line-75"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-75">ffi_call_AMD64</a></span> <span class="nv">PROC</span> <span class="nv"><a href="/./Lib/plat-irix5/CL_old.py.html#line-188">FRAME</a></span>
+<a name="line-75"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-75">ffi_call_AMD64</a></span> <span class="nv">PROC</span> <span class="nv"><a href="/python-xr/./Lib/plat-irix5/CL_old.py.html#line-188">FRAME</a></span>
 <a name="line-76"></a>
-<a name="line-77"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">32</span><span class="p">],</span> <span class="nv"><a href="/./Modules/_ctypes/libffi/src/nios2/sysv.S.html#line-124">r9</a></span>
-<a name="line-78"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">24</span><span class="p">],</span> <span class="nv"><a href="/./Modules/_ctypes/libffi/src/powerpc/darwin.S.html#line-81">r8</a></span>
+<a name="line-77"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">32</span><span class="p">],</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/nios2/sysv.S.html#line-124">r9</a></span>
+<a name="line-78"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">24</span><span class="p">],</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/powerpc/darwin.S.html#line-81">r8</a></span>
 <a name="line-79"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">16</span><span class="p">],</span> <span class="nb">rdx</span>
 <a name="line-80"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">8</span><span class="p">],</span> <span class="nb">rcx</span>
 <a name="line-81"></a><span class="nf">.PUSHREG</span> <span class="nb">rbp</span>
-<a name="line-82"></a>	<span class="nf"><a href="/./Demo/turtle/tdemo_minimal_hanoi.py.html#line-35">push</a></span>	<span class="nb">rbp</span>
+<a name="line-82"></a>	<span class="nf"><a href="/python-xr/./Demo/turtle/tdemo_minimal_hanoi.py.html#line-35">push</a></span>	<span class="nb">rbp</span>
 <a name="line-83"></a><span class="nf">.ALLOCSTACK</span> <span class="mi">48</span>
-<a name="line-84"></a>	<span class="nf"><a href="/./Lib/distutils/msvc9compiler.py.html#line-167">sub</a></span>	<span class="nb">rsp</span><span class="p">,</span> <span class="mi">48</span>					<span class="c1">; 00000030H</span>
+<a name="line-84"></a>	<span class="nf"><a href="/python-xr/./Lib/distutils/msvc9compiler.py.html#line-167">sub</a></span>	<span class="nb">rsp</span><span class="p">,</span> <span class="mi">48</span>					<span class="c1">; 00000030H</span>
 <a name="line-85"></a><span class="nf">.SETFRAME</span> <span class="nb">rbp</span><span class="p">,</span> <span class="mi">32</span>
 <a name="line-86"></a>	<span class="nf">lea</span>	<span class="nb">rbp</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">32</span><span class="p">]</span>
 <a name="line-87"></a><span class="nf">.ENDPROLOG</span>
 <a name="line-88"></a>
 <a name="line-89"></a>	<span class="nf">mov</span>	<span class="nb">eax</span><span class="p">,</span> <span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="kt">byte</span><span class="nv">s$</span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
-<a name="line-90"></a>	<span class="nf"><a href="/./Demo/pdist/rcvs.py.html#line-206">add</a></span>	<span class="nb">rax</span><span class="p">,</span> <span class="mi">15</span>
-<a name="line-91"></a>	<span class="nf"><a href="/./Lib/plat-mac/macerrors.py.html#line-1308">and</a></span>	<span class="nb">rax</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span>
-<a name="line-92"></a>	<span class="nf"><a href="/./Lib/cgitb.py.html#line-126">call</a></span>	<span class="nv">__chkstk</span>
-<a name="line-93"></a>	<span class="nf"><a href="/./Lib/distutils/msvc9compiler.py.html#line-167">sub</a></span>	<span class="nb">rsp</span><span class="p">,</span> <span class="nb">rax</span>
+<a name="line-90"></a>	<span class="nf"><a href="/python-xr/./Demo/pdist/rcvs.py.html#line-206">add</a></span>	<span class="nb">rax</span><span class="p">,</span> <span class="mi">15</span>
+<a name="line-91"></a>	<span class="nf"><a href="/python-xr/./Lib/plat-mac/macerrors.py.html#line-1308">and</a></span>	<span class="nb">rax</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span>
+<a name="line-92"></a>	<span class="nf"><a href="/python-xr/./Lib/cgitb.py.html#line-126">call</a></span>	<span class="nv">__chkstk</span>
+<a name="line-93"></a>	<span class="nf"><a href="/python-xr/./Lib/distutils/msvc9compiler.py.html#line-167">sub</a></span>	<span class="nb">rsp</span><span class="p">,</span> <span class="nb">rax</span>
 <a name="line-94"></a>	<span class="nf">lea</span>	<span class="nb">rax</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">32</span><span class="p">]</span>
-<a name="line-95"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-67">stack$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">],</span> <span class="nb">rax</span>
+<a name="line-95"></a>	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-67">stack$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">],</span> <span class="nb">rax</span>
 <a name="line-96"></a>
-<a name="line-97"></a>	<span class="nf">mov</span>	<span class="nb">rdx</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-69">ecif$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
-<a name="line-98"></a>	<span class="nf">mov</span>	<span class="nb">rcx</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-67">stack$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
-<a name="line-99"></a>	<span class="nf"><a href="/./Lib/cgitb.py.html#line-126">call</a></span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-68">prepfunc$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
+<a name="line-97"></a>	<span class="nf">mov</span>	<span class="nb">rdx</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-69">ecif$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
+<a name="line-98"></a>	<span class="nf">mov</span>	<span class="nb">rcx</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-67">stack$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
+<a name="line-99"></a>	<span class="nf"><a href="/python-xr/./Lib/cgitb.py.html#line-126">call</a></span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-68">prepfunc$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
 <a name="line-100"></a>
-<a name="line-101"></a>	<span class="nf">mov</span>	<span class="nb">rsp</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-67">stack$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
+<a name="line-101"></a>	<span class="nf">mov</span>	<span class="nb">rsp</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-67">stack$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
 <a name="line-102"></a>
 <a name="line-103"></a>	<span class="nf">movlpd</span>	<span class="nv">xmm3</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">24</span><span class="p">]</span>
-<a name="line-104"></a>	<span class="nf">movd</span>	<span class="nv"><a href="/./Modules/_ctypes/libffi/src/nios2/sysv.S.html#line-124">r9</a></span><span class="p">,</span> <span class="nv">xmm3</span>
+<a name="line-104"></a>	<span class="nf">movd</span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/nios2/sysv.S.html#line-124">r9</a></span><span class="p">,</span> <span class="nv">xmm3</span>
 <a name="line-105"></a>
 <a name="line-106"></a>	<span class="nf">movlpd</span>	<span class="nv">xmm2</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">16</span><span class="p">]</span>
-<a name="line-107"></a>	<span class="nf">movd</span>	<span class="nv"><a href="/./Modules/_ctypes/libffi/src/powerpc/darwin.S.html#line-81">r8</a></span><span class="p">,</span> <span class="nv">xmm2</span>
+<a name="line-107"></a>	<span class="nf">movd</span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/powerpc/darwin.S.html#line-81">r8</a></span><span class="p">,</span> <span class="nv">xmm2</span>
 <a name="line-108"></a>
 <a name="line-109"></a>	<span class="nf">movlpd</span>	<span class="nv">xmm1</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="o">+</span><span class="mi">8</span><span class="p">]</span>
 <a name="line-110"></a>	<span class="nf">movd</span>	<span class="nb">rdx</span><span class="p">,</span> <span class="nv">xmm1</span>
@@ -349,48 +349,48 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-112"></a>	<span class="nf">movlpd</span>	<span class="nv">xmm0</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rsp</span><span class="p">]</span>
 <a name="line-113"></a>	<span class="nf">movd</span>	<span class="nb">rcx</span><span class="p">,</span> <span class="nv">xmm0</span>
 <a name="line-114"></a>
-<a name="line-115"></a>	<span class="nf"><a href="/./Lib/cgitb.py.html#line-126">call</a></span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-73">fn$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
+<a name="line-115"></a>	<span class="nf"><a href="/python-xr/./Lib/cgitb.py.html#line-126">call</a></span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-73">fn$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
 <a name="line-116"></a><span class="nl">ret_int$:</span>
-<a name="line-117"></a> 	<span class="nf"><a href="/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span>	<span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-71">flags$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">],</span> <span class="mi">1</span> <span class="c1">; FFI_TYPE_INT</span>
-<a name="line-118"></a> 	<span class="nf">jne</span>	<span class="nv"><a href="/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-202">ret_float$</a></span>
+<a name="line-117"></a> 	<span class="nf"><a href="/python-xr/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span>	<span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-71">flags$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">],</span> <span class="mi">1</span> <span class="c1">; FFI_TYPE_INT</span>
+<a name="line-118"></a> 	<span class="nf">jne</span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-202">ret_float$</a></span>
 <a name="line-119"></a>
-<a name="line-120"></a>	<span class="nf">mov</span>	<span class="nb">rcx</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-72">rvalue$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
+<a name="line-120"></a>	<span class="nf">mov</span>	<span class="nb">rcx</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-72">rvalue$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
 <a name="line-121"></a>	<span class="nf">mov</span>	<span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rcx</span><span class="p">],</span> <span class="nb">eax</span>
-<a name="line-122"></a>	<span class="nf">jmp</span>	<span class="nv"><a href="/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-148">ret_nothing$</a></span>
+<a name="line-122"></a>	<span class="nf">jmp</span>	<span class="nv"><a href="/python-xr/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-148">ret_nothing$</a></span>
 <a name="line-123"></a>
 <a name="line-124"></a><span class="nl">ret_float$:</span>
-<a name="line-125"></a> 	<span class="nf"><a href="/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span>	<span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-71">flags$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">],</span> <span class="mi">2</span> <span class="c1">; FFI_TYPE_FLOAT</span>
-<a name="line-126"></a> 	<span class="nf">jne</span>	<span class="nv"><a href="/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-210">ret_double$</a></span>
+<a name="line-125"></a> 	<span class="nf"><a href="/python-xr/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span>	<span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-71">flags$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">],</span> <span class="mi">2</span> <span class="c1">; FFI_TYPE_FLOAT</span>
+<a name="line-126"></a> 	<span class="nf">jne</span>	<span class="nv"><a href="/python-xr/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win64.S.html#line-210">ret_double$</a></span>
 <a name="line-127"></a>
-<a name="line-128"></a> 	<span class="nf">mov</span>	<span class="nb">rax</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-72">rvalue$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
+<a name="line-128"></a> 	<span class="nf">mov</span>	<span class="nb">rax</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-72">rvalue$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
 <a name="line-129"></a> 	<span class="nf">movlpd</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rax</span><span class="p">],</span> <span class="nv">xmm0</span>
-<a name="line-130"></a> 	<span class="nf">jmp</span>	<span class="nv"><a href="/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-148">ret_nothing$</a></span>
+<a name="line-130"></a> 	<span class="nf">jmp</span>	<span class="nv"><a href="/python-xr/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-148">ret_nothing$</a></span>
 <a name="line-131"></a>
 <a name="line-132"></a><span class="nl">ret_double$:</span>
-<a name="line-133"></a> 	<span class="nf"><a href="/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span>	<span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-71">flags$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">],</span> <span class="mi">3</span> <span class="c1">; FFI_TYPE_DOUBLE</span>
-<a name="line-134"></a> 	<span class="nf">jne</span>	<span class="nv"><a href="/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-140">ret_int64$</a></span>
+<a name="line-133"></a> 	<span class="nf"><a href="/python-xr/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span>	<span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-71">flags$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">],</span> <span class="mi">3</span> <span class="c1">; FFI_TYPE_DOUBLE</span>
+<a name="line-134"></a> 	<span class="nf">jne</span>	<span class="nv"><a href="/python-xr/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-140">ret_int64$</a></span>
 <a name="line-135"></a>
-<a name="line-136"></a> 	<span class="nf">mov</span>	<span class="nb">rax</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-72">rvalue$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
+<a name="line-136"></a> 	<span class="nf">mov</span>	<span class="nb">rax</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-72">rvalue$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
 <a name="line-137"></a> 	<span class="nf">movlpd</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rax</span><span class="p">],</span> <span class="nv">xmm0</span>
-<a name="line-138"></a> 	<span class="nf">jmp</span>	<span class="nv"><a href="/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-148">ret_nothing$</a></span>
+<a name="line-138"></a> 	<span class="nf">jmp</span>	<span class="nv"><a href="/python-xr/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-148">ret_nothing$</a></span>
 <a name="line-139"></a>
 <a name="line-140"></a><span class="nl">ret_int64$:</span>
-<a name="line-141"></a>  	<span class="nf"><a href="/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span>	<span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-71">flags$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">],</span> <span class="mi">12</span> <span class="c1">; FFI_TYPE_SINT64</span>
-<a name="line-142"></a>  	<span class="nf">jne</span>	<span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-148">ret_nothing$</a></span>
+<a name="line-141"></a>  	<span class="nf"><a href="/python-xr/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span>	<span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-71">flags$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">],</span> <span class="mi">12</span> <span class="c1">; FFI_TYPE_SINT64</span>
+<a name="line-142"></a>  	<span class="nf">jne</span>	<span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-148">ret_nothing$</a></span>
 <a name="line-143"></a>
-<a name="line-144"></a> 	<span class="nf">mov</span>	<span class="nb">rcx</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-72">rvalue$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
+<a name="line-144"></a> 	<span class="nf">mov</span>	<span class="nb">rcx</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-72">rvalue$</a></span><span class="p">[</span><span class="nb">rbp</span><span class="p">]</span>
 <a name="line-145"></a> 	<span class="nf">mov</span>	<span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rcx</span><span class="p">],</span> <span class="nb">rax</span>
-<a name="line-146"></a> 	<span class="nf">jmp</span>	<span class="nv"><a href="/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-148">ret_nothing$</a></span>
+<a name="line-146"></a> 	<span class="nf">jmp</span>	<span class="nv"><a href="/python-xr/./Lib/ctypes/wintypes.py.html#line-32">SHORT</a></span> <span class="nv"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-148">ret_nothing$</a></span>
 <a name="line-147"></a>	
 <a name="line-148"></a><span class="nl">ret_nothing$:</span>
 <a name="line-149"></a>	<span class="nf">xor</span>	<span class="nb">eax</span><span class="p">,</span> <span class="nb">eax</span>
 <a name="line-150"></a>
 <a name="line-151"></a>	<span class="nf">lea</span>	<span class="nb">rsp</span><span class="p">,</span> <span class="kt">QWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">rbp</span><span class="o">+</span><span class="mi">16</span><span class="p">]</span>
-<a name="line-152"></a>	<span class="nf"><a href="/./Demo/turtle/tdemo_minimal_hanoi.py.html#line-39">pop</a></span>	<span class="nb">rbp</span>
-<a name="line-153"></a>	<span class="nf"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span>	<span class="mi">0</span>
-<a name="line-154"></a><span class="nf"><a href="/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-75">ffi_call_AMD64</a></span> <span class="nv">ENDP</span>
-<a name="line-155"></a><span class="nf"><a href="/./Modules/_ctypes/libffi/src/x86/win32.S.html#line-48">_TEXT</a></span>	<span class="nv">ENDS</span>
-<a name="line-156"></a><span class="nf"><a href="/./Lib/idlelib/GrepDialog.py.html#line-7">END</a></span>
+<a name="line-152"></a>	<span class="nf"><a href="/python-xr/./Demo/turtle/tdemo_minimal_hanoi.py.html#line-39">pop</a></span>	<span class="nb">rbp</span>
+<a name="line-153"></a>	<span class="nf"><a href="/python-xr/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span>	<span class="mi">0</span>
+<a name="line-154"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi_msvc/win64.asm.html#line-75">ffi_call_AMD64</a></span> <span class="nv">ENDP</span>
+<a name="line-155"></a><span class="nf"><a href="/python-xr/./Modules/_ctypes/libffi/src/x86/win32.S.html#line-48">_TEXT</a></span>	<span class="nv">ENDS</span>
+<a name="line-156"></a><span class="nf"><a href="/python-xr/./Lib/idlelib/GrepDialog.py.html#line-7">END</a></span>
 </pre></div>
 </td></tr></table></body>
 </html>

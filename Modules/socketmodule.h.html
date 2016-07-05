@@ -414,58 +414,58 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-82"></a>
 <a name="line-83"></a><span class="cm">/* Abstract the socket file descriptor type */</span>
 <a name="line-84"></a><span class="cp">#ifdef MS_WINDOWS</span>
-<a name="line-85"></a><span class="k">typedef</span> <span class="n"><a href="/./Modules/_multiprocessing/multiprocessing.h.html#line-41">SOCKET</a></span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-85">SOCKET_T</a></span><span class="p">;</span>
+<a name="line-85"></a><span class="k">typedef</span> <span class="n"><a href="/python-xr/./Modules/_multiprocessing/multiprocessing.h.html#line-41">SOCKET</a></span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-85">SOCKET_T</a></span><span class="p">;</span>
 <a name="line-86"></a><span class="cp">#       ifdef MS_WIN64</span>
 <a name="line-87"></a><span class="cp">#               define SIZEOF_SOCKET_T 8</span>
 <a name="line-88"></a><span class="cp">#       else</span>
 <a name="line-89"></a><span class="cp">#               define SIZEOF_SOCKET_T 4</span>
 <a name="line-90"></a><span class="cp">#       endif</span>
 <a name="line-91"></a><span class="cp">#else</span>
-<a name="line-92"></a><span class="k">typedef</span> <span class="kt">int</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-85">SOCKET_T</a></span><span class="p">;</span>
+<a name="line-92"></a><span class="k">typedef</span> <span class="kt">int</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-85">SOCKET_T</a></span><span class="p">;</span>
 <a name="line-93"></a><span class="cp">#       define SIZEOF_SOCKET_T SIZEOF_INT</span>
 <a name="line-94"></a><span class="cp">#endif</span>
 <a name="line-95"></a>
 <a name="line-96"></a><span class="cm">/* Socket address */</span>
-<a name="line-97"></a><span class="k">typedef</span> <span class="k">union</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-97">sock_addr</a></span> <span class="p">{</span>
-<a name="line-98"></a>    <span class="k">struct</span> <span class="n">sockaddr_in</span> <span class="n"><a href="/./Lib/ihooks.py.html#line-421">in</a></span><span class="p">;</span>
+<a name="line-97"></a><span class="k">typedef</span> <span class="k">union</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-97">sock_addr</a></span> <span class="p">{</span>
+<a name="line-98"></a>    <span class="k">struct</span> <span class="n">sockaddr_in</span> <span class="n"><a href="/python-xr/./Lib/ihooks.py.html#line-421">in</a></span><span class="p">;</span>
 <a name="line-99"></a><span class="cp">#ifdef AF_UNIX</span>
-<a name="line-100"></a>    <span class="k">struct</span> <span class="n">sockaddr_un</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-100">un</a></span><span class="p">;</span>
+<a name="line-100"></a>    <span class="k">struct</span> <span class="n">sockaddr_un</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-100">un</a></span><span class="p">;</span>
 <a name="line-101"></a><span class="cp">#endif</span>
 <a name="line-102"></a><span class="cp">#ifdef AF_NETLINK</span>
-<a name="line-103"></a>    <span class="k">struct</span> <span class="n">sockaddr_nl</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-108">nl</a></span><span class="p">;</span>
+<a name="line-103"></a>    <span class="k">struct</span> <span class="n">sockaddr_nl</span> <span class="n"><a href="/python-xr/./Include/Python-ast.h.html#line-108">nl</a></span><span class="p">;</span>
 <a name="line-104"></a><span class="cp">#endif</span>
 <a name="line-105"></a><span class="cp">#ifdef ENABLE_IPV6</span>
-<a name="line-106"></a>    <span class="k">struct</span> <span class="n">sockaddr_in6</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-106">in6</a></span><span class="p">;</span>
-<a name="line-107"></a>    <span class="k">struct</span> <span class="n"><a href="/./Modules/addrinfo.h.html#line-153">sockaddr_storage</a></span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-107">storage</a></span><span class="p">;</span>
+<a name="line-106"></a>    <span class="k">struct</span> <span class="n">sockaddr_in6</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-106">in6</a></span><span class="p">;</span>
+<a name="line-107"></a>    <span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/addrinfo.h.html#line-153">sockaddr_storage</a></span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-107">storage</a></span><span class="p">;</span>
 <a name="line-108"></a><span class="cp">#endif</span>
 <a name="line-109"></a><span class="cp">#ifdef HAVE_BLUETOOTH_BLUETOOTH_H</span>
-<a name="line-110"></a>    <span class="k">struct</span> <span class="n"><a href="/./Modules/socketmodule.c.html#line-395">sockaddr_l2</a></span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-110">bt_l2</a></span><span class="p">;</span>
-<a name="line-111"></a>    <span class="k">struct</span> <span class="n"><a href="/./Modules/socketmodule.c.html#line-396">sockaddr_rc</a></span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-111">bt_rc</a></span><span class="p">;</span>
-<a name="line-112"></a>    <span class="k">struct</span> <span class="n"><a href="/./Modules/socketmodule.c.html#line-405">sockaddr_sco</a></span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-112">bt_sco</a></span><span class="p">;</span>
-<a name="line-113"></a>    <span class="k">struct</span> <span class="n"><a href="/./Modules/socketmodule.c.html#line-404">sockaddr_hci</a></span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-113">bt_hci</a></span><span class="p">;</span>
+<a name="line-110"></a>    <span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.c.html#line-395">sockaddr_l2</a></span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-110">bt_l2</a></span><span class="p">;</span>
+<a name="line-111"></a>    <span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.c.html#line-396">sockaddr_rc</a></span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-111">bt_rc</a></span><span class="p">;</span>
+<a name="line-112"></a>    <span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.c.html#line-405">sockaddr_sco</a></span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-112">bt_sco</a></span><span class="p">;</span>
+<a name="line-113"></a>    <span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.c.html#line-404">sockaddr_hci</a></span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-113">bt_hci</a></span><span class="p">;</span>
 <a name="line-114"></a><span class="cp">#endif</span>
 <a name="line-115"></a><span class="cp">#ifdef HAVE_NETPACKET_PACKET_H</span>
-<a name="line-116"></a>    <span class="k">struct</span> <span class="n">sockaddr_ll</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-72">ll</a></span><span class="p">;</span>
+<a name="line-116"></a>    <span class="k">struct</span> <span class="n">sockaddr_ll</span> <span class="n"><a href="/python-xr/./Modules/_ctypes/ctypes.h.html#line-72">ll</a></span><span class="p">;</span>
 <a name="line-117"></a><span class="cp">#endif</span>
-<a name="line-118"></a><span class="p">}</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-118">sock_addr_t</a></span><span class="p">;</span>
+<a name="line-118"></a><span class="p">}</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-118">sock_addr_t</a></span><span class="p">;</span>
 <a name="line-119"></a>
 <a name="line-120"></a><span class="cm">/* The object holding a socket.  It holds some extra information,</span>
 <a name="line-121"></a><span class="cm">   like the address family, which is used to decode socket address</span>
 <a name="line-122"></a><span class="cm">   arguments properly. */</span>
 <a name="line-123"></a>
 <a name="line-124"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
-<a name="line-125"></a>    <span class="n"><a href="/./Include/object.h.html#line-78">PyObject_HEAD</a></span>
-<a name="line-126"></a>    <span class="n"><a href="/./Modules/socketmodule.h.html#line-85">SOCKET_T</a></span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-126">sock_fd</a></span><span class="p">;</span>           <span class="cm">/* Socket file descriptor */</span>
-<a name="line-127"></a>    <span class="kt">int</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-127">sock_family</a></span><span class="p">;</span>            <span class="cm">/* Address family, e.g., AF_INET */</span>
-<a name="line-128"></a>    <span class="kt">int</span> <span class="n"><a href="/./Modules/socketmodule.c.html#line-3208">sock_type</a></span><span class="p">;</span>              <span class="cm">/* Socket type, e.g., SOCK_STREAM */</span>
-<a name="line-129"></a>    <span class="kt">int</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-129">sock_proto</a></span><span class="p">;</span>             <span class="cm">/* Protocol type, usually 0 */</span>
-<a name="line-130"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Modules/socketmodule.h.html#line-130">errorhandler</a></span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span> <span class="cm">/* Error handler; checks</span>
+<a name="line-125"></a>    <span class="n"><a href="/python-xr/./Include/object.h.html#line-78">PyObject_HEAD</a></span>
+<a name="line-126"></a>    <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-85">SOCKET_T</a></span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-126">sock_fd</a></span><span class="p">;</span>           <span class="cm">/* Socket file descriptor */</span>
+<a name="line-127"></a>    <span class="kt">int</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-127">sock_family</a></span><span class="p">;</span>            <span class="cm">/* Address family, e.g., AF_INET */</span>
+<a name="line-128"></a>    <span class="kt">int</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.c.html#line-3208">sock_type</a></span><span class="p">;</span>              <span class="cm">/* Socket type, e.g., SOCK_STREAM */</span>
+<a name="line-129"></a>    <span class="kt">int</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-129">sock_proto</a></span><span class="p">;</span>             <span class="cm">/* Protocol type, usually 0 */</span>
+<a name="line-130"></a>    <span class="n"><a href="/python-xr/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-130">errorhandler</a></span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span> <span class="cm">/* Error handler; checks</span>
 <a name="line-131"></a><span class="cm">                                        errno, returns NULL and</span>
 <a name="line-132"></a><span class="cm">                                        sets a Python exception */</span>
-<a name="line-133"></a>    <span class="kt">double</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-133">sock_timeout</a></span><span class="p">;</span>                 <span class="cm">/* Operation timeout in seconds;</span>
+<a name="line-133"></a>    <span class="kt">double</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-133">sock_timeout</a></span><span class="p">;</span>                 <span class="cm">/* Operation timeout in seconds;</span>
 <a name="line-134"></a><span class="cm">                                        0.0 means non-blocking */</span>
-<a name="line-135"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Include/fileobject.h.html#line-28">weakreflist</a></span><span class="p">;</span>
-<a name="line-136"></a><span class="p">}</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-136">PySocketSockObject</a></span><span class="p">;</span>
+<a name="line-135"></a>    <span class="n"><a href="/python-xr/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Include/fileobject.h.html#line-28">weakreflist</a></span><span class="p">;</span>
+<a name="line-136"></a><span class="p">}</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-136">PySocketSockObject</a></span><span class="p">;</span>
 <a name="line-137"></a>
 <a name="line-138"></a><span class="cm">/* --- C API ----------------------------------------------------*/</span>
 <a name="line-139"></a>
@@ -519,9 +519,9 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-187"></a>
 <a name="line-188"></a><span class="cm">/* C API for usage by other Python modules */</span>
 <a name="line-189"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
-<a name="line-190"></a>    <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="n"><a href="/./Modules/socketmodule.h.html#line-190">Sock_Type</a></span><span class="p">;</span>
-<a name="line-191"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-9">error</a></span><span class="p">;</span>
-<a name="line-192"></a><span class="p">}</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-192">PySocketModule_APIObject</a></span><span class="p">;</span>
+<a name="line-190"></a>    <span class="n"><a href="/python-xr/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-190">Sock_Type</a></span><span class="p">;</span>
+<a name="line-191"></a>    <span class="n"><a href="/python-xr/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/python-xr/./Demo/classes/bitvec.py.html#line-9">error</a></span><span class="p">;</span>
+<a name="line-192"></a><span class="p">}</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-192">PySocketModule_APIObject</a></span><span class="p">;</span>
 <a name="line-193"></a>
 <a name="line-194"></a><span class="cm">/* XXX The net effect of the following appears to be to define a function</span>
 <a name="line-195"></a><span class="cm">   XXX named PySocketModule_APIObject in _ssl.c.  It&#39;s unclear why it isn&#39;t</span>
@@ -547,7 +547,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-215"></a><span class="cm">*/</span>
 <a name="line-216"></a>
 <a name="line-217"></a><span class="k">static</span>
-<a name="line-218"></a><span class="n"><a href="/./Modules/socketmodule.h.html#line-192">PySocketModule_APIObject</a></span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-218">PySocketModule</a></span><span class="p">;</span>
+<a name="line-218"></a><span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-192">PySocketModule_APIObject</a></span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-218">PySocketModule</a></span><span class="p">;</span>
 <a name="line-219"></a>
 <a name="line-220"></a><span class="cm">/* You *must* call this before using any of the functions in</span>
 <a name="line-221"></a><span class="cm">   PySocketModule and check its outcome; otherwise all accesses will</span>
@@ -558,20 +558,20 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-226"></a><span class="cp">#endif</span>
 <a name="line-227"></a>
 <a name="line-228"></a><span class="k">static</span>
-<a name="line-229"></a><span class="kt">int</span> <span class="nf"><a href="/./Modules/socketmodule.h.html#line-229">PySocketModule_ImportModuleAndAPI</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="line-229"></a><span class="kt">int</span> <span class="nf"><a href="/python-xr/./Modules/socketmodule.h.html#line-229">PySocketModule_ImportModuleAndAPI</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <a name="line-230"></a><span class="p">{</span>
 <a name="line-231"></a>    <span class="kt">void</span> <span class="o">*</span><span class="n">api</span><span class="p">;</span>
 <a name="line-232"></a>
-<a name="line-233"></a>  <span class="n"><a href="/./Modules/socketmodule.h.html#line-225">DPRINTF</a></span><span class="p">(</span><span class="s">&quot; Loading capsule %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/./Modules/socketmodule.h.html#line-81">PySocket_CAPSULE_NAME</a></span><span class="p">);</span>
-<a name="line-234"></a>  <span class="n">api</span> <span class="o">=</span> <span class="n"><a href="/./Doc/includes/capsulethunk.h.html#line-71">PyCapsule_Import</a></span><span class="p">(</span><span class="n"><a href="/./Modules/socketmodule.h.html#line-81">PySocket_CAPSULE_NAME</a></span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<a name="line-235"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">api</span> <span class="o">==</span> <span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">)</span>
+<a name="line-233"></a>  <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-225">DPRINTF</a></span><span class="p">(</span><span class="s">&quot; Loading capsule %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-81">PySocket_CAPSULE_NAME</a></span><span class="p">);</span>
+<a name="line-234"></a>  <span class="n">api</span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Doc/includes/capsulethunk.h.html#line-71">PyCapsule_Import</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-81">PySocket_CAPSULE_NAME</a></span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<a name="line-235"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">api</span> <span class="o">==</span> <span class="nb"><a href="/python-xr/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">)</span>
 <a name="line-236"></a>        <span class="k">goto</span> <span class="n">onError</span><span class="p">;</span>
-<a name="line-237"></a>    <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-55">memcpy</a></span><span class="p">(</span><span class="o">&amp;</span><span class="n"><a href="/./Modules/socketmodule.h.html#line-218">PySocketModule</a></span><span class="p">,</span> <span class="n">api</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n"><a href="/./Modules/socketmodule.h.html#line-218">PySocketModule</a></span><span class="p">));</span>
-<a name="line-238"></a>    <span class="n"><a href="/./Modules/socketmodule.h.html#line-225">DPRINTF</a></span><span class="p">(</span><span class="s">&quot; API object loaded and initialized.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-237"></a>    <span class="n"><a href="/python-xr/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-55">memcpy</a></span><span class="p">(</span><span class="o">&amp;</span><span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-218">PySocketModule</a></span><span class="p">,</span> <span class="n">api</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-218">PySocketModule</a></span><span class="p">));</span>
+<a name="line-238"></a>    <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-225">DPRINTF</a></span><span class="p">(</span><span class="s">&quot; API object loaded and initialized.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <a name="line-239"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <a name="line-240"></a>
 <a name="line-241"></a> <span class="nl">onError</span><span class="p">:</span>
-<a name="line-242"></a>    <span class="n"><a href="/./Modules/socketmodule.h.html#line-225">DPRINTF</a></span><span class="p">(</span><span class="s">&quot; not found.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-242"></a>    <span class="n"><a href="/python-xr/./Modules/socketmodule.h.html#line-225">DPRINTF</a></span><span class="p">(</span><span class="s">&quot; not found.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <a name="line-243"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
 <a name="line-244"></a><span class="p">}</span>
 <a name="line-245"></a>

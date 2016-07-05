@@ -171,16 +171,16 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-6"></a><span class="c">#    Licensed to PSF under a Contributor Agreement.</span>
 <a name="line-7"></a>
 <a name="line-8"></a><span class="c"># Python binary to use</span>
-<a name="line-9"></a><span class="nv"><a href="/./Doc/Makefile.html#line-7">PYTHON</a></span> <span class="o">=</span> python
+<a name="line-9"></a><span class="nv"><a href="/python-xr/./Doc/Makefile.html#line-7">PYTHON</a></span> <span class="o">=</span> python
 <a name="line-10"></a>
 <a name="line-11"></a><span class="c"># Remove tool to use</span>
-<a name="line-12"></a><span class="nv"><a href="/./Tools/unicode/Makefile.html#line-12">RM</a></span> <span class="o">=</span> /bin/rm
+<a name="line-12"></a><span class="nv"><a href="/python-xr/./Tools/unicode/Makefile.html#line-12">RM</a></span> <span class="o">=</span> /bin/rm
 <a name="line-13"></a>
 <a name="line-14"></a><span class="c">### Generic targets</span>
 <a name="line-15"></a>
-<a name="line-16"></a><span class="nf"><a href="/./Tools/faqwiz/faqwiz.py.html#line-15">all</a></span><span class="o">:</span>	<span class="n">distclean</span> <span class="n">mappings</span> <span class="n"><a href="/./Lib/_pyio.py.html#line-9">codecs</a></span>
+<a name="line-16"></a><span class="nf"><a href="/python-xr/./Tools/faqwiz/faqwiz.py.html#line-15">all</a></span><span class="o">:</span>	<span class="n">distclean</span> <span class="n">mappings</span> <span class="n"><a href="/python-xr/./Lib/_pyio.py.html#line-9">codecs</a></span>
 <a name="line-17"></a>
-<a name="line-18"></a><span class="nf"><a href="/./Lib/_pyio.py.html#line-9">codecs</a></span><span class="o">:</span>	<span class="n"><a href="/./Lib/compiler/pyassem.py.html#line-7">misc</a></span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-260">windows</a></span> <span class="n">iso</span> <span class="n">apple</span> <span class="n">ebcdic</span> <span class="n">custom</span>-<span class="n">mappings</span> <span class="n">cjk</span>
+<a name="line-18"></a><span class="nf"><a href="/python-xr/./Lib/_pyio.py.html#line-9">codecs</a></span><span class="o">:</span>	<span class="n"><a href="/python-xr/./Lib/compiler/pyassem.py.html#line-7">misc</a></span> <span class="n"><a href="/python-xr/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-260">windows</a></span> <span class="n">iso</span> <span class="n">apple</span> <span class="n">ebcdic</span> <span class="n">custom</span>-<span class="n">mappings</span> <span class="n">cjk</span>
 <a name="line-19"></a>
 <a name="line-20"></a><span class="c">### Mappings</span>
 <a name="line-21"></a>
@@ -192,7 +192,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-27"></a><span class="nf">build/</span><span class="o">:</span>
 <a name="line-28"></a>	mkdir build
 <a name="line-29"></a>
-<a name="line-30"></a><span class="nf"><a href="/./Lib/compiler/pyassem.py.html#line-7">misc</a></span><span class="o">:</span>	<span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
+<a name="line-30"></a><span class="nf"><a href="/python-xr/./Lib/compiler/pyassem.py.html#line-7">misc</a></span><span class="o">:</span>	<span class="n"><a href="/python-xr/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
 <a name="line-31"></a>	<span class="k">$(</span>PYTHON<span class="k">)</span> gencodec.py MAPPINGS/VENDORS/MISC/ build/
 <a name="line-32"></a>	<span class="k">$(</span>RM<span class="k">)</span> build/atarist.*
 <a name="line-33"></a>	<span class="k">$(</span>RM<span class="k">)</span> build/us_ascii_quotes.*
@@ -200,19 +200,19 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-35"></a>	<span class="k">$(</span>RM<span class="k">)</span> build/sgml.*
 <a name="line-36"></a>	<span class="k">$(</span>RM<span class="k">)</span> -f build/readme.*
 <a name="line-37"></a>
-<a name="line-38"></a><span class="nf">custom-mappings</span><span class="o">:</span>	<span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
+<a name="line-38"></a><span class="nf">custom-mappings</span><span class="o">:</span>	<span class="n"><a href="/python-xr/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
 <a name="line-39"></a>	<span class="k">$(</span>PYTHON<span class="k">)</span> gencodec.py python-mappings/ build/
 <a name="line-40"></a>
-<a name="line-41"></a><span class="nf"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-260">windows</a></span><span class="o">:</span>	<span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
+<a name="line-41"></a><span class="nf"><a href="/python-xr/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-260">windows</a></span><span class="o">:</span>	<span class="n"><a href="/python-xr/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
 <a name="line-42"></a>	<span class="k">$(</span>PYTHON<span class="k">)</span> gencodec.py MAPPINGS/VENDORS/MICSFT/WINDOWS/ build/
 <a name="line-43"></a>	<span class="k">$(</span>RM<span class="k">)</span> build/cp9*
 <a name="line-44"></a>	<span class="k">$(</span>RM<span class="k">)</span> -f build/readme.*
 <a name="line-45"></a>
-<a name="line-46"></a><span class="nf">iso</span><span class="o">:</span>	<span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
+<a name="line-46"></a><span class="nf">iso</span><span class="o">:</span>	<span class="n"><a href="/python-xr/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
 <a name="line-47"></a>	<span class="k">$(</span>PYTHON<span class="k">)</span> gencodec.py MAPPINGS/ISO8859/ build/ iso
 <a name="line-48"></a>	<span class="k">$(</span>RM<span class="k">)</span> -f build/isoreadme.*
 <a name="line-49"></a>
-<a name="line-50"></a><span class="nf">apple</span><span class="o">:</span>	<span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
+<a name="line-50"></a><span class="nf">apple</span><span class="o">:</span>	<span class="n"><a href="/python-xr/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
 <a name="line-51"></a>	<span class="k">$(</span>PYTHON<span class="k">)</span> gencodec.py MAPPINGS/VENDORS/APPLE/ build/ mac_
 <a name="line-52"></a>	<span class="k">$(</span>RM<span class="k">)</span> build/mac_dingbats.*
 <a name="line-53"></a>	<span class="k">$(</span>RM<span class="k">)</span> build/mac_japanese.*
@@ -233,19 +233,19 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-68"></a>	<span class="k">$(</span>RM<span class="k">)</span> build/mac_keyboard.*
 <a name="line-69"></a>	<span class="k">$(</span>RM<span class="k">)</span> -f build/mac_readme.*
 <a name="line-70"></a>
-<a name="line-71"></a><span class="nf">ebcdic</span><span class="o">:</span>	<span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
+<a name="line-71"></a><span class="nf">ebcdic</span><span class="o">:</span>	<span class="n"><a href="/python-xr/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
 <a name="line-72"></a>	<span class="k">$(</span>PYTHON<span class="k">)</span> gencodec.py MAPPINGS/VENDORS/MICSFT/EBCDIC/ build/
 <a name="line-73"></a>	<span class="k">$(</span>RM<span class="k">)</span> -f build/readme.*
 <a name="line-74"></a>
-<a name="line-75"></a><span class="nf">cjk</span><span class="o">:</span>	<span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
+<a name="line-75"></a><span class="nf">cjk</span><span class="o">:</span>	<span class="n"><a href="/python-xr/./Demo/tix/tixwidgets.py.html#line-112">build</a></span>/
 <a name="line-76"></a>	<span class="k">$(</span>PYTHON<span class="k">)</span> gencjkcodecs.py build/
 <a name="line-77"></a>
 <a name="line-78"></a><span class="c">### Cleanup</span>
 <a name="line-79"></a>
-<a name="line-80"></a><span class="nf"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span><span class="o">:</span>
+<a name="line-80"></a><span class="nf"><a href="/python-xr/./Lib/distutils/command/clean.py.html#line-14">clean</a></span><span class="o">:</span>
 <a name="line-81"></a>	<span class="k">$(</span>RM<span class="k">)</span> -f build/*
 <a name="line-82"></a>
-<a name="line-83"></a><span class="nf">distclean</span><span class="o">:</span>	<span class="n"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span>
+<a name="line-83"></a><span class="nf">distclean</span><span class="o">:</span>	<span class="n"><a href="/python-xr/./Lib/distutils/command/clean.py.html#line-14">clean</a></span>
 <a name="line-84"></a>	<span class="k">$(</span>RM<span class="k">)</span> -rf MAPPINGS/
 </pre></div>
 </td></tr></table></body>

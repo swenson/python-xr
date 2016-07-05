@@ -144,54 +144,54 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-6"></a>
 <a name="line-7"></a>
 <a name="line-8"></a>
-<a name="line-9"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-9">MessageError</a></span><span class="p">(</span><span class="ne"><a href="/./Lib/xml/sax/_exceptions.py.html#line-4">Exception</a></span><span class="p">):</span>
+<a name="line-9"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-9">MessageError</a></span><span class="p">(</span><span class="ne"><a href="/python-xr/./Lib/xml/sax/_exceptions.py.html#line-4">Exception</a></span><span class="p">):</span>
 <a name="line-10"></a>    <span class="sd">&quot;&quot;&quot;Base class for errors in the email package.&quot;&quot;&quot;</span>
 <a name="line-11"></a>
 <a name="line-12"></a>
-<a name="line-13"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-13">MessageParseError</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-9">MessageError</a></span><span class="p">):</span>
+<a name="line-13"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-13">MessageParseError</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-9">MessageError</a></span><span class="p">):</span>
 <a name="line-14"></a>    <span class="sd">&quot;&quot;&quot;Base class for message parsing errors.&quot;&quot;&quot;</span>
 <a name="line-15"></a>
 <a name="line-16"></a>
-<a name="line-17"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-17">HeaderParseError</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-13">MessageParseError</a></span><span class="p">):</span>
+<a name="line-17"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-17">HeaderParseError</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-13">MessageParseError</a></span><span class="p">):</span>
 <a name="line-18"></a>    <span class="sd">&quot;&quot;&quot;Error while parsing headers.&quot;&quot;&quot;</span>
 <a name="line-19"></a>
 <a name="line-20"></a>
-<a name="line-21"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-21">BoundaryError</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-13">MessageParseError</a></span><span class="p">):</span>
+<a name="line-21"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-21">BoundaryError</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-13">MessageParseError</a></span><span class="p">):</span>
 <a name="line-22"></a>    <span class="sd">&quot;&quot;&quot;Couldn&#39;t find terminating boundary.&quot;&quot;&quot;</span>
 <a name="line-23"></a>
 <a name="line-24"></a>
-<a name="line-25"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-25">MultipartConversionError</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-9">MessageError</a></span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+<a name="line-25"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-25">MultipartConversionError</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-9">MessageError</a></span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
 <a name="line-26"></a>    <span class="sd">&quot;&quot;&quot;Conversion to a multipart is prohibited.&quot;&quot;&quot;</span>
 <a name="line-27"></a>
 <a name="line-28"></a>
-<a name="line-29"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-29">CharsetError</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-9">MessageError</a></span><span class="p">):</span>
+<a name="line-29"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-29">CharsetError</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-9">MessageError</a></span><span class="p">):</span>
 <a name="line-30"></a>    <span class="sd">&quot;&quot;&quot;An illegal charset was given.&quot;&quot;&quot;</span>
 <a name="line-31"></a>
 <a name="line-32"></a>
 <a name="line-33"></a>
 <a name="line-34"></a><span class="c1"># These are parsing defects which the parser was able to work around.</span>
-<a name="line-35"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">:</span>
+<a name="line-35"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">:</span>
 <a name="line-36"></a>    <span class="sd">&quot;&quot;&quot;Base class for a message defect.&quot;&quot;&quot;</span>
 <a name="line-37"></a>
-<a name="line-38"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/cgi/wiki.py.html#line-21">__init__</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/scripts/from.py.html#line-23">line</a></span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">):</span>
-<a name="line-39"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/scripts/from.py.html#line-23">line</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/scripts/from.py.html#line-23">line</a></span>
+<a name="line-38"></a>    <span class="k">def</span> <span class="nf"><a href="/python-xr/./Demo/cgi/wiki.py.html#line-21">__init__</a></span><span class="p">(</span><span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Demo/scripts/from.py.html#line-23">line</a></span><span class="o">=</span><span class="bp"><a href="/python-xr/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">):</span>
+<a name="line-39"></a>        <span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Demo/scripts/from.py.html#line-23">line</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Demo/scripts/from.py.html#line-23">line</a></span>
 <a name="line-40"></a>
-<a name="line-41"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-41">NoBoundaryInMultipartDefect</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
+<a name="line-41"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-41">NoBoundaryInMultipartDefect</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
 <a name="line-42"></a>    <span class="sd">&quot;&quot;&quot;A message claimed to be a multipart but had no boundary parameter.&quot;&quot;&quot;</span>
 <a name="line-43"></a>
-<a name="line-44"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-44">StartBoundaryNotFoundDefect</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
+<a name="line-44"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-44">StartBoundaryNotFoundDefect</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
 <a name="line-45"></a>    <span class="sd">&quot;&quot;&quot;The claimed start boundary was never found.&quot;&quot;&quot;</span>
 <a name="line-46"></a>
-<a name="line-47"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-47">FirstHeaderLineIsContinuationDefect</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
+<a name="line-47"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-47">FirstHeaderLineIsContinuationDefect</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
 <a name="line-48"></a>    <span class="sd">&quot;&quot;&quot;A message had a continuation line as its first header line.&quot;&quot;&quot;</span>
 <a name="line-49"></a>
-<a name="line-50"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-50">MisplacedEnvelopeHeaderDefect</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
+<a name="line-50"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-50">MisplacedEnvelopeHeaderDefect</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
 <a name="line-51"></a>    <span class="sd">&quot;&quot;&quot;A &#39;Unix-from&#39; header was found in the middle of a header block.&quot;&quot;&quot;</span>
 <a name="line-52"></a>
-<a name="line-53"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-53">MalformedHeaderDefect</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
+<a name="line-53"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-53">MalformedHeaderDefect</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
 <a name="line-54"></a>    <span class="sd">&quot;&quot;&quot;Found a header that was missing a colon, or was otherwise malformed.&quot;&quot;&quot;</span>
 <a name="line-55"></a>
-<a name="line-56"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/email/errors.py.html#line-56">MultipartInvariantViolationDefect</a></span><span class="p">(</span><span class="n"><a href="/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
+<a name="line-56"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/email/errors.py.html#line-56">MultipartInvariantViolationDefect</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/email/errors.py.html#line-35">MessageDefect</a></span><span class="p">):</span>
 <a name="line-57"></a>    <span class="sd">&quot;&quot;&quot;A message claimed to be a multipart but no subparts were found.&quot;&quot;&quot;</span>
 </pre></div>
 </td></tr></table></body>

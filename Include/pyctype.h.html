@@ -121,7 +121,7 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-9"></a><span class="cp">#define PY_CTF_SPACE  0x08</span>
 <a name="line-10"></a><span class="cp">#define PY_CTF_XDIGIT 0x10</span>
 <a name="line-11"></a>
-<a name="line-12"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Python/pyctype.c.html#line-5">_Py_ctype_table</a></span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+<a name="line-12"></a><span class="n"><a href="/python-xr/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/python-xr/./Python/pyctype.c.html#line-5">_Py_ctype_table</a></span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
 <a name="line-13"></a>
 <a name="line-14"></a><span class="cm">/* Unlike their C counterparts, the following macros are not meant to</span>
 <a name="line-15"></a><span class="cm"> * handle an int with any of the values [EOF, 0-UCHAR_MAX]. The argument</span>
@@ -134,8 +134,8 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-22"></a><span class="cp">#define Py_ISALNUM(c)  (_Py_ctype_table[Py_CHARMASK(c)] &amp; PY_CTF_ALNUM)</span>
 <a name="line-23"></a><span class="cp">#define Py_ISSPACE(c)  (_Py_ctype_table[Py_CHARMASK(c)] &amp; PY_CTF_SPACE)</span>
 <a name="line-24"></a>
-<a name="line-25"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="n"><a href="/./Python/pyctype.c.html#line-145">_Py_ctype_tolower</a></span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
-<a name="line-26"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="n"><a href="/./Python/pyctype.c.html#line-180">_Py_ctype_toupper</a></span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+<a name="line-25"></a><span class="n"><a href="/python-xr/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="n"><a href="/python-xr/./Python/pyctype.c.html#line-145">_Py_ctype_tolower</a></span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+<a name="line-26"></a><span class="n"><a href="/python-xr/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="n"><a href="/python-xr/./Python/pyctype.c.html#line-180">_Py_ctype_toupper</a></span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
 <a name="line-27"></a>
 <a name="line-28"></a><span class="cp">#define Py_TOLOWER(c) (_Py_ctype_tolower[Py_CHARMASK(c)])</span>
 <a name="line-29"></a><span class="cp">#define Py_TOUPPER(c) (_Py_ctype_toupper[Py_CHARMASK(c)])</span>

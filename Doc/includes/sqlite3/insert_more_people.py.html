@@ -95,22 +95,22 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-13">13</a>
 <a href="#line-14">14</a>
 <a href="#line-15">15</a>
-<a href="#line-16">16</a></pre></div></td><td class="code"><div class="source"><span class="filename">Doc/includes/sqlite3/insert_more_people.py</span><pre><span></span><a name="line-1"></a><span class="kn">import</span> <span class="nn"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-1">sqlite3</a></span>
+<a href="#line-16">16</a></pre></div></td><td class="code"><div class="source"><span class="filename">Doc/includes/sqlite3/insert_more_people.py</span><pre><span></span><a name="line-1"></a><span class="kn">import</span> <span class="nn"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-1">sqlite3</a></span>
 <a name="line-2"></a>
-<a name="line-3"></a><span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span> <span class="o">=</span> <span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-1">sqlite3</a></span><span class="o">.</span><span class="n"><a href="/./Lib/asyncore.py.html#line-344">connect</a></span><span class="p">(</span><span class="s2">&quot;mydb&quot;</span><span class="p">)</span>
+<a name="line-3"></a><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-1">sqlite3</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/asyncore.py.html#line-344">connect</a></span><span class="p">(</span><span class="s2">&quot;mydb&quot;</span><span class="p">)</span>
 <a name="line-4"></a>
-<a name="line-5"></a><span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-10">cur</a></span> <span class="o">=</span> <span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/sqlite3/countcursors.py.html#line-8">cursor</a></span><span class="p">()</span>
+<a name="line-5"></a><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-10">cur</a></span> <span class="o">=</span> <span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/countcursors.py.html#line-8">cursor</a></span><span class="p">()</span>
 <a name="line-6"></a>
-<a name="line-7"></a><span class="n"><a href="/./Doc/includes/sqlite3/insert_more_people.py.html#line-7">newPeople</a></span> <span class="o">=</span> <span class="p">(</span>
+<a name="line-7"></a><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/insert_more_people.py.html#line-7">newPeople</a></span> <span class="o">=</span> <span class="p">(</span>
 <a name="line-8"></a>    <span class="p">(</span><span class="s1">&#39;Lebed&#39;</span>       <span class="p">,</span> <span class="mi">53</span><span class="p">),</span>
 <a name="line-9"></a>    <span class="p">(</span><span class="s1">&#39;Zhirinovsky&#39;</span> <span class="p">,</span> <span class="mi">57</span><span class="p">),</span>
 <a name="line-10"></a>  <span class="p">)</span>
 <a name="line-11"></a>
-<a name="line-12"></a><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n"><a href="/./Doc/includes/sqlite3/insert_more_people.py.html#line-7">newPeople</a></span><span class="p">:</span>
-<a name="line-13"></a>    <span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-10">cur</a></span><span class="o">.</span><span class="n"><a href="/./Demo/sockets/rpythond.py.html#line-37">execute</a></span><span class="p">(</span><span class="s2">&quot;insert into people (name_last, age) values (?, ?)&quot;</span><span class="p">,</span> <span class="n">person</span><span class="p">)</span>
+<a name="line-12"></a><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n"><a href="/python-xr/./Doc/includes/sqlite3/insert_more_people.py.html#line-7">newPeople</a></span><span class="p">:</span>
+<a name="line-13"></a>    <span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-10">cur</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Demo/sockets/rpythond.py.html#line-37">execute</a></span><span class="p">(</span><span class="s2">&quot;insert into people (name_last, age) values (?, ?)&quot;</span><span class="p">,</span> <span class="n">person</span><span class="p">)</span>
 <a name="line-14"></a>
 <a name="line-15"></a><span class="c1"># The changes will not be saved unless the transaction is committed explicitly:</span>
-<a name="line-16"></a><span class="n"><a href="/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-144">commit</a></span><span class="p">()</span>
+<a name="line-16"></a><span class="n"><a href="/python-xr/./Doc/includes/sqlite3/adapter_datetime.py.html#line-9">con</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Demo/pdist/rcvs.py.html#line-144">commit</a></span><span class="p">()</span>
 </pre></div>
 </td></tr></table></body>
 </html>

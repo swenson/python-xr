@@ -108,11 +108,11 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-9"></a>
 <a name="line-10"></a><span class="cm">/* ARGSUSED */</span>
 <a name="line-11"></a><span class="kt">int</span>
-<a name="line-12"></a><span class="nf"><a href="/./Modules/signalmodule.c.html#line-893">PyErr_CheckSignals</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="line-12"></a><span class="nf"><a href="/python-xr/./Modules/signalmodule.c.html#line-893">PyErr_CheckSignals</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <a name="line-13"></a><span class="p">{</span>
-<a name="line-14"></a>	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/./Modules/signalmodule.c.html#line-970">PyOS_InterruptOccurred</a></span><span class="p">())</span>
+<a name="line-14"></a>	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n"><a href="/python-xr/./Modules/signalmodule.c.html#line-970">PyOS_InterruptOccurred</a></span><span class="p">())</span>
 <a name="line-15"></a>		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<a name="line-16"></a>	<span class="n"><a href="/./Python/errors.c.html#line-61">PyErr_SetNone</a></span><span class="p">(</span><span class="n">PyExc_KeyboardInterrupt</span><span class="p">);</span>
+<a name="line-16"></a>	<span class="n"><a href="/python-xr/./Python/errors.c.html#line-61">PyErr_SetNone</a></span><span class="p">(</span><span class="n">PyExc_KeyboardInterrupt</span><span class="p">);</span>
 <a name="line-17"></a>	<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
 <a name="line-18"></a><span class="p">}</span>
 </pre></div>

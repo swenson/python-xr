@@ -196,16 +196,16 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-17"></a><span class="cm"> * | 10 | 11 | 12 | 13 | . . .</span>
 <a name="line-18"></a><span class="cm"> * +-------------------+</span>
 <a name="line-19"></a><span class="cm"> */</span>
-<a name="line-20"></a><span class="k">struct</span> <span class="n"><a href="/./Modules/yuv.h.html#line-21">yuv411</a></span> <span class="p">{</span>
+<a name="line-20"></a><span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/yuv.h.html#line-21">yuv411</a></span> <span class="p">{</span>
 <a name="line-21"></a>    <span class="k">struct</span> <span class="p">{</span>
-<a name="line-22"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Demo/rpc/rpc.py.html#line-433">dummy</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
-<a name="line-23"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Modules/yuv.h.html#line-24">y0</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
-<a name="line-24"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Modules/yuv.h.html#line-25">u0</a></span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
-<a name="line-25"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Lib/lib2to3/tests/data/py2_test_grammar.py.html#line-172">v0</a></span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
-<a name="line-26"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Modules/yuv.h.html#line-27">y1</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
-<a name="line-27"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Modules/yuv.h.html#line-28">u1</a></span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
-<a name="line-28"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Lib/lib2to3/tests/data/py2_test_grammar.py.html#line-173">v1</a></span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
-<a name="line-29"></a>    <span class="p">}</span> <span class="n"><a href="/./Demo/threads/sync.py.html#line-417">v</a></span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<a name="line-22"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Demo/rpc/rpc.py.html#line-433">dummy</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
+<a name="line-23"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Modules/yuv.h.html#line-24">y0</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
+<a name="line-24"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Modules/yuv.h.html#line-25">u0</a></span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+<a name="line-25"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Lib/lib2to3/tests/data/py2_test_grammar.py.html#line-172">v0</a></span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+<a name="line-26"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Modules/yuv.h.html#line-27">y1</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
+<a name="line-27"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Modules/yuv.h.html#line-28">u1</a></span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+<a name="line-28"></a>        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Lib/lib2to3/tests/data/py2_test_grammar.py.html#line-173">v1</a></span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+<a name="line-29"></a>    <span class="p">}</span> <span class="n"><a href="/python-xr/./Demo/threads/sync.py.html#line-417">v</a></span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
 <a name="line-30"></a><span class="p">};</span>
 <a name="line-31"></a>
 <a name="line-32"></a><span class="cp">#define YUV411_Y00(y)   (y).v[0].y0</span>
@@ -242,11 +242,11 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-63"></a><span class="cm"> * | 0 | 1 |</span>
 <a name="line-64"></a><span class="cm"> * +-------+</span>
 <a name="line-65"></a><span class="cm"> */</span>
-<a name="line-66"></a><span class="k">struct</span> <span class="n"><a href="/./Modules/yuv.h.html#line-67">yuv422</a></span> <span class="p">{</span>
-<a name="line-67"></a>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Lib/test/re_tests.py.html#line-665">u</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
-<a name="line-68"></a>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Modules/yuv.h.html#line-24">y0</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
-<a name="line-69"></a>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Demo/threads/sync.py.html#line-417">v</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
-<a name="line-70"></a>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/./Modules/yuv.h.html#line-27">y1</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
+<a name="line-66"></a><span class="k">struct</span> <span class="n"><a href="/python-xr/./Modules/yuv.h.html#line-67">yuv422</a></span> <span class="p">{</span>
+<a name="line-67"></a>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Lib/test/re_tests.py.html#line-665">u</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
+<a name="line-68"></a>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Modules/yuv.h.html#line-24">y0</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
+<a name="line-69"></a>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Demo/threads/sync.py.html#line-417">v</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
+<a name="line-70"></a>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl"><a href="/python-xr/./Modules/yuv.h.html#line-27">y1</a></span><span class="p">:</span><span class="mi">8</span><span class="p">;</span>
 <a name="line-71"></a><span class="p">};</span>
 <a name="line-72"></a><span class="cp">#define YUV422_Y0(y)    (y).y0</span>
 <a name="line-73"></a><span class="cp">#define YUV422_Y1(y)    (y).y1</span>
@@ -267,9 +267,9 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-88"></a><span class="cm">/*</span>
 <a name="line-89"></a><span class="cm"> * Conversion functions.</span>
 <a name="line-90"></a><span class="cm"> */</span>
-<a name="line-91"></a><span class="kt">void</span> <span class="nf"><a href="/./Modules/yuvconvert.c.html#line-5">yuv_sv411_to_cl422dc</a></span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
-<a name="line-92"></a><span class="kt">void</span> <span class="nf"><a href="/./Modules/yuvconvert.c.html#line-42">yuv_sv411_to_cl422dc_quartersize</a></span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
-<a name="line-93"></a><span class="kt">void</span> <span class="nf"><a href="/./Modules/yuvconvert.c.html#line-81">yuv_sv411_to_cl422dc_sixteenthsize</a></span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-91"></a><span class="kt">void</span> <span class="nf"><a href="/python-xr/./Modules/yuvconvert.c.html#line-5">yuv_sv411_to_cl422dc</a></span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-92"></a><span class="kt">void</span> <span class="nf"><a href="/python-xr/./Modules/yuvconvert.c.html#line-42">yuv_sv411_to_cl422dc_quartersize</a></span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-93"></a><span class="kt">void</span> <span class="nf"><a href="/python-xr/./Modules/yuvconvert.c.html#line-81">yuv_sv411_to_cl422dc_sixteenthsize</a></span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
 <a name="line-94"></a>
 <a name="line-95"></a><span class="cp">#ifdef __cplusplus</span>
 <a name="line-96"></a><span class="p">}</span>

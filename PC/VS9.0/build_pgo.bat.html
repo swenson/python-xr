@@ -127,25 +127,25 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-6"></a><span class="c1">rem building the PGUpdate configuration while developing.</span>
 <a name="line-7"></a>
 <a name="line-8"></a><span class="k">setlocal</span>
-<a name="line-9"></a><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build.bat.html#line-12">platf</a></span><span class="p">=</span>Win32
+<a name="line-9"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build.bat.html#line-12">platf</a></span><span class="p">=</span>Win32
 <a name="line-10"></a>
 <a name="line-11"></a><span class="c1">rem use the performance testsuite.  This is quick and simple</span>
-<a name="line-12"></a><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build_pgo.bat.html#line-12">job1</a></span><span class="p">=</span>..\..\tools\pybench\pybench.py -n 1 -C 1 --with-gc
-<a name="line-13"></a><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build_pgo.bat.html#line-13">path1</a></span><span class="p">=</span>..\..\tools\pybench
+<a name="line-12"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build_pgo.bat.html#line-12">job1</a></span><span class="p">=</span>..\..\tools\pybench\pybench.py -n 1 -C 1 --with-gc
+<a name="line-13"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build_pgo.bat.html#line-13">path1</a></span><span class="p">=</span>..\..\tools\pybench
 <a name="line-14"></a>
 <a name="line-15"></a><span class="c1">rem or the whole testsuite for more thorough testing</span>
-<a name="line-16"></a><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build_pgo.bat.html#line-16">job2</a></span><span class="p">=</span>..\..\lib\test\regrtest.py
-<a name="line-17"></a><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build_pgo.bat.html#line-17">path2</a></span><span class="p">=</span>..\..\lib
+<a name="line-16"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build_pgo.bat.html#line-16">job2</a></span><span class="p">=</span>..\..\lib\test\regrtest.py
+<a name="line-17"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build_pgo.bat.html#line-17">path2</a></span><span class="p">=</span>..\..\lib
 <a name="line-18"></a>
-<a name="line-19"></a><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build_pgo.bat.html#line-19">job</a></span><span class="p">=</span><span class="nv">%job1%</span>
-<a name="line-20"></a><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build_pgo.bat.html#line-20">clrpath</a></span><span class="p">=</span><span class="nv">%path1%</span>
+<a name="line-19"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build_pgo.bat.html#line-19">job</a></span><span class="p">=</span><span class="nv">%job1%</span>
+<a name="line-20"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build_pgo.bat.html#line-20">clrpath</a></span><span class="p">=</span><span class="nv">%path1%</span>
 <a name="line-21"></a>
-<a name="line-22"></a><span class="p">:</span><span class="nl"><a href="/./PC/VC6/rt.bat.html#line-24">CheckOpts</a></span>
-<a name="line-23"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;-p&quot;</span> <span class="p">(</span><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build.bat.html#line-12">platf</a></span><span class="p">=</span><span class="nv">%2</span><span class="p">)</span> <span class="p">&amp;</span> <span class="k">shift</span> <span class="p">&amp;</span> <span class="k">shift</span> <span class="p">&amp;</span> <span class="k">goto</span> <span class="nl"><a href="/./PC/VC6/rt.bat.html#line-24">CheckOpts</a></span>
-<a name="line-24"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;-2&quot;</span> <span class="p">(</span><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build_pgo.bat.html#line-19">job</a></span><span class="p">=</span><span class="nv">%job2%</span><span class="p">)</span> <span class="p">&amp;</span> <span class="p">(</span><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build_pgo.bat.html#line-20">clrpath</a></span><span class="p">=</span><span class="nv">%path2%</span><span class="p">)</span> <span class="p">&amp;</span> <span class="k">shift</span> <span class="p">&amp;</span> <span class="k">goto</span> <span class="nl"><a href="/./PC/VC6/rt.bat.html#line-24">CheckOpts</a></span>
+<a name="line-22"></a><span class="p">:</span><span class="nl"><a href="/python-xr/./PC/VC6/rt.bat.html#line-24">CheckOpts</a></span>
+<a name="line-23"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;-p&quot;</span> <span class="p">(</span><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build.bat.html#line-12">platf</a></span><span class="p">=</span><span class="nv">%2</span><span class="p">)</span> <span class="p">&amp;</span> <span class="k">shift</span> <span class="p">&amp;</span> <span class="k">shift</span> <span class="p">&amp;</span> <span class="k">goto</span> <span class="nl"><a href="/python-xr/./PC/VC6/rt.bat.html#line-24">CheckOpts</a></span>
+<a name="line-24"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;-2&quot;</span> <span class="p">(</span><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build_pgo.bat.html#line-19">job</a></span><span class="p">=</span><span class="nv">%job2%</span><span class="p">)</span> <span class="p">&amp;</span> <span class="p">(</span><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build_pgo.bat.html#line-20">clrpath</a></span><span class="p">=</span><span class="nv">%path2%</span><span class="p">)</span> <span class="p">&amp;</span> <span class="k">shift</span> <span class="p">&amp;</span> <span class="k">goto</span> <span class="nl"><a href="/python-xr/./PC/VC6/rt.bat.html#line-24">CheckOpts</a></span>
 <a name="line-25"></a>
-<a name="line-26"></a><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build_pgo.bat.html#line-26">PGI</a></span><span class="p">=</span><span class="nv">%platf%</span>-pgi
-<a name="line-27"></a><span class="k">set</span> <span class="nv"><a href="/./PC/VS8.0/build_pgo.bat.html#line-27">PGO</a></span><span class="p">=</span><span class="nv">%platf%</span>-pgo
+<a name="line-26"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build_pgo.bat.html#line-26">PGI</a></span><span class="p">=</span><span class="nv">%platf%</span>-pgi
+<a name="line-27"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS8.0/build_pgo.bat.html#line-27">PGO</a></span><span class="p">=</span><span class="nv">%platf%</span>-pgo
 <a name="line-28"></a>
 <a name="line-29"></a><span class="p">@</span><span class="k">echo</span> on
 <a name="line-30"></a><span class="c1">rem build the instrumented version</span>

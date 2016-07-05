@@ -99,17 +99,17 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a href="#line-17">17</a></pre></div></td><td class="code"><div class="source"><span class="filename">PC/VS7.1/amd64_ml64.bat</span><pre><span></span><a name="line-1"></a><span class="p">@</span><span class="k">echo</span> off
 <a name="line-2"></a><span class="c1">rem Try to find the AMD64 assembler and call it with the supplied arguments.</span>
 <a name="line-3"></a>
-<a name="line-4"></a><span class="k">set</span> <span class="nv"><a href="/./PC/VS7.1/amd64_ml64.bat.html#line-4">MLEXE</a></span><span class="p">=</span>Microsoft Platform SDK\Bin\Win64\x86\AMD64\ml64.EXE
+<a name="line-4"></a><span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS7.1/amd64_ml64.bat.html#line-4">MLEXE</a></span><span class="p">=</span>Microsoft Platform SDK\Bin\Win64\x86\AMD64\ml64.EXE
 <a name="line-5"></a>
 <a name="line-6"></a><span class="c1">rem For the environment variables see also</span>
 <a name="line-7"></a><span class="c1">rem http://msdn.microsoft.com/library/en-us/win64/win64/wow64_implementation_details.asp</span>
 <a name="line-8"></a>
 <a name="line-9"></a><span class="k">if</span> <span class="k">exist</span> <span class="s2">&quot;</span><span class="nv">%ProgramFiles%</span><span class="s2">\</span><span class="nv">%MLEXE%</span><span class="s2">&quot;</span> <span class="p">(</span>
-<a name="line-10"></a>  <span class="k">set</span> <span class="nv"><a href="/./PC/VS7.1/amd64_ml64.bat.html#line-10">ML64</a></span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%ProgramFiles%</span><span class="s2">\</span><span class="nv">%MLEXE%</span><span class="s2">&quot;</span>
+<a name="line-10"></a>  <span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS7.1/amd64_ml64.bat.html#line-10">ML64</a></span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%ProgramFiles%</span><span class="s2">\</span><span class="nv">%MLEXE%</span><span class="s2">&quot;</span>
 <a name="line-11"></a><span class="p">)</span> <span class="k">else</span> <span class="k">if</span> <span class="k">exist</span> <span class="s2">&quot;</span><span class="nv">%ProgramW6432%</span><span class="s2">\</span><span class="nv">%MLEXE%</span><span class="s2">&quot;</span> <span class="p">(</span>
-<a name="line-12"></a>  <span class="k">set</span> <span class="nv"><a href="/./PC/VS7.1/amd64_ml64.bat.html#line-10">ML64</a></span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%ProgramW6432%</span><span class="s2">\</span><span class="nv">%MLEXE%</span><span class="s2">&quot;</span>
+<a name="line-12"></a>  <span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS7.1/amd64_ml64.bat.html#line-10">ML64</a></span><span class="p">=</span><span class="s2">&quot;</span><span class="nv">%ProgramW6432%</span><span class="s2">\</span><span class="nv">%MLEXE%</span><span class="s2">&quot;</span>
 <a name="line-13"></a><span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
-<a name="line-14"></a>  <span class="k">set</span> <span class="nv"><a href="/./PC/VS7.1/amd64_ml64.bat.html#line-10">ML64</a></span><span class="p">=</span>ml64.exe
+<a name="line-14"></a>  <span class="k">set</span> <span class="nv"><a href="/python-xr/./PC/VS7.1/amd64_ml64.bat.html#line-10">ML64</a></span><span class="p">=</span>ml64.exe
 <a name="line-15"></a><span class="p">)</span>
 <a name="line-16"></a>
 <a name="line-17"></a><span class="nv">%ML64%</span> <span class="nv">%*</span>

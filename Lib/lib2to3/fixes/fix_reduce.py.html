@@ -123,17 +123,17 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-7"></a><span class="sd">used in that module.</span>
 <a name="line-8"></a><span class="sd">&quot;&quot;&quot;</span>
 <a name="line-9"></a>
-<a name="line-10"></a><span class="kn">from</span> <span class="nn">lib2to3</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/lib2to3/fixes/fix_apply.py.html#line-11">fixer_base</a></span>
-<a name="line-11"></a><span class="kn">from</span> <span class="nn">lib2to3.fixer_util</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/lib2to3/fixer_util.py.html#line-294">touch_import</a></span>
+<a name="line-10"></a><span class="kn">from</span> <span class="nn">lib2to3</span> <span class="kn">import</span> <span class="n"><a href="/python-xr/./Lib/lib2to3/fixes/fix_apply.py.html#line-11">fixer_base</a></span>
+<a name="line-11"></a><span class="kn">from</span> <span class="nn">lib2to3.fixer_util</span> <span class="kn">import</span> <span class="n"><a href="/python-xr/./Lib/lib2to3/fixer_util.py.html#line-294">touch_import</a></span>
 <a name="line-12"></a>
 <a name="line-13"></a>
 <a name="line-14"></a>
-<a name="line-15"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/lib2to3/fixes/fix_reduce.py.html#line-15">FixReduce</a></span><span class="p">(</span><span class="n"><a href="/./Lib/lib2to3/fixes/fix_apply.py.html#line-11">fixer_base</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/fixer_base.py.html#line-15">BaseFix</a></span><span class="p">):</span>
+<a name="line-15"></a><span class="k">class</span> <span class="nc"><a href="/python-xr/./Lib/lib2to3/fixes/fix_reduce.py.html#line-15">FixReduce</a></span><span class="p">(</span><span class="n"><a href="/python-xr/./Lib/lib2to3/fixes/fix_apply.py.html#line-11">fixer_base</a></span><span class="o">.</span><span class="n"><a href="/python-xr/./Lib/lib2to3/fixer_base.py.html#line-15">BaseFix</a></span><span class="p">):</span>
 <a name="line-16"></a>
-<a name="line-17"></a>    <span class="n"><a href="/./Lib/lib2to3/fixer_base.py.html#line-42">BM_compatible</a></span> <span class="o">=</span> <span class="bp">True</span>
-<a name="line-18"></a>    <span class="n"><a href="/./Lib/lib2to3/fixer_base.py.html#line-33">order</a></span> <span class="o">=</span> <span class="s2">&quot;pre&quot;</span>
+<a name="line-17"></a>    <span class="n"><a href="/python-xr/./Lib/lib2to3/fixer_base.py.html#line-42">BM_compatible</a></span> <span class="o">=</span> <span class="bp">True</span>
+<a name="line-18"></a>    <span class="n"><a href="/python-xr/./Lib/lib2to3/fixer_base.py.html#line-33">order</a></span> <span class="o">=</span> <span class="s2">&quot;pre&quot;</span>
 <a name="line-19"></a>
-<a name="line-20"></a>    <span class="n"><a href="/./Lib/lib2to3/fixer_base.py.html#line-25">PATTERN</a></span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a name="line-20"></a>    <span class="n"><a href="/python-xr/./Lib/lib2to3/fixer_base.py.html#line-25">PATTERN</a></span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <a name="line-21"></a><span class="s2">    power&lt; &#39;reduce&#39;</span>
 <a name="line-22"></a><span class="s2">        trailer&lt; &#39;(&#39;</span>
 <a name="line-23"></a><span class="s2">            arglist&lt; (</span>
@@ -147,8 +147,8 @@ body .il { color: #666666 } /* Literal.Number.Integer.Long */
 <a name="line-31"></a><span class="s2">    &gt;</span>
 <a name="line-32"></a><span class="s2">    &quot;&quot;&quot;</span>
 <a name="line-33"></a>
-<a name="line-34"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/compiler/transformer.py.html#line-120">transform</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Include/node.h.html#line-17">node</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-41">results</a></span><span class="p">):</span>
-<a name="line-35"></a>        <span class="n"><a href="/./Lib/lib2to3/fixer_util.py.html#line-294">touch_import</a></span><span class="p">(</span><span class="s1">u&#39;functools&#39;</span><span class="p">,</span> <span class="s1">u&#39;reduce&#39;</span><span class="p">,</span> <span class="n"><a href="/./Include/node.h.html#line-17">node</a></span><span class="p">)</span>
+<a name="line-34"></a>    <span class="k">def</span> <span class="nf"><a href="/python-xr/./Lib/compiler/transformer.py.html#line-120">transform</a></span><span class="p">(</span><span class="bp"><a href="/python-xr/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Include/node.h.html#line-17">node</a></span><span class="p">,</span> <span class="n"><a href="/python-xr/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-41">results</a></span><span class="p">):</span>
+<a name="line-35"></a>        <span class="n"><a href="/python-xr/./Lib/lib2to3/fixer_util.py.html#line-294">touch_import</a></span><span class="p">(</span><span class="s1">u&#39;functools&#39;</span><span class="p">,</span> <span class="s1">u&#39;reduce&#39;</span><span class="p">,</span> <span class="n"><a href="/python-xr/./Include/node.h.html#line-17">node</a></span><span class="p">)</span>
 </pre></div>
 </td></tr></table></body>
 </html>

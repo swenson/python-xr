@@ -1,0 +1,1038 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a>
+<a href="#line-140">140</a>
+<a href="#line-141">141</a>
+<a href="#line-142">142</a>
+<a href="#line-143">143</a>
+<a href="#line-144">144</a>
+<a href="#line-145">145</a>
+<a href="#line-146">146</a>
+<a href="#line-147">147</a>
+<a href="#line-148">148</a>
+<a href="#line-149">149</a>
+<a href="#line-150">150</a>
+<a href="#line-151">151</a>
+<a href="#line-152">152</a>
+<a href="#line-153">153</a>
+<a href="#line-154">154</a>
+<a href="#line-155">155</a>
+<a href="#line-156">156</a>
+<a href="#line-157">157</a>
+<a href="#line-158">158</a>
+<a href="#line-159">159</a>
+<a href="#line-160">160</a>
+<a href="#line-161">161</a>
+<a href="#line-162">162</a>
+<a href="#line-163">163</a>
+<a href="#line-164">164</a>
+<a href="#line-165">165</a>
+<a href="#line-166">166</a>
+<a href="#line-167">167</a>
+<a href="#line-168">168</a>
+<a href="#line-169">169</a>
+<a href="#line-170">170</a>
+<a href="#line-171">171</a>
+<a href="#line-172">172</a>
+<a href="#line-173">173</a>
+<a href="#line-174">174</a>
+<a href="#line-175">175</a>
+<a href="#line-176">176</a>
+<a href="#line-177">177</a>
+<a href="#line-178">178</a>
+<a href="#line-179">179</a>
+<a href="#line-180">180</a>
+<a href="#line-181">181</a>
+<a href="#line-182">182</a>
+<a href="#line-183">183</a>
+<a href="#line-184">184</a>
+<a href="#line-185">185</a>
+<a href="#line-186">186</a>
+<a href="#line-187">187</a>
+<a href="#line-188">188</a>
+<a href="#line-189">189</a>
+<a href="#line-190">190</a>
+<a href="#line-191">191</a>
+<a href="#line-192">192</a>
+<a href="#line-193">193</a>
+<a href="#line-194">194</a>
+<a href="#line-195">195</a>
+<a href="#line-196">196</a>
+<a href="#line-197">197</a>
+<a href="#line-198">198</a>
+<a href="#line-199">199</a>
+<a href="#line-200">200</a>
+<a href="#line-201">201</a>
+<a href="#line-202">202</a>
+<a href="#line-203">203</a>
+<a href="#line-204">204</a>
+<a href="#line-205">205</a>
+<a href="#line-206">206</a>
+<a href="#line-207">207</a>
+<a href="#line-208">208</a>
+<a href="#line-209">209</a>
+<a href="#line-210">210</a>
+<a href="#line-211">211</a>
+<a href="#line-212">212</a>
+<a href="#line-213">213</a>
+<a href="#line-214">214</a>
+<a href="#line-215">215</a>
+<a href="#line-216">216</a>
+<a href="#line-217">217</a>
+<a href="#line-218">218</a>
+<a href="#line-219">219</a>
+<a href="#line-220">220</a>
+<a href="#line-221">221</a>
+<a href="#line-222">222</a>
+<a href="#line-223">223</a>
+<a href="#line-224">224</a>
+<a href="#line-225">225</a>
+<a href="#line-226">226</a>
+<a href="#line-227">227</a>
+<a href="#line-228">228</a>
+<a href="#line-229">229</a>
+<a href="#line-230">230</a>
+<a href="#line-231">231</a>
+<a href="#line-232">232</a>
+<a href="#line-233">233</a>
+<a href="#line-234">234</a>
+<a href="#line-235">235</a>
+<a href="#line-236">236</a>
+<a href="#line-237">237</a>
+<a href="#line-238">238</a>
+<a href="#line-239">239</a>
+<a href="#line-240">240</a>
+<a href="#line-241">241</a>
+<a href="#line-242">242</a>
+<a href="#line-243">243</a>
+<a href="#line-244">244</a>
+<a href="#line-245">245</a>
+<a href="#line-246">246</a>
+<a href="#line-247">247</a>
+<a href="#line-248">248</a>
+<a href="#line-249">249</a>
+<a href="#line-250">250</a>
+<a href="#line-251">251</a>
+<a href="#line-252">252</a>
+<a href="#line-253">253</a>
+<a href="#line-254">254</a>
+<a href="#line-255">255</a>
+<a href="#line-256">256</a>
+<a href="#line-257">257</a>
+<a href="#line-258">258</a>
+<a href="#line-259">259</a>
+<a href="#line-260">260</a>
+<a href="#line-261">261</a>
+<a href="#line-262">262</a>
+<a href="#line-263">263</a>
+<a href="#line-264">264</a>
+<a href="#line-265">265</a>
+<a href="#line-266">266</a>
+<a href="#line-267">267</a>
+<a href="#line-268">268</a>
+<a href="#line-269">269</a>
+<a href="#line-270">270</a>
+<a href="#line-271">271</a>
+<a href="#line-272">272</a>
+<a href="#line-273">273</a>
+<a href="#line-274">274</a>
+<a href="#line-275">275</a>
+<a href="#line-276">276</a>
+<a href="#line-277">277</a>
+<a href="#line-278">278</a>
+<a href="#line-279">279</a>
+<a href="#line-280">280</a>
+<a href="#line-281">281</a>
+<a href="#line-282">282</a>
+<a href="#line-283">283</a>
+<a href="#line-284">284</a>
+<a href="#line-285">285</a>
+<a href="#line-286">286</a>
+<a href="#line-287">287</a>
+<a href="#line-288">288</a>
+<a href="#line-289">289</a>
+<a href="#line-290">290</a>
+<a href="#line-291">291</a>
+<a href="#line-292">292</a>
+<a href="#line-293">293</a>
+<a href="#line-294">294</a>
+<a href="#line-295">295</a>
+<a href="#line-296">296</a>
+<a href="#line-297">297</a>
+<a href="#line-298">298</a>
+<a href="#line-299">299</a>
+<a href="#line-300">300</a>
+<a href="#line-301">301</a>
+<a href="#line-302">302</a>
+<a href="#line-303">303</a>
+<a href="#line-304">304</a>
+<a href="#line-305">305</a>
+<a href="#line-306">306</a>
+<a href="#line-307">307</a>
+<a href="#line-308">308</a>
+<a href="#line-309">309</a>
+<a href="#line-310">310</a>
+<a href="#line-311">311</a>
+<a href="#line-312">312</a>
+<a href="#line-313">313</a>
+<a href="#line-314">314</a>
+<a href="#line-315">315</a>
+<a href="#line-316">316</a>
+<a href="#line-317">317</a>
+<a href="#line-318">318</a>
+<a href="#line-319">319</a>
+<a href="#line-320">320</a>
+<a href="#line-321">321</a>
+<a href="#line-322">322</a>
+<a href="#line-323">323</a>
+<a href="#line-324">324</a>
+<a href="#line-325">325</a>
+<a href="#line-326">326</a>
+<a href="#line-327">327</a>
+<a href="#line-328">328</a>
+<a href="#line-329">329</a>
+<a href="#line-330">330</a>
+<a href="#line-331">331</a>
+<a href="#line-332">332</a>
+<a href="#line-333">333</a>
+<a href="#line-334">334</a>
+<a href="#line-335">335</a>
+<a href="#line-336">336</a>
+<a href="#line-337">337</a>
+<a href="#line-338">338</a>
+<a href="#line-339">339</a>
+<a href="#line-340">340</a>
+<a href="#line-341">341</a>
+<a href="#line-342">342</a>
+<a href="#line-343">343</a>
+<a href="#line-344">344</a>
+<a href="#line-345">345</a>
+<a href="#line-346">346</a>
+<a href="#line-347">347</a>
+<a href="#line-348">348</a>
+<a href="#line-349">349</a>
+<a href="#line-350">350</a>
+<a href="#line-351">351</a>
+<a href="#line-352">352</a>
+<a href="#line-353">353</a>
+<a href="#line-354">354</a>
+<a href="#line-355">355</a>
+<a href="#line-356">356</a>
+<a href="#line-357">357</a>
+<a href="#line-358">358</a>
+<a href="#line-359">359</a>
+<a href="#line-360">360</a>
+<a href="#line-361">361</a>
+<a href="#line-362">362</a>
+<a href="#line-363">363</a>
+<a href="#line-364">364</a>
+<a href="#line-365">365</a>
+<a href="#line-366">366</a>
+<a href="#line-367">367</a>
+<a href="#line-368">368</a>
+<a href="#line-369">369</a>
+<a href="#line-370">370</a>
+<a href="#line-371">371</a>
+<a href="#line-372">372</a>
+<a href="#line-373">373</a>
+<a href="#line-374">374</a>
+<a href="#line-375">375</a>
+<a href="#line-376">376</a>
+<a href="#line-377">377</a>
+<a href="#line-378">378</a>
+<a href="#line-379">379</a>
+<a href="#line-380">380</a>
+<a href="#line-381">381</a>
+<a href="#line-382">382</a>
+<a href="#line-383">383</a>
+<a href="#line-384">384</a>
+<a href="#line-385">385</a>
+<a href="#line-386">386</a>
+<a href="#line-387">387</a>
+<a href="#line-388">388</a>
+<a href="#line-389">389</a>
+<a href="#line-390">390</a>
+<a href="#line-391">391</a>
+<a href="#line-392">392</a>
+<a href="#line-393">393</a>
+<a href="#line-394">394</a>
+<a href="#line-395">395</a>
+<a href="#line-396">396</a>
+<a href="#line-397">397</a>
+<a href="#line-398">398</a>
+<a href="#line-399">399</a>
+<a href="#line-400">400</a>
+<a href="#line-401">401</a>
+<a href="#line-402">402</a>
+<a href="#line-403">403</a>
+<a href="#line-404">404</a>
+<a href="#line-405">405</a>
+<a href="#line-406">406</a>
+<a href="#line-407">407</a>
+<a href="#line-408">408</a>
+<a href="#line-409">409</a>
+<a href="#line-410">410</a>
+<a href="#line-411">411</a>
+<a href="#line-412">412</a>
+<a href="#line-413">413</a>
+<a href="#line-414">414</a>
+<a href="#line-415">415</a>
+<a href="#line-416">416</a>
+<a href="#line-417">417</a>
+<a href="#line-418">418</a>
+<a href="#line-419">419</a>
+<a href="#line-420">420</a>
+<a href="#line-421">421</a>
+<a href="#line-422">422</a>
+<a href="#line-423">423</a>
+<a href="#line-424">424</a>
+<a href="#line-425">425</a>
+<a href="#line-426">426</a>
+<a href="#line-427">427</a>
+<a href="#line-428">428</a>
+<a href="#line-429">429</a>
+<a href="#line-430">430</a>
+<a href="#line-431">431</a>
+<a href="#line-432">432</a>
+<a href="#line-433">433</a>
+<a href="#line-434">434</a>
+<a href="#line-435">435</a>
+<a href="#line-436">436</a>
+<a href="#line-437">437</a>
+<a href="#line-438">438</a>
+<a href="#line-439">439</a>
+<a href="#line-440">440</a>
+<a href="#line-441">441</a>
+<a href="#line-442">442</a>
+<a href="#line-443">443</a>
+<a href="#line-444">444</a>
+<a href="#line-445">445</a>
+<a href="#line-446">446</a>
+<a href="#line-447">447</a>
+<a href="#line-448">448</a>
+<a href="#line-449">449</a>
+<a href="#line-450">450</a>
+<a href="#line-451">451</a>
+<a href="#line-452">452</a>
+<a href="#line-453">453</a>
+<a href="#line-454">454</a>
+<a href="#line-455">455</a>
+<a href="#line-456">456</a>
+<a href="#line-457">457</a>
+<a href="#line-458">458</a>
+<a href="#line-459">459</a>
+<a href="#line-460">460</a>
+<a href="#line-461">461</a>
+<a href="#line-462">462</a>
+<a href="#line-463">463</a>
+<a href="#line-464">464</a>
+<a href="#line-465">465</a>
+<a href="#line-466">466</a>
+<a href="#line-467">467</a>
+<a href="#line-468">468</a>
+<a href="#line-469">469</a>
+<a href="#line-470">470</a>
+<a href="#line-471">471</a>
+<a href="#line-472">472</a>
+<a href="#line-473">473</a>
+<a href="#line-474">474</a>
+<a href="#line-475">475</a>
+<a href="#line-476">476</a>
+<a href="#line-477">477</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/distutils/util.py</span><pre><span></span><a name="line-1"></a><span class="sd">&quot;&quot;&quot;distutils.util</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="sd">Miscellaneous utility functions -- anything that doesn&#39;t fit into</span>
+<a name="line-4"></a><span class="sd">one of the other *util.py modules.</span>
+<a name="line-5"></a><span class="sd">&quot;&quot;&quot;</span>
+<a name="line-6"></a>
+<a name="line-7"></a><span class="n"><a href="/./Lib/curses/__init__.py.html#line-13">__revision__</a></span> <span class="o">=</span> <span class="s2">&quot;$Id$&quot;</span>
+<a name="line-8"></a>
+<a name="line-9"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">,</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">,</span> <span class="nn"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">,</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">re</a></span>
+<a name="line-10"></a><span class="kn">from</span> <span class="nn">distutils.errors</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/command/bdist.py.html#line-12">DistutilsPlatformError</a></span>
+<a name="line-11"></a><span class="kn">from</span> <span class="nn">distutils.dep_util</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/bcppcompiler.py.html#line-22">newer</a></span>
+<a name="line-12"></a><span class="kn">from</span> <span class="nn">distutils.spawn</span> <span class="kn">import</span> <span class="n"><a href="/./Demo/tkinter/guido/ShellWindow.py.html#line-107">spawn</a></span>
+<a name="line-13"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-246">distutils</a></span> <span class="kn">import</span> <span class="n"><a href="/./Demo/pdist/rcslib.py.html#line-48">log</a></span>
+<a name="line-14"></a><span class="kn">from</span> <span class="nn">distutils.errors</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/errors.py.html#line-66">DistutilsByteCompileError</a></span>
+<a name="line-15"></a>
+<a name="line-16"></a><span class="k">def</span> <span class="nf"><a href="/./Doc/includes/test.py.html#line-206">get_platform</a></span> <span class="p">():</span>
+<a name="line-17"></a>    <span class="sd">&quot;&quot;&quot;Return a string that identifies the current platform.  This is used</span>
+<a name="line-18"></a><span class="sd">    mainly to distinguish platform-specific build directories and</span>
+<a name="line-19"></a><span class="sd">    platform-specific built distributions.  Typically includes the OS name</span>
+<a name="line-20"></a><span class="sd">    and version and the architecture (as supplied by &#39;os.uname()&#39;),</span>
+<a name="line-21"></a><span class="sd">    although the exact information included depends on the OS; eg. for IRIX</span>
+<a name="line-22"></a><span class="sd">    the architecture isn&#39;t particularly important (IRIX only runs on SGI</span>
+<a name="line-23"></a><span class="sd">    hardware), but for Linux the kernel version isn&#39;t particularly</span>
+<a name="line-24"></a><span class="sd">    important.</span>
+<a name="line-25"></a>
+<a name="line-26"></a><span class="sd">    Examples of returned values:</span>
+<a name="line-27"></a><span class="sd">       linux-i586</span>
+<a name="line-28"></a><span class="sd">       linux-alpha (?)</span>
+<a name="line-29"></a><span class="sd">       solaris-2.6-sun4u</span>
+<a name="line-30"></a><span class="sd">       irix-5.3</span>
+<a name="line-31"></a><span class="sd">       irix64-6.2</span>
+<a name="line-32"></a>
+<a name="line-33"></a><span class="sd">    Windows will return one of:</span>
+<a name="line-34"></a><span class="sd">       win-amd64 (64bit Windows on AMD64 (aka x86_64, Intel64, EM64T, etc)</span>
+<a name="line-35"></a><span class="sd">       win-ia64 (64bit Windows on Itanium)</span>
+<a name="line-36"></a><span class="sd">       win32 (all others - specifically, sys.platform is returned)</span>
+<a name="line-37"></a>
+<a name="line-38"></a><span class="sd">    For other non-POSIX platforms, currently just returns &#39;sys.platform&#39;.</span>
+<a name="line-39"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-40"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span><span class="p">:</span>
+<a name="line-41"></a>        <span class="c1"># sniff sys.version for architecture.</span>
+<a name="line-42"></a>        <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span> <span class="o">=</span> <span class="s2">&quot; bit (&quot;</span>
+<a name="line-43"></a>        <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/find.py.html#line-132">find</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">)</span>
+<a name="line-44"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+<a name="line-45"></a>            <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/upload.py.html#line-6">platform</a></span>
+<a name="line-46"></a>        <span class="n"><a href="/./Lib/test/test_sys_setprofile.py.html#line-218">j</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/find.py.html#line-132">find</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">)</span>
+<a name="line-47"></a>        <span class="n">look</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="o">+</span><span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">):</span><span class="n"><a href="/./Lib/test/test_sys_setprofile.py.html#line-218">j</a></span><span class="p">]</span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-320">lower</a></span><span class="p">()</span>
+<a name="line-48"></a>        <span class="k">if</span> <span class="n">look</span><span class="o">==</span><span class="s1">&#39;amd64&#39;</span><span class="p">:</span>
+<a name="line-49"></a>            <span class="k">return</span> <span class="s1">&#39;win-amd64&#39;</span>
+<a name="line-50"></a>        <span class="k">if</span> <span class="n">look</span><span class="o">==</span><span class="s1">&#39;itanium&#39;</span><span class="p">:</span>
+<a name="line-51"></a>            <span class="k">return</span> <span class="s1">&#39;win-ia64&#39;</span>
+<a name="line-52"></a>        <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/upload.py.html#line-6">platform</a></span>
+<a name="line-53"></a>
+<a name="line-54"></a>    <span class="c1"># Set for cross builds explicitly</span>
+<a name="line-55"></a>    <span class="k">if</span> <span class="s2">&quot;_PYTHON_HOST_PLATFORM&quot;</span> <span class="ow">in</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/os.py.html#line-307">environ</a></span><span class="p">:</span>
+<a name="line-56"></a>        <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/os.py.html#line-307">environ</a></span><span class="p">[</span><span class="s2">&quot;_PYTHON_HOST_PLATFORM&quot;</span><span class="p">]</span>
+<a name="line-57"></a>
+<a name="line-58"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="o">!=</span> <span class="s2">&quot;posix&quot;</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="p">,</span> <span class="s1">&#39;uname&#39;</span><span class="p">):</span>
+<a name="line-59"></a>        <span class="c1"># XXX what about the architecture? NT is Intel or Alpha,</span>
+<a name="line-60"></a>        <span class="c1"># Mac OS is M68k or PPC, etc.</span>
+<a name="line-61"></a>        <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/upload.py.html#line-6">platform</a></span>
+<a name="line-62"></a>
+<a name="line-63"></a>    <span class="c1"># Try to distinguish various flavours of Unix</span>
+<a name="line-64"></a>
+<a name="line-65"></a>    <span class="p">(</span><span class="n">osname</span><span class="p">,</span> <span class="n"><a href="/./Lib/ftplib.py.html#line-104">host</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span><span class="p">)</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/platform.py.html#line-1119">uname</a></span><span class="p">()</span>
+<a name="line-66"></a>
+<a name="line-67"></a>    <span class="c1"># Convert the OS name to lowercase, remove &#39;/&#39; characters</span>
+<a name="line-68"></a>    <span class="c1"># (to accommodate BSD/OS), and translate spaces (for &quot;Power Macintosh&quot;)</span>
+<a name="line-69"></a>    <span class="n">osname</span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-320">lower</a></span><span class="p">(</span><span class="n">osname</span><span class="p">)</span>
+<a name="line-70"></a>    <span class="n">osname</span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/turtle/tdemo_lindenmayer_indian.py.html#line-30">replace</a></span><span class="p">(</span><span class="n">osname</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<a name="line-71"></a>    <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/turtle/tdemo_lindenmayer_indian.py.html#line-30">replace</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+<a name="line-72"></a>    <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/turtle/tdemo_lindenmayer_indian.py.html#line-30">replace</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<a name="line-73"></a>
+<a name="line-74"></a>    <span class="k">if</span> <span class="n">osname</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;linux&quot;</span><span class="p">:</span>
+<a name="line-75"></a>        <span class="c1"># At least on Linux/Intel, &#39;machine&#39; is the processor --</span>
+<a name="line-76"></a>        <span class="c1"># i386, etc.</span>
+<a name="line-77"></a>        <span class="c1"># XXX what about Alpha, SPARC, etc?</span>
+<a name="line-78"></a>        <span class="k">return</span>  <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">-</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">osname</span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span><span class="p">)</span>
+<a name="line-79"></a>    <span class="k">elif</span> <span class="n">osname</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;sunos&quot;</span><span class="p">:</span>
+<a name="line-80"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s2">&quot;5&quot;</span><span class="p">:</span>           <span class="c1"># SunOS 5 == Solaris 2</span>
+<a name="line-81"></a>            <span class="n">osname</span> <span class="o">=</span> <span class="s2">&quot;solaris&quot;</span>
+<a name="line-82"></a>            <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span><span class="p">(</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+<a name="line-83"></a>            <span class="c1"># We can&#39;t use &quot;platform.architecture()[0]&quot; because a</span>
+<a name="line-84"></a>            <span class="c1"># bootstrap problem. We use a dict to get an error</span>
+<a name="line-85"></a>            <span class="c1"># if some suspicious happens.</span>
+<a name="line-86"></a>            <span class="n">bitness</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2147483647</span><span class="p">:</span><span class="s2">&quot;32bit&quot;</span><span class="p">,</span> <span class="mi">9223372036854775807</span><span class="p">:</span><span class="s2">&quot;64bit&quot;</span><span class="p">}</span>
+<a name="line-87"></a>            <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span> <span class="o">+=</span> <span class="s2">&quot;.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">bitness</span><span class="p">[</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/tests/data/py2_test_grammar.py.html#line-35">maxint</a></span><span class="p">]</span>
+<a name="line-88"></a>        <span class="c1"># fall through to standard osname-release-machine representation</span>
+<a name="line-89"></a>    <span class="k">elif</span> <span class="n">osname</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;irix&quot;</span><span class="p">:</span>              <span class="c1"># could be &quot;irix64&quot;!</span>
+<a name="line-90"></a>        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">-</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">osname</span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span><span class="p">)</span>
+<a name="line-91"></a>    <span class="k">elif</span> <span class="n">osname</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;aix&quot;</span><span class="p">:</span>
+<a name="line-92"></a>        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">-</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">osname</span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span><span class="p">)</span>
+<a name="line-93"></a>    <span class="k">elif</span> <span class="n">osname</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;cygwin&quot;</span><span class="p">:</span>
+<a name="line-94"></a>        <span class="n">osname</span> <span class="o">=</span> <span class="s2">&quot;cygwin&quot;</span>
+<a name="line-95"></a>        <span class="n">rel_re</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">re</a></span><span class="o">.</span><span class="n"><a href="/./Lib/_strptime.py.html#line-263">compile</a></span> <span class="p">(</span><span class="s1">r&#39;[\d.]+&#39;</span><span class="p">)</span>
+<a name="line-96"></a>        <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">=</span> <span class="n">rel_re</span><span class="o">.</span><span class="n"><a href="/./Demo/parser/example.py.html#line-116">match</a></span><span class="p">(</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span><span class="p">)</span>
+<a name="line-97"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">:</span>
+<a name="line-98"></a>            <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib-tk/Tkinter.py.html#line-1680">group</a></span><span class="p">()</span>
+<a name="line-99"></a>    <span class="k">elif</span> <span class="n">osname</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;darwin&quot;</span><span class="p">:</span>
+<a name="line-100"></a>        <span class="kn">import</span> <span class="nn"><a href="/./Lib/distutils/sysconfig.py.html#line-170">_osx_support</a></span><span class="o">,</span> <span class="nn">distutils.sysconfig</span>
+<a name="line-101"></a>        <span class="n">osname</span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/sysconfig.py.html#line-170">_osx_support</a></span><span class="o">.</span><span class="n"><a href="/./Lib/_osx_support.py.html#line-429">get_platform_osx</a></span><span class="p">(</span>
+<a name="line-102"></a>                                        <span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-246">distutils</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/build_ext.py.html#line-132">sysconfig</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/install.py.html#line-15">get_config_vars</a></span><span class="p">(),</span>
+<a name="line-103"></a>                                        <span class="n">osname</span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span><span class="p">)</span>
+<a name="line-104"></a>
+<a name="line-105"></a>    <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">-</span><span class="si">%s</span><span class="s2">-</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">osname</span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-81">release</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span><span class="p">)</span>
+<a name="line-106"></a>
+<a name="line-107"></a><span class="c1"># get_platform ()</span>
+<a name="line-108"></a>
+<a name="line-109"></a>
+<a name="line-110"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/command/build_py.py.html#line-13">convert_path</a></span> <span class="p">(</span><span class="n">pathname</span><span class="p">):</span>
+<a name="line-111"></a>    <span class="sd">&quot;&quot;&quot;Return &#39;pathname&#39; as a name that will work on the native filesystem,</span>
+<a name="line-112"></a><span class="sd">    i.e. split it on &#39;/&#39; and put it back together again using the current</span>
+<a name="line-113"></a><span class="sd">    directory separator.  Needed because filenames in the setup script are</span>
+<a name="line-114"></a><span class="sd">    always supplied in Unix style, and have to be converted to the local</span>
+<a name="line-115"></a><span class="sd">    convention before we can actually use them in the filesystem.  Raises</span>
+<a name="line-116"></a><span class="sd">    ValueError on non-Unix-ish systems if &#39;pathname&#39; either starts or</span>
+<a name="line-117"></a><span class="sd">    ends with a slash.</span>
+<a name="line-118"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-119"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/fixes/fix_import.py.html#line-15">sep</a></span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span>
+<a name="line-120"></a>        <span class="k">return</span> <span class="n">pathname</span>
+<a name="line-121"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">pathname</span><span class="p">:</span>
+<a name="line-122"></a>        <span class="k">return</span> <span class="n">pathname</span>
+<a name="line-123"></a>    <span class="k">if</span> <span class="n">pathname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span>
+<a name="line-124"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="s2">&quot;path &#39;</span><span class="si">%s</span><span class="s2">&#39; cannot be absolute&quot;</span> <span class="o">%</span> <span class="n">pathname</span>
+<a name="line-125"></a>    <span class="k">if</span> <span class="n">pathname</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span>
+<a name="line-126"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="s2">&quot;path &#39;</span><span class="si">%s</span><span class="s2">&#39; cannot end with &#39;/&#39;&quot;</span> <span class="o">%</span> <span class="n">pathname</span>
+<a name="line-127"></a>
+<a name="line-128"></a>    <span class="n"><a href="/./Lib/test/test_xmlrpc.py.html#line-380">paths</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/kill.py.html#line-6">split</a></span><span class="p">(</span><span class="n">pathname</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<a name="line-129"></a>    <span class="k">while</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n"><a href="/./Lib/test/test_xmlrpc.py.html#line-380">paths</a></span><span class="p">:</span>
+<a name="line-130"></a>        <span class="n"><a href="/./Lib/test/test_xmlrpc.py.html#line-380">paths</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-137">remove</a></span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<a name="line-131"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Lib/test/test_xmlrpc.py.html#line-380">paths</a></span><span class="p">:</span>
+<a name="line-132"></a>        <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/macpath.py.html#line-18">curdir</a></span>
+<a name="line-133"></a>    <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Lib/test/test_xmlrpc.py.html#line-380">paths</a></span><span class="p">)</span>
+<a name="line-134"></a>
+<a name="line-135"></a><span class="c1"># convert_path ()</span>
+<a name="line-136"></a>
+<a name="line-137"></a>
+<a name="line-138"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/command/install.py.html#line-18">change_root</a></span> <span class="p">(</span><span class="n">new_root</span><span class="p">,</span> <span class="n">pathname</span><span class="p">):</span>
+<a name="line-139"></a>    <span class="sd">&quot;&quot;&quot;Return &#39;pathname&#39; with &#39;new_root&#39; prepended.  If &#39;pathname&#39; is</span>
+<a name="line-140"></a><span class="sd">    relative, this is equivalent to &quot;os.path.join(new_root,pathname)&quot;.</span>
+<a name="line-141"></a><span class="sd">    Otherwise, it requires making &#39;pathname&#39; relative and then joining the</span>
+<a name="line-142"></a><span class="sd">    two, which is tricky on DOS/Windows and Mac OS.</span>
+<a name="line-143"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-144"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="o">==</span> <span class="s1">&#39;posix&#39;</span><span class="p">:</span>
+<a name="line-145"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Lib/macpath.py.html#line-33">isabs</a></span><span class="p">(</span><span class="n">pathname</span><span class="p">):</span>
+<a name="line-146"></a>            <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n">new_root</span><span class="p">,</span> <span class="n">pathname</span><span class="p">)</span>
+<a name="line-147"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-148"></a>            <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n">new_root</span><span class="p">,</span> <span class="n">pathname</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<a name="line-149"></a>
+<a name="line-150"></a>    <span class="k">elif</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span><span class="p">:</span>
+<a name="line-151"></a>        <span class="p">(</span><span class="n">drive</span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">)</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/tests/test_archive_util.py.html#line-9">splitdrive</a></span><span class="p">(</span><span class="n">pathname</span><span class="p">)</span>
+<a name="line-152"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">:</span>
+<a name="line-153"></a>            <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<a name="line-154"></a>        <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n">new_root</span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">)</span>
+<a name="line-155"></a>
+<a name="line-156"></a>    <span class="k">elif</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="o">==</span> <span class="s1">&#39;os2&#39;</span><span class="p">:</span>
+<a name="line-157"></a>        <span class="p">(</span><span class="n">drive</span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">)</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/tests/test_archive_util.py.html#line-9">splitdrive</a></span><span class="p">(</span><span class="n">pathname</span><span class="p">)</span>
+<a name="line-158"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/fixes/fix_import.py.html#line-15">sep</a></span><span class="p">:</span>
+<a name="line-159"></a>            <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<a name="line-160"></a>        <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n">new_root</span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">)</span>
+<a name="line-161"></a>
+<a name="line-162"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="line-163"></a>        <span class="k">raise</span> <span class="n"><a href="/./Lib/distutils/command/bdist.py.html#line-12">DistutilsPlatformError</a></span><span class="p">,</span> \
+<a name="line-164"></a>              <span class="s2">&quot;nothing known about platform &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span>
+<a name="line-165"></a>
+<a name="line-166"></a>
+<a name="line-167"></a><span class="n"><a href="/./Lib/distutils/util.py.html#line-167">_environ_checked</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-168"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/dist.py.html#line-20">check_environ</a></span> <span class="p">():</span>
+<a name="line-169"></a>    <span class="sd">&quot;&quot;&quot;Ensure that &#39;os.environ&#39; has all the environment variables we</span>
+<a name="line-170"></a><span class="sd">    guarantee that users can use in config files, command-line options,</span>
+<a name="line-171"></a><span class="sd">    etc.  Currently this includes:</span>
+<a name="line-172"></a><span class="sd">      HOME - user&#39;s home directory (Unix only)</span>
+<a name="line-173"></a><span class="sd">      PLAT - description of the current platform, including hardware</span>
+<a name="line-174"></a><span class="sd">             and OS (see &#39;get_platform()&#39;)</span>
+<a name="line-175"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-176"></a>    <span class="k">global</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-167">_environ_checked</a></span>
+<a name="line-177"></a>    <span class="k">if</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-167">_environ_checked</a></span><span class="p">:</span>
+<a name="line-178"></a>        <span class="k">return</span>
+<a name="line-179"></a>
+<a name="line-180"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="o">==</span> <span class="s1">&#39;posix&#39;</span> <span class="ow">and</span> <span class="s1">&#39;HOME&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/os.py.html#line-307">environ</a></span><span class="p">:</span>
+<a name="line-181"></a>        <span class="kn">import</span> <span class="nn"><a href="/./Demo/pdist/FSProxy.py.html#line-88">pwd</a></span>
+<a name="line-182"></a>        <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/os.py.html#line-307">environ</a></span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-88">pwd</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-os2emx/pwd.py.html#line-192">getpwuid</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/rpc/rpc.py.html#line-162">getuid</a></span><span class="p">())[</span><span class="mi">5</span><span class="p">]</span>
+<a name="line-183"></a>
+<a name="line-184"></a>    <span class="k">if</span> <span class="s1">&#39;PLAT&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/os.py.html#line-307">environ</a></span><span class="p">:</span>
+<a name="line-185"></a>        <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/os.py.html#line-307">environ</a></span><span class="p">[</span><span class="s1">&#39;PLAT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n"><a href="/./Doc/includes/test.py.html#line-206">get_platform</a></span><span class="p">()</span>
+<a name="line-186"></a>
+<a name="line-187"></a>    <span class="n"><a href="/./Lib/distutils/util.py.html#line-167">_environ_checked</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-188"></a>
+<a name="line-189"></a>
+<a name="line-190"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/command/install.py.html#line-18">subst_vars</a></span> <span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="n">local_vars</span><span class="p">):</span>
+<a name="line-191"></a>    <span class="sd">&quot;&quot;&quot;Perform shell/Perl-style variable substitution on &#39;string&#39;.  Every</span>
+<a name="line-192"></a><span class="sd">    occurrence of &#39;$&#39; followed by a name is considered a variable, and</span>
+<a name="line-193"></a><span class="sd">    variable is substituted by the value found in the &#39;local_vars&#39;</span>
+<a name="line-194"></a><span class="sd">    dictionary, or in &#39;os.environ&#39; if it&#39;s not in &#39;local_vars&#39;.</span>
+<a name="line-195"></a><span class="sd">    &#39;os.environ&#39; is first checked/augmented to guarantee that it contains</span>
+<a name="line-196"></a><span class="sd">    certain values: see &#39;check_environ()&#39;.  Raise ValueError for any</span>
+<a name="line-197"></a><span class="sd">    variables not found in either &#39;local_vars&#39; or &#39;os.environ&#39;.</span>
+<a name="line-198"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-199"></a>    <span class="n"><a href="/./Lib/distutils/dist.py.html#line-20">check_environ</a></span><span class="p">()</span>
+<a name="line-200"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/util.py.html#line-200">_subst</a></span> <span class="p">(</span><span class="n"><a href="/./Demo/parser/example.py.html#line-116">match</a></span><span class="p">,</span> <span class="n">local_vars</span><span class="o">=</span><span class="n">local_vars</span><span class="p">):</span>
+<a name="line-201"></a>        <span class="n">var_name</span> <span class="o">=</span> <span class="n"><a href="/./Demo/parser/example.py.html#line-116">match</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib-tk/Tkinter.py.html#line-1680">group</a></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-202"></a>        <span class="k">if</span> <span class="n">var_name</span> <span class="ow">in</span> <span class="n">local_vars</span><span class="p">:</span>
+<a name="line-203"></a>            <span class="k">return</span> <span class="nb"><a href="/./Include/unicodeobject.h.html#line-418">str</a></span><span class="p">(</span><span class="n">local_vars</span><span class="p">[</span><span class="n">var_name</span><span class="p">])</span>
+<a name="line-204"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-205"></a>            <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/os.py.html#line-307">environ</a></span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span>
+<a name="line-206"></a>
+<a name="line-207"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="line-208"></a>        <span class="k">return</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">re</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/msvc9compiler.py.html#line-167">sub</a></span><span class="p">(</span><span class="s1">r&#39;\$([a-zA-Z_][a-zA-Z_0-9]*)&#39;</span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-200">_subst</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">)</span>
+<a name="line-209"></a>    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="n"><a href="/./explore.py.html#line-18">var</a></span><span class="p">:</span>
+<a name="line-210"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="s2">&quot;invalid variable &#39;$</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n"><a href="/./explore.py.html#line-18">var</a></span>
+<a name="line-211"></a>
+<a name="line-212"></a><span class="c1"># subst_vars ()</span>
+<a name="line-213"></a>
+<a name="line-214"></a>
+<a name="line-215"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/tests/test_util.py.html#line-7">grok_environment_error</a></span> <span class="p">(</span><span class="n"><a href="/./Include/codecs.h.html#line-195">exc</a></span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="o">=</span><span class="s2">&quot;error: &quot;</span><span class="p">):</span>
+<a name="line-216"></a>    <span class="c1"># Function kept for backward compatibility.</span>
+<a name="line-217"></a>    <span class="c1"># Used to try clever things with EnvironmentErrors,</span>
+<a name="line-218"></a>    <span class="c1"># but nowadays str(exception) produces good messages.</span>
+<a name="line-219"></a>    <span class="k">return</span> <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span> <span class="o">+</span> <span class="nb"><a href="/./Include/unicodeobject.h.html#line-418">str</a></span><span class="p">(</span><span class="n"><a href="/./Include/codecs.h.html#line-195">exc</a></span><span class="p">)</span>
+<a name="line-220"></a>
+<a name="line-221"></a>
+<a name="line-222"></a><span class="c1"># Needed by &#39;split_quoted()&#39;</span>
+<a name="line-223"></a><span class="n">_wordchars_re</span> <span class="o">=</span> <span class="n">_squote_re</span> <span class="o">=</span> <span class="n">_dquote_re</span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-224"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/util.py.html#line-224">_init_regex</a></span><span class="p">():</span>
+<a name="line-225"></a>    <span class="k">global</span> <span class="n">_wordchars_re</span><span class="p">,</span> <span class="n">_squote_re</span><span class="p">,</span> <span class="n">_dquote_re</span>
+<a name="line-226"></a>    <span class="n">_wordchars_re</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">re</a></span><span class="o">.</span><span class="n"><a href="/./Lib/_strptime.py.html#line-263">compile</a></span><span class="p">(</span><span class="s1">r&#39;[^</span><span class="se">\\\&#39;</span><span class="s1">\&quot;</span><span class="si">%s</span><span class="s1"> ]*&#39;</span> <span class="o">%</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-irix5/panelparser.py.html#line-12">whitespace</a></span><span class="p">)</span>
+<a name="line-227"></a>    <span class="n">_squote_re</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">re</a></span><span class="o">.</span><span class="n"><a href="/./Lib/_strptime.py.html#line-263">compile</a></span><span class="p">(</span><span class="s2">r&quot;&#39;(?:[^&#39;</span><span class="se">\\</span><span class="s2">]|</span><span class="se">\\</span><span class="s2">.)*&#39;&quot;</span><span class="p">)</span>
+<a name="line-228"></a>    <span class="n">_dquote_re</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">re</a></span><span class="o">.</span><span class="n"><a href="/./Lib/_strptime.py.html#line-263">compile</a></span><span class="p">(</span><span class="s1">r&#39;&quot;(?:[^&quot;</span><span class="se">\\</span><span class="s1">]|</span><span class="se">\\</span><span class="s1">.)*&quot;&#39;</span><span class="p">)</span>
+<a name="line-229"></a>
+<a name="line-230"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/ccompiler.py.html#line-18">split_quoted</a></span> <span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">):</span>
+<a name="line-231"></a>    <span class="sd">&quot;&quot;&quot;Split a string up according to Unix shell-like rules for quotes and</span>
+<a name="line-232"></a><span class="sd">    backslashes.  In short: words are delimited by spaces, as long as those</span>
+<a name="line-233"></a><span class="sd">    spaces are not escaped by a backslash, or inside a quoted string.</span>
+<a name="line-234"></a><span class="sd">    Single and double quotes are equivalent, and the quote characters can</span>
+<a name="line-235"></a><span class="sd">    be backslash-escaped.  The backslash is stripped from any two-character</span>
+<a name="line-236"></a><span class="sd">    escape sequence, leaving only the escaped character.  The quote</span>
+<a name="line-237"></a><span class="sd">    characters are stripped from any quoted string.  Returns a list of</span>
+<a name="line-238"></a><span class="sd">    words.</span>
+<a name="line-239"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-240"></a>
+<a name="line-241"></a>    <span class="c1"># This is a nice algorithm for splitting up a single string, since it</span>
+<a name="line-242"></a>    <span class="c1"># doesn&#39;t require character-by-character examination.  It was a little</span>
+<a name="line-243"></a>    <span class="c1"># bit of a brain-bender to get it working right, though...</span>
+<a name="line-244"></a>    <span class="k">if</span> <span class="n">_wordchars_re</span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-224">_init_regex</a></span><span class="p">()</span>
+<a name="line-245"></a>
+<a name="line-246"></a>    <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Lib/UserString.py.html#line-125">strip</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">)</span>
+<a name="line-247"></a>    <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span> <span class="o">=</span> <span class="p">[]</span>
+<a name="line-248"></a>    <span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-1616">pos</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-249"></a>
+<a name="line-250"></a>    <span class="k">while</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">:</span>
+<a name="line-251"></a>        <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">=</span> <span class="n">_wordchars_re</span><span class="o">.</span><span class="n"><a href="/./Demo/parser/example.py.html#line-116">match</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-1616">pos</a></span><span class="p">)</span>
+<a name="line-252"></a>        <span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="o">.</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">()</span>
+<a name="line-253"></a>        <span class="k">if</span> <span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span> <span class="o">==</span> <span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">):</span>
+<a name="line-254"></a>            <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[:</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">])</span>
+<a name="line-255"></a>            <span class="k">break</span>
+<a name="line-256"></a>
+<a name="line-257"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">]</span> <span class="ow">in</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-irix5/panelparser.py.html#line-12">whitespace</a></span><span class="p">:</span> <span class="c1"># unescaped, unquoted whitespace: now</span>
+<a name="line-258"></a>            <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[:</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">])</span>       <span class="c1"># we definitely have a word delimiter</span>
+<a name="line-259"></a>            <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Lib/UserString.py.html#line-104">lstrip</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">:])</span>
+<a name="line-260"></a>            <span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-1616">pos</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-261"></a>
+<a name="line-262"></a>        <span class="k">elif</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">:</span>            <span class="c1"># preserve whatever is being escaped;</span>
+<a name="line-263"></a>                                        <span class="c1"># will become part of the current word</span>
+<a name="line-264"></a>            <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[:</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">]</span> <span class="o">+</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+<a name="line-265"></a>            <span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-1616">pos</a></span> <span class="o">=</span> <span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="o">+</span><span class="mi">1</span>
+<a name="line-266"></a>
+<a name="line-267"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-268"></a>            <span class="k">if</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">:</span>           <span class="c1"># slurp singly-quoted string</span>
+<a name="line-269"></a>                <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">=</span> <span class="n">_squote_re</span><span class="o">.</span><span class="n"><a href="/./Demo/parser/example.py.html#line-116">match</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">)</span>
+<a name="line-270"></a>            <span class="k">elif</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">:</span>         <span class="c1"># slurp doubly-quoted string</span>
+<a name="line-271"></a>                <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">=</span> <span class="n">_dquote_re</span><span class="o">.</span><span class="n"><a href="/./Demo/parser/example.py.html#line-116">match</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">)</span>
+<a name="line-272"></a>            <span class="k">else</span><span class="p">:</span>
+<a name="line-273"></a>                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">,</span> \
+<a name="line-274"></a>                      <span class="s2">&quot;this can&#39;t happen (bad char &#39;</span><span class="si">%c</span><span class="s2">&#39;)&quot;</span> <span class="o">%</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">]</span>
+<a name="line-275"></a>
+<a name="line-276"></a>            <span class="k">if</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-277"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> \
+<a name="line-278"></a>                      <span class="s2">&quot;bad string (mismatched </span><span class="si">%s</span><span class="s2"> quotes?)&quot;</span> <span class="o">%</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">]</span>
+<a name="line-279"></a>
+<a name="line-280"></a>            <span class="p">(</span><span class="n">beg</span><span class="p">,</span> <span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">)</span> <span class="o">=</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+<a name="line-281"></a>            <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[:</span><span class="n">beg</span><span class="p">]</span> <span class="o">+</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[</span><span class="n">beg</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">[</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">:]</span>
+<a name="line-282"></a>            <span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-1616">pos</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="o">.</span><span class="n"><a href="/./Doc/make.bat.html#line-123">end</a></span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span>
+<a name="line-283"></a>
+<a name="line-284"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-1616">pos</a></span> <span class="o">&gt;=</span> <span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">):</span>
+<a name="line-285"></a>            <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">)</span>
+<a name="line-286"></a>            <span class="k">break</span>
+<a name="line-287"></a>
+<a name="line-288"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span>
+<a name="line-289"></a>
+<a name="line-290"></a><span class="c1"># split_quoted ()</span>
+<a name="line-291"></a>
+<a name="line-292"></a>
+<a name="line-293"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/sockets/rpythond.py.html#line-37">execute</a></span> <span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<a name="line-294"></a>    <span class="sd">&quot;&quot;&quot;Perform some action that affects the outside world (eg.  by</span>
+<a name="line-295"></a><span class="sd">    writing to the filesystem).  Such actions are special because they</span>
+<a name="line-296"></a><span class="sd">    are disabled by the &#39;dry_run&#39; flag.  This method takes care of all</span>
+<a name="line-297"></a><span class="sd">    that bureaucracy for you; all you have to do is supply the</span>
+<a name="line-298"></a><span class="sd">    function to call and an argument tuple for it (to embody the</span>
+<a name="line-299"></a><span class="sd">    &quot;external action&quot; being performed), and an optional message to</span>
+<a name="line-300"></a><span class="sd">    print.</span>
+<a name="line-301"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-302"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-303"></a>        <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-264">func</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">)</span>
+<a name="line-304"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;,)&#39;</span><span class="p">:</span>        <span class="c1"># correct for singleton tuple</span>
+<a name="line-305"></a>            <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span>
+<a name="line-306"></a>
+<a name="line-307"></a>    <span class="n"><a href="/./Demo/pdist/rcslib.py.html#line-48">log</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-167">info</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="p">)</span>
+<a name="line-308"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="p">:</span>
+<a name="line-309"></a>        <span class="n"><a href="/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">)</span>
+<a name="line-310"></a>
+<a name="line-311"></a>
+<a name="line-312"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/dist.py.html#line-20">strtobool</a></span> <span class="p">(</span><span class="n"><a href="/./Modules/zlib/inftrees.h.html#line-27">val</a></span><span class="p">):</span>
+<a name="line-313"></a>    <span class="sd">&quot;&quot;&quot;Convert a string representation of truth to true (1) or false (0).</span>
+<a name="line-314"></a>
+<a name="line-315"></a><span class="sd">    True values are &#39;y&#39;, &#39;yes&#39;, &#39;t&#39;, &#39;true&#39;, &#39;on&#39;, and &#39;1&#39;; false values</span>
+<a name="line-316"></a><span class="sd">    are &#39;n&#39;, &#39;no&#39;, &#39;f&#39;, &#39;false&#39;, &#39;off&#39;, and &#39;0&#39;.  Raises ValueError if</span>
+<a name="line-317"></a><span class="sd">    &#39;val&#39; is anything else.</span>
+<a name="line-318"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-319"></a>    <span class="n"><a href="/./Modules/zlib/inftrees.h.html#line-27">val</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-320">lower</a></span><span class="p">(</span><span class="n"><a href="/./Modules/zlib/inftrees.h.html#line-27">val</a></span><span class="p">)</span>
+<a name="line-320"></a>    <span class="k">if</span> <span class="n"><a href="/./Modules/zlib/inftrees.h.html#line-27">val</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;true&#39;</span><span class="p">,</span> <span class="s1">&#39;on&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">):</span>
+<a name="line-321"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a name="line-322"></a>    <span class="k">elif</span> <span class="n"><a href="/./Modules/zlib/inftrees.h.html#line-27">val</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;false&#39;</span><span class="p">,</span> <span class="s1">&#39;off&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">):</span>
+<a name="line-323"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a name="line-324"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="line-325"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="s2">&quot;invalid truth value </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n"><a href="/./Modules/zlib/inftrees.h.html#line-27">val</a></span><span class="p">,)</span>
+<a name="line-326"></a>
+<a name="line-327"></a>
+<a name="line-328"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/command/build_py.py.html#line-375">byte_compile</a></span> <span class="p">(</span><span class="n">py_files</span><span class="p">,</span>
+<a name="line-329"></a>                  <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-480">optimize</a></span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a name="line-330"></a>                  <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="n">base_dir</span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span>
+<a name="line-331"></a>                  <span class="n"><a href="/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a name="line-332"></a>                  <span class="n"><a href="/./Modules/zlib/gzguts.h.html#line-175">direct</a></span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">):</span>
+<a name="line-333"></a>    <span class="sd">&quot;&quot;&quot;Byte-compile a collection of Python source files to either .pyc</span>
+<a name="line-334"></a><span class="sd">    or .pyo files in the same directory.  &#39;py_files&#39; is a list of files</span>
+<a name="line-335"></a><span class="sd">    to compile; any files that don&#39;t end in &quot;.py&quot; are silently skipped.</span>
+<a name="line-336"></a><span class="sd">    &#39;optimize&#39; must be one of the following:</span>
+<a name="line-337"></a><span class="sd">      0 - don&#39;t optimize (generate .pyc)</span>
+<a name="line-338"></a><span class="sd">      1 - normal optimization (like &quot;python -O&quot;)</span>
+<a name="line-339"></a><span class="sd">      2 - extra optimization (like &quot;python -OO&quot;)</span>
+<a name="line-340"></a><span class="sd">    If &#39;force&#39; is true, all files are recompiled regardless of</span>
+<a name="line-341"></a><span class="sd">    timestamps.</span>
+<a name="line-342"></a>
+<a name="line-343"></a><span class="sd">    The source filename encoded in each bytecode file defaults to the</span>
+<a name="line-344"></a><span class="sd">    filenames listed in &#39;py_files&#39;; you can modify these with &#39;prefix&#39; and</span>
+<a name="line-345"></a><span class="sd">    &#39;basedir&#39;.  &#39;prefix&#39; is a string that will be stripped off of each</span>
+<a name="line-346"></a><span class="sd">    source filename, and &#39;base_dir&#39; is a directory name that will be</span>
+<a name="line-347"></a><span class="sd">    prepended (after &#39;prefix&#39; is stripped).  You can supply either or both</span>
+<a name="line-348"></a><span class="sd">    (or neither) of &#39;prefix&#39; and &#39;base_dir&#39;, as you wish.</span>
+<a name="line-349"></a>
+<a name="line-350"></a><span class="sd">    If &#39;dry_run&#39; is true, doesn&#39;t actually do anything that would</span>
+<a name="line-351"></a><span class="sd">    affect the filesystem.</span>
+<a name="line-352"></a>
+<a name="line-353"></a><span class="sd">    Byte-compilation is either done directly in this interpreter process</span>
+<a name="line-354"></a><span class="sd">    with the standard py_compile module, or indirectly by writing a</span>
+<a name="line-355"></a><span class="sd">    temporary script and executing it.  Normally, you should let</span>
+<a name="line-356"></a><span class="sd">    &#39;byte_compile()&#39; figure out to use direct compilation or not (see</span>
+<a name="line-357"></a><span class="sd">    the source for details).  The &#39;direct&#39; flag is used by the script</span>
+<a name="line-358"></a><span class="sd">    generated in indirect mode; unless you know what you&#39;re doing, leave</span>
+<a name="line-359"></a><span class="sd">    it set to None.</span>
+<a name="line-360"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-361"></a>    <span class="c1"># nothing is done if sys.dont_write_bytecode is True</span>
+<a name="line-362"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n">dont_write_bytecode</span><span class="p">:</span>
+<a name="line-363"></a>        <span class="k">raise</span> <span class="n"><a href="/./Lib/distutils/errors.py.html#line-66">DistutilsByteCompileError</a></span><span class="p">(</span><span class="s1">&#39;byte-compiling is disabled.&#39;</span><span class="p">)</span>
+<a name="line-364"></a>
+<a name="line-365"></a>    <span class="c1"># First, if the caller didn&#39;t force us into direct or indirect mode,</span>
+<a name="line-366"></a>    <span class="c1"># figure out which mode we should be in.  We take a conservative</span>
+<a name="line-367"></a>    <span class="c1"># approach: choose direct mode *only* if the current interpreter is</span>
+<a name="line-368"></a>    <span class="c1"># in debug mode and optimize is 0.  If we&#39;re not in debug mode (-O</span>
+<a name="line-369"></a>    <span class="c1"># or -OO), we don&#39;t know which level of optimization this</span>
+<a name="line-370"></a>    <span class="c1"># interpreter is running with, so we can&#39;t do direct</span>
+<a name="line-371"></a>    <span class="c1"># byte-compilation and be certain that it&#39;s the right thing.  Thus,</span>
+<a name="line-372"></a>    <span class="c1"># always compile indirectly if the current interpreter is in either</span>
+<a name="line-373"></a>    <span class="c1"># optimize mode, or if either optimization level was requested by</span>
+<a name="line-374"></a>    <span class="c1"># the caller.</span>
+<a name="line-375"></a>    <span class="k">if</span> <span class="n"><a href="/./Modules/zlib/gzguts.h.html#line-175">direct</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-376"></a>        <span class="n"><a href="/./Modules/zlib/gzguts.h.html#line-175">direct</a></span> <span class="o">=</span> <span class="p">(</span><span class="n">__debug__</span> <span class="ow">and</span> <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-480">optimize</a></span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<a name="line-377"></a>
+<a name="line-378"></a>    <span class="c1"># &quot;Indirect&quot; byte-compilation: write a temporary script and then</span>
+<a name="line-379"></a>    <span class="c1"># run it with the appropriate flags.</span>
+<a name="line-380"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Modules/zlib/gzguts.h.html#line-175">direct</a></span><span class="p">:</span>
+<a name="line-381"></a>        <span class="k">try</span><span class="p">:</span>
+<a name="line-382"></a>            <span class="kn">from</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">tempfile</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-382">mkstemp</a></span>
+<a name="line-383"></a>            <span class="p">(</span><span class="n">script_fd</span><span class="p">,</span> <span class="n">script_name</span><span class="p">)</span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-382">mkstemp</a></span><span class="p">(</span><span class="s2">&quot;.py&quot;</span><span class="p">)</span>
+<a name="line-384"></a>        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<a name="line-385"></a>            <span class="kn">from</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">tempfile</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-183">mktemp</a></span>
+<a name="line-386"></a>            <span class="p">(</span><span class="n">script_fd</span><span class="p">,</span> <span class="n">script_name</span><span class="p">)</span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-183">mktemp</a></span><span class="p">(</span><span class="s2">&quot;.py&quot;</span><span class="p">)</span>
+<a name="line-387"></a>        <span class="n"><a href="/./Demo/pdist/rcslib.py.html#line-48">log</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-167">info</a></span><span class="p">(</span><span class="s2">&quot;writing byte-compilation script &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span><span class="p">,</span> <span class="n">script_name</span><span class="p">)</span>
+<a name="line-388"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="p">:</span>
+<a name="line-389"></a>            <span class="k">if</span> <span class="n">script_fd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-390"></a>                <span class="n"><a href="/./Demo/scripts/script.py.html#line-36">script</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_tempfile.py.html#line-819">fdopen</a></span><span class="p">(</span><span class="n">script_fd</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<a name="line-391"></a>            <span class="k">else</span><span class="p">:</span>
+<a name="line-392"></a>                <span class="n"><a href="/./Demo/scripts/script.py.html#line-36">script</a></span> <span class="o">=</span> <span class="nb"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="n">script_name</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<a name="line-393"></a>
+<a name="line-394"></a>            <span class="n"><a href="/./Demo/scripts/script.py.html#line-36">script</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<a name="line-395"></a><span class="s2">from distutils.util import byte_compile</span>
+<a name="line-396"></a><span class="s2">files = [</span>
+<a name="line-397"></a><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<a name="line-398"></a>
+<a name="line-399"></a>            <span class="c1"># XXX would be nice to write absolute filenames, just for</span>
+<a name="line-400"></a>            <span class="c1"># safety&#39;s sake (script should be more robust in the face of</span>
+<a name="line-401"></a>            <span class="c1"># chdir&#39;ing before running it).  But this requires abspath&#39;ing</span>
+<a name="line-402"></a>            <span class="c1"># &#39;prefix&#39; as well, and that breaks the hack in build_lib&#39;s</span>
+<a name="line-403"></a>            <span class="c1"># &#39;byte_compile()&#39; method that carefully tacks on a trailing</span>
+<a name="line-404"></a>            <span class="c1"># slash (os.sep really) to make sure the prefix here is &quot;just</span>
+<a name="line-405"></a>            <span class="c1"># right&quot;.  This whole prefix business is rather delicate -- the</span>
+<a name="line-406"></a>            <span class="c1"># problem is that it&#39;s really a directory, but I&#39;m treating it</span>
+<a name="line-407"></a>            <span class="c1"># as a dumb string, so trailing slashes and so forth matter.</span>
+<a name="line-408"></a>
+<a name="line-409"></a>            <span class="c1">#py_files = map(os.path.abspath, py_files)</span>
+<a name="line-410"></a>            <span class="c1">#if prefix:</span>
+<a name="line-411"></a>            <span class="c1">#    prefix = os.path.abspath(prefix)</span>
+<a name="line-412"></a>
+<a name="line-413"></a>            <span class="n"><a href="/./Demo/scripts/script.py.html#line-36">script</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span><span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="nb"><a href="/./Lib/lib-tk/ttk.py.html#line-389">map</a></span><span class="p">(</span><span class="nb"><a href="/./Demo/pdist/cmptree.py.html#line-4">repr</a></span><span class="p">,</span> <span class="n">py_files</span><span class="p">),</span> <span class="s2">&quot;,</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a name="line-414"></a>            <span class="n"><a href="/./Demo/scripts/script.py.html#line-36">script</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<a name="line-415"></a><span class="s2">byte_compile(files, optimize=</span><span class="si">%r</span><span class="s2">, force=</span><span class="si">%r</span><span class="s2">,</span>
+<a name="line-416"></a><span class="s2">             prefix=</span><span class="si">%r</span><span class="s2">, base_dir=</span><span class="si">%r</span><span class="s2">,</span>
+<a name="line-417"></a><span class="s2">             verbose=</span><span class="si">%r</span><span class="s2">, dry_run=0,</span>
+<a name="line-418"></a><span class="s2">             direct=1)</span>
+<a name="line-419"></a><span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-480">optimize</a></span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">,</span> <span class="n">base_dir</span><span class="p">,</span> <span class="n"><a href="/./Lib/bsddb/test/test_all.py.html#line-467">verbose</a></span><span class="p">))</span>
+<a name="line-420"></a>
+<a name="line-421"></a>            <span class="n"><a href="/./Demo/scripts/script.py.html#line-36">script</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-363">close</a></span><span class="p">()</span>
+<a name="line-422"></a>
+<a name="line-423"></a>        <span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span> <span class="o">=</span> <span class="p">[</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/CGIHTTPServer.py.html#line-363">executable</a></span><span class="p">,</span> <span class="n">script_name</span><span class="p">]</span>
+<a name="line-424"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-480">optimize</a></span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a name="line-425"></a>            <span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-131">insert</a></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;-O&quot;</span><span class="p">)</span>
+<a name="line-426"></a>        <span class="k">elif</span> <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-480">optimize</a></span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<a name="line-427"></a>            <span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-131">insert</a></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;-OO&quot;</span><span class="p">)</span>
+<a name="line-428"></a>        <span class="n"><a href="/./Demo/tkinter/guido/ShellWindow.py.html#line-107">spawn</a></span><span class="p">(</span><span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="o">=</span><span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="p">)</span>
+<a name="line-429"></a>        <span class="n"><a href="/./Demo/sockets/rpythond.py.html#line-37">execute</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-137">remove</a></span><span class="p">,</span> <span class="p">(</span><span class="n">script_name</span><span class="p">,),</span> <span class="s2">&quot;removing </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">script_name</span><span class="p">,</span>
+<a name="line-430"></a>                <span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="o">=</span><span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="p">)</span>
+<a name="line-431"></a>
+<a name="line-432"></a>    <span class="c1"># &quot;Direct&quot; byte-compilation: use the py_compile module to compile</span>
+<a name="line-433"></a>    <span class="c1"># right here, right now.  Note that the script generated in indirect</span>
+<a name="line-434"></a>    <span class="c1"># mode simply calls &#39;byte_compile()&#39; in direct mode, a weird sort of</span>
+<a name="line-435"></a>    <span class="c1"># cross-process recursion.  Hey, it works!</span>
+<a name="line-436"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="line-437"></a>        <span class="kn">from</span> <span class="nn"><a href="/./Lib/compileall.py.html#line-15">py_compile</a></span> <span class="kn">import</span> <span class="nb"><a href="/./Lib/_strptime.py.html#line-263">compile</a></span>
+<a name="line-438"></a>
+<a name="line-439"></a>        <span class="k">for</span> <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span> <span class="ow">in</span> <span class="n">py_files</span><span class="p">:</span>
+<a name="line-440"></a>            <span class="k">if</span> <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">!=</span> <span class="s2">&quot;.py&quot;</span><span class="p">:</span>
+<a name="line-441"></a>                <span class="c1"># This lets us be lazy and not filter filenames in</span>
+<a name="line-442"></a>                <span class="c1"># the &quot;install_lib&quot; command.</span>
+<a name="line-443"></a>                <span class="k">continue</span>
+<a name="line-444"></a>
+<a name="line-445"></a>            <span class="c1"># Terminology from the py_compile module:</span>
+<a name="line-446"></a>            <span class="c1">#   cfile - byte-compiled file</span>
+<a name="line-447"></a>            <span class="c1">#   dfile - purported source filename (same as &#39;file&#39; by default)</span>
+<a name="line-448"></a>            <span class="n"><a href="/./Lib/distutils/util.py.html#line-448">cfile</a></span> <span class="o">=</span> <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span> <span class="o">+</span> <span class="p">(</span><span class="n">__debug__</span> <span class="ow">and</span> <span class="s2">&quot;c&quot;</span> <span class="ow">or</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<a name="line-449"></a>            <span class="n"><a href="/./Lib/distutils/util.py.html#line-449">dfile</a></span> <span class="o">=</span> <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span>
+<a name="line-450"></a>            <span class="k">if</span> <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">:</span>
+<a name="line-451"></a>                <span class="k">if</span> <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">[:</span><span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">)]</span> <span class="o">!=</span> <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">:</span>
+<a name="line-452"></a>                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> \
+<a name="line-453"></a>                          <span class="p">(</span><span class="s2">&quot;invalid prefix: filename </span><span class="si">%r</span><span class="s2"> doesn&#39;t start with </span><span class="si">%r</span><span class="s2">&quot;</span>
+<a name="line-454"></a>                           <span class="o">%</span> <span class="p">(</span><span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">))</span>
+<a name="line-455"></a>                <span class="n"><a href="/./Lib/distutils/util.py.html#line-449">dfile</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-449">dfile</a></span><span class="p">[</span><span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">):]</span>
+<a name="line-456"></a>            <span class="k">if</span> <span class="n">base_dir</span><span class="p">:</span>
+<a name="line-457"></a>                <span class="n"><a href="/./Lib/distutils/util.py.html#line-449">dfile</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-449">dfile</a></span><span class="p">)</span>
+<a name="line-458"></a>
+<a name="line-459"></a>            <span class="n"><a href="/./Lib/distutils/util.py.html#line-459">cfile_base</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/file_util.py.html#line-180">basename</a></span><span class="p">(</span><span class="n"><a href="/./Lib/distutils/util.py.html#line-448">cfile</a></span><span class="p">)</span>
+<a name="line-460"></a>            <span class="k">if</span> <span class="n"><a href="/./Modules/zlib/gzguts.h.html#line-175">direct</a></span><span class="p">:</span>
+<a name="line-461"></a>                <span class="k">if</span> <span class="n">force</span> <span class="ow">or</span> <span class="n"><a href="/./Lib/distutils/bcppcompiler.py.html#line-22">newer</a></span><span class="p">(</span><span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-448">cfile</a></span><span class="p">):</span>
+<a name="line-462"></a>                    <span class="n"><a href="/./Demo/pdist/rcslib.py.html#line-48">log</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-167">info</a></span><span class="p">(</span><span class="s2">&quot;byte-compiling </span><span class="si">%s</span><span class="s2"> to </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-459">cfile_base</a></span><span class="p">)</span>
+<a name="line-463"></a>                    <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="p">:</span>
+<a name="line-464"></a>                        <span class="nb"><a href="/./Lib/_strptime.py.html#line-263">compile</a></span><span class="p">(</span><span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-448">cfile</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-449">dfile</a></span><span class="p">)</span>
+<a name="line-465"></a>                <span class="k">else</span><span class="p">:</span>
+<a name="line-466"></a>                    <span class="n"><a href="/./Demo/pdist/rcslib.py.html#line-48">log</a></span><span class="o">.</span><span class="n"><a href="/./Lib/asyncore.py.html#line-225">debug</a></span><span class="p">(</span><span class="s2">&quot;skipping byte-compilation of </span><span class="si">%s</span><span class="s2"> to </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span>
+<a name="line-467"></a>                              <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-459">cfile_base</a></span><span class="p">)</span>
+<a name="line-468"></a>
+<a name="line-469"></a><span class="c1"># byte_compile ()</span>
+<a name="line-470"></a>
+<a name="line-471"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/dist.py.html#line-20">rfc822_escape</a></span> <span class="p">(</span><span class="n"><a href="/./Mac/Demo/sound/playaiff.py.html#line-39">header</a></span><span class="p">):</span>
+<a name="line-472"></a>    <span class="sd">&quot;&quot;&quot;Return a version of the string escaped for inclusion in an</span>
+<a name="line-473"></a><span class="sd">    RFC-822 header, by ensuring there are 8 spaces space after each newline.</span>
+<a name="line-474"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-475"></a>    <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/kill.py.html#line-6">split</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Demo/sound/playaiff.py.html#line-39">header</a></span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<a name="line-476"></a>    <span class="n"><a href="/./Mac/Demo/sound/playaiff.py.html#line-39">header</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<a name="line-477"></a>    <span class="k">return</span> <span class="n"><a href="/./Mac/Demo/sound/playaiff.py.html#line-39">header</a></span>
+</pre></div>
+</td></tr></table></body>
+</html>

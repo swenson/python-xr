@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/test/test_doctest2.py</span><pre><span></span><a name="line-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a name="line-2"></a><span class="sd">u&quot;&quot;&quot;A module to test whether doctest recognizes some 2.2 features,</span>
+<a name="line-3"></a><span class="sd">like static and class methods.</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="sd">&gt;&gt;&gt; print &#39;yup&#39;  # 1</span>
+<a name="line-6"></a><span class="sd">yup</span>
+<a name="line-7"></a>
+<a name="line-8"></a><span class="sd">We include some (random) encoded (utf-8) text in the text surrounding</span>
+<a name="line-9"></a><span class="sd">the example.  It should be ignored:</span>
+<a name="line-10"></a>
+<a name="line-11"></a><span class="sd">ЉЊЈЁЂ</span>
+<a name="line-12"></a>
+<a name="line-13"></a><span class="sd">&quot;&quot;&quot;</span>
+<a name="line-14"></a>
+<a name="line-15"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span>
+<a name="line-16"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span>
+<a name="line-17"></a><span class="kn">from</span> <span class="nn"><a href="/./Demo/classes/Complex.py.html#line-245">test</a></span> <span class="kn">import</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span>
+<a name="line-18"></a><span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-480">optimize</a></span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+<a name="line-19"></a>    <span class="k">raise</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_ftplib.py.html#line-18">SkipTest</a></span><span class="p">(</span><span class="s2">&quot;Cannot test docstrings with -O2&quot;</span><span class="p">)</span>
+<a name="line-20"></a>
+<a name="line-21"></a><span class="k">class</span> <span class="nc"><a href="/./Demo/metaclasses/Eiffel.py.html#line-101">C</a></span><span class="p">(</span><span class="nb"><a href="/./Include/asdl.h.html#line-6">object</a></span><span class="p">):</span>
+<a name="line-22"></a>    <span class="sd">u&quot;&quot;&quot;Class C.</span>
+<a name="line-23"></a>
+<a name="line-24"></a><span class="sd">    &gt;&gt;&gt; print C()  # 2</span>
+<a name="line-25"></a><span class="sd">    42</span>
+<a name="line-26"></a>
+<a name="line-27"></a>
+<a name="line-28"></a><span class="sd">    We include some (random) encoded (utf-8) text in the text surrounding</span>
+<a name="line-29"></a><span class="sd">    the example.  It should be ignored:</span>
+<a name="line-30"></a>
+<a name="line-31"></a><span class="sd">        ЉЊЈЁЂ</span>
+<a name="line-32"></a>
+<a name="line-33"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-34"></a>
+<a name="line-35"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/cgi/wiki.py.html#line-21">__init__</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-36"></a>        <span class="sd">&quot;&quot;&quot;C.__init__.</span>
+<a name="line-37"></a>
+<a name="line-38"></a><span class="sd">        &gt;&gt;&gt; print C() # 3</span>
+<a name="line-39"></a><span class="sd">        42</span>
+<a name="line-40"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-41"></a>
+<a name="line-42"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/classes/Complex.py.html#line-130">__str__</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-43"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a name="line-44"></a><span class="sd">        &gt;&gt;&gt; print C() # 4</span>
+<a name="line-45"></a><span class="sd">        42</span>
+<a name="line-46"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-47"></a>        <span class="k">return</span> <span class="s2">&quot;42&quot;</span>
+<a name="line-48"></a>
+<a name="line-49"></a>    <span class="k">class</span> <span class="nc"><a href="/./Demo/metaclasses/Meta.py.html#line-106">D</a></span><span class="p">(</span><span class="nb"><a href="/./Include/asdl.h.html#line-6">object</a></span><span class="p">):</span>
+<a name="line-50"></a>        <span class="sd">&quot;&quot;&quot;A nested D class.</span>
+<a name="line-51"></a>
+<a name="line-52"></a><span class="sd">        &gt;&gt;&gt; print &quot;In D!&quot;   # 5</span>
+<a name="line-53"></a><span class="sd">        In D!</span>
+<a name="line-54"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-55"></a>
+<a name="line-56"></a>        <span class="k">def</span> <span class="nf"><a href="/./Lib/contextlib.py.html#line-89">nested</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-57"></a>            <span class="sd">&quot;&quot;&quot;</span>
+<a name="line-58"></a><span class="sd">            &gt;&gt;&gt; print 3 # 6</span>
+<a name="line-59"></a><span class="sd">            3</span>
+<a name="line-60"></a><span class="sd">            &quot;&quot;&quot;</span>
+<a name="line-61"></a>
+<a name="line-62"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_descr.py.html#line-2023">getx</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-63"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a name="line-64"></a><span class="sd">        &gt;&gt;&gt; c = C()    # 7</span>
+<a name="line-65"></a><span class="sd">        &gt;&gt;&gt; c.x = 12   # 8</span>
+<a name="line-66"></a><span class="sd">        &gt;&gt;&gt; print c.x  # 9</span>
+<a name="line-67"></a><span class="sd">        -12</span>
+<a name="line-68"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-69"></a>        <span class="k">return</span> <span class="o">-</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/types.py.html#line-55">_x</a></span>
+<a name="line-70"></a>
+<a name="line-71"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/lib-tk/turtle.py.html#line-1707">setx</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-265">value</a></span><span class="p">):</span>
+<a name="line-72"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a name="line-73"></a><span class="sd">        &gt;&gt;&gt; c = C()     # 10</span>
+<a name="line-74"></a><span class="sd">        &gt;&gt;&gt; c.x = 12    # 11</span>
+<a name="line-75"></a><span class="sd">        &gt;&gt;&gt; print c.x   # 12</span>
+<a name="line-76"></a><span class="sd">        -12</span>
+<a name="line-77"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-78"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/types.py.html#line-55">_x</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-265">value</a></span>
+<a name="line-79"></a>
+<a name="line-80"></a>    <span class="n"><a href="/./Demo/threads/fcmp.py.html#line-26">x</a></span> <span class="o">=</span> <span class="nb"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1258">property</a></span><span class="p">(</span><span class="n"><a href="/./Lib/test/test_descr.py.html#line-2023">getx</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-1707">setx</a></span><span class="p">,</span> <span class="n"><a href="/./Include/descrobject.h.html#line-15">doc</a></span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<a name="line-81"></a><span class="s2">        &gt;&gt;&gt; c = C()    # 13</span>
+<a name="line-82"></a><span class="s2">        &gt;&gt;&gt; c.x = 12   # 14</span>
+<a name="line-83"></a><span class="s2">        &gt;&gt;&gt; print c.x  # 15</span>
+<a name="line-84"></a><span class="s2">        -12</span>
+<a name="line-85"></a><span class="s2">        &quot;&quot;&quot;</span><span class="p">)</span>
+<a name="line-86"></a>
+<a name="line-87"></a>    <span class="nd">@staticmethod</span>
+<a name="line-88"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_doctest2.py.html#line-88">statm</a></span><span class="p">():</span>
+<a name="line-89"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a name="line-90"></a><span class="sd">        A static method.</span>
+<a name="line-91"></a>
+<a name="line-92"></a><span class="sd">        &gt;&gt;&gt; print C.statm()    # 16</span>
+<a name="line-93"></a><span class="sd">        666</span>
+<a name="line-94"></a><span class="sd">        &gt;&gt;&gt; print C().statm()  # 17</span>
+<a name="line-95"></a><span class="sd">        666</span>
+<a name="line-96"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-97"></a>        <span class="k">return</span> <span class="mi">666</span>
+<a name="line-98"></a>
+<a name="line-99"></a>    <span class="nd">@classmethod</span>
+<a name="line-100"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_doctest2.py.html#line-100">clsm</a></span><span class="p">(</span><span class="n"><a href="/./Lib/pkgutil.py.html#line-44">cls</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/zlib/inftrees.h.html#line-27">val</a></span><span class="p">):</span>
+<a name="line-101"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a name="line-102"></a><span class="sd">        A class method.</span>
+<a name="line-103"></a>
+<a name="line-104"></a><span class="sd">        &gt;&gt;&gt; print C.clsm(22)    # 18</span>
+<a name="line-105"></a><span class="sd">        22</span>
+<a name="line-106"></a><span class="sd">        &gt;&gt;&gt; print C().clsm(23)  # 19</span>
+<a name="line-107"></a><span class="sd">        23</span>
+<a name="line-108"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-109"></a>        <span class="k">return</span> <span class="n"><a href="/./Modules/zlib/inftrees.h.html#line-27">val</a></span>
+<a name="line-110"></a>
+<a name="line-111"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">():</span>
+<a name="line-112"></a>    <span class="kn">from</span> <span class="nn"><a href="/./Demo/classes/Complex.py.html#line-245">test</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/test/test_doctest2.py.html#line-112">test_doctest2</a></span>
+<a name="line-113"></a>    <span class="n">EXPECTED</span> <span class="o">=</span> <span class="mi">19</span>
+<a name="line-114"></a>    <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/guido/rmt.py.html#line-29">t</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_code.py.html#line-85">run_doctest</a></span><span class="p">(</span><span class="n"><a href="/./Lib/test/test_doctest2.py.html#line-112">test_doctest2</a></span><span class="p">)</span>
+<a name="line-115"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/tkinter/guido/rmt.py.html#line-29">t</a></span> <span class="o">!=</span> <span class="n">EXPECTED</span><span class="p">:</span>
+<a name="line-116"></a>        <span class="k">raise</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-2">test_support</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/double_const.py.html#line-1">TestFailed</a></span><span class="p">(</span><span class="s2">&quot;expected </span><span class="si">%d</span><span class="s2"> tests to run, not </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span>
+<a name="line-117"></a>                                      <span class="p">(</span><span class="n">EXPECTED</span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/guido/rmt.py.html#line-29">t</a></span><span class="p">))</span>
+<a name="line-118"></a>
+<a name="line-119"></a><span class="c1"># Pollute the namespace with a bunch of imported functions and classes,</span>
+<a name="line-120"></a><span class="c1"># to make sure they don&#39;t get tested.</span>
+<a name="line-121"></a><span class="kn">from</span> <span class="nn"><a href="/./Demo/classes/Rev.py.html#line-91">doctest</a></span> <span class="kn">import</span> <span class="o">*</span>
+<a name="line-122"></a>
+<a name="line-123"></a><span class="k">if</span> <span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="line-124"></a>    <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-209">test_main</a></span><span class="p">()</span>
+</pre></div>
+</td></tr></table></body>
+</html>

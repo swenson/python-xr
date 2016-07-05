@@ -1,0 +1,1446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a>
+<a href="#line-140">140</a>
+<a href="#line-141">141</a>
+<a href="#line-142">142</a>
+<a href="#line-143">143</a>
+<a href="#line-144">144</a>
+<a href="#line-145">145</a>
+<a href="#line-146">146</a>
+<a href="#line-147">147</a>
+<a href="#line-148">148</a>
+<a href="#line-149">149</a>
+<a href="#line-150">150</a>
+<a href="#line-151">151</a>
+<a href="#line-152">152</a>
+<a href="#line-153">153</a>
+<a href="#line-154">154</a>
+<a href="#line-155">155</a>
+<a href="#line-156">156</a>
+<a href="#line-157">157</a>
+<a href="#line-158">158</a>
+<a href="#line-159">159</a>
+<a href="#line-160">160</a>
+<a href="#line-161">161</a>
+<a href="#line-162">162</a>
+<a href="#line-163">163</a>
+<a href="#line-164">164</a>
+<a href="#line-165">165</a>
+<a href="#line-166">166</a>
+<a href="#line-167">167</a>
+<a href="#line-168">168</a>
+<a href="#line-169">169</a>
+<a href="#line-170">170</a>
+<a href="#line-171">171</a>
+<a href="#line-172">172</a>
+<a href="#line-173">173</a>
+<a href="#line-174">174</a>
+<a href="#line-175">175</a>
+<a href="#line-176">176</a>
+<a href="#line-177">177</a>
+<a href="#line-178">178</a>
+<a href="#line-179">179</a>
+<a href="#line-180">180</a>
+<a href="#line-181">181</a>
+<a href="#line-182">182</a>
+<a href="#line-183">183</a>
+<a href="#line-184">184</a>
+<a href="#line-185">185</a>
+<a href="#line-186">186</a>
+<a href="#line-187">187</a>
+<a href="#line-188">188</a>
+<a href="#line-189">189</a>
+<a href="#line-190">190</a>
+<a href="#line-191">191</a>
+<a href="#line-192">192</a>
+<a href="#line-193">193</a>
+<a href="#line-194">194</a>
+<a href="#line-195">195</a>
+<a href="#line-196">196</a>
+<a href="#line-197">197</a>
+<a href="#line-198">198</a>
+<a href="#line-199">199</a>
+<a href="#line-200">200</a>
+<a href="#line-201">201</a>
+<a href="#line-202">202</a>
+<a href="#line-203">203</a>
+<a href="#line-204">204</a>
+<a href="#line-205">205</a>
+<a href="#line-206">206</a>
+<a href="#line-207">207</a>
+<a href="#line-208">208</a>
+<a href="#line-209">209</a>
+<a href="#line-210">210</a>
+<a href="#line-211">211</a>
+<a href="#line-212">212</a>
+<a href="#line-213">213</a>
+<a href="#line-214">214</a>
+<a href="#line-215">215</a>
+<a href="#line-216">216</a>
+<a href="#line-217">217</a>
+<a href="#line-218">218</a>
+<a href="#line-219">219</a>
+<a href="#line-220">220</a>
+<a href="#line-221">221</a>
+<a href="#line-222">222</a>
+<a href="#line-223">223</a>
+<a href="#line-224">224</a>
+<a href="#line-225">225</a>
+<a href="#line-226">226</a>
+<a href="#line-227">227</a>
+<a href="#line-228">228</a>
+<a href="#line-229">229</a>
+<a href="#line-230">230</a>
+<a href="#line-231">231</a>
+<a href="#line-232">232</a>
+<a href="#line-233">233</a>
+<a href="#line-234">234</a>
+<a href="#line-235">235</a>
+<a href="#line-236">236</a>
+<a href="#line-237">237</a>
+<a href="#line-238">238</a>
+<a href="#line-239">239</a>
+<a href="#line-240">240</a>
+<a href="#line-241">241</a>
+<a href="#line-242">242</a>
+<a href="#line-243">243</a>
+<a href="#line-244">244</a>
+<a href="#line-245">245</a>
+<a href="#line-246">246</a>
+<a href="#line-247">247</a>
+<a href="#line-248">248</a>
+<a href="#line-249">249</a>
+<a href="#line-250">250</a>
+<a href="#line-251">251</a>
+<a href="#line-252">252</a>
+<a href="#line-253">253</a>
+<a href="#line-254">254</a>
+<a href="#line-255">255</a>
+<a href="#line-256">256</a>
+<a href="#line-257">257</a>
+<a href="#line-258">258</a>
+<a href="#line-259">259</a>
+<a href="#line-260">260</a>
+<a href="#line-261">261</a>
+<a href="#line-262">262</a>
+<a href="#line-263">263</a>
+<a href="#line-264">264</a>
+<a href="#line-265">265</a>
+<a href="#line-266">266</a>
+<a href="#line-267">267</a>
+<a href="#line-268">268</a>
+<a href="#line-269">269</a>
+<a href="#line-270">270</a>
+<a href="#line-271">271</a>
+<a href="#line-272">272</a>
+<a href="#line-273">273</a>
+<a href="#line-274">274</a>
+<a href="#line-275">275</a>
+<a href="#line-276">276</a>
+<a href="#line-277">277</a>
+<a href="#line-278">278</a>
+<a href="#line-279">279</a>
+<a href="#line-280">280</a>
+<a href="#line-281">281</a>
+<a href="#line-282">282</a>
+<a href="#line-283">283</a>
+<a href="#line-284">284</a>
+<a href="#line-285">285</a>
+<a href="#line-286">286</a>
+<a href="#line-287">287</a>
+<a href="#line-288">288</a>
+<a href="#line-289">289</a>
+<a href="#line-290">290</a>
+<a href="#line-291">291</a>
+<a href="#line-292">292</a>
+<a href="#line-293">293</a>
+<a href="#line-294">294</a>
+<a href="#line-295">295</a>
+<a href="#line-296">296</a>
+<a href="#line-297">297</a>
+<a href="#line-298">298</a>
+<a href="#line-299">299</a>
+<a href="#line-300">300</a>
+<a href="#line-301">301</a>
+<a href="#line-302">302</a>
+<a href="#line-303">303</a>
+<a href="#line-304">304</a>
+<a href="#line-305">305</a>
+<a href="#line-306">306</a>
+<a href="#line-307">307</a>
+<a href="#line-308">308</a>
+<a href="#line-309">309</a>
+<a href="#line-310">310</a>
+<a href="#line-311">311</a>
+<a href="#line-312">312</a>
+<a href="#line-313">313</a>
+<a href="#line-314">314</a>
+<a href="#line-315">315</a>
+<a href="#line-316">316</a>
+<a href="#line-317">317</a>
+<a href="#line-318">318</a>
+<a href="#line-319">319</a>
+<a href="#line-320">320</a>
+<a href="#line-321">321</a>
+<a href="#line-322">322</a>
+<a href="#line-323">323</a>
+<a href="#line-324">324</a>
+<a href="#line-325">325</a>
+<a href="#line-326">326</a>
+<a href="#line-327">327</a>
+<a href="#line-328">328</a>
+<a href="#line-329">329</a>
+<a href="#line-330">330</a>
+<a href="#line-331">331</a>
+<a href="#line-332">332</a>
+<a href="#line-333">333</a>
+<a href="#line-334">334</a>
+<a href="#line-335">335</a>
+<a href="#line-336">336</a>
+<a href="#line-337">337</a>
+<a href="#line-338">338</a>
+<a href="#line-339">339</a>
+<a href="#line-340">340</a>
+<a href="#line-341">341</a>
+<a href="#line-342">342</a>
+<a href="#line-343">343</a>
+<a href="#line-344">344</a>
+<a href="#line-345">345</a>
+<a href="#line-346">346</a>
+<a href="#line-347">347</a>
+<a href="#line-348">348</a>
+<a href="#line-349">349</a>
+<a href="#line-350">350</a>
+<a href="#line-351">351</a>
+<a href="#line-352">352</a>
+<a href="#line-353">353</a>
+<a href="#line-354">354</a>
+<a href="#line-355">355</a>
+<a href="#line-356">356</a>
+<a href="#line-357">357</a>
+<a href="#line-358">358</a>
+<a href="#line-359">359</a>
+<a href="#line-360">360</a>
+<a href="#line-361">361</a>
+<a href="#line-362">362</a>
+<a href="#line-363">363</a>
+<a href="#line-364">364</a>
+<a href="#line-365">365</a>
+<a href="#line-366">366</a>
+<a href="#line-367">367</a>
+<a href="#line-368">368</a>
+<a href="#line-369">369</a>
+<a href="#line-370">370</a>
+<a href="#line-371">371</a>
+<a href="#line-372">372</a>
+<a href="#line-373">373</a>
+<a href="#line-374">374</a>
+<a href="#line-375">375</a>
+<a href="#line-376">376</a>
+<a href="#line-377">377</a>
+<a href="#line-378">378</a>
+<a href="#line-379">379</a>
+<a href="#line-380">380</a>
+<a href="#line-381">381</a>
+<a href="#line-382">382</a>
+<a href="#line-383">383</a>
+<a href="#line-384">384</a>
+<a href="#line-385">385</a>
+<a href="#line-386">386</a>
+<a href="#line-387">387</a>
+<a href="#line-388">388</a>
+<a href="#line-389">389</a>
+<a href="#line-390">390</a>
+<a href="#line-391">391</a>
+<a href="#line-392">392</a>
+<a href="#line-393">393</a>
+<a href="#line-394">394</a>
+<a href="#line-395">395</a>
+<a href="#line-396">396</a>
+<a href="#line-397">397</a>
+<a href="#line-398">398</a>
+<a href="#line-399">399</a>
+<a href="#line-400">400</a>
+<a href="#line-401">401</a>
+<a href="#line-402">402</a>
+<a href="#line-403">403</a>
+<a href="#line-404">404</a>
+<a href="#line-405">405</a>
+<a href="#line-406">406</a>
+<a href="#line-407">407</a>
+<a href="#line-408">408</a>
+<a href="#line-409">409</a>
+<a href="#line-410">410</a>
+<a href="#line-411">411</a>
+<a href="#line-412">412</a>
+<a href="#line-413">413</a>
+<a href="#line-414">414</a>
+<a href="#line-415">415</a>
+<a href="#line-416">416</a>
+<a href="#line-417">417</a>
+<a href="#line-418">418</a>
+<a href="#line-419">419</a>
+<a href="#line-420">420</a>
+<a href="#line-421">421</a>
+<a href="#line-422">422</a>
+<a href="#line-423">423</a>
+<a href="#line-424">424</a>
+<a href="#line-425">425</a>
+<a href="#line-426">426</a>
+<a href="#line-427">427</a>
+<a href="#line-428">428</a>
+<a href="#line-429">429</a>
+<a href="#line-430">430</a>
+<a href="#line-431">431</a>
+<a href="#line-432">432</a>
+<a href="#line-433">433</a>
+<a href="#line-434">434</a>
+<a href="#line-435">435</a>
+<a href="#line-436">436</a>
+<a href="#line-437">437</a>
+<a href="#line-438">438</a>
+<a href="#line-439">439</a>
+<a href="#line-440">440</a>
+<a href="#line-441">441</a>
+<a href="#line-442">442</a>
+<a href="#line-443">443</a>
+<a href="#line-444">444</a>
+<a href="#line-445">445</a>
+<a href="#line-446">446</a>
+<a href="#line-447">447</a>
+<a href="#line-448">448</a>
+<a href="#line-449">449</a>
+<a href="#line-450">450</a>
+<a href="#line-451">451</a>
+<a href="#line-452">452</a>
+<a href="#line-453">453</a>
+<a href="#line-454">454</a>
+<a href="#line-455">455</a>
+<a href="#line-456">456</a>
+<a href="#line-457">457</a>
+<a href="#line-458">458</a>
+<a href="#line-459">459</a>
+<a href="#line-460">460</a>
+<a href="#line-461">461</a>
+<a href="#line-462">462</a>
+<a href="#line-463">463</a>
+<a href="#line-464">464</a>
+<a href="#line-465">465</a>
+<a href="#line-466">466</a>
+<a href="#line-467">467</a>
+<a href="#line-468">468</a>
+<a href="#line-469">469</a>
+<a href="#line-470">470</a>
+<a href="#line-471">471</a>
+<a href="#line-472">472</a>
+<a href="#line-473">473</a>
+<a href="#line-474">474</a>
+<a href="#line-475">475</a>
+<a href="#line-476">476</a>
+<a href="#line-477">477</a>
+<a href="#line-478">478</a>
+<a href="#line-479">479</a>
+<a href="#line-480">480</a>
+<a href="#line-481">481</a>
+<a href="#line-482">482</a>
+<a href="#line-483">483</a>
+<a href="#line-484">484</a>
+<a href="#line-485">485</a>
+<a href="#line-486">486</a>
+<a href="#line-487">487</a>
+<a href="#line-488">488</a>
+<a href="#line-489">489</a>
+<a href="#line-490">490</a>
+<a href="#line-491">491</a>
+<a href="#line-492">492</a>
+<a href="#line-493">493</a>
+<a href="#line-494">494</a>
+<a href="#line-495">495</a>
+<a href="#line-496">496</a>
+<a href="#line-497">497</a>
+<a href="#line-498">498</a>
+<a href="#line-499">499</a>
+<a href="#line-500">500</a>
+<a href="#line-501">501</a>
+<a href="#line-502">502</a>
+<a href="#line-503">503</a>
+<a href="#line-504">504</a>
+<a href="#line-505">505</a>
+<a href="#line-506">506</a>
+<a href="#line-507">507</a>
+<a href="#line-508">508</a>
+<a href="#line-509">509</a>
+<a href="#line-510">510</a>
+<a href="#line-511">511</a>
+<a href="#line-512">512</a>
+<a href="#line-513">513</a>
+<a href="#line-514">514</a>
+<a href="#line-515">515</a>
+<a href="#line-516">516</a>
+<a href="#line-517">517</a>
+<a href="#line-518">518</a>
+<a href="#line-519">519</a>
+<a href="#line-520">520</a>
+<a href="#line-521">521</a>
+<a href="#line-522">522</a>
+<a href="#line-523">523</a>
+<a href="#line-524">524</a>
+<a href="#line-525">525</a>
+<a href="#line-526">526</a>
+<a href="#line-527">527</a>
+<a href="#line-528">528</a>
+<a href="#line-529">529</a>
+<a href="#line-530">530</a>
+<a href="#line-531">531</a>
+<a href="#line-532">532</a>
+<a href="#line-533">533</a>
+<a href="#line-534">534</a>
+<a href="#line-535">535</a>
+<a href="#line-536">536</a>
+<a href="#line-537">537</a>
+<a href="#line-538">538</a>
+<a href="#line-539">539</a>
+<a href="#line-540">540</a>
+<a href="#line-541">541</a>
+<a href="#line-542">542</a>
+<a href="#line-543">543</a>
+<a href="#line-544">544</a>
+<a href="#line-545">545</a>
+<a href="#line-546">546</a>
+<a href="#line-547">547</a>
+<a href="#line-548">548</a>
+<a href="#line-549">549</a>
+<a href="#line-550">550</a>
+<a href="#line-551">551</a>
+<a href="#line-552">552</a>
+<a href="#line-553">553</a>
+<a href="#line-554">554</a>
+<a href="#line-555">555</a>
+<a href="#line-556">556</a>
+<a href="#line-557">557</a>
+<a href="#line-558">558</a>
+<a href="#line-559">559</a>
+<a href="#line-560">560</a>
+<a href="#line-561">561</a>
+<a href="#line-562">562</a>
+<a href="#line-563">563</a>
+<a href="#line-564">564</a>
+<a href="#line-565">565</a>
+<a href="#line-566">566</a>
+<a href="#line-567">567</a>
+<a href="#line-568">568</a>
+<a href="#line-569">569</a>
+<a href="#line-570">570</a>
+<a href="#line-571">571</a>
+<a href="#line-572">572</a>
+<a href="#line-573">573</a>
+<a href="#line-574">574</a>
+<a href="#line-575">575</a>
+<a href="#line-576">576</a>
+<a href="#line-577">577</a>
+<a href="#line-578">578</a>
+<a href="#line-579">579</a>
+<a href="#line-580">580</a>
+<a href="#line-581">581</a>
+<a href="#line-582">582</a>
+<a href="#line-583">583</a>
+<a href="#line-584">584</a>
+<a href="#line-585">585</a>
+<a href="#line-586">586</a>
+<a href="#line-587">587</a>
+<a href="#line-588">588</a>
+<a href="#line-589">589</a>
+<a href="#line-590">590</a>
+<a href="#line-591">591</a>
+<a href="#line-592">592</a>
+<a href="#line-593">593</a>
+<a href="#line-594">594</a>
+<a href="#line-595">595</a>
+<a href="#line-596">596</a>
+<a href="#line-597">597</a>
+<a href="#line-598">598</a>
+<a href="#line-599">599</a>
+<a href="#line-600">600</a>
+<a href="#line-601">601</a>
+<a href="#line-602">602</a>
+<a href="#line-603">603</a>
+<a href="#line-604">604</a>
+<a href="#line-605">605</a>
+<a href="#line-606">606</a>
+<a href="#line-607">607</a>
+<a href="#line-608">608</a>
+<a href="#line-609">609</a>
+<a href="#line-610">610</a>
+<a href="#line-611">611</a>
+<a href="#line-612">612</a>
+<a href="#line-613">613</a>
+<a href="#line-614">614</a>
+<a href="#line-615">615</a>
+<a href="#line-616">616</a>
+<a href="#line-617">617</a>
+<a href="#line-618">618</a>
+<a href="#line-619">619</a>
+<a href="#line-620">620</a>
+<a href="#line-621">621</a>
+<a href="#line-622">622</a>
+<a href="#line-623">623</a>
+<a href="#line-624">624</a>
+<a href="#line-625">625</a>
+<a href="#line-626">626</a>
+<a href="#line-627">627</a>
+<a href="#line-628">628</a>
+<a href="#line-629">629</a>
+<a href="#line-630">630</a>
+<a href="#line-631">631</a>
+<a href="#line-632">632</a>
+<a href="#line-633">633</a>
+<a href="#line-634">634</a>
+<a href="#line-635">635</a>
+<a href="#line-636">636</a>
+<a href="#line-637">637</a>
+<a href="#line-638">638</a>
+<a href="#line-639">639</a>
+<a href="#line-640">640</a>
+<a href="#line-641">641</a>
+<a href="#line-642">642</a>
+<a href="#line-643">643</a>
+<a href="#line-644">644</a>
+<a href="#line-645">645</a>
+<a href="#line-646">646</a>
+<a href="#line-647">647</a>
+<a href="#line-648">648</a>
+<a href="#line-649">649</a>
+<a href="#line-650">650</a>
+<a href="#line-651">651</a>
+<a href="#line-652">652</a>
+<a href="#line-653">653</a>
+<a href="#line-654">654</a>
+<a href="#line-655">655</a>
+<a href="#line-656">656</a>
+<a href="#line-657">657</a>
+<a href="#line-658">658</a>
+<a href="#line-659">659</a>
+<a href="#line-660">660</a>
+<a href="#line-661">661</a>
+<a href="#line-662">662</a>
+<a href="#line-663">663</a>
+<a href="#line-664">664</a>
+<a href="#line-665">665</a>
+<a href="#line-666">666</a>
+<a href="#line-667">667</a>
+<a href="#line-668">668</a>
+<a href="#line-669">669</a>
+<a href="#line-670">670</a>
+<a href="#line-671">671</a>
+<a href="#line-672">672</a>
+<a href="#line-673">673</a>
+<a href="#line-674">674</a>
+<a href="#line-675">675</a>
+<a href="#line-676">676</a>
+<a href="#line-677">677</a>
+<a href="#line-678">678</a>
+<a href="#line-679">679</a>
+<a href="#line-680">680</a>
+<a href="#line-681">681</a></pre></div></td><td class="code"><div class="source"><span class="filename">Modules/_ctypes/libffi/src/sparc/ffi.c</span><pre><span></span><a name="line-1"></a><span class="cm">/* -----------------------------------------------------------------------</span>
+<a name="line-2"></a><span class="cm">   ffi.c - Copyright (c) 2011, 2013 Anthony Green</span>
+<a name="line-3"></a><span class="cm">           Copyright (c) 1996, 2003-2004, 2007-2008 Red Hat, Inc.</span>
+<a name="line-4"></a><span class="cm">   </span>
+<a name="line-5"></a><span class="cm">   SPARC Foreign Function Interface </span>
+<a name="line-6"></a>
+<a name="line-7"></a><span class="cm">   Permission is hereby granted, free of charge, to any person obtaining</span>
+<a name="line-8"></a><span class="cm">   a copy of this software and associated documentation files (the</span>
+<a name="line-9"></a><span class="cm">   ``Software&#39;&#39;), to deal in the Software without restriction, including</span>
+<a name="line-10"></a><span class="cm">   without limitation the rights to use, copy, modify, merge, publish,</span>
+<a name="line-11"></a><span class="cm">   distribute, sublicense, and/or sell copies of the Software, and to</span>
+<a name="line-12"></a><span class="cm">   permit persons to whom the Software is furnished to do so, subject to</span>
+<a name="line-13"></a><span class="cm">   the following conditions:</span>
+<a name="line-14"></a>
+<a name="line-15"></a><span class="cm">   The above copyright notice and this permission notice shall be included</span>
+<a name="line-16"></a><span class="cm">   in all copies or substantial portions of the Software.</span>
+<a name="line-17"></a>
+<a name="line-18"></a><span class="cm">   THE SOFTWARE IS PROVIDED ``AS IS&#39;&#39;, WITHOUT WARRANTY OF ANY KIND,</span>
+<a name="line-19"></a><span class="cm">   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</span>
+<a name="line-20"></a><span class="cm">   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span>
+<a name="line-21"></a><span class="cm">   NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT</span>
+<a name="line-22"></a><span class="cm">   HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,</span>
+<a name="line-23"></a><span class="cm">   WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<a name="line-24"></a><span class="cm">   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER</span>
+<a name="line-25"></a><span class="cm">   DEALINGS IN THE SOFTWARE.</span>
+<a name="line-26"></a><span class="cm">   ----------------------------------------------------------------------- */</span>
+<a name="line-27"></a>
+<a name="line-28"></a><span class="cp">#include</span> <span class="cpf">&lt;ffi.h&gt;</span><span class="cp"></span>
+<a name="line-29"></a><span class="cp">#include</span> <span class="cpf">&lt;ffi_common.h&gt;</span><span class="cp"></span>
+<a name="line-30"></a>
+<a name="line-31"></a><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<a name="line-32"></a>
+<a name="line-33"></a>
+<a name="line-34"></a><span class="cm">/* ffi_prep_args is called by the assembly routine once stack space</span>
+<a name="line-35"></a><span class="cm">   has been allocated for the function&#39;s arguments */</span>
+<a name="line-36"></a>
+<a name="line-37"></a><span class="kt">void</span> <span class="nf"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-37">ffi_prep_args_v8</a></span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Lib/inspect.py.html#line-1058">stack</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-91">extended_cif</a></span> <span class="o">*</span><span class="n">ecif</span><span class="p">)</span>
+<a name="line-38"></a><span class="p">{</span>
+<a name="line-39"></a>  <span class="kt">int</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">;</span>
+<a name="line-40"></a>  <span class="kt">void</span> <span class="o">**</span><span class="n">p_argv</span><span class="p">;</span>
+<a name="line-41"></a>  <span class="kt">char</span> <span class="o">*</span><span class="n">argp</span><span class="p">;</span>
+<a name="line-42"></a>  <span class="n"><a href="/./Modules/_ctypes/callproc.c.html#line-608">ffi_type</a></span> <span class="o">**</span><span class="n">p_arg</span><span class="p">;</span>
+<a name="line-43"></a>
+<a name="line-44"></a>  <span class="cm">/* Skip 16 words for the window save area */</span>
+<a name="line-45"></a>  <span class="n">argp</span> <span class="o">=</span> <span class="n"><a href="/./Lib/inspect.py.html#line-1058">stack</a></span> <span class="o">+</span> <span class="mi">16</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<a name="line-46"></a>
+<a name="line-47"></a>  <span class="cm">/* This should only really be done when we are returning a structure,</span>
+<a name="line-48"></a><span class="cm">     however, it&#39;s faster just to do it all the time...</span>
+<a name="line-49"></a>
+<a name="line-50"></a><span class="cm">  if ( ecif-&gt;cif-&gt;rtype-&gt;type == FFI_TYPE_STRUCT ) */</span>
+<a name="line-51"></a>  <span class="o">*</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">ecif</span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">;</span>
+<a name="line-52"></a>
+<a name="line-53"></a>  <span class="cm">/* And 1 word for the  structure return value. */</span>
+<a name="line-54"></a>  <span class="n">argp</span> <span class="o">+=</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<a name="line-55"></a>
+<a name="line-56"></a><span class="cp">#ifdef USING_PURIFY</span>
+<a name="line-57"></a>  <span class="cm">/* Purify will probably complain in our assembly routine, unless we</span>
+<a name="line-58"></a><span class="cm">     zero out this memory. */</span>
+<a name="line-59"></a>
+<a name="line-60"></a>  <span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-61"></a>  <span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-62"></a>  <span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-63"></a>  <span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-64"></a>  <span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-65"></a>  <span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-66"></a><span class="cp">#endif</span>
+<a name="line-67"></a>
+<a name="line-68"></a>  <span class="n">p_argv</span> <span class="o">=</span> <span class="n">ecif</span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">;</span>
+<a name="line-69"></a>
+<a name="line-70"></a>  <span class="k">for</span> <span class="p">(</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">=</span> <span class="n">ecif</span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/test/pystone.py.html#line-261">nargs</a></span><span class="p">,</span> <span class="n">p_arg</span> <span class="o">=</span> <span class="n">ecif</span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">;</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">;</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="o">--</span><span class="p">,</span> <span class="n">p_arg</span><span class="o">++</span><span class="p">)</span>
+<a name="line-71"></a>    <span class="p">{</span>
+<a name="line-72"></a>      <span class="kt">size_t</span> <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span><span class="p">;</span>
+<a name="line-73"></a>
+<a name="line-74"></a>	  <span class="k">if</span> <span class="p">((</span><span class="o">*</span><span class="n">p_arg</span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span>
+<a name="line-75"></a><span class="cp">#if FFI_TYPE_LONGDOUBLE != FFI_TYPE_DOUBLE</span>
+<a name="line-76"></a>	      <span class="o">||</span> <span class="p">(</span><span class="o">*</span><span class="n">p_arg</span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/alpha/ffi.c.html#line-39">FFI_TYPE_LONGDOUBLE</a></span>
+<a name="line-77"></a><span class="cp">#endif</span>
+<a name="line-78"></a>	      <span class="p">)</span>
+<a name="line-79"></a>	    <span class="p">{</span>
+<a name="line-80"></a>	      <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-81"></a>	      <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<a name="line-82"></a>	    <span class="p">}</span>
+<a name="line-83"></a>	  <span class="k">else</span>
+<a name="line-84"></a>	    <span class="p">{</span>
+<a name="line-85"></a>	      <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">p_arg</span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">;</span>
+<a name="line-86"></a>	      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">))</span>
+<a name="line-87"></a>		<span class="p">{</span>
+<a name="line-88"></a>		  <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<a name="line-89"></a>		  <span class="k">switch</span> <span class="p">((</span><span class="o">*</span><span class="n">p_arg</span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">)</span>
+<a name="line-90"></a>		    <span class="p">{</span>
+<a name="line-91"></a>		    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-299">FFI_TYPE_SINT8</a></span><span class="p">:</span>
+<a name="line-92"></a>		      <span class="o">*</span><span class="p">(</span><span class="kt">signed</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-111">SINT8</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-93"></a>		      <span class="k">break</span><span class="p">;</span>
+<a name="line-94"></a>		      
+<a name="line-95"></a>		    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-298">FFI_TYPE_UINT8</a></span><span class="p">:</span>
+<a name="line-96"></a>		      <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-110">UINT8</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-97"></a>		      <span class="k">break</span><span class="p">;</span>
+<a name="line-98"></a>		      
+<a name="line-99"></a>		    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-301">FFI_TYPE_SINT16</a></span><span class="p">:</span>
+<a name="line-100"></a>		      <span class="o">*</span><span class="p">(</span><span class="kt">signed</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-113">SINT16</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-101"></a>		      <span class="k">break</span><span class="p">;</span>
+<a name="line-102"></a>		      
+<a name="line-103"></a>		    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-300">FFI_TYPE_UINT16</a></span><span class="p">:</span>
+<a name="line-104"></a>		      <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-112">UINT16</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-105"></a>		      <span class="k">break</span><span class="p">;</span>
+<a name="line-106"></a>
+<a name="line-107"></a>		    <span class="k">default</span><span class="o">:</span>
+<a name="line-108"></a>		      <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-68">FFI_ASSERT</a></span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a name="line-109"></a>		    <span class="p">}</span>
+<a name="line-110"></a>		<span class="p">}</span>
+<a name="line-111"></a>	      <span class="k">else</span>
+<a name="line-112"></a>		<span class="p">{</span>
+<a name="line-113"></a>		  <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-55">memcpy</a></span><span class="p">(</span><span class="n">argp</span><span class="p">,</span> <span class="o">*</span><span class="n">p_argv</span><span class="p">,</span> <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span><span class="p">);</span>
+<a name="line-114"></a>		<span class="p">}</span>
+<a name="line-115"></a>	    <span class="p">}</span>
+<a name="line-116"></a>	  <span class="n">p_argv</span><span class="o">++</span><span class="p">;</span>
+<a name="line-117"></a>	  <span class="n">argp</span> <span class="o">+=</span> <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span><span class="p">;</span>
+<a name="line-118"></a>    <span class="p">}</span>
+<a name="line-119"></a>  
+<a name="line-120"></a>  <span class="k">return</span><span class="p">;</span>
+<a name="line-121"></a><span class="p">}</span>
+<a name="line-122"></a>
+<a name="line-123"></a><span class="kt">int</span> <span class="nf"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-123">ffi_prep_args_v9</a></span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Lib/inspect.py.html#line-1058">stack</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-91">extended_cif</a></span> <span class="o">*</span><span class="n">ecif</span><span class="p">)</span>
+<a name="line-124"></a><span class="p">{</span>
+<a name="line-125"></a>  <span class="kt">int</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-126"></a>  <span class="kt">int</span> <span class="n"><a href="/./Lib/test/test_compile.py.html#line-354">tmp</a></span><span class="p">;</span>
+<a name="line-127"></a>  <span class="kt">void</span> <span class="o">**</span><span class="n">p_argv</span><span class="p">;</span>
+<a name="line-128"></a>  <span class="kt">char</span> <span class="o">*</span><span class="n">argp</span><span class="p">;</span>
+<a name="line-129"></a>  <span class="n"><a href="/./Modules/_ctypes/callproc.c.html#line-608">ffi_type</a></span> <span class="o">**</span><span class="n">p_arg</span><span class="p">;</span>
+<a name="line-130"></a>
+<a name="line-131"></a>  <span class="n"><a href="/./Lib/test/test_compile.py.html#line-354">tmp</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-132"></a>
+<a name="line-133"></a>  <span class="cm">/* Skip 16 words for the window save area */</span>
+<a name="line-134"></a>  <span class="n">argp</span> <span class="o">=</span> <span class="n"><a href="/./Lib/inspect.py.html#line-1058">stack</a></span> <span class="o">+</span> <span class="mi">16</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">);</span>
+<a name="line-135"></a>
+<a name="line-136"></a><span class="cp">#ifdef USING_PURIFY</span>
+<a name="line-137"></a>  <span class="cm">/* Purify will probably complain in our assembly routine, unless we</span>
+<a name="line-138"></a><span class="cm">     zero out this memory. */</span>
+<a name="line-139"></a>
+<a name="line-140"></a>  <span class="p">((</span><span class="kt">long</span> <span class="kt">long</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-141"></a>  <span class="p">((</span><span class="kt">long</span> <span class="kt">long</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-142"></a>  <span class="p">((</span><span class="kt">long</span> <span class="kt">long</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-143"></a>  <span class="p">((</span><span class="kt">long</span> <span class="kt">long</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-144"></a>  <span class="p">((</span><span class="kt">long</span> <span class="kt">long</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-145"></a>  <span class="p">((</span><span class="kt">long</span> <span class="kt">long</span><span class="o">*</span><span class="p">)</span><span class="n">argp</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-146"></a><span class="cp">#endif</span>
+<a name="line-147"></a>
+<a name="line-148"></a>  <span class="n">p_argv</span> <span class="o">=</span> <span class="n">ecif</span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">;</span>
+<a name="line-149"></a>
+<a name="line-150"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">ecif</span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span> <span class="o">&amp;&amp;</span>
+<a name="line-151"></a>      <span class="n">ecif</span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span> <span class="o">&gt;</span> <span class="mi">32</span><span class="p">)</span>
+<a name="line-152"></a>    <span class="p">{</span>
+<a name="line-153"></a>      <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="n">ecif</span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">;</span>
+<a name="line-154"></a>      <span class="n">argp</span> <span class="o">+=</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">);</span>
+<a name="line-155"></a>      <span class="n"><a href="/./Lib/test/test_compile.py.html#line-354">tmp</a></span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-156"></a>    <span class="p">}</span>
+<a name="line-157"></a>
+<a name="line-158"></a>  <span class="k">for</span> <span class="p">(</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">p_arg</span> <span class="o">=</span> <span class="n">ecif</span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">;</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">&lt;</span> <span class="n">ecif</span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/test/pystone.py.html#line-261">nargs</a></span><span class="p">;</span>
+<a name="line-159"></a>       <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="o">++</span><span class="p">,</span> <span class="n">p_arg</span><span class="o">++</span><span class="p">)</span>
+<a name="line-160"></a>    <span class="p">{</span>
+<a name="line-161"></a>      <span class="kt">size_t</span> <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span><span class="p">;</span>
+<a name="line-162"></a>
+<a name="line-163"></a>      <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">p_arg</span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">;</span>
+<a name="line-164"></a>      <span class="k">switch</span> <span class="p">((</span><span class="o">*</span><span class="n">p_arg</span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">)</span>
+<a name="line-165"></a>	<span class="p">{</span>
+<a name="line-166"></a>	<span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span><span class="p">:</span>
+<a name="line-167"></a>	  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">&gt;</span> <span class="mi">16</span><span class="p">)</span>
+<a name="line-168"></a>	    <span class="p">{</span>
+<a name="line-169"></a>	      <span class="cm">/* For structures larger than 16 bytes we pass reference.  */</span>
+<a name="line-170"></a>	      <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">;</span>
+<a name="line-171"></a>	      <span class="n">argp</span> <span class="o">+=</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">);</span>
+<a name="line-172"></a>	      <span class="n"><a href="/./Lib/test/test_compile.py.html#line-354">tmp</a></span><span class="o">++</span><span class="p">;</span>
+<a name="line-173"></a>	      <span class="n">p_argv</span><span class="o">++</span><span class="p">;</span>
+<a name="line-174"></a>	      <span class="k">continue</span><span class="p">;</span>
+<a name="line-175"></a>	    <span class="p">}</span>
+<a name="line-176"></a>	  <span class="cm">/* FALLTHROUGH */</span>
+<a name="line-177"></a>	<span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-291">FFI_TYPE_FLOAT</a></span><span class="p">:</span>
+<a name="line-178"></a>	<span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-292">FFI_TYPE_DOUBLE</a></span><span class="p">:</span>
+<a name="line-179"></a><span class="cp">#if FFI_TYPE_LONGDOUBLE != FFI_TYPE_DOUBLE</span>
+<a name="line-180"></a>	<span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi/src/alpha/ffi.c.html#line-39">FFI_TYPE_LONGDOUBLE</a></span><span class="p">:</span>
+<a name="line-181"></a><span class="cp">#endif</span>
+<a name="line-182"></a>	  <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="cm">/* We should promote into FP regs as well as integer.  */</span>
+<a name="line-183"></a>	  <span class="k">break</span><span class="p">;</span>
+<a name="line-184"></a>	<span class="p">}</span>
+<a name="line-185"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">))</span>
+<a name="line-186"></a>	<span class="p">{</span>
+<a name="line-187"></a>	  <span class="k">switch</span> <span class="p">((</span><span class="o">*</span><span class="n">p_arg</span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">)</span>
+<a name="line-188"></a>	    <span class="p">{</span>
+<a name="line-189"></a>	    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-299">FFI_TYPE_SINT8</a></span><span class="p">:</span>
+<a name="line-190"></a>	      <span class="o">*</span><span class="p">(</span><span class="kt">signed</span> <span class="kt">long</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-111">SINT8</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-191"></a>	      <span class="k">break</span><span class="p">;</span>
+<a name="line-192"></a>
+<a name="line-193"></a>	    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-298">FFI_TYPE_UINT8</a></span><span class="p">:</span>
+<a name="line-194"></a>	      <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-110">UINT8</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-195"></a>	      <span class="k">break</span><span class="p">;</span>
+<a name="line-196"></a>
+<a name="line-197"></a>	    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-301">FFI_TYPE_SINT16</a></span><span class="p">:</span>
+<a name="line-198"></a>	      <span class="o">*</span><span class="p">(</span><span class="kt">signed</span> <span class="kt">long</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-113">SINT16</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-199"></a>	      <span class="k">break</span><span class="p">;</span>
+<a name="line-200"></a>
+<a name="line-201"></a>	    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-300">FFI_TYPE_UINT16</a></span><span class="p">:</span>
+<a name="line-202"></a>	      <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-112">UINT16</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-203"></a>	      <span class="k">break</span><span class="p">;</span>
+<a name="line-204"></a>
+<a name="line-205"></a>	    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-303">FFI_TYPE_SINT32</a></span><span class="p">:</span>
+<a name="line-206"></a>	      <span class="o">*</span><span class="p">(</span><span class="kt">signed</span> <span class="kt">long</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-100">SINT32</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-207"></a>	      <span class="k">break</span><span class="p">;</span>
+<a name="line-208"></a>
+<a name="line-209"></a>	    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-302">FFI_TYPE_UINT32</a></span><span class="p">:</span>
+<a name="line-210"></a>	      <span class="o">*</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="n">argp</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-114">UINT32</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span>
+<a name="line-211"></a>	      <span class="k">break</span><span class="p">;</span>
+<a name="line-212"></a>
+<a name="line-213"></a>	    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-291">FFI_TYPE_FLOAT</a></span><span class="p">:</span>
+<a name="line-214"></a>	      <span class="o">*</span><span class="p">(</span><span class="kt">float</span> <span class="o">*</span><span class="p">)</span> <span class="p">(</span><span class="n">argp</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-120">FLOAT32</a></span> <span class="o">*</span><span class="p">)(</span><span class="o">*</span> <span class="n">p_argv</span><span class="p">);</span> <span class="cm">/* Right justify */</span>
+<a name="line-215"></a>	      <span class="k">break</span><span class="p">;</span>
+<a name="line-216"></a>
+<a name="line-217"></a>	    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span><span class="p">:</span>
+<a name="line-218"></a>	      <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-55">memcpy</a></span><span class="p">(</span><span class="n">argp</span><span class="p">,</span> <span class="o">*</span><span class="n">p_argv</span><span class="p">,</span> <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span><span class="p">);</span>
+<a name="line-219"></a>	      <span class="k">break</span><span class="p">;</span>
+<a name="line-220"></a>
+<a name="line-221"></a>	    <span class="k">default</span><span class="o">:</span>
+<a name="line-222"></a>	      <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-68">FFI_ASSERT</a></span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a name="line-223"></a>	    <span class="p">}</span>
+<a name="line-224"></a>	  <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">);</span>
+<a name="line-225"></a>	  <span class="n"><a href="/./Lib/test/test_compile.py.html#line-354">tmp</a></span><span class="o">++</span><span class="p">;</span>
+<a name="line-226"></a>	<span class="p">}</span>
+<a name="line-227"></a>      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">==</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">))</span>
+<a name="line-228"></a>	<span class="p">{</span>
+<a name="line-229"></a>	  <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-55">memcpy</a></span><span class="p">(</span><span class="n">argp</span><span class="p">,</span> <span class="o">*</span><span class="n">p_argv</span><span class="p">,</span> <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span><span class="p">);</span>
+<a name="line-230"></a>	  <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">);</span>
+<a name="line-231"></a>	  <span class="n"><a href="/./Lib/test/test_compile.py.html#line-354">tmp</a></span><span class="o">++</span><span class="p">;</span>
+<a name="line-232"></a>	<span class="p">}</span>
+<a name="line-233"></a>      <span class="k">else</span>
+<a name="line-234"></a>	<span class="p">{</span>
+<a name="line-235"></a>	  <span class="k">if</span> <span class="p">((</span><span class="n"><a href="/./Lib/test/test_compile.py.html#line-354">tmp</a></span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">*</span><span class="n">p_arg</span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-143">alignment</a></span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">)</span>
+<a name="line-236"></a>	    <span class="p">{</span>
+<a name="line-237"></a>	      <span class="n"><a href="/./Lib/test/test_compile.py.html#line-354">tmp</a></span><span class="o">++</span><span class="p">;</span>
+<a name="line-238"></a>	      <span class="n">argp</span> <span class="o">+=</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">);</span>
+<a name="line-239"></a>	    <span class="p">}</span>
+<a name="line-240"></a>	  <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-55">memcpy</a></span><span class="p">(</span><span class="n">argp</span><span class="p">,</span> <span class="o">*</span><span class="n">p_argv</span><span class="p">,</span> <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span><span class="p">);</span>
+<a name="line-241"></a>	  <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">);</span>
+<a name="line-242"></a>	  <span class="n"><a href="/./Lib/test/test_compile.py.html#line-354">tmp</a></span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<a name="line-243"></a>	<span class="p">}</span>
+<a name="line-244"></a>      <span class="n">p_argv</span><span class="o">++</span><span class="p">;</span>
+<a name="line-245"></a>      <span class="n">argp</span> <span class="o">+=</span> <span class="n"><a href="/./Lib/test/crashers/nasty_eq_vs_dict.py.html#line-45">z</a></span><span class="p">;</span>
+<a name="line-246"></a>    <span class="p">}</span>
+<a name="line-247"></a>
+<a name="line-248"></a>  <span class="k">return</span> <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span><span class="p">;</span>
+<a name="line-249"></a><span class="p">}</span>
+<a name="line-250"></a>
+<a name="line-251"></a><span class="cm">/* Perform machine dependent cif processing */</span>
+<a name="line-252"></a><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-159">ffi_status</a></span> <span class="nf"><a href="/./Modules/_ctypes/libffi/src/aarch64/ffi.c.html#line-755">ffi_prep_cif_machdep</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-173">ffi_cif</a></span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">)</span>
+<a name="line-253"></a><span class="p">{</span>
+<a name="line-254"></a>  <span class="kt">int</span> <span class="n">wordsize</span><span class="p">;</span>
+<a name="line-255"></a>
+<a name="line-256"></a>  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-164">abi</a></span> <span class="o">!=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffitarget.h.html#line-51">FFI_V9</a></span><span class="p">)</span>
+<a name="line-257"></a>    <span class="p">{</span>
+<a name="line-258"></a>      <span class="n">wordsize</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<a name="line-259"></a>
+<a name="line-260"></a>      <span class="cm">/* If we are returning a struct, this will already have been added.</span>
+<a name="line-261"></a><span class="cm">	 Otherwise we need to add it because it&#39;s always got to be there! */</span>
+<a name="line-262"></a>
+<a name="line-263"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">!=</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span><span class="p">)</span>
+<a name="line-264"></a>	<span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span> <span class="o">+=</span> <span class="n">wordsize</span><span class="p">;</span>
+<a name="line-265"></a>
+<a name="line-266"></a>      <span class="cm">/* sparc call frames require that space is allocated for 6 args,</span>
+<a name="line-267"></a><span class="cm">	 even if they aren&#39;t used. Make that space if necessary. */</span>
+<a name="line-268"></a>  
+<a name="line-269"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span> <span class="o">&lt;</span> <span class="mi">4</span><span class="o">*</span><span class="mi">6</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span>
+<a name="line-270"></a>	<span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="mi">6</span><span class="o">+</span><span class="mi">4</span><span class="p">;</span>
+<a name="line-271"></a>    <span class="p">}</span>
+<a name="line-272"></a>  <span class="k">else</span>
+<a name="line-273"></a>    <span class="p">{</span>
+<a name="line-274"></a>      <span class="n">wordsize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<a name="line-275"></a>
+<a name="line-276"></a>      <span class="cm">/* sparc call frames require that space is allocated for 6 args,</span>
+<a name="line-277"></a><span class="cm">	 even if they aren&#39;t used. Make that space if necessary. */</span>
+<a name="line-278"></a>  
+<a name="line-279"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span> <span class="o">&lt;</span> <span class="mi">8</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
+<a name="line-280"></a>	<span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="mi">6</span><span class="p">;</span>
+<a name="line-281"></a>    <span class="p">}</span>
+<a name="line-282"></a>
+<a name="line-283"></a>  <span class="cm">/* Adjust cif-&gt;bytes. to include 16 words for the window save area,</span>
+<a name="line-284"></a><span class="cm">     and maybe the struct/union return pointer area, */</span>
+<a name="line-285"></a>
+<a name="line-286"></a>  <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span> <span class="o">+=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">wordsize</span><span class="p">;</span>
+<a name="line-287"></a>
+<a name="line-288"></a>  <span class="cm">/* The stack must be 2 word aligned, so round bytes up</span>
+<a name="line-289"></a><span class="cm">     appropriately. */</span>
+<a name="line-290"></a>
+<a name="line-291"></a>  <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-77">ALIGN</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">wordsize</span><span class="p">);</span>
+<a name="line-292"></a>
+<a name="line-293"></a>  <span class="cm">/* Set the return type flag */</span>
+<a name="line-294"></a>  <span class="k">switch</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">)</span>
+<a name="line-295"></a>    <span class="p">{</span>
+<a name="line-296"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-289">FFI_TYPE_VOID</a></span><span class="p">:</span>
+<a name="line-297"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-291">FFI_TYPE_FLOAT</a></span><span class="p">:</span>
+<a name="line-298"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-292">FFI_TYPE_DOUBLE</a></span><span class="p">:</span>
+<a name="line-299"></a><span class="cp">#if FFI_TYPE_LONGDOUBLE != FFI_TYPE_DOUBLE</span>
+<a name="line-300"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi/src/alpha/ffi.c.html#line-39">FFI_TYPE_LONGDOUBLE</a></span><span class="p">:</span>
+<a name="line-301"></a><span class="cp">#endif</span>
+<a name="line-302"></a>      <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">;</span>
+<a name="line-303"></a>      <span class="k">break</span><span class="p">;</span>
+<a name="line-304"></a>
+<a name="line-305"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span><span class="p">:</span>
+<a name="line-306"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-164">abi</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffitarget.h.html#line-51">FFI_V9</a></span> <span class="o">&amp;&amp;</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span> <span class="o">&gt;</span> <span class="mi">32</span><span class="p">)</span>
+<a name="line-307"></a>	<span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-289">FFI_TYPE_VOID</a></span><span class="p">;</span>
+<a name="line-308"></a>      <span class="k">else</span>
+<a name="line-309"></a>	<span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span><span class="p">;</span>
+<a name="line-310"></a>      <span class="k">break</span><span class="p">;</span>
+<a name="line-311"></a>
+<a name="line-312"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-299">FFI_TYPE_SINT8</a></span><span class="p">:</span>
+<a name="line-313"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-298">FFI_TYPE_UINT8</a></span><span class="p">:</span>
+<a name="line-314"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-301">FFI_TYPE_SINT16</a></span><span class="p">:</span>
+<a name="line-315"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-300">FFI_TYPE_UINT16</a></span><span class="p">:</span>
+<a name="line-316"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-164">abi</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffitarget.h.html#line-51">FFI_V9</a></span><span class="p">)</span>
+<a name="line-317"></a>	<span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-290">FFI_TYPE_INT</a></span><span class="p">;</span>
+<a name="line-318"></a>      <span class="k">else</span>
+<a name="line-319"></a>	<span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">;</span>
+<a name="line-320"></a>      <span class="k">break</span><span class="p">;</span>
+<a name="line-321"></a>
+<a name="line-322"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-305">FFI_TYPE_SINT64</a></span><span class="p">:</span>
+<a name="line-323"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-304">FFI_TYPE_UINT64</a></span><span class="p">:</span>
+<a name="line-324"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-164">abi</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffitarget.h.html#line-51">FFI_V9</a></span><span class="p">)</span>
+<a name="line-325"></a>	<span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-290">FFI_TYPE_INT</a></span><span class="p">;</span>
+<a name="line-326"></a>      <span class="k">else</span>
+<a name="line-327"></a>	<span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-305">FFI_TYPE_SINT64</a></span><span class="p">;</span>
+<a name="line-328"></a>      <span class="k">break</span><span class="p">;</span>
+<a name="line-329"></a>
+<a name="line-330"></a>    <span class="k">default</span><span class="o">:</span>
+<a name="line-331"></a>      <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-290">FFI_TYPE_INT</a></span><span class="p">;</span>
+<a name="line-332"></a>      <span class="k">break</span><span class="p">;</span>
+<a name="line-333"></a>    <span class="p">}</span>
+<a name="line-334"></a>  <span class="k">return</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-156">FFI_OK</a></span><span class="p">;</span>
+<a name="line-335"></a><span class="p">}</span>
+<a name="line-336"></a>
+<a name="line-337"></a><span class="kt">int</span> <span class="nf"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-337">ffi_v9_layout_struct</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/callproc.c.html#line-608">ffi_type</a></span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-365">arg</a></span><span class="p">,</span> <span class="kt">int</span> <span class="n">off</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">intg</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-188">flt</a></span><span class="p">)</span>
+<a name="line-338"></a><span class="p">{</span>
+<a name="line-339"></a>  <span class="n"><a href="/./Modules/_ctypes/callproc.c.html#line-608">ffi_type</a></span> <span class="o">**</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span> <span class="o">=</span> <span class="o">&amp;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-365">arg</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/asdl.h.html#line-22">elements</a></span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<a name="line-340"></a>
+<a name="line-341"></a>  <span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span> <span class="o">!=</span> <span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">)</span>
+<a name="line-342"></a>    <span class="p">{</span>
+<a name="line-343"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">off</span> <span class="o">&amp;</span> <span class="p">((</span><span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-143">alignment</a></span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<a name="line-344"></a>	<span class="n">off</span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-77">ALIGN</a></span><span class="p">(</span><span class="n">off</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-143">alignment</a></span><span class="p">);</span>
+<a name="line-345"></a>
+<a name="line-346"></a>      <span class="k">switch</span> <span class="p">((</span><span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">)</span>
+<a name="line-347"></a>	<span class="p">{</span>
+<a name="line-348"></a>	<span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span><span class="p">:</span>
+<a name="line-349"></a>	  <span class="n">off</span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-337">ffi_v9_layout_struct</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="p">,</span> <span class="n">off</span><span class="p">,</span> <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span><span class="p">,</span> <span class="n">intg</span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-188">flt</a></span><span class="p">);</span>
+<a name="line-350"></a>	  <span class="n">off</span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-77">ALIGN</a></span><span class="p">(</span><span class="n">off</span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/mips/ffitarget.h.html#line-74">FFI_SIZEOF_ARG</a></span><span class="p">);</span>
+<a name="line-351"></a>	  <span class="k">break</span><span class="p">;</span>
+<a name="line-352"></a>	<span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-291">FFI_TYPE_FLOAT</a></span><span class="p">:</span>
+<a name="line-353"></a>	<span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-292">FFI_TYPE_DOUBLE</a></span><span class="p">:</span>
+<a name="line-354"></a><span class="cp">#if FFI_TYPE_LONGDOUBLE != FFI_TYPE_DOUBLE</span>
+<a name="line-355"></a>	<span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi/src/alpha/ffi.c.html#line-39">FFI_TYPE_LONGDOUBLE</a></span><span class="p">:</span>
+<a name="line-356"></a><span class="cp">#endif</span>
+<a name="line-357"></a>	  <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-488">memmove</a></span><span class="p">(</span><span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span> <span class="o">+</span> <span class="n">off</span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-188">flt</a></span> <span class="o">+</span> <span class="n">off</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">);</span>
+<a name="line-358"></a>	  <span class="n">off</span> <span class="o">+=</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">;</span>
+<a name="line-359"></a>	  <span class="k">break</span><span class="p">;</span>
+<a name="line-360"></a>	<span class="k">default</span><span class="o">:</span>
+<a name="line-361"></a>	  <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-488">memmove</a></span><span class="p">(</span><span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span> <span class="o">+</span> <span class="n">off</span><span class="p">,</span> <span class="n">intg</span> <span class="o">+</span> <span class="n">off</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">);</span>
+<a name="line-362"></a>	  <span class="n">off</span> <span class="o">+=</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="p">)</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">;</span>
+<a name="line-363"></a>	  <span class="k">break</span><span class="p">;</span>
+<a name="line-364"></a>	<span class="p">}</span>
+<a name="line-365"></a>      <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-190">ptr</a></span><span class="o">++</span><span class="p">;</span>
+<a name="line-366"></a>    <span class="p">}</span>
+<a name="line-367"></a>  <span class="k">return</span> <span class="n">off</span><span class="p">;</span>
+<a name="line-368"></a><span class="p">}</span>
+<a name="line-369"></a>
+<a name="line-370"></a>
+<a name="line-371"></a><span class="cp">#ifdef SPARC64</span>
+<a name="line-372"></a><span class="k">extern</span> <span class="kt">int</span> <span class="nf"><a href="/./Modules/_ctypes/libffi/src/sparc/v9.S.html#line-44">ffi_call_v9</a></span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-91">extended_cif</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">unsigned</span><span class="p">,</span> 
+<a name="line-373"></a>		       <span class="kt">unsigned</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+<a name="line-374"></a><span class="cp">#else</span>
+<a name="line-375"></a><span class="k">extern</span> <span class="kt">int</span> <span class="nf"><a href="/./Modules/_ctypes/libffi/src/sparc/v8.S.html#line-68">ffi_call_v8</a></span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-91">extended_cif</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">unsigned</span><span class="p">,</span> 
+<a name="line-376"></a>		       <span class="kt">unsigned</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+<a name="line-377"></a><span class="cp">#endif</span>
+<a name="line-378"></a>
+<a name="line-379"></a><span class="cp">#ifndef __GNUC__</span>
+<a name="line-380"></a><span class="kt">void</span> <span class="nf"><a href="/./Modules/_ctypes/libffi/src/sparc/v8.S.html#line-41">ffi_flush_icache</a></span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">size_t</span><span class="p">);</span>
+<a name="line-381"></a><span class="cp">#endif</span>
+<a name="line-382"></a>
+<a name="line-383"></a><span class="kt">void</span> <span class="nf"><a href="/./Modules/_ctypes/libffi/src/aarch64/ffi.c.html#line-802">ffi_call</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-173">ffi_cif</a></span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span><span class="p">)(</span><span class="kt">void</span><span class="p">),</span> <span class="kt">void</span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">)</span>
+<a name="line-384"></a><span class="p">{</span>
+<a name="line-385"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-91">extended_cif</a></span> <span class="n">ecif</span><span class="p">;</span>
+<a name="line-386"></a>  <span class="kt">void</span> <span class="o">*</span><span class="n">rval</span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">;</span>
+<a name="line-387"></a>
+<a name="line-388"></a>  <span class="n">ecif</span><span class="p">.</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">;</span>
+<a name="line-389"></a>  <span class="n">ecif</span><span class="p">.</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">;</span>
+<a name="line-390"></a>
+<a name="line-391"></a>  <span class="cm">/* If the return value is a struct and we don&#39;t have a return	*/</span>
+<a name="line-392"></a>  <span class="cm">/* value address then we need to make one		        */</span>
+<a name="line-393"></a>
+<a name="line-394"></a>  <span class="n">ecif</span><span class="p">.</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">;</span>
+<a name="line-395"></a>  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span><span class="p">)</span>
+<a name="line-396"></a>    <span class="p">{</span>
+<a name="line-397"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span> <span class="o">&lt;=</span> <span class="mi">32</span><span class="p">)</span>
+<a name="line-398"></a>	<span class="n">rval</span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-27">alloca</a></span><span class="p">(</span><span class="mi">64</span><span class="p">);</span>
+<a name="line-399"></a>      <span class="k">else</span>
+<a name="line-400"></a>	<span class="p">{</span>
+<a name="line-401"></a>	  <span class="n">rval</span> <span class="o">=</span> <span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">;</span>
+<a name="line-402"></a>	  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span> <span class="o">==</span> <span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">)</span>
+<a name="line-403"></a>	    <span class="n">ecif</span><span class="p">.</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-27">alloca</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">);</span>
+<a name="line-404"></a>	<span class="p">}</span>
+<a name="line-405"></a>    <span class="p">}</span>
+<a name="line-406"></a>
+<a name="line-407"></a>  <span class="k">switch</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-164">abi</a></span><span class="p">)</span> 
+<a name="line-408"></a>    <span class="p">{</span>
+<a name="line-409"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi/src/sparc/ffitarget.h.html#line-49">FFI_V8</a></span><span class="p">:</span>
+<a name="line-410"></a><span class="cp">#ifdef SPARC64</span>
+<a name="line-411"></a>      <span class="cm">/* We don&#39;t yet support calling 32bit code from 64bit */</span>
+<a name="line-412"></a>      <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-68">FFI_ASSERT</a></span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a name="line-413"></a><span class="cp">#else</span>
+<a name="line-414"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span>
+<a name="line-415"></a><span class="cp">#if FFI_TYPE_LONGDOUBLE != FFI_TYPE_DOUBLE</span>
+<a name="line-416"></a>	  <span class="o">||</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/alpha/ffi.c.html#line-39">FFI_TYPE_LONGDOUBLE</a></span>
+<a name="line-417"></a><span class="cp">#endif</span>
+<a name="line-418"></a>	  <span class="p">))</span>
+<a name="line-419"></a>	<span class="p">{</span>
+<a name="line-420"></a>	  <span class="cm">/* For v8, we need an &quot;unimp&quot; with size of returning struct */</span>
+<a name="line-421"></a>	  <span class="cm">/* behind &quot;call&quot;, so we alloc some executable space for it. */</span>
+<a name="line-422"></a>	  <span class="cm">/* l7 is used, we need to make sure v8.S doesn&#39;t use %l7.   */</span>
+<a name="line-423"></a>	  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="n">call_struct</span> <span class="o">=</span> <span class="nb"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span><span class="p">;</span>
+<a name="line-424"></a>	  <span class="n"><a href="/./Modules/_ctypes/libffi/src/arm/ffi.c.html#line-655">ffi_closure_alloc</a></span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">call_struct</span><span class="p">);</span>
+<a name="line-425"></a>	  <span class="k">if</span> <span class="p">(</span><span class="n">call_struct</span><span class="p">)</span>
+<a name="line-426"></a>	    <span class="p">{</span>
+<a name="line-427"></a>	      <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span><span class="p">;</span>
+<a name="line-428"></a>	      <span class="n">call_struct</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xae10001f</span><span class="p">;</span>		 <span class="cm">/* mov   %i7, %l7	 */</span>
+<a name="line-429"></a>	      <span class="n">call_struct</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xbe10000f</span><span class="p">;</span>		 <span class="cm">/* mov   %o7, %i7	 */</span>
+<a name="line-430"></a>	      <span class="n">call_struct</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x03000000</span> <span class="o">|</span> <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="o">&gt;&gt;</span> <span class="mi">10</span><span class="p">;</span>     <span class="cm">/* sethi %hi(fn), %g1	 */</span>
+<a name="line-431"></a>	      <span class="n">call_struct</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x9fc06000</span> <span class="o">|</span> <span class="p">(</span><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="o">&amp;</span> <span class="mh">0x3ff</span><span class="p">);</span> <span class="cm">/* jmp %g1+%lo(fn), %o7 */</span>
+<a name="line-432"></a>	      <span class="n">call_struct</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x01000000</span><span class="p">;</span>		 <span class="cm">/* nop			 */</span>
+<a name="line-433"></a>	      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span> <span class="o">&lt;</span> <span class="mh">0x7f</span><span class="p">)</span>
+<a name="line-434"></a>		<span class="n">call_struct</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">;</span>	 <span class="cm">/* unimp		 */</span>
+<a name="line-435"></a>	      <span class="k">else</span>
+<a name="line-436"></a>		<span class="n">call_struct</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x01000000</span><span class="p">;</span>	     	 <span class="cm">/* nop			 */</span>
+<a name="line-437"></a>	      <span class="n">call_struct</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x81c7e008</span><span class="p">;</span>		 <span class="cm">/* ret			 */</span>
+<a name="line-438"></a>	      <span class="n">call_struct</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xbe100017</span><span class="p">;</span>		 <span class="cm">/* mov   %l7, %i7	 */</span>
+<a name="line-439"></a><span class="cp">#ifdef __GNUC__</span>
+<a name="line-440"></a>	      <span class="n">asm</span> <span class="k">volatile</span> <span class="p">(</span><span class="s">&quot;iflush %0; iflush %0+8; iflush %0+16; iflush %0+24&quot;</span> <span class="o">:</span> <span class="o">:</span>
+<a name="line-441"></a>			    <span class="s">&quot;r&quot;</span> <span class="p">(</span><span class="n">call_struct</span><span class="p">)</span> <span class="o">:</span> <span class="s">&quot;memory&quot;</span><span class="p">);</span>
+<a name="line-442"></a>	      <span class="cm">/* SPARC v8 requires 5 instructions for flush to be visible */</span>
+<a name="line-443"></a>	      <span class="n">asm</span> <span class="k">volatile</span> <span class="p">(</span><span class="s">&quot;nop; nop; nop; nop; nop&quot;</span><span class="p">);</span>
+<a name="line-444"></a><span class="cp">#else</span>
+<a name="line-445"></a>	      <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/v8.S.html#line-41">ffi_flush_icache</a></span> <span class="p">(</span><span class="n">call_struct</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-446"></a><span class="cp">#endif</span>
+<a name="line-447"></a>	      <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/v8.S.html#line-68">ffi_call_v8</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-37">ffi_prep_args_v8</a></span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ecif</span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span><span class="p">,</span>
+<a name="line-448"></a>			  <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">,</span> <span class="n">call_struct</span><span class="p">);</span>
+<a name="line-449"></a>	      <span class="n"><a href="/./Modules/_ctypes/libffi/src/arm/ffi.c.html#line-698">ffi_closure_free</a></span><span class="p">(</span><span class="n">call_struct</span><span class="p">);</span>
+<a name="line-450"></a>	    <span class="p">}</span>
+<a name="line-451"></a>	  <span class="k">else</span>
+<a name="line-452"></a>	    <span class="p">{</span>
+<a name="line-453"></a>	      <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/v8.S.html#line-68">ffi_call_v8</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-37">ffi_prep_args_v8</a></span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ecif</span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span><span class="p">,</span>
+<a name="line-454"></a>			  <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span><span class="p">);</span>
+<a name="line-455"></a>	    <span class="p">}</span>
+<a name="line-456"></a>	<span class="p">}</span>
+<a name="line-457"></a>      <span class="k">else</span>
+<a name="line-458"></a>	<span class="p">{</span>
+<a name="line-459"></a>	  <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/v8.S.html#line-68">ffi_call_v8</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-37">ffi_prep_args_v8</a></span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ecif</span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span><span class="p">,</span>
+<a name="line-460"></a>		      <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span><span class="p">);</span>
+<a name="line-461"></a>	<span class="p">}</span>
+<a name="line-462"></a><span class="cp">#endif</span>
+<a name="line-463"></a>      <span class="k">break</span><span class="p">;</span>
+<a name="line-464"></a>    <span class="k">case</span> <span class="nl"><a href="/./Modules/_ctypes/libffi/src/sparc/ffitarget.h.html#line-51">FFI_V9</a></span><span class="p">:</span>
+<a name="line-465"></a><span class="cp">#ifdef SPARC64</span>
+<a name="line-466"></a>      <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/v9.S.html#line-44">ffi_call_v9</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-123">ffi_prep_args_v9</a></span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ecif</span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span><span class="p">,</span>
+<a name="line-467"></a>		  <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span><span class="p">,</span> <span class="n">rval</span><span class="p">,</span> <span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span><span class="p">);</span>
+<a name="line-468"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span> <span class="o">&amp;&amp;</span> <span class="n">rval</span> <span class="o">&amp;&amp;</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span><span class="p">)</span>
+<a name="line-469"></a>	<span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-337">ffi_v9_layout_struct</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">rval</span><span class="p">,</span> <span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">rval</span><span class="p">)</span><span class="o">+</span><span class="mi">32</span><span class="p">);</span>
+<a name="line-470"></a><span class="cp">#else</span>
+<a name="line-471"></a>      <span class="cm">/* And vice versa */</span>
+<a name="line-472"></a>      <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-68">FFI_ASSERT</a></span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a name="line-473"></a><span class="cp">#endif</span>
+<a name="line-474"></a>      <span class="k">break</span><span class="p">;</span>
+<a name="line-475"></a>    <span class="k">default</span><span class="o">:</span>
+<a name="line-476"></a>      <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-68">FFI_ASSERT</a></span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a name="line-477"></a>      <span class="k">break</span><span class="p">;</span>
+<a name="line-478"></a>    <span class="p">}</span>
+<a name="line-479"></a><span class="p">}</span>
+<a name="line-480"></a>
+<a name="line-481"></a>
+<a name="line-482"></a><span class="cp">#ifdef SPARC64</span>
+<a name="line-483"></a><span class="k">extern</span> <span class="kt">void</span> <span class="nf"><a href="/./Modules/_ctypes/libffi/src/sparc/v9.S.html#line-145">ffi_closure_v9</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-484"></a><span class="cp">#else</span>
+<a name="line-485"></a><span class="k">extern</span> <span class="kt">void</span> <span class="nf"><a href="/./Modules/_ctypes/libffi/src/sparc/v8.S.html#line-185">ffi_closure_v8</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-486"></a><span class="cp">#endif</span>
+<a name="line-487"></a>
+<a name="line-488"></a><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-159">ffi_status</a></span>
+<a name="line-489"></a><span class="nf"><a href="/./Modules/_ctypes/libffi/src/aarch64/ffi.c.html#line-917">ffi_prep_closure_loc</a></span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-224">ffi_closure</a></span><span class="o">*</span> <span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="p">,</span>
+<a name="line-490"></a>		      <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-173">ffi_cif</a></span><span class="o">*</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">,</span>
+<a name="line-491"></a>		      <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-222">fun</a></span><span class="p">)(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-173">ffi_cif</a></span><span class="o">*</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span><span class="p">,</span> <span class="kt">void</span><span class="o">**</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span><span class="p">),</span>
+<a name="line-492"></a>		      <span class="kt">void</span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-223">user_data</a></span><span class="p">,</span>
+<a name="line-493"></a>		      <span class="kt">void</span> <span class="o">*</span><span class="n">codeloc</span><span class="p">)</span>
+<a name="line-494"></a><span class="p">{</span>
+<a name="line-495"></a>  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<a name="line-496"></a>  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span><span class="p">;</span>
+<a name="line-497"></a><span class="cp">#ifdef SPARC64</span>
+<a name="line-498"></a>  <span class="cm">/* Trampoline address is equal to the closure address.  We take advantage</span>
+<a name="line-499"></a><span class="cm">     of that to reduce the trampoline size by 8 bytes. */</span>
+<a name="line-500"></a>  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-164">abi</a></span> <span class="o">!=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffitarget.h.html#line-51">FFI_V9</a></span><span class="p">)</span>
+<a name="line-501"></a>    <span class="k">return</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-158">FFI_BAD_ABI</a></span><span class="p">;</span>
+<a name="line-502"></a>  <span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/v9.S.html#line-145">ffi_closure_v9</a></span><span class="p">;</span>
+<a name="line-503"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x83414000</span><span class="p">;</span>	<span class="cm">/* rd	%pc, %g1	*/</span>
+<a name="line-504"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xca586010</span><span class="p">;</span>	<span class="cm">/* ldx	[%g1+16], %g5	*/</span>
+<a name="line-505"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x81c14000</span><span class="p">;</span>	<span class="cm">/* jmp	%g5		*/</span>
+<a name="line-506"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x01000000</span><span class="p">;</span>	<span class="cm">/* nop			*/</span>
+<a name="line-507"></a>  <span class="o">*</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">=</span> <span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span><span class="p">;</span>
+<a name="line-508"></a><span class="cp">#else</span>
+<a name="line-509"></a>  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-286">ctx</a></span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="n">codeloc</span><span class="p">;</span>
+<a name="line-510"></a>  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-164">abi</a></span> <span class="o">!=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffitarget.h.html#line-49">FFI_V8</a></span><span class="p">)</span>
+<a name="line-511"></a>    <span class="k">return</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-158">FFI_BAD_ABI</a></span><span class="p">;</span>
+<a name="line-512"></a>  <span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/v8.S.html#line-185">ffi_closure_v8</a></span><span class="p">;</span>
+<a name="line-513"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x03000000</span> <span class="o">|</span> <span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span> <span class="o">&gt;&gt;</span> <span class="mi">10</span><span class="p">;</span>	<span class="cm">/* sethi %hi(fn), %g1	*/</span>
+<a name="line-514"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x05000000</span> <span class="o">|</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-286">ctx</a></span> <span class="o">&gt;&gt;</span> <span class="mi">10</span><span class="p">;</span>	<span class="cm">/* sethi %hi(ctx), %g2	*/</span>
+<a name="line-515"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x81c06000</span> <span class="o">|</span> <span class="p">(</span><span class="n"><a href="/./Lib/aifc.py.html#line-964">fn</a></span> <span class="o">&amp;</span> <span class="mh">0x3ff</span><span class="p">);</span>	<span class="cm">/* jmp   %g1+%lo(fn)	*/</span>
+<a name="line-516"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-220">tramp</a></span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x8410a000</span> <span class="o">|</span> <span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-286">ctx</a></span> <span class="o">&amp;</span> <span class="mh">0x3ff</span><span class="p">);</span><span class="cm">/* or    %g2, %lo(ctx)	*/</span>
+<a name="line-517"></a><span class="cp">#endif</span>
+<a name="line-518"></a>
+<a name="line-519"></a>  <span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">;</span>
+<a name="line-520"></a>  <span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-222">fun</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-222">fun</a></span><span class="p">;</span>
+<a name="line-521"></a>  <span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-223">user_data</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-223">user_data</a></span><span class="p">;</span>
+<a name="line-522"></a>
+<a name="line-523"></a>  <span class="cm">/* Flush the Icache.  closure is 8 bytes aligned.  */</span>
+<a name="line-524"></a><span class="cp">#ifdef __GNUC__</span>
+<a name="line-525"></a><span class="cp">#ifdef SPARC64</span>
+<a name="line-526"></a>  <span class="n">asm</span> <span class="k">volatile</span> <span class="p">(</span><span class="s">&quot;flush	%0; flush %0+8&quot;</span> <span class="o">:</span> <span class="o">:</span> <span class="s">&quot;r&quot;</span> <span class="p">(</span><span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="p">)</span> <span class="o">:</span> <span class="s">&quot;memory&quot;</span><span class="p">);</span>
+<a name="line-527"></a><span class="cp">#else</span>
+<a name="line-528"></a>  <span class="n">asm</span> <span class="k">volatile</span> <span class="p">(</span><span class="s">&quot;iflush	%0; iflush %0+8&quot;</span> <span class="o">:</span> <span class="o">:</span> <span class="s">&quot;r&quot;</span> <span class="p">(</span><span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="p">)</span> <span class="o">:</span> <span class="s">&quot;memory&quot;</span><span class="p">);</span>
+<a name="line-529"></a>  <span class="cm">/* SPARC v8 requires 5 instructions for flush to be visible */</span>
+<a name="line-530"></a>  <span class="n">asm</span> <span class="k">volatile</span> <span class="p">(</span><span class="s">&quot;nop; nop; nop; nop; nop&quot;</span><span class="p">);</span>
+<a name="line-531"></a><span class="cp">#endif</span>
+<a name="line-532"></a><span class="cp">#else</span>
+<a name="line-533"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/v8.S.html#line-41">ffi_flush_icache</a></span> <span class="p">(</span><span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+<a name="line-534"></a><span class="cp">#endif</span>
+<a name="line-535"></a>
+<a name="line-536"></a>  <span class="k">return</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-156">FFI_OK</a></span><span class="p">;</span>
+<a name="line-537"></a><span class="p">}</span>
+<a name="line-538"></a>
+<a name="line-539"></a><span class="kt">int</span>
+<a name="line-540"></a><span class="nf"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-540">ffi_closure_sparc_inner_v8</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-224">ffi_closure</a></span> <span class="o">*</span><span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="p">,</span>
+<a name="line-541"></a>  <span class="kt">void</span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">scratch</span><span class="p">)</span>
+<a name="line-542"></a><span class="p">{</span>
+<a name="line-543"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-173">ffi_cif</a></span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">;</span>
+<a name="line-544"></a>  <span class="n"><a href="/./Modules/_ctypes/callproc.c.html#line-608">ffi_type</a></span> <span class="o">**</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">;</span>
+<a name="line-545"></a>  <span class="kt">void</span> <span class="o">**</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">;</span>
+<a name="line-546"></a>  <span class="kt">int</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">,</span> <span class="n">argn</span><span class="p">;</span>
+<a name="line-547"></a>
+<a name="line-548"></a>  <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span> <span class="o">=</span> <span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">;</span>
+<a name="line-549"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">;</span>
+<a name="line-550"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-27">alloca</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/test/pystone.py.html#line-261">nargs</a></span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">));</span>
+<a name="line-551"></a>
+<a name="line-552"></a>  <span class="cm">/* Copy the caller&#39;s structure return address so that the closure</span>
+<a name="line-553"></a><span class="cm">     returns the data directly to the caller.  */</span>
+<a name="line-554"></a>  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span>
+<a name="line-555"></a><span class="cp">#if FFI_TYPE_LONGDOUBLE != FFI_TYPE_DOUBLE  </span>
+<a name="line-556"></a>      <span class="o">||</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/alpha/ffi.c.html#line-39">FFI_TYPE_LONGDOUBLE</a></span>
+<a name="line-557"></a><span class="cp">#endif</span>
+<a name="line-558"></a>     <span class="p">)</span>
+<a name="line-559"></a>    <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<a name="line-560"></a>
+<a name="line-561"></a>  <span class="cm">/* Always skip the structure return address.  */</span>
+<a name="line-562"></a>  <span class="n">argn</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-563"></a>
+<a name="line-564"></a>  <span class="cm">/* Grab the addresses of the arguments from the stack frame.  */</span>
+<a name="line-565"></a>  <span class="k">for</span> <span class="p">(</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">&lt;</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/test/pystone.py.html#line-261">nargs</a></span><span class="p">;</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="o">++</span><span class="p">)</span>
+<a name="line-566"></a>    <span class="p">{</span>
+<a name="line-567"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span>
+<a name="line-568"></a><span class="cp">#if FFI_TYPE_LONGDOUBLE != FFI_TYPE_DOUBLE</span>
+<a name="line-569"></a>	  <span class="o">||</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/alpha/ffi.c.html#line-39">FFI_TYPE_LONGDOUBLE</a></span>
+<a name="line-570"></a><span class="cp">#endif</span>
+<a name="line-571"></a>         <span class="p">)</span>
+<a name="line-572"></a>	<span class="p">{</span>
+<a name="line-573"></a>	  <span class="cm">/* Straight copy of invisible reference.  */</span>
+<a name="line-574"></a>	  <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="n">argn</span><span class="o">++</span><span class="p">];</span>
+<a name="line-575"></a>	<span class="p">}</span>
+<a name="line-576"></a>      <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-292">FFI_TYPE_DOUBLE</a></span>
+<a name="line-577"></a>	       <span class="o">||</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-305">FFI_TYPE_SINT64</a></span>
+<a name="line-578"></a>	       <span class="o">||</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-304">FFI_TYPE_UINT64</a></span><span class="p">)</span>
+<a name="line-579"></a>	       <span class="cm">/* gpr is 8-byte aligned.  */</span>
+<a name="line-580"></a>	       <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">argn</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<a name="line-581"></a>	<span class="p">{</span>
+<a name="line-582"></a>	  <span class="cm">/* Align on a 8-byte boundary.  */</span>
+<a name="line-583"></a>	  <span class="n">scratch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="n">argn</span><span class="p">];</span>
+<a name="line-584"></a>	  <span class="n">scratch</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="n">argn</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+<a name="line-585"></a>	  <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span> <span class="o">=</span> <span class="n">scratch</span><span class="p">;</span>
+<a name="line-586"></a>	  <span class="n">scratch</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>
+<a name="line-587"></a>	  <span class="n">argn</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<a name="line-588"></a>	<span class="p">}</span>
+<a name="line-589"></a>      <span class="k">else</span>
+<a name="line-590"></a>	<span class="p">{</span>
+<a name="line-591"></a>	  <span class="cm">/* Always right-justify.  */</span>
+<a name="line-592"></a>	  <span class="n">argn</span> <span class="o">+=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-77">ALIGN</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/mips/ffitarget.h.html#line-74">FFI_SIZEOF_ARG</a></span><span class="p">)</span> <span class="o">/</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/mips/ffitarget.h.html#line-74">FFI_SIZEOF_ARG</a></span><span class="p">;</span>
+<a name="line-593"></a>	  <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="n">argn</span><span class="p">])</span> <span class="o">-</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">;</span>
+<a name="line-594"></a>	<span class="p">}</span>
+<a name="line-595"></a>    <span class="p">}</span>
+<a name="line-596"></a>
+<a name="line-597"></a>  <span class="cm">/* Invoke the closure.  */</span>
+<a name="line-598"></a>  <span class="p">(</span><span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-222">fun</a></span><span class="p">)</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">,</span> <span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-223">user_data</a></span><span class="p">);</span>
+<a name="line-599"></a>
+<a name="line-600"></a>  <span class="cm">/* Tell ffi_closure_sparc how to perform return type promotions.  */</span>
+<a name="line-601"></a>  <span class="k">return</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">;</span>
+<a name="line-602"></a><span class="p">}</span>
+<a name="line-603"></a>
+<a name="line-604"></a><span class="kt">int</span>
+<a name="line-605"></a><span class="nf"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-605">ffi_closure_sparc_inner_v9</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-224">ffi_closure</a></span> <span class="o">*</span><span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="p">,</span>
+<a name="line-606"></a>  <span class="kt">void</span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">,</span> <span class="kt">double</span> <span class="o">*</span><span class="n">fpr</span><span class="p">)</span>
+<a name="line-607"></a><span class="p">{</span>
+<a name="line-608"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-173">ffi_cif</a></span> <span class="o">*</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">;</span>
+<a name="line-609"></a>  <span class="n"><a href="/./Modules/_ctypes/callproc.c.html#line-608">ffi_type</a></span> <span class="o">**</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">;</span>
+<a name="line-610"></a>  <span class="kt">void</span> <span class="o">**</span><span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">;</span>
+<a name="line-611"></a>  <span class="kt">int</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">,</span> <span class="n">argn</span><span class="p">,</span> <span class="n">fp_slot_max</span><span class="p">;</span>
+<a name="line-612"></a>
+<a name="line-613"></a>  <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span> <span class="o">=</span> <span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">;</span>
+<a name="line-614"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">;</span>
+<a name="line-615"></a>  <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span> <span class="o">=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-27">alloca</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/test/pystone.py.html#line-261">nargs</a></span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">));</span>
+<a name="line-616"></a>
+<a name="line-617"></a>  <span class="cm">/* Copy the caller&#39;s structure return address so that the closure</span>
+<a name="line-618"></a><span class="cm">     returns the data directly to the caller.  */</span>
+<a name="line-619"></a>  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-289">FFI_TYPE_VOID</a></span>
+<a name="line-620"></a>      <span class="o">&amp;&amp;</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span><span class="p">)</span>
+<a name="line-621"></a>    <span class="p">{</span>
+<a name="line-622"></a>      <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<a name="line-623"></a>      <span class="cm">/* Skip the structure return address.  */</span>
+<a name="line-624"></a>      <span class="n">argn</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-625"></a>    <span class="p">}</span>
+<a name="line-626"></a>  <span class="k">else</span>
+<a name="line-627"></a>    <span class="n">argn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-628"></a>
+<a name="line-629"></a>  <span class="n">fp_slot_max</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">-</span> <span class="n">argn</span><span class="p">;</span>
+<a name="line-630"></a>
+<a name="line-631"></a>  <span class="cm">/* Grab the addresses of the arguments from the stack frame.  */</span>
+<a name="line-632"></a>  <span class="k">for</span> <span class="p">(</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">&lt;</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Lib/test/pystone.py.html#line-261">nargs</a></span><span class="p">;</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="o">++</span><span class="p">)</span>
+<a name="line-633"></a>    <span class="p">{</span>
+<a name="line-634"></a>      <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-306">FFI_TYPE_STRUCT</a></span><span class="p">)</span>
+<a name="line-635"></a>	<span class="p">{</span>
+<a name="line-636"></a>	  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span> <span class="o">&gt;</span> <span class="mi">16</span><span class="p">)</span>
+<a name="line-637"></a>	    <span class="p">{</span>
+<a name="line-638"></a>	      <span class="cm">/* Straight copy of invisible reference.  */</span>
+<a name="line-639"></a>	      <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="n">argn</span><span class="o">++</span><span class="p">];</span>
+<a name="line-640"></a>	    <span class="p">}</span>
+<a name="line-641"></a>	  <span class="k">else</span>
+<a name="line-642"></a>	    <span class="p">{</span>
+<a name="line-643"></a>	      <span class="cm">/* Left-justify.  */</span>
+<a name="line-644"></a>	      <span class="n"><a href="/./Modules/_ctypes/libffi/src/sparc/ffi.c.html#line-337">ffi_v9_layout_struct</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">],</span>
+<a name="line-645"></a>				   <span class="mi">0</span><span class="p">,</span>
+<a name="line-646"></a>				   <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="n">argn</span><span class="p">],</span>
+<a name="line-647"></a>				   <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="n">argn</span><span class="p">],</span>
+<a name="line-648"></a>				   <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">fpr</span><span class="p">[</span><span class="n">argn</span><span class="p">]);</span>
+<a name="line-649"></a>	      <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="n">argn</span><span class="p">];</span>
+<a name="line-650"></a>	      <span class="n">argn</span> <span class="o">+=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-77">ALIGN</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/mips/ffitarget.h.html#line-74">FFI_SIZEOF_ARG</a></span><span class="p">)</span> <span class="o">/</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/mips/ffitarget.h.html#line-74">FFI_SIZEOF_ARG</a></span><span class="p">;</span>
+<a name="line-651"></a>	    <span class="p">}</span>
+<a name="line-652"></a>	<span class="p">}</span>
+<a name="line-653"></a>      <span class="k">else</span>
+<a name="line-654"></a>	<span class="p">{</span>
+<a name="line-655"></a>	  <span class="cm">/* Right-justify.  */</span>
+<a name="line-656"></a>	  <span class="n">argn</span> <span class="o">+=</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-77">ALIGN</a></span><span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/mips/ffitarget.h.html#line-74">FFI_SIZEOF_ARG</a></span><span class="p">)</span> <span class="o">/</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/mips/ffitarget.h.html#line-74">FFI_SIZEOF_ARG</a></span><span class="p">;</span>
+<a name="line-657"></a>
+<a name="line-658"></a>	  <span class="cm">/* Align on a 16-byte boundary.  */</span>
+<a name="line-659"></a><span class="cp">#if FFI_TYPE_LONGDOUBLE != FFI_TYPE_DOUBLE</span>
+<a name="line-660"></a>	  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/alpha/ffi.c.html#line-39">FFI_TYPE_LONGDOUBLE</a></span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">argn</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<a name="line-661"></a>	    <span class="n">argn</span><span class="o">++</span><span class="p">;</span>
+<a name="line-662"></a><span class="cp">#endif</span>
+<a name="line-663"></a>	  <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">&lt;</span> <span class="n">fp_slot_max</span>
+<a name="line-664"></a>	      <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-291">FFI_TYPE_FLOAT</a></span>
+<a name="line-665"></a>		  <span class="o">||</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-292">FFI_TYPE_DOUBLE</a></span>
+<a name="line-666"></a><span class="cp">#if FFI_TYPE_LONGDOUBLE != FFI_TYPE_DOUBLE</span>
+<a name="line-667"></a>		  <span class="o">||</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">==</span> <span class="n"><a href="/./Modules/_ctypes/libffi/src/alpha/ffi.c.html#line-39">FFI_TYPE_LONGDOUBLE</a></span>
+<a name="line-668"></a><span class="cp">#endif</span>
+<a name="line-669"></a>		  <span class="p">))</span>
+<a name="line-670"></a>	    <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">fpr</span><span class="p">[</span><span class="n">argn</span><span class="p">])</span> <span class="o">-</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">;</span>
+<a name="line-671"></a>	  <span class="k">else</span>
+<a name="line-672"></a>	    <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n"><a href="/./Modules/_ctypes/libffi/src/x86/ffi64.c.html#line-63">gpr</a></span><span class="p">[</span><span class="n">argn</span><span class="p">])</span> <span class="o">-</span> <span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-166">arg_types</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">]</span><span class="o">-&gt;</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">;</span>
+<a name="line-673"></a>	<span class="p">}</span>
+<a name="line-674"></a>    <span class="p">}</span>
+<a name="line-675"></a>
+<a name="line-676"></a>  <span class="cm">/* Invoke the closure.  */</span>
+<a name="line-677"></a>  <span class="p">(</span><span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-222">fun</a></span><span class="p">)</span> <span class="p">(</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span><span class="p">,</span> <span class="n"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-90">avalue</a></span><span class="p">,</span> <span class="n"><a href="/./Include/descrobject.h.html#line-16">closure</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-223">user_data</a></span><span class="p">);</span>
+<a name="line-678"></a>
+<a name="line-679"></a>  <span class="cm">/* Tell ffi_closure_sparc how to perform return type promotions.  */</span>
+<a name="line-680"></a>  <span class="k">return</span> <span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-100">cif</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Modules/_ctypes/libffi_arm_wince/ffi.h.html#line-167">rtype</a></span><span class="o">-&gt;</span><span class="n"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">;</span>
+<a name="line-681"></a><span class="p">}</span>
+</pre></div>
+</td></tr></table></body>
+</html>

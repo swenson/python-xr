@@ -1,0 +1,980 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a>
+<a href="#line-140">140</a>
+<a href="#line-141">141</a>
+<a href="#line-142">142</a>
+<a href="#line-143">143</a>
+<a href="#line-144">144</a>
+<a href="#line-145">145</a>
+<a href="#line-146">146</a>
+<a href="#line-147">147</a>
+<a href="#line-148">148</a>
+<a href="#line-149">149</a>
+<a href="#line-150">150</a>
+<a href="#line-151">151</a>
+<a href="#line-152">152</a>
+<a href="#line-153">153</a>
+<a href="#line-154">154</a>
+<a href="#line-155">155</a>
+<a href="#line-156">156</a>
+<a href="#line-157">157</a>
+<a href="#line-158">158</a>
+<a href="#line-159">159</a>
+<a href="#line-160">160</a>
+<a href="#line-161">161</a>
+<a href="#line-162">162</a>
+<a href="#line-163">163</a>
+<a href="#line-164">164</a>
+<a href="#line-165">165</a>
+<a href="#line-166">166</a>
+<a href="#line-167">167</a>
+<a href="#line-168">168</a>
+<a href="#line-169">169</a>
+<a href="#line-170">170</a>
+<a href="#line-171">171</a>
+<a href="#line-172">172</a>
+<a href="#line-173">173</a>
+<a href="#line-174">174</a>
+<a href="#line-175">175</a>
+<a href="#line-176">176</a>
+<a href="#line-177">177</a>
+<a href="#line-178">178</a>
+<a href="#line-179">179</a>
+<a href="#line-180">180</a>
+<a href="#line-181">181</a>
+<a href="#line-182">182</a>
+<a href="#line-183">183</a>
+<a href="#line-184">184</a>
+<a href="#line-185">185</a>
+<a href="#line-186">186</a>
+<a href="#line-187">187</a>
+<a href="#line-188">188</a>
+<a href="#line-189">189</a>
+<a href="#line-190">190</a>
+<a href="#line-191">191</a>
+<a href="#line-192">192</a>
+<a href="#line-193">193</a>
+<a href="#line-194">194</a>
+<a href="#line-195">195</a>
+<a href="#line-196">196</a>
+<a href="#line-197">197</a>
+<a href="#line-198">198</a>
+<a href="#line-199">199</a>
+<a href="#line-200">200</a>
+<a href="#line-201">201</a>
+<a href="#line-202">202</a>
+<a href="#line-203">203</a>
+<a href="#line-204">204</a>
+<a href="#line-205">205</a>
+<a href="#line-206">206</a>
+<a href="#line-207">207</a>
+<a href="#line-208">208</a>
+<a href="#line-209">209</a>
+<a href="#line-210">210</a>
+<a href="#line-211">211</a>
+<a href="#line-212">212</a>
+<a href="#line-213">213</a>
+<a href="#line-214">214</a>
+<a href="#line-215">215</a>
+<a href="#line-216">216</a>
+<a href="#line-217">217</a>
+<a href="#line-218">218</a>
+<a href="#line-219">219</a>
+<a href="#line-220">220</a>
+<a href="#line-221">221</a>
+<a href="#line-222">222</a>
+<a href="#line-223">223</a>
+<a href="#line-224">224</a>
+<a href="#line-225">225</a>
+<a href="#line-226">226</a>
+<a href="#line-227">227</a>
+<a href="#line-228">228</a>
+<a href="#line-229">229</a>
+<a href="#line-230">230</a>
+<a href="#line-231">231</a>
+<a href="#line-232">232</a>
+<a href="#line-233">233</a>
+<a href="#line-234">234</a>
+<a href="#line-235">235</a>
+<a href="#line-236">236</a>
+<a href="#line-237">237</a>
+<a href="#line-238">238</a>
+<a href="#line-239">239</a>
+<a href="#line-240">240</a>
+<a href="#line-241">241</a>
+<a href="#line-242">242</a>
+<a href="#line-243">243</a>
+<a href="#line-244">244</a>
+<a href="#line-245">245</a>
+<a href="#line-246">246</a>
+<a href="#line-247">247</a>
+<a href="#line-248">248</a>
+<a href="#line-249">249</a>
+<a href="#line-250">250</a>
+<a href="#line-251">251</a>
+<a href="#line-252">252</a>
+<a href="#line-253">253</a>
+<a href="#line-254">254</a>
+<a href="#line-255">255</a>
+<a href="#line-256">256</a>
+<a href="#line-257">257</a>
+<a href="#line-258">258</a>
+<a href="#line-259">259</a>
+<a href="#line-260">260</a>
+<a href="#line-261">261</a>
+<a href="#line-262">262</a>
+<a href="#line-263">263</a>
+<a href="#line-264">264</a>
+<a href="#line-265">265</a>
+<a href="#line-266">266</a>
+<a href="#line-267">267</a>
+<a href="#line-268">268</a>
+<a href="#line-269">269</a>
+<a href="#line-270">270</a>
+<a href="#line-271">271</a>
+<a href="#line-272">272</a>
+<a href="#line-273">273</a>
+<a href="#line-274">274</a>
+<a href="#line-275">275</a>
+<a href="#line-276">276</a>
+<a href="#line-277">277</a>
+<a href="#line-278">278</a>
+<a href="#line-279">279</a>
+<a href="#line-280">280</a>
+<a href="#line-281">281</a>
+<a href="#line-282">282</a>
+<a href="#line-283">283</a>
+<a href="#line-284">284</a>
+<a href="#line-285">285</a>
+<a href="#line-286">286</a>
+<a href="#line-287">287</a>
+<a href="#line-288">288</a>
+<a href="#line-289">289</a>
+<a href="#line-290">290</a>
+<a href="#line-291">291</a>
+<a href="#line-292">292</a>
+<a href="#line-293">293</a>
+<a href="#line-294">294</a>
+<a href="#line-295">295</a>
+<a href="#line-296">296</a>
+<a href="#line-297">297</a>
+<a href="#line-298">298</a>
+<a href="#line-299">299</a>
+<a href="#line-300">300</a>
+<a href="#line-301">301</a>
+<a href="#line-302">302</a>
+<a href="#line-303">303</a>
+<a href="#line-304">304</a>
+<a href="#line-305">305</a>
+<a href="#line-306">306</a>
+<a href="#line-307">307</a>
+<a href="#line-308">308</a>
+<a href="#line-309">309</a>
+<a href="#line-310">310</a>
+<a href="#line-311">311</a>
+<a href="#line-312">312</a>
+<a href="#line-313">313</a>
+<a href="#line-314">314</a>
+<a href="#line-315">315</a>
+<a href="#line-316">316</a>
+<a href="#line-317">317</a>
+<a href="#line-318">318</a>
+<a href="#line-319">319</a>
+<a href="#line-320">320</a>
+<a href="#line-321">321</a>
+<a href="#line-322">322</a>
+<a href="#line-323">323</a>
+<a href="#line-324">324</a>
+<a href="#line-325">325</a>
+<a href="#line-326">326</a>
+<a href="#line-327">327</a>
+<a href="#line-328">328</a>
+<a href="#line-329">329</a>
+<a href="#line-330">330</a>
+<a href="#line-331">331</a>
+<a href="#line-332">332</a>
+<a href="#line-333">333</a>
+<a href="#line-334">334</a>
+<a href="#line-335">335</a>
+<a href="#line-336">336</a>
+<a href="#line-337">337</a>
+<a href="#line-338">338</a>
+<a href="#line-339">339</a>
+<a href="#line-340">340</a>
+<a href="#line-341">341</a>
+<a href="#line-342">342</a>
+<a href="#line-343">343</a>
+<a href="#line-344">344</a>
+<a href="#line-345">345</a>
+<a href="#line-346">346</a>
+<a href="#line-347">347</a>
+<a href="#line-348">348</a>
+<a href="#line-349">349</a>
+<a href="#line-350">350</a>
+<a href="#line-351">351</a>
+<a href="#line-352">352</a>
+<a href="#line-353">353</a>
+<a href="#line-354">354</a>
+<a href="#line-355">355</a>
+<a href="#line-356">356</a>
+<a href="#line-357">357</a>
+<a href="#line-358">358</a>
+<a href="#line-359">359</a>
+<a href="#line-360">360</a>
+<a href="#line-361">361</a>
+<a href="#line-362">362</a>
+<a href="#line-363">363</a>
+<a href="#line-364">364</a>
+<a href="#line-365">365</a>
+<a href="#line-366">366</a>
+<a href="#line-367">367</a>
+<a href="#line-368">368</a>
+<a href="#line-369">369</a>
+<a href="#line-370">370</a>
+<a href="#line-371">371</a>
+<a href="#line-372">372</a>
+<a href="#line-373">373</a>
+<a href="#line-374">374</a>
+<a href="#line-375">375</a>
+<a href="#line-376">376</a>
+<a href="#line-377">377</a>
+<a href="#line-378">378</a>
+<a href="#line-379">379</a>
+<a href="#line-380">380</a>
+<a href="#line-381">381</a>
+<a href="#line-382">382</a>
+<a href="#line-383">383</a>
+<a href="#line-384">384</a>
+<a href="#line-385">385</a>
+<a href="#line-386">386</a>
+<a href="#line-387">387</a>
+<a href="#line-388">388</a>
+<a href="#line-389">389</a>
+<a href="#line-390">390</a>
+<a href="#line-391">391</a>
+<a href="#line-392">392</a>
+<a href="#line-393">393</a>
+<a href="#line-394">394</a>
+<a href="#line-395">395</a>
+<a href="#line-396">396</a>
+<a href="#line-397">397</a>
+<a href="#line-398">398</a>
+<a href="#line-399">399</a>
+<a href="#line-400">400</a>
+<a href="#line-401">401</a>
+<a href="#line-402">402</a>
+<a href="#line-403">403</a>
+<a href="#line-404">404</a>
+<a href="#line-405">405</a>
+<a href="#line-406">406</a>
+<a href="#line-407">407</a>
+<a href="#line-408">408</a>
+<a href="#line-409">409</a>
+<a href="#line-410">410</a>
+<a href="#line-411">411</a>
+<a href="#line-412">412</a>
+<a href="#line-413">413</a>
+<a href="#line-414">414</a>
+<a href="#line-415">415</a>
+<a href="#line-416">416</a>
+<a href="#line-417">417</a>
+<a href="#line-418">418</a>
+<a href="#line-419">419</a>
+<a href="#line-420">420</a>
+<a href="#line-421">421</a>
+<a href="#line-422">422</a>
+<a href="#line-423">423</a>
+<a href="#line-424">424</a>
+<a href="#line-425">425</a>
+<a href="#line-426">426</a>
+<a href="#line-427">427</a>
+<a href="#line-428">428</a>
+<a href="#line-429">429</a>
+<a href="#line-430">430</a>
+<a href="#line-431">431</a>
+<a href="#line-432">432</a>
+<a href="#line-433">433</a>
+<a href="#line-434">434</a>
+<a href="#line-435">435</a>
+<a href="#line-436">436</a>
+<a href="#line-437">437</a>
+<a href="#line-438">438</a>
+<a href="#line-439">439</a>
+<a href="#line-440">440</a>
+<a href="#line-441">441</a>
+<a href="#line-442">442</a>
+<a href="#line-443">443</a>
+<a href="#line-444">444</a>
+<a href="#line-445">445</a>
+<a href="#line-446">446</a>
+<a href="#line-447">447</a>
+<a href="#line-448">448</a></pre></div></td><td class="code"><div class="source"><span class="filename">RISCOS/Makefile</span><pre><span></span><a name="line-1"></a><span class="c"># RISC OS Python</span>
+<a name="line-2"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-2">LIBSROOT</a></span> <span class="o">=</span> $.AcornC_C++.Libraries
+<a name="line-3"></a>
+<a name="line-4"></a><span class="c"># You may need to change some of the following</span>
+<a name="line-5"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-5">OSLIB</a></span> <span class="o">=</span> <span class="k">$(</span>LIBSROOT<span class="k">)</span>.OSLib
+<a name="line-6"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-6">CLIB</a></span> <span class="o">=</span> <span class="k">$(</span>LIBSROOT<span class="k">)</span>.clib
+<a name="line-7"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-7">TCPIPLIB</a></span> <span class="o">=</span> <span class="k">$(</span>LIBSROOT<span class="k">)</span>.TCPIPLibs
+<a name="line-8"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-8">DLKLIB</a></span> <span class="o">=</span> <span class="k">$(</span>LIBSROOT<span class="k">)</span>.dlk
+<a name="line-9"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-9">ZLIB</a></span> <span class="o">=</span> <span class="k">$(</span>LIBSROOT<span class="k">)</span>.zlib
+<a name="line-10"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-10">BZLIB</a></span> <span class="o">=</span> <span class="k">$(</span>LIBSROOT<span class="k">)</span>.bzlib
+<a name="line-11"></a><span class="nv"><a href="/./Modules/_elementtree.c.html#line-2042">EXPAT</a></span> <span class="o">=</span> <span class="k">$(</span>LIBSROOT<span class="k">)</span>.expat.lib
+<a name="line-12"></a>
+<a name="line-13"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-13">OBJSCAN</a></span> <span class="o">=</span> <span class="k">$(</span>DLKLIB<span class="k">)</span>.objscan
+<a name="line-14"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-14">MAKEDLK</a></span> <span class="o">=</span> <span class="k">$(</span>DLKLIB<span class="k">)</span>.makedlk
+<a name="line-15"></a>
+<a name="line-16"></a><span class="c"># change from time to time (don&#39;t forget to change !Boot also)</span>
+<a name="line-17"></a><span class="nv"><a href="/./Python/ceval.c.html#line-729">TARGET</a></span><span class="o">=</span>Python23
+<a name="line-18"></a><span class="nv"><a href="/./Lib/pickle.py.html#line-123">BUILD</a></span><span class="o">=</span>40
+<a name="line-19"></a>
+<a name="line-20"></a>
+<a name="line-21"></a><span class="c">#</span>
+<a name="line-22"></a><span class="c"># You shouldn&#39;t need to change anything below this line</span>
+<a name="line-23"></a><span class="c">#</span>
+<a name="line-24"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-24">DLKFLAG</a></span><span class="o">=</span> -DDLK
+<a name="line-25"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-25">DLKOBJS</a></span> <span class="o">=</span> <span class="k">$(</span>DLKLIB<span class="k">)</span>.o.dlk_load @.o.linktab
+<a name="line-26"></a>
+<a name="line-27"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-27">HEADERS</a></span> <span class="o">=</span> @,<span class="k">$(</span>TCPIPLIB<span class="k">)</span>,@.^.Include,@.^.Modules,@.^.Objects,@.^.Python,<span class="k">$(</span>CLIB<span class="k">)</span>,<span class="k">$(</span>OSLIB<span class="k">)</span>,<span class="k">$(</span>DLKLIB<span class="k">)</span>
+<a name="line-28"></a>
+<a name="line-29"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-18">CFLAGS</a></span> <span class="o">=</span> -c  <span class="k">$(</span>DLKFLAG<span class="k">)</span> -DRISCOS -DHAVE_CONFIG_H -wadP -throwback -APCS 3/32bit/fpe3
+<a name="line-30"></a>
+<a name="line-31"></a><span class="nv"><a href="/./Demo/embed/Makefile.html#line-6">CC</a></span> <span class="o">=</span> cc <span class="k">$(</span>CFLAGS<span class="k">)</span> -j<span class="k">$(</span>HEADERS<span class="k">)</span>
+<a name="line-32"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-32">CCEXPAT</a></span> <span class="o">=</span> cc <span class="k">$(</span>CFLAGS<span class="k">)</span> -j<span class="k">$(</span>HEADERS<span class="k">)</span>,<span class="k">$(</span>EXPAT<span class="k">)</span> -DHAVE_EXPAT_H
+<a name="line-33"></a>
+<a name="line-34"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-34">LINK</a></span> <span class="o">=</span> link
+<a name="line-35"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-35">LINKFLAGS</a></span> <span class="o">=</span> -aif <span class="c1">#-NOUNUSED #-d</span>
+<a name="line-36"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-36">LOADLIBS</a></span> <span class="o">=</span> <span class="k">$(</span>TCPIPLIB<span class="k">)</span>.o.unixlib <span class="k">$(</span>TCPIPLIB<span class="k">)</span>.o.inetlib <span class="k">$(</span>TCPIPLIB<span class="k">)</span>.o.socklib <span class="k">$(</span>CLIB<span class="k">)</span>.o.Stubs <span class="k">$(</span>OSLIB<span class="k">)</span>.o.OSLib32 <span class="k">$(</span>DLKOBJS<span class="k">)</span>
+<a name="line-37"></a>
+<a name="line-38"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-38">LIBFILE</a></span> <span class="o">=</span> libfile -c 
+<a name="line-39"></a>
+<a name="line-40"></a>
+<a name="line-41"></a><span class="nf">.c.o  </span><span class="o">:</span>
+<a name="line-42"></a>       <span class="k">$(</span>CC<span class="k">)</span> -o <span class="nv">$@</span> <span class="nv">$*</span>.c
+<a name="line-43"></a>
+<a name="line-44"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-44">MAIN_PYTHON</a></span> <span class="o">=</span><span class="se">\</span>
+<a name="line-45"></a>	@.^.Modules.o.python
+<a name="line-46"></a>
+<a name="line-47"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-47">LIB_PYTHON</a></span> <span class="o">=</span><span class="se">\</span>
+<a name="line-48"></a>	@.^.LibPython
+<a name="line-49"></a>
+<a name="line-50"></a><span class="c"># code for main Python binary</span>
+<a name="line-51"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-51">MODULES_STATIC</a></span> <span class="o">=</span><span class="se">\</span>
+<a name="line-52"></a>	@.^.Modules.o.main<span class="se">\</span>
+<a name="line-53"></a>	@.Modules.o.config<span class="se">\</span>
+<a name="line-54"></a>	@.^.Modules.o.getbuildinfo<span class="se">\</span>
+<a name="line-55"></a>	@.Modules.o.getpath_riscos<span class="se">\</span>
+<a name="line-56"></a>	@.Modules.o.riscosmodule<span class="se">\</span>
+<a name="line-57"></a>	@.^.Modules.o.gcmodule
+<a name="line-58"></a>
+<a name="line-59"></a>
+<a name="line-60"></a><span class="c"># dynamic Modules</span>
+<a name="line-61"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-61">MODULES_DYNAMIC</a></span> <span class="o">=</span><span class="se">\</span>
+<a name="line-62"></a>	@.^.Lib.array/pyd<span class="se">\</span>
+<a name="line-63"></a>	@.^.Lib.audioop/pyd<span class="se">\</span>
+<a name="line-64"></a>	@.^.Lib.binascii/pyd<span class="se">\</span>
+<a name="line-65"></a>	@.^.Lib.bz2/pyd<span class="se">\</span>
+<a name="line-66"></a>	@.^.Lib.cmath/pyd<span class="se">\</span>
+<a name="line-67"></a>	@.^.Lib.cPickle/pyd<span class="se">\</span>
+<a name="line-68"></a>	@.^.Lib.cStringIO/pyd<span class="se">\</span>
+<a name="line-69"></a>	@.^.Lib.datetime/pyd<span class="se">\</span>
+<a name="line-70"></a>	@.^.Lib.errno/pyd<span class="se">\</span>
+<a name="line-71"></a>	@.^.Lib.imageop/pyd<span class="se">\</span>
+<a name="line-72"></a>	@.^.Lib.itertools/pyd<span class="se">\</span>
+<a name="line-73"></a>	@.^.Lib.math/pyd<span class="se">\</span>
+<a name="line-74"></a>	@.^.Lib.md5/pyd<span class="se">\</span>
+<a name="line-75"></a>	@.^.Lib.operator/pyd<span class="se">\</span>
+<a name="line-76"></a>	@.^.Lib.parser/pyd<span class="se">\</span>
+<a name="line-77"></a>	@.^.Lib.rgbimg/pyd<span class="se">\</span>
+<a name="line-78"></a>	@.^.Lib.sha/pyd<span class="se">\</span>
+<a name="line-79"></a>	@.^.Lib.signal/pyd<span class="se">\</span>
+<a name="line-80"></a>	@.^.Lib.struct/pyd<span class="se">\</span>
+<a name="line-81"></a>	@.^.Lib.time/pyd<span class="se">\</span>
+<a name="line-82"></a>	@.^.Lib._locale/pyd<span class="se">\</span>
+<a name="line-83"></a>	@.^.Lib.zlib/pyd<span class="se">\</span>
+<a name="line-84"></a>	@.^.Lib.select/pyd<span class="se">\</span>
+<a name="line-85"></a>	@.^.Lib._socket/pyd<span class="se">\</span>
+<a name="line-86"></a>	@.^.Lib._codecs/pyd<span class="se">\</span>
+<a name="line-87"></a>	@.^.Lib._weakref/pyd<span class="se">\</span>
+<a name="line-88"></a>	@.^.Lib._testcapi/pyd<span class="se">\</span>
+<a name="line-89"></a>	@.^.Lib.unicodedata/pyd<span class="se">\</span>
+<a name="line-90"></a>	@.^.Lib.pyexpat/pyd<span class="se">\</span>
+<a name="line-91"></a>	@.^.Lib.plat-riscos.drawf/pyd<span class="se">\</span>
+<a name="line-92"></a>	@.^.Lib.plat-riscos.swi/pyd<span class="se">\</span>
+<a name="line-93"></a>	@.^.Lib._sre/pyd<span class="se">\</span>
+<a name="line-94"></a>	@.^.Lib.xxsubtype/pyd<span class="se">\</span>
+<a name="line-95"></a>	@.^.Lib._symtable/pyd<span class="se">\</span>
+<a name="line-96"></a>	@.^.Lib._random/pyd<span class="se">\</span>
+<a name="line-97"></a>	@.^.Lib.zipimport/pyd<span class="se">\</span>
+<a name="line-98"></a>	@.^.Lib._csv/pyd
+<a name="line-99"></a>
+<a name="line-100"></a>
+<a name="line-101"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-101">OBJECTS_PYTHON</a></span> <span class="o">=</span><span class="se">\</span>
+<a name="line-102"></a>	@.^.Python.o.traceback<span class="se">\</span>
+<a name="line-103"></a>	@.^.Python.o.sysmodule<span class="se">\</span>
+<a name="line-104"></a>	@.^.Python.o.structmember<span class="se">\</span>
+<a name="line-105"></a>	@.^.Python.o.strdup<span class="se">\</span>
+<a name="line-106"></a>	@.^.Python.o.sigcheck<span class="se">\</span>
+<a name="line-107"></a>	@.^.Python.o.pythonrun<span class="se">\</span>
+<a name="line-108"></a>	@.^.Python.o.pystate<span class="se">\</span>
+<a name="line-109"></a>	@.^.Python.o.pyfpe<span class="se">\</span>
+<a name="line-110"></a>	@.^.Python.o.mystrtoul<span class="se">\</span>
+<a name="line-111"></a>	@.^.Python.o.mysnprintf<span class="se">\</span>
+<a name="line-112"></a>	@.^.Python.o.modsupport<span class="se">\</span>
+<a name="line-113"></a>	@.^.Python.o.marshal<span class="se">\</span>
+<a name="line-114"></a>	@.^.Python.o.importdl<span class="se">\</span>
+<a name="line-115"></a>	@.^.Python.o.import<span class="se">\</span>
+<a name="line-116"></a>	@.^.Python.o.graminit<span class="se">\</span>
+<a name="line-117"></a>	@.^.Python.o.getversion<span class="se">\</span>
+<a name="line-118"></a>	@.^.Python.o.getplatform<span class="se">\</span>
+<a name="line-119"></a>	@.^.Python.o.getopt<span class="se">\</span>
+<a name="line-120"></a>	@.^.Python.o.getcopyright<span class="se">\</span>
+<a name="line-121"></a>	@.^.Python.o.getcompiler<span class="se">\</span>
+<a name="line-122"></a>	@.^.Python.o.getargs<span class="se">\</span>
+<a name="line-123"></a>	@.^.Python.o.frozenmain<span class="se">\</span>
+<a name="line-124"></a>	@.^.Python.o.frozen<span class="se">\</span>
+<a name="line-125"></a>	@.^.Python.o.errors<span class="se">\</span>
+<a name="line-126"></a>	@.^.Python.o.compile<span class="se">\</span>
+<a name="line-127"></a>	@.^.Python.o.ceval<span class="se">\</span>
+<a name="line-128"></a>	@.^.Python.o.bltinmodule<span class="se">\</span>
+<a name="line-129"></a>	@.^.Python.o.exceptions<span class="se">\</span>
+<a name="line-130"></a>	@.^.Python.o.codecs<span class="se">\</span>
+<a name="line-131"></a>	@.^.Python.o.symtable<span class="se">\</span>
+<a name="line-132"></a>	@.^.Python.o.future
+<a name="line-133"></a>
+<a name="line-134"></a>
+<a name="line-135"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-135">OBJECTS_RISCOS</a></span> <span class="o">=</span> <span class="se">\</span>
+<a name="line-136"></a>	@.Python.o.dynload_riscos<span class="se">\</span>
+<a name="line-137"></a>	@.Python.o.getcwd_riscos<span class="se">\</span>
+<a name="line-138"></a>	@.o.unixstuff
+<a name="line-139"></a>
+<a name="line-140"></a>
+<a name="line-141"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-141">OBJECTS_OBJECTS</a></span> <span class="o">=</span><span class="se">\</span>
+<a name="line-142"></a>	@.^.Objects.o.typeobject<span class="se">\</span>
+<a name="line-143"></a>	@.^.Objects.o.tupleobject<span class="se">\</span>
+<a name="line-144"></a>	@.^.Objects.o.stringobject<span class="se">\</span>
+<a name="line-145"></a>	@.^.Objects.o.sliceobject<span class="se">\</span>
+<a name="line-146"></a>	@.^.Objects.o.rangeobject<span class="se">\</span>
+<a name="line-147"></a>	@.^.Objects.o.object<span class="se">\</span>
+<a name="line-148"></a>	@.^.Objects.o.obmalloc<span class="se">\</span>
+<a name="line-149"></a>	@.^.Objects.o.moduleobject<span class="se">\</span>
+<a name="line-150"></a>	@.^.Objects.o.methodobject<span class="se">\</span>
+<a name="line-151"></a>	@.^.Objects.o.longobject<span class="se">\</span>
+<a name="line-152"></a>	@.^.Objects.o.listobject<span class="se">\</span>
+<a name="line-153"></a>	@.^.Objects.o.intobject<span class="se">\</span>
+<a name="line-154"></a>	@.^.Objects.o.boolobject<span class="se">\</span>
+<a name="line-155"></a>	@.^.Objects.o.iterobject<span class="se">\</span>
+<a name="line-156"></a>	@.^.Objects.o.funcobject<span class="se">\</span>
+<a name="line-157"></a>	@.^.Objects.o.frameobject<span class="se">\</span>
+<a name="line-158"></a>	@.^.Objects.o.floatobject<span class="se">\</span>
+<a name="line-159"></a>	@.^.Objects.o.fileobject<span class="se">\</span>
+<a name="line-160"></a>	@.^.Objects.o.enumobject<span class="se">\</span>
+<a name="line-161"></a>	@.^.Objects.o.dictobject<span class="se">\</span>
+<a name="line-162"></a>	@.^.Objects.o.complexobject<span class="se">\</span>
+<a name="line-163"></a>	@.^.Objects.o.cobject<span class="se">\</span>
+<a name="line-164"></a>	@.^.Objects.o.classobject<span class="se">\</span>
+<a name="line-165"></a>	@.^.Objects.o.cellobject<span class="se">\</span>
+<a name="line-166"></a>	@.^.Objects.o.bufferobject<span class="se">\</span>
+<a name="line-167"></a>	@.^.Objects.o.abstract<span class="se">\</span>
+<a name="line-168"></a>	@.^.Objects.o.unicodectype<span class="se">\</span>
+<a name="line-169"></a>	@.^.Objects.o.unicodeobject<span class="se">\</span>
+<a name="line-170"></a>	@.^.Objects.o.descrobject<span class="se">\</span>
+<a name="line-171"></a>	@.^.Objects.o.weakrefobject<span class="se">\</span>
+<a name="line-172"></a>	@.^.Objects.o.structseq
+<a name="line-173"></a>
+<a name="line-174"></a>
+<a name="line-175"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-175">OBJECTS_PARSER</a></span> <span class="o">=</span><span class="se">\</span>
+<a name="line-176"></a>	@.^.Parser.o.tokenizer<span class="se">\</span>
+<a name="line-177"></a>	@.^.Parser.o.printgrammar<span class="se">\</span>
+<a name="line-178"></a>	@.^.Parser.o.parsetok<span class="se">\</span>
+<a name="line-179"></a>	@.^.Parser.o.parser<span class="se">\</span>
+<a name="line-180"></a>	@.^.Parser.o.node<span class="se">\</span>
+<a name="line-181"></a>	@.^.Parser.o.myreadline<span class="se">\</span>
+<a name="line-182"></a>	@.^.Parser.o.metagrammar<span class="se">\</span>
+<a name="line-183"></a>	@.^.Parser.o.listnode<span class="se">\</span>
+<a name="line-184"></a>	@.^.Parser.o.intrcheck<span class="se">\</span>
+<a name="line-185"></a>	@.^.Parser.o.grammar1<span class="se">\</span>
+<a name="line-186"></a>	@.^.Parser.o.grammar<span class="se">\</span>
+<a name="line-187"></a>	@.^.Parser.o.firstsets<span class="se">\</span>
+<a name="line-188"></a>	@.^.Parser.o.bitset<span class="se">\</span>
+<a name="line-189"></a>	@.^.Parser.o.acceler
+<a name="line-190"></a>
+<a name="line-191"></a><span class="nv"><a href="/./RISCOS/Makefile.html#line-191">SUPPORT_FILES</a></span> <span class="o">=</span> @.^.!Boot @.^.!Run @.^.!Sprites @.^.!Sprites22 @.^.AddToPath
+<a name="line-192"></a>
+<a name="line-193"></a><span class="nv"><a href="/./Lib/test/test_aepack.py.html#line-11">OBJECTS</a></span> <span class="o">=</span> <span class="k">$(</span>OBJECTS_PYTHON<span class="k">)</span> <span class="k">$(</span>OBJECTS_PARSER<span class="k">)</span> <span class="k">$(</span>MODULES_STATIC<span class="k">)</span> <span class="k">$(</span>OBJECTS_OBJECTS<span class="k">)</span> <span class="k">$(</span>OBJECTS_RISCOS<span class="k">)</span>
+<a name="line-194"></a>
+<a name="line-195"></a>
+<a name="line-196"></a><span class="nf"><a href="/./Tools/faqwiz/faqwiz.py.html#line-15">all</a></span><span class="o">:</span> @.^.<span class="k">$(</span><span class="nv"><a href="/./Python/ceval.c.html#line-729">TARGET</a></span><span class="k">)</span> <span class="k">$(</span><span class="nv"><a href="/./RISCOS/Makefile.html#line-61">MODULES_DYNAMIC</a></span><span class="k">)</span> <span class="k">$(</span><span class="nv"><a href="/./RISCOS/Makefile.html#line-191">SUPPORT_FILES</a></span><span class="k">)</span>
+<a name="line-197"></a>
+<a name="line-198"></a><span class="nf">@.^.Modules.o.getbuildinfo</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Demo/tix/grid.py.html#line-25">c</a></span>.<span class="n">getbuildinfo</span>
+<a name="line-199"></a>       <span class="k">$(</span>CC<span class="k">)</span> -DBUILD<span class="o">=</span><span class="k">$(</span>BUILD<span class="k">)</span> -o @.^.Modules.o.getbuildinfo @.^.Modules.c.getbuildinfo
+<a name="line-200"></a>
+<a name="line-201"></a>
+<a name="line-202"></a><span class="nf">$(LIB_PYTHON)</span><span class="o">:</span>	<span class="k">$(</span><span class="nv"><a href="/./Lib/test/test_aepack.py.html#line-11">OBJECTS</a></span><span class="k">)</span>
+<a name="line-203"></a>	<span class="k">$(</span>LIBFILE<span class="k">)</span> <span class="k">$(</span>LIB_PYTHON<span class="k">)</span> <span class="k">$(</span>OBJECTS<span class="k">)</span>
+<a name="line-204"></a>
+<a name="line-205"></a><span class="nf">@.^.$(TARGET)</span><span class="o">:</span>  <span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">linktab</span> <span class="k">$(</span><span class="nv"><a href="/./RISCOS/Makefile.html#line-44">MAIN_PYTHON</a></span><span class="k">)</span> <span class="k">$(</span><span class="nv"><a href="/./RISCOS/Makefile.html#line-47">LIB_PYTHON</a></span><span class="k">)</span>
+<a name="line-206"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -o @.^.<span class="k">$(</span>TARGET<span class="k">)</span> <span class="k">$(</span>MAIN_PYTHON<span class="k">)</span> @.^.LibPython <span class="k">$(</span>LOADLIBS<span class="k">)</span>
+<a name="line-207"></a>
+<a name="line-208"></a>
+<a name="line-209"></a><span class="c">#########################################################################</span>
+<a name="line-210"></a><span class="c"># RISC OS support files</span>
+<a name="line-211"></a><span class="c">#</span>
+<a name="line-212"></a><span class="nf">@.^.!Boot</span><span class="o">:</span> <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-6">support</a></span>.!<span class="n">Boot</span>
+<a name="line-213"></a>	copy support.!Boot @.^.!Boot ~C~VF
+<a name="line-214"></a>	settype @.^.!Boot feb
+<a name="line-215"></a><span class="nf">@.^.!Run</span><span class="o">:</span>  <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-6">support</a></span>.!<span class="n"><a href="/./PCbuild/build.bat.html#line-43">Run</a></span>
+<a name="line-216"></a>	copy support.!Run @.^.!Run ~C~VF
+<a name="line-217"></a>	settype @.^.!Run feb
+<a name="line-218"></a><span class="nf">@.^.!Sprites</span><span class="o">:</span> <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-6">support</a></span>.!<span class="n">Sprites</span>
+<a name="line-219"></a>	copy support.!Sprites @.^.!Sprites ~C~VF
+<a name="line-220"></a>	settype @.^.!Sprites ff9
+<a name="line-221"></a><span class="nf">@.^.!Sprites22</span><span class="o">:</span> <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-6">support</a></span>.!<span class="n">Sprites</span>22
+<a name="line-222"></a>	copy support.!Sprites22 @.^.!Sprites22 ~C~VF
+<a name="line-223"></a>	settype @.^.!Sprites22 ff9
+<a name="line-224"></a><span class="nf">@.^.AddToPath</span><span class="o">:</span> <span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-6">support</a></span>.<span class="n">AddToPath</span>
+<a name="line-225"></a>	copy support.AddToPath @.^.AddToPath ~C~VF
+<a name="line-226"></a>	settype @.^.AddToPath ffc
+<a name="line-227"></a>
+<a name="line-228"></a>
+<a name="line-229"></a><span class="c">#########################################################################</span>
+<a name="line-230"></a><span class="c"># Dynamic Modules</span>
+<a name="line-231"></a><span class="c">#</span>
+<a name="line-232"></a><span class="nf">@.^.Lib.array/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">arraymodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-233"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.array/pyd -s s.linktab -o @.^.Modules.o.arraymodule -e initarray
+<a name="line-234"></a>
+<a name="line-235"></a><span class="nf">@.^.Lib.audioop/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Lib/aifc.py.html#line-442">audioop</a></span> <span class="c"># s.linktab</span>
+<a name="line-236"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.audioop/pyd -s s.linktab -o @.^.Modules.o.audioop -e initaudioop
+<a name="line-237"></a>
+<a name="line-238"></a><span class="nf">@.^.Lib.binascii/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Lib/CGIHTTPServer.py.html#line-176">binascii</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-239"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.binascii/pyd -s s.linktab -o @.^.Modules.o.binascii -e initbinascii
+<a name="line-240"></a>
+<a name="line-241"></a><span class="nf">@.^.Lib.cmath/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">cmathmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-242"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.cmath/pyd -s s.linktab -o @.^.Modules.o.cmathmodule -e initcmath
+<a name="line-243"></a>
+<a name="line-244"></a><span class="nf">@.^.Lib.cPickle/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-40">cPickle</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-245"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.cPickle/pyd -s s.linktab -o @.^.Modules.o.cPickle -e initcPickle
+<a name="line-246"></a>
+<a name="line-247"></a><span class="nf">@.^.Lib.cStringIO/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-3">cStringIO</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-248"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.cStringIO/pyd -s s.linktab -o @.^.Modules.o.cStringIO -e initcStringIO
+<a name="line-249"></a>
+<a name="line-250"></a><span class="nf">@.^.Lib._csv/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">_csv</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-251"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib._csv/pyd -s s.linktab -o @.^.Modules.o._csv -e init_csv
+<a name="line-252"></a>
+<a name="line-253"></a><span class="nf">@.^.Lib.plat-riscos.drawf/pyd</span><span class="o">:</span> <span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">drawfmodule</span> <span class="c">#s.linktab</span>
+<a name="line-254"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -aof -o Modules.o.drawflink Modules.o.drawfmodule <span class="k">$(</span>OSLIB<span class="k">)</span>.o.OSLIB32
+<a name="line-255"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.plat-riscos.drawf/pyd -s s.linktab -o Modules.o.drawflink -e initdrawf
+<a name="line-256"></a>
+<a name="line-257"></a><span class="nf">@.^.Lib.datetime/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">datetimemodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-258"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.datetime/pyd -s s.linktab -o @.^.Modules.o.datetimemodule -e initdatetime
+<a name="line-259"></a>
+<a name="line-260"></a><span class="nf">@.^.Lib.errno/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">errnomodule</span> <span class="c">#s.linktab</span>
+<a name="line-261"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.errno/pyd -s s.linktab -o @.^.Modules.o.errnomodule -e initerrno
+<a name="line-262"></a>
+<a name="line-263"></a><span class="nf">@.^.Lib.imageop/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Lib/test/test_imageop.py.html#line-8">imageop</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-264"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.imageop/pyd -s s.linktab -o @.^.Modules.o.imageop -e initimageop
+<a name="line-265"></a>
+<a name="line-266"></a><span class="nf">@.^.Lib.itertools/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">itertoolsmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-267"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.itertools/pyd -s s.linktab -o @.^.Modules.o.itertoolsmodule -e inititertools
+<a name="line-268"></a>
+<a name="line-269"></a><span class="nf">@.^.Lib.math/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">mathmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-270"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.math/pyd -s s.linktab -o @.^.Modules.o.mathmodule -e initmath
+<a name="line-271"></a>
+<a name="line-272"></a><span class="nf">@.^.Lib.mmap/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">mmapmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-273"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.mmap/pyd -s s.linktab -o @.^.Modules.o.mmapmodule -e initmmap
+<a name="line-274"></a>
+<a name="line-275"></a><span class="nf">@.^.Lib.md5/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Lib/test/test_inspect.py.html#line-549">md</a></span>5<span class="n"><a href="/./Demo/tix/grid.py.html#line-25">c</a></span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Lib/test/test_inspect.py.html#line-549">md</a></span>5<span class="n"><a href="/./Include/Python-ast.h.html#line-163">module</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-276"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -aof -o @.^.Modules.o.md5link @.^.Modules.o.md5c @.^.Modules.o.md5module
+<a name="line-277"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.md5/pyd -s s.linktab -o @.^.Modules.o.md5link -e initmd5
+<a name="line-278"></a>
+<a name="line-279"></a><span class="nf">@.^.Lib.operator/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Doc/includes/mp_newtype.py.html#line-11">operator</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-280"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.operator/pyd -s s.linktab -o @.^.Modules.o.operator -e initoperator
+<a name="line-281"></a>
+<a name="line-282"></a><span class="nf">@.^.Lib.parser/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">parsermodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-283"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.parser/pyd -s s.linktab -o @.^.Modules.o.parsermodule -e initparser
+<a name="line-284"></a>
+<a name="line-285"></a><span class="nf">@.^.Lib.rgbimg/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">rgbimgmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-286"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.rgbimg/pyd -s s.linktab -o @.^.Modules.o.rgbimgmodule -e initrgbimg
+<a name="line-287"></a>
+<a name="line-288"></a><span class="nf">@.^.Lib.sha/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">shamodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-289"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.sha/pyd -s s.linktab -o @.^.Modules.o.shamodule -e initsha
+<a name="line-290"></a>
+<a name="line-291"></a><span class="nf">@.^.Lib.signal/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">signalmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-292"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.signal/pyd -s s.linktab -o @.^.Modules.o.signalmodule -e initsignal
+<a name="line-293"></a>
+<a name="line-294"></a><span class="nf">@.^.Lib.strop/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">stropmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-295"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.strop/pyd -s s.linktab -o @.^.Modules.o.stropmodule -e initstrop
+<a name="line-296"></a>
+<a name="line-297"></a><span class="nf">@.^.Lib.struct/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">structmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-298"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.struct/pyd -s s.linktab -o @.^.Modules.o.structmodule -e initstruct
+<a name="line-299"></a>
+<a name="line-300"></a><span class="nf">@.^.Lib.plat-riscos.swi/pyd</span><span class="o">:</span> <span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">swimodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-301"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -aof -o Modules.o.swilink Modules.o.swimodule <span class="k">$(</span>OSLIB<span class="k">)</span>.o.OSLIB32
+<a name="line-302"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.plat-riscos.swi/pyd -s s.linktab -o Modules.o.swilink -e initswi
+<a name="line-303"></a>
+<a name="line-304"></a><span class="nf">@.^.Lib._locale/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">_localemodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-305"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib._locale/pyd -s s.linktab -o @.^.Modules.o._localemodule -e init_locale
+<a name="line-306"></a>
+<a name="line-307"></a><span class="nf">@.^.Lib._sre/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Lib/sre_compile.py.html#line-14">_sre</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-308"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib._sre/pyd -s s.linktab -o @.^.Modules.o._sre -e init_sre
+<a name="line-309"></a>
+<a name="line-310"></a><span class="nf">@.^.Lib._codecs/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">_codecsmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-311"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib._codecs/pyd -s s.linktab -o @.^.Modules.o._codecsmodule -e init_codecs
+<a name="line-312"></a>
+<a name="line-313"></a><span class="nf">@.^.Lib._weakref/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Lib/xml/sax/expatreader.py.html#line-37">_weakref</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-314"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib._weakref/pyd -s s.linktab -o @.^.Modules.o._weakref -e init_weakref
+<a name="line-315"></a>
+<a name="line-316"></a><span class="nf">@.^.Lib._testcapi/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">_testcapimodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-317"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib._testcapi/pyd -s s.linktab -o @.^.Modules.o._testcapimodule -e init_testcapi
+<a name="line-318"></a>
+<a name="line-319"></a><span class="nf">@.^.Lib.unicodedata/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Demo/scripts/find-uname.py.html#line-19">unicodedata</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-320"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.unicodedata/pyd -s s.linktab -o @.^.Modules.o.unicodedata -e initunicodedata
+<a name="line-321"></a>
+<a name="line-322"></a><span class="nf">@.^.Lib.xxsubtype/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">xxsubtype</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-323"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.xxsubtype/pyd -s s.linktab -o @.^.Modules.o.xxsubtype -e initxxsubtype
+<a name="line-324"></a>
+<a name="line-325"></a><span class="nf">@.^.Lib._random/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">_randommodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-326"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib._random/pyd -s s.linktab -o @.^.Modules.o._randommodule -e init_random
+<a name="line-327"></a>
+<a name="line-328"></a><span class="nf">@.^.Lib._symtable/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">symtablemodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-329"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib._symtable/pyd -s s.linktab -o @.^.Modules.o.symtablemodule -e init_symtable
+<a name="line-330"></a>
+<a name="line-331"></a>
+<a name="line-332"></a><span class="c">############################################################################</span>
+<a name="line-333"></a><span class="c"># Dynamic Modules with other dependencies</span>
+<a name="line-334"></a><span class="c">#</span>
+<a name="line-335"></a><span class="nf">@.^.Lib.select/pyd</span><span class="o">:</span>  @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">selectmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-336"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -aof -o @.^.Modules.o.selectlink @.^.Modules.o.selectmodule <span class="k">$(</span>TCPIPLIB<span class="k">)</span>.o.socklib5
+<a name="line-337"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.select/pyd -s s.linktab -o @.^.Modules.o.selectlink -e initselect
+<a name="line-338"></a>
+<a name="line-339"></a><span class="nf">@.^.Modules.o.selectmodule</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Demo/tix/grid.py.html#line-25">c</a></span>.<span class="n">selectmodule</span>
+<a name="line-340"></a>	<span class="k">$(</span>CC<span class="k">)</span> -I<span class="k">$(</span>TCPIPLIB<span class="k">)</span>.include -o <span class="nv">$@</span> @.^.Modules.c.selectmodule
+<a name="line-341"></a>
+<a name="line-342"></a><span class="nf">@.^.Lib._socket/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">socketmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span> 
+<a name="line-343"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -aof -o @.^.Modules.o._socketlink @.^.Modules.o.socketmodule <span class="k">$(</span>TCPIPLIB<span class="k">)</span>.o.inetlib <span class="k">$(</span>TCPIPLIB<span class="k">)</span>.o.unixlib <span class="k">$(</span>TCPIPLIB<span class="k">)</span>.o.socklib5
+<a name="line-344"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib._socket/pyd -s s.linktab -o @.^.Modules.o._socketlink -e init_socket
+<a name="line-345"></a>
+<a name="line-346"></a><span class="nf">@.^.Modules.o.socketmodule</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Demo/tix/grid.py.html#line-25">c</a></span>.<span class="n">socketmodule</span>
+<a name="line-347"></a>	<span class="k">$(</span>CC<span class="k">)</span> -I<span class="k">$(</span>TCPIPLIB<span class="k">)</span>.include -o <span class="nv">$@</span> @.^.Modules.c.socketmodule
+<a name="line-348"></a>
+<a name="line-349"></a>
+<a name="line-350"></a><span class="nf">@.^.Lib.zlib/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">zlibmodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-351"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -aof -o @.^.Modules.o.zliblink @.^.Modules.o.zlibmodule <span class="k">$(</span>ZLIB<span class="k">)</span>.zlib
+<a name="line-352"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.zlib/pyd -s s.linktab -o @.^.Modules.o.zliblink -e initzlib
+<a name="line-353"></a>
+<a name="line-354"></a><span class="nf">@.^.Modules.o.zlibmodule</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Demo/tix/grid.py.html#line-25">c</a></span>.<span class="n">zlibmodule</span>
+<a name="line-355"></a>	<span class="k">$(</span>CC<span class="k">)</span> -I<span class="k">$(</span>ZLIB<span class="k">)</span> -o <span class="nv">$@</span> @.^.Modules.c.zlibmodule
+<a name="line-356"></a>
+<a name="line-357"></a><span class="nf">@.^.Lib.bz2/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">bz</span>2<span class="n"><a href="/./Include/Python-ast.h.html#line-163">module</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-358"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -aof -o @.^.Modules.o.bz2link @.^.Modules.o.bz2module <span class="k">$(</span>BZLIB<span class="k">)</span>.bzlib
+<a name="line-359"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.bz2/pyd -s s.linktab -o @.^.Modules.o.bz2link -e initbz2
+<a name="line-360"></a>
+<a name="line-361"></a><span class="nf">@.^.Modules.o.bz2module</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Demo/tix/grid.py.html#line-25">c</a></span>.<span class="n">bz</span>2<span class="n"><a href="/./Include/Python-ast.h.html#line-163">module</a></span>
+<a name="line-362"></a>	<span class="k">$(</span>CC<span class="k">)</span> -I<span class="k">$(</span>BZLIB<span class="k">)</span> -o <span class="nv">$@</span> @.^.Modules.c.bz2module
+<a name="line-363"></a>
+<a name="line-364"></a><span class="nf">@.^.Lib.time/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">timemodule</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span> @.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-166">sleep</a></span>
+<a name="line-365"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -aof -o @.^.Modules.o.timelink @.^.Modules.o.timemodule @.o.sleep <span class="k">$(</span>OSLIB<span class="k">)</span>.o.OSLib32
+<a name="line-366"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.time/pyd -s s.linktab -o @.^.Modules.o.timelink -e inittime
+<a name="line-367"></a>
+<a name="line-368"></a><span class="c">#@.^.Lib.time/pyd: @.Modules.o.timemodule s.linktab</span>
+<a name="line-369"></a><span class="c">#	$(LINK) -aof -o @.Modules.o.timelink @.Modules.o.timemodule $(OSLIB).o.OSLib32</span>
+<a name="line-370"></a><span class="c">#	$(MAKEDLK) -d @.^.Lib.time/pyd -s s.linktab -o @.Modules.o.timelink -e inittime</span>
+<a name="line-371"></a>
+<a name="line-372"></a>
+<a name="line-373"></a><span class="nf">@.^.Lib.pyexpat/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n">pyexpat</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-374"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -aof -o @.^.Modules.o.pyexpatlink @.^.Modules.o.pyexpat <span class="k">$(</span>EXPAT<span class="k">)</span>.expat_lib
+<a name="line-375"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.pyexpat/pyd -s s.linktab -o @.^.Modules.o.pyexpatlink -e initpyexpat
+<a name="line-376"></a>
+<a name="line-377"></a><span class="nf">@.^.Modules.o.pyexpat</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Demo/tix/grid.py.html#line-25">c</a></span>.<span class="n">pyexpat</span>
+<a name="line-378"></a>	<span class="k">$(</span>CCEXPAT<span class="k">)</span> -o <span class="nv">$@</span> @.^.Modules.c.pyexpat
+<a name="line-379"></a>
+<a name="line-380"></a><span class="nf">@.^.Lib.zipimport/pyd</span><span class="o">:</span> @.^.<span class="n">Modules</span>.<span class="n"><a href="/./Include/abstract.h.html#line-1045">o</a></span>.<span class="n"><a href="/./Lib/pkgutil.py.html#line-328">zipimport</a></span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-381"></a>	<span class="k">$(</span>LINK<span class="k">)</span> -aof -o @.^.Modules.o.zipimportlink @.^.Modules.o.zipimport o.unixstuff <span class="k">$(</span>OSLIB<span class="k">)</span>.o.OSLib32
+<a name="line-382"></a>	<span class="k">$(</span>MAKEDLK<span class="k">)</span> -d @.^.Lib.zipimport/pyd -s s.linktab -o @.^.Modules.o.zipimportlink -e initzipimport
+<a name="line-383"></a>
+<a name="line-384"></a>
+<a name="line-385"></a><span class="c">##########################################################################</span>
+<a name="line-386"></a><span class="c"># dynamic linking symbol table</span>
+<a name="line-387"></a><span class="c">#</span>
+<a name="line-388"></a><span class="nf">o.linktab</span><span class="o">:</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>.<span class="n">linktab</span>
+<a name="line-389"></a>	ObjAsm -APCS 3/32bit s.linktab o.linktab
+<a name="line-390"></a>
+<a name="line-391"></a><span class="nf">s.linktab</span><span class="o">:</span> <span class="k">$(</span><span class="nv"><a href="/./Lib/test/test_aepack.py.html#line-11">OBJECTS</a></span><span class="k">)</span>
+<a name="line-392"></a>	<span class="k">$(</span>OBJSCAN<span class="k">)</span> -s s.linktab -o <span class="k">$(</span>OBJECTS<span class="k">)</span> <span class="k">$(</span>clib<span class="k">)</span>.o.stubs
+<a name="line-393"></a>
+<a name="line-394"></a><span class="c">##########################################################################</span>
+<a name="line-395"></a><span class="c"># special targets</span>
+<a name="line-396"></a><span class="c">#</span>
+<a name="line-397"></a><span class="nf">libclean</span><span class="o">:</span>
+<a name="line-398"></a>	-wipe @.^.Lib.*/pyc ~C~V
+<a name="line-399"></a>	-wipe @.^.Lib.*/pyo ~C~V
+<a name="line-400"></a>	-wipe @.^.Lib.plat-riscos.*/pyc ~C~V
+<a name="line-401"></a>	-wipe @.^.Lib.plat-riscos.*/pyo ~C~V
+<a name="line-402"></a>	-wipe @.^.Lib.test.*/pyc ~C~V
+<a name="line-403"></a>	-wipe @.^.Lib.test.*/pyo ~C~V
+<a name="line-404"></a>	-wipe @.^.Lib.encodings.*/pyc ~C~V
+<a name="line-405"></a>	-wipe @.^.Lib.encodings.*/pyo ~C~V
+<a name="line-406"></a>	-wipe @.^.Lib.curses.*/pyc ~C~V
+<a name="line-407"></a>	-wipe @.^.Lib.curses.*/pyo ~C~V
+<a name="line-408"></a>	-wipe @.^.Lib.xml.*/pyc ~C~V
+<a name="line-409"></a>	-wipe @.^.Lib.xml.*/pyo ~C~V
+<a name="line-410"></a>	-wipe @.^.Lib.xml.sax.*/pyc ~C~V
+<a name="line-411"></a>	-wipe @.^.Lib.xml.sax.*/pyo ~C~V
+<a name="line-412"></a>	-wipe @.^.Lib.xml.dom.*/pyc ~C~V
+<a name="line-413"></a>	-wipe @.^.Lib.xml.dom.*/pyo ~C~V
+<a name="line-414"></a>	-wipe @.^.Lib.xml.parsers.*/pyc ~C~V
+<a name="line-415"></a>	-wipe @.^.Lib.xml.parsers.*/pyo ~C~V
+<a name="line-416"></a>
+<a name="line-417"></a><span class="nf"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span><span class="o">:</span> <span class="n">libclean</span>
+<a name="line-418"></a>	-wipe @.^.Modules.o.* ~C~V
+<a name="line-419"></a>	-wipe @.^.Objects.o.* ~C~V
+<a name="line-420"></a>	-wipe @.^.Parser.o.* ~C~V
+<a name="line-421"></a>	-wipe @.^.Python.o.* ~C~V
+<a name="line-422"></a>	-wipe @.Modules.o.* ~C~V
+<a name="line-423"></a>	-wipe @.Python.o.* ~C~V
+<a name="line-424"></a>	-wipe @.o.* ~C ~V
+<a name="line-425"></a>
+<a name="line-426"></a><span class="nf">rebuild</span><span class="o">:</span> <span class="n"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span> <span class="n"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span>-<span class="n"><a href="/./Lib/ctypes/test/test_win32.py.html#line-6">support</a></span>
+<a name="line-427"></a>	remove @.^.<span class="k">$(</span>TARGET<span class="k">)</span>
+<a name="line-428"></a>	-wipe @.^.Lib.*/pyd ~C ~V
+<a name="line-429"></a>	-wipe @.^.Lib.plat-riscos.*/pyd ~C~V
+<a name="line-430"></a>	remove s.linktab
+<a name="line-431"></a>	remove @.^.LibPython
+<a name="line-432"></a>
+<a name="line-433"></a><span class="nf">clean-support</span><span class="o">:</span>
+<a name="line-434"></a>	-wipe @.^.!* ~C~V
+<a name="line-435"></a>	remove @.^.AddToPath
+<a name="line-436"></a>
+<a name="line-437"></a><span class="nf">cdirs</span><span class="o">:</span>
+<a name="line-438"></a>	cdir @.Modules.o
+<a name="line-439"></a>	cdir @.Python.o
+<a name="line-440"></a>	cdir @.s
+<a name="line-441"></a>	cdir @.o
+<a name="line-442"></a>	cdir @.^.Python.o
+<a name="line-443"></a>	cdir @.^.Parser.o
+<a name="line-444"></a>	cdir @.^.Objects.o
+<a name="line-445"></a>	cdir @.^.Modules.o
+<a name="line-446"></a>
+<a name="line-447"></a>
+<a name="line-448"></a><span class="c"># Dynamic dependencies:</span>
+</pre></div>
+</td></tr></table></body>
+</html>

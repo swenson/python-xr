@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a></pre></div></td><td class="code"><div class="source"><span class="filename">Modules/_ctypes/libffi/src/moxie/eabi.S</span><pre><span></span><a name="line-1"></a><span class="err">/*</span> <span class="err">-----------------------------------------------------------------------</span>
+<a name="line-2"></a>   <span class="nf">eabi.S</span> <span class="p">-</span> <span class="no">Copyright</span> <span class="p">(</span><span class="no"><a href="/./Demo/tix/grid.py.html#line-25">c</a></span><span class="p">)</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span>  <span class="no">Anthony</span> <span class="no">Green</span>
+<a name="line-3"></a>   
+<a name="line-4"></a>   <span class="nf">Moxie</span> <span class="no">Assembly</span> <span class="no">glue.</span>
+<a name="line-5"></a>
+<a name="line-6"></a>   <span class="nf">Permission</span> <span class="no"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-40">is</a></span> <span class="no">hereby</span> <span class="no">granted</span><span class="p">,</span> <span class="no"><a href="/./Lib/multiprocessing/heap.py.html#line-190">free</a></span> <span class="no"><a href="/./Lib/msilib/schema.py.html#line-646">of</a></span> <span class="no">charge</span><span class="p">,</span> <span class="no"><a href="/./Lib/bsddb/dbshelve.py.html#line-40">to</a></span> <span class="no"><a href="/./Lib/idlelib/ColorDelegator.py.html#line-10">any</a></span> <span class="no">person</span> <span class="no">obtaining</span>
+<a name="line-7"></a>   <span class="nf"><a href="/./Lib/lib2to3/tests/test_util.py.html#line-139">a</a></span> <span class="no"><a href="/./Demo/classes/bitvec.py.html#line-158">copy</a></span> <span class="no"><a href="/./Lib/msilib/schema.py.html#line-646">of</a></span> <span class="no"><a href="/./Doc/make.bat.html#line-6">this</a></span> <span class="no">software</span> <span class="no"><a href="/./Lib/plat-mac/macerrors.py.html#line-1308">and</a></span> <span class="no">associated</span> <span class="no">documentation</span> <span class="no"><a href="/./Demo/pdist/rcsbump.html#line-19">files</a></span> <span class="p">(</span><span class="no"><a href="/./Lib/cookielib.py.html#line-37">the</a></span>
+<a name="line-8"></a>   <span class="err">``</span><span class="nf">Software</span><span class="err">&#39;&#39;</span><span class="p">),</span> <span class="no"><a href="/./Lib/bsddb/dbshelve.py.html#line-40">to</a></span> <span class="no"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-307">deal</a></span> <span class="no"><a href="/./Lib/ihooks.py.html#line-421">in</a></span> <span class="no"><a href="/./Lib/cookielib.py.html#line-37">the</a></span> <span class="no">Software</span> <span class="no"><a href="/./Tools/scripts/analyze_dxp.py.html#line-31">without</a></span> <span class="no">restriction</span><span class="p">,</span> <span class="no">including</span>
+<a name="line-9"></a>   <span class="nf"><a href="/./Tools/scripts/analyze_dxp.py.html#line-31">without</a></span> <span class="no">limitation</span> <span class="no"><a href="/./Lib/cookielib.py.html#line-37">the</a></span> <span class="no">rights</span> <span class="no"><a href="/./Lib/bsddb/dbshelve.py.html#line-40">to</a></span> <span class="no">use</span><span class="p">,</span> <span class="no"><a href="/./Demo/classes/bitvec.py.html#line-158">copy</a></span><span class="p">,</span> <span class="no"><a href="/./Tools/scripts/win_add2path.py.html#line-20">modify</a></span><span class="p">,</span> <span class="no"><a href="/./Lib/doctest.py.html#line-1523">merge</a></span><span class="p">,</span> <span class="no">publish</span><span class="p">,</span>
+<a name="line-10"></a>   <span class="nf">distribute</span><span class="p">,</span> <span class="no">sublicense</span><span class="p">,</span> <span class="no"><a href="/./Lib/plat-mac/macerrors.py.html#line-1308">and</a></span><span class="err">/</span><span class="no"><a href="/./Lib/plat-mac/bundlebuilder.py.html#line-682">or</a></span> <span class="no">sell</span> <span class="no">copies</span> <span class="no"><a href="/./Lib/msilib/schema.py.html#line-646">of</a></span> <span class="no"><a href="/./Lib/cookielib.py.html#line-37">the</a></span> <span class="no">Software</span><span class="p">,</span> <span class="no"><a href="/./Lib/plat-mac/macerrors.py.html#line-1308">and</a></span> <span class="no"><a href="/./Lib/bsddb/dbshelve.py.html#line-40">to</a></span>
+<a name="line-11"></a>   <span class="nf">permit</span> <span class="no"><a href="/./Doc/includes/sqlite3/shortcut_methods.py.html#line-3">persons</a></span> <span class="no"><a href="/./Lib/bsddb/dbshelve.py.html#line-40">to</a></span> <span class="no">whom</span> <span class="no"><a href="/./Lib/cookielib.py.html#line-37">the</a></span> <span class="no">Software</span> <span class="no"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-40">is</a></span> <span class="no">furnished</span> <span class="no"><a href="/./Lib/bsddb/dbshelve.py.html#line-40">to</a></span> <span class="no"><a href="/./Lib/idlelib/UndoDelegator.py.html#line-182">do</a></span> <span class="no"><a href="/./Lib/distutils/archive_util.py.html#line-84">so</a></span><span class="p">,</span> <span class="no">subject</span> <span class="no"><a href="/./Lib/bsddb/dbshelve.py.html#line-40">to</a></span>
+<a name="line-12"></a>   <span class="nf"><a href="/./Lib/cookielib.py.html#line-37">the</a></span> <span class="no">following</span> <span class="no">conditions</span><span class="p">:</span>
+<a name="line-13"></a>
+<a name="line-14"></a>   <span class="nf"><a href="/./Lib/msilib/schema.py.html#line-646">The</a></span> <span class="no">above</span> <span class="no"><a href="/./Doc/conf.py.html#line-21">copyright</a></span> <span class="no"><a href="/./Tools/pybench/CommandLine.py.html#line-516">notice</a></span> <span class="no"><a href="/./Lib/plat-mac/macerrors.py.html#line-1308">and</a></span> <span class="no"><a href="/./Doc/make.bat.html#line-6">this</a></span> <span class="no">permission</span> <span class="no"><a href="/./Tools/pybench/CommandLine.py.html#line-516">notice</a></span> <span class="no">shall</span> <span class="no"><a href="/./Lib/bsddb/dbshelve.py.html#line-40">be</a></span> <span class="no">included</span>
+<a name="line-15"></a>   <span class="nf"><a href="/./Lib/ihooks.py.html#line-421">in</a></span> <span class="no"><a href="/./Tools/faqwiz/faqwiz.py.html#line-15">all</a></span> <span class="no">copies</span> <span class="no"><a href="/./Lib/plat-mac/bundlebuilder.py.html#line-682">or</a></span> <span class="no">substantial</span> <span class="no">portions</span> <span class="no"><a href="/./Lib/msilib/schema.py.html#line-646">of</a></span> <span class="no"><a href="/./Lib/cookielib.py.html#line-37">the</a></span> <span class="no">Software.</span>
+<a name="line-16"></a>
+<a name="line-17"></a>   <span class="nf">THE</span> <span class="no">SOFTWARE</span> <span class="no"><a href="/./Lib/ctypes/test/test_structures.py.html#line-96">IS</a></span> <span class="no">PROVIDED</span> <span class="err">``</span><span class="no">AS</span> <span class="no"><a href="/./Lib/ctypes/test/test_structures.py.html#line-96">IS</a></span><span class="err">&#39;&#39;</span><span class="p">,</span> <span class="no">WITHOUT</span> <span class="no">WARRANTY</span> <span class="no"><a href="/./Modules/zlib/zconf.h.html#line-267">OF</a></span> <span class="no"><a href="/./Lib/sre_constants.py.html#line-35">ANY</a></span> <span class="no"><a href="/./Mac/Modules/app/appsupport.py.html#line-12">KIND</a></span><span class="p">,</span> <span class="no">EXPRESS</span>
+<a name="line-18"></a>   <span class="nf">OR</span> <span class="no">IMPLIED</span><span class="p">,</span> <span class="no">INCLUDING</span> <span class="no">BUT</span> <span class="no">NOT</span> <span class="no">LIMITED</span> <span class="no">TO</span> <span class="no">THE</span> <span class="no">WARRANTIES</span> <span class="no"><a href="/./Modules/zlib/zconf.h.html#line-267">OF</a></span>
+<a name="line-19"></a>   <span class="nf">MERCHANTABILITY</span><span class="p">,</span> <span class="no">FITNESS</span> <span class="no">FOR</span> <span class="no"><a href="/./Demo/turtle/tdemo_lindenmayer_indian.py.html#line-86">A</a></span> <span class="no">PARTICULAR</span> <span class="no">PURPOSE</span> <span class="no">AND</span> <span class="no">NONINFRINGEMENT.</span>
+<a name="line-20"></a>   <span class="nf"><a href="/./Lib/sre_constants.py.html#line-48">IN</a></span> <span class="no"><a href="/./Lib/lib-tk/tkMessageBox.py.html#line-51">NO</a></span> <span class="no"><a href="/./Lib/plat-irix5/FL.py.html#line-22">EVENT</a></span> <span class="no">SHALL</span> <span class="no">THE</span> <span class="no">AUTHOR</span> <span class="no">BE</span> <span class="no">LIABLE</span> <span class="no">FOR</span> <span class="no"><a href="/./Lib/sre_constants.py.html#line-35">ANY</a></span> <span class="no">CLAIM</span><span class="p">,</span> <span class="no">DAMAGES</span> <span class="no">OR</span>
+<a name="line-21"></a>   <span class="nf">OTHER</span> <span class="no">LIABILITY</span><span class="p">,</span> <span class="no">WHETHER</span> <span class="no"><a href="/./Lib/sre_constants.py.html#line-48">IN</a></span> <span class="no">AN</span> <span class="no">ACTION</span> <span class="no"><a href="/./Modules/zlib/zconf.h.html#line-267">OF</a></span> <span class="no">CONTRACT</span><span class="p">,</span> <span class="no">TORT</span> <span class="no">OR</span> <span class="no">OTHERWISE</span><span class="p">,</span>
+<a name="line-22"></a>   <span class="nf">ARISING</span> <span class="no">FROM</span><span class="p">,</span> <span class="no"><a href="/./PC/os2emx/Makefile.html#line-194">OUT</a></span> <span class="no"><a href="/./Modules/zlib/zconf.h.html#line-267">OF</a></span> <span class="no">OR</span> <span class="no"><a href="/./Lib/sre_constants.py.html#line-48">IN</a></span> <span class="no">CONNECTION</span> <span class="no">WITH</span> <span class="no">THE</span> <span class="no">SOFTWARE</span> <span class="no">OR</span> <span class="no">THE</span> <span class="no"><a href="/./Include/symtable.h.html#line-66">USE</a></span> <span class="no">OR</span>
+<a name="line-23"></a>   <span class="nf">OTHER</span> <span class="no">DEALINGS</span> <span class="no"><a href="/./Lib/sre_constants.py.html#line-48">IN</a></span> <span class="no">THE</span> <span class="no">SOFTWARE.</span>
+<a name="line-24"></a>   <span class="err">-----------------------------------------------------------------------</span> <span class="err">*/</span>
+<a name="line-25"></a>
+<a name="line-26"></a><span class="c">#define LIBFFI_ASM	</span>
+<a name="line-27"></a><span class="c">#include &lt;fficonfig.h&gt;</span>
+<a name="line-28"></a><span class="c">#include &lt;ffi.h&gt;</span>
+<a name="line-29"></a>
+<a name="line-30"></a>	<span class="na">.globl</span> <span class="no">ffi_prep_args_EABI</span>
+<a name="line-31"></a>
+<a name="line-32"></a>	<span class="na">.text</span>
+<a name="line-33"></a>	<span class="na">.p2align</span> <span class="mi">4</span>
+<a name="line-34"></a>	<span class="na">.globl</span> <span class="no"><a href="/./Modules/_ctypes/libffi/src/frv/eabi.S.html#line-44">ffi_call_EABI</a></span>
+<a name="line-35"></a>	<span class="na">.type</span> <span class="no"><a href="/./Modules/_ctypes/libffi/src/frv/eabi.S.html#line-44">ffi_call_EABI</a></span><span class="p">,</span> <span class="na">@function</span>
+<a name="line-36"></a>
+<a name="line-37"></a>	<span class="c"># $r0 :   ffi_prep_args</span>
+<a name="line-38"></a>	<span class="c"># $r1 :   &amp;ecif</span>
+<a name="line-39"></a>	<span class="c"># $r2 :   cif-&gt;bytes</span>
+<a name="line-40"></a>	<span class="c"># $r3 :   fig-&gt;flags</span>
+<a name="line-41"></a>	<span class="c"># $r4 :   ecif.rvalue</span>
+<a name="line-42"></a>	<span class="c"># $r5 :   fn</span>
+<a name="line-43"></a>	
+<a name="line-44"></a><span class="nl">ffi_call_EABI:</span>
+<a name="line-45"></a>	<span class="nf"><a href="/./Demo/turtle/tdemo_minimal_hanoi.py.html#line-35">push</a></span>	<span class="no">$sp</span><span class="p">,</span> <span class="no">$r6</span>
+<a name="line-46"></a>	<span class="nf"><a href="/./Demo/turtle/tdemo_minimal_hanoi.py.html#line-35">push</a></span>	<span class="no">$sp</span><span class="p">,</span> <span class="no">$r7</span>
+<a name="line-47"></a>	<span class="nf"><a href="/./Demo/turtle/tdemo_minimal_hanoi.py.html#line-35">push</a></span>	<span class="no">$sp</span><span class="p">,</span> <span class="no">$r8</span>
+<a name="line-48"></a>	<span class="nf"><a href="/./Lib/lib2to3/fixes/fix_operator.py.html#line-18">dec</a></span>	<span class="no">$sp</span><span class="p">,</span> <span class="mi">24</span>
+<a name="line-49"></a>
+<a name="line-50"></a>	<span class="err">/*</span> <span class="nf"><a href="/./Include/Python-ast.h.html#line-11">Store</a></span> <span class="no">incoming</span> <span class="no"><a href="/./Include/Python-ast.h.html#line-213">args</a></span> <span class="no"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="no">stack.</span>  <span class="p">*</span><span class="err">/</span>
+<a name="line-51"></a>	<span class="nf">sto.l</span>	<span class="mi">0</span><span class="p">(</span><span class="no">$sp</span><span class="p">),</span> <span class="no">$r0</span> <span class="err">/</span><span class="p">*</span> <span class="no"><a href="/./Modules/_ctypes/libffi/src/arc/ffi.c.html#line-46">ffi_prep_args</a></span> <span class="p">*</span><span class="err">/</span>
+<a name="line-52"></a>	<span class="nf">sto.l</span>	<span class="mi">4</span><span class="p">(</span><span class="no">$sp</span><span class="p">),</span> <span class="no">$r1</span> <span class="err">/</span><span class="p">*</span> <span class="no">ecif</span> <span class="p">*</span><span class="err">/</span>
+<a name="line-53"></a>	<span class="nf">sto.l</span>	<span class="mi">8</span><span class="p">(</span><span class="no">$sp</span><span class="p">),</span> <span class="no">$r2</span> <span class="err">/</span><span class="p">*</span> <span class="no"><a href="/./Lib/lib2to3/pgen2/tokenize.py.html#line-46">bytes</a></span> <span class="p">*</span><span class="err">/</span>
+<a name="line-54"></a>	<span class="nf">sto.l</span>	<span class="mi">12</span><span class="p">(</span><span class="no">$sp</span><span class="p">),</span> <span class="no">$r3</span> <span class="err">/</span><span class="p">*</span> <span class="no"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="p">*</span><span class="err">/</span>
+<a name="line-55"></a>	<span class="nf">sto.l</span>	<span class="mi">16</span><span class="p">(</span><span class="no">$sp</span><span class="p">),</span> <span class="no">$r4</span> <span class="err">/</span><span class="p">*</span> <span class="err">&amp;</span><span class="no"><a href="/./Modules/_ctypes/libffi/include/ffi_common.h.html#line-89">rvalue</a></span> <span class="p">*</span><span class="err">/</span>
+<a name="line-56"></a>	<span class="nf">sto.l</span>	<span class="mi">20</span><span class="p">(</span><span class="no">$sp</span><span class="p">),</span> <span class="no">$r5</span> <span class="err">/</span><span class="p">*</span> <span class="no"><a href="/./Lib/aifc.py.html#line-964">fn</a></span> <span class="p">*</span><span class="err">/</span>
+<a name="line-57"></a>	
+<a name="line-58"></a>	<span class="err">/*</span> <span class="nf"><a href="/./Include/Python-ast.h.html#line-269">Call</a></span> <span class="no">ffi_prep_args.</span>  <span class="p">*</span><span class="err">/</span>
+<a name="line-59"></a>	<span class="nf">mov</span> 	<span class="no">$r6</span><span class="p">,</span> <span class="no">$r4</span> <span class="err">/</span><span class="p">*</span> <span class="no"><a href="/./Lib/idlelib/configHandler.py.html#line-125">Save</a></span> <span class="no"><a href="/./Demo/tkinter/guido/wish.py.html#line-22">result</a></span> <span class="no"><a href="/./Doc/includes/sqlite3/complete_statement.py.html#line-21">buffer</a></span> <span class="p">*</span><span class="err">/</span>
+<a name="line-60"></a>	<span class="nf">mov</span>	<span class="no">$r7</span><span class="p">,</span> <span class="no">$r5</span> <span class="err">/</span><span class="p">*</span> <span class="no"><a href="/./Lib/idlelib/configHandler.py.html#line-125">Save</a></span> <span class="no"><a href="/./Lib/cookielib.py.html#line-37">the</a></span> <span class="no"><a href="/./Include/Python-ast.h.html#line-100">target</a></span> <span class="no"><a href="/./Lib/aifc.py.html#line-964">fn</a></span> <span class="p">*</span><span class="err">/</span>
+<a name="line-61"></a>	<span class="nf">mov</span>	<span class="no">$r8</span><span class="p">,</span> <span class="no">$r3</span> <span class="err">/</span><span class="p">*</span> <span class="no"><a href="/./Lib/idlelib/configHandler.py.html#line-125">Save</a></span> <span class="no"><a href="/./Lib/cookielib.py.html#line-37">the</a></span> <span class="no"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="p">*</span><span class="err">/</span>
+<a name="line-62"></a>	<span class="nf">sub.l</span>	<span class="no">$sp</span><span class="p">,</span> <span class="no">$r2</span> <span class="err">/</span><span class="p">*</span> <span class="no">Allocate</span> <span class="no"><a href="/./Lib/inspect.py.html#line-1058">stack</a></span> <span class="no"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-847">space</a></span> <span class="p">*</span><span class="err">/</span>
+<a name="line-63"></a>	<span class="nf">mov</span>	<span class="no">$r0</span><span class="p">,</span> <span class="no">$sp</span> <span class="err">/</span><span class="p">*</span> <span class="no"><a href="/./Lib/zipfile.py.html#line-11">We</a></span> <span class="no"><a href="/./Lib/plat-mac/macerrors.py.html#line-370">can</a></span> <span class="no">stomp</span> <span class="no">over</span> <span class="no">$r0</span> <span class="p">*</span><span class="err">/</span>
+<a name="line-64"></a>	<span class="err">/*</span> <span class="nf">$r1</span> <span class="no"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-40">is</a></span> <span class="no">already</span> <span class="no"><a href="/./Demo/curses/life.py.html#line-63">set</a></span> <span class="no"><a href="/./Lib/lib-tk/turtle.py.html#line-2377">up</a></span> <span class="p">*</span><span class="err">/</span>
+<a name="line-65"></a>	<span class="nf">jsra</span> 	<span class="no"><a href="/./Modules/_ctypes/libffi/src/arc/ffi.c.html#line-46">ffi_prep_args</a></span>
+<a name="line-66"></a>
+<a name="line-67"></a>	<span class="err">/*</span> <span class="nf"><a href="/./Include/Python-ast.h.html#line-11">Load</a></span> <span class="no"><a href="/./Demo/rpc/rpc.py.html#line-663">register</a></span> <span class="no">arguments.</span>  <span class="p">*</span><span class="err">/</span>
+<a name="line-68"></a>	<span class="nf">ldo.l</span>	<span class="no">$r0</span><span class="p">,</span> <span class="mi">0</span><span class="p">(</span><span class="no">$sp</span><span class="p">)</span>
+<a name="line-69"></a>	<span class="nf">ldo.l</span>	<span class="no">$r1</span><span class="p">,</span> <span class="mi">4</span><span class="p">(</span><span class="no">$sp</span><span class="p">)</span>
+<a name="line-70"></a>	<span class="nf">ldo.l</span>	<span class="no">$r2</span><span class="p">,</span> <span class="mi">8</span><span class="p">(</span><span class="no">$sp</span><span class="p">)</span>
+<a name="line-71"></a>	<span class="nf">ldo.l</span>	<span class="no">$r3</span><span class="p">,</span> <span class="mi">12</span><span class="p">(</span><span class="no">$sp</span><span class="p">)</span>
+<a name="line-72"></a>	<span class="nf">ldo.l</span>	<span class="no">$r4</span><span class="p">,</span> <span class="mi">16</span><span class="p">(</span><span class="no">$sp</span><span class="p">)</span>
+<a name="line-73"></a>	<span class="nf">ldo.l</span>	<span class="no">$r5</span><span class="p">,</span> <span class="mi">20</span><span class="p">(</span><span class="no">$sp</span><span class="p">)</span>
+<a name="line-74"></a>	
+<a name="line-75"></a>	<span class="err">/*</span> <span class="nf"><a href="/./Include/Python-ast.h.html#line-269">Call</a></span> <span class="no"><a href="/./Lib/cookielib.py.html#line-37">the</a></span> <span class="no"><a href="/./Include/Python-ast.h.html#line-100">target</a></span> <span class="no">function.</span>  <span class="p">*</span><span class="err">/</span>
+<a name="line-76"></a>	<span class="nf">jsr</span>	<span class="no">$r7</span>
+<a name="line-77"></a>
+<a name="line-78"></a>	<span class="nf">ldi.l</span>	<span class="no">$r7</span><span class="p">,</span> <span class="mi">0xffffffff</span>
+<a name="line-79"></a>	<span class="nf"><a href="/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span>	<span class="no">$r8</span><span class="p">,</span> <span class="no">$r7</span>
+<a name="line-80"></a>	<span class="nf">beq</span>	<span class="no"><a href="/./Modules/_ctypes/libffi/src/mips/n32.S.html#line-337">retstruct</a></span>
+<a name="line-81"></a>
+<a name="line-82"></a>	<span class="nf">ldi.l</span>	<span class="no">$r7</span><span class="p">,</span> <span class="mi">4</span>
+<a name="line-83"></a>	<span class="nf"><a href="/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span>	<span class="no">$r8</span><span class="p">,</span> <span class="no">$r7</span>
+<a name="line-84"></a>	<span class="nf">bgt</span>	<span class="no"><a href="/./Modules/_ctypes/libffi/src/moxie/eabi.S.html#line-89">ret2reg</a></span>
+<a name="line-85"></a>
+<a name="line-86"></a>	<span class="nf">st.l</span>	<span class="p">(</span><span class="no">$r6</span><span class="p">),</span> <span class="no">$r0</span>
+<a name="line-87"></a>	<span class="nf">jmpa</span>	<span class="no"><a href="/./Modules/_ctypes/libffi/src/moxie/eabi.S.html#line-94">retdone</a></span>
+<a name="line-88"></a>
+<a name="line-89"></a><span class="nl">ret2reg:</span>	
+<a name="line-90"></a>	<span class="nf">st.l</span>	<span class="p">(</span><span class="no">$r6</span><span class="p">),</span> <span class="no">$r0</span>
+<a name="line-91"></a>	<span class="nf">sto.l</span>	<span class="mi">4</span><span class="p">(</span><span class="no">$r6</span><span class="p">),</span> <span class="no">$r1</span>
+<a name="line-92"></a>
+<a name="line-93"></a><span class="nl">retstruct:</span>
+<a name="line-94"></a><span class="nl">retdone:</span>	
+<a name="line-95"></a>	<span class="err">/*</span> <span class="nf">Return.</span>  <span class="p">*</span><span class="err">/</span>
+<a name="line-96"></a>	<span class="nf">ldo.l</span>	<span class="no">$r6</span><span class="p">,</span> <span class="p">-</span><span class="mi">4</span><span class="p">(</span><span class="no">$fp</span><span class="p">)</span>
+<a name="line-97"></a>	<span class="nf">ldo.l</span>	<span class="no">$r7</span><span class="p">,</span> <span class="p">-</span><span class="mi">8</span><span class="p">(</span><span class="no">$fp</span><span class="p">)</span>
+<a name="line-98"></a>	<span class="nf">ldo.l</span>	<span class="no">$r8</span><span class="p">,</span> <span class="p">-</span><span class="mi">12</span><span class="p">(</span><span class="no">$fp</span><span class="p">)</span>
+<a name="line-99"></a>	<span class="nf"><a href="/./Lib/ctypes/test/test_win32.py.html#line-108">ret</a></span>
+<a name="line-100"></a>	<span class="na">.size</span> <span class="no"><a href="/./Modules/_ctypes/libffi/src/frv/eabi.S.html#line-44">ffi_call_EABI</a></span><span class="p">,</span> <span class="no">.-ffi_call_EABI</span>
+<a name="line-101"></a>	
+</pre></div>
+</td></tr></table></body>
+</html>

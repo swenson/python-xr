@@ -1,0 +1,1272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a>
+<a href="#line-140">140</a>
+<a href="#line-141">141</a>
+<a href="#line-142">142</a>
+<a href="#line-143">143</a>
+<a href="#line-144">144</a>
+<a href="#line-145">145</a>
+<a href="#line-146">146</a>
+<a href="#line-147">147</a>
+<a href="#line-148">148</a>
+<a href="#line-149">149</a>
+<a href="#line-150">150</a>
+<a href="#line-151">151</a>
+<a href="#line-152">152</a>
+<a href="#line-153">153</a>
+<a href="#line-154">154</a>
+<a href="#line-155">155</a>
+<a href="#line-156">156</a>
+<a href="#line-157">157</a>
+<a href="#line-158">158</a>
+<a href="#line-159">159</a>
+<a href="#line-160">160</a>
+<a href="#line-161">161</a>
+<a href="#line-162">162</a>
+<a href="#line-163">163</a>
+<a href="#line-164">164</a>
+<a href="#line-165">165</a>
+<a href="#line-166">166</a>
+<a href="#line-167">167</a>
+<a href="#line-168">168</a>
+<a href="#line-169">169</a>
+<a href="#line-170">170</a>
+<a href="#line-171">171</a>
+<a href="#line-172">172</a>
+<a href="#line-173">173</a>
+<a href="#line-174">174</a>
+<a href="#line-175">175</a>
+<a href="#line-176">176</a>
+<a href="#line-177">177</a>
+<a href="#line-178">178</a>
+<a href="#line-179">179</a>
+<a href="#line-180">180</a>
+<a href="#line-181">181</a>
+<a href="#line-182">182</a>
+<a href="#line-183">183</a>
+<a href="#line-184">184</a>
+<a href="#line-185">185</a>
+<a href="#line-186">186</a>
+<a href="#line-187">187</a>
+<a href="#line-188">188</a>
+<a href="#line-189">189</a>
+<a href="#line-190">190</a>
+<a href="#line-191">191</a>
+<a href="#line-192">192</a>
+<a href="#line-193">193</a>
+<a href="#line-194">194</a>
+<a href="#line-195">195</a>
+<a href="#line-196">196</a>
+<a href="#line-197">197</a>
+<a href="#line-198">198</a>
+<a href="#line-199">199</a>
+<a href="#line-200">200</a>
+<a href="#line-201">201</a>
+<a href="#line-202">202</a>
+<a href="#line-203">203</a>
+<a href="#line-204">204</a>
+<a href="#line-205">205</a>
+<a href="#line-206">206</a>
+<a href="#line-207">207</a>
+<a href="#line-208">208</a>
+<a href="#line-209">209</a>
+<a href="#line-210">210</a>
+<a href="#line-211">211</a>
+<a href="#line-212">212</a>
+<a href="#line-213">213</a>
+<a href="#line-214">214</a>
+<a href="#line-215">215</a>
+<a href="#line-216">216</a>
+<a href="#line-217">217</a>
+<a href="#line-218">218</a>
+<a href="#line-219">219</a>
+<a href="#line-220">220</a>
+<a href="#line-221">221</a>
+<a href="#line-222">222</a>
+<a href="#line-223">223</a>
+<a href="#line-224">224</a>
+<a href="#line-225">225</a>
+<a href="#line-226">226</a>
+<a href="#line-227">227</a>
+<a href="#line-228">228</a>
+<a href="#line-229">229</a>
+<a href="#line-230">230</a>
+<a href="#line-231">231</a>
+<a href="#line-232">232</a>
+<a href="#line-233">233</a>
+<a href="#line-234">234</a>
+<a href="#line-235">235</a>
+<a href="#line-236">236</a>
+<a href="#line-237">237</a>
+<a href="#line-238">238</a>
+<a href="#line-239">239</a>
+<a href="#line-240">240</a>
+<a href="#line-241">241</a>
+<a href="#line-242">242</a>
+<a href="#line-243">243</a>
+<a href="#line-244">244</a>
+<a href="#line-245">245</a>
+<a href="#line-246">246</a>
+<a href="#line-247">247</a>
+<a href="#line-248">248</a>
+<a href="#line-249">249</a>
+<a href="#line-250">250</a>
+<a href="#line-251">251</a>
+<a href="#line-252">252</a>
+<a href="#line-253">253</a>
+<a href="#line-254">254</a>
+<a href="#line-255">255</a>
+<a href="#line-256">256</a>
+<a href="#line-257">257</a>
+<a href="#line-258">258</a>
+<a href="#line-259">259</a>
+<a href="#line-260">260</a>
+<a href="#line-261">261</a>
+<a href="#line-262">262</a>
+<a href="#line-263">263</a>
+<a href="#line-264">264</a>
+<a href="#line-265">265</a>
+<a href="#line-266">266</a>
+<a href="#line-267">267</a>
+<a href="#line-268">268</a>
+<a href="#line-269">269</a>
+<a href="#line-270">270</a>
+<a href="#line-271">271</a>
+<a href="#line-272">272</a>
+<a href="#line-273">273</a>
+<a href="#line-274">274</a>
+<a href="#line-275">275</a>
+<a href="#line-276">276</a>
+<a href="#line-277">277</a>
+<a href="#line-278">278</a>
+<a href="#line-279">279</a>
+<a href="#line-280">280</a>
+<a href="#line-281">281</a>
+<a href="#line-282">282</a>
+<a href="#line-283">283</a>
+<a href="#line-284">284</a>
+<a href="#line-285">285</a>
+<a href="#line-286">286</a>
+<a href="#line-287">287</a>
+<a href="#line-288">288</a>
+<a href="#line-289">289</a>
+<a href="#line-290">290</a>
+<a href="#line-291">291</a>
+<a href="#line-292">292</a>
+<a href="#line-293">293</a>
+<a href="#line-294">294</a>
+<a href="#line-295">295</a>
+<a href="#line-296">296</a>
+<a href="#line-297">297</a>
+<a href="#line-298">298</a>
+<a href="#line-299">299</a>
+<a href="#line-300">300</a>
+<a href="#line-301">301</a>
+<a href="#line-302">302</a>
+<a href="#line-303">303</a>
+<a href="#line-304">304</a>
+<a href="#line-305">305</a>
+<a href="#line-306">306</a>
+<a href="#line-307">307</a>
+<a href="#line-308">308</a>
+<a href="#line-309">309</a>
+<a href="#line-310">310</a>
+<a href="#line-311">311</a>
+<a href="#line-312">312</a>
+<a href="#line-313">313</a>
+<a href="#line-314">314</a>
+<a href="#line-315">315</a>
+<a href="#line-316">316</a>
+<a href="#line-317">317</a>
+<a href="#line-318">318</a>
+<a href="#line-319">319</a>
+<a href="#line-320">320</a>
+<a href="#line-321">321</a>
+<a href="#line-322">322</a>
+<a href="#line-323">323</a>
+<a href="#line-324">324</a>
+<a href="#line-325">325</a>
+<a href="#line-326">326</a>
+<a href="#line-327">327</a>
+<a href="#line-328">328</a>
+<a href="#line-329">329</a>
+<a href="#line-330">330</a>
+<a href="#line-331">331</a>
+<a href="#line-332">332</a>
+<a href="#line-333">333</a>
+<a href="#line-334">334</a>
+<a href="#line-335">335</a>
+<a href="#line-336">336</a>
+<a href="#line-337">337</a>
+<a href="#line-338">338</a>
+<a href="#line-339">339</a>
+<a href="#line-340">340</a>
+<a href="#line-341">341</a>
+<a href="#line-342">342</a>
+<a href="#line-343">343</a>
+<a href="#line-344">344</a>
+<a href="#line-345">345</a>
+<a href="#line-346">346</a>
+<a href="#line-347">347</a>
+<a href="#line-348">348</a>
+<a href="#line-349">349</a>
+<a href="#line-350">350</a>
+<a href="#line-351">351</a>
+<a href="#line-352">352</a>
+<a href="#line-353">353</a>
+<a href="#line-354">354</a>
+<a href="#line-355">355</a>
+<a href="#line-356">356</a>
+<a href="#line-357">357</a>
+<a href="#line-358">358</a>
+<a href="#line-359">359</a>
+<a href="#line-360">360</a>
+<a href="#line-361">361</a>
+<a href="#line-362">362</a>
+<a href="#line-363">363</a>
+<a href="#line-364">364</a>
+<a href="#line-365">365</a>
+<a href="#line-366">366</a>
+<a href="#line-367">367</a>
+<a href="#line-368">368</a>
+<a href="#line-369">369</a>
+<a href="#line-370">370</a>
+<a href="#line-371">371</a>
+<a href="#line-372">372</a>
+<a href="#line-373">373</a>
+<a href="#line-374">374</a>
+<a href="#line-375">375</a>
+<a href="#line-376">376</a>
+<a href="#line-377">377</a>
+<a href="#line-378">378</a>
+<a href="#line-379">379</a>
+<a href="#line-380">380</a>
+<a href="#line-381">381</a>
+<a href="#line-382">382</a>
+<a href="#line-383">383</a>
+<a href="#line-384">384</a>
+<a href="#line-385">385</a>
+<a href="#line-386">386</a>
+<a href="#line-387">387</a>
+<a href="#line-388">388</a>
+<a href="#line-389">389</a>
+<a href="#line-390">390</a>
+<a href="#line-391">391</a>
+<a href="#line-392">392</a>
+<a href="#line-393">393</a>
+<a href="#line-394">394</a>
+<a href="#line-395">395</a>
+<a href="#line-396">396</a>
+<a href="#line-397">397</a>
+<a href="#line-398">398</a>
+<a href="#line-399">399</a>
+<a href="#line-400">400</a>
+<a href="#line-401">401</a>
+<a href="#line-402">402</a>
+<a href="#line-403">403</a>
+<a href="#line-404">404</a>
+<a href="#line-405">405</a>
+<a href="#line-406">406</a>
+<a href="#line-407">407</a>
+<a href="#line-408">408</a>
+<a href="#line-409">409</a>
+<a href="#line-410">410</a>
+<a href="#line-411">411</a>
+<a href="#line-412">412</a>
+<a href="#line-413">413</a>
+<a href="#line-414">414</a>
+<a href="#line-415">415</a>
+<a href="#line-416">416</a>
+<a href="#line-417">417</a>
+<a href="#line-418">418</a>
+<a href="#line-419">419</a>
+<a href="#line-420">420</a>
+<a href="#line-421">421</a>
+<a href="#line-422">422</a>
+<a href="#line-423">423</a>
+<a href="#line-424">424</a>
+<a href="#line-425">425</a>
+<a href="#line-426">426</a>
+<a href="#line-427">427</a>
+<a href="#line-428">428</a>
+<a href="#line-429">429</a>
+<a href="#line-430">430</a>
+<a href="#line-431">431</a>
+<a href="#line-432">432</a>
+<a href="#line-433">433</a>
+<a href="#line-434">434</a>
+<a href="#line-435">435</a>
+<a href="#line-436">436</a>
+<a href="#line-437">437</a>
+<a href="#line-438">438</a>
+<a href="#line-439">439</a>
+<a href="#line-440">440</a>
+<a href="#line-441">441</a>
+<a href="#line-442">442</a>
+<a href="#line-443">443</a>
+<a href="#line-444">444</a>
+<a href="#line-445">445</a>
+<a href="#line-446">446</a>
+<a href="#line-447">447</a>
+<a href="#line-448">448</a>
+<a href="#line-449">449</a>
+<a href="#line-450">450</a>
+<a href="#line-451">451</a>
+<a href="#line-452">452</a>
+<a href="#line-453">453</a>
+<a href="#line-454">454</a>
+<a href="#line-455">455</a>
+<a href="#line-456">456</a>
+<a href="#line-457">457</a>
+<a href="#line-458">458</a>
+<a href="#line-459">459</a>
+<a href="#line-460">460</a>
+<a href="#line-461">461</a>
+<a href="#line-462">462</a>
+<a href="#line-463">463</a>
+<a href="#line-464">464</a>
+<a href="#line-465">465</a>
+<a href="#line-466">466</a>
+<a href="#line-467">467</a>
+<a href="#line-468">468</a>
+<a href="#line-469">469</a>
+<a href="#line-470">470</a>
+<a href="#line-471">471</a>
+<a href="#line-472">472</a>
+<a href="#line-473">473</a>
+<a href="#line-474">474</a>
+<a href="#line-475">475</a>
+<a href="#line-476">476</a>
+<a href="#line-477">477</a>
+<a href="#line-478">478</a>
+<a href="#line-479">479</a>
+<a href="#line-480">480</a>
+<a href="#line-481">481</a>
+<a href="#line-482">482</a>
+<a href="#line-483">483</a>
+<a href="#line-484">484</a>
+<a href="#line-485">485</a>
+<a href="#line-486">486</a>
+<a href="#line-487">487</a>
+<a href="#line-488">488</a>
+<a href="#line-489">489</a>
+<a href="#line-490">490</a>
+<a href="#line-491">491</a>
+<a href="#line-492">492</a>
+<a href="#line-493">493</a>
+<a href="#line-494">494</a>
+<a href="#line-495">495</a>
+<a href="#line-496">496</a>
+<a href="#line-497">497</a>
+<a href="#line-498">498</a>
+<a href="#line-499">499</a>
+<a href="#line-500">500</a>
+<a href="#line-501">501</a>
+<a href="#line-502">502</a>
+<a href="#line-503">503</a>
+<a href="#line-504">504</a>
+<a href="#line-505">505</a>
+<a href="#line-506">506</a>
+<a href="#line-507">507</a>
+<a href="#line-508">508</a>
+<a href="#line-509">509</a>
+<a href="#line-510">510</a>
+<a href="#line-511">511</a>
+<a href="#line-512">512</a>
+<a href="#line-513">513</a>
+<a href="#line-514">514</a>
+<a href="#line-515">515</a>
+<a href="#line-516">516</a>
+<a href="#line-517">517</a>
+<a href="#line-518">518</a>
+<a href="#line-519">519</a>
+<a href="#line-520">520</a>
+<a href="#line-521">521</a>
+<a href="#line-522">522</a>
+<a href="#line-523">523</a>
+<a href="#line-524">524</a>
+<a href="#line-525">525</a>
+<a href="#line-526">526</a>
+<a href="#line-527">527</a>
+<a href="#line-528">528</a>
+<a href="#line-529">529</a>
+<a href="#line-530">530</a>
+<a href="#line-531">531</a>
+<a href="#line-532">532</a>
+<a href="#line-533">533</a>
+<a href="#line-534">534</a>
+<a href="#line-535">535</a>
+<a href="#line-536">536</a>
+<a href="#line-537">537</a>
+<a href="#line-538">538</a>
+<a href="#line-539">539</a>
+<a href="#line-540">540</a>
+<a href="#line-541">541</a>
+<a href="#line-542">542</a>
+<a href="#line-543">543</a>
+<a href="#line-544">544</a>
+<a href="#line-545">545</a>
+<a href="#line-546">546</a>
+<a href="#line-547">547</a>
+<a href="#line-548">548</a>
+<a href="#line-549">549</a>
+<a href="#line-550">550</a>
+<a href="#line-551">551</a>
+<a href="#line-552">552</a>
+<a href="#line-553">553</a>
+<a href="#line-554">554</a>
+<a href="#line-555">555</a>
+<a href="#line-556">556</a>
+<a href="#line-557">557</a>
+<a href="#line-558">558</a>
+<a href="#line-559">559</a>
+<a href="#line-560">560</a>
+<a href="#line-561">561</a>
+<a href="#line-562">562</a>
+<a href="#line-563">563</a>
+<a href="#line-564">564</a>
+<a href="#line-565">565</a>
+<a href="#line-566">566</a>
+<a href="#line-567">567</a>
+<a href="#line-568">568</a>
+<a href="#line-569">569</a>
+<a href="#line-570">570</a>
+<a href="#line-571">571</a>
+<a href="#line-572">572</a>
+<a href="#line-573">573</a>
+<a href="#line-574">574</a>
+<a href="#line-575">575</a>
+<a href="#line-576">576</a>
+<a href="#line-577">577</a>
+<a href="#line-578">578</a>
+<a href="#line-579">579</a>
+<a href="#line-580">580</a>
+<a href="#line-581">581</a>
+<a href="#line-582">582</a>
+<a href="#line-583">583</a>
+<a href="#line-584">584</a>
+<a href="#line-585">585</a>
+<a href="#line-586">586</a>
+<a href="#line-587">587</a>
+<a href="#line-588">588</a>
+<a href="#line-589">589</a>
+<a href="#line-590">590</a>
+<a href="#line-591">591</a>
+<a href="#line-592">592</a>
+<a href="#line-593">593</a>
+<a href="#line-594">594</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/mimetypes.py</span><pre><span></span><a name="line-1"></a><span class="sd">&quot;&quot;&quot;Guess the MIME type of a file.</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="sd">This module defines two useful functions:</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="sd">guess_type(url, strict=1) -- guess the MIME type and encoding of a URL.</span>
+<a name="line-6"></a>
+<a name="line-7"></a><span class="sd">guess_extension(type, strict=1) -- guess the extension for a given MIME type.</span>
+<a name="line-8"></a>
+<a name="line-9"></a><span class="sd">It also contains the following, for tuning the behavior:</span>
+<a name="line-10"></a>
+<a name="line-11"></a><span class="sd">Data:</span>
+<a name="line-12"></a>
+<a name="line-13"></a><span class="sd">knownfiles -- list of files to parse</span>
+<a name="line-14"></a><span class="sd">inited -- flag set when init() has been called</span>
+<a name="line-15"></a><span class="sd">suffix_map -- dictionary mapping suffixes to suffixes</span>
+<a name="line-16"></a><span class="sd">encodings_map -- dictionary mapping suffixes to encodings</span>
+<a name="line-17"></a><span class="sd">types_map -- dictionary mapping suffixes to types</span>
+<a name="line-18"></a>
+<a name="line-19"></a><span class="sd">Functions:</span>
+<a name="line-20"></a>
+<a name="line-21"></a><span class="sd">init([files]) -- parse a list of files, default knownfiles (on Windows, the</span>
+<a name="line-22"></a><span class="sd">  default values are taken from the registry)</span>
+<a name="line-23"></a><span class="sd">read_mime_types(file) -- parse one file, return a dictionary or None</span>
+<a name="line-24"></a><span class="sd">&quot;&quot;&quot;</span>
+<a name="line-25"></a>
+<a name="line-26"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span>
+<a name="line-27"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span>
+<a name="line-28"></a><span class="kn">import</span> <span class="nn"><a href="/./Lib/SimpleHTTPServer.py.html#line-14">posixpath</a></span>
+<a name="line-29"></a><span class="kn">import</span> <span class="nn"><a href="/./Lib/CGIHTTPServer.py.html#line-28">urllib</a></span>
+<a name="line-30"></a><span class="k">try</span><span class="p">:</span>
+<a name="line-31"></a>    <span class="kn">import</span> <span class="nn"><a href="/./Lib/distutils/msvc9compiler.py.html#line-28">_winreg</a></span>
+<a name="line-32"></a><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<a name="line-33"></a>    <span class="n"><a href="/./Lib/distutils/msvc9compiler.py.html#line-28">_winreg</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-34"></a>
+<a name="line-35"></a><span class="n"><a href="/./Demo/tkinter/ttk/plastik_theme.py.html#line-27">__all__</a></span> <span class="o">=</span> <span class="p">[</span>
+<a name="line-36"></a>    <span class="s2">&quot;guess_type&quot;</span><span class="p">,</span><span class="s2">&quot;guess_extension&quot;</span><span class="p">,</span><span class="s2">&quot;guess_all_extensions&quot;</span><span class="p">,</span>
+<a name="line-37"></a>    <span class="s2">&quot;add_type&quot;</span><span class="p">,</span><span class="s2">&quot;read_mime_types&quot;</span><span class="p">,</span><span class="s2">&quot;init&quot;</span>
+<a name="line-38"></a><span class="p">]</span>
+<a name="line-39"></a>
+<a name="line-40"></a><span class="n"><a href="/./Lib/mimetypes.py.html#line-40">knownfiles</a></span> <span class="o">=</span> <span class="p">[</span>
+<a name="line-41"></a>    <span class="s2">&quot;/etc/mime.types&quot;</span><span class="p">,</span>
+<a name="line-42"></a>    <span class="s2">&quot;/etc/httpd/mime.types&quot;</span><span class="p">,</span>                    <span class="c1"># Mac OS X</span>
+<a name="line-43"></a>    <span class="s2">&quot;/etc/httpd/conf/mime.types&quot;</span><span class="p">,</span>               <span class="c1"># Apache</span>
+<a name="line-44"></a>    <span class="s2">&quot;/etc/apache/mime.types&quot;</span><span class="p">,</span>                   <span class="c1"># Apache 1</span>
+<a name="line-45"></a>    <span class="s2">&quot;/etc/apache2/mime.types&quot;</span><span class="p">,</span>                  <span class="c1"># Apache 2</span>
+<a name="line-46"></a>    <span class="s2">&quot;/usr/local/etc/httpd/conf/mime.types&quot;</span><span class="p">,</span>
+<a name="line-47"></a>    <span class="s2">&quot;/usr/local/lib/netscape/mime.types&quot;</span><span class="p">,</span>
+<a name="line-48"></a>    <span class="s2">&quot;/usr/local/etc/httpd/conf/mime.types&quot;</span><span class="p">,</span>     <span class="c1"># Apache 1.2</span>
+<a name="line-49"></a>    <span class="s2">&quot;/usr/local/etc/mime.types&quot;</span><span class="p">,</span>                <span class="c1"># Apache 1.3</span>
+<a name="line-50"></a>    <span class="p">]</span>
+<a name="line-51"></a>
+<a name="line-52"></a><span class="n"><a href="/./Lib/mimetypes.py.html#line-52">inited</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/plat-mac/bundlebuilder.py.html#line-925">False</a></span>
+<a name="line-53"></a><span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-54"></a>
+<a name="line-55"></a>
+<a name="line-56"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/mimetypes.py.html#line-56">MimeTypes</a></span><span class="p">:</span>
+<a name="line-57"></a>    <span class="sd">&quot;&quot;&quot;MIME-types datastore.</span>
+<a name="line-58"></a>
+<a name="line-59"></a><span class="sd">    This datastore can handle information from mime.types-style files</span>
+<a name="line-60"></a><span class="sd">    and supports basic determination of MIME type from a filename or</span>
+<a name="line-61"></a><span class="sd">    URL, and can guess a reasonable extension given a MIME type.</span>
+<a name="line-62"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-63"></a>
+<a name="line-64"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/cgi/wiki.py.html#line-21">__init__</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/test/test_pep277.py.html#line-7">filenames</a></span><span class="o">=</span><span class="p">(),</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-65"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-52">inited</a></span><span class="p">:</span>
+<a name="line-66"></a>            <span class="n"><a href="/./Demo/turtle/tdemo_planet_and_moon.py.html#line-30">init</a></span><span class="p">()</span>
+<a name="line-67"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">encodings_map</span> <span class="o">=</span> <span class="n">encodings_map</span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-158">copy</a></span><span class="p">()</span>
+<a name="line-68"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">suffix_map</span> <span class="o">=</span> <span class="n">suffix_map</span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-158">copy</a></span><span class="p">()</span>
+<a name="line-69"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">types_map</span> <span class="o">=</span> <span class="p">({},</span> <span class="p">{})</span> <span class="c1"># dict for (non-strict, strict)</span>
+<a name="line-70"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">types_map_inv</span> <span class="o">=</span> <span class="p">({},</span> <span class="p">{})</span>
+<a name="line-71"></a>        <span class="k">for</span> <span class="p">(</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">,</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">)</span> <span class="ow">in</span> <span class="n">types_map</span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-269">items</a></span><span class="p">():</span>
+<a name="line-72"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/mimetypes.py.html#line-330">add_type</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<a name="line-73"></a>        <span class="k">for</span> <span class="p">(</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">,</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">)</span> <span class="ow">in</span> <span class="n">common_types</span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-269">items</a></span><span class="p">():</span>
+<a name="line-74"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/mimetypes.py.html#line-330">add_type</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">,</span> <span class="bp"><a href="/./Lib/plat-mac/bundlebuilder.py.html#line-925">False</a></span><span class="p">)</span>
+<a name="line-75"></a>        <span class="k">for</span> <span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="ow">in</span> <span class="n"><a href="/./Lib/test/test_pep277.py.html#line-7">filenames</a></span><span class="p">:</span>
+<a name="line-76"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-225">read</a></span><span class="p">(</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-77"></a>
+<a name="line-78"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/mimetypes.py.html#line-330">add_type</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-79"></a>        <span class="sd">&quot;&quot;&quot;Add a mapping between a type and an extension.</span>
+<a name="line-80"></a>
+<a name="line-81"></a><span class="sd">        When the extension is already known, the new</span>
+<a name="line-82"></a><span class="sd">        type will replace the old one. When the type</span>
+<a name="line-83"></a><span class="sd">        is already known the extension will be added</span>
+<a name="line-84"></a><span class="sd">        to the list of known extensions.</span>
+<a name="line-85"></a>
+<a name="line-86"></a><span class="sd">        If strict is true, information will be added to</span>
+<a name="line-87"></a><span class="sd">        list of standard types, else to the list of non-standard</span>
+<a name="line-88"></a><span class="sd">        types.</span>
+<a name="line-89"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-90"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">types_map</span><span class="p">[</span><span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">][</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">]</span> <span class="o">=</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span>
+<a name="line-91"></a>        <span class="n">exts</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">types_map_inv</span><span class="p">[</span><span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">]</span><span class="o">.</span><span class="n"><a href="/./Lib/UserDict.py.html#line-159">setdefault</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="p">[])</span>
+<a name="line-92"></a>        <span class="k">if</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exts</span><span class="p">:</span>
+<a name="line-93"></a>            <span class="n">exts</span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">)</span>
+<a name="line-94"></a>
+<a name="line-95"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/SimpleHTTPServer.py.html#line-194">guess_type</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-374">url</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-96"></a>        <span class="sd">&quot;&quot;&quot;Guess the type of a file based on its URL.</span>
+<a name="line-97"></a>
+<a name="line-98"></a><span class="sd">        Return value is a tuple (type, encoding) where type is None if</span>
+<a name="line-99"></a><span class="sd">        the type can&#39;t be guessed (no or unknown suffix) or a string</span>
+<a name="line-100"></a><span class="sd">        of the form type/subtype, usable for a MIME Content-type</span>
+<a name="line-101"></a><span class="sd">        header; and encoding is None for no encoding or the name of</span>
+<a name="line-102"></a><span class="sd">        the program used to encode (e.g. compress or gzip).  The</span>
+<a name="line-103"></a><span class="sd">        mappings are table driven.  Encoding suffixes are case</span>
+<a name="line-104"></a><span class="sd">        sensitive; type suffixes are first tried case sensitive, then</span>
+<a name="line-105"></a><span class="sd">        case insensitive.</span>
+<a name="line-106"></a>
+<a name="line-107"></a><span class="sd">        The suffixes .tgz, .taz and .tz (case sensitive!) are all</span>
+<a name="line-108"></a><span class="sd">        mapped to &#39;.tar.gz&#39;.  (This is table-driven too, using the</span>
+<a name="line-109"></a><span class="sd">        dictionary suffix_map.)</span>
+<a name="line-110"></a>
+<a name="line-111"></a><span class="sd">        Optional `strict&#39; argument when False adds a bunch of commonly found,</span>
+<a name="line-112"></a><span class="sd">        but non-standard types.</span>
+<a name="line-113"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-114"></a>        <span class="n">scheme</span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-374">url</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/CGIHTTPServer.py.html#line-28">urllib</a></span><span class="o">.</span><span class="n"><a href="/./Lib/urllib.py.html#line-1082">splittype</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-374">url</a></span><span class="p">)</span>
+<a name="line-115"></a>        <span class="k">if</span> <span class="n">scheme</span> <span class="o">==</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span>
+<a name="line-116"></a>            <span class="c1"># syntax of data URLs:</span>
+<a name="line-117"></a>            <span class="c1"># dataurl   := &quot;data:&quot; [ mediatype ] [ &quot;;base64&quot; ] &quot;,&quot; data</span>
+<a name="line-118"></a>            <span class="c1"># mediatype := [ type &quot;/&quot; subtype ] *( &quot;;&quot; parameter )</span>
+<a name="line-119"></a>            <span class="c1"># data      := *urlchar</span>
+<a name="line-120"></a>            <span class="c1"># parameter := attribute &quot;=&quot; value</span>
+<a name="line-121"></a>            <span class="c1"># type/subtype defaults to &quot;text/plain&quot;</span>
+<a name="line-122"></a>            <span class="n">comma</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-374">url</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/find.py.html#line-132">find</a></span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<a name="line-123"></a>            <span class="k">if</span> <span class="n">comma</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<a name="line-124"></a>                <span class="c1"># bad data URL</span>
+<a name="line-125"></a>                <span class="k">return</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-126"></a>            <span class="n">semi</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-374">url</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/find.py.html#line-132">find</a></span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">comma</span><span class="p">)</span>
+<a name="line-127"></a>            <span class="k">if</span> <span class="n">semi</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<a name="line-128"></a>                <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-374">url</a></span><span class="p">[:</span><span class="n">semi</span><span class="p">]</span>
+<a name="line-129"></a>            <span class="k">else</span><span class="p">:</span>
+<a name="line-130"></a>                <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-374">url</a></span><span class="p">[:</span><span class="n">comma</span><span class="p">]</span>
+<a name="line-131"></a>            <span class="k">if</span> <span class="s1">&#39;=&#39;</span> <span class="ow">in</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="ow">or</span> <span class="s1">&#39;/&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">:</span>
+<a name="line-132"></a>                <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">=</span> <span class="s1">&#39;text/plain&#39;</span>
+<a name="line-133"></a>            <span class="k">return</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>           <span class="c1"># never compressed, so encoding is None</span>
+<a name="line-134"></a>        <span class="n"><a href="/./Include/memoryobject.h.html#line-54">base</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/SimpleHTTPServer.py.html#line-14">posixpath</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/rstlint.py.html#line-18">splitext</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-374">url</a></span><span class="p">)</span>
+<a name="line-135"></a>        <span class="k">while</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span> <span class="ow">in</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">suffix_map</span><span class="p">:</span>
+<a name="line-136"></a>            <span class="n"><a href="/./Include/memoryobject.h.html#line-54">base</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/SimpleHTTPServer.py.html#line-14">posixpath</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/rstlint.py.html#line-18">splitext</a></span><span class="p">(</span><span class="n"><a href="/./Include/memoryobject.h.html#line-54">base</a></span> <span class="o">+</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">suffix_map</span><span class="p">[</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">])</span>
+<a name="line-137"></a>        <span class="k">if</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span> <span class="ow">in</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">encodings_map</span><span class="p">:</span>
+<a name="line-138"></a>            <span class="n"><a href="/./Include/pyerrors.h.html#line-35">encoding</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">encodings_map</span><span class="p">[</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">]</span>
+<a name="line-139"></a>            <span class="n"><a href="/./Include/memoryobject.h.html#line-54">base</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/SimpleHTTPServer.py.html#line-14">posixpath</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/rstlint.py.html#line-18">splitext</a></span><span class="p">(</span><span class="n"><a href="/./Include/memoryobject.h.html#line-54">base</a></span><span class="p">)</span>
+<a name="line-140"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-141"></a>            <span class="n"><a href="/./Include/pyerrors.h.html#line-35">encoding</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-142"></a>        <span class="n">types_map</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">types_map</span><span class="p">[</span><span class="bp">True</span><span class="p">]</span>
+<a name="line-143"></a>        <span class="k">if</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span> <span class="ow">in</span> <span class="n">types_map</span><span class="p">:</span>
+<a name="line-144"></a>            <span class="k">return</span> <span class="n">types_map</span><span class="p">[</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">],</span> <span class="n"><a href="/./Include/pyerrors.h.html#line-35">encoding</a></span>
+<a name="line-145"></a>        <span class="k">elif</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-320">lower</a></span><span class="p">()</span> <span class="ow">in</span> <span class="n">types_map</span><span class="p">:</span>
+<a name="line-146"></a>            <span class="k">return</span> <span class="n">types_map</span><span class="p">[</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-320">lower</a></span><span class="p">()],</span> <span class="n"><a href="/./Include/pyerrors.h.html#line-35">encoding</a></span>
+<a name="line-147"></a>        <span class="k">elif</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">:</span>
+<a name="line-148"></a>            <span class="k">return</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="n"><a href="/./Include/pyerrors.h.html#line-35">encoding</a></span>
+<a name="line-149"></a>        <span class="n">types_map</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">types_map</span><span class="p">[</span><span class="bp"><a href="/./Lib/plat-mac/bundlebuilder.py.html#line-925">False</a></span><span class="p">]</span>
+<a name="line-150"></a>        <span class="k">if</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span> <span class="ow">in</span> <span class="n">types_map</span><span class="p">:</span>
+<a name="line-151"></a>            <span class="k">return</span> <span class="n">types_map</span><span class="p">[</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">],</span> <span class="n"><a href="/./Include/pyerrors.h.html#line-35">encoding</a></span>
+<a name="line-152"></a>        <span class="k">elif</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-320">lower</a></span><span class="p">()</span> <span class="ow">in</span> <span class="n">types_map</span><span class="p">:</span>
+<a name="line-153"></a>            <span class="k">return</span> <span class="n">types_map</span><span class="p">[</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-320">lower</a></span><span class="p">()],</span> <span class="n"><a href="/./Include/pyerrors.h.html#line-35">encoding</a></span>
+<a name="line-154"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-155"></a>            <span class="k">return</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="n"><a href="/./Include/pyerrors.h.html#line-35">encoding</a></span>
+<a name="line-156"></a>
+<a name="line-157"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/mimetypes.py.html#line-157">guess_all_extensions</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-158"></a>        <span class="sd">&quot;&quot;&quot;Guess the extensions for a file based on its MIME type.</span>
+<a name="line-159"></a>
+<a name="line-160"></a><span class="sd">        Return value is a list of strings giving the possible filename</span>
+<a name="line-161"></a><span class="sd">        extensions, including the leading dot (&#39;.&#39;).  The extension is not</span>
+<a name="line-162"></a><span class="sd">        guaranteed to have been associated with any particular data stream,</span>
+<a name="line-163"></a><span class="sd">        but would be mapped to the MIME type `type&#39; by guess_type().</span>
+<a name="line-164"></a>
+<a name="line-165"></a><span class="sd">        Optional `strict&#39; argument when false adds a bunch of commonly found,</span>
+<a name="line-166"></a><span class="sd">        but non-standard types.</span>
+<a name="line-167"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-168"></a>        <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span> <span class="o">=</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-320">lower</a></span><span class="p">()</span>
+<a name="line-169"></a>        <span class="n"><a href="/./Doc/conf.py.html#line-16">extensions</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">types_map_inv</span><span class="p">[</span><span class="bp">True</span><span class="p">]</span><span class="o">.</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-203">get</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="p">[])</span>
+<a name="line-170"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">:</span>
+<a name="line-171"></a>            <span class="k">for</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span> <span class="ow">in</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">types_map_inv</span><span class="p">[</span><span class="bp"><a href="/./Lib/plat-mac/bundlebuilder.py.html#line-925">False</a></span><span class="p">]</span><span class="o">.</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-203">get</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="p">[]):</span>
+<a name="line-172"></a>                <span class="k">if</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span> <span class="ow">not</span> <span class="ow">in</span> <span class="n"><a href="/./Doc/conf.py.html#line-16">extensions</a></span><span class="p">:</span>
+<a name="line-173"></a>                    <span class="n"><a href="/./Doc/conf.py.html#line-16">extensions</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">)</span>
+<a name="line-174"></a>        <span class="k">return</span> <span class="n"><a href="/./Doc/conf.py.html#line-16">extensions</a></span>
+<a name="line-175"></a>
+<a name="line-176"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/mimetypes.py.html#line-176">guess_extension</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-177"></a>        <span class="sd">&quot;&quot;&quot;Guess the extension for a file based on its MIME type.</span>
+<a name="line-178"></a>
+<a name="line-179"></a><span class="sd">        Return value is a string giving a filename extension,</span>
+<a name="line-180"></a><span class="sd">        including the leading dot (&#39;.&#39;).  The extension is not</span>
+<a name="line-181"></a><span class="sd">        guaranteed to have been associated with any particular data</span>
+<a name="line-182"></a><span class="sd">        stream, but would be mapped to the MIME type `type&#39; by</span>
+<a name="line-183"></a><span class="sd">        guess_type().  If no extension can be guessed for `type&#39;, None</span>
+<a name="line-184"></a><span class="sd">        is returned.</span>
+<a name="line-185"></a>
+<a name="line-186"></a><span class="sd">        Optional `strict&#39; argument when false adds a bunch of commonly found,</span>
+<a name="line-187"></a><span class="sd">        but non-standard types.</span>
+<a name="line-188"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-189"></a>        <span class="n"><a href="/./Doc/conf.py.html#line-16">extensions</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/mimetypes.py.html#line-157">guess_all_extensions</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-190"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Doc/conf.py.html#line-16">extensions</a></span><span class="p">:</span>
+<a name="line-191"></a>            <span class="k">return</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-192"></a>        <span class="k">return</span> <span class="n"><a href="/./Doc/conf.py.html#line-16">extensions</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a name="line-193"></a>
+<a name="line-194"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/pdist/FSProxy.py.html#line-225">read</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/scripts/script.py.html#line-19">filename</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-195"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a name="line-196"></a><span class="sd">        Read a single mime.types-format file, specified by pathname.</span>
+<a name="line-197"></a>
+<a name="line-198"></a><span class="sd">        If strict is true, information will be added to</span>
+<a name="line-199"></a><span class="sd">        list of standard types, else to the list of non-standard</span>
+<a name="line-200"></a><span class="sd">        types.</span>
+<a name="line-201"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-202"></a>        <span class="k">with</span> <span class="nb"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="n"><a href="/./Demo/scripts/script.py.html#line-19">filename</a></span><span class="p">)</span> <span class="k">as</span> <span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span><span class="p">:</span>
+<a name="line-203"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/ConfigParser.py.html#line-310">readfp</a></span><span class="p">(</span><span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-204"></a>
+<a name="line-205"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/ConfigParser.py.html#line-310">readfp</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-206"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a name="line-207"></a><span class="sd">        Read a single mime.types-format file.</span>
+<a name="line-208"></a>
+<a name="line-209"></a><span class="sd">        If strict is true, information will be added to</span>
+<a name="line-210"></a><span class="sd">        list of standard types, else to the list of non-standard</span>
+<a name="line-211"></a><span class="sd">        types.</span>
+<a name="line-212"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-213"></a>        <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+<a name="line-214"></a>            <span class="n"><a href="/./Demo/scripts/from.py.html#line-23">line</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span><span class="o">.</span><span class="n"><a href="/./Lib/StringIO.py.html#line-139">readline</a></span><span class="p">()</span>
+<a name="line-215"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Demo/scripts/from.py.html#line-23">line</a></span><span class="p">:</span>
+<a name="line-216"></a>                <span class="k">break</span>
+<a name="line-217"></a>            <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/scripts/from.py.html#line-23">line</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/kill.py.html#line-6">split</a></span><span class="p">()</span>
+<a name="line-218"></a>            <span class="k">for</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span><span class="p">)):</span>
+<a name="line-219"></a>                <span class="k">if</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;#&#39;</span><span class="p">:</span>
+<a name="line-220"></a>                    <span class="k">del</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span><span class="p">[</span><span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">:]</span>
+<a name="line-221"></a>                    <span class="k">break</span>
+<a name="line-222"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span><span class="p">:</span>
+<a name="line-223"></a>                <span class="k">continue</span>
+<a name="line-224"></a>            <span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n">suffixes</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/Text_Suite.py.html#line-93">words</a></span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<a name="line-225"></a>            <span class="k">for</span> <span class="n">suff</span> <span class="ow">in</span> <span class="n">suffixes</span><span class="p">:</span>
+<a name="line-226"></a>                <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/mimetypes.py.html#line-330">add_type</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">suff</span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-227"></a>
+<a name="line-228"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/mimetypes.py.html#line-228">read_windows_registry</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-229"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a name="line-230"></a><span class="sd">        Load the MIME types database from Windows registry.</span>
+<a name="line-231"></a>
+<a name="line-232"></a><span class="sd">        If strict is true, information will be added to</span>
+<a name="line-233"></a><span class="sd">        list of standard types, else to the list of non-standard</span>
+<a name="line-234"></a><span class="sd">        types.</span>
+<a name="line-235"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a name="line-236"></a>
+<a name="line-237"></a>        <span class="c1"># Windows only</span>
+<a name="line-238"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Lib/distutils/msvc9compiler.py.html#line-28">_winreg</a></span><span class="p">:</span>
+<a name="line-239"></a>            <span class="k">return</span>
+<a name="line-240"></a>
+<a name="line-241"></a>        <span class="k">def</span> <span class="nf"><a href="/./Lib/mimetypes.py.html#line-241">enum_types</a></span><span class="p">(</span><span class="n">mimedb</span><span class="p">):</span>
+<a name="line-242"></a>            <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-243"></a>            <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="line-244"></a>                <span class="k">try</span><span class="p">:</span>
+<a name="line-245"></a>                    <span class="n">ctype</span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/msvc9compiler.py.html#line-28">_winreg</a></span><span class="o">.</span><span class="n">EnumKey</span><span class="p">(</span><span class="n">mimedb</span><span class="p">,</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span><span class="p">)</span>
+<a name="line-246"></a>                <span class="k">except</span> <span class="ne">EnvironmentError</span><span class="p">:</span>
+<a name="line-247"></a>                    <span class="k">break</span>
+<a name="line-248"></a>                <span class="k">else</span><span class="p">:</span>
+<a name="line-249"></a>                    <span class="k">if</span> <span class="s1">&#39;</span><span class="se">\0</span><span class="s1">&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ctype</span><span class="p">:</span>
+<a name="line-250"></a>                        <span class="k">yield</span> <span class="n">ctype</span>
+<a name="line-251"></a>                <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="line-252"></a>
+<a name="line-253"></a>        <span class="n">default_encoding</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n">getdefaultencoding</span><span class="p">()</span>
+<a name="line-254"></a>        <span class="k">with</span> <span class="n"><a href="/./Lib/distutils/msvc9compiler.py.html#line-28">_winreg</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_mimetypes.py.html#line-151">OpenKey</a></span><span class="p">(</span><span class="n"><a href="/./Lib/distutils/msvc9compiler.py.html#line-28">_winreg</a></span><span class="o">.</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hkcr</span><span class="p">:</span>
+<a name="line-255"></a>            <span class="k">for</span> <span class="n">subkeyname</span> <span class="ow">in</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-241">enum_types</a></span><span class="p">(</span><span class="n">hkcr</span><span class="p">):</span>
+<a name="line-256"></a>                <span class="k">try</span><span class="p">:</span>
+<a name="line-257"></a>                    <span class="k">with</span> <span class="n"><a href="/./Lib/distutils/msvc9compiler.py.html#line-28">_winreg</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_mimetypes.py.html#line-151">OpenKey</a></span><span class="p">(</span><span class="n">hkcr</span><span class="p">,</span> <span class="n">subkeyname</span><span class="p">)</span> <span class="k">as</span> <span class="n">subkey</span><span class="p">:</span>
+<a name="line-258"></a>                        <span class="c1"># Only check file extensions</span>
+<a name="line-259"></a>                        <span class="k">if</span> <span class="ow">not</span> <span class="n">subkeyname</span><span class="o">.</span><span class="n"><a href="/./Lib/UserString.py.html#line-123">startswith</a></span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+<a name="line-260"></a>                            <span class="k">continue</span>
+<a name="line-261"></a>                        <span class="c1"># raises EnvironmentError if no &#39;Content Type&#39; value</span>
+<a name="line-262"></a>                        <span class="n">mimetype</span><span class="p">,</span> <span class="n">datatype</span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/msvc9compiler.py.html#line-28">_winreg</a></span><span class="o">.</span><span class="n"><a href="/./Lib/platform.py.html#line-630">QueryValueEx</a></span><span class="p">(</span>
+<a name="line-263"></a>                            <span class="n">subkey</span><span class="p">,</span> <span class="s1">&#39;Content Type&#39;</span><span class="p">)</span>
+<a name="line-264"></a>                        <span class="k">if</span> <span class="n">datatype</span> <span class="o">!=</span> <span class="n"><a href="/./Lib/distutils/msvc9compiler.py.html#line-28">_winreg</a></span><span class="o">.</span><span class="n">REG_SZ</span><span class="p">:</span>
+<a name="line-265"></a>                            <span class="k">continue</span>
+<a name="line-266"></a>                        <span class="k">try</span><span class="p">:</span>
+<a name="line-267"></a>                            <span class="n">mimetype</span> <span class="o">=</span> <span class="n">mimetype</span><span class="o">.</span><span class="n"><a href="/./Lib/UserString.py.html#line-75">encode</a></span><span class="p">(</span><span class="n">default_encoding</span><span class="p">)</span>
+<a name="line-268"></a>                        <span class="k">except</span> <span class="ne">UnicodeEncodeError</span><span class="p">:</span>
+<a name="line-269"></a>                            <span class="k">continue</span>
+<a name="line-270"></a>                        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/mimetypes.py.html#line-330">add_type</a></span><span class="p">(</span><span class="n">mimetype</span><span class="p">,</span> <span class="n">subkeyname</span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-271"></a>                <span class="k">except</span> <span class="ne">EnvironmentError</span><span class="p">:</span>
+<a name="line-272"></a>                    <span class="k">continue</span>
+<a name="line-273"></a>
+<a name="line-274"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/SimpleHTTPServer.py.html#line-194">guess_type</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-374">url</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-275"></a>    <span class="sd">&quot;&quot;&quot;Guess the type of a file based on its URL.</span>
+<a name="line-276"></a>
+<a name="line-277"></a><span class="sd">    Return value is a tuple (type, encoding) where type is None if the</span>
+<a name="line-278"></a><span class="sd">    type can&#39;t be guessed (no or unknown suffix) or a string of the</span>
+<a name="line-279"></a><span class="sd">    form type/subtype, usable for a MIME Content-type header; and</span>
+<a name="line-280"></a><span class="sd">    encoding is None for no encoding or the name of the program used</span>
+<a name="line-281"></a><span class="sd">    to encode (e.g. compress or gzip).  The mappings are table</span>
+<a name="line-282"></a><span class="sd">    driven.  Encoding suffixes are case sensitive; type suffixes are</span>
+<a name="line-283"></a><span class="sd">    first tried case sensitive, then case insensitive.</span>
+<a name="line-284"></a>
+<a name="line-285"></a><span class="sd">    The suffixes .tgz, .taz and .tz (case sensitive!) are all mapped</span>
+<a name="line-286"></a><span class="sd">    to &quot;.tar.gz&quot;.  (This is table-driven too, using the dictionary</span>
+<a name="line-287"></a><span class="sd">    suffix_map).</span>
+<a name="line-288"></a>
+<a name="line-289"></a><span class="sd">    Optional `strict&#39; argument when false adds a bunch of commonly found, but</span>
+<a name="line-290"></a><span class="sd">    non-standard types.</span>
+<a name="line-291"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-292"></a>    <span class="k">if</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-293"></a>        <span class="n"><a href="/./Demo/turtle/tdemo_planet_and_moon.py.html#line-30">init</a></span><span class="p">()</span>
+<a name="line-294"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span><span class="o">.</span><span class="n"><a href="/./Lib/SimpleHTTPServer.py.html#line-194">guess_type</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-374">url</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-295"></a>
+<a name="line-296"></a>
+<a name="line-297"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/mimetypes.py.html#line-157">guess_all_extensions</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-298"></a>    <span class="sd">&quot;&quot;&quot;Guess the extensions for a file based on its MIME type.</span>
+<a name="line-299"></a>
+<a name="line-300"></a><span class="sd">    Return value is a list of strings giving the possible filename</span>
+<a name="line-301"></a><span class="sd">    extensions, including the leading dot (&#39;.&#39;).  The extension is not</span>
+<a name="line-302"></a><span class="sd">    guaranteed to have been associated with any particular data</span>
+<a name="line-303"></a><span class="sd">    stream, but would be mapped to the MIME type `type&#39; by</span>
+<a name="line-304"></a><span class="sd">    guess_type().  If no extension can be guessed for `type&#39;, None</span>
+<a name="line-305"></a><span class="sd">    is returned.</span>
+<a name="line-306"></a>
+<a name="line-307"></a><span class="sd">    Optional `strict&#39; argument when false adds a bunch of commonly found,</span>
+<a name="line-308"></a><span class="sd">    but non-standard types.</span>
+<a name="line-309"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-310"></a>    <span class="k">if</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-311"></a>        <span class="n"><a href="/./Demo/turtle/tdemo_planet_and_moon.py.html#line-30">init</a></span><span class="p">()</span>
+<a name="line-312"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span><span class="o">.</span><span class="n"><a href="/./Lib/mimetypes.py.html#line-157">guess_all_extensions</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-313"></a>
+<a name="line-314"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/mimetypes.py.html#line-176">guess_extension</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-315"></a>    <span class="sd">&quot;&quot;&quot;Guess the extension for a file based on its MIME type.</span>
+<a name="line-316"></a>
+<a name="line-317"></a><span class="sd">    Return value is a string giving a filename extension, including the</span>
+<a name="line-318"></a><span class="sd">    leading dot (&#39;.&#39;).  The extension is not guaranteed to have been</span>
+<a name="line-319"></a><span class="sd">    associated with any particular data stream, but would be mapped to the</span>
+<a name="line-320"></a><span class="sd">    MIME type `type&#39; by guess_type().  If no extension can be guessed for</span>
+<a name="line-321"></a><span class="sd">    `type&#39;, None is returned.</span>
+<a name="line-322"></a>
+<a name="line-323"></a><span class="sd">    Optional `strict&#39; argument when false adds a bunch of commonly found,</span>
+<a name="line-324"></a><span class="sd">    but non-standard types.</span>
+<a name="line-325"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-326"></a>    <span class="k">if</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-327"></a>        <span class="n"><a href="/./Demo/turtle/tdemo_planet_and_moon.py.html#line-30">init</a></span><span class="p">()</span>
+<a name="line-328"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span><span class="o">.</span><span class="n"><a href="/./Lib/mimetypes.py.html#line-176">guess_extension</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-329"></a>
+<a name="line-330"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/mimetypes.py.html#line-330">add_type</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<a name="line-331"></a>    <span class="sd">&quot;&quot;&quot;Add a mapping between a type and an extension.</span>
+<a name="line-332"></a>
+<a name="line-333"></a><span class="sd">    When the extension is already known, the new</span>
+<a name="line-334"></a><span class="sd">    type will replace the old one. When the type</span>
+<a name="line-335"></a><span class="sd">    is already known the extension will be added</span>
+<a name="line-336"></a><span class="sd">    to the list of known extensions.</span>
+<a name="line-337"></a>
+<a name="line-338"></a><span class="sd">    If strict is true, information will be added to</span>
+<a name="line-339"></a><span class="sd">    list of standard types, else to the list of non-standard</span>
+<a name="line-340"></a><span class="sd">    types.</span>
+<a name="line-341"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="line-342"></a>    <span class="k">if</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-343"></a>        <span class="n"><a href="/./Demo/turtle/tdemo_planet_and_moon.py.html#line-30">init</a></span><span class="p">()</span>
+<a name="line-344"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span><span class="o">.</span><span class="n"><a href="/./Lib/mimetypes.py.html#line-330">add_type</a></span><span class="p">(</span><span class="nb"><a href="/./Include/Python-ast.h.html#line-137">type</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-193">ext</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-345"></a>
+<a name="line-346"></a>
+<a name="line-347"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/turtle/tdemo_planet_and_moon.py.html#line-30">init</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/rcsbump.html#line-19">files</a></span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">):</span>
+<a name="line-348"></a>    <span class="k">global</span> <span class="n">suffix_map</span><span class="p">,</span> <span class="n">types_map</span><span class="p">,</span> <span class="n">encodings_map</span><span class="p">,</span> <span class="n">common_types</span>
+<a name="line-349"></a>    <span class="k">global</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-52">inited</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span>
+<a name="line-350"></a>    <span class="n"><a href="/./Lib/mimetypes.py.html#line-52">inited</a></span> <span class="o">=</span> <span class="bp">True</span>    <span class="c1"># so that MimeTypes.__init__() doesn&#39;t call us again</span>
+<a name="line-351"></a>    <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-56">MimeTypes</a></span><span class="p">()</span>
+<a name="line-352"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-19">files</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-353"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/distutils/msvc9compiler.py.html#line-28">_winreg</a></span><span class="p">:</span>
+<a name="line-354"></a>            <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span><span class="o">.</span><span class="n"><a href="/./Lib/mimetypes.py.html#line-228">read_windows_registry</a></span><span class="p">()</span>
+<a name="line-355"></a>        <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-19">files</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-40">knownfiles</a></span>
+<a name="line-356"></a>    <span class="k">for</span> <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span> <span class="ow">in</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-19">files</a></span><span class="p">:</span>
+<a name="line-357"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-138">isfile</a></span><span class="p">(</span><span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">):</span>
+<a name="line-358"></a>            <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-225">read</a></span><span class="p">(</span><span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">)</span>
+<a name="line-359"></a>    <span class="n">encodings_map</span> <span class="o">=</span> <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span><span class="o">.</span><span class="n">encodings_map</span>
+<a name="line-360"></a>    <span class="n">suffix_map</span> <span class="o">=</span> <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span><span class="o">.</span><span class="n">suffix_map</span>
+<a name="line-361"></a>    <span class="n">types_map</span> <span class="o">=</span> <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span><span class="o">.</span><span class="n">types_map</span><span class="p">[</span><span class="bp">True</span><span class="p">]</span>
+<a name="line-362"></a>    <span class="n">common_types</span> <span class="o">=</span> <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span><span class="o">.</span><span class="n">types_map</span><span class="p">[</span><span class="bp"><a href="/./Lib/plat-mac/bundlebuilder.py.html#line-925">False</a></span><span class="p">]</span>
+<a name="line-363"></a>    <span class="c1"># Make the DB a global variable now that it is fully initialized</span>
+<a name="line-364"></a>    <span class="n"><a href="/./Lib/mimetypes.py.html#line-53">_db</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span>
+<a name="line-365"></a>
+<a name="line-366"></a>
+<a name="line-367"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/mimetypes.py.html#line-367">read_mime_types</a></span><span class="p">(</span><span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">):</span>
+<a name="line-368"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="line-369"></a>        <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="o">=</span> <span class="nb"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="p">)</span>
+<a name="line-370"></a>    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+<a name="line-371"></a>        <span class="k">return</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-372"></a>    <span class="k">with</span> <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="p">:</span>
+<a name="line-373"></a>        <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-56">MimeTypes</a></span><span class="p">()</span>
+<a name="line-374"></a>        <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span><span class="o">.</span><span class="n"><a href="/./Lib/ConfigParser.py.html#line-310">readfp</a></span><span class="p">(</span><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<a name="line-375"></a>        <span class="k">return</span> <span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-28">db</a></span><span class="o">.</span><span class="n">types_map</span><span class="p">[</span><span class="bp">True</span><span class="p">]</span>
+<a name="line-376"></a>
+<a name="line-377"></a>
+<a name="line-378"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/mimetypes.py.html#line-378">_default_mime_types</a></span><span class="p">():</span>
+<a name="line-379"></a>    <span class="k">global</span> <span class="n">suffix_map</span>
+<a name="line-380"></a>    <span class="k">global</span> <span class="n">encodings_map</span>
+<a name="line-381"></a>    <span class="k">global</span> <span class="n">types_map</span>
+<a name="line-382"></a>    <span class="k">global</span> <span class="n">common_types</span>
+<a name="line-383"></a>
+<a name="line-384"></a>    <span class="n">suffix_map</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-385"></a>        <span class="s1">&#39;.tgz&#39;</span><span class="p">:</span> <span class="s1">&#39;.tar.gz&#39;</span><span class="p">,</span>
+<a name="line-386"></a>        <span class="s1">&#39;.taz&#39;</span><span class="p">:</span> <span class="s1">&#39;.tar.gz&#39;</span><span class="p">,</span>
+<a name="line-387"></a>        <span class="s1">&#39;.tz&#39;</span><span class="p">:</span> <span class="s1">&#39;.tar.gz&#39;</span><span class="p">,</span>
+<a name="line-388"></a>        <span class="s1">&#39;.tbz2&#39;</span><span class="p">:</span> <span class="s1">&#39;.tar.bz2&#39;</span><span class="p">,</span>
+<a name="line-389"></a>        <span class="s1">&#39;.txz&#39;</span><span class="p">:</span> <span class="s1">&#39;.tar.xz&#39;</span><span class="p">,</span>
+<a name="line-390"></a>        <span class="p">}</span>
+<a name="line-391"></a>
+<a name="line-392"></a>    <span class="n">encodings_map</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-393"></a>        <span class="s1">&#39;.gz&#39;</span><span class="p">:</span> <span class="s1">&#39;gzip&#39;</span><span class="p">,</span>
+<a name="line-394"></a>        <span class="s1">&#39;.Z&#39;</span><span class="p">:</span> <span class="s1">&#39;compress&#39;</span><span class="p">,</span>
+<a name="line-395"></a>        <span class="s1">&#39;.bz2&#39;</span><span class="p">:</span> <span class="s1">&#39;bzip2&#39;</span><span class="p">,</span>
+<a name="line-396"></a>        <span class="s1">&#39;.xz&#39;</span><span class="p">:</span> <span class="s1">&#39;xz&#39;</span><span class="p">,</span>
+<a name="line-397"></a>        <span class="p">}</span>
+<a name="line-398"></a>
+<a name="line-399"></a>    <span class="c1"># Before adding new types, make sure they are either registered with IANA,</span>
+<a name="line-400"></a>    <span class="c1"># at http://www.isi.edu/in-notes/iana/assignments/media-types</span>
+<a name="line-401"></a>    <span class="c1"># or extensions, i.e. using the x- prefix</span>
+<a name="line-402"></a>
+<a name="line-403"></a>    <span class="c1"># If you add to these, please keep them sorted!</span>
+<a name="line-404"></a>    <span class="n">types_map</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-405"></a>        <span class="s1">&#39;.a&#39;</span>      <span class="p">:</span> <span class="s1">&#39;application/octet-stream&#39;</span><span class="p">,</span>
+<a name="line-406"></a>        <span class="s1">&#39;.ai&#39;</span>     <span class="p">:</span> <span class="s1">&#39;application/postscript&#39;</span><span class="p">,</span>
+<a name="line-407"></a>        <span class="s1">&#39;.aif&#39;</span>    <span class="p">:</span> <span class="s1">&#39;audio/x-aiff&#39;</span><span class="p">,</span>
+<a name="line-408"></a>        <span class="s1">&#39;.aifc&#39;</span>   <span class="p">:</span> <span class="s1">&#39;audio/x-aiff&#39;</span><span class="p">,</span>
+<a name="line-409"></a>        <span class="s1">&#39;.aiff&#39;</span>   <span class="p">:</span> <span class="s1">&#39;audio/x-aiff&#39;</span><span class="p">,</span>
+<a name="line-410"></a>        <span class="s1">&#39;.au&#39;</span>     <span class="p">:</span> <span class="s1">&#39;audio/basic&#39;</span><span class="p">,</span>
+<a name="line-411"></a>        <span class="s1">&#39;.avi&#39;</span>    <span class="p">:</span> <span class="s1">&#39;video/x-msvideo&#39;</span><span class="p">,</span>
+<a name="line-412"></a>        <span class="s1">&#39;.bat&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">,</span>
+<a name="line-413"></a>        <span class="s1">&#39;.bcpio&#39;</span>  <span class="p">:</span> <span class="s1">&#39;application/x-bcpio&#39;</span><span class="p">,</span>
+<a name="line-414"></a>        <span class="s1">&#39;.bin&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/octet-stream&#39;</span><span class="p">,</span>
+<a name="line-415"></a>        <span class="s1">&#39;.bmp&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/x-ms-bmp&#39;</span><span class="p">,</span>
+<a name="line-416"></a>        <span class="s1">&#39;.c&#39;</span>      <span class="p">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">,</span>
+<a name="line-417"></a>        <span class="c1"># Duplicates :(</span>
+<a name="line-418"></a>        <span class="s1">&#39;.cdf&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-cdf&#39;</span><span class="p">,</span>
+<a name="line-419"></a>        <span class="s1">&#39;.cdf&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-netcdf&#39;</span><span class="p">,</span>
+<a name="line-420"></a>        <span class="s1">&#39;.cpio&#39;</span>   <span class="p">:</span> <span class="s1">&#39;application/x-cpio&#39;</span><span class="p">,</span>
+<a name="line-421"></a>        <span class="s1">&#39;.csh&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-csh&#39;</span><span class="p">,</span>
+<a name="line-422"></a>        <span class="s1">&#39;.css&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/css&#39;</span><span class="p">,</span>
+<a name="line-423"></a>        <span class="s1">&#39;.dll&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/octet-stream&#39;</span><span class="p">,</span>
+<a name="line-424"></a>        <span class="s1">&#39;.doc&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/msword&#39;</span><span class="p">,</span>
+<a name="line-425"></a>        <span class="s1">&#39;.dot&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/msword&#39;</span><span class="p">,</span>
+<a name="line-426"></a>        <span class="s1">&#39;.dvi&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-dvi&#39;</span><span class="p">,</span>
+<a name="line-427"></a>        <span class="s1">&#39;.eml&#39;</span>    <span class="p">:</span> <span class="s1">&#39;message/rfc822&#39;</span><span class="p">,</span>
+<a name="line-428"></a>        <span class="s1">&#39;.eps&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/postscript&#39;</span><span class="p">,</span>
+<a name="line-429"></a>        <span class="s1">&#39;.etx&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/x-setext&#39;</span><span class="p">,</span>
+<a name="line-430"></a>        <span class="s1">&#39;.exe&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/octet-stream&#39;</span><span class="p">,</span>
+<a name="line-431"></a>        <span class="s1">&#39;.gif&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/gif&#39;</span><span class="p">,</span>
+<a name="line-432"></a>        <span class="s1">&#39;.gtar&#39;</span>   <span class="p">:</span> <span class="s1">&#39;application/x-gtar&#39;</span><span class="p">,</span>
+<a name="line-433"></a>        <span class="s1">&#39;.h&#39;</span>      <span class="p">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">,</span>
+<a name="line-434"></a>        <span class="s1">&#39;.hdf&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-hdf&#39;</span><span class="p">,</span>
+<a name="line-435"></a>        <span class="s1">&#39;.htm&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/html&#39;</span><span class="p">,</span>
+<a name="line-436"></a>        <span class="s1">&#39;.html&#39;</span>   <span class="p">:</span> <span class="s1">&#39;text/html&#39;</span><span class="p">,</span>
+<a name="line-437"></a>        <span class="s1">&#39;.ico&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/vnd.microsoft.icon&#39;</span><span class="p">,</span>
+<a name="line-438"></a>        <span class="s1">&#39;.ief&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/ief&#39;</span><span class="p">,</span>
+<a name="line-439"></a>        <span class="s1">&#39;.jpe&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/jpeg&#39;</span><span class="p">,</span>
+<a name="line-440"></a>        <span class="s1">&#39;.jpeg&#39;</span>   <span class="p">:</span> <span class="s1">&#39;image/jpeg&#39;</span><span class="p">,</span>
+<a name="line-441"></a>        <span class="s1">&#39;.jpg&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/jpeg&#39;</span><span class="p">,</span>
+<a name="line-442"></a>        <span class="s1">&#39;.js&#39;</span>     <span class="p">:</span> <span class="s1">&#39;application/javascript&#39;</span><span class="p">,</span>
+<a name="line-443"></a>        <span class="s1">&#39;.ksh&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">,</span>
+<a name="line-444"></a>        <span class="s1">&#39;.latex&#39;</span>  <span class="p">:</span> <span class="s1">&#39;application/x-latex&#39;</span><span class="p">,</span>
+<a name="line-445"></a>        <span class="s1">&#39;.m1v&#39;</span>    <span class="p">:</span> <span class="s1">&#39;video/mpeg&#39;</span><span class="p">,</span>
+<a name="line-446"></a>        <span class="s1">&#39;.man&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-troff-man&#39;</span><span class="p">,</span>
+<a name="line-447"></a>        <span class="s1">&#39;.me&#39;</span>     <span class="p">:</span> <span class="s1">&#39;application/x-troff-me&#39;</span><span class="p">,</span>
+<a name="line-448"></a>        <span class="s1">&#39;.mht&#39;</span>    <span class="p">:</span> <span class="s1">&#39;message/rfc822&#39;</span><span class="p">,</span>
+<a name="line-449"></a>        <span class="s1">&#39;.mhtml&#39;</span>  <span class="p">:</span> <span class="s1">&#39;message/rfc822&#39;</span><span class="p">,</span>
+<a name="line-450"></a>        <span class="s1">&#39;.mif&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-mif&#39;</span><span class="p">,</span>
+<a name="line-451"></a>        <span class="s1">&#39;.mov&#39;</span>    <span class="p">:</span> <span class="s1">&#39;video/quicktime&#39;</span><span class="p">,</span>
+<a name="line-452"></a>        <span class="s1">&#39;.movie&#39;</span>  <span class="p">:</span> <span class="s1">&#39;video/x-sgi-movie&#39;</span><span class="p">,</span>
+<a name="line-453"></a>        <span class="s1">&#39;.mp2&#39;</span>    <span class="p">:</span> <span class="s1">&#39;audio/mpeg&#39;</span><span class="p">,</span>
+<a name="line-454"></a>        <span class="s1">&#39;.mp3&#39;</span>    <span class="p">:</span> <span class="s1">&#39;audio/mpeg&#39;</span><span class="p">,</span>
+<a name="line-455"></a>        <span class="s1">&#39;.mp4&#39;</span>    <span class="p">:</span> <span class="s1">&#39;video/mp4&#39;</span><span class="p">,</span>
+<a name="line-456"></a>        <span class="s1">&#39;.mpa&#39;</span>    <span class="p">:</span> <span class="s1">&#39;video/mpeg&#39;</span><span class="p">,</span>
+<a name="line-457"></a>        <span class="s1">&#39;.mpe&#39;</span>    <span class="p">:</span> <span class="s1">&#39;video/mpeg&#39;</span><span class="p">,</span>
+<a name="line-458"></a>        <span class="s1">&#39;.mpeg&#39;</span>   <span class="p">:</span> <span class="s1">&#39;video/mpeg&#39;</span><span class="p">,</span>
+<a name="line-459"></a>        <span class="s1">&#39;.mpg&#39;</span>    <span class="p">:</span> <span class="s1">&#39;video/mpeg&#39;</span><span class="p">,</span>
+<a name="line-460"></a>        <span class="s1">&#39;.ms&#39;</span>     <span class="p">:</span> <span class="s1">&#39;application/x-troff-ms&#39;</span><span class="p">,</span>
+<a name="line-461"></a>        <span class="s1">&#39;.nc&#39;</span>     <span class="p">:</span> <span class="s1">&#39;application/x-netcdf&#39;</span><span class="p">,</span>
+<a name="line-462"></a>        <span class="s1">&#39;.nws&#39;</span>    <span class="p">:</span> <span class="s1">&#39;message/rfc822&#39;</span><span class="p">,</span>
+<a name="line-463"></a>        <span class="s1">&#39;.o&#39;</span>      <span class="p">:</span> <span class="s1">&#39;application/octet-stream&#39;</span><span class="p">,</span>
+<a name="line-464"></a>        <span class="s1">&#39;.obj&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/octet-stream&#39;</span><span class="p">,</span>
+<a name="line-465"></a>        <span class="s1">&#39;.oda&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/oda&#39;</span><span class="p">,</span>
+<a name="line-466"></a>        <span class="s1">&#39;.p12&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-pkcs12&#39;</span><span class="p">,</span>
+<a name="line-467"></a>        <span class="s1">&#39;.p7c&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/pkcs7-mime&#39;</span><span class="p">,</span>
+<a name="line-468"></a>        <span class="s1">&#39;.pbm&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/x-portable-bitmap&#39;</span><span class="p">,</span>
+<a name="line-469"></a>        <span class="s1">&#39;.pdf&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/pdf&#39;</span><span class="p">,</span>
+<a name="line-470"></a>        <span class="s1">&#39;.pfx&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-pkcs12&#39;</span><span class="p">,</span>
+<a name="line-471"></a>        <span class="s1">&#39;.pgm&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/x-portable-graymap&#39;</span><span class="p">,</span>
+<a name="line-472"></a>        <span class="s1">&#39;.pl&#39;</span>     <span class="p">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">,</span>
+<a name="line-473"></a>        <span class="s1">&#39;.png&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/png&#39;</span><span class="p">,</span>
+<a name="line-474"></a>        <span class="s1">&#39;.pnm&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/x-portable-anymap&#39;</span><span class="p">,</span>
+<a name="line-475"></a>        <span class="s1">&#39;.pot&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/vnd.ms-powerpoint&#39;</span><span class="p">,</span>
+<a name="line-476"></a>        <span class="s1">&#39;.ppa&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/vnd.ms-powerpoint&#39;</span><span class="p">,</span>
+<a name="line-477"></a>        <span class="s1">&#39;.ppm&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/x-portable-pixmap&#39;</span><span class="p">,</span>
+<a name="line-478"></a>        <span class="s1">&#39;.pps&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/vnd.ms-powerpoint&#39;</span><span class="p">,</span>
+<a name="line-479"></a>        <span class="s1">&#39;.ppt&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/vnd.ms-powerpoint&#39;</span><span class="p">,</span>
+<a name="line-480"></a>        <span class="s1">&#39;.ps&#39;</span>     <span class="p">:</span> <span class="s1">&#39;application/postscript&#39;</span><span class="p">,</span>
+<a name="line-481"></a>        <span class="s1">&#39;.pwz&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/vnd.ms-powerpoint&#39;</span><span class="p">,</span>
+<a name="line-482"></a>        <span class="s1">&#39;.py&#39;</span>     <span class="p">:</span> <span class="s1">&#39;text/x-python&#39;</span><span class="p">,</span>
+<a name="line-483"></a>        <span class="s1">&#39;.pyc&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-python-code&#39;</span><span class="p">,</span>
+<a name="line-484"></a>        <span class="s1">&#39;.pyo&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-python-code&#39;</span><span class="p">,</span>
+<a name="line-485"></a>        <span class="s1">&#39;.qt&#39;</span>     <span class="p">:</span> <span class="s1">&#39;video/quicktime&#39;</span><span class="p">,</span>
+<a name="line-486"></a>        <span class="s1">&#39;.ra&#39;</span>     <span class="p">:</span> <span class="s1">&#39;audio/x-pn-realaudio&#39;</span><span class="p">,</span>
+<a name="line-487"></a>        <span class="s1">&#39;.ram&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-pn-realaudio&#39;</span><span class="p">,</span>
+<a name="line-488"></a>        <span class="s1">&#39;.ras&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/x-cmu-raster&#39;</span><span class="p">,</span>
+<a name="line-489"></a>        <span class="s1">&#39;.rdf&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/xml&#39;</span><span class="p">,</span>
+<a name="line-490"></a>        <span class="s1">&#39;.rgb&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/x-rgb&#39;</span><span class="p">,</span>
+<a name="line-491"></a>        <span class="s1">&#39;.roff&#39;</span>   <span class="p">:</span> <span class="s1">&#39;application/x-troff&#39;</span><span class="p">,</span>
+<a name="line-492"></a>        <span class="s1">&#39;.rtx&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/richtext&#39;</span><span class="p">,</span>
+<a name="line-493"></a>        <span class="s1">&#39;.sgm&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/x-sgml&#39;</span><span class="p">,</span>
+<a name="line-494"></a>        <span class="s1">&#39;.sgml&#39;</span>   <span class="p">:</span> <span class="s1">&#39;text/x-sgml&#39;</span><span class="p">,</span>
+<a name="line-495"></a>        <span class="s1">&#39;.sh&#39;</span>     <span class="p">:</span> <span class="s1">&#39;application/x-sh&#39;</span><span class="p">,</span>
+<a name="line-496"></a>        <span class="s1">&#39;.shar&#39;</span>   <span class="p">:</span> <span class="s1">&#39;application/x-shar&#39;</span><span class="p">,</span>
+<a name="line-497"></a>        <span class="s1">&#39;.snd&#39;</span>    <span class="p">:</span> <span class="s1">&#39;audio/basic&#39;</span><span class="p">,</span>
+<a name="line-498"></a>        <span class="s1">&#39;.so&#39;</span>     <span class="p">:</span> <span class="s1">&#39;application/octet-stream&#39;</span><span class="p">,</span>
+<a name="line-499"></a>        <span class="s1">&#39;.src&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-wais-source&#39;</span><span class="p">,</span>
+<a name="line-500"></a>        <span class="s1">&#39;.sv4cpio&#39;</span><span class="p">:</span> <span class="s1">&#39;application/x-sv4cpio&#39;</span><span class="p">,</span>
+<a name="line-501"></a>        <span class="s1">&#39;.sv4crc&#39;</span> <span class="p">:</span> <span class="s1">&#39;application/x-sv4crc&#39;</span><span class="p">,</span>
+<a name="line-502"></a>        <span class="s1">&#39;.swf&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-shockwave-flash&#39;</span><span class="p">,</span>
+<a name="line-503"></a>        <span class="s1">&#39;.t&#39;</span>      <span class="p">:</span> <span class="s1">&#39;application/x-troff&#39;</span><span class="p">,</span>
+<a name="line-504"></a>        <span class="s1">&#39;.tar&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-tar&#39;</span><span class="p">,</span>
+<a name="line-505"></a>        <span class="s1">&#39;.tcl&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-tcl&#39;</span><span class="p">,</span>
+<a name="line-506"></a>        <span class="s1">&#39;.tex&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/x-tex&#39;</span><span class="p">,</span>
+<a name="line-507"></a>        <span class="s1">&#39;.texi&#39;</span>   <span class="p">:</span> <span class="s1">&#39;application/x-texinfo&#39;</span><span class="p">,</span>
+<a name="line-508"></a>        <span class="s1">&#39;.texinfo&#39;</span><span class="p">:</span> <span class="s1">&#39;application/x-texinfo&#39;</span><span class="p">,</span>
+<a name="line-509"></a>        <span class="s1">&#39;.tif&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/tiff&#39;</span><span class="p">,</span>
+<a name="line-510"></a>        <span class="s1">&#39;.tiff&#39;</span>   <span class="p">:</span> <span class="s1">&#39;image/tiff&#39;</span><span class="p">,</span>
+<a name="line-511"></a>        <span class="s1">&#39;.tr&#39;</span>     <span class="p">:</span> <span class="s1">&#39;application/x-troff&#39;</span><span class="p">,</span>
+<a name="line-512"></a>        <span class="s1">&#39;.tsv&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/tab-separated-values&#39;</span><span class="p">,</span>
+<a name="line-513"></a>        <span class="s1">&#39;.txt&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">,</span>
+<a name="line-514"></a>        <span class="s1">&#39;.ustar&#39;</span>  <span class="p">:</span> <span class="s1">&#39;application/x-ustar&#39;</span><span class="p">,</span>
+<a name="line-515"></a>        <span class="s1">&#39;.vcf&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/x-vcard&#39;</span><span class="p">,</span>
+<a name="line-516"></a>        <span class="s1">&#39;.wav&#39;</span>    <span class="p">:</span> <span class="s1">&#39;audio/x-wav&#39;</span><span class="p">,</span>
+<a name="line-517"></a>        <span class="s1">&#39;.wiz&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/msword&#39;</span><span class="p">,</span>
+<a name="line-518"></a>        <span class="s1">&#39;.wsdl&#39;</span>   <span class="p">:</span> <span class="s1">&#39;application/xml&#39;</span><span class="p">,</span>
+<a name="line-519"></a>        <span class="s1">&#39;.xbm&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/x-xbitmap&#39;</span><span class="p">,</span>
+<a name="line-520"></a>        <span class="s1">&#39;.xlb&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/vnd.ms-excel&#39;</span><span class="p">,</span>
+<a name="line-521"></a>        <span class="c1"># Duplicates :(</span>
+<a name="line-522"></a>        <span class="s1">&#39;.xls&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/excel&#39;</span><span class="p">,</span>
+<a name="line-523"></a>        <span class="s1">&#39;.xls&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/vnd.ms-excel&#39;</span><span class="p">,</span>
+<a name="line-524"></a>        <span class="s1">&#39;.xml&#39;</span>    <span class="p">:</span> <span class="s1">&#39;text/xml&#39;</span><span class="p">,</span>
+<a name="line-525"></a>        <span class="s1">&#39;.xpdl&#39;</span>   <span class="p">:</span> <span class="s1">&#39;application/xml&#39;</span><span class="p">,</span>
+<a name="line-526"></a>        <span class="s1">&#39;.xpm&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/x-xpixmap&#39;</span><span class="p">,</span>
+<a name="line-527"></a>        <span class="s1">&#39;.xsl&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/xml&#39;</span><span class="p">,</span>
+<a name="line-528"></a>        <span class="s1">&#39;.xwd&#39;</span>    <span class="p">:</span> <span class="s1">&#39;image/x-xwindowdump&#39;</span><span class="p">,</span>
+<a name="line-529"></a>        <span class="s1">&#39;.zip&#39;</span>    <span class="p">:</span> <span class="s1">&#39;application/zip&#39;</span><span class="p">,</span>
+<a name="line-530"></a>        <span class="p">}</span>
+<a name="line-531"></a>
+<a name="line-532"></a>    <span class="c1"># These are non-standard types, commonly found in the wild.  They will</span>
+<a name="line-533"></a>    <span class="c1"># only match if strict=0 flag is given to the API methods.</span>
+<a name="line-534"></a>
+<a name="line-535"></a>    <span class="c1"># Please sort these too</span>
+<a name="line-536"></a>    <span class="n">common_types</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-537"></a>        <span class="s1">&#39;.jpg&#39;</span> <span class="p">:</span> <span class="s1">&#39;image/jpg&#39;</span><span class="p">,</span>
+<a name="line-538"></a>        <span class="s1">&#39;.mid&#39;</span> <span class="p">:</span> <span class="s1">&#39;audio/midi&#39;</span><span class="p">,</span>
+<a name="line-539"></a>        <span class="s1">&#39;.midi&#39;</span><span class="p">:</span> <span class="s1">&#39;audio/midi&#39;</span><span class="p">,</span>
+<a name="line-540"></a>        <span class="s1">&#39;.pct&#39;</span> <span class="p">:</span> <span class="s1">&#39;image/pict&#39;</span><span class="p">,</span>
+<a name="line-541"></a>        <span class="s1">&#39;.pic&#39;</span> <span class="p">:</span> <span class="s1">&#39;image/pict&#39;</span><span class="p">,</span>
+<a name="line-542"></a>        <span class="s1">&#39;.pict&#39;</span><span class="p">:</span> <span class="s1">&#39;image/pict&#39;</span><span class="p">,</span>
+<a name="line-543"></a>        <span class="s1">&#39;.rtf&#39;</span> <span class="p">:</span> <span class="s1">&#39;application/rtf&#39;</span><span class="p">,</span>
+<a name="line-544"></a>        <span class="s1">&#39;.xul&#39;</span> <span class="p">:</span> <span class="s1">&#39;text/xul&#39;</span>
+<a name="line-545"></a>        <span class="p">}</span>
+<a name="line-546"></a>
+<a name="line-547"></a>
+<a name="line-548"></a><span class="n"><a href="/./Lib/mimetypes.py.html#line-378">_default_mime_types</a></span><span class="p">()</span>
+<a name="line-549"></a>
+<a name="line-550"></a>
+<a name="line-551"></a><span class="k">if</span> <span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="line-552"></a>    <span class="kn">import</span> <span class="nn"><a href="/./Demo/pdist/cmdfw.py.html#line-41">getopt</a></span>
+<a name="line-553"></a>
+<a name="line-554"></a>    <span class="n"><a href="/./Lib/unittest/main.py.html#line-67">USAGE</a></span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<a name="line-555"></a><span class="s2">Usage: mimetypes.py [options] type</span>
+<a name="line-556"></a>
+<a name="line-557"></a><span class="s2">Options:</span>
+<a name="line-558"></a><span class="s2">    --help / -h       -- print this message and exit</span>
+<a name="line-559"></a><span class="s2">    --lenient / -l    -- additionally search of some common, but non-standard</span>
+<a name="line-560"></a><span class="s2">                         types.</span>
+<a name="line-561"></a><span class="s2">    --extension / -e  -- guess extension instead of type</span>
+<a name="line-562"></a>
+<a name="line-563"></a><span class="s2">More than one type argument may be given.</span>
+<a name="line-564"></a><span class="s2">&quot;&quot;&quot;</span>
+<a name="line-565"></a>
+<a name="line-566"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span><span class="p">(</span><span class="n"><a href="/./Include/import.h.html#line-59">code</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+<a name="line-567"></a>        <span class="k">print</span> <span class="n"><a href="/./Lib/unittest/main.py.html#line-67">USAGE</a></span>
+<a name="line-568"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="p">:</span> <span class="k">print</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span>
+<a name="line-569"></a>        <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/argparse.py.html#line-2359">exit</a></span><span class="p">(</span><span class="n"><a href="/./Include/import.h.html#line-59">code</a></span><span class="p">)</span>
+<a name="line-570"></a>
+<a name="line-571"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="line-572"></a>        <span class="n">opts</span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-41">getopt</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-41">getopt</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="s1">&#39;hle&#39;</span><span class="p">,</span>
+<a name="line-573"></a>                                   <span class="p">[</span><span class="s1">&#39;help&#39;</span><span class="p">,</span> <span class="s1">&#39;lenient&#39;</span><span class="p">,</span> <span class="s1">&#39;extension&#39;</span><span class="p">])</span>
+<a name="line-574"></a>    <span class="k">except</span> <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-41">getopt</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-9">error</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="p">:</span>
+<a name="line-575"></a>        <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="p">)</span>
+<a name="line-576"></a>
+<a name="line-577"></a>    <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-578"></a>    <span class="n"><a href="/./Lib/distutils/tests/setuptools_extension.py.html#line-47">extension</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-579"></a>    <span class="k">for</span> <span class="n"><a href="/./Lib/getopt.py.html#line-39">opt</a></span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-365">arg</a></span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
+<a name="line-580"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/getopt.py.html#line-39">opt</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-h&#39;</span><span class="p">,</span> <span class="s1">&#39;--help&#39;</span><span class="p">):</span>
+<a name="line-581"></a>            <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-582"></a>        <span class="k">elif</span> <span class="n"><a href="/./Lib/getopt.py.html#line-39">opt</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-l&#39;</span><span class="p">,</span> <span class="s1">&#39;--lenient&#39;</span><span class="p">):</span>
+<a name="line-583"></a>            <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-584"></a>        <span class="k">elif</span> <span class="n"><a href="/./Lib/getopt.py.html#line-39">opt</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-e&#39;</span><span class="p">,</span> <span class="s1">&#39;--extension&#39;</span><span class="p">):</span>
+<a name="line-585"></a>            <span class="n"><a href="/./Lib/distutils/tests/setuptools_extension.py.html#line-47">extension</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-586"></a>    <span class="k">for</span> <span class="n">gtype</span> <span class="ow">in</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">:</span>
+<a name="line-587"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/distutils/tests/setuptools_extension.py.html#line-47">extension</a></span><span class="p">:</span>
+<a name="line-588"></a>            <span class="n">guess</span> <span class="o">=</span> <span class="n"><a href="/./Lib/mimetypes.py.html#line-176">guess_extension</a></span><span class="p">(</span><span class="n">gtype</span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-589"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">guess</span><span class="p">:</span> <span class="k">print</span> <span class="s2">&quot;I don&#39;t know anything about type&quot;</span><span class="p">,</span> <span class="n">gtype</span>
+<a name="line-590"></a>            <span class="k">else</span><span class="p">:</span> <span class="k">print</span> <span class="n">guess</span>
+<a name="line-591"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-592"></a>            <span class="n">guess</span><span class="p">,</span> <span class="n"><a href="/./Include/pyerrors.h.html#line-35">encoding</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/SimpleHTTPServer.py.html#line-194">guess_type</a></span><span class="p">(</span><span class="n">gtype</span><span class="p">,</span> <span class="n"><a href="/./Lib/httplib.py.html#line-734">strict</a></span><span class="p">)</span>
+<a name="line-593"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">guess</span><span class="p">:</span> <span class="k">print</span> <span class="s2">&quot;I don&#39;t know anything about type&quot;</span><span class="p">,</span> <span class="n">gtype</span>
+<a name="line-594"></a>            <span class="k">else</span><span class="p">:</span> <span class="k">print</span> <span class="s1">&#39;type:&#39;</span><span class="p">,</span> <span class="n">guess</span><span class="p">,</span> <span class="s1">&#39;encoding:&#39;</span><span class="p">,</span> <span class="n"><a href="/./Include/pyerrors.h.html#line-35">encoding</a></span>
+</pre></div>
+</td></tr></table></body>
+</html>

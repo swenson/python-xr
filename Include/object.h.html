@@ -1,0 +1,2110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">   1</a>
+<a href="#line-2">   2</a>
+<a href="#line-3">   3</a>
+<a href="#line-4">   4</a>
+<a href="#line-5">   5</a>
+<a href="#line-6">   6</a>
+<a href="#line-7">   7</a>
+<a href="#line-8">   8</a>
+<a href="#line-9">   9</a>
+<a href="#line-10">  10</a>
+<a href="#line-11">  11</a>
+<a href="#line-12">  12</a>
+<a href="#line-13">  13</a>
+<a href="#line-14">  14</a>
+<a href="#line-15">  15</a>
+<a href="#line-16">  16</a>
+<a href="#line-17">  17</a>
+<a href="#line-18">  18</a>
+<a href="#line-19">  19</a>
+<a href="#line-20">  20</a>
+<a href="#line-21">  21</a>
+<a href="#line-22">  22</a>
+<a href="#line-23">  23</a>
+<a href="#line-24">  24</a>
+<a href="#line-25">  25</a>
+<a href="#line-26">  26</a>
+<a href="#line-27">  27</a>
+<a href="#line-28">  28</a>
+<a href="#line-29">  29</a>
+<a href="#line-30">  30</a>
+<a href="#line-31">  31</a>
+<a href="#line-32">  32</a>
+<a href="#line-33">  33</a>
+<a href="#line-34">  34</a>
+<a href="#line-35">  35</a>
+<a href="#line-36">  36</a>
+<a href="#line-37">  37</a>
+<a href="#line-38">  38</a>
+<a href="#line-39">  39</a>
+<a href="#line-40">  40</a>
+<a href="#line-41">  41</a>
+<a href="#line-42">  42</a>
+<a href="#line-43">  43</a>
+<a href="#line-44">  44</a>
+<a href="#line-45">  45</a>
+<a href="#line-46">  46</a>
+<a href="#line-47">  47</a>
+<a href="#line-48">  48</a>
+<a href="#line-49">  49</a>
+<a href="#line-50">  50</a>
+<a href="#line-51">  51</a>
+<a href="#line-52">  52</a>
+<a href="#line-53">  53</a>
+<a href="#line-54">  54</a>
+<a href="#line-55">  55</a>
+<a href="#line-56">  56</a>
+<a href="#line-57">  57</a>
+<a href="#line-58">  58</a>
+<a href="#line-59">  59</a>
+<a href="#line-60">  60</a>
+<a href="#line-61">  61</a>
+<a href="#line-62">  62</a>
+<a href="#line-63">  63</a>
+<a href="#line-64">  64</a>
+<a href="#line-65">  65</a>
+<a href="#line-66">  66</a>
+<a href="#line-67">  67</a>
+<a href="#line-68">  68</a>
+<a href="#line-69">  69</a>
+<a href="#line-70">  70</a>
+<a href="#line-71">  71</a>
+<a href="#line-72">  72</a>
+<a href="#line-73">  73</a>
+<a href="#line-74">  74</a>
+<a href="#line-75">  75</a>
+<a href="#line-76">  76</a>
+<a href="#line-77">  77</a>
+<a href="#line-78">  78</a>
+<a href="#line-79">  79</a>
+<a href="#line-80">  80</a>
+<a href="#line-81">  81</a>
+<a href="#line-82">  82</a>
+<a href="#line-83">  83</a>
+<a href="#line-84">  84</a>
+<a href="#line-85">  85</a>
+<a href="#line-86">  86</a>
+<a href="#line-87">  87</a>
+<a href="#line-88">  88</a>
+<a href="#line-89">  89</a>
+<a href="#line-90">  90</a>
+<a href="#line-91">  91</a>
+<a href="#line-92">  92</a>
+<a href="#line-93">  93</a>
+<a href="#line-94">  94</a>
+<a href="#line-95">  95</a>
+<a href="#line-96">  96</a>
+<a href="#line-97">  97</a>
+<a href="#line-98">  98</a>
+<a href="#line-99">  99</a>
+<a href="#line-100"> 100</a>
+<a href="#line-101"> 101</a>
+<a href="#line-102"> 102</a>
+<a href="#line-103"> 103</a>
+<a href="#line-104"> 104</a>
+<a href="#line-105"> 105</a>
+<a href="#line-106"> 106</a>
+<a href="#line-107"> 107</a>
+<a href="#line-108"> 108</a>
+<a href="#line-109"> 109</a>
+<a href="#line-110"> 110</a>
+<a href="#line-111"> 111</a>
+<a href="#line-112"> 112</a>
+<a href="#line-113"> 113</a>
+<a href="#line-114"> 114</a>
+<a href="#line-115"> 115</a>
+<a href="#line-116"> 116</a>
+<a href="#line-117"> 117</a>
+<a href="#line-118"> 118</a>
+<a href="#line-119"> 119</a>
+<a href="#line-120"> 120</a>
+<a href="#line-121"> 121</a>
+<a href="#line-122"> 122</a>
+<a href="#line-123"> 123</a>
+<a href="#line-124"> 124</a>
+<a href="#line-125"> 125</a>
+<a href="#line-126"> 126</a>
+<a href="#line-127"> 127</a>
+<a href="#line-128"> 128</a>
+<a href="#line-129"> 129</a>
+<a href="#line-130"> 130</a>
+<a href="#line-131"> 131</a>
+<a href="#line-132"> 132</a>
+<a href="#line-133"> 133</a>
+<a href="#line-134"> 134</a>
+<a href="#line-135"> 135</a>
+<a href="#line-136"> 136</a>
+<a href="#line-137"> 137</a>
+<a href="#line-138"> 138</a>
+<a href="#line-139"> 139</a>
+<a href="#line-140"> 140</a>
+<a href="#line-141"> 141</a>
+<a href="#line-142"> 142</a>
+<a href="#line-143"> 143</a>
+<a href="#line-144"> 144</a>
+<a href="#line-145"> 145</a>
+<a href="#line-146"> 146</a>
+<a href="#line-147"> 147</a>
+<a href="#line-148"> 148</a>
+<a href="#line-149"> 149</a>
+<a href="#line-150"> 150</a>
+<a href="#line-151"> 151</a>
+<a href="#line-152"> 152</a>
+<a href="#line-153"> 153</a>
+<a href="#line-154"> 154</a>
+<a href="#line-155"> 155</a>
+<a href="#line-156"> 156</a>
+<a href="#line-157"> 157</a>
+<a href="#line-158"> 158</a>
+<a href="#line-159"> 159</a>
+<a href="#line-160"> 160</a>
+<a href="#line-161"> 161</a>
+<a href="#line-162"> 162</a>
+<a href="#line-163"> 163</a>
+<a href="#line-164"> 164</a>
+<a href="#line-165"> 165</a>
+<a href="#line-166"> 166</a>
+<a href="#line-167"> 167</a>
+<a href="#line-168"> 168</a>
+<a href="#line-169"> 169</a>
+<a href="#line-170"> 170</a>
+<a href="#line-171"> 171</a>
+<a href="#line-172"> 172</a>
+<a href="#line-173"> 173</a>
+<a href="#line-174"> 174</a>
+<a href="#line-175"> 175</a>
+<a href="#line-176"> 176</a>
+<a href="#line-177"> 177</a>
+<a href="#line-178"> 178</a>
+<a href="#line-179"> 179</a>
+<a href="#line-180"> 180</a>
+<a href="#line-181"> 181</a>
+<a href="#line-182"> 182</a>
+<a href="#line-183"> 183</a>
+<a href="#line-184"> 184</a>
+<a href="#line-185"> 185</a>
+<a href="#line-186"> 186</a>
+<a href="#line-187"> 187</a>
+<a href="#line-188"> 188</a>
+<a href="#line-189"> 189</a>
+<a href="#line-190"> 190</a>
+<a href="#line-191"> 191</a>
+<a href="#line-192"> 192</a>
+<a href="#line-193"> 193</a>
+<a href="#line-194"> 194</a>
+<a href="#line-195"> 195</a>
+<a href="#line-196"> 196</a>
+<a href="#line-197"> 197</a>
+<a href="#line-198"> 198</a>
+<a href="#line-199"> 199</a>
+<a href="#line-200"> 200</a>
+<a href="#line-201"> 201</a>
+<a href="#line-202"> 202</a>
+<a href="#line-203"> 203</a>
+<a href="#line-204"> 204</a>
+<a href="#line-205"> 205</a>
+<a href="#line-206"> 206</a>
+<a href="#line-207"> 207</a>
+<a href="#line-208"> 208</a>
+<a href="#line-209"> 209</a>
+<a href="#line-210"> 210</a>
+<a href="#line-211"> 211</a>
+<a href="#line-212"> 212</a>
+<a href="#line-213"> 213</a>
+<a href="#line-214"> 214</a>
+<a href="#line-215"> 215</a>
+<a href="#line-216"> 216</a>
+<a href="#line-217"> 217</a>
+<a href="#line-218"> 218</a>
+<a href="#line-219"> 219</a>
+<a href="#line-220"> 220</a>
+<a href="#line-221"> 221</a>
+<a href="#line-222"> 222</a>
+<a href="#line-223"> 223</a>
+<a href="#line-224"> 224</a>
+<a href="#line-225"> 225</a>
+<a href="#line-226"> 226</a>
+<a href="#line-227"> 227</a>
+<a href="#line-228"> 228</a>
+<a href="#line-229"> 229</a>
+<a href="#line-230"> 230</a>
+<a href="#line-231"> 231</a>
+<a href="#line-232"> 232</a>
+<a href="#line-233"> 233</a>
+<a href="#line-234"> 234</a>
+<a href="#line-235"> 235</a>
+<a href="#line-236"> 236</a>
+<a href="#line-237"> 237</a>
+<a href="#line-238"> 238</a>
+<a href="#line-239"> 239</a>
+<a href="#line-240"> 240</a>
+<a href="#line-241"> 241</a>
+<a href="#line-242"> 242</a>
+<a href="#line-243"> 243</a>
+<a href="#line-244"> 244</a>
+<a href="#line-245"> 245</a>
+<a href="#line-246"> 246</a>
+<a href="#line-247"> 247</a>
+<a href="#line-248"> 248</a>
+<a href="#line-249"> 249</a>
+<a href="#line-250"> 250</a>
+<a href="#line-251"> 251</a>
+<a href="#line-252"> 252</a>
+<a href="#line-253"> 253</a>
+<a href="#line-254"> 254</a>
+<a href="#line-255"> 255</a>
+<a href="#line-256"> 256</a>
+<a href="#line-257"> 257</a>
+<a href="#line-258"> 258</a>
+<a href="#line-259"> 259</a>
+<a href="#line-260"> 260</a>
+<a href="#line-261"> 261</a>
+<a href="#line-262"> 262</a>
+<a href="#line-263"> 263</a>
+<a href="#line-264"> 264</a>
+<a href="#line-265"> 265</a>
+<a href="#line-266"> 266</a>
+<a href="#line-267"> 267</a>
+<a href="#line-268"> 268</a>
+<a href="#line-269"> 269</a>
+<a href="#line-270"> 270</a>
+<a href="#line-271"> 271</a>
+<a href="#line-272"> 272</a>
+<a href="#line-273"> 273</a>
+<a href="#line-274"> 274</a>
+<a href="#line-275"> 275</a>
+<a href="#line-276"> 276</a>
+<a href="#line-277"> 277</a>
+<a href="#line-278"> 278</a>
+<a href="#line-279"> 279</a>
+<a href="#line-280"> 280</a>
+<a href="#line-281"> 281</a>
+<a href="#line-282"> 282</a>
+<a href="#line-283"> 283</a>
+<a href="#line-284"> 284</a>
+<a href="#line-285"> 285</a>
+<a href="#line-286"> 286</a>
+<a href="#line-287"> 287</a>
+<a href="#line-288"> 288</a>
+<a href="#line-289"> 289</a>
+<a href="#line-290"> 290</a>
+<a href="#line-291"> 291</a>
+<a href="#line-292"> 292</a>
+<a href="#line-293"> 293</a>
+<a href="#line-294"> 294</a>
+<a href="#line-295"> 295</a>
+<a href="#line-296"> 296</a>
+<a href="#line-297"> 297</a>
+<a href="#line-298"> 298</a>
+<a href="#line-299"> 299</a>
+<a href="#line-300"> 300</a>
+<a href="#line-301"> 301</a>
+<a href="#line-302"> 302</a>
+<a href="#line-303"> 303</a>
+<a href="#line-304"> 304</a>
+<a href="#line-305"> 305</a>
+<a href="#line-306"> 306</a>
+<a href="#line-307"> 307</a>
+<a href="#line-308"> 308</a>
+<a href="#line-309"> 309</a>
+<a href="#line-310"> 310</a>
+<a href="#line-311"> 311</a>
+<a href="#line-312"> 312</a>
+<a href="#line-313"> 313</a>
+<a href="#line-314"> 314</a>
+<a href="#line-315"> 315</a>
+<a href="#line-316"> 316</a>
+<a href="#line-317"> 317</a>
+<a href="#line-318"> 318</a>
+<a href="#line-319"> 319</a>
+<a href="#line-320"> 320</a>
+<a href="#line-321"> 321</a>
+<a href="#line-322"> 322</a>
+<a href="#line-323"> 323</a>
+<a href="#line-324"> 324</a>
+<a href="#line-325"> 325</a>
+<a href="#line-326"> 326</a>
+<a href="#line-327"> 327</a>
+<a href="#line-328"> 328</a>
+<a href="#line-329"> 329</a>
+<a href="#line-330"> 330</a>
+<a href="#line-331"> 331</a>
+<a href="#line-332"> 332</a>
+<a href="#line-333"> 333</a>
+<a href="#line-334"> 334</a>
+<a href="#line-335"> 335</a>
+<a href="#line-336"> 336</a>
+<a href="#line-337"> 337</a>
+<a href="#line-338"> 338</a>
+<a href="#line-339"> 339</a>
+<a href="#line-340"> 340</a>
+<a href="#line-341"> 341</a>
+<a href="#line-342"> 342</a>
+<a href="#line-343"> 343</a>
+<a href="#line-344"> 344</a>
+<a href="#line-345"> 345</a>
+<a href="#line-346"> 346</a>
+<a href="#line-347"> 347</a>
+<a href="#line-348"> 348</a>
+<a href="#line-349"> 349</a>
+<a href="#line-350"> 350</a>
+<a href="#line-351"> 351</a>
+<a href="#line-352"> 352</a>
+<a href="#line-353"> 353</a>
+<a href="#line-354"> 354</a>
+<a href="#line-355"> 355</a>
+<a href="#line-356"> 356</a>
+<a href="#line-357"> 357</a>
+<a href="#line-358"> 358</a>
+<a href="#line-359"> 359</a>
+<a href="#line-360"> 360</a>
+<a href="#line-361"> 361</a>
+<a href="#line-362"> 362</a>
+<a href="#line-363"> 363</a>
+<a href="#line-364"> 364</a>
+<a href="#line-365"> 365</a>
+<a href="#line-366"> 366</a>
+<a href="#line-367"> 367</a>
+<a href="#line-368"> 368</a>
+<a href="#line-369"> 369</a>
+<a href="#line-370"> 370</a>
+<a href="#line-371"> 371</a>
+<a href="#line-372"> 372</a>
+<a href="#line-373"> 373</a>
+<a href="#line-374"> 374</a>
+<a href="#line-375"> 375</a>
+<a href="#line-376"> 376</a>
+<a href="#line-377"> 377</a>
+<a href="#line-378"> 378</a>
+<a href="#line-379"> 379</a>
+<a href="#line-380"> 380</a>
+<a href="#line-381"> 381</a>
+<a href="#line-382"> 382</a>
+<a href="#line-383"> 383</a>
+<a href="#line-384"> 384</a>
+<a href="#line-385"> 385</a>
+<a href="#line-386"> 386</a>
+<a href="#line-387"> 387</a>
+<a href="#line-388"> 388</a>
+<a href="#line-389"> 389</a>
+<a href="#line-390"> 390</a>
+<a href="#line-391"> 391</a>
+<a href="#line-392"> 392</a>
+<a href="#line-393"> 393</a>
+<a href="#line-394"> 394</a>
+<a href="#line-395"> 395</a>
+<a href="#line-396"> 396</a>
+<a href="#line-397"> 397</a>
+<a href="#line-398"> 398</a>
+<a href="#line-399"> 399</a>
+<a href="#line-400"> 400</a>
+<a href="#line-401"> 401</a>
+<a href="#line-402"> 402</a>
+<a href="#line-403"> 403</a>
+<a href="#line-404"> 404</a>
+<a href="#line-405"> 405</a>
+<a href="#line-406"> 406</a>
+<a href="#line-407"> 407</a>
+<a href="#line-408"> 408</a>
+<a href="#line-409"> 409</a>
+<a href="#line-410"> 410</a>
+<a href="#line-411"> 411</a>
+<a href="#line-412"> 412</a>
+<a href="#line-413"> 413</a>
+<a href="#line-414"> 414</a>
+<a href="#line-415"> 415</a>
+<a href="#line-416"> 416</a>
+<a href="#line-417"> 417</a>
+<a href="#line-418"> 418</a>
+<a href="#line-419"> 419</a>
+<a href="#line-420"> 420</a>
+<a href="#line-421"> 421</a>
+<a href="#line-422"> 422</a>
+<a href="#line-423"> 423</a>
+<a href="#line-424"> 424</a>
+<a href="#line-425"> 425</a>
+<a href="#line-426"> 426</a>
+<a href="#line-427"> 427</a>
+<a href="#line-428"> 428</a>
+<a href="#line-429"> 429</a>
+<a href="#line-430"> 430</a>
+<a href="#line-431"> 431</a>
+<a href="#line-432"> 432</a>
+<a href="#line-433"> 433</a>
+<a href="#line-434"> 434</a>
+<a href="#line-435"> 435</a>
+<a href="#line-436"> 436</a>
+<a href="#line-437"> 437</a>
+<a href="#line-438"> 438</a>
+<a href="#line-439"> 439</a>
+<a href="#line-440"> 440</a>
+<a href="#line-441"> 441</a>
+<a href="#line-442"> 442</a>
+<a href="#line-443"> 443</a>
+<a href="#line-444"> 444</a>
+<a href="#line-445"> 445</a>
+<a href="#line-446"> 446</a>
+<a href="#line-447"> 447</a>
+<a href="#line-448"> 448</a>
+<a href="#line-449"> 449</a>
+<a href="#line-450"> 450</a>
+<a href="#line-451"> 451</a>
+<a href="#line-452"> 452</a>
+<a href="#line-453"> 453</a>
+<a href="#line-454"> 454</a>
+<a href="#line-455"> 455</a>
+<a href="#line-456"> 456</a>
+<a href="#line-457"> 457</a>
+<a href="#line-458"> 458</a>
+<a href="#line-459"> 459</a>
+<a href="#line-460"> 460</a>
+<a href="#line-461"> 461</a>
+<a href="#line-462"> 462</a>
+<a href="#line-463"> 463</a>
+<a href="#line-464"> 464</a>
+<a href="#line-465"> 465</a>
+<a href="#line-466"> 466</a>
+<a href="#line-467"> 467</a>
+<a href="#line-468"> 468</a>
+<a href="#line-469"> 469</a>
+<a href="#line-470"> 470</a>
+<a href="#line-471"> 471</a>
+<a href="#line-472"> 472</a>
+<a href="#line-473"> 473</a>
+<a href="#line-474"> 474</a>
+<a href="#line-475"> 475</a>
+<a href="#line-476"> 476</a>
+<a href="#line-477"> 477</a>
+<a href="#line-478"> 478</a>
+<a href="#line-479"> 479</a>
+<a href="#line-480"> 480</a>
+<a href="#line-481"> 481</a>
+<a href="#line-482"> 482</a>
+<a href="#line-483"> 483</a>
+<a href="#line-484"> 484</a>
+<a href="#line-485"> 485</a>
+<a href="#line-486"> 486</a>
+<a href="#line-487"> 487</a>
+<a href="#line-488"> 488</a>
+<a href="#line-489"> 489</a>
+<a href="#line-490"> 490</a>
+<a href="#line-491"> 491</a>
+<a href="#line-492"> 492</a>
+<a href="#line-493"> 493</a>
+<a href="#line-494"> 494</a>
+<a href="#line-495"> 495</a>
+<a href="#line-496"> 496</a>
+<a href="#line-497"> 497</a>
+<a href="#line-498"> 498</a>
+<a href="#line-499"> 499</a>
+<a href="#line-500"> 500</a>
+<a href="#line-501"> 501</a>
+<a href="#line-502"> 502</a>
+<a href="#line-503"> 503</a>
+<a href="#line-504"> 504</a>
+<a href="#line-505"> 505</a>
+<a href="#line-506"> 506</a>
+<a href="#line-507"> 507</a>
+<a href="#line-508"> 508</a>
+<a href="#line-509"> 509</a>
+<a href="#line-510"> 510</a>
+<a href="#line-511"> 511</a>
+<a href="#line-512"> 512</a>
+<a href="#line-513"> 513</a>
+<a href="#line-514"> 514</a>
+<a href="#line-515"> 515</a>
+<a href="#line-516"> 516</a>
+<a href="#line-517"> 517</a>
+<a href="#line-518"> 518</a>
+<a href="#line-519"> 519</a>
+<a href="#line-520"> 520</a>
+<a href="#line-521"> 521</a>
+<a href="#line-522"> 522</a>
+<a href="#line-523"> 523</a>
+<a href="#line-524"> 524</a>
+<a href="#line-525"> 525</a>
+<a href="#line-526"> 526</a>
+<a href="#line-527"> 527</a>
+<a href="#line-528"> 528</a>
+<a href="#line-529"> 529</a>
+<a href="#line-530"> 530</a>
+<a href="#line-531"> 531</a>
+<a href="#line-532"> 532</a>
+<a href="#line-533"> 533</a>
+<a href="#line-534"> 534</a>
+<a href="#line-535"> 535</a>
+<a href="#line-536"> 536</a>
+<a href="#line-537"> 537</a>
+<a href="#line-538"> 538</a>
+<a href="#line-539"> 539</a>
+<a href="#line-540"> 540</a>
+<a href="#line-541"> 541</a>
+<a href="#line-542"> 542</a>
+<a href="#line-543"> 543</a>
+<a href="#line-544"> 544</a>
+<a href="#line-545"> 545</a>
+<a href="#line-546"> 546</a>
+<a href="#line-547"> 547</a>
+<a href="#line-548"> 548</a>
+<a href="#line-549"> 549</a>
+<a href="#line-550"> 550</a>
+<a href="#line-551"> 551</a>
+<a href="#line-552"> 552</a>
+<a href="#line-553"> 553</a>
+<a href="#line-554"> 554</a>
+<a href="#line-555"> 555</a>
+<a href="#line-556"> 556</a>
+<a href="#line-557"> 557</a>
+<a href="#line-558"> 558</a>
+<a href="#line-559"> 559</a>
+<a href="#line-560"> 560</a>
+<a href="#line-561"> 561</a>
+<a href="#line-562"> 562</a>
+<a href="#line-563"> 563</a>
+<a href="#line-564"> 564</a>
+<a href="#line-565"> 565</a>
+<a href="#line-566"> 566</a>
+<a href="#line-567"> 567</a>
+<a href="#line-568"> 568</a>
+<a href="#line-569"> 569</a>
+<a href="#line-570"> 570</a>
+<a href="#line-571"> 571</a>
+<a href="#line-572"> 572</a>
+<a href="#line-573"> 573</a>
+<a href="#line-574"> 574</a>
+<a href="#line-575"> 575</a>
+<a href="#line-576"> 576</a>
+<a href="#line-577"> 577</a>
+<a href="#line-578"> 578</a>
+<a href="#line-579"> 579</a>
+<a href="#line-580"> 580</a>
+<a href="#line-581"> 581</a>
+<a href="#line-582"> 582</a>
+<a href="#line-583"> 583</a>
+<a href="#line-584"> 584</a>
+<a href="#line-585"> 585</a>
+<a href="#line-586"> 586</a>
+<a href="#line-587"> 587</a>
+<a href="#line-588"> 588</a>
+<a href="#line-589"> 589</a>
+<a href="#line-590"> 590</a>
+<a href="#line-591"> 591</a>
+<a href="#line-592"> 592</a>
+<a href="#line-593"> 593</a>
+<a href="#line-594"> 594</a>
+<a href="#line-595"> 595</a>
+<a href="#line-596"> 596</a>
+<a href="#line-597"> 597</a>
+<a href="#line-598"> 598</a>
+<a href="#line-599"> 599</a>
+<a href="#line-600"> 600</a>
+<a href="#line-601"> 601</a>
+<a href="#line-602"> 602</a>
+<a href="#line-603"> 603</a>
+<a href="#line-604"> 604</a>
+<a href="#line-605"> 605</a>
+<a href="#line-606"> 606</a>
+<a href="#line-607"> 607</a>
+<a href="#line-608"> 608</a>
+<a href="#line-609"> 609</a>
+<a href="#line-610"> 610</a>
+<a href="#line-611"> 611</a>
+<a href="#line-612"> 612</a>
+<a href="#line-613"> 613</a>
+<a href="#line-614"> 614</a>
+<a href="#line-615"> 615</a>
+<a href="#line-616"> 616</a>
+<a href="#line-617"> 617</a>
+<a href="#line-618"> 618</a>
+<a href="#line-619"> 619</a>
+<a href="#line-620"> 620</a>
+<a href="#line-621"> 621</a>
+<a href="#line-622"> 622</a>
+<a href="#line-623"> 623</a>
+<a href="#line-624"> 624</a>
+<a href="#line-625"> 625</a>
+<a href="#line-626"> 626</a>
+<a href="#line-627"> 627</a>
+<a href="#line-628"> 628</a>
+<a href="#line-629"> 629</a>
+<a href="#line-630"> 630</a>
+<a href="#line-631"> 631</a>
+<a href="#line-632"> 632</a>
+<a href="#line-633"> 633</a>
+<a href="#line-634"> 634</a>
+<a href="#line-635"> 635</a>
+<a href="#line-636"> 636</a>
+<a href="#line-637"> 637</a>
+<a href="#line-638"> 638</a>
+<a href="#line-639"> 639</a>
+<a href="#line-640"> 640</a>
+<a href="#line-641"> 641</a>
+<a href="#line-642"> 642</a>
+<a href="#line-643"> 643</a>
+<a href="#line-644"> 644</a>
+<a href="#line-645"> 645</a>
+<a href="#line-646"> 646</a>
+<a href="#line-647"> 647</a>
+<a href="#line-648"> 648</a>
+<a href="#line-649"> 649</a>
+<a href="#line-650"> 650</a>
+<a href="#line-651"> 651</a>
+<a href="#line-652"> 652</a>
+<a href="#line-653"> 653</a>
+<a href="#line-654"> 654</a>
+<a href="#line-655"> 655</a>
+<a href="#line-656"> 656</a>
+<a href="#line-657"> 657</a>
+<a href="#line-658"> 658</a>
+<a href="#line-659"> 659</a>
+<a href="#line-660"> 660</a>
+<a href="#line-661"> 661</a>
+<a href="#line-662"> 662</a>
+<a href="#line-663"> 663</a>
+<a href="#line-664"> 664</a>
+<a href="#line-665"> 665</a>
+<a href="#line-666"> 666</a>
+<a href="#line-667"> 667</a>
+<a href="#line-668"> 668</a>
+<a href="#line-669"> 669</a>
+<a href="#line-670"> 670</a>
+<a href="#line-671"> 671</a>
+<a href="#line-672"> 672</a>
+<a href="#line-673"> 673</a>
+<a href="#line-674"> 674</a>
+<a href="#line-675"> 675</a>
+<a href="#line-676"> 676</a>
+<a href="#line-677"> 677</a>
+<a href="#line-678"> 678</a>
+<a href="#line-679"> 679</a>
+<a href="#line-680"> 680</a>
+<a href="#line-681"> 681</a>
+<a href="#line-682"> 682</a>
+<a href="#line-683"> 683</a>
+<a href="#line-684"> 684</a>
+<a href="#line-685"> 685</a>
+<a href="#line-686"> 686</a>
+<a href="#line-687"> 687</a>
+<a href="#line-688"> 688</a>
+<a href="#line-689"> 689</a>
+<a href="#line-690"> 690</a>
+<a href="#line-691"> 691</a>
+<a href="#line-692"> 692</a>
+<a href="#line-693"> 693</a>
+<a href="#line-694"> 694</a>
+<a href="#line-695"> 695</a>
+<a href="#line-696"> 696</a>
+<a href="#line-697"> 697</a>
+<a href="#line-698"> 698</a>
+<a href="#line-699"> 699</a>
+<a href="#line-700"> 700</a>
+<a href="#line-701"> 701</a>
+<a href="#line-702"> 702</a>
+<a href="#line-703"> 703</a>
+<a href="#line-704"> 704</a>
+<a href="#line-705"> 705</a>
+<a href="#line-706"> 706</a>
+<a href="#line-707"> 707</a>
+<a href="#line-708"> 708</a>
+<a href="#line-709"> 709</a>
+<a href="#line-710"> 710</a>
+<a href="#line-711"> 711</a>
+<a href="#line-712"> 712</a>
+<a href="#line-713"> 713</a>
+<a href="#line-714"> 714</a>
+<a href="#line-715"> 715</a>
+<a href="#line-716"> 716</a>
+<a href="#line-717"> 717</a>
+<a href="#line-718"> 718</a>
+<a href="#line-719"> 719</a>
+<a href="#line-720"> 720</a>
+<a href="#line-721"> 721</a>
+<a href="#line-722"> 722</a>
+<a href="#line-723"> 723</a>
+<a href="#line-724"> 724</a>
+<a href="#line-725"> 725</a>
+<a href="#line-726"> 726</a>
+<a href="#line-727"> 727</a>
+<a href="#line-728"> 728</a>
+<a href="#line-729"> 729</a>
+<a href="#line-730"> 730</a>
+<a href="#line-731"> 731</a>
+<a href="#line-732"> 732</a>
+<a href="#line-733"> 733</a>
+<a href="#line-734"> 734</a>
+<a href="#line-735"> 735</a>
+<a href="#line-736"> 736</a>
+<a href="#line-737"> 737</a>
+<a href="#line-738"> 738</a>
+<a href="#line-739"> 739</a>
+<a href="#line-740"> 740</a>
+<a href="#line-741"> 741</a>
+<a href="#line-742"> 742</a>
+<a href="#line-743"> 743</a>
+<a href="#line-744"> 744</a>
+<a href="#line-745"> 745</a>
+<a href="#line-746"> 746</a>
+<a href="#line-747"> 747</a>
+<a href="#line-748"> 748</a>
+<a href="#line-749"> 749</a>
+<a href="#line-750"> 750</a>
+<a href="#line-751"> 751</a>
+<a href="#line-752"> 752</a>
+<a href="#line-753"> 753</a>
+<a href="#line-754"> 754</a>
+<a href="#line-755"> 755</a>
+<a href="#line-756"> 756</a>
+<a href="#line-757"> 757</a>
+<a href="#line-758"> 758</a>
+<a href="#line-759"> 759</a>
+<a href="#line-760"> 760</a>
+<a href="#line-761"> 761</a>
+<a href="#line-762"> 762</a>
+<a href="#line-763"> 763</a>
+<a href="#line-764"> 764</a>
+<a href="#line-765"> 765</a>
+<a href="#line-766"> 766</a>
+<a href="#line-767"> 767</a>
+<a href="#line-768"> 768</a>
+<a href="#line-769"> 769</a>
+<a href="#line-770"> 770</a>
+<a href="#line-771"> 771</a>
+<a href="#line-772"> 772</a>
+<a href="#line-773"> 773</a>
+<a href="#line-774"> 774</a>
+<a href="#line-775"> 775</a>
+<a href="#line-776"> 776</a>
+<a href="#line-777"> 777</a>
+<a href="#line-778"> 778</a>
+<a href="#line-779"> 779</a>
+<a href="#line-780"> 780</a>
+<a href="#line-781"> 781</a>
+<a href="#line-782"> 782</a>
+<a href="#line-783"> 783</a>
+<a href="#line-784"> 784</a>
+<a href="#line-785"> 785</a>
+<a href="#line-786"> 786</a>
+<a href="#line-787"> 787</a>
+<a href="#line-788"> 788</a>
+<a href="#line-789"> 789</a>
+<a href="#line-790"> 790</a>
+<a href="#line-791"> 791</a>
+<a href="#line-792"> 792</a>
+<a href="#line-793"> 793</a>
+<a href="#line-794"> 794</a>
+<a href="#line-795"> 795</a>
+<a href="#line-796"> 796</a>
+<a href="#line-797"> 797</a>
+<a href="#line-798"> 798</a>
+<a href="#line-799"> 799</a>
+<a href="#line-800"> 800</a>
+<a href="#line-801"> 801</a>
+<a href="#line-802"> 802</a>
+<a href="#line-803"> 803</a>
+<a href="#line-804"> 804</a>
+<a href="#line-805"> 805</a>
+<a href="#line-806"> 806</a>
+<a href="#line-807"> 807</a>
+<a href="#line-808"> 808</a>
+<a href="#line-809"> 809</a>
+<a href="#line-810"> 810</a>
+<a href="#line-811"> 811</a>
+<a href="#line-812"> 812</a>
+<a href="#line-813"> 813</a>
+<a href="#line-814"> 814</a>
+<a href="#line-815"> 815</a>
+<a href="#line-816"> 816</a>
+<a href="#line-817"> 817</a>
+<a href="#line-818"> 818</a>
+<a href="#line-819"> 819</a>
+<a href="#line-820"> 820</a>
+<a href="#line-821"> 821</a>
+<a href="#line-822"> 822</a>
+<a href="#line-823"> 823</a>
+<a href="#line-824"> 824</a>
+<a href="#line-825"> 825</a>
+<a href="#line-826"> 826</a>
+<a href="#line-827"> 827</a>
+<a href="#line-828"> 828</a>
+<a href="#line-829"> 829</a>
+<a href="#line-830"> 830</a>
+<a href="#line-831"> 831</a>
+<a href="#line-832"> 832</a>
+<a href="#line-833"> 833</a>
+<a href="#line-834"> 834</a>
+<a href="#line-835"> 835</a>
+<a href="#line-836"> 836</a>
+<a href="#line-837"> 837</a>
+<a href="#line-838"> 838</a>
+<a href="#line-839"> 839</a>
+<a href="#line-840"> 840</a>
+<a href="#line-841"> 841</a>
+<a href="#line-842"> 842</a>
+<a href="#line-843"> 843</a>
+<a href="#line-844"> 844</a>
+<a href="#line-845"> 845</a>
+<a href="#line-846"> 846</a>
+<a href="#line-847"> 847</a>
+<a href="#line-848"> 848</a>
+<a href="#line-849"> 849</a>
+<a href="#line-850"> 850</a>
+<a href="#line-851"> 851</a>
+<a href="#line-852"> 852</a>
+<a href="#line-853"> 853</a>
+<a href="#line-854"> 854</a>
+<a href="#line-855"> 855</a>
+<a href="#line-856"> 856</a>
+<a href="#line-857"> 857</a>
+<a href="#line-858"> 858</a>
+<a href="#line-859"> 859</a>
+<a href="#line-860"> 860</a>
+<a href="#line-861"> 861</a>
+<a href="#line-862"> 862</a>
+<a href="#line-863"> 863</a>
+<a href="#line-864"> 864</a>
+<a href="#line-865"> 865</a>
+<a href="#line-866"> 866</a>
+<a href="#line-867"> 867</a>
+<a href="#line-868"> 868</a>
+<a href="#line-869"> 869</a>
+<a href="#line-870"> 870</a>
+<a href="#line-871"> 871</a>
+<a href="#line-872"> 872</a>
+<a href="#line-873"> 873</a>
+<a href="#line-874"> 874</a>
+<a href="#line-875"> 875</a>
+<a href="#line-876"> 876</a>
+<a href="#line-877"> 877</a>
+<a href="#line-878"> 878</a>
+<a href="#line-879"> 879</a>
+<a href="#line-880"> 880</a>
+<a href="#line-881"> 881</a>
+<a href="#line-882"> 882</a>
+<a href="#line-883"> 883</a>
+<a href="#line-884"> 884</a>
+<a href="#line-885"> 885</a>
+<a href="#line-886"> 886</a>
+<a href="#line-887"> 887</a>
+<a href="#line-888"> 888</a>
+<a href="#line-889"> 889</a>
+<a href="#line-890"> 890</a>
+<a href="#line-891"> 891</a>
+<a href="#line-892"> 892</a>
+<a href="#line-893"> 893</a>
+<a href="#line-894"> 894</a>
+<a href="#line-895"> 895</a>
+<a href="#line-896"> 896</a>
+<a href="#line-897"> 897</a>
+<a href="#line-898"> 898</a>
+<a href="#line-899"> 899</a>
+<a href="#line-900"> 900</a>
+<a href="#line-901"> 901</a>
+<a href="#line-902"> 902</a>
+<a href="#line-903"> 903</a>
+<a href="#line-904"> 904</a>
+<a href="#line-905"> 905</a>
+<a href="#line-906"> 906</a>
+<a href="#line-907"> 907</a>
+<a href="#line-908"> 908</a>
+<a href="#line-909"> 909</a>
+<a href="#line-910"> 910</a>
+<a href="#line-911"> 911</a>
+<a href="#line-912"> 912</a>
+<a href="#line-913"> 913</a>
+<a href="#line-914"> 914</a>
+<a href="#line-915"> 915</a>
+<a href="#line-916"> 916</a>
+<a href="#line-917"> 917</a>
+<a href="#line-918"> 918</a>
+<a href="#line-919"> 919</a>
+<a href="#line-920"> 920</a>
+<a href="#line-921"> 921</a>
+<a href="#line-922"> 922</a>
+<a href="#line-923"> 923</a>
+<a href="#line-924"> 924</a>
+<a href="#line-925"> 925</a>
+<a href="#line-926"> 926</a>
+<a href="#line-927"> 927</a>
+<a href="#line-928"> 928</a>
+<a href="#line-929"> 929</a>
+<a href="#line-930"> 930</a>
+<a href="#line-931"> 931</a>
+<a href="#line-932"> 932</a>
+<a href="#line-933"> 933</a>
+<a href="#line-934"> 934</a>
+<a href="#line-935"> 935</a>
+<a href="#line-936"> 936</a>
+<a href="#line-937"> 937</a>
+<a href="#line-938"> 938</a>
+<a href="#line-939"> 939</a>
+<a href="#line-940"> 940</a>
+<a href="#line-941"> 941</a>
+<a href="#line-942"> 942</a>
+<a href="#line-943"> 943</a>
+<a href="#line-944"> 944</a>
+<a href="#line-945"> 945</a>
+<a href="#line-946"> 946</a>
+<a href="#line-947"> 947</a>
+<a href="#line-948"> 948</a>
+<a href="#line-949"> 949</a>
+<a href="#line-950"> 950</a>
+<a href="#line-951"> 951</a>
+<a href="#line-952"> 952</a>
+<a href="#line-953"> 953</a>
+<a href="#line-954"> 954</a>
+<a href="#line-955"> 955</a>
+<a href="#line-956"> 956</a>
+<a href="#line-957"> 957</a>
+<a href="#line-958"> 958</a>
+<a href="#line-959"> 959</a>
+<a href="#line-960"> 960</a>
+<a href="#line-961"> 961</a>
+<a href="#line-962"> 962</a>
+<a href="#line-963"> 963</a>
+<a href="#line-964"> 964</a>
+<a href="#line-965"> 965</a>
+<a href="#line-966"> 966</a>
+<a href="#line-967"> 967</a>
+<a href="#line-968"> 968</a>
+<a href="#line-969"> 969</a>
+<a href="#line-970"> 970</a>
+<a href="#line-971"> 971</a>
+<a href="#line-972"> 972</a>
+<a href="#line-973"> 973</a>
+<a href="#line-974"> 974</a>
+<a href="#line-975"> 975</a>
+<a href="#line-976"> 976</a>
+<a href="#line-977"> 977</a>
+<a href="#line-978"> 978</a>
+<a href="#line-979"> 979</a>
+<a href="#line-980"> 980</a>
+<a href="#line-981"> 981</a>
+<a href="#line-982"> 982</a>
+<a href="#line-983"> 983</a>
+<a href="#line-984"> 984</a>
+<a href="#line-985"> 985</a>
+<a href="#line-986"> 986</a>
+<a href="#line-987"> 987</a>
+<a href="#line-988"> 988</a>
+<a href="#line-989"> 989</a>
+<a href="#line-990"> 990</a>
+<a href="#line-991"> 991</a>
+<a href="#line-992"> 992</a>
+<a href="#line-993"> 993</a>
+<a href="#line-994"> 994</a>
+<a href="#line-995"> 995</a>
+<a href="#line-996"> 996</a>
+<a href="#line-997"> 997</a>
+<a href="#line-998"> 998</a>
+<a href="#line-999"> 999</a>
+<a href="#line-1000">1000</a>
+<a href="#line-1001">1001</a>
+<a href="#line-1002">1002</a>
+<a href="#line-1003">1003</a>
+<a href="#line-1004">1004</a>
+<a href="#line-1005">1005</a>
+<a href="#line-1006">1006</a>
+<a href="#line-1007">1007</a>
+<a href="#line-1008">1008</a>
+<a href="#line-1009">1009</a>
+<a href="#line-1010">1010</a>
+<a href="#line-1011">1011</a>
+<a href="#line-1012">1012</a>
+<a href="#line-1013">1013</a></pre></div></td><td class="code"><div class="source"><span class="filename">Include/object.h</span><pre><span></span><a name="line-1"></a><span class="cp">#ifndef Py_OBJECT_H</span>
+<a name="line-2"></a><span class="cp">#define Py_OBJECT_H</span>
+<a name="line-3"></a><span class="cp">#ifdef __cplusplus</span>
+<a name="line-4"></a><span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
+<a name="line-5"></a><span class="cp">#endif</span>
+<a name="line-6"></a>
+<a name="line-7"></a>
+<a name="line-8"></a><span class="cm">/* Object and type object interface */</span>
+<a name="line-9"></a>
+<a name="line-10"></a><span class="cm">/*</span>
+<a name="line-11"></a><span class="cm">Objects are structures allocated on the heap.  Special rules apply to</span>
+<a name="line-12"></a><span class="cm">the use of objects to ensure they are properly garbage-collected.</span>
+<a name="line-13"></a><span class="cm">Objects are never allocated statically or on the stack; they must be</span>
+<a name="line-14"></a><span class="cm">accessed through special macros and functions only.  (Type objects are</span>
+<a name="line-15"></a><span class="cm">exceptions to the first rule; the standard types are represented by</span>
+<a name="line-16"></a><span class="cm">statically initialized type objects, although work on type/class unification</span>
+<a name="line-17"></a><span class="cm">for Python 2.2 made it possible to have heap-allocated type objects too).</span>
+<a name="line-18"></a>
+<a name="line-19"></a><span class="cm">An object has a &#39;reference count&#39; that is increased or decreased when a</span>
+<a name="line-20"></a><span class="cm">pointer to the object is copied or deleted; when the reference count</span>
+<a name="line-21"></a><span class="cm">reaches zero there are no references to the object left and it can be</span>
+<a name="line-22"></a><span class="cm">removed from the heap.</span>
+<a name="line-23"></a>
+<a name="line-24"></a><span class="cm">An object has a &#39;type&#39; that determines what it represents and what kind</span>
+<a name="line-25"></a><span class="cm">of data it contains.  An object&#39;s type is fixed when it is created.</span>
+<a name="line-26"></a><span class="cm">Types themselves are represented as objects; an object contains a</span>
+<a name="line-27"></a><span class="cm">pointer to the corresponding type object.  The type itself has a type</span>
+<a name="line-28"></a><span class="cm">pointer pointing to the object representing the type &#39;type&#39;, which</span>
+<a name="line-29"></a><span class="cm">contains a pointer to itself!).</span>
+<a name="line-30"></a>
+<a name="line-31"></a><span class="cm">Objects do not float around in memory; once allocated an object keeps</span>
+<a name="line-32"></a><span class="cm">the same size and address.  Objects that must hold variable-size data</span>
+<a name="line-33"></a><span class="cm">can contain pointers to variable-size parts of the object.  Not all</span>
+<a name="line-34"></a><span class="cm">objects of the same type have the same size; but the size cannot change</span>
+<a name="line-35"></a><span class="cm">after allocation.  (These restrictions are made so a reference to an</span>
+<a name="line-36"></a><span class="cm">object can be simply a pointer -- moving an object would require</span>
+<a name="line-37"></a><span class="cm">updating all the pointers, and changing an object&#39;s size would require</span>
+<a name="line-38"></a><span class="cm">moving it if there was another object right next to it.)</span>
+<a name="line-39"></a>
+<a name="line-40"></a><span class="cm">Objects are always accessed through pointers of the type &#39;PyObject *&#39;.</span>
+<a name="line-41"></a><span class="cm">The type &#39;PyObject&#39; is a structure that only contains the reference count</span>
+<a name="line-42"></a><span class="cm">and the type pointer.  The actual memory allocated for an object</span>
+<a name="line-43"></a><span class="cm">contains other data that can only be accessed after casting the pointer</span>
+<a name="line-44"></a><span class="cm">to a pointer to a longer structure type.  This longer type must start</span>
+<a name="line-45"></a><span class="cm">with the reference count and type fields; the macro PyObject_HEAD should be</span>
+<a name="line-46"></a><span class="cm">used for this (to accommodate for future changes).  The implementation</span>
+<a name="line-47"></a><span class="cm">of a particular object type can cast the object pointer to the proper</span>
+<a name="line-48"></a><span class="cm">type and back.</span>
+<a name="line-49"></a>
+<a name="line-50"></a><span class="cm">A standard interface exists for objects that contain an array of items</span>
+<a name="line-51"></a><span class="cm">whose size is determined when the object is allocated.</span>
+<a name="line-52"></a><span class="cm">*/</span>
+<a name="line-53"></a>
+<a name="line-54"></a><span class="cm">/* Py_DEBUG implies Py_TRACE_REFS. */</span>
+<a name="line-55"></a><span class="cp">#if defined(Py_DEBUG) &amp;&amp; !defined(Py_TRACE_REFS)</span>
+<a name="line-56"></a><span class="cp">#define Py_TRACE_REFS</span>
+<a name="line-57"></a><span class="cp">#endif</span>
+<a name="line-58"></a>
+<a name="line-59"></a><span class="cm">/* Py_TRACE_REFS implies Py_REF_DEBUG. */</span>
+<a name="line-60"></a><span class="cp">#if defined(Py_TRACE_REFS) &amp;&amp; !defined(Py_REF_DEBUG)</span>
+<a name="line-61"></a><span class="cp">#define Py_REF_DEBUG</span>
+<a name="line-62"></a><span class="cp">#endif</span>
+<a name="line-63"></a>
+<a name="line-64"></a><span class="cp">#ifdef Py_TRACE_REFS</span>
+<a name="line-65"></a><span class="cm">/* Define pointers to support a doubly-linked list of all live heap objects. */</span>
+<a name="line-66"></a><span class="cp">#define _PyObject_HEAD_EXTRA            \</span>
+<a name="line-67"></a><span class="cp">    struct _object *_ob_next;           \</span>
+<a name="line-68"></a><span class="cp">    struct _object *_ob_prev;</span>
+<a name="line-69"></a>
+<a name="line-70"></a><span class="cp">#define _PyObject_EXTRA_INIT 0, 0,</span>
+<a name="line-71"></a>
+<a name="line-72"></a><span class="cp">#else</span>
+<a name="line-73"></a><span class="cp">#define _PyObject_HEAD_EXTRA</span>
+<a name="line-74"></a><span class="cp">#define _PyObject_EXTRA_INIT</span>
+<a name="line-75"></a><span class="cp">#endif</span>
+<a name="line-76"></a>
+<a name="line-77"></a><span class="cm">/* PyObject_HEAD defines the initial segment of every PyObject. */</span>
+<a name="line-78"></a><span class="cp">#define PyObject_HEAD                   \</span>
+<a name="line-79"></a><span class="cp">    _PyObject_HEAD_EXTRA                \</span>
+<a name="line-80"></a><span class="cp">    Py_ssize_t ob_refcnt;               \</span>
+<a name="line-81"></a><span class="cp">    struct _typeobject *ob_type;</span>
+<a name="line-82"></a>
+<a name="line-83"></a><span class="cp">#define PyObject_HEAD_INIT(type)        \</span>
+<a name="line-84"></a><span class="cp">    _PyObject_EXTRA_INIT                \</span>
+<a name="line-85"></a><span class="cp">    1, type,</span>
+<a name="line-86"></a>
+<a name="line-87"></a><span class="cp">#define PyVarObject_HEAD_INIT(type, size)       \</span>
+<a name="line-88"></a><span class="cp">    PyObject_HEAD_INIT(type) size,</span>
+<a name="line-89"></a>
+<a name="line-90"></a><span class="cm">/* PyObject_VAR_HEAD defines the initial segment of all variable-size</span>
+<a name="line-91"></a><span class="cm"> * container objects.  These end with a declaration of an array with 1</span>
+<a name="line-92"></a><span class="cm"> * element, but enough space is malloc&#39;ed so that the array actually</span>
+<a name="line-93"></a><span class="cm"> * has room for ob_size elements.  Note that ob_size is an element count,</span>
+<a name="line-94"></a><span class="cm"> * not necessarily a byte count.</span>
+<a name="line-95"></a><span class="cm"> */</span>
+<a name="line-96"></a><span class="cp">#define PyObject_VAR_HEAD               \</span>
+<a name="line-97"></a><span class="cp">    PyObject_HEAD                       \</span>
+<a name="line-98"></a><span class="cp">    Py_ssize_t ob_size; </span><span class="cm">/* Number of items in variable part */</span><span class="cp"></span>
+<a name="line-99"></a><span class="cp">#define Py_INVALID_SIZE (Py_ssize_t)-1</span>
+<a name="line-100"></a>
+<a name="line-101"></a><span class="cm">/* Nothing is actually declared to be a PyObject, but every pointer to</span>
+<a name="line-102"></a><span class="cm"> * a Python object can be cast to a PyObject*.  This is inheritance built</span>
+<a name="line-103"></a><span class="cm"> * by hand.  Similarly every pointer to a variable-size Python object can,</span>
+<a name="line-104"></a><span class="cm"> * in addition, be cast to PyVarObject*.</span>
+<a name="line-105"></a><span class="cm"> */</span>
+<a name="line-106"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="n"><a href="/./Include/object.h.html#line-106">_object</a></span> <span class="p">{</span>
+<a name="line-107"></a>    <span class="n"><a href="/./Include/object.h.html#line-78">PyObject_HEAD</a></span>
+<a name="line-108"></a><span class="p">}</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span><span class="p">;</span>
+<a name="line-109"></a>
+<a name="line-110"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+<a name="line-111"></a>    <span class="n"><a href="/./Include/object.h.html#line-96">PyObject_VAR_HEAD</a></span>
+<a name="line-112"></a><span class="p">}</span> <span class="n"><a href="/./Include/object.h.html#line-112">PyVarObject</a></span><span class="p">;</span>
+<a name="line-113"></a>
+<a name="line-114"></a><span class="cp">#define Py_REFCNT(ob)           (((PyObject*)(ob))-&gt;ob_refcnt)</span>
+<a name="line-115"></a><span class="cp">#define Py_TYPE(ob)             (((PyObject*)(ob))-&gt;ob_type)</span>
+<a name="line-116"></a><span class="cp">#define Py_SIZE(ob)             (((PyVarObject*)(ob))-&gt;ob_size)</span>
+<a name="line-117"></a>
+<a name="line-118"></a><span class="cm">/*</span>
+<a name="line-119"></a><span class="cm">Type objects contain a string containing the type name (to help somewhat</span>
+<a name="line-120"></a><span class="cm">in debugging), the allocation parameters (see PyObject_New() and</span>
+<a name="line-121"></a><span class="cm">PyObject_NewVar()),</span>
+<a name="line-122"></a><span class="cm">and methods for accessing objects of the type.  Methods are optional, a</span>
+<a name="line-123"></a><span class="cm">nil pointer meaning that particular kind of access is not available for</span>
+<a name="line-124"></a><span class="cm">this type.  The Py_DECREF() macro uses the tp_dealloc method without</span>
+<a name="line-125"></a><span class="cm">checking for a nil pointer; it should always be implemented except if</span>
+<a name="line-126"></a><span class="cm">the implementation can guarantee that the reference count will never</span>
+<a name="line-127"></a><span class="cm">reach zero (e.g., for statically allocated type objects).</span>
+<a name="line-128"></a>
+<a name="line-129"></a><span class="cm">NB: the methods for certain type groups are now contained in separate</span>
+<a name="line-130"></a><span class="cm">method blocks.</span>
+<a name="line-131"></a><span class="cm">*/</span>
+<a name="line-132"></a>
+<a name="line-133"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-134"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-135"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-135">ternaryfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-136"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-136">inquiry</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-137"></a><span class="k">typedef</span> <span class="nf"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-137">lenfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-138"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-138">coercion</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">**</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">**</span><span class="p">);</span>
+<a name="line-139"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">intargfunc</span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Include/pyport.h.html#line-630">Py_DEPRECATED</a></span><span class="p">(</span><span class="mf">2.5</span><span class="p">);</span>
+<a name="line-140"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">intintargfunc</span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Include/pyport.h.html#line-630">Py_DEPRECATED</a></span><span class="p">(</span><span class="mf">2.5</span><span class="p">);</span>
+<a name="line-141"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-141">ssizeargfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">);</span>
+<a name="line-142"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-142">ssizessizeargfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">);</span>
+<a name="line-143"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-143">intobjargproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-144"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-144">intintobjargproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-145"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-145">ssizeobjargproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-146"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-146">ssizessizeobjargproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-147"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-147">objobjargproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-148"></a>
+<a name="line-149"></a>
+<a name="line-150"></a>
+<a name="line-151"></a><span class="cm">/* int-based buffer interface */</span>
+<a name="line-152"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-152">getreadbufferproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="p">);</span>
+<a name="line-153"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-153">getwritebufferproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="p">);</span>
+<a name="line-154"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-154">getsegcountproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-155"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-155">getcharbufferproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="p">);</span>
+<a name="line-156"></a><span class="cm">/* ssize_t-based buffer interface */</span>
+<a name="line-157"></a><span class="k">typedef</span> <span class="nf"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-157">readbufferproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="p">);</span>
+<a name="line-158"></a><span class="k">typedef</span> <span class="nf"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-158">writebufferproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="p">);</span>
+<a name="line-159"></a><span class="k">typedef</span> <span class="nf"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-159">segcountproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-160"></a><span class="k">typedef</span> <span class="nf"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-160">charbufferproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="p">);</span>
+<a name="line-161"></a>
+<a name="line-162"></a>
+<a name="line-163"></a><span class="cm">/* Py3k buffer interface */</span>
+<a name="line-164"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="n"><a href="/./Include/object.h.html#line-164">bufferinfo</a></span> <span class="p">{</span>
+<a name="line-165"></a>    <span class="kt">void</span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-165">buf</a></span><span class="p">;</span>
+<a name="line-166"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Include/abstract.h.html#line-492">obj</a></span><span class="p">;</span>        <span class="cm">/* owned reference */</span>
+<a name="line-167"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="n"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">;</span>
+<a name="line-168"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="n"><a href="/./Include/object.h.html#line-168">itemsize</a></span><span class="p">;</span>  <span class="cm">/* This is Py_ssize_t so it can be</span>
+<a name="line-169"></a><span class="cm">                             pointed to by strides in simple case.*/</span>
+<a name="line-170"></a>    <span class="kt">int</span> <span class="n"><a href="/./Include/object.h.html#line-170">readonly</a></span><span class="p">;</span>
+<a name="line-171"></a>    <span class="kt">int</span> <span class="n"><a href="/./Include/object.h.html#line-171">ndim</a></span><span class="p">;</span>
+<a name="line-172"></a>    <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Demo/scripts/unbirthday.py.html#line-78">format</a></span><span class="p">;</span>
+<a name="line-173"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-173">shape</a></span><span class="p">;</span>
+<a name="line-174"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-174">strides</a></span><span class="p">;</span>
+<a name="line-175"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-175">suboffsets</a></span><span class="p">;</span>
+<a name="line-176"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="n"><a href="/./Include/object.h.html#line-176">smalltable</a></span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>  <span class="cm">/* static store for shape and strides of</span>
+<a name="line-177"></a><span class="cm">                                  mono-dimensional buffers. */</span>
+<a name="line-178"></a>    <span class="kt">void</span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-178">internal</a></span><span class="p">;</span>
+<a name="line-179"></a><span class="p">}</span> <span class="n"><a href="/./Include/object.h.html#line-179">Py_buffer</a></span><span class="p">;</span>
+<a name="line-180"></a>
+<a name="line-181"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-181">getbufferproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-179">Py_buffer</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-182"></a><span class="k">typedef</span> <span class="nf"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-185">void</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-182">releasebufferproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-179">Py_buffer</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-183"></a>
+<a name="line-184"></a>    <span class="cm">/* Flags for getting buffers */</span>
+<a name="line-185"></a><span class="cp">#define PyBUF_SIMPLE 0</span>
+<a name="line-186"></a><span class="cp">#define PyBUF_WRITABLE 0x0001</span>
+<a name="line-187"></a><span class="cm">/*  we used to include an E, backwards compatible alias  */</span>
+<a name="line-188"></a><span class="cp">#define PyBUF_WRITEABLE PyBUF_WRITABLE</span>
+<a name="line-189"></a><span class="cp">#define PyBUF_FORMAT 0x0004</span>
+<a name="line-190"></a><span class="cp">#define PyBUF_ND 0x0008</span>
+<a name="line-191"></a><span class="cp">#define PyBUF_STRIDES (0x0010 | PyBUF_ND)</span>
+<a name="line-192"></a><span class="cp">#define PyBUF_C_CONTIGUOUS (0x0020 | PyBUF_STRIDES)</span>
+<a name="line-193"></a><span class="cp">#define PyBUF_F_CONTIGUOUS (0x0040 | PyBUF_STRIDES)</span>
+<a name="line-194"></a><span class="cp">#define PyBUF_ANY_CONTIGUOUS (0x0080 | PyBUF_STRIDES)</span>
+<a name="line-195"></a><span class="cp">#define PyBUF_INDIRECT (0x0100 | PyBUF_STRIDES)</span>
+<a name="line-196"></a>
+<a name="line-197"></a><span class="cp">#define PyBUF_CONTIG (PyBUF_ND | PyBUF_WRITABLE)</span>
+<a name="line-198"></a><span class="cp">#define PyBUF_CONTIG_RO (PyBUF_ND)</span>
+<a name="line-199"></a>
+<a name="line-200"></a><span class="cp">#define PyBUF_STRIDED (PyBUF_STRIDES | PyBUF_WRITABLE)</span>
+<a name="line-201"></a><span class="cp">#define PyBUF_STRIDED_RO (PyBUF_STRIDES)</span>
+<a name="line-202"></a>
+<a name="line-203"></a><span class="cp">#define PyBUF_RECORDS (PyBUF_STRIDES | PyBUF_WRITABLE | PyBUF_FORMAT)</span>
+<a name="line-204"></a><span class="cp">#define PyBUF_RECORDS_RO (PyBUF_STRIDES | PyBUF_FORMAT)</span>
+<a name="line-205"></a>
+<a name="line-206"></a><span class="cp">#define PyBUF_FULL (PyBUF_INDIRECT | PyBUF_WRITABLE | PyBUF_FORMAT)</span>
+<a name="line-207"></a><span class="cp">#define PyBUF_FULL_RO (PyBUF_INDIRECT | PyBUF_FORMAT)</span>
+<a name="line-208"></a>
+<a name="line-209"></a>
+<a name="line-210"></a><span class="cp">#define PyBUF_READ  0x100</span>
+<a name="line-211"></a><span class="cp">#define PyBUF_WRITE 0x200</span>
+<a name="line-212"></a><span class="cp">#define PyBUF_SHADOW 0x400</span>
+<a name="line-213"></a><span class="cm">/* end Py3k buffer interface */</span>
+<a name="line-214"></a>
+<a name="line-215"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-215">objobjproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-216"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-216">visitproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-217"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-217">traverseproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-216">visitproc</a></span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-218"></a>
+<a name="line-219"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+<a name="line-220"></a>    <span class="cm">/* For numbers without flag bit Py_TPFLAGS_CHECKTYPES set, all</span>
+<a name="line-221"></a><span class="cm">       arguments are guaranteed to be of the object&#39;s type (modulo</span>
+<a name="line-222"></a><span class="cm">       coercion hacks -- i.e. if the type&#39;s coercion function</span>
+<a name="line-223"></a><span class="cm">       returns other types, then these are allowed as well).  Numbers that</span>
+<a name="line-224"></a><span class="cm">       have the Py_TPFLAGS_CHECKTYPES flag bit set should check *both*</span>
+<a name="line-225"></a><span class="cm">       arguments for proper type and implement the necessary conversions</span>
+<a name="line-226"></a><span class="cm">       in the slot functions themselves. */</span>
+<a name="line-227"></a>
+<a name="line-228"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-228">nb_add</a></span><span class="p">;</span>
+<a name="line-229"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-229">nb_subtract</a></span><span class="p">;</span>
+<a name="line-230"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-230">nb_multiply</a></span><span class="p">;</span>
+<a name="line-231"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-231">nb_divide</a></span><span class="p">;</span>
+<a name="line-232"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-232">nb_remainder</a></span><span class="p">;</span>
+<a name="line-233"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-233">nb_divmod</a></span><span class="p">;</span>
+<a name="line-234"></a>    <span class="n"><a href="/./Include/object.h.html#line-135">ternaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-234">nb_power</a></span><span class="p">;</span>
+<a name="line-235"></a>    <span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-235">nb_negative</a></span><span class="p">;</span>
+<a name="line-236"></a>    <span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-236">nb_positive</a></span><span class="p">;</span>
+<a name="line-237"></a>    <span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-237">nb_absolute</a></span><span class="p">;</span>
+<a name="line-238"></a>    <span class="n"><a href="/./Include/object.h.html#line-136">inquiry</a></span> <span class="n"><a href="/./Include/object.h.html#line-238">nb_nonzero</a></span><span class="p">;</span>
+<a name="line-239"></a>    <span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-239">nb_invert</a></span><span class="p">;</span>
+<a name="line-240"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-240">nb_lshift</a></span><span class="p">;</span>
+<a name="line-241"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-241">nb_rshift</a></span><span class="p">;</span>
+<a name="line-242"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-242">nb_and</a></span><span class="p">;</span>
+<a name="line-243"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-243">nb_xor</a></span><span class="p">;</span>
+<a name="line-244"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-244">nb_or</a></span><span class="p">;</span>
+<a name="line-245"></a>    <span class="n"><a href="/./Include/object.h.html#line-138">coercion</a></span> <span class="n"><a href="/./Include/object.h.html#line-245">nb_coerce</a></span><span class="p">;</span>
+<a name="line-246"></a>    <span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-246">nb_int</a></span><span class="p">;</span>
+<a name="line-247"></a>    <span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-247">nb_long</a></span><span class="p">;</span>
+<a name="line-248"></a>    <span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-248">nb_float</a></span><span class="p">;</span>
+<a name="line-249"></a>    <span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-249">nb_oct</a></span><span class="p">;</span>
+<a name="line-250"></a>    <span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-250">nb_hex</a></span><span class="p">;</span>
+<a name="line-251"></a>    <span class="cm">/* Added in release 2.0 */</span>
+<a name="line-252"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-252">nb_inplace_add</a></span><span class="p">;</span>
+<a name="line-253"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-253">nb_inplace_subtract</a></span><span class="p">;</span>
+<a name="line-254"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-254">nb_inplace_multiply</a></span><span class="p">;</span>
+<a name="line-255"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-255">nb_inplace_divide</a></span><span class="p">;</span>
+<a name="line-256"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-256">nb_inplace_remainder</a></span><span class="p">;</span>
+<a name="line-257"></a>    <span class="n"><a href="/./Include/object.h.html#line-135">ternaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-257">nb_inplace_power</a></span><span class="p">;</span>
+<a name="line-258"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-258">nb_inplace_lshift</a></span><span class="p">;</span>
+<a name="line-259"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-259">nb_inplace_rshift</a></span><span class="p">;</span>
+<a name="line-260"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-260">nb_inplace_and</a></span><span class="p">;</span>
+<a name="line-261"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-261">nb_inplace_xor</a></span><span class="p">;</span>
+<a name="line-262"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-262">nb_inplace_or</a></span><span class="p">;</span>
+<a name="line-263"></a>
+<a name="line-264"></a>    <span class="cm">/* Added in release 2.2 */</span>
+<a name="line-265"></a>    <span class="cm">/* The following require the Py_TPFLAGS_HAVE_CLASS flag */</span>
+<a name="line-266"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-266">nb_floor_divide</a></span><span class="p">;</span>
+<a name="line-267"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-267">nb_true_divide</a></span><span class="p">;</span>
+<a name="line-268"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-268">nb_inplace_floor_divide</a></span><span class="p">;</span>
+<a name="line-269"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-269">nb_inplace_true_divide</a></span><span class="p">;</span>
+<a name="line-270"></a>
+<a name="line-271"></a>    <span class="cm">/* Added in release 2.5 */</span>
+<a name="line-272"></a>    <span class="n"><a href="/./Include/object.h.html#line-133">unaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-272">nb_index</a></span><span class="p">;</span>
+<a name="line-273"></a><span class="p">}</span> <span class="n"><a href="/./Include/object.h.html#line-273">PyNumberMethods</a></span><span class="p">;</span>
+<a name="line-274"></a>
+<a name="line-275"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+<a name="line-276"></a>    <span class="n"><a href="/./Include/object.h.html#line-137">lenfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-276">sq_length</a></span><span class="p">;</span>
+<a name="line-277"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-277">sq_concat</a></span><span class="p">;</span>
+<a name="line-278"></a>    <span class="n"><a href="/./Include/object.h.html#line-141">ssizeargfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-278">sq_repeat</a></span><span class="p">;</span>
+<a name="line-279"></a>    <span class="n"><a href="/./Include/object.h.html#line-141">ssizeargfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-279">sq_item</a></span><span class="p">;</span>
+<a name="line-280"></a>    <span class="n"><a href="/./Include/object.h.html#line-142">ssizessizeargfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-280">sq_slice</a></span><span class="p">;</span>
+<a name="line-281"></a>    <span class="n"><a href="/./Include/object.h.html#line-145">ssizeobjargproc</a></span> <span class="n"><a href="/./Include/object.h.html#line-281">sq_ass_item</a></span><span class="p">;</span>
+<a name="line-282"></a>    <span class="n"><a href="/./Include/object.h.html#line-146">ssizessizeobjargproc</a></span> <span class="n"><a href="/./Include/object.h.html#line-282">sq_ass_slice</a></span><span class="p">;</span>
+<a name="line-283"></a>    <span class="n"><a href="/./Include/object.h.html#line-215">objobjproc</a></span> <span class="n"><a href="/./Include/object.h.html#line-283">sq_contains</a></span><span class="p">;</span>
+<a name="line-284"></a>    <span class="cm">/* Added in release 2.0 */</span>
+<a name="line-285"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-285">sq_inplace_concat</a></span><span class="p">;</span>
+<a name="line-286"></a>    <span class="n"><a href="/./Include/object.h.html#line-141">ssizeargfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-286">sq_inplace_repeat</a></span><span class="p">;</span>
+<a name="line-287"></a><span class="p">}</span> <span class="n"><a href="/./Include/object.h.html#line-287">PySequenceMethods</a></span><span class="p">;</span>
+<a name="line-288"></a>
+<a name="line-289"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+<a name="line-290"></a>    <span class="n"><a href="/./Include/object.h.html#line-137">lenfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-290">mp_length</a></span><span class="p">;</span>
+<a name="line-291"></a>    <span class="n"><a href="/./Include/object.h.html#line-134">binaryfunc</a></span> <span class="n"><a href="/./Include/object.h.html#line-291">mp_subscript</a></span><span class="p">;</span>
+<a name="line-292"></a>    <span class="n"><a href="/./Include/object.h.html#line-147">objobjargproc</a></span> <span class="n"><a href="/./Include/object.h.html#line-292">mp_ass_subscript</a></span><span class="p">;</span>
+<a name="line-293"></a><span class="p">}</span> <span class="n"><a href="/./Include/object.h.html#line-293">PyMappingMethods</a></span><span class="p">;</span>
+<a name="line-294"></a>
+<a name="line-295"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+<a name="line-296"></a>    <span class="n"><a href="/./Include/object.h.html#line-157">readbufferproc</a></span> <span class="n"><a href="/./Include/object.h.html#line-296">bf_getreadbuffer</a></span><span class="p">;</span>
+<a name="line-297"></a>    <span class="n"><a href="/./Include/object.h.html#line-158">writebufferproc</a></span> <span class="n"><a href="/./Include/object.h.html#line-297">bf_getwritebuffer</a></span><span class="p">;</span>
+<a name="line-298"></a>    <span class="n"><a href="/./Include/object.h.html#line-159">segcountproc</a></span> <span class="n"><a href="/./Include/object.h.html#line-298">bf_getsegcount</a></span><span class="p">;</span>
+<a name="line-299"></a>    <span class="n"><a href="/./Include/object.h.html#line-160">charbufferproc</a></span> <span class="n"><a href="/./Include/object.h.html#line-299">bf_getcharbuffer</a></span><span class="p">;</span>
+<a name="line-300"></a>    <span class="n"><a href="/./Include/object.h.html#line-181">getbufferproc</a></span> <span class="n"><a href="/./Include/object.h.html#line-300">bf_getbuffer</a></span><span class="p">;</span>
+<a name="line-301"></a>    <span class="n"><a href="/./Include/object.h.html#line-182">releasebufferproc</a></span> <span class="n"><a href="/./Include/object.h.html#line-301">bf_releasebuffer</a></span><span class="p">;</span>
+<a name="line-302"></a><span class="p">}</span> <span class="n"><a href="/./Include/object.h.html#line-302">PyBufferProcs</a></span><span class="p">;</span>
+<a name="line-303"></a>
+<a name="line-304"></a>
+<a name="line-305"></a><span class="k">typedef</span> <span class="nf"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-185">void</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-305">freefunc</a></span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-306"></a><span class="k">typedef</span> <span class="nf"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-185">void</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/cobject.h.html#line-82">destructor</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-307"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-307">printfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-308"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-308">getattrfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-309"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-309">getattrofunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-310"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-310">setattrfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-311"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-311">setattrofunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-312"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-312">cmpfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-313"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-313">reprfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-314"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-27">long</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-314">hashfunc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-315"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-315">richcmpfunc</a></span><span class="p">)</span> <span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-316"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-316">getiterfunc</a></span><span class="p">)</span> <span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-317"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-317">iternextfunc</a></span><span class="p">)</span> <span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-318"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-318">descrgetfunc</a></span><span class="p">)</span> <span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-319"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-319">descrsetfunc</a></span><span class="p">)</span> <span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-320"></a><span class="k">typedef</span> <span class="nf"><a href="/./Lib/plat-irix5/IOCTL.py.html#line-25">int</a></span> <span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-320">initproc</a></span><span class="p">)(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-321"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-321">newfunc</a></span><span class="p">)(</span><span class="k">struct</span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-1">_typeobject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-322"></a><span class="k">typedef</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-322">allocfunc</a></span><span class="p">)(</span><span class="k">struct</span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-1">_typeobject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">);</span>
+<a name="line-323"></a>
+<a name="line-324"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-1">_typeobject</a></span> <span class="p">{</span>
+<a name="line-325"></a>    <span class="n"><a href="/./Include/object.h.html#line-96">PyObject_VAR_HEAD</a></span>
+<a name="line-326"></a>    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-3">tp_name</a></span><span class="p">;</span> <span class="cm">/* For printing, in format &quot;&lt;module&gt;.&lt;name&gt;&quot; */</span>
+<a name="line-327"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-4">tp_basicsize</a></span><span class="p">,</span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-4">tp_itemsize</a></span><span class="p">;</span> <span class="cm">/* For allocation */</span>
+<a name="line-328"></a>
+<a name="line-329"></a>    <span class="cm">/* Methods to implement standard operations */</span>
+<a name="line-330"></a>
+<a name="line-331"></a>    <span class="n"><a href="/./Include/cobject.h.html#line-82">destructor</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-8">tp_dealloc</a></span><span class="p">;</span>
+<a name="line-332"></a>    <span class="n"><a href="/./Include/object.h.html#line-307">printfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-9">tp_print</a></span><span class="p">;</span>
+<a name="line-333"></a>    <span class="n"><a href="/./Include/object.h.html#line-308">getattrfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-10">tp_getattr</a></span><span class="p">;</span>
+<a name="line-334"></a>    <span class="n"><a href="/./Include/object.h.html#line-310">setattrfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-11">tp_setattr</a></span><span class="p">;</span>
+<a name="line-335"></a>    <span class="n"><a href="/./Include/object.h.html#line-312">cmpfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-12">tp_compare</a></span><span class="p">;</span>
+<a name="line-336"></a>    <span class="n"><a href="/./Include/object.h.html#line-313">reprfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-13">tp_repr</a></span><span class="p">;</span>
+<a name="line-337"></a>
+<a name="line-338"></a>    <span class="cm">/* Method suites for standard classes */</span>
+<a name="line-339"></a>
+<a name="line-340"></a>    <span class="n"><a href="/./Include/object.h.html#line-273">PyNumberMethods</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-17">tp_as_number</a></span><span class="p">;</span>
+<a name="line-341"></a>    <span class="n"><a href="/./Include/object.h.html#line-287">PySequenceMethods</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-18">tp_as_sequence</a></span><span class="p">;</span>
+<a name="line-342"></a>    <span class="n"><a href="/./Include/object.h.html#line-293">PyMappingMethods</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-19">tp_as_mapping</a></span><span class="p">;</span>
+<a name="line-343"></a>
+<a name="line-344"></a>    <span class="cm">/* More standard operations (here for binary compatibility) */</span>
+<a name="line-345"></a>
+<a name="line-346"></a>    <span class="n"><a href="/./Include/object.h.html#line-314">hashfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-23">tp_hash</a></span><span class="p">;</span>
+<a name="line-347"></a>    <span class="n"><a href="/./Include/object.h.html#line-135">ternaryfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-24">tp_call</a></span><span class="p">;</span>
+<a name="line-348"></a>    <span class="n"><a href="/./Include/object.h.html#line-313">reprfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-25">tp_str</a></span><span class="p">;</span>
+<a name="line-349"></a>    <span class="n"><a href="/./Include/object.h.html#line-309">getattrofunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-26">tp_getattro</a></span><span class="p">;</span>
+<a name="line-350"></a>    <span class="n"><a href="/./Include/object.h.html#line-311">setattrofunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-27">tp_setattro</a></span><span class="p">;</span>
+<a name="line-351"></a>
+<a name="line-352"></a>    <span class="cm">/* Functions to access object as input/output buffer */</span>
+<a name="line-353"></a>    <span class="n"><a href="/./Include/object.h.html#line-302">PyBufferProcs</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-30">tp_as_buffer</a></span><span class="p">;</span>
+<a name="line-354"></a>
+<a name="line-355"></a>    <span class="cm">/* Flags to define presence of optional/expanded features */</span>
+<a name="line-356"></a>    <span class="kt">long</span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-33">tp_flags</a></span><span class="p">;</span>
+<a name="line-357"></a>
+<a name="line-358"></a>    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-35">tp_doc</a></span><span class="p">;</span> <span class="cm">/* Documentation string */</span>
+<a name="line-359"></a>
+<a name="line-360"></a>    <span class="cm">/* Assigned meaning in release 2.0 */</span>
+<a name="line-361"></a>    <span class="cm">/* call function for all accessible objects */</span>
+<a name="line-362"></a>    <span class="n"><a href="/./Include/object.h.html#line-217">traverseproc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-39">tp_traverse</a></span><span class="p">;</span>
+<a name="line-363"></a>
+<a name="line-364"></a>    <span class="cm">/* delete references to contained objects */</span>
+<a name="line-365"></a>    <span class="n"><a href="/./Include/object.h.html#line-136">inquiry</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-42">tp_clear</a></span><span class="p">;</span>
+<a name="line-366"></a>
+<a name="line-367"></a>    <span class="cm">/* Assigned meaning in release 2.1 */</span>
+<a name="line-368"></a>    <span class="cm">/* rich comparisons */</span>
+<a name="line-369"></a>    <span class="n"><a href="/./Include/object.h.html#line-315">richcmpfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-46">tp_richcompare</a></span><span class="p">;</span>
+<a name="line-370"></a>
+<a name="line-371"></a>    <span class="cm">/* weak reference enabler */</span>
+<a name="line-372"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-49">tp_weaklistoffset</a></span><span class="p">;</span>
+<a name="line-373"></a>
+<a name="line-374"></a>    <span class="cm">/* Added in release 2.2 */</span>
+<a name="line-375"></a>    <span class="cm">/* Iterators */</span>
+<a name="line-376"></a>    <span class="n"><a href="/./Include/object.h.html#line-316">getiterfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-53">tp_iter</a></span><span class="p">;</span>
+<a name="line-377"></a>    <span class="n"><a href="/./Include/object.h.html#line-317">iternextfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-54">tp_iternext</a></span><span class="p">;</span>
+<a name="line-378"></a>
+<a name="line-379"></a>    <span class="cm">/* Attribute descriptor and subclassing stuff */</span>
+<a name="line-380"></a>    <span class="k">struct</span> <span class="n"><a href="/./Include/methodobject.h.html#line-37">PyMethodDef</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-57">tp_methods</a></span><span class="p">;</span>
+<a name="line-381"></a>    <span class="k">struct</span> <span class="n"><a href="/./Include/structmember.h.html#line-36">PyMemberDef</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-58">tp_members</a></span><span class="p">;</span>
+<a name="line-382"></a>    <span class="k">struct</span> <span class="n"><a href="/./Include/descrobject.h.html#line-11">PyGetSetDef</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-59">tp_getset</a></span><span class="p">;</span>
+<a name="line-383"></a>    <span class="k">struct</span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-1">_typeobject</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-60">tp_base</a></span><span class="p">;</span>
+<a name="line-384"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-61">tp_dict</a></span><span class="p">;</span>
+<a name="line-385"></a>    <span class="n"><a href="/./Include/object.h.html#line-318">descrgetfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-62">tp_descr_get</a></span><span class="p">;</span>
+<a name="line-386"></a>    <span class="n"><a href="/./Include/object.h.html#line-319">descrsetfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-63">tp_descr_set</a></span><span class="p">;</span>
+<a name="line-387"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-64">tp_dictoffset</a></span><span class="p">;</span>
+<a name="line-388"></a>    <span class="n"><a href="/./Include/object.h.html#line-320">initproc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-65">tp_init</a></span><span class="p">;</span>
+<a name="line-389"></a>    <span class="n"><a href="/./Include/object.h.html#line-322">allocfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-66">tp_alloc</a></span><span class="p">;</span>
+<a name="line-390"></a>    <span class="n"><a href="/./Include/object.h.html#line-321">newfunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-67">tp_new</a></span><span class="p">;</span>
+<a name="line-391"></a>    <span class="n"><a href="/./Include/object.h.html#line-305">freefunc</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-68">tp_free</a></span><span class="p">;</span> <span class="cm">/* Low-level free-memory routine */</span>
+<a name="line-392"></a>    <span class="n"><a href="/./Include/object.h.html#line-136">inquiry</a></span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-69">tp_is_gc</a></span><span class="p">;</span> <span class="cm">/* For PyObject_IS_GC */</span>
+<a name="line-393"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-70">tp_bases</a></span><span class="p">;</span>
+<a name="line-394"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-71">tp_mro</a></span><span class="p">;</span> <span class="cm">/* method resolution order */</span>
+<a name="line-395"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-72">tp_cache</a></span><span class="p">;</span>
+<a name="line-396"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-73">tp_subclasses</a></span><span class="p">;</span>
+<a name="line-397"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-74">tp_weaklist</a></span><span class="p">;</span>
+<a name="line-398"></a>    <span class="n"><a href="/./Include/cobject.h.html#line-82">destructor</a></span> <span class="n"><a href="/./Include/object.h.html#line-398">tp_del</a></span><span class="p">;</span>
+<a name="line-399"></a>
+<a name="line-400"></a>    <span class="cm">/* Type attribute cache version tag. Added in version 2.6 */</span>
+<a name="line-401"></a>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n"><a href="/./Include/object.h.html#line-401">tp_version_tag</a></span><span class="p">;</span>
+<a name="line-402"></a>
+<a name="line-403"></a><span class="cp">#ifdef COUNT_ALLOCS</span>
+<a name="line-404"></a>    <span class="cm">/* these must be last and never explicitly initialized */</span>
+<a name="line-405"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="n"><a href="/./Include/object.h.html#line-405">tp_allocs</a></span><span class="p">;</span>
+<a name="line-406"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="n"><a href="/./Include/object.h.html#line-406">tp_frees</a></span><span class="p">;</span>
+<a name="line-407"></a>    <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="n"><a href="/./Include/object.h.html#line-407">tp_maxalloc</a></span><span class="p">;</span>
+<a name="line-408"></a>    <span class="k">struct</span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-1">_typeobject</a></span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-408">tp_prev</a></span><span class="p">;</span>
+<a name="line-409"></a>    <span class="k">struct</span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-1">_typeobject</a></span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-409">tp_next</a></span><span class="p">;</span>
+<a name="line-410"></a><span class="cp">#endif</span>
+<a name="line-411"></a><span class="p">}</span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span><span class="p">;</span>
+<a name="line-412"></a>
+<a name="line-413"></a>
+<a name="line-414"></a><span class="cm">/* The *real* layout of a type object when allocated on the heap */</span>
+<a name="line-415"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="n"><a href="/./Include/object.h.html#line-415">_heaptypeobject</a></span> <span class="p">{</span>
+<a name="line-416"></a>    <span class="cm">/* Note: there&#39;s a dependency on the order of these members</span>
+<a name="line-417"></a><span class="cm">       in slotptr() in typeobject.c . */</span>
+<a name="line-418"></a>    <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="n"><a href="/./Include/object.h.html#line-418">ht_type</a></span><span class="p">;</span>
+<a name="line-419"></a>    <span class="n"><a href="/./Include/object.h.html#line-273">PyNumberMethods</a></span> <span class="n"><a href="/./Include/object.h.html#line-419">as_number</a></span><span class="p">;</span>
+<a name="line-420"></a>    <span class="n"><a href="/./Include/object.h.html#line-293">PyMappingMethods</a></span> <span class="n"><a href="/./Include/object.h.html#line-420">as_mapping</a></span><span class="p">;</span>
+<a name="line-421"></a>    <span class="n"><a href="/./Include/object.h.html#line-287">PySequenceMethods</a></span> <span class="n"><a href="/./Include/object.h.html#line-421">as_sequence</a></span><span class="p">;</span> <span class="cm">/* as_sequence comes after as_mapping,</span>
+<a name="line-422"></a><span class="cm">                                      so that the mapping wins when both</span>
+<a name="line-423"></a><span class="cm">                                      the mapping and the sequence define</span>
+<a name="line-424"></a><span class="cm">                                      a given operator (e.g. __getitem__).</span>
+<a name="line-425"></a><span class="cm">                                      see add_operators() in typeobject.c . */</span>
+<a name="line-426"></a>    <span class="n"><a href="/./Include/object.h.html#line-302">PyBufferProcs</a></span> <span class="n"><a href="/./Include/object.h.html#line-426">as_buffer</a></span><span class="p">;</span>
+<a name="line-427"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-427">ht_name</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/object.h.html#line-427">ht_slots</a></span><span class="p">;</span>
+<a name="line-428"></a>    <span class="cm">/* here are optional user slots, followed by the members. */</span>
+<a name="line-429"></a><span class="p">}</span> <span class="n"><a href="/./Include/object.h.html#line-429">PyHeapTypeObject</a></span><span class="p">;</span>
+<a name="line-430"></a>
+<a name="line-431"></a><span class="cm">/* access macro to the members which are floating &quot;behind&quot; the object */</span>
+<a name="line-432"></a><span class="cp">#define PyHeapType_GET_MEMBERS(etype) \</span>
+<a name="line-433"></a><span class="cp">    ((PyMemberDef *)(((char *)etype) + Py_TYPE(etype)-&gt;tp_basicsize))</span>
+<a name="line-434"></a>
+<a name="line-435"></a>
+<a name="line-436"></a><span class="cm">/* Generic type check */</span>
+<a name="line-437"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-1146">PyType_IsSubtype</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-438"></a><span class="cp">#define PyObject_TypeCheck(ob, tp) \</span>
+<a name="line-439"></a><span class="cp">    (Py_TYPE(ob) == (tp) || PyType_IsSubtype(Py_TYPE(ob), (tp)))</span>
+<a name="line-440"></a>
+<a name="line-441"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-2772">PyType_Type</a></span><span class="p">;</span> <span class="cm">/* built-in &#39;type&#39; */</span>
+<a name="line-442"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-3537">PyBaseObject_Type</a></span><span class="p">;</span> <span class="cm">/* built-in &#39;object&#39; */</span>
+<a name="line-443"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-6712">PySuper_Type</a></span><span class="p">;</span> <span class="cm">/* built-in &#39;super&#39; */</span>
+<a name="line-444"></a>
+<a name="line-445"></a><span class="cp">#define PyType_Check(op) \</span>
+<a name="line-446"></a><span class="cp">    PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_TYPE_SUBCLASS)</span>
+<a name="line-447"></a><span class="cp">#define PyType_CheckExact(op) (Py_TYPE(op) == &amp;PyType_Type)</span>
+<a name="line-448"></a>
+<a name="line-449"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-3975">PyType_Ready</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-450"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-754">PyType_GenericAlloc</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">);</span>
+<a name="line-451"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-784">PyType_GenericNew</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="p">,</span>
+<a name="line-452"></a>                                               <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-453"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-2484">_PyType_Lookup</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-454"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-1225">_PyObject_LookupSpecial</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">**</span><span class="p">);</span>
+<a name="line-455"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-37">PyType_ClearCache</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-456"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/typeobject.c.html#line-54">PyType_Modified</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-457"></a>
+<a name="line-458"></a><span class="cm">/* Generic operations on objects */</span>
+<a name="line-459"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-328">PyObject_Print</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-460"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-335">_PyObject_Dump</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-461"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-364">PyObject_Repr</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-462"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-407">_PyObject_Str</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-463"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-449">PyObject_Str</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-464"></a><span class="cp">#define PyObject_Bytes PyObject_Str</span>
+<a name="line-465"></a><span class="cp">#ifdef Py_USING_UNICODE</span>
+<a name="line-466"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-471">PyObject_Unicode</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-467"></a><span class="cp">#endif</span>
+<a name="line-468"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-854">PyObject_Compare</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-469"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-944">PyObject_RichCompare</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-470"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-990">PyObject_RichCompareBool</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-471"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1129">PyObject_GetAttrString</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-472"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1156">PyObject_SetAttrString</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-473"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1144">PyObject_HasAttrString</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-474"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1172">PyObject_GetAttr</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-475"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1218">PyObject_SetAttr</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-476"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1206">PyObject_HasAttr</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-477"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">**</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1277">_PyObject_GetDictPtr</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-478"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1304">PyObject_SelfIter</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-479"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1316">_PyObject_NextNotImplemented</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-480"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1459">PyObject_GenericGetAttr</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-481"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1557">PyObject_GenericSetAttr</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span>
+<a name="line-482"></a>                                              <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-483"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1105">PyObject_Hash</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-484"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1095">PyObject_HashNotImplemented</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-485"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1567">PyObject_IsTrue</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-486"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1595">PyObject_Not</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-487"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1658">PyCallable_Check</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-488"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1645">PyNumber_Coerce</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">**</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">**</span><span class="p">);</span>
+<a name="line-489"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1612">PyNumber_CoerceEx</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">**</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">**</span><span class="p">);</span>
+<a name="line-490"></a>
+<a name="line-491"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/weakrefobject.c.html#line-907">PyObject_ClearWeakRefs</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-492"></a>
+<a name="line-493"></a><span class="cm">/* A slot function whose address we need to compare */</span>
+<a name="line-494"></a><span class="k">extern</span> <span class="kt">int</span> <span class="nf"><a href="/./Objects/typeobject.c.html#line-5350">_PyObject_SlotCompare</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-495"></a><span class="cm">/* Same as PyObject_Generic{Get,Set}Attr, but passing the attributes</span>
+<a name="line-496"></a><span class="cm">   dict as the last parameter. */</span>
+<a name="line-497"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span>
+<a name="line-498"></a><span class="n"><a href="/./Objects/object.c.html#line-1327">_PyObject_GenericGetAttrWithDict</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-499"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>
+<a name="line-500"></a><span class="n"><a href="/./Objects/object.c.html#line-1465">_PyObject_GenericSetAttrWithDict</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span>
+<a name="line-501"></a>                                 <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-502"></a>
+<a name="line-503"></a>
+<a name="line-504"></a><span class="cm">/* PyObject_Dir(obj) acts like Python __builtin__.dir(obj), returning a</span>
+<a name="line-505"></a><span class="cm">   list of strings.  PyObject_Dir(NULL) is like __builtin__.dir(),</span>
+<a name="line-506"></a><span class="cm">   returning the names of the current locals.  In this case, if there are</span>
+<a name="line-507"></a><span class="cm">   no current locals, NULL is returned, and PyErr_Occurred() is false.</span>
+<a name="line-508"></a><span class="cm">*/</span>
+<a name="line-509"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1968">PyObject_Dir</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-510"></a>
+<a name="line-511"></a>
+<a name="line-512"></a><span class="cm">/* Helpers for printing recursive container types */</span>
+<a name="line-513"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2374">Py_ReprEnter</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-514"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2402">Py_ReprLeave</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-515"></a>
+<a name="line-516"></a><span class="cm">/* Helpers for hash functions */</span>
+<a name="line-517"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1022">_Py_HashDouble</a></span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+<a name="line-518"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1081">_Py_HashPointer</a></span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">);</span>
+<a name="line-519"></a>
+<a name="line-520"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+<a name="line-521"></a>    <span class="kt">long</span> <span class="n"><a href="/./Include/object.h.html#line-521">prefix</a></span><span class="p">;</span>
+<a name="line-522"></a>    <span class="kt">long</span> <span class="n"><a href="/./Include/object.h.html#line-522">suffix</a></span><span class="p">;</span>
+<a name="line-523"></a><span class="p">}</span> <span class="n"><a href="/./Include/object.h.html#line-523">_Py_HashSecret_t</a></span><span class="p">;</span>
+<a name="line-524"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-523">_Py_HashSecret_t</a></span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-1102">_Py_HashSecret</a></span><span class="p">;</span>
+<a name="line-525"></a>
+<a name="line-526"></a><span class="cp">#ifdef Py_DEBUG</span>
+<a name="line-527"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Python/random.c.html#line-11">_Py_HashSecret_Initialized</a></span><span class="p">;</span>
+<a name="line-528"></a><span class="cp">#endif</span>
+<a name="line-529"></a>
+<a name="line-530"></a><span class="cm">/* Helper for passing objects to printf and the like.</span>
+<a name="line-531"></a><span class="cm">   Leaks refcounts.  Don&#39;t use it!</span>
+<a name="line-532"></a><span class="cm">*/</span>
+<a name="line-533"></a><span class="cp">#define PyObject_REPR(obj) PyString_AS_STRING(PyObject_Repr(obj))</span>
+<a name="line-534"></a>
+<a name="line-535"></a><span class="cm">/* Flag bits for printing: */</span>
+<a name="line-536"></a><span class="cp">#define Py_PRINT_RAW    1       </span><span class="cm">/* No string quotes etc. */</span><span class="cp"></span>
+<a name="line-537"></a>
+<a name="line-538"></a><span class="cm">/*</span>
+<a name="line-539"></a><span class="cm">`Type flags (tp_flags)</span>
+<a name="line-540"></a>
+<a name="line-541"></a><span class="cm">These flags are used to extend the type structure in a backwards-compatible</span>
+<a name="line-542"></a><span class="cm">fashion. Extensions can use the flags to indicate (and test) when a given</span>
+<a name="line-543"></a><span class="cm">type structure contains a new feature. The Python core will use these when</span>
+<a name="line-544"></a><span class="cm">introducing new functionality between major revisions (to avoid mid-version</span>
+<a name="line-545"></a><span class="cm">changes in the PYTHON_API_VERSION).</span>
+<a name="line-546"></a>
+<a name="line-547"></a><span class="cm">Arbitration of the flag bit positions will need to be coordinated among</span>
+<a name="line-548"></a><span class="cm">all extension writers who publically release their extensions (this will</span>
+<a name="line-549"></a><span class="cm">be fewer than you might expect!)..</span>
+<a name="line-550"></a>
+<a name="line-551"></a><span class="cm">Python 1.5.2 introduced the bf_getcharbuffer slot into PyBufferProcs.</span>
+<a name="line-552"></a>
+<a name="line-553"></a><span class="cm">Type definitions should use Py_TPFLAGS_DEFAULT for their tp_flags value.</span>
+<a name="line-554"></a>
+<a name="line-555"></a><span class="cm">Code can use PyType_HasFeature(type_ob, flag_value) to test whether the</span>
+<a name="line-556"></a><span class="cm">given type object has a specified feature.</span>
+<a name="line-557"></a>
+<a name="line-558"></a><span class="cm">NOTE: when building the core, Py_TPFLAGS_DEFAULT includes</span>
+<a name="line-559"></a><span class="cm">Py_TPFLAGS_HAVE_VERSION_TAG; outside the core, it doesn&#39;t.  This is so</span>
+<a name="line-560"></a><span class="cm">that extensions that modify tp_dict of their own types directly don&#39;t</span>
+<a name="line-561"></a><span class="cm">break, since this was allowed in 2.5.  In 3.0 they will have to</span>
+<a name="line-562"></a><span class="cm">manually remove this flag though!</span>
+<a name="line-563"></a><span class="cm">*/</span>
+<a name="line-564"></a>
+<a name="line-565"></a><span class="cm">/* PyBufferProcs contains bf_getcharbuffer */</span>
+<a name="line-566"></a><span class="cp">#define Py_TPFLAGS_HAVE_GETCHARBUFFER  (1L&lt;&lt;0)</span>
+<a name="line-567"></a>
+<a name="line-568"></a><span class="cm">/* PySequenceMethods contains sq_contains */</span>
+<a name="line-569"></a><span class="cp">#define Py_TPFLAGS_HAVE_SEQUENCE_IN (1L&lt;&lt;1)</span>
+<a name="line-570"></a>
+<a name="line-571"></a><span class="cm">/* This is here for backwards compatibility.  Extensions that use the old GC</span>
+<a name="line-572"></a><span class="cm"> * API will still compile but the objects will not be tracked by the GC. */</span>
+<a name="line-573"></a><span class="cp">#define Py_TPFLAGS_GC 0 </span><span class="cm">/* used to be (1L&lt;&lt;2) */</span><span class="cp"></span>
+<a name="line-574"></a>
+<a name="line-575"></a><span class="cm">/* PySequenceMethods and PyNumberMethods contain in-place operators */</span>
+<a name="line-576"></a><span class="cp">#define Py_TPFLAGS_HAVE_INPLACEOPS (1L&lt;&lt;3)</span>
+<a name="line-577"></a>
+<a name="line-578"></a><span class="cm">/* PyNumberMethods do their own coercion */</span>
+<a name="line-579"></a><span class="cp">#define Py_TPFLAGS_CHECKTYPES (1L&lt;&lt;4)</span>
+<a name="line-580"></a>
+<a name="line-581"></a><span class="cm">/* tp_richcompare is defined */</span>
+<a name="line-582"></a><span class="cp">#define Py_TPFLAGS_HAVE_RICHCOMPARE (1L&lt;&lt;5)</span>
+<a name="line-583"></a>
+<a name="line-584"></a><span class="cm">/* Objects which are weakly referencable if their tp_weaklistoffset is &gt;0 */</span>
+<a name="line-585"></a><span class="cp">#define Py_TPFLAGS_HAVE_WEAKREFS (1L&lt;&lt;6)</span>
+<a name="line-586"></a>
+<a name="line-587"></a><span class="cm">/* tp_iter is defined */</span>
+<a name="line-588"></a><span class="cp">#define Py_TPFLAGS_HAVE_ITER (1L&lt;&lt;7)</span>
+<a name="line-589"></a>
+<a name="line-590"></a><span class="cm">/* New members introduced by Python 2.2 exist */</span>
+<a name="line-591"></a><span class="cp">#define Py_TPFLAGS_HAVE_CLASS (1L&lt;&lt;8)</span>
+<a name="line-592"></a>
+<a name="line-593"></a><span class="cm">/* Set if the type object is dynamically allocated */</span>
+<a name="line-594"></a><span class="cp">#define Py_TPFLAGS_HEAPTYPE (1L&lt;&lt;9)</span>
+<a name="line-595"></a>
+<a name="line-596"></a><span class="cm">/* Set if the type allows subclassing */</span>
+<a name="line-597"></a><span class="cp">#define Py_TPFLAGS_BASETYPE (1L&lt;&lt;10)</span>
+<a name="line-598"></a>
+<a name="line-599"></a><span class="cm">/* Set if the type is &#39;ready&#39; -- fully initialized */</span>
+<a name="line-600"></a><span class="cp">#define Py_TPFLAGS_READY (1L&lt;&lt;12)</span>
+<a name="line-601"></a>
+<a name="line-602"></a><span class="cm">/* Set while the type is being &#39;readied&#39;, to prevent recursive ready calls */</span>
+<a name="line-603"></a><span class="cp">#define Py_TPFLAGS_READYING (1L&lt;&lt;13)</span>
+<a name="line-604"></a>
+<a name="line-605"></a><span class="cm">/* Objects support garbage collection (see objimp.h) */</span>
+<a name="line-606"></a><span class="cp">#define Py_TPFLAGS_HAVE_GC (1L&lt;&lt;14)</span>
+<a name="line-607"></a>
+<a name="line-608"></a><span class="cm">/* These two bits are preserved for Stackless Python, next after this is 17 */</span>
+<a name="line-609"></a><span class="cp">#ifdef STACKLESS</span>
+<a name="line-610"></a><span class="cp">#define Py_TPFLAGS_HAVE_STACKLESS_EXTENSION (3L&lt;&lt;15)</span>
+<a name="line-611"></a><span class="cp">#else</span>
+<a name="line-612"></a><span class="cp">#define Py_TPFLAGS_HAVE_STACKLESS_EXTENSION 0</span>
+<a name="line-613"></a><span class="cp">#endif</span>
+<a name="line-614"></a>
+<a name="line-615"></a><span class="cm">/* Objects support nb_index in PyNumberMethods */</span>
+<a name="line-616"></a><span class="cp">#define Py_TPFLAGS_HAVE_INDEX (1L&lt;&lt;17)</span>
+<a name="line-617"></a>
+<a name="line-618"></a><span class="cm">/* Objects support type attribute cache */</span>
+<a name="line-619"></a><span class="cp">#define Py_TPFLAGS_HAVE_VERSION_TAG   (1L&lt;&lt;18)</span>
+<a name="line-620"></a><span class="cp">#define Py_TPFLAGS_VALID_VERSION_TAG  (1L&lt;&lt;19)</span>
+<a name="line-621"></a>
+<a name="line-622"></a><span class="cm">/* Type is abstract and cannot be instantiated */</span>
+<a name="line-623"></a><span class="cp">#define Py_TPFLAGS_IS_ABSTRACT (1L&lt;&lt;20)</span>
+<a name="line-624"></a>
+<a name="line-625"></a><span class="cm">/* Has the new buffer protocol */</span>
+<a name="line-626"></a><span class="cp">#define Py_TPFLAGS_HAVE_NEWBUFFER (1L&lt;&lt;21)</span>
+<a name="line-627"></a>
+<a name="line-628"></a><span class="cm">/* These flags are used to determine if a type is a subclass. */</span>
+<a name="line-629"></a><span class="cp">#define Py_TPFLAGS_INT_SUBCLASS         (1L&lt;&lt;23)</span>
+<a name="line-630"></a><span class="cp">#define Py_TPFLAGS_LONG_SUBCLASS        (1L&lt;&lt;24)</span>
+<a name="line-631"></a><span class="cp">#define Py_TPFLAGS_LIST_SUBCLASS        (1L&lt;&lt;25)</span>
+<a name="line-632"></a><span class="cp">#define Py_TPFLAGS_TUPLE_SUBCLASS       (1L&lt;&lt;26)</span>
+<a name="line-633"></a><span class="cp">#define Py_TPFLAGS_STRING_SUBCLASS      (1L&lt;&lt;27)</span>
+<a name="line-634"></a><span class="cp">#define Py_TPFLAGS_UNICODE_SUBCLASS     (1L&lt;&lt;28)</span>
+<a name="line-635"></a><span class="cp">#define Py_TPFLAGS_DICT_SUBCLASS        (1L&lt;&lt;29)</span>
+<a name="line-636"></a><span class="cp">#define Py_TPFLAGS_BASE_EXC_SUBCLASS    (1L&lt;&lt;30)</span>
+<a name="line-637"></a><span class="cp">#define Py_TPFLAGS_TYPE_SUBCLASS        (1L&lt;&lt;31)</span>
+<a name="line-638"></a>
+<a name="line-639"></a><span class="cp">#define Py_TPFLAGS_DEFAULT_EXTERNAL ( \</span>
+<a name="line-640"></a><span class="cp">                 Py_TPFLAGS_HAVE_GETCHARBUFFER | \</span>
+<a name="line-641"></a><span class="cp">                 Py_TPFLAGS_HAVE_SEQUENCE_IN | \</span>
+<a name="line-642"></a><span class="cp">                 Py_TPFLAGS_HAVE_INPLACEOPS | \</span>
+<a name="line-643"></a><span class="cp">                 Py_TPFLAGS_HAVE_RICHCOMPARE | \</span>
+<a name="line-644"></a><span class="cp">                 Py_TPFLAGS_HAVE_WEAKREFS | \</span>
+<a name="line-645"></a><span class="cp">                 Py_TPFLAGS_HAVE_ITER | \</span>
+<a name="line-646"></a><span class="cp">                 Py_TPFLAGS_HAVE_CLASS | \</span>
+<a name="line-647"></a><span class="cp">                 Py_TPFLAGS_HAVE_STACKLESS_EXTENSION | \</span>
+<a name="line-648"></a><span class="cp">                 Py_TPFLAGS_HAVE_INDEX | \</span>
+<a name="line-649"></a><span class="cp">                 0)</span>
+<a name="line-650"></a><span class="cp">#define Py_TPFLAGS_DEFAULT_CORE (Py_TPFLAGS_DEFAULT_EXTERNAL | \</span>
+<a name="line-651"></a><span class="cp">                 Py_TPFLAGS_HAVE_VERSION_TAG)</span>
+<a name="line-652"></a>
+<a name="line-653"></a><span class="cp">#ifdef Py_BUILD_CORE</span>
+<a name="line-654"></a><span class="cp">#define Py_TPFLAGS_DEFAULT Py_TPFLAGS_DEFAULT_CORE</span>
+<a name="line-655"></a><span class="cp">#else</span>
+<a name="line-656"></a><span class="cp">#define Py_TPFLAGS_DEFAULT Py_TPFLAGS_DEFAULT_EXTERNAL</span>
+<a name="line-657"></a><span class="cp">#endif</span>
+<a name="line-658"></a>
+<a name="line-659"></a><span class="cp">#define PyType_HasFeature(t,f)  (((t)-&gt;tp_flags &amp; (f)) != 0)</span>
+<a name="line-660"></a><span class="cp">#define PyType_FastSubclass(t,f)  PyType_HasFeature(t,f)</span>
+<a name="line-661"></a>
+<a name="line-662"></a>
+<a name="line-663"></a><span class="cm">/*</span>
+<a name="line-664"></a><span class="cm">The macros Py_INCREF(op) and Py_DECREF(op) are used to increment or decrement</span>
+<a name="line-665"></a><span class="cm">reference counts.  Py_DECREF calls the object&#39;s deallocator function when</span>
+<a name="line-666"></a><span class="cm">the refcount falls to 0; for</span>
+<a name="line-667"></a><span class="cm">objects that don&#39;t contain references to other objects or heap memory</span>
+<a name="line-668"></a><span class="cm">this can be the standard function free().  Both macros can be used</span>
+<a name="line-669"></a><span class="cm">wherever a void expression is allowed.  The argument must not be a</span>
+<a name="line-670"></a><span class="cm">NULL pointer.  If it may be NULL, use Py_XINCREF/Py_XDECREF instead.</span>
+<a name="line-671"></a><span class="cm">The macro _Py_NewReference(op) initialize reference counts to 1, and</span>
+<a name="line-672"></a><span class="cm">in special builds (Py_REF_DEBUG, Py_TRACE_REFS) performs additional</span>
+<a name="line-673"></a><span class="cm">bookkeeping appropriate to the special build.</span>
+<a name="line-674"></a>
+<a name="line-675"></a><span class="cm">We assume that the reference count field can never overflow; this can</span>
+<a name="line-676"></a><span class="cm">be proven when the size of the field is the same as the pointer size, so</span>
+<a name="line-677"></a><span class="cm">we ignore the possibility.  Provided a C int is at least 32 bits (which</span>
+<a name="line-678"></a><span class="cm">is implicitly assumed in many parts of this code), that&#39;s enough for</span>
+<a name="line-679"></a><span class="cm">about 2**31 references to an object.</span>
+<a name="line-680"></a>
+<a name="line-681"></a><span class="cm">XXX The following became out of date in Python 2.2, but I&#39;m not sure</span>
+<a name="line-682"></a><span class="cm">XXX what the full truth is now.  Certainly, heap-allocated type objects</span>
+<a name="line-683"></a><span class="cm">XXX can and should be deallocated.</span>
+<a name="line-684"></a><span class="cm">Type objects should never be deallocated; the type pointer in an object</span>
+<a name="line-685"></a><span class="cm">is not considered to be a reference to the type object, to save</span>
+<a name="line-686"></a><span class="cm">complications in the deallocation function.  (This is actually a</span>
+<a name="line-687"></a><span class="cm">decision that&#39;s up to the implementer of each new type so if you want,</span>
+<a name="line-688"></a><span class="cm">you can count such references to the type object.)</span>
+<a name="line-689"></a>
+<a name="line-690"></a><span class="cm">*** WARNING*** The Py_DECREF macro must have a side-effect-free argument</span>
+<a name="line-691"></a><span class="cm">since it may evaluate its argument multiple times.  (The alternative</span>
+<a name="line-692"></a><span class="cm">would be to mace it a proper function or assign it to a global temporary</span>
+<a name="line-693"></a><span class="cm">variable first, both of which are slower; and in a multi-threaded</span>
+<a name="line-694"></a><span class="cm">environment the global variable trick is not safe.)</span>
+<a name="line-695"></a><span class="cm">*/</span>
+<a name="line-696"></a>
+<a name="line-697"></a><span class="cm">/* First define a pile of simple helper macros, one set per special</span>
+<a name="line-698"></a><span class="cm"> * build symbol.  These either expand to the obvious things, or to</span>
+<a name="line-699"></a><span class="cm"> * nothing at all when the special mode isn&#39;t in effect.  The main</span>
+<a name="line-700"></a><span class="cm"> * macros can later be defined just once then, yet expand to different</span>
+<a name="line-701"></a><span class="cm"> * things depending on which special build options are and aren&#39;t in effect.</span>
+<a name="line-702"></a><span class="cm"> * Trust me &lt;wink&gt;:  while painful, this is 20x easier to understand than,</span>
+<a name="line-703"></a><span class="cm"> * e.g, defining _Py_NewReference five different times in a maze of nested</span>
+<a name="line-704"></a><span class="cm"> * #ifdefs (we used to do that -- it was impenetrable).</span>
+<a name="line-705"></a><span class="cm"> */</span>
+<a name="line-706"></a><span class="cp">#ifdef Py_REF_DEBUG</span>
+<a name="line-707"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-12">_Py_RefTotal</a></span><span class="p">;</span>
+<a name="line-708"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-192">_Py_NegativeRefcount</a></span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n"><a href="/./Lib/test/test_bsddb.py.html#line-318">fname</a></span><span class="p">,</span>
+<a name="line-709"></a>                                            <span class="kt">int</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-183">lineno</a></span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-101">op</a></span><span class="p">);</span>
+<a name="line-710"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/dictobject.c.html#line-142">_PyDict_Dummy</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-711"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/setobject.c.html#line-35">_PySet_Dummy</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-712"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-15">_Py_GetRefTotal</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-713"></a><span class="cp">#define _Py_INC_REFTOTAL        _Py_RefTotal++</span>
+<a name="line-714"></a><span class="cp">#define _Py_DEC_REFTOTAL        _Py_RefTotal--</span>
+<a name="line-715"></a><span class="cp">#define _Py_REF_DEBUG_COMMA     ,</span>
+<a name="line-716"></a><span class="cp">#define _Py_CHECK_REFCNT(OP)                                    \</span>
+<a name="line-717"></a><span class="cp">{       if (((PyObject*)OP)-&gt;ob_refcnt &lt; 0)                             \</span>
+<a name="line-718"></a><span class="cp">                _Py_NegativeRefcount(__FILE__, __LINE__,        \</span>
+<a name="line-719"></a><span class="cp">                                     (PyObject *)(OP));         \</span>
+<a name="line-720"></a><span class="cp">}</span>
+<a name="line-721"></a><span class="cp">#else</span>
+<a name="line-722"></a><span class="cp">#define _Py_INC_REFTOTAL</span>
+<a name="line-723"></a><span class="cp">#define _Py_DEC_REFTOTAL</span>
+<a name="line-724"></a><span class="cp">#define _Py_REF_DEBUG_COMMA</span>
+<a name="line-725"></a><span class="cp">#define _Py_CHECK_REFCNT(OP)    </span><span class="cm">/* a semicolon */</span><span class="cp">;</span>
+<a name="line-726"></a><span class="cp">#endif </span><span class="cm">/* Py_REF_DEBUG */</span><span class="cp"></span>
+<a name="line-727"></a>
+<a name="line-728"></a><span class="cp">#ifdef COUNT_ALLOCS</span>
+<a name="line-729"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-139">inc_count</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-730"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-170">dec_count</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-731"></a><span class="cp">#define _Py_INC_TPALLOCS(OP)    inc_count(Py_TYPE(OP))</span>
+<a name="line-732"></a><span class="cp">#define _Py_INC_TPFREES(OP)     dec_count(Py_TYPE(OP))</span>
+<a name="line-733"></a><span class="cp">#define _Py_DEC_TPFREES(OP)     Py_TYPE(OP)-&gt;tp_frees--</span>
+<a name="line-734"></a><span class="cp">#define _Py_COUNT_ALLOCS_COMMA  ,</span>
+<a name="line-735"></a><span class="cp">#else</span>
+<a name="line-736"></a><span class="cp">#define _Py_INC_TPALLOCS(OP)</span>
+<a name="line-737"></a><span class="cp">#define _Py_INC_TPFREES(OP)</span>
+<a name="line-738"></a><span class="cp">#define _Py_DEC_TPFREES(OP)</span>
+<a name="line-739"></a><span class="cp">#define _Py_COUNT_ALLOCS_COMMA</span>
+<a name="line-740"></a><span class="cp">#endif </span><span class="cm">/* COUNT_ALLOCS */</span><span class="cp"></span>
+<a name="line-741"></a>
+<a name="line-742"></a><span class="cp">#ifdef Py_TRACE_REFS</span>
+<a name="line-743"></a><span class="cm">/* Py_TRACE_REFS is such major surgery that we call external routines. */</span>
+<a name="line-744"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Include/object.h.html#line-755">_Py_NewReference</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-745"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Include/object.h.html#line-760">_Py_ForgetReference</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-746"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Include/object.h.html#line-762">_Py_Dealloc</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-747"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2269">_Py_PrintReferences</a></span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-748"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2285">_Py_PrintReferenceAddresses</a></span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-749"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-58">_Py_AddToAllObjects</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span> <span class="n">force</span><span class="p">);</span>
+<a name="line-750"></a>
+<a name="line-751"></a><span class="cp">#else</span>
+<a name="line-752"></a><span class="cm">/* Without Py_TRACE_REFS, there&#39;s little enough to do that we expand code</span>
+<a name="line-753"></a><span class="cm"> * inline.</span>
+<a name="line-754"></a><span class="cm"> */</span>
+<a name="line-755"></a><span class="cp">#define _Py_NewReference(op) (                          \</span>
+<a name="line-756"></a><span class="cp">    _Py_INC_TPALLOCS(op) _Py_COUNT_ALLOCS_COMMA         \</span>
+<a name="line-757"></a><span class="cp">    _Py_INC_REFTOTAL  _Py_REF_DEBUG_COMMA               \</span>
+<a name="line-758"></a><span class="cp">    Py_REFCNT(op) = 1)</span>
+<a name="line-759"></a>
+<a name="line-760"></a><span class="cp">#define _Py_ForgetReference(op) _Py_INC_TPFREES(op)</span>
+<a name="line-761"></a>
+<a name="line-762"></a><span class="cp">#define _Py_Dealloc(op) (                               \</span>
+<a name="line-763"></a><span class="cp">    _Py_INC_TPFREES(op) _Py_COUNT_ALLOCS_COMMA          \</span>
+<a name="line-764"></a><span class="cp">    (*Py_TYPE(op)-&gt;tp_dealloc)((PyObject *)(op)))</span>
+<a name="line-765"></a><span class="cp">#endif </span><span class="cm">/* !Py_TRACE_REFS */</span><span class="cp"></span>
+<a name="line-766"></a>
+<a name="line-767"></a><span class="cp">#define Py_INCREF(op) (                         \</span>
+<a name="line-768"></a><span class="cp">    _Py_INC_REFTOTAL  _Py_REF_DEBUG_COMMA       \</span>
+<a name="line-769"></a><span class="cp">    ((PyObject*)(op))-&gt;ob_refcnt++)</span>
+<a name="line-770"></a>
+<a name="line-771"></a><span class="cp">#define Py_DECREF(op)                                   \</span>
+<a name="line-772"></a><span class="cp">    do {                                                \</span>
+<a name="line-773"></a><span class="cp">        if (_Py_DEC_REFTOTAL  _Py_REF_DEBUG_COMMA       \</span>
+<a name="line-774"></a><span class="cp">        --((PyObject*)(op))-&gt;ob_refcnt != 0)            \</span>
+<a name="line-775"></a><span class="cp">            _Py_CHECK_REFCNT(op)                        \</span>
+<a name="line-776"></a><span class="cp">        else                                            \</span>
+<a name="line-777"></a><span class="cp">        _Py_Dealloc((PyObject *)(op));                  \</span>
+<a name="line-778"></a><span class="cp">    } while (0)</span>
+<a name="line-779"></a>
+<a name="line-780"></a><span class="cm">/* Safely decref `op` and set `op` to NULL, especially useful in tp_clear</span>
+<a name="line-781"></a><span class="cm"> * and tp_dealloc implementatons.</span>
+<a name="line-782"></a><span class="cm"> *</span>
+<a name="line-783"></a><span class="cm"> * Note that &quot;the obvious&quot; code can be deadly:</span>
+<a name="line-784"></a><span class="cm"> *</span>
+<a name="line-785"></a><span class="cm"> *     Py_XDECREF(op);</span>
+<a name="line-786"></a><span class="cm"> *     op = NULL;</span>
+<a name="line-787"></a><span class="cm"> *</span>
+<a name="line-788"></a><span class="cm"> * Typically, `op` is something like self-&gt;containee, and `self` is done</span>
+<a name="line-789"></a><span class="cm"> * using its `containee` member.  In the code sequence above, suppose</span>
+<a name="line-790"></a><span class="cm"> * `containee` is non-NULL with a refcount of 1.  Its refcount falls to</span>
+<a name="line-791"></a><span class="cm"> * 0 on the first line, which can trigger an arbitrary amount of code,</span>
+<a name="line-792"></a><span class="cm"> * possibly including finalizers (like __del__ methods or weakref callbacks)</span>
+<a name="line-793"></a><span class="cm"> * coded in Python, which in turn can release the GIL and allow other threads</span>
+<a name="line-794"></a><span class="cm"> * to run, etc.  Such code may even invoke methods of `self` again, or cause</span>
+<a name="line-795"></a><span class="cm"> * cyclic gc to trigger, but-- oops! --self-&gt;containee still points to the</span>
+<a name="line-796"></a><span class="cm"> * object being torn down, and it may be in an insane state while being torn</span>
+<a name="line-797"></a><span class="cm"> * down.  This has in fact been a rich historic source of miserable (rare &amp;</span>
+<a name="line-798"></a><span class="cm"> * hard-to-diagnose) segfaulting (and other) bugs.</span>
+<a name="line-799"></a><span class="cm"> *</span>
+<a name="line-800"></a><span class="cm"> * The safe way is:</span>
+<a name="line-801"></a><span class="cm"> *</span>
+<a name="line-802"></a><span class="cm"> *      Py_CLEAR(op);</span>
+<a name="line-803"></a><span class="cm"> *</span>
+<a name="line-804"></a><span class="cm"> * That arranges to set `op` to NULL _before_ decref&#39;ing, so that any code</span>
+<a name="line-805"></a><span class="cm"> * triggered as a side-effect of `op` getting torn down no longer believes</span>
+<a name="line-806"></a><span class="cm"> * `op` points to a valid object.</span>
+<a name="line-807"></a><span class="cm"> *</span>
+<a name="line-808"></a><span class="cm"> * There are cases where it&#39;s safe to use the naive code, but they&#39;re brittle.</span>
+<a name="line-809"></a><span class="cm"> * For example, if `op` points to a Python integer, you know that destroying</span>
+<a name="line-810"></a><span class="cm"> * one of those can&#39;t cause problems -- but in part that relies on that</span>
+<a name="line-811"></a><span class="cm"> * Python integers aren&#39;t currently weakly referencable.  Best practice is</span>
+<a name="line-812"></a><span class="cm"> * to use Py_CLEAR() even if you can&#39;t think of a reason for why you need to.</span>
+<a name="line-813"></a><span class="cm"> */</span>
+<a name="line-814"></a><span class="cp">#define Py_CLEAR(op)                            \</span>
+<a name="line-815"></a><span class="cp">    do {                                        \</span>
+<a name="line-816"></a><span class="cp">        if (op) {                               \</span>
+<a name="line-817"></a><span class="cp">            PyObject *_py_tmp = (PyObject *)(op);               \</span>
+<a name="line-818"></a><span class="cp">            (op) = NULL;                        \</span>
+<a name="line-819"></a><span class="cp">            Py_DECREF(_py_tmp);                 \</span>
+<a name="line-820"></a><span class="cp">        }                                       \</span>
+<a name="line-821"></a><span class="cp">    } while (0)</span>
+<a name="line-822"></a>
+<a name="line-823"></a><span class="cm">/* Macros to use in case the object pointer may be NULL: */</span>
+<a name="line-824"></a><span class="cp">#define Py_XINCREF(op) do { if ((op) == NULL) ; else Py_INCREF(op); } while (0)</span>
+<a name="line-825"></a><span class="cp">#define Py_XDECREF(op) do { if ((op) == NULL) ; else Py_DECREF(op); } while (0)</span>
+<a name="line-826"></a>
+<a name="line-827"></a><span class="cm">/*</span>
+<a name="line-828"></a><span class="cm">These are provided as conveniences to Python runtime embedders, so that</span>
+<a name="line-829"></a><span class="cm">they can have object code that is not dependent on Python compilation flags.</span>
+<a name="line-830"></a><span class="cm">*/</span>
+<a name="line-831"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-206">Py_IncRef</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-832"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-212">Py_DecRef</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-833"></a>
+<a name="line-834"></a><span class="cm">/*</span>
+<a name="line-835"></a><span class="cm">_Py_NoneStruct is an object of undefined type which can be used in contexts</span>
+<a name="line-836"></a><span class="cm">where NULL (nil) is not suitable (since NULL often means &#39;error&#39;).</span>
+<a name="line-837"></a>
+<a name="line-838"></a><span class="cm">Don&#39;t forget to apply Py_INCREF() when returning this value!!!</span>
+<a name="line-839"></a><span class="cm">*/</span>
+<a name="line-840"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2032">_Py_NoneStruct</a></span><span class="p">;</span> <span class="cm">/* Don&#39;t use this directly */</span>
+<a name="line-841"></a><span class="cp">#define Py_None (&amp;_Py_NoneStruct)</span>
+<a name="line-842"></a>
+<a name="line-843"></a><span class="cm">/* Macro for returning Py_None from a function */</span>
+<a name="line-844"></a><span class="cp">#define Py_RETURN_NONE return Py_INCREF(Py_None), Py_None</span>
+<a name="line-845"></a>
+<a name="line-846"></a><span class="cm">/*</span>
+<a name="line-847"></a><span class="cm">Py_NotImplemented is a singleton used to signal that an operation is</span>
+<a name="line-848"></a><span class="cm">not implemented for a given type combination.</span>
+<a name="line-849"></a><span class="cm">*/</span>
+<a name="line-850"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2063">_Py_NotImplementedStruct</a></span><span class="p">;</span> <span class="cm">/* Don&#39;t use this directly */</span>
+<a name="line-851"></a><span class="cp">#define Py_NotImplemented (&amp;_Py_NotImplementedStruct)</span>
+<a name="line-852"></a>
+<a name="line-853"></a><span class="cm">/* Rich comparison opcodes */</span>
+<a name="line-854"></a><span class="cp">#define Py_LT 0</span>
+<a name="line-855"></a><span class="cp">#define Py_LE 1</span>
+<a name="line-856"></a><span class="cp">#define Py_EQ 2</span>
+<a name="line-857"></a><span class="cp">#define Py_NE 3</span>
+<a name="line-858"></a><span class="cp">#define Py_GT 4</span>
+<a name="line-859"></a><span class="cp">#define Py_GE 5</span>
+<a name="line-860"></a>
+<a name="line-861"></a><span class="cm">/* Maps Py_LT to Py_GT, ..., Py_GE to Py_LE.</span>
+<a name="line-862"></a><span class="cm"> * Defined in object.c.</span>
+<a name="line-863"></a><span class="cm"> */</span>
+<a name="line-864"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-598">_Py_SwappedOp</a></span><span class="p">[];</span>
+<a name="line-865"></a>
+<a name="line-866"></a><span class="cm">/*</span>
+<a name="line-867"></a><span class="cm">Define staticforward and statichere for source compatibility with old</span>
+<a name="line-868"></a><span class="cm">C extensions.</span>
+<a name="line-869"></a>
+<a name="line-870"></a><span class="cm">The staticforward define was needed to support certain broken C</span>
+<a name="line-871"></a><span class="cm">compilers (notably SCO ODT 3.0, perhaps early AIX as well) botched the</span>
+<a name="line-872"></a><span class="cm">static keyword when it was used with a forward declaration of a static</span>
+<a name="line-873"></a><span class="cm">initialized structure.  Standard C allows the forward declaration with</span>
+<a name="line-874"></a><span class="cm">static, and we&#39;ve decided to stop catering to broken C compilers.</span>
+<a name="line-875"></a><span class="cm">(In fact, we expect that the compilers are all fixed eight years later.)</span>
+<a name="line-876"></a><span class="cm">*/</span>
+<a name="line-877"></a>
+<a name="line-878"></a><span class="cp">#define staticforward static</span>
+<a name="line-879"></a><span class="cp">#define statichere static</span>
+<a name="line-880"></a>
+<a name="line-881"></a>
+<a name="line-882"></a><span class="cm">/*</span>
+<a name="line-883"></a><span class="cm">More conventions</span>
+<a name="line-884"></a><span class="cm">================</span>
+<a name="line-885"></a>
+<a name="line-886"></a><span class="cm">Argument Checking</span>
+<a name="line-887"></a><span class="cm">-----------------</span>
+<a name="line-888"></a>
+<a name="line-889"></a><span class="cm">Functions that take objects as arguments normally don&#39;t check for nil</span>
+<a name="line-890"></a><span class="cm">arguments, but they do check the type of the argument, and return an</span>
+<a name="line-891"></a><span class="cm">error if the function doesn&#39;t apply to the type.</span>
+<a name="line-892"></a>
+<a name="line-893"></a><span class="cm">Failure Modes</span>
+<a name="line-894"></a><span class="cm">-------------</span>
+<a name="line-895"></a>
+<a name="line-896"></a><span class="cm">Functions may fail for a variety of reasons, including running out of</span>
+<a name="line-897"></a><span class="cm">memory.  This is communicated to the caller in two ways: an error string</span>
+<a name="line-898"></a><span class="cm">is set (see errors.h), and the function result differs: functions that</span>
+<a name="line-899"></a><span class="cm">normally return a pointer return NULL for failure, functions returning</span>
+<a name="line-900"></a><span class="cm">an integer return -1 (which could be a legal return value too!), and</span>
+<a name="line-901"></a><span class="cm">other functions return 0 for success and -1 for failure.</span>
+<a name="line-902"></a><span class="cm">Callers should always check for errors before using the result.  If</span>
+<a name="line-903"></a><span class="cm">an error was set, the caller must either explicitly clear it, or pass</span>
+<a name="line-904"></a><span class="cm">the error on to its caller.</span>
+<a name="line-905"></a>
+<a name="line-906"></a><span class="cm">Reference Counts</span>
+<a name="line-907"></a><span class="cm">----------------</span>
+<a name="line-908"></a>
+<a name="line-909"></a><span class="cm">It takes a while to get used to the proper usage of reference counts.</span>
+<a name="line-910"></a>
+<a name="line-911"></a><span class="cm">Functions that create an object set the reference count to 1; such new</span>
+<a name="line-912"></a><span class="cm">objects must be stored somewhere or destroyed again with Py_DECREF().</span>
+<a name="line-913"></a><span class="cm">Some functions that &#39;store&#39; objects, such as PyTuple_SetItem() and</span>
+<a name="line-914"></a><span class="cm">PyList_SetItem(),</span>
+<a name="line-915"></a><span class="cm">don&#39;t increment the reference count of the object, since the most</span>
+<a name="line-916"></a><span class="cm">frequent use is to store a fresh object.  Functions that &#39;retrieve&#39;</span>
+<a name="line-917"></a><span class="cm">objects, such as PyTuple_GetItem() and PyDict_GetItemString(), also</span>
+<a name="line-918"></a><span class="cm">don&#39;t increment</span>
+<a name="line-919"></a><span class="cm">the reference count, since most frequently the object is only looked at</span>
+<a name="line-920"></a><span class="cm">quickly.  Thus, to retrieve an object and store it again, the caller</span>
+<a name="line-921"></a><span class="cm">must call Py_INCREF() explicitly.</span>
+<a name="line-922"></a>
+<a name="line-923"></a><span class="cm">NOTE: functions that &#39;consume&#39; a reference count, like</span>
+<a name="line-924"></a><span class="cm">PyList_SetItem(), consume the reference even if the object wasn&#39;t</span>
+<a name="line-925"></a><span class="cm">successfully stored, to simplify error handling.</span>
+<a name="line-926"></a>
+<a name="line-927"></a><span class="cm">It seems attractive to make other functions that take an object as</span>
+<a name="line-928"></a><span class="cm">argument consume a reference count; however, this may quickly get</span>
+<a name="line-929"></a><span class="cm">confusing (even the current practice is already confusing).  Consider</span>
+<a name="line-930"></a><span class="cm">it carefully, it may save lots of calls to Py_INCREF() and Py_DECREF() at</span>
+<a name="line-931"></a><span class="cm">times.</span>
+<a name="line-932"></a><span class="cm">*/</span>
+<a name="line-933"></a>
+<a name="line-934"></a>
+<a name="line-935"></a><span class="cm">/* Trashcan mechanism, thanks to Christian Tismer.</span>
+<a name="line-936"></a>
+<a name="line-937"></a><span class="cm">When deallocating a container object, it&#39;s possible to trigger an unbounded</span>
+<a name="line-938"></a><span class="cm">chain of deallocations, as each Py_DECREF in turn drops the refcount on &quot;the</span>
+<a name="line-939"></a><span class="cm">next&quot; object in the chain to 0.  This can easily lead to stack faults, and</span>
+<a name="line-940"></a><span class="cm">especially in threads (which typically have less stack space to work with).</span>
+<a name="line-941"></a>
+<a name="line-942"></a><span class="cm">A container object that participates in cyclic gc can avoid this by</span>
+<a name="line-943"></a><span class="cm">bracketing the body of its tp_dealloc function with a pair of macros:</span>
+<a name="line-944"></a>
+<a name="line-945"></a><span class="cm">static void</span>
+<a name="line-946"></a><span class="cm">mytype_dealloc(mytype *p)</span>
+<a name="line-947"></a><span class="cm">{</span>
+<a name="line-948"></a><span class="cm">    ... declarations go here ...</span>
+<a name="line-949"></a>
+<a name="line-950"></a><span class="cm">    PyObject_GC_UnTrack(p);        // must untrack first</span>
+<a name="line-951"></a><span class="cm">    Py_TRASHCAN_SAFE_BEGIN(p)</span>
+<a name="line-952"></a><span class="cm">    ... The body of the deallocator goes here, including all calls ...</span>
+<a name="line-953"></a><span class="cm">    ... to Py_DECREF on contained objects.                         ...</span>
+<a name="line-954"></a><span class="cm">    Py_TRASHCAN_SAFE_END(p)</span>
+<a name="line-955"></a><span class="cm">}</span>
+<a name="line-956"></a>
+<a name="line-957"></a><span class="cm">CAUTION:  Never return from the middle of the body!  If the body needs to</span>
+<a name="line-958"></a><span class="cm">&quot;get out early&quot;, put a label immediately before the Py_TRASHCAN_SAFE_END</span>
+<a name="line-959"></a><span class="cm">call, and goto it.  Else the call-depth counter (see below) will stay</span>
+<a name="line-960"></a><span class="cm">above 0 forever, and the trashcan will never get emptied.</span>
+<a name="line-961"></a>
+<a name="line-962"></a><span class="cm">How it works:  The BEGIN macro increments a call-depth counter.  So long</span>
+<a name="line-963"></a><span class="cm">as this counter is small, the body of the deallocator is run directly without</span>
+<a name="line-964"></a><span class="cm">further ado.  But if the counter gets large, it instead adds p to a list of</span>
+<a name="line-965"></a><span class="cm">objects to be deallocated later, skips the body of the deallocator, and</span>
+<a name="line-966"></a><span class="cm">resumes execution after the END macro.  The tp_dealloc routine then returns</span>
+<a name="line-967"></a><span class="cm">without deallocating anything (and so unbounded call-stack depth is avoided).</span>
+<a name="line-968"></a>
+<a name="line-969"></a><span class="cm">When the call stack finishes unwinding again, code generated by the END macro</span>
+<a name="line-970"></a><span class="cm">notices this, and calls another routine to deallocate all the objects that</span>
+<a name="line-971"></a><span class="cm">may have been added to the list of deferred deallocations.  In effect, a</span>
+<a name="line-972"></a><span class="cm">chain of N deallocations is broken into N / PyTrash_UNWIND_LEVEL pieces,</span>
+<a name="line-973"></a><span class="cm">with the call stack never exceeding a depth of PyTrash_UNWIND_LEVEL.</span>
+<a name="line-974"></a><span class="cm">*/</span>
+<a name="line-975"></a>
+<a name="line-976"></a><span class="cm">/* This is the old private API, invoked by the macros before 2.7.4.</span>
+<a name="line-977"></a><span class="cm">   Kept for binary compatibility of extensions. */</span>
+<a name="line-978"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2439">_PyTrash_deposit_object</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span><span class="o">*</span><span class="p">);</span>
+<a name="line-979"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2464">_PyTrash_destroy_chain</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-980"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2427">_PyTrash_delete_nesting</a></span><span class="p">;</span>
+<a name="line-981"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2432">_PyTrash_delete_later</a></span><span class="p">;</span>
+<a name="line-982"></a>
+<a name="line-983"></a><span class="cm">/* The new thread-safe private API, invoked by the macros below. */</span>
+<a name="line-984"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2450">_PyTrash_thread_deposit_object</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span><span class="o">*</span><span class="p">);</span>
+<a name="line-985"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/object.c.html#line-2488">_PyTrash_thread_destroy_chain</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-986"></a>
+<a name="line-987"></a><span class="cp">#define PyTrash_UNWIND_LEVEL 50</span>
+<a name="line-988"></a>
+<a name="line-989"></a><span class="cm">/* Note the workaround for when the thread state is NULL (issue #17703) */</span>
+<a name="line-990"></a><span class="cp">#define Py_TRASHCAN_SAFE_BEGIN(op) \</span>
+<a name="line-991"></a><span class="cp">    do { \</span>
+<a name="line-992"></a><span class="cp">        PyThreadState *_tstate = PyThreadState_GET(); \</span>
+<a name="line-993"></a><span class="cp">        if (!_tstate || \</span>
+<a name="line-994"></a><span class="cp">            _tstate-&gt;trash_delete_nesting &lt; PyTrash_UNWIND_LEVEL) { \</span>
+<a name="line-995"></a><span class="cp">            if (_tstate) \</span>
+<a name="line-996"></a><span class="cp">                ++_tstate-&gt;trash_delete_nesting;</span>
+<a name="line-997"></a>            <span class="cm">/* The body of the deallocator is here. */</span>
+<a name="line-998"></a><span class="cp">#define Py_TRASHCAN_SAFE_END(op) \</span>
+<a name="line-999"></a><span class="cp">            if (_tstate) { \</span>
+<a name="line-1000"></a><span class="cp">                --_tstate-&gt;trash_delete_nesting; \</span>
+<a name="line-1001"></a><span class="cp">                if (_tstate-&gt;trash_delete_later \</span>
+<a name="line-1002"></a><span class="cp">                    &amp;&amp; _tstate-&gt;trash_delete_nesting &lt;= 0) \</span>
+<a name="line-1003"></a><span class="cp">                    _PyTrash_thread_destroy_chain(); \</span>
+<a name="line-1004"></a><span class="cp">            } \</span>
+<a name="line-1005"></a><span class="cp">        } \</span>
+<a name="line-1006"></a><span class="cp">        else \</span>
+<a name="line-1007"></a><span class="cp">            _PyTrash_thread_deposit_object((PyObject*)op); \</span>
+<a name="line-1008"></a><span class="cp">    } while (0);</span>
+<a name="line-1009"></a>
+<a name="line-1010"></a><span class="cp">#ifdef __cplusplus</span>
+<a name="line-1011"></a><span class="p">}</span>
+<a name="line-1012"></a><span class="cp">#endif</span>
+<a name="line-1013"></a><span class="cp">#endif </span><span class="cm">/* !Py_OBJECT_H */</span><span class="cp"></span>
+</pre></div>
+</td></tr></table></body>
+</html>

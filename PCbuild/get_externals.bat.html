@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a></pre></div></td><td class="code"><div class="source"><span class="filename">PCbuild/get_externals.bat</span><pre><span></span><a name="line-1"></a><span class="p">@</span><span class="k">echo</span> off
+<a name="line-2"></a><span class="k">setlocal</span>
+<a name="line-3"></a><span class="c1">rem Simple script to fetch source for external libraries</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="k">if</span> <span class="k">not</span> <span class="k">exist</span> <span class="s2">&quot;</span><span class="nv">%~dp0</span><span class="s2">..\externals&quot;</span> <span class="k">mkdir</span> <span class="s2">&quot;</span><span class="nv">%~dp0</span><span class="s2">..\externals&quot;</span>
+<a name="line-6"></a><span class="k">pushd</span> <span class="s2">&quot;</span><span class="nv">%~dp0</span><span class="s2">..\externals&quot;</span>
+<a name="line-7"></a>
+<a name="line-8"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%SVNROOT%</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./PCbuild/get_externals.bat.html#line-8">SVNROOT</a></span><span class="p">=</span>http://svn.python.org/projects/external/
+<a name="line-9"></a>
+<a name="line-10"></a><span class="c1">rem Optionally clean up first.  Be warned that this can be very destructive!</span>
+<a name="line-11"></a><span class="k">if</span> <span class="k">not</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;&quot;</span> <span class="p">(</span>
+<a name="line-12"></a>    <span class="k">for</span> <span class="se">%%</span>c <span class="k">in</span> <span class="p">(</span>-c --clean --clean-only<span class="p">)</span> <span class="k">do</span> <span class="p">(</span>
+<a name="line-13"></a>        <span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;</span><span class="se">%%</span><span class="s2">c&quot;</span> <span class="k">goto</span> <span class="nl"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span>
+<a name="line-14"></a>    <span class="p">)</span>
+<a name="line-15"></a>    <span class="k">goto</span> <span class="nl"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span>
+<a name="line-16"></a><span class="p">)</span>
+<a name="line-17"></a><span class="k">goto</span> <span class="nl"><a href="/./Lib/idlelib/IdleHistory.py.html#line-40">fetch</a></span>
+<a name="line-18"></a>
+<a name="line-19"></a><span class="p">:</span><span class="nl"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span>
+<a name="line-20"></a><span class="k">echo</span>.Cleaning up external libraries.
+<a name="line-21"></a><span class="k">for</span> /D <span class="se">%%</span>d <span class="k">in</span> <span class="p">(</span>
+<a name="line-22"></a>               bzip2-*
+<a name="line-23"></a>               db-*
+<a name="line-24"></a>               nasm-*
+<a name="line-25"></a>               openssl-*
+<a name="line-26"></a>               tcl-*
+<a name="line-27"></a>               tcltk*
+<a name="line-28"></a>               tk-*
+<a name="line-29"></a>               tix-*
+<a name="line-30"></a>               sqlite-*
+<a name="line-31"></a>               xz-*
+<a name="line-32"></a>               <span class="p">)</span> <span class="k">do</span> <span class="p">(</span>
+<a name="line-33"></a>    <span class="k">echo</span>.Removing <span class="se">%%</span>d
+<a name="line-34"></a>    <span class="k">rmdir</span> /s /q <span class="se">%%</span>d
+<a name="line-35"></a><span class="p">)</span>
+<a name="line-36"></a><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;--clean-only&quot;</span> <span class="p">(</span>
+<a name="line-37"></a>    <span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-38"></a><span class="p">)</span>
+<a name="line-39"></a>
+<a name="line-40"></a><span class="p">:</span><span class="nl"><a href="/./Lib/idlelib/IdleHistory.py.html#line-40">fetch</a></span>
+<a name="line-41"></a><span class="c1">rem Fetch current versions</span>
+<a name="line-42"></a>
+<a name="line-43"></a>svn --version <span class="p">&gt;</span> nul <span class="mi">2</span><span class="p">&gt;&amp;</span><span class="mi">1</span>
+<a name="line-44"></a><span class="k">if</span> <span class="k">ERRORLEVEL</span> <span class="mi">9009</span> <span class="p">(</span>
+<a name="line-45"></a>    <span class="k">echo</span>.svn.exe must be on your PATH.
+<a name="line-46"></a>    <span class="k">echo</span>.Try TortoiseSVN (http://tortoisesvn.net/<span class="se">^)</span> and be sure to check the
+<a name="line-47"></a>    <span class="k">echo</span>.command line tools option.
+<a name="line-48"></a>    <span class="k">popd</span>
+<a name="line-49"></a>    <span class="k">exit</span> /b 1
+<a name="line-50"></a><span class="p">)</span>
+<a name="line-51"></a>
+<a name="line-52"></a><span class="k">echo</span>.Fetching external libraries...
+<a name="line-53"></a>
+<a name="line-54"></a><span class="c1">rem When updating these versions, remember to update the relevant property</span>
+<a name="line-55"></a><span class="c1">rem files in both this dir and PC\VS9.0</span>
+<a name="line-56"></a>
+<a name="line-57"></a><span class="k">set</span> <span class="nv"><a href="/./PCbuild/get_externals.bat.html#line-57">libraries</a></span><span class="p">=</span>
+<a name="line-58"></a><span class="k">set</span> <span class="nv"><a href="/./PCbuild/get_externals.bat.html#line-57">libraries</a></span><span class="p">=</span><span class="nv">%libraries%</span>                                    bzip2-1.0.6
+<a name="line-59"></a><span class="k">if</span> <span class="k">NOT</span> <span class="s2">&quot;</span><span class="nv">%IncludeBsddb%</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;false&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./PCbuild/get_externals.bat.html#line-57">libraries</a></span><span class="p">=</span><span class="nv">%libraries%</span>   db-4.7.25.0
+<a name="line-60"></a><span class="k">if</span> <span class="k">NOT</span> <span class="s2">&quot;</span><span class="nv">%IncludeSSL%</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;false&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./PCbuild/get_externals.bat.html#line-57">libraries</a></span><span class="p">=</span><span class="nv">%libraries%</span>     nasm-2.11.06
+<a name="line-61"></a><span class="k">if</span> <span class="k">NOT</span> <span class="s2">&quot;</span><span class="nv">%IncludeSSL%</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;false&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./PCbuild/get_externals.bat.html#line-57">libraries</a></span><span class="p">=</span><span class="nv">%libraries%</span>     openssl-1.0.2d
+<a name="line-62"></a><span class="k">set</span> <span class="nv"><a href="/./PCbuild/get_externals.bat.html#line-57">libraries</a></span><span class="p">=</span><span class="nv">%libraries%</span>                                    sqlite-3.6.21
+<a name="line-63"></a><span class="k">if</span> <span class="k">NOT</span> <span class="s2">&quot;</span><span class="nv">%IncludeTkinter%</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;false&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./PCbuild/get_externals.bat.html#line-57">libraries</a></span><span class="p">=</span><span class="nv">%libraries%</span> tcl-8.5.15.0
+<a name="line-64"></a><span class="k">if</span> <span class="k">NOT</span> <span class="s2">&quot;</span><span class="nv">%IncludeTkinter%</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;false&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./PCbuild/get_externals.bat.html#line-57">libraries</a></span><span class="p">=</span><span class="nv">%libraries%</span> tk-8.5.15.0
+<a name="line-65"></a><span class="k">if</span> <span class="k">NOT</span> <span class="s2">&quot;</span><span class="nv">%IncludeTkinter%</span><span class="s2">&quot;</span><span class="o">==</span><span class="s2">&quot;false&quot;</span> <span class="k">set</span> <span class="nv"><a href="/./PCbuild/get_externals.bat.html#line-57">libraries</a></span><span class="p">=</span><span class="nv">%libraries%</span> tix-8.4.3.5
+<a name="line-66"></a>
+<a name="line-67"></a><span class="k">for</span> <span class="se">%%</span>e <span class="k">in</span> <span class="p">(</span><span class="nv">%libraries%</span><span class="p">)</span> <span class="k">do</span> <span class="p">(</span>
+<a name="line-68"></a>    <span class="k">if</span> <span class="k">exist</span> <span class="se">%%</span>e <span class="p">(</span>
+<a name="line-69"></a>        <span class="k">echo</span>.<span class="se">%%</span>e already exists, skipping.
+<a name="line-70"></a>    <span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
+<a name="line-71"></a>        <span class="k">echo</span>.Fetching <span class="se">%%</span>e...
+<a name="line-72"></a>        svn export <span class="nv">%SVNROOT%</span><span class="se">%%</span>e
+<a name="line-73"></a>    <span class="p">)</span>
+<a name="line-74"></a><span class="p">)</span>
+<a name="line-75"></a>
+<a name="line-76"></a><span class="k">goto</span> <span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-77"></a>
+<a name="line-78"></a><span class="p">:</span><span class="nl"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span>
+<a name="line-79"></a><span class="k">echo</span>.invalid argument: <span class="nv">%1</span>
+<a name="line-80"></a><span class="k">echo</span>.usage: <span class="nv">%~n0</span> [[ -c <span class="se">^|</span> --clean ] <span class="se">^|</span> --clean-only ]
+<a name="line-81"></a><span class="k">echo</span>.
+<a name="line-82"></a><span class="k">echo</span>.Pull all sources necessary for compiling optional extension modules
+<a name="line-83"></a><span class="k">echo</span>.that rely on external libraries.  Requires svn.exe to be on your PATH
+<a name="line-84"></a><span class="k">echo</span>.and pulls sources from <span class="nv">%SVNROOT%</span>.
+<a name="line-85"></a><span class="k">echo</span>.
+<a name="line-86"></a><span class="k">echo</span>.Use the -c or --clean option to clean up all external library sources
+<a name="line-87"></a><span class="k">echo</span>.before pulling in the current versions.
+<a name="line-88"></a><span class="k">echo</span>.
+<a name="line-89"></a><span class="k">echo</span>.Use the --clean-only option to do the same cleaning, without pulling in
+<a name="line-90"></a><span class="k">echo</span>.anything new.
+<a name="line-91"></a><span class="k">echo</span>.
+<a name="line-92"></a><span class="k">echo</span>.Only the first argument is checked, all others are ignored.
+<a name="line-93"></a><span class="k">echo</span>.
+<a name="line-94"></a><span class="k">echo</span>.**WARNING**: the cleaning options unconditionally remove any directory
+<a name="line-95"></a><span class="k">echo</span>.that is a child of
+<a name="line-96"></a><span class="k">echo</span>.   <span class="nv">%CD%</span>
+<a name="line-97"></a><span class="k">echo</span>.and matches wildcard patterns beginning with bzip2-, db-, nasm-, openssl-,
+<a name="line-98"></a><span class="k">echo</span>.tcl-, tcltk, tk-, tix-, sqlite-, or xz-, and as such has the potential
+<a name="line-99"></a><span class="k">echo</span>.to be very destructive if you are not aware of what it is doing.  Use with
+<a name="line-100"></a><span class="k">echo</span>.caution!
+<a name="line-101"></a><span class="k">popd</span>
+<a name="line-102"></a><span class="k">exit</span> /b -1
+<a name="line-103"></a>
+<a name="line-104"></a>
+<a name="line-105"></a><span class="p">:</span><span class="nl"><a href="/./Doc/make.bat.html#line-123">end</a></span>
+<a name="line-106"></a><span class="k">echo</span> Finished.
+<a name="line-107"></a><span class="k">popd</span>
+</pre></div>
+</td></tr></table></body>
+</html>

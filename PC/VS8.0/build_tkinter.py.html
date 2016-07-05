@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1"> 1</a>
+<a href="#line-2"> 2</a>
+<a href="#line-3"> 3</a>
+<a href="#line-4"> 4</a>
+<a href="#line-5"> 5</a>
+<a href="#line-6"> 6</a>
+<a href="#line-7"> 7</a>
+<a href="#line-8"> 8</a>
+<a href="#line-9"> 9</a>
+<a href="#line-10">10</a>
+<a href="#line-11">11</a>
+<a href="#line-12">12</a>
+<a href="#line-13">13</a>
+<a href="#line-14">14</a>
+<a href="#line-15">15</a>
+<a href="#line-16">16</a>
+<a href="#line-17">17</a>
+<a href="#line-18">18</a>
+<a href="#line-19">19</a>
+<a href="#line-20">20</a>
+<a href="#line-21">21</a>
+<a href="#line-22">22</a>
+<a href="#line-23">23</a>
+<a href="#line-24">24</a>
+<a href="#line-25">25</a>
+<a href="#line-26">26</a>
+<a href="#line-27">27</a>
+<a href="#line-28">28</a>
+<a href="#line-29">29</a>
+<a href="#line-30">30</a>
+<a href="#line-31">31</a>
+<a href="#line-32">32</a>
+<a href="#line-33">33</a>
+<a href="#line-34">34</a>
+<a href="#line-35">35</a>
+<a href="#line-36">36</a>
+<a href="#line-37">37</a>
+<a href="#line-38">38</a>
+<a href="#line-39">39</a>
+<a href="#line-40">40</a>
+<a href="#line-41">41</a>
+<a href="#line-42">42</a>
+<a href="#line-43">43</a>
+<a href="#line-44">44</a>
+<a href="#line-45">45</a>
+<a href="#line-46">46</a>
+<a href="#line-47">47</a>
+<a href="#line-48">48</a>
+<a href="#line-49">49</a>
+<a href="#line-50">50</a>
+<a href="#line-51">51</a>
+<a href="#line-52">52</a>
+<a href="#line-53">53</a>
+<a href="#line-54">54</a>
+<a href="#line-55">55</a>
+<a href="#line-56">56</a>
+<a href="#line-57">57</a>
+<a href="#line-58">58</a>
+<a href="#line-59">59</a>
+<a href="#line-60">60</a>
+<a href="#line-61">61</a>
+<a href="#line-62">62</a>
+<a href="#line-63">63</a>
+<a href="#line-64">64</a>
+<a href="#line-65">65</a>
+<a href="#line-66">66</a>
+<a href="#line-67">67</a>
+<a href="#line-68">68</a>
+<a href="#line-69">69</a>
+<a href="#line-70">70</a>
+<a href="#line-71">71</a>
+<a href="#line-72">72</a>
+<a href="#line-73">73</a>
+<a href="#line-74">74</a>
+<a href="#line-75">75</a>
+<a href="#line-76">76</a>
+<a href="#line-77">77</a>
+<a href="#line-78">78</a>
+<a href="#line-79">79</a>
+<a href="#line-80">80</a>
+<a href="#line-81">81</a>
+<a href="#line-82">82</a>
+<a href="#line-83">83</a>
+<a href="#line-84">84</a>
+<a href="#line-85">85</a></pre></div></td><td class="code"><div class="source"><span class="filename">PC/VS8.0/build_tkinter.py</span><pre><span></span><a name="line-1"></a><span class="sd">&quot;&quot;&quot;Script to compile the dependencies of _tkinter</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="sd">Copyright (c) 2007 by Christian Heimes &lt;christian@cheimes.de&gt;</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="sd">Licensed to PSF under a Contributor Agreement.</span>
+<a name="line-6"></a><span class="sd">&quot;&quot;&quot;</span>
+<a name="line-7"></a>
+<a name="line-8"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span>
+<a name="line-9"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span>
+<a name="line-10"></a>
+<a name="line-11"></a><span class="n"><a href="/./Lib/distutils/tests/__init__.py.html#line-21">here</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/rstlint.py.html#line-18">abspath</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/file_util.py.html#line-180">dirname</a></span><span class="p">(</span><span class="n"><a href="/./Lib/idlelib/idle_test/test_grep.py.html#line-14">__file__</a></span><span class="p">))</span>
+<a name="line-12"></a><span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-12">par</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Lib/macpath.py.html#line-19">pardir</a></span>
+<a name="line-13"></a>
+<a name="line-14"></a><span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
+<a name="line-15"></a>    <span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-15">TCL</a></span> <span class="o">=</span> <span class="s2">&quot;tcl8.4.16&quot;</span>
+<a name="line-16"></a>    <span class="n"><a href="/./Demo/turtle/tdemo_two_canvases.py.html#line-9">TK</a></span> <span class="o">=</span> <span class="s2">&quot;tk8.4.16&quot;</span>
+<a name="line-17"></a>    <span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-17">TIX</a></span> <span class="o">=</span> <span class="s2">&quot;tix-8.4.0&quot;</span>
+<a name="line-18"></a><span class="k">else</span><span class="p">:</span>
+<a name="line-19"></a>    <span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-15">TCL</a></span> <span class="o">=</span> <span class="s2">&quot;tcl8.5b3&quot;</span>
+<a name="line-20"></a>    <span class="n"><a href="/./Demo/turtle/tdemo_two_canvases.py.html#line-9">TK</a></span> <span class="o">=</span> <span class="s2">&quot;tcl8.5b3&quot;</span>
+<a name="line-21"></a>    <span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-17">TIX</a></span> <span class="o">=</span> <span class="s2">&quot;Tix8.4.2&quot;</span>
+<a name="line-22"></a>
+<a name="line-23"></a><span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-23">ROOT</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/rstlint.py.html#line-18">abspath</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./Lib/distutils/tests/__init__.py.html#line-21">here</a></span><span class="p">,</span> <span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-12">par</a></span><span class="p">,</span> <span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-12">par</a></span><span class="p">,</span> <span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-12">par</a></span><span class="p">))</span>
+<a name="line-24"></a><span class="c1"># Windows 2000 compatibility: WINVER 0x0500</span>
+<a name="line-25"></a><span class="c1"># http://msdn2.microsoft.com/en-us/library/aa383745.aspx</span>
+<a name="line-26"></a><span class="n"><a href="/./PC/VS9.0/build_tkinter.py.html#line-21">NMAKE</a></span> <span class="o">=</span> <span class="s2">&quot;nmake /nologo /f </span><span class="si">%s</span><span class="s2"> COMPILERFLAGS=-DWINVER=0x0500 </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span>
+<a name="line-27"></a>
+<a name="line-28"></a><span class="k">def</span> <span class="nf"><a href="/./PC/VC6/build_tkinter.py.html#line-38">nmake</a></span><span class="p">(</span><span class="n"><a href="/./Lib/socket.py.html#line-216">makefile</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/dist.py.html#line-722">command</a></span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n"><a href="/./Modules/_functoolsmodule.c.html#line-96">kw</a></span><span class="p">):</span>
+<a name="line-29"></a>    <span class="n">defines</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./Lib/test/test_sort.py.html#line-215">k</a></span><span class="o">+</span><span class="s1">&#39;=&#39;</span><span class="o">+</span><span class="n"><a href="/./Demo/threads/sync.py.html#line-417">v</a></span> <span class="k">for</span> <span class="n"><a href="/./Lib/test/test_sort.py.html#line-215">k</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/threads/sync.py.html#line-417">v</a></span> <span class="ow">in</span> <span class="n"><a href="/./Modules/_functoolsmodule.c.html#line-96">kw</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-269">items</a></span><span class="p">())</span>
+<a name="line-30"></a>    <span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span> <span class="o">=</span> <span class="n"><a href="/./PC/VS9.0/build_tkinter.py.html#line-21">NMAKE</a></span> <span class="o">%</span> <span class="p">(</span><span class="n"><a href="/./Lib/socket.py.html#line-216">makefile</a></span><span class="p">,</span> <span class="n">defines</span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/dist.py.html#line-722">command</a></span><span class="p">)</span>
+<a name="line-31"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">+</span><span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a name="line-32"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/curses/has_key.py.html#line-185">system</a></span><span class="p">(</span><span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<a name="line-33"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n"><a href="/./Demo/embed/importexc.c.html#line-3">cmd</a></span><span class="p">)</span>
+<a name="line-34"></a>
+<a name="line-35"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span><span class="p">(</span><span class="n"><a href="/./Lib/distutils/command/upload.py.html#line-6">platform</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span><span class="p">):</span>
+<a name="line-36"></a>    <span class="k">if</span> <span class="n"><a href="/./Lib/distutils/command/upload.py.html#line-6">platform</a></span> <span class="o">==</span> <span class="s2">&quot;Win32&quot;</span><span class="p">:</span>
+<a name="line-37"></a>        <span class="n"><a href="/./Include/Python-ast.h.html#line-106">dest</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-23">ROOT</a></span><span class="p">,</span> <span class="s2">&quot;tcltk&quot;</span><span class="p">)</span>
+<a name="line-38"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span> <span class="o">=</span> <span class="s2">&quot;X86&quot;</span>
+<a name="line-39"></a>    <span class="k">elif</span> <span class="n"><a href="/./Lib/distutils/command/upload.py.html#line-6">platform</a></span> <span class="o">==</span> <span class="s2">&quot;x64&quot;</span><span class="p">:</span>
+<a name="line-40"></a>        <span class="n"><a href="/./Include/Python-ast.h.html#line-106">dest</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-23">ROOT</a></span><span class="p">,</span> <span class="s2">&quot;tcltk64&quot;</span><span class="p">)</span>
+<a name="line-41"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span> <span class="o">=</span> <span class="s2">&quot;X64&quot;</span>
+<a name="line-42"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="line-43"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n"><a href="/./Lib/distutils/command/upload.py.html#line-6">platform</a></span><span class="p">)</span>
+<a name="line-44"></a>
+<a name="line-45"></a>    <span class="c1"># TCL</span>
+<a name="line-46"></a>    <span class="n"><a href="/./Lib/lib-tk/FixTk.py.html#line-63">tcldir</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-23">ROOT</a></span><span class="p">,</span> <span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-15">TCL</a></span><span class="p">)</span>
+<a name="line-47"></a>    <span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
+<a name="line-48"></a>        <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib-tk/Tix.py.html#line-659">chdir</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./Lib/lib-tk/FixTk.py.html#line-63">tcldir</a></span><span class="p">,</span> <span class="s2">&quot;win&quot;</span><span class="p">))</span>
+<a name="line-49"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span><span class="p">:</span>
+<a name="line-50"></a>            <span class="n"><a href="/./PC/VC6/build_tkinter.py.html#line-38">nmake</a></span><span class="p">(</span><span class="s2">&quot;makefile.vc&quot;</span><span class="p">,</span> <span class="s2">&quot;clean&quot;</span><span class="p">)</span>
+<a name="line-51"></a>        <span class="n"><a href="/./PC/VC6/build_tkinter.py.html#line-38">nmake</a></span><span class="p">(</span><span class="s2">&quot;makefile.vc&quot;</span><span class="p">)</span>
+<a name="line-52"></a>        <span class="n"><a href="/./PC/VC6/build_tkinter.py.html#line-38">nmake</a></span><span class="p">(</span><span class="s2">&quot;makefile.vc&quot;</span><span class="p">,</span> <span class="s2">&quot;install&quot;</span><span class="p">,</span> <span class="n">INSTALLDIR</span><span class="o">=</span><span class="n"><a href="/./Include/Python-ast.h.html#line-106">dest</a></span><span class="p">)</span>
+<a name="line-53"></a>
+<a name="line-54"></a>    <span class="c1"># TK</span>
+<a name="line-55"></a>    <span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
+<a name="line-56"></a>        <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib-tk/Tix.py.html#line-659">chdir</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-23">ROOT</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/turtle/tdemo_two_canvases.py.html#line-9">TK</a></span><span class="p">,</span> <span class="s2">&quot;win&quot;</span><span class="p">))</span>
+<a name="line-57"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span><span class="p">:</span>
+<a name="line-58"></a>            <span class="n"><a href="/./PC/VC6/build_tkinter.py.html#line-38">nmake</a></span><span class="p">(</span><span class="s2">&quot;makefile.vc&quot;</span><span class="p">,</span> <span class="s2">&quot;clean&quot;</span><span class="p">,</span> <span class="n">TCLDIR</span><span class="o">=</span><span class="n"><a href="/./Lib/lib-tk/FixTk.py.html#line-63">tcldir</a></span><span class="p">)</span>
+<a name="line-59"></a>        <span class="n"><a href="/./PC/VC6/build_tkinter.py.html#line-38">nmake</a></span><span class="p">(</span><span class="s2">&quot;makefile.vc&quot;</span><span class="p">,</span> <span class="n">TCLDIR</span><span class="o">=</span><span class="n"><a href="/./Lib/lib-tk/FixTk.py.html#line-63">tcldir</a></span><span class="p">)</span>
+<a name="line-60"></a>        <span class="n"><a href="/./PC/VC6/build_tkinter.py.html#line-38">nmake</a></span><span class="p">(</span><span class="s2">&quot;makefile.vc&quot;</span><span class="p">,</span> <span class="s2">&quot;install&quot;</span><span class="p">,</span> <span class="n">TCLDIR</span><span class="o">=</span><span class="n"><a href="/./Lib/lib-tk/FixTk.py.html#line-63">tcldir</a></span><span class="p">,</span> <span class="n">INSTALLDIR</span><span class="o">=</span><span class="n"><a href="/./Include/Python-ast.h.html#line-106">dest</a></span><span class="p">)</span>
+<a name="line-61"></a>
+<a name="line-62"></a>    <span class="c1"># TIX</span>
+<a name="line-63"></a>    <span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
+<a name="line-64"></a>        <span class="c1"># python9.mak is available at http://svn.python.org</span>
+<a name="line-65"></a>        <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib-tk/Tix.py.html#line-659">chdir</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-23">ROOT</a></span><span class="p">,</span> <span class="n"><a href="/./PC/VS8.0/build_tkinter.py.html#line-17">TIX</a></span><span class="p">,</span> <span class="s2">&quot;win&quot;</span><span class="p">))</span>
+<a name="line-66"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span><span class="p">:</span>
+<a name="line-67"></a>            <span class="n"><a href="/./PC/VC6/build_tkinter.py.html#line-38">nmake</a></span><span class="p">(</span><span class="s2">&quot;python9.mak&quot;</span><span class="p">,</span> <span class="s2">&quot;clean&quot;</span><span class="p">)</span>
+<a name="line-68"></a>        <span class="n"><a href="/./PC/VC6/build_tkinter.py.html#line-38">nmake</a></span><span class="p">(</span><span class="s2">&quot;python9.mak&quot;</span><span class="p">,</span> <span class="n">MACHINE</span><span class="o">=</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1166">machine</a></span><span class="p">)</span>
+<a name="line-69"></a>        <span class="n"><a href="/./PC/VC6/build_tkinter.py.html#line-38">nmake</a></span><span class="p">(</span><span class="s2">&quot;python9.mak&quot;</span><span class="p">,</span> <span class="s2">&quot;install&quot;</span><span class="p">)</span>
+<a name="line-70"></a>
+<a name="line-71"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">():</span>
+<a name="line-72"></a>    <span class="k">if</span> <span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;Win32&quot;</span><span class="p">,</span> <span class="s2">&quot;x64&quot;</span><span class="p">):</span>
+<a name="line-73"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> Win32|x64&quot;</span> <span class="o">%</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a name="line-74"></a>        <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/argparse.py.html#line-2359">exit</a></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-75"></a>
+<a name="line-76"></a>    <span class="k">if</span> <span class="s2">&quot;-c&quot;</span> <span class="ow">in</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">:</span>
+<a name="line-77"></a>        <span class="n"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span> <span class="o">=</span> <span class="bp">True</span>
+<a name="line-78"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="line-79"></a>        <span class="n"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/plat-mac/bundlebuilder.py.html#line-925">False</a></span>
+<a name="line-80"></a>
+<a name="line-81"></a>    <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n"><a href="/./Lib/distutils/command/clean.py.html#line-14">clean</a></span><span class="p">)</span>
+<a name="line-82"></a>
+<a name="line-83"></a>
+<a name="line-84"></a><span class="k">if</span> <span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="line-85"></a>    <span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">()</span>
+</pre></div>
+</td></tr></table></body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1"> 1</a>
+<a href="#line-2"> 2</a>
+<a href="#line-3"> 3</a>
+<a href="#line-4"> 4</a>
+<a href="#line-5"> 5</a>
+<a href="#line-6"> 6</a>
+<a href="#line-7"> 7</a>
+<a href="#line-8"> 8</a>
+<a href="#line-9"> 9</a>
+<a href="#line-10">10</a>
+<a href="#line-11">11</a>
+<a href="#line-12">12</a>
+<a href="#line-13">13</a>
+<a href="#line-14">14</a>
+<a href="#line-15">15</a>
+<a href="#line-16">16</a>
+<a href="#line-17">17</a>
+<a href="#line-18">18</a>
+<a href="#line-19">19</a>
+<a href="#line-20">20</a>
+<a href="#line-21">21</a>
+<a href="#line-22">22</a>
+<a href="#line-23">23</a>
+<a href="#line-24">24</a>
+<a href="#line-25">25</a>
+<a href="#line-26">26</a>
+<a href="#line-27">27</a>
+<a href="#line-28">28</a>
+<a href="#line-29">29</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/ctypes/test/test_libc.py</span><pre><span></span><a name="line-1"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/ctypes/test/__init__.py.html#line-5">ctypes</a></span> <span class="kn">import</span> <span class="o">*</span>
+<a name="line-4"></a><span class="kn">import</span> <span class="nn"><a href="/./Lib/ctypes/test/test_as_parameter.py.html#line-4">_ctypes_test</a></span>
+<a name="line-5"></a>
+<a name="line-6"></a><span class="n"><a href="/./Lib/ctypes/test/test_funcptr.py.html#line-11">lib</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-332">CDLL</a></span><span class="p">(</span><span class="n"><a href="/./Lib/ctypes/test/test_as_parameter.py.html#line-4">_ctypes_test</a></span><span class="o">.</span><span class="n"><a href="/./Lib/idlelib/idle_test/test_grep.py.html#line-14">__file__</a></span><span class="p">)</span>
+<a name="line-7"></a>
+<a name="line-8"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/ctypes/test/test_libc.py.html#line-8">LibTest</a></span><span class="p">(</span><span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span><span class="o">.</span><span class="n"><a href="/./Lib/ctypes/test/test_delattr.py.html#line-7">TestCase</a></span><span class="p">):</span>
+<a name="line-9"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/ctypes/test/test_libc.py.html#line-9">test_sqrt</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-10"></a>        <span class="n"><a href="/./Lib/ctypes/test/test_funcptr.py.html#line-11">lib</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/_ctypes_test.c.html#line-95">my_sqrt</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-132">argtypes</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-201">c_double</a></span><span class="p">,</span>
+<a name="line-11"></a>        <span class="n"><a href="/./Lib/ctypes/test/test_funcptr.py.html#line-11">lib</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/_ctypes_test.c.html#line-95">my_sqrt</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-104">restype</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-201">c_double</a></span>
+<a name="line-12"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_argparse.py.html#line-23">assertEqual</a></span><span class="p">(</span><span class="n"><a href="/./Lib/ctypes/test/test_funcptr.py.html#line-11">lib</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/_ctypes_test.c.html#line-95">my_sqrt</a></span><span class="p">(</span><span class="mf">4.0</span><span class="p">),</span> <span class="mf">2.0</span><span class="p">)</span>
+<a name="line-13"></a>        <span class="kn">import</span> <span class="nn"><a href="/./Demo/classes/Complex.py.html#line-65">math</a></span>
+<a name="line-14"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_argparse.py.html#line-23">assertEqual</a></span><span class="p">(</span><span class="n"><a href="/./Lib/ctypes/test/test_funcptr.py.html#line-11">lib</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/_ctypes_test.c.html#line-95">my_sqrt</a></span><span class="p">(</span><span class="mf">2.0</span><span class="p">),</span> <span class="n"><a href="/./Demo/classes/Complex.py.html#line-65">math</a></span><span class="o">.</span><span class="n"><a href="/./Demo/scripts/fact.py.html#line-9">sqrt</a></span><span class="p">(</span><span class="mf">2.0</span><span class="p">))</span>
+<a name="line-15"></a>
+<a name="line-16"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/ctypes/test/test_libc.py.html#line-16">test_qsort</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-17"></a>        <span class="n">comparefunc</span> <span class="o">=</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-78">CFUNCTYPE</a></span><span class="p">(</span><span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-186">c_int</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-263">POINTER</a></span><span class="p">(</span><span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-238">c_char</a></span><span class="p">),</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-263">POINTER</a></span><span class="p">(</span><span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-238">c_char</a></span><span class="p">))</span>
+<a name="line-18"></a>        <span class="n"><a href="/./Lib/ctypes/test/test_funcptr.py.html#line-11">lib</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/_ctypes_test.c.html#line-100">my_qsort</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-132">argtypes</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-255">c_void_p</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-474">c_size_t</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-474">c_size_t</a></span><span class="p">,</span> <span class="n">comparefunc</span>
+<a name="line-19"></a>        <span class="n"><a href="/./Lib/ctypes/test/test_funcptr.py.html#line-11">lib</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/_ctypes_test.c.html#line-100">my_qsort</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/ctypes.h.html#line-104">restype</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-20"></a>
+<a name="line-21"></a>        <span class="k">def</span> <span class="nf"><a href="/./Demo/classes/bitvec.py.html#line-153">sort</a></span><span class="p">(</span><span class="n"><a href="/./Lib/lib2to3/tests/test_util.py.html#line-139">a</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span><span class="p">):</span>
+<a name="line-22"></a>            <span class="k">return</span> <span class="nb"><a href="/./Lib/bsddb/dbtables.py.html#line-680">cmp</a></span><span class="p">(</span><span class="n"><a href="/./Lib/lib2to3/tests/test_util.py.html#line-139">a</a></span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a name="line-23"></a>
+<a name="line-24"></a>        <span class="n">chars</span> <span class="o">=</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-52">create_string_buffer</a></span><span class="p">(</span><span class="s2">&quot;spam, spam, and spam&quot;</span><span class="p">)</span>
+<a name="line-25"></a>        <span class="n"><a href="/./Lib/ctypes/test/test_funcptr.py.html#line-11">lib</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_ctypes/_ctypes_test.c.html#line-100">my_qsort</a></span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n">chars</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-143">sizeof</a></span><span class="p">(</span><span class="n"><a href="/./Lib/ctypes/__init__.py.html#line-238">c_char</a></span><span class="p">),</span> <span class="n">comparefunc</span><span class="p">(</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-153">sort</a></span><span class="p">))</span>
+<a name="line-26"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_argparse.py.html#line-23">assertEqual</a></span><span class="p">(</span><span class="n">chars</span><span class="o">.</span><span class="n"><a href="/./Lib/_pyio.py.html#line-760">raw</a></span><span class="p">,</span> <span class="s2">&quot;   ,,aaaadmmmnpppsss</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)</span>
+<a name="line-27"></a>
+<a name="line-28"></a><span class="k">if</span> <span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a name="line-29"></a>    <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span><span class="o">.</span><span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">()</span>
+</pre></div>
+</td></tr></table></body>
+</html>

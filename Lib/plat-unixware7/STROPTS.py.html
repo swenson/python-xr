@@ -1,0 +1,740 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a>
+<a href="#line-140">140</a>
+<a href="#line-141">141</a>
+<a href="#line-142">142</a>
+<a href="#line-143">143</a>
+<a href="#line-144">144</a>
+<a href="#line-145">145</a>
+<a href="#line-146">146</a>
+<a href="#line-147">147</a>
+<a href="#line-148">148</a>
+<a href="#line-149">149</a>
+<a href="#line-150">150</a>
+<a href="#line-151">151</a>
+<a href="#line-152">152</a>
+<a href="#line-153">153</a>
+<a href="#line-154">154</a>
+<a href="#line-155">155</a>
+<a href="#line-156">156</a>
+<a href="#line-157">157</a>
+<a href="#line-158">158</a>
+<a href="#line-159">159</a>
+<a href="#line-160">160</a>
+<a href="#line-161">161</a>
+<a href="#line-162">162</a>
+<a href="#line-163">163</a>
+<a href="#line-164">164</a>
+<a href="#line-165">165</a>
+<a href="#line-166">166</a>
+<a href="#line-167">167</a>
+<a href="#line-168">168</a>
+<a href="#line-169">169</a>
+<a href="#line-170">170</a>
+<a href="#line-171">171</a>
+<a href="#line-172">172</a>
+<a href="#line-173">173</a>
+<a href="#line-174">174</a>
+<a href="#line-175">175</a>
+<a href="#line-176">176</a>
+<a href="#line-177">177</a>
+<a href="#line-178">178</a>
+<a href="#line-179">179</a>
+<a href="#line-180">180</a>
+<a href="#line-181">181</a>
+<a href="#line-182">182</a>
+<a href="#line-183">183</a>
+<a href="#line-184">184</a>
+<a href="#line-185">185</a>
+<a href="#line-186">186</a>
+<a href="#line-187">187</a>
+<a href="#line-188">188</a>
+<a href="#line-189">189</a>
+<a href="#line-190">190</a>
+<a href="#line-191">191</a>
+<a href="#line-192">192</a>
+<a href="#line-193">193</a>
+<a href="#line-194">194</a>
+<a href="#line-195">195</a>
+<a href="#line-196">196</a>
+<a href="#line-197">197</a>
+<a href="#line-198">198</a>
+<a href="#line-199">199</a>
+<a href="#line-200">200</a>
+<a href="#line-201">201</a>
+<a href="#line-202">202</a>
+<a href="#line-203">203</a>
+<a href="#line-204">204</a>
+<a href="#line-205">205</a>
+<a href="#line-206">206</a>
+<a href="#line-207">207</a>
+<a href="#line-208">208</a>
+<a href="#line-209">209</a>
+<a href="#line-210">210</a>
+<a href="#line-211">211</a>
+<a href="#line-212">212</a>
+<a href="#line-213">213</a>
+<a href="#line-214">214</a>
+<a href="#line-215">215</a>
+<a href="#line-216">216</a>
+<a href="#line-217">217</a>
+<a href="#line-218">218</a>
+<a href="#line-219">219</a>
+<a href="#line-220">220</a>
+<a href="#line-221">221</a>
+<a href="#line-222">222</a>
+<a href="#line-223">223</a>
+<a href="#line-224">224</a>
+<a href="#line-225">225</a>
+<a href="#line-226">226</a>
+<a href="#line-227">227</a>
+<a href="#line-228">228</a>
+<a href="#line-229">229</a>
+<a href="#line-230">230</a>
+<a href="#line-231">231</a>
+<a href="#line-232">232</a>
+<a href="#line-233">233</a>
+<a href="#line-234">234</a>
+<a href="#line-235">235</a>
+<a href="#line-236">236</a>
+<a href="#line-237">237</a>
+<a href="#line-238">238</a>
+<a href="#line-239">239</a>
+<a href="#line-240">240</a>
+<a href="#line-241">241</a>
+<a href="#line-242">242</a>
+<a href="#line-243">243</a>
+<a href="#line-244">244</a>
+<a href="#line-245">245</a>
+<a href="#line-246">246</a>
+<a href="#line-247">247</a>
+<a href="#line-248">248</a>
+<a href="#line-249">249</a>
+<a href="#line-250">250</a>
+<a href="#line-251">251</a>
+<a href="#line-252">252</a>
+<a href="#line-253">253</a>
+<a href="#line-254">254</a>
+<a href="#line-255">255</a>
+<a href="#line-256">256</a>
+<a href="#line-257">257</a>
+<a href="#line-258">258</a>
+<a href="#line-259">259</a>
+<a href="#line-260">260</a>
+<a href="#line-261">261</a>
+<a href="#line-262">262</a>
+<a href="#line-263">263</a>
+<a href="#line-264">264</a>
+<a href="#line-265">265</a>
+<a href="#line-266">266</a>
+<a href="#line-267">267</a>
+<a href="#line-268">268</a>
+<a href="#line-269">269</a>
+<a href="#line-270">270</a>
+<a href="#line-271">271</a>
+<a href="#line-272">272</a>
+<a href="#line-273">273</a>
+<a href="#line-274">274</a>
+<a href="#line-275">275</a>
+<a href="#line-276">276</a>
+<a href="#line-277">277</a>
+<a href="#line-278">278</a>
+<a href="#line-279">279</a>
+<a href="#line-280">280</a>
+<a href="#line-281">281</a>
+<a href="#line-282">282</a>
+<a href="#line-283">283</a>
+<a href="#line-284">284</a>
+<a href="#line-285">285</a>
+<a href="#line-286">286</a>
+<a href="#line-287">287</a>
+<a href="#line-288">288</a>
+<a href="#line-289">289</a>
+<a href="#line-290">290</a>
+<a href="#line-291">291</a>
+<a href="#line-292">292</a>
+<a href="#line-293">293</a>
+<a href="#line-294">294</a>
+<a href="#line-295">295</a>
+<a href="#line-296">296</a>
+<a href="#line-297">297</a>
+<a href="#line-298">298</a>
+<a href="#line-299">299</a>
+<a href="#line-300">300</a>
+<a href="#line-301">301</a>
+<a href="#line-302">302</a>
+<a href="#line-303">303</a>
+<a href="#line-304">304</a>
+<a href="#line-305">305</a>
+<a href="#line-306">306</a>
+<a href="#line-307">307</a>
+<a href="#line-308">308</a>
+<a href="#line-309">309</a>
+<a href="#line-310">310</a>
+<a href="#line-311">311</a>
+<a href="#line-312">312</a>
+<a href="#line-313">313</a>
+<a href="#line-314">314</a>
+<a href="#line-315">315</a>
+<a href="#line-316">316</a>
+<a href="#line-317">317</a>
+<a href="#line-318">318</a>
+<a href="#line-319">319</a>
+<a href="#line-320">320</a>
+<a href="#line-321">321</a>
+<a href="#line-322">322</a>
+<a href="#line-323">323</a>
+<a href="#line-324">324</a>
+<a href="#line-325">325</a>
+<a href="#line-326">326</a>
+<a href="#line-327">327</a>
+<a href="#line-328">328</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/plat-unixware7/STROPTS.py</span><pre><span></span><a name="line-1"></a><span class="c1"># Generated by h2py from /usr/include/sys/stropts.h</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="c1"># Included from sys/types.h</span>
+<a name="line-4"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/plat-unixware7/IN.py.html#line-45">quad_low</a></span><span class="p">(</span><span class="n"><a href="/./Demo/threads/fcmp.py.html#line-26">x</a></span><span class="p">):</span> <span class="k">return</span> <span class="n"><a href="/./Demo/threads/fcmp.py.html#line-26">x</a></span><span class="o">.</span><span class="n"><a href="/./Modules/zlib/inftrees.h.html#line-27">val</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a name="line-5"></a>
+<a name="line-6"></a><span class="n"><a href="/./Lib/plat-unixware7/IN.py.html#line-47">ADT_EMASKSIZE</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-7"></a><span class="n"><a href="/./Lib/plat-atheos/IN.py.html#line-118">SHRT_MIN</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">32768</span>
+<a name="line-8"></a><span class="n"><a href="/./Lib/plat-atheos/IN.py.html#line-117">SHRT_MAX</a></span> <span class="o">=</span> <span class="mi">32767</span>
+<a name="line-9"></a><span class="n"><a href="/./Lib/plat-atheos/IN.py.html#line-112">INT_MIN</a></span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2147483647</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-10"></a><span class="n"><a href="/./Include/pyport.h.html#line-859">INT_MAX</a></span> <span class="o">=</span> <span class="mi">2147483647</span>
+<a name="line-11"></a><span class="n"><a href="/./Include/pyport.h.html#line-873">LONG_MIN</a></span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2147483647</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-12"></a><span class="n"><a href="/./Include/pyport.h.html#line-864">LONG_MAX</a></span> <span class="o">=</span> <span class="mi">2147483647</span>
+<a name="line-13"></a><span class="n"><a href="/./Lib/plat-unixware7/IN.py.html#line-54">OFF32_MAX</a></span> <span class="o">=</span> <span class="n"><a href="/./Include/pyport.h.html#line-864">LONG_MAX</a></span>
+<a name="line-14"></a><span class="n"><a href="/./Lib/plat-unixware7/IN.py.html#line-55">ISTAT_ASSERTED</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-15"></a><span class="n"><a href="/./Lib/plat-unixware7/IN.py.html#line-56">ISTAT_ASSUMED</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-16"></a><span class="n"><a href="/./Lib/plat-unixware7/IN.py.html#line-57">ISTAT_NONE</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-17"></a><span class="n"><a href="/./Lib/plat-unixware7/IN.py.html#line-58">OFF_MAX</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-unixware7/IN.py.html#line-54">OFF32_MAX</a></span>
+<a name="line-18"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-398">CLOCK_MAX</a></span> <span class="o">=</span> <span class="n"><a href="/./Include/pyport.h.html#line-864">LONG_MAX</a></span>
+<a name="line-19"></a><span class="n"><a href="/./Lib/plat-irix5/FILE.py.html#line-16">P_MYID</a></span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-20"></a><span class="n"><a href="/./Lib/plat-irix5/FILE.py.html#line-17">P_MYHOSTID</a></span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-21"></a>
+<a name="line-22"></a><span class="c1"># Included from sys/select.h</span>
+<a name="line-23"></a><span class="n"><a href="/./Lib/plat-atheos/IN.py.html#line-323">FD_SETSIZE</a></span> <span class="o">=</span> <span class="mi">4096</span>
+<a name="line-24"></a><span class="n"><a href="/./Lib/plat-irix5/FILE.py.html#line-40">NBBY</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-25"></a><span class="n"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-26"></a>
+<a name="line-27"></a><span class="c1"># Included from sys/conf.h</span>
+<a name="line-28"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1736">D_NEW</a></span> <span class="o">=</span> <span class="mh">0x00</span>
+<a name="line-29"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-29">D_OLD</a></span> <span class="o">=</span> <span class="mh">0x01</span>
+<a name="line-30"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-30">D_DMA</a></span> <span class="o">=</span> <span class="mh">0x02</span>
+<a name="line-31"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-31">D_BLKOFF</a></span> <span class="o">=</span> <span class="mh">0x400</span>
+<a name="line-32"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-32">D_LFS</a></span> <span class="o">=</span> <span class="mh">0x8000</span>
+<a name="line-33"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-33">D_STR</a></span> <span class="o">=</span> <span class="mh">0x0800</span>
+<a name="line-34"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-34">D_MOD</a></span> <span class="o">=</span> <span class="mh">0x1000</span>
+<a name="line-35"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-35">D_PSEUDO</a></span> <span class="o">=</span> <span class="mh">0x2000</span>
+<a name="line-36"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-36">D_RANDOM</a></span> <span class="o">=</span> <span class="mh">0x4000</span>
+<a name="line-37"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-37">D_HOT</a></span> <span class="o">=</span> <span class="mh">0x10000</span>
+<a name="line-38"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-38">D_SEEKNEG</a></span> <span class="o">=</span> <span class="mh">0x04</span>
+<a name="line-39"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1738">D_TAPE</a></span> <span class="o">=</span> <span class="mh">0x08</span>
+<a name="line-40"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-40">D_NOBRKUP</a></span> <span class="o">=</span> <span class="mh">0x10</span>
+<a name="line-41"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-41">D_INITPUB</a></span> <span class="o">=</span> <span class="mh">0x20</span>
+<a name="line-42"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-42">D_NOSPECMACDATA</a></span> <span class="o">=</span> <span class="mh">0x40</span>
+<a name="line-43"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-43">D_RDWEQ</a></span> <span class="o">=</span> <span class="mh">0x80</span>
+<a name="line-44"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-44">SECMASK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-41">D_INITPUB</a></span><span class="o">|</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-42">D_NOSPECMACDATA</a></span><span class="o">|</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-43">D_RDWEQ</a></span><span class="p">)</span>
+<a name="line-45"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-45">DAF_REQDMA</a></span> <span class="o">=</span> <span class="mh">0x1</span>
+<a name="line-46"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-46">DAF_PHYSREQ</a></span> <span class="o">=</span> <span class="mh">0x2</span>
+<a name="line-47"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-47">DAF_PRE8</a></span> <span class="o">=</span> <span class="mh">0x4</span>
+<a name="line-48"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-48">DAF_STATIC</a></span> <span class="o">=</span> <span class="mh">0x8</span>
+<a name="line-49"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-49">DAF_STR</a></span> <span class="o">=</span> <span class="mh">0x10</span>
+<a name="line-50"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1751">D_MP</a></span> <span class="o">=</span> <span class="mh">0x100</span>
+<a name="line-51"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-51">D_UPF</a></span> <span class="o">=</span> <span class="mh">0x200</span>
+<a name="line-52"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-52">ROOTFS_NAMESZ</a></span> <span class="o">=</span> <span class="mi">7</span>
+<a name="line-53"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-849">FMNAMESZ</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-54"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-54">MCD_VERSION</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-55"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-55">DI_BCBP</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-56"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-56">DI_MEDIA</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-57"></a>
+<a name="line-58"></a><span class="c1"># Included from sys/secsys.h</span>
+<a name="line-59"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-59">ES_MACOPENLID</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-60"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-60">ES_MACSYSLID</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-61"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-61">ES_MACROOTLID</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-62"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-62">ES_PRVINFO</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-63"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-63">ES_PRVSETCNT</a></span> <span class="o">=</span> <span class="mi">5</span>
+<a name="line-64"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-64">ES_PRVSETS</a></span> <span class="o">=</span> <span class="mi">6</span>
+<a name="line-65"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-65">ES_MACADTLID</a></span> <span class="o">=</span> <span class="mi">7</span>
+<a name="line-66"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-66">ES_PRVID</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-67"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-67">ES_TPGETMAJOR</a></span> <span class="o">=</span> <span class="mi">9</span>
+<a name="line-68"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-68">SA_EXEC</a></span> <span class="o">=</span> <span class="mo">001</span>
+<a name="line-69"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-69">SA_WRITE</a></span> <span class="o">=</span> <span class="mo">002</span>
+<a name="line-70"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-70">SA_READ</a></span> <span class="o">=</span> <span class="mo">004</span>
+<a name="line-71"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-71">SA_SUBSIZE</a></span> <span class="o">=</span> <span class="mo">010</span>
+<a name="line-72"></a>
+<a name="line-73"></a><span class="c1"># Included from sys/stropts_f.h</span>
+<a name="line-74"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span> <span class="o">=</span> <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="p">)</span>
+<a name="line-75"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-75">X_I_BASE</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0200</span><span class="p">)</span>
+<a name="line-76"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-76">X_I_NREAD</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0201</span><span class="p">)</span>
+<a name="line-77"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-77">X_I_PUSH</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0202</span><span class="p">)</span>
+<a name="line-78"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-78">X_I_POP</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0203</span><span class="p">)</span>
+<a name="line-79"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-79">X_I_LOOK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0204</span><span class="p">)</span>
+<a name="line-80"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-80">X_I_FLUSH</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0205</span><span class="p">)</span>
+<a name="line-81"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-81">X_I_SRDOPT</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0206</span><span class="p">)</span>
+<a name="line-82"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-82">X_I_GRDOPT</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0207</span><span class="p">)</span>
+<a name="line-83"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-83">X_I_STR</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0210</span><span class="p">)</span>
+<a name="line-84"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-84">X_I_SETSIG</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0211</span><span class="p">)</span>
+<a name="line-85"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-85">X_I_GETSIG</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0212</span><span class="p">)</span>
+<a name="line-86"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-86">X_I_FIND</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0213</span><span class="p">)</span>
+<a name="line-87"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-87">X_I_LINK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0214</span><span class="p">)</span>
+<a name="line-88"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-88">X_I_UNLINK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0215</span><span class="p">)</span>
+<a name="line-89"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-89">X_I_PEEK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0217</span><span class="p">)</span>
+<a name="line-90"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-90">X_I_FDINSERT</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0220</span><span class="p">)</span>
+<a name="line-91"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-91">X_I_SENDFD</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0221</span><span class="p">)</span>
+<a name="line-92"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-92">X_I_RECVFD</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-74">X_STR</a></span><span class="o">|</span><span class="mo">0222</span><span class="p">)</span>
+<a name="line-93"></a>
+<a name="line-94"></a><span class="c1"># Included from unistd.h</span>
+<a name="line-95"></a>
+<a name="line-96"></a><span class="c1"># Included from sys/unistd.h</span>
+<a name="line-97"></a><span class="n"><a href="/./Lib/plat-irix5/FILE.py.html#line-239">R_OK</a></span> <span class="o">=</span> <span class="mo">004</span>
+<a name="line-98"></a><span class="n"><a href="/./Lib/plat-irix5/FILE.py.html#line-238">W_OK</a></span> <span class="o">=</span> <span class="mo">002</span>
+<a name="line-99"></a><span class="n"><a href="/./Lib/plat-irix5/FILE.py.html#line-237">X_OK</a></span> <span class="o">=</span> <span class="mo">001</span>
+<a name="line-100"></a><span class="n"><a href="/./Lib/plat-irix5/FILE.py.html#line-236">F_OK</a></span> <span class="o">=</span> <span class="mo">000</span>
+<a name="line-101"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-101">EFF_ONLY_OK</a></span> <span class="o">=</span> <span class="mo">010</span>
+<a name="line-102"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-102">EX_OK</a></span> <span class="o">=</span> <span class="mo">020</span>
+<a name="line-103"></a><span class="n"><a href="/./Lib/_pyio.py.html#line-20">SEEK_SET</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-104"></a><span class="n"><a href="/./Lib/_pyio.py.html#line-20">SEEK_CUR</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-105"></a><span class="n"><a href="/./Lib/_pyio.py.html#line-20">SEEK_END</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-106"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-193">_SC_ARG_MAX</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-107"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-194">_SC_CHILD_MAX</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-108"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-195">_SC_CLK_TCK</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-109"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-196">_SC_NGROUPS_MAX</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-110"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-197">_SC_OPEN_MAX</a></span> <span class="o">=</span> <span class="mi">5</span>
+<a name="line-111"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-198">_SC_JOB_CONTROL</a></span> <span class="o">=</span> <span class="mi">6</span>
+<a name="line-112"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-199">_SC_SAVED_IDS</a></span> <span class="o">=</span> <span class="mi">7</span>
+<a name="line-113"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-200">_SC_VERSION</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-114"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-201">_SC_PASS_MAX</a></span> <span class="o">=</span> <span class="mi">9</span>
+<a name="line-115"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-202">_SC_LOGNAME_MAX</a></span> <span class="o">=</span> <span class="mi">10</span>
+<a name="line-116"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-203">_SC_PAGESIZE</a></span> <span class="o">=</span> <span class="mi">11</span>
+<a name="line-117"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-261">_SC_PAGE_SIZE</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-203">_SC_PAGESIZE</a></span>
+<a name="line-118"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-204">_SC_XOPEN_VERSION</a></span> <span class="o">=</span> <span class="mi">12</span>
+<a name="line-119"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-119">_SC_NACLS_MAX</a></span> <span class="o">=</span> <span class="mi">13</span>
+<a name="line-120"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-205">_SC_NPROCESSORS_CONF</a></span> <span class="o">=</span> <span class="mi">14</span>
+<a name="line-121"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-206">_SC_NPROCESSORS_ONLN</a></span> <span class="o">=</span> <span class="mi">15</span>
+<a name="line-122"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-122">_SC_NPROCESSES</a></span> <span class="o">=</span> <span class="mi">39</span>
+<a name="line-123"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-123">_SC_TOTAL_MEMORY</a></span> <span class="o">=</span> <span class="mi">40</span>
+<a name="line-124"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-124">_SC_USEABLE_MEMORY</a></span> <span class="o">=</span> <span class="mi">41</span>
+<a name="line-125"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-125">_SC_GENERAL_MEMORY</a></span> <span class="o">=</span> <span class="mi">42</span>
+<a name="line-126"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-126">_SC_DEDICATED_MEMORY</a></span> <span class="o">=</span> <span class="mi">43</span>
+<a name="line-127"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-127">_SC_NCGS_CONF</a></span> <span class="o">=</span> <span class="mi">44</span>
+<a name="line-128"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-128">_SC_NCGS_ONLN</a></span> <span class="o">=</span> <span class="mi">45</span>
+<a name="line-129"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-129">_SC_MAX_CPUS_PER_CG</a></span> <span class="o">=</span> <span class="mi">46</span>
+<a name="line-130"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-130">_SC_CG_SIMPLE_IMPL</a></span> <span class="o">=</span> <span class="mi">47</span>
+<a name="line-131"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-131">_SC_CACHE_LINE</a></span> <span class="o">=</span> <span class="mi">48</span>
+<a name="line-132"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-132">_SC_SYSTEM_ID</a></span> <span class="o">=</span> <span class="mi">49</span>
+<a name="line-133"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-286">_SC_THREADS</a></span> <span class="o">=</span> <span class="mi">51</span>
+<a name="line-134"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-287">_SC_THREAD_ATTR_STACKADDR</a></span> <span class="o">=</span> <span class="mi">52</span>
+<a name="line-135"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-288">_SC_THREAD_ATTR_STACKSIZE</a></span> <span class="o">=</span> <span class="mi">53</span>
+<a name="line-136"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-278">_SC_THREAD_DESTRUCTOR_ITERATIONS</a></span> <span class="o">=</span> <span class="mi">54</span>
+<a name="line-137"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-282">_SC_THREAD_KEYS_MAX</a></span> <span class="o">=</span> <span class="mi">55</span>
+<a name="line-138"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-289">_SC_THREAD_PRIORITY_SCHEDULING</a></span> <span class="o">=</span> <span class="mi">56</span>
+<a name="line-139"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-290">_SC_THREAD_PRIO_INHERIT</a></span> <span class="o">=</span> <span class="mi">57</span>
+<a name="line-140"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-291">_SC_THREAD_PRIO_PROTECT</a></span> <span class="o">=</span> <span class="mi">58</span>
+<a name="line-141"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-283">_SC_THREAD_STACK_MIN</a></span> <span class="o">=</span> <span class="mi">59</span>
+<a name="line-142"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-292">_SC_THREAD_PROCESS_SHARED</a></span> <span class="o">=</span> <span class="mi">60</span>
+<a name="line-143"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-293">_SC_THREAD_SAFE_FUNCTIONS</a></span> <span class="o">=</span> <span class="mi">61</span>
+<a name="line-144"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-284">_SC_THREAD_THREADS_MAX</a></span> <span class="o">=</span> <span class="mi">62</span>
+<a name="line-145"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-145">_SC_KERNEL_VM</a></span> <span class="o">=</span> <span class="mi">63</span>
+<a name="line-146"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-208">_SC_TZNAME_MAX</a></span> <span class="o">=</span> <span class="mi">320</span>
+<a name="line-147"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-207">_SC_STREAM_MAX</a></span> <span class="o">=</span> <span class="mi">321</span>
+<a name="line-148"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-253">_SC_XOPEN_CRYPT</a></span> <span class="o">=</span> <span class="mi">323</span>
+<a name="line-149"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-254">_SC_XOPEN_ENH_I18N</a></span> <span class="o">=</span> <span class="mi">324</span>
+<a name="line-150"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-255">_SC_XOPEN_SHM</a></span> <span class="o">=</span> <span class="mi">325</span>
+<a name="line-151"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-257">_SC_XOPEN_XCU_VERSION</a></span> <span class="o">=</span> <span class="mi">327</span>
+<a name="line-152"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-152">_SC_AES_OS_VERSION</a></span> <span class="o">=</span> <span class="mi">330</span>
+<a name="line-153"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-258">_SC_ATEXIT_MAX</a></span> <span class="o">=</span> <span class="mi">331</span>
+<a name="line-154"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-236">_SC_2_C_BIND</a></span> <span class="o">=</span> <span class="mi">350</span>
+<a name="line-155"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-237">_SC_2_C_DEV</a></span> <span class="o">=</span> <span class="mi">351</span>
+<a name="line-156"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-238">_SC_2_C_VERSION</a></span> <span class="o">=</span> <span class="mi">352</span>
+<a name="line-157"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-256">_SC_2_CHAR_TERM</a></span> <span class="o">=</span> <span class="mi">353</span>
+<a name="line-158"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-239">_SC_2_FORT_DEV</a></span> <span class="o">=</span> <span class="mi">354</span>
+<a name="line-159"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-240">_SC_2_FORT_RUN</a></span> <span class="o">=</span> <span class="mi">355</span>
+<a name="line-160"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-241">_SC_2_LOCALEDEF</a></span> <span class="o">=</span> <span class="mi">356</span>
+<a name="line-161"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-242">_SC_2_SW_DEV</a></span> <span class="o">=</span> <span class="mi">357</span>
+<a name="line-162"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-243">_SC_2_UPE</a></span> <span class="o">=</span> <span class="mi">358</span>
+<a name="line-163"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-244">_SC_2_VERSION</a></span> <span class="o">=</span> <span class="mi">359</span>
+<a name="line-164"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-245">_SC_BC_BASE_MAX</a></span> <span class="o">=</span> <span class="mi">370</span>
+<a name="line-165"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-246">_SC_BC_DIM_MAX</a></span> <span class="o">=</span> <span class="mi">371</span>
+<a name="line-166"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-247">_SC_BC_SCALE_MAX</a></span> <span class="o">=</span> <span class="mi">372</span>
+<a name="line-167"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-248">_SC_BC_STRING_MAX</a></span> <span class="o">=</span> <span class="mi">373</span>
+<a name="line-168"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-249">_SC_COLL_WEIGHTS_MAX</a></span> <span class="o">=</span> <span class="mi">380</span>
+<a name="line-169"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-250">_SC_EXPR_NEST_MAX</a></span> <span class="o">=</span> <span class="mi">381</span>
+<a name="line-170"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-251">_SC_LINE_MAX</a></span> <span class="o">=</span> <span class="mi">382</span>
+<a name="line-171"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-252">_SC_RE_DUP_MAX</a></span> <span class="o">=</span> <span class="mi">383</span>
+<a name="line-172"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-259">_SC_IOV_MAX</a></span> <span class="o">=</span> <span class="mi">390</span>
+<a name="line-173"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-173">_SC_NPROC_CONF</a></span> <span class="o">=</span> <span class="mi">391</span>
+<a name="line-174"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-174">_SC_NPROC_ONLN</a></span> <span class="o">=</span> <span class="mi">392</span>
+<a name="line-175"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-260">_SC_XOPEN_UNIX</a></span> <span class="o">=</span> <span class="mi">400</span>
+<a name="line-176"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-226">_SC_SEMAPHORES</a></span> <span class="o">=</span> <span class="mi">440</span>
+<a name="line-177"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-168">_CS_PATH</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-178"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-178">__O_CS_HOSTNAME</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-179"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-179">_CS_RELEASE</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-180"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-180">_CS_VERSION</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-181"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-181">__O_CS_MACHINE</a></span> <span class="o">=</span> <span class="mi">5</span>
+<a name="line-182"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-182">__O_CS_ARCHITECTURE</a></span> <span class="o">=</span> <span class="mi">6</span>
+<a name="line-183"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-183">_CS_HW_SERIAL</a></span> <span class="o">=</span> <span class="mi">7</span>
+<a name="line-184"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-184">__O_CS_HW_PROVIDER</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-185"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-185">_CS_SRPC_DOMAIN</a></span> <span class="o">=</span> <span class="mi">9</span>
+<a name="line-186"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-186">_CS_INITTAB_NAME</a></span> <span class="o">=</span> <span class="mi">10</span>
+<a name="line-187"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-187">__O_CS_SYSNAME</a></span> <span class="o">=</span> <span class="mi">11</span>
+<a name="line-188"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-169">_CS_LFS_CFLAGS</a></span> <span class="o">=</span> <span class="mi">20</span>
+<a name="line-189"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-170">_CS_LFS_LDFLAGS</a></span> <span class="o">=</span> <span class="mi">21</span>
+<a name="line-190"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-171">_CS_LFS_LIBS</a></span> <span class="o">=</span> <span class="mi">22</span>
+<a name="line-191"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-172">_CS_LFS_LINTFLAGS</a></span> <span class="o">=</span> <span class="mi">23</span>
+<a name="line-192"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-173">_CS_LFS64_CFLAGS</a></span> <span class="o">=</span> <span class="mi">24</span>
+<a name="line-193"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-174">_CS_LFS64_LDFLAGS</a></span> <span class="o">=</span> <span class="mi">25</span>
+<a name="line-194"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-175">_CS_LFS64_LIBS</a></span> <span class="o">=</span> <span class="mi">26</span>
+<a name="line-195"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-176">_CS_LFS64_LINTFLAGS</a></span> <span class="o">=</span> <span class="mi">27</span>
+<a name="line-196"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-196">_CS_ARCHITECTURE</a></span> <span class="o">=</span> <span class="mi">100</span>
+<a name="line-197"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-197">_CS_BUSTYPES</a></span> <span class="o">=</span> <span class="mi">101</span>
+<a name="line-198"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-198">_CS_HOSTNAME</a></span> <span class="o">=</span> <span class="mi">102</span>
+<a name="line-199"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-199">_CS_HW_PROVIDER</a></span> <span class="o">=</span> <span class="mi">103</span>
+<a name="line-200"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-200">_CS_KERNEL_STAMP</a></span> <span class="o">=</span> <span class="mi">104</span>
+<a name="line-201"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-201">_CS_MACHINE</a></span> <span class="o">=</span> <span class="mi">105</span>
+<a name="line-202"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-202">_CS_OS_BASE</a></span> <span class="o">=</span> <span class="mi">106</span>
+<a name="line-203"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-203">_CS_OS_PROVIDER</a></span> <span class="o">=</span> <span class="mi">107</span>
+<a name="line-204"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-204">_CS_SYSNAME</a></span> <span class="o">=</span> <span class="mi">108</span>
+<a name="line-205"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-205">_CS_USER_LIMIT</a></span> <span class="o">=</span> <span class="mi">109</span>
+<a name="line-206"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-301">_PC_LINK_MAX</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-207"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-302">_PC_MAX_CANON</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-208"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-303">_PC_MAX_INPUT</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-209"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-304">_PC_NAME_MAX</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-210"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-305">_PC_PATH_MAX</a></span> <span class="o">=</span> <span class="mi">5</span>
+<a name="line-211"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-306">_PC_PIPE_BUF</a></span> <span class="o">=</span> <span class="mi">6</span>
+<a name="line-212"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-307">_PC_NO_TRUNC</a></span> <span class="o">=</span> <span class="mi">7</span>
+<a name="line-213"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-308">_PC_VDISABLE</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-214"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-309">_PC_CHOWN_RESTRICTED</a></span> <span class="o">=</span> <span class="mi">9</span>
+<a name="line-215"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-313">_PC_FILESIZEBITS</a></span> <span class="o">=</span> <span class="mi">10</span>
+<a name="line-216"></a><span class="n"><a href="/./Lib/plat-irix6/FILE.py.html#line-362">_POSIX_VERSION</a></span> <span class="o">=</span> <span class="il">199009L</span>
+<a name="line-217"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-47">_XOPEN_VERSION</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-218"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-218">GF_PATH</a></span> <span class="o">=</span> <span class="s2">&quot;/etc/group&quot;</span>
+<a name="line-219"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-219">PF_PATH</a></span> <span class="o">=</span> <span class="s2">&quot;/etc/passwd&quot;</span>
+<a name="line-220"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-220">F_ULOCK</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-221"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-221">F_LOCK</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-222"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-222">F_TLOCK</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-223"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-223">F_TEST</a></span> <span class="o">=</span> <span class="mi">3</span>
+<a name="line-224"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-224">_POSIX_JOB_CONTROL</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-225"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-225">_POSIX_SAVED_IDS</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-226"></a><span class="n"><a href="/./Lib/plat-irix6/FILE.py.html#line-364">_POSIX_VDISABLE</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-227"></a><span class="n"><a href="/./Lib/plat-beos5/IN.py.html#line-199">NULL</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-228"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-228">STDIN_FILENO</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-229"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-229">STDOUT_FILENO</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-230"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-230">STDERR_FILENO</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-231"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-231">_XOPEN_UNIX</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-232"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-320">_XOPEN_ENH_I18N</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-233"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-233">_XOPEN_XPG4</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-234"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-317">_POSIX2_C_VERSION</a></span> <span class="o">=</span> <span class="il">199209L</span>
+<a name="line-235"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-316">_POSIX2_VERSION</a></span> <span class="o">=</span> <span class="il">199209L</span>
+<a name="line-236"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-318">_XOPEN_XCU_VERSION</a></span> <span class="o">=</span> <span class="mi">4</span>
+<a name="line-237"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-237">_POSIX_SEMAPHORES</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-238"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-238">_POSIX_THREADS</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-239"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-239">_POSIX_THREAD_ATTR_STACKADDR</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-240"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-240">_POSIX_THREAD_ATTR_STACKSIZE</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-241"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-241">_POSIX_THREAD_PRIORITY_SCHEDULING</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-242"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-242">_POSIX_THREAD_PROCESS_SHARED</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-243"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-243">_POSIX_THREAD_SAFE_FUNCTIONS</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-244"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-322">_POSIX2_C_BIND</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-245"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-323">_POSIX2_CHAR_TERM</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-246"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-246">_POSIX2_FORT_RUN</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-247"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-324">_POSIX2_LOCALEDEF</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-248"></a><span class="n"><a href="/./Lib/plat-sunos5/IN.py.html#line-327">_POSIX2_UPE</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-249"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-249">_LFS_ASYNCHRONOUS_IO</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-250"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-250">_LFS_LARGEFILE</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-251"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-251">_LFS64_ASYNCHRONOUS_IO</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-252"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-252">_LFS64_LARGEFILE</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-253"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-253">_LFS64_STDIO</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-254"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-849">FMNAMESZ</a></span> <span class="o">=</span> <span class="mi">8</span>
+<a name="line-255"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1756">SNDZERO</a></span> <span class="o">=</span> <span class="mh">0x001</span>
+<a name="line-256"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1757">SNDPIPE</a></span> <span class="o">=</span> <span class="mh">0x002</span>
+<a name="line-257"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1758">RNORM</a></span> <span class="o">=</span> <span class="mh">0x000</span>
+<a name="line-258"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1759">RMSGD</a></span> <span class="o">=</span> <span class="mh">0x001</span>
+<a name="line-259"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1760">RMSGN</a></span> <span class="o">=</span> <span class="mh">0x002</span>
+<a name="line-260"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1761">RMODEMASK</a></span> <span class="o">=</span> <span class="mh">0x003</span>
+<a name="line-261"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1762">RPROTDAT</a></span> <span class="o">=</span> <span class="mh">0x004</span>
+<a name="line-262"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1763">RPROTDIS</a></span> <span class="o">=</span> <span class="mh">0x008</span>
+<a name="line-263"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1764">RPROTNORM</a></span> <span class="o">=</span> <span class="mh">0x010</span>
+<a name="line-264"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1765">RPROTMASK</a></span> <span class="o">=</span> <span class="mh">0x01c</span>
+<a name="line-265"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1774">FLUSHR</a></span> <span class="o">=</span> <span class="mh">0x01</span>
+<a name="line-266"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1775">FLUSHW</a></span> <span class="o">=</span> <span class="mh">0x02</span>
+<a name="line-267"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1776">FLUSHRW</a></span> <span class="o">=</span> <span class="mh">0x03</span>
+<a name="line-268"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1777">FLUSHBAND</a></span> <span class="o">=</span> <span class="mh">0x04</span>
+<a name="line-269"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1782">S_INPUT</a></span> <span class="o">=</span> <span class="mh">0x0001</span>
+<a name="line-270"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1783">S_HIPRI</a></span> <span class="o">=</span> <span class="mh">0x0002</span>
+<a name="line-271"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1784">S_OUTPUT</a></span> <span class="o">=</span> <span class="mh">0x0004</span>
+<a name="line-272"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1785">S_MSG</a></span> <span class="o">=</span> <span class="mh">0x0008</span>
+<a name="line-273"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1786">S_ERROR</a></span> <span class="o">=</span> <span class="mh">0x0010</span>
+<a name="line-274"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1787">S_HANGUP</a></span> <span class="o">=</span> <span class="mh">0x0020</span>
+<a name="line-275"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1788">S_RDNORM</a></span> <span class="o">=</span> <span class="mh">0x0040</span>
+<a name="line-276"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1789">S_WRNORM</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1784">S_OUTPUT</a></span>
+<a name="line-277"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1790">S_RDBAND</a></span> <span class="o">=</span> <span class="mh">0x0080</span>
+<a name="line-278"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1791">S_WRBAND</a></span> <span class="o">=</span> <span class="mh">0x0100</span>
+<a name="line-279"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1792">S_BANDURG</a></span> <span class="o">=</span> <span class="mh">0x0200</span>
+<a name="line-280"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1793">RS_HIPRI</a></span> <span class="o">=</span> <span class="mh">0x01</span>
+<a name="line-281"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1796">MSG_HIPRI</a></span> <span class="o">=</span> <span class="mh">0x01</span>
+<a name="line-282"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1797">MSG_ANY</a></span> <span class="o">=</span> <span class="mh">0x02</span>
+<a name="line-283"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1798">MSG_BAND</a></span> <span class="o">=</span> <span class="mh">0x04</span>
+<a name="line-284"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-284">MSG_DISCARD</a></span> <span class="o">=</span> <span class="mh">0x08</span>
+<a name="line-285"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-285">MSG_PEEKIOCTL</a></span> <span class="o">=</span> <span class="mh">0x10</span>
+<a name="line-286"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1807">MORECTL</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-287"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1808">MOREDATA</a></span> <span class="o">=</span> <span class="mi">2</span>
+<a name="line-288"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1809">MUXID_ALL</a></span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-289"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1810">ANYMARK</a></span> <span class="o">=</span> <span class="mh">0x01</span>
+<a name="line-290"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1811">LASTMARK</a></span> <span class="o">=</span> <span class="mh">0x02</span>
+<a name="line-291"></a><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span> <span class="o">=</span> <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="p">)</span>
+<a name="line-292"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-292">I_NREAD</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">01</span><span class="p">)</span>
+<a name="line-293"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-293">I_PUSH</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">02</span><span class="p">)</span>
+<a name="line-294"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-294">I_POP</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">03</span><span class="p">)</span>
+<a name="line-295"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-295">I_LOOK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">04</span><span class="p">)</span>
+<a name="line-296"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-296">I_FLUSH</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">05</span><span class="p">)</span>
+<a name="line-297"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-297">I_SRDOPT</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">06</span><span class="p">)</span>
+<a name="line-298"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-298">I_GRDOPT</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">07</span><span class="p">)</span>
+<a name="line-299"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-299">I_STR</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">010</span><span class="p">)</span>
+<a name="line-300"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-300">I_SETSIG</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">011</span><span class="p">)</span>
+<a name="line-301"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-301">I_GETSIG</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">012</span><span class="p">)</span>
+<a name="line-302"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-302">I_FIND</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">013</span><span class="p">)</span>
+<a name="line-303"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-303">I_LINK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">014</span><span class="p">)</span>
+<a name="line-304"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-304">I_UNLINK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">015</span><span class="p">)</span>
+<a name="line-305"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-305">I_PEEK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">017</span><span class="p">)</span>
+<a name="line-306"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-306">I_FDINSERT</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">020</span><span class="p">)</span>
+<a name="line-307"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-307">I_SENDFD</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">021</span><span class="p">)</span>
+<a name="line-308"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-308">I_RECVFD</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">022</span><span class="p">)</span>
+<a name="line-309"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-309">I_E_RECVFD</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">016</span><span class="p">)</span>
+<a name="line-310"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-308">I_RECVFD</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">016</span><span class="p">)</span>
+<a name="line-311"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-308">I_RECVFD</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">022</span><span class="p">)</span>
+<a name="line-312"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-312">I_SWROPT</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">023</span><span class="p">)</span>
+<a name="line-313"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-313">I_GWROPT</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">024</span><span class="p">)</span>
+<a name="line-314"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-314">I_LIST</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">025</span><span class="p">)</span>
+<a name="line-315"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-315">I_PLINK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">026</span><span class="p">)</span>
+<a name="line-316"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-316">I_PUNLINK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">027</span><span class="p">)</span>
+<a name="line-317"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-317">I_FLUSHBAND</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">034</span><span class="p">)</span>
+<a name="line-318"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-318">I_CKBAND</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">035</span><span class="p">)</span>
+<a name="line-319"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-319">I_GETBAND</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">036</span><span class="p">)</span>
+<a name="line-320"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-320">I_ATMARK</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">037</span><span class="p">)</span>
+<a name="line-321"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-321">I_SETCLTIME</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">040</span><span class="p">)</span>
+<a name="line-322"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-322">I_GETCLTIME</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">041</span><span class="p">)</span>
+<a name="line-323"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-323">I_CANPUT</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">042</span><span class="p">)</span>
+<a name="line-324"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-324">I_S_RECVFD</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">043</span><span class="p">)</span>
+<a name="line-325"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-325">I_STATS</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">044</span><span class="p">)</span>
+<a name="line-326"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-326">I_BIGPIPE</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">045</span><span class="p">)</span>
+<a name="line-327"></a><span class="n"><a href="/./Lib/plat-unixware7/STROPTS.py.html#line-327">I_GETTP</a></span> <span class="o">=</span> <span class="p">(</span><span class="n"><a href="/./Include/node.h.html#line-31">STR</a></span><span class="o">|</span><span class="mo">046</span><span class="p">)</span>
+<a name="line-328"></a><span class="n"><a href="/./Lib/plat-sunos5/STROPTS.py.html#line-1813">INFTIM</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</td></tr></table></body>
+</html>

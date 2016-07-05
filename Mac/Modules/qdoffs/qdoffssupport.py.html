@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a></pre></div></td><td class="code"><div class="source"><span class="filename">Mac/Modules/qdoffs/qdoffssupport.py</span><pre><span></span><a name="line-1"></a><span class="c1"># This script generates a Python interface for an Apple Macintosh Manager.</span>
+<a name="line-2"></a><span class="c1"># It uses the &quot;bgen&quot; package to generate C code.</span>
+<a name="line-3"></a><span class="c1"># The function specifications are generated by scanning the mamager&#39;s header file,</span>
+<a name="line-4"></a><span class="c1"># using the &quot;scantools&quot; package (customized for this particular manager).</span>
+<a name="line-5"></a>
+<a name="line-6"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span>
+<a name="line-7"></a>
+<a name="line-8"></a><span class="c1"># Declarations that change for each manager</span>
+<a name="line-9"></a><span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-9">MACHEADERFILE</a></span> <span class="o">=</span> <span class="s1">&#39;QDOffscreen.h&#39;</span>         <span class="c1"># The Apple header file</span>
+<a name="line-10"></a><span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-10">MODNAME</a></span> <span class="o">=</span> <span class="s1">&#39;_Qdoffs&#39;</span>                             <span class="c1"># The name of the module</span>
+<a name="line-11"></a><span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-11">OBJECTNAME</a></span> <span class="o">=</span> <span class="s1">&#39;GWorld&#39;</span>                   <span class="c1"># The basic name of the objects used here</span>
+<a name="line-12"></a>
+<a name="line-13"></a><span class="c1"># The following is *usually* unchanged but may still require tuning</span>
+<a name="line-14"></a><span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-13">MODPREFIX</a></span> <span class="o">=</span> <span class="s1">&#39;Qdoffs&#39;</span>                    <span class="c1"># The prefix for module-wide routines</span>
+<a name="line-15"></a><span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-16">OBJECTTYPE</a></span> <span class="o">=</span> <span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-11">OBJECTNAME</a></span> <span class="o">+</span> <span class="s1">&#39;Ptr&#39;</span>         <span class="c1"># The C type used to represent them</span>
+<a name="line-16"></a><span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-17">OBJECTPREFIX</a></span> <span class="o">=</span> <span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-11">OBJECTNAME</a></span> <span class="o">+</span> <span class="s1">&#39;Obj&#39;</span>       <span class="c1"># The prefix for object methods</span>
+<a name="line-17"></a><span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-14">INPUTFILE</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-320">lower</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-13">MODPREFIX</a></span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;gen.py&#39;</span> <span class="c1"># The file generated by the scanner</span>
+<a name="line-18"></a><span class="c1">#EDITFILE = string.lower(MODPREFIX) + &#39;edit.py&#39; # The manual definitions</span>
+<a name="line-19"></a><span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-15">OUTPUTFILE</a></span> <span class="o">=</span> <span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-10">MODNAME</a></span> <span class="o">+</span> <span class="s2">&quot;module.c&quot;</span>       <span class="c1"># The file generated by this program</span>
+<a name="line-20"></a>
+<a name="line-21"></a><span class="kn">from</span> <span class="nn">macsupport</span> <span class="kn">import</span> <span class="o">*</span>
+<a name="line-22"></a>
+<a name="line-23"></a><span class="c1"># Create the type objects</span>
+<a name="line-24"></a>
+<a name="line-25"></a><span class="n"><a href="/./Mac/Modules/mlte/mltesupport.py.html#line-121">GWorldPtr</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-274">OpaqueByValueType</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-16">OBJECTTYPE</a></span><span class="p">,</span> <span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-17">OBJECTPREFIX</a></span><span class="p">)</span>
+<a name="line-26"></a><span class="n"><a href="/./Mac/Modules/qdoffs/qdoffssupport.py.html#line-26">GWorldFlags</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/aetypes.py.html#line-104">Type</a></span><span class="p">(</span><span class="s2">&quot;GWorldFlags&quot;</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">)</span>
+<a name="line-27"></a><span class="n"><a href="/./Mac/Modules/qd/qdsupport.py.html#line-48">GDHandle</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-274">OpaqueByValueType</a></span><span class="p">(</span><span class="s2">&quot;GDHandle&quot;</span><span class="p">,</span> <span class="s2">&quot;ResObj&quot;</span><span class="p">)</span>
+<a name="line-28"></a><span class="n"><a href="/./Mac/Modules/qdoffs/qdoffssupport.py.html#line-28">OptGDHandle</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-274">OpaqueByValueType</a></span><span class="p">(</span><span class="s2">&quot;GDHandle&quot;</span><span class="p">,</span> <span class="s2">&quot;OptResObj&quot;</span><span class="p">)</span>
+<a name="line-29"></a><span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-55">CTabHandle</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-274">OpaqueByValueType</a></span><span class="p">(</span><span class="s2">&quot;CTabHandle&quot;</span><span class="p">,</span> <span class="s2">&quot;OptResObj&quot;</span><span class="p">)</span>
+<a name="line-30"></a><span class="n"><a href="/./Mac/Modules/qd/qdsupport.py.html#line-41">PixPatHandle</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-274">OpaqueByValueType</a></span><span class="p">(</span><span class="s2">&quot;PixPatHandle&quot;</span><span class="p">,</span> <span class="s2">&quot;ResObj&quot;</span><span class="p">)</span>
+<a name="line-31"></a><span class="n"><a href="/./Mac/Modules/drag/dragsupport.py.html#line-30">PixMapHandle</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-274">OpaqueByValueType</a></span><span class="p">(</span><span class="s2">&quot;PixMapHandle&quot;</span><span class="p">,</span> <span class="s2">&quot;ResObj&quot;</span><span class="p">)</span>
+<a name="line-32"></a><span class="n"><a href="/./Mac/Modules/cg/cgsupport.py.html#line-20">CGrafPtr</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-274">OpaqueByValueType</a></span><span class="p">(</span><span class="s2">&quot;CGrafPtr&quot;</span><span class="p">,</span> <span class="s2">&quot;GrafObj&quot;</span><span class="p">)</span>
+<a name="line-33"></a><span class="n"><a href="/./Mac/Modules/carbonevt/CarbonEvtsupport.py.html#line-72">GrafPtr</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenType.py.html#line-274">OpaqueByValueType</a></span><span class="p">(</span><span class="s2">&quot;GrafPtr&quot;</span><span class="p">,</span> <span class="s2">&quot;GrafObj&quot;</span><span class="p">)</span>
+<a name="line-34"></a><span class="n"><a href="/./Mac/Modules/qdoffs/qdoffssupport.py.html#line-34">QDErr</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/macsupport.py.html#line-106">OSErrType</a></span><span class="p">(</span><span class="s2">&quot;QDErr&quot;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<a name="line-35"></a>
+<a name="line-36"></a><span class="n">includestuff</span> <span class="o">=</span> <span class="n">includestuff</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;</span>
+<a name="line-37"></a><span class="s2">#include &lt;Carbon/Carbon.h&gt;</span>
+<a name="line-38"></a>
+<a name="line-39"></a><span class="s2">#ifdef USE_TOOLBOX_OBJECT_GLUE</span>
+<a name="line-40"></a><span class="s2">extern PyObject *_GWorldObj_New(GWorldPtr);</span>
+<a name="line-41"></a><span class="s2">extern int _GWorldObj_Convert(PyObject *, GWorldPtr *);</span>
+<a name="line-42"></a>
+<a name="line-43"></a><span class="s2">#define GWorldObj_New _GWorldObj_New</span>
+<a name="line-44"></a><span class="s2">#define GWorldObj_Convert _GWorldObj_Convert</span>
+<a name="line-45"></a><span class="s2">#endif</span>
+<a name="line-46"></a>
+<a name="line-47"></a><span class="s2">#define as_GrafPtr(gworld) ((GrafPtr)(gworld))</span>
+<a name="line-48"></a>
+<a name="line-49"></a><span class="s2">&quot;&quot;&quot;</span>
+<a name="line-50"></a>
+<a name="line-51"></a><span class="n">initstuff</span> <span class="o">=</span> <span class="n">initstuff</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;</span>
+<a name="line-52"></a><span class="s2">        PyMac_INIT_TOOLBOX_OBJECT_NEW(GWorldPtr, GWorldObj_New);</span>
+<a name="line-53"></a><span class="s2">        PyMac_INIT_TOOLBOX_OBJECT_CONVERT(GWorldPtr, GWorldObj_Convert);</span>
+<a name="line-54"></a><span class="s2">&quot;&quot;&quot;</span>
+<a name="line-55"></a>
+<a name="line-56"></a><span class="k">class</span> <span class="nc"><a href="/./Mac/Modules/app/appsupport.py.html#line-92">MyObjectDefinition</a></span><span class="p">(</span><span class="n"><a href="/./Tools/bgen/bgen/bgenObjectDefinition.py.html#line-370">PEP253Mixin</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenObjectDefinition.py.html#line-468">GlobalObjectDefinition</a></span><span class="p">):</span>
+<a name="line-57"></a>    <span class="c1"># XXXX Should inherit from GrafPtr?</span>
+<a name="line-58"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Modules/cf/cfsupport.py.html#line-254">outputCheckNewArg</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-59"></a>        <span class="n"><a href="/./Tools/bgen/bgen/bgenOutput.py.html#line-57">Output</a></span><span class="p">(</span><span class="s2">&quot;if (itself == NULL) return PyMac_Error(resNotFound);&quot;</span><span class="p">)</span>
+<a name="line-60"></a><span class="c1">##      def outputInitStructMembers(self):</span>
+<a name="line-61"></a><span class="c1">##              GlobalObjectDefinition.outputInitStructMembers(self)</span>
+<a name="line-62"></a><span class="c1">##              Output(&quot;SetWRefCon(itself, (long)it);&quot;)</span>
+<a name="line-63"></a><span class="c1">##      def outputCheckConvertArg(self):</span>
+<a name="line-64"></a><span class="c1">##              OutLbrace(&quot;if (DlgObj_Check(v))&quot;)</span>
+<a name="line-65"></a><span class="c1">##              Output(&quot;*p_itself = ((WindowObject *)v)-&gt;ob_itself;&quot;)</span>
+<a name="line-66"></a><span class="c1">##              Output(&quot;return 1;&quot;)</span>
+<a name="line-67"></a><span class="c1">##              OutRbrace()</span>
+<a name="line-68"></a><span class="c1">##              Out(&quot;&quot;&quot;</span>
+<a name="line-69"></a><span class="c1">##              if (v == Py_None) { *p_itself = NULL; return 1; }</span>
+<a name="line-70"></a><span class="c1">##              if (PyInt_Check(v)) { *p_itself = (WindowPtr)PyInt_AsLong(v); return 1; }</span>
+<a name="line-71"></a><span class="c1">##              &quot;&quot;&quot;)</span>
+<a name="line-72"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Modules/carbonevt/CarbonEvtsupport.py.html#line-193">outputFreeIt</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n">itselfname</span><span class="p">):</span>
+<a name="line-73"></a>        <span class="n"><a href="/./Tools/bgen/bgen/bgenOutput.py.html#line-57">Output</a></span><span class="p">(</span><span class="s2">&quot;DisposeGWorld(</span><span class="si">%s</span><span class="s2">);&quot;</span><span class="p">,</span> <span class="n">itselfname</span><span class="p">)</span>
+<a name="line-74"></a><span class="c1"># From here on it&#39;s basically all boiler plate...</span>
+<a name="line-75"></a>
+<a name="line-76"></a><span class="c1"># Create the generator groups and link them</span>
+<a name="line-77"></a><span class="n"><a href="/./Include/Python-ast.h.html#line-163">module</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/macsupport.py.html#line-194">MacModule</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-10">MODNAME</a></span><span class="p">,</span> <span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-13">MODPREFIX</a></span><span class="p">,</span> <span class="n">includestuff</span><span class="p">,</span> <span class="n">finalstuff</span><span class="p">,</span> <span class="n">initstuff</span><span class="p">)</span>
+<a name="line-78"></a><span class="nb"><a href="/./Include/asdl.h.html#line-6">object</a></span> <span class="o">=</span> <span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-92">MyObjectDefinition</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-11">OBJECTNAME</a></span><span class="p">,</span> <span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-17">OBJECTPREFIX</a></span><span class="p">,</span> <span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-16">OBJECTTYPE</a></span><span class="p">)</span>
+<a name="line-79"></a><span class="n"><a href="/./Include/Python-ast.h.html#line-163">module</a></span><span class="o">.</span><span class="n"><a href="/./Tools/bgen/bgen/bgenModule.py.html#line-24">addobject</a></span><span class="p">(</span><span class="nb"><a href="/./Include/asdl.h.html#line-6">object</a></span><span class="p">)</span>
+<a name="line-80"></a>
+<a name="line-81"></a>
+<a name="line-82"></a><span class="c1"># Create the generator classes used to populate the lists</span>
+<a name="line-83"></a><span class="n"><a href="/./Lib/compiler/ast.py.html#line-546">Function</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/macsupport.py.html#line-191">OSErrWeakLinkFunctionGenerator</a></span>
+<a name="line-84"></a><span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-114">Method</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/macsupport.py.html#line-192">OSErrWeakLinkMethodGenerator</a></span>
+<a name="line-85"></a>
+<a name="line-86"></a><span class="c1"># Create and populate the lists</span>
+<a name="line-87"></a><span class="n"><a href="/./Mac/Modules/ae/aesupport.py.html#line-213">functions</a></span> <span class="o">=</span> <span class="p">[]</span>
+<a name="line-88"></a><span class="n"><a href="/./Include/methodobject.h.html#line-74">methods</a></span> <span class="o">=</span> <span class="p">[]</span>
+<a name="line-89"></a><span class="nb"><a href="/./Lib/idlelib/PyShell.py.html#line-649">execfile</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-14">INPUTFILE</a></span><span class="p">)</span>
+<a name="line-90"></a>
+<a name="line-91"></a><span class="c1"># A method to convert a GWorldPtr to a GrafPtr</span>
+<a name="line-92"></a><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="o">=</span> <span class="n"><a href="/./Mac/Modules/app/appsupport.py.html#line-114">Method</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Modules/carbonevt/CarbonEvtsupport.py.html#line-72">GrafPtr</a></span><span class="p">,</span> <span class="s1">&#39;as_GrafPtr&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n"><a href="/./Mac/Modules/mlte/mltesupport.py.html#line-121">GWorldPtr</a></span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenVariable.py.html#line-5">InMode</a></span><span class="p">))</span>
+<a name="line-93"></a><span class="n"><a href="/./Include/methodobject.h.html#line-74">methods</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="p">)</span>
+<a name="line-94"></a>
+<a name="line-95"></a><span class="c1">#</span>
+<a name="line-96"></a><span class="c1"># Manual generator: get data out of a pixmap</span>
+<a name="line-97"></a><span class="n">pixmapgetbytes_body</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a name="line-98"></a><span class="s2">PixMapHandle pm;</span>
+<a name="line-99"></a><span class="s2">int from, length;</span>
+<a name="line-100"></a><span class="s2">char *cp;</span>
+<a name="line-101"></a>
+<a name="line-102"></a><span class="s2">if ( !PyArg_ParseTuple(_args, &quot;O&amp;ii&quot;, ResObj_Convert, &amp;pm, &amp;from, &amp;length) )</span>
+<a name="line-103"></a><span class="s2">        return NULL;</span>
+<a name="line-104"></a><span class="s2">cp = GetPixBaseAddr(pm)+from;</span>
+<a name="line-105"></a><span class="s2">_res = PyString_FromStringAndSize(cp, length);</span>
+<a name="line-106"></a><span class="s2">return _res;</span>
+<a name="line-107"></a><span class="s2">&quot;&quot;&quot;</span>
+<a name="line-108"></a><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenGenerator.py.html#line-98">ManualGenerator</a></span><span class="p">(</span><span class="s2">&quot;GetPixMapBytes&quot;</span><span class="p">,</span> <span class="n">pixmapgetbytes_body</span><span class="p">)</span>
+<a name="line-109"></a><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-3769">docstring</a></span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;(pixmap, int start, int size) -&gt; string. Return bytes from the pixmap&quot;&quot;&quot;</span>
+<a name="line-110"></a><span class="n"><a href="/./Mac/Modules/ae/aesupport.py.html#line-213">functions</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="p">)</span>
+<a name="line-111"></a>
+<a name="line-112"></a><span class="c1"># Manual generator: store data in a pixmap</span>
+<a name="line-113"></a><span class="n">pixmapputbytes_body</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a name="line-114"></a><span class="s2">PixMapHandle pm;</span>
+<a name="line-115"></a><span class="s2">int from, length;</span>
+<a name="line-116"></a><span class="s2">char *cp, *icp;</span>
+<a name="line-117"></a>
+<a name="line-118"></a><span class="s2">if ( !PyArg_ParseTuple(_args, &quot;O&amp;is#&quot;, ResObj_Convert, &amp;pm, &amp;from, &amp;icp, &amp;length) )</span>
+<a name="line-119"></a><span class="s2">        return NULL;</span>
+<a name="line-120"></a><span class="s2">cp = GetPixBaseAddr(pm)+from;</span>
+<a name="line-121"></a><span class="s2">memcpy(cp, icp, length);</span>
+<a name="line-122"></a><span class="s2">Py_INCREF(Py_None);</span>
+<a name="line-123"></a><span class="s2">_res = Py_None;</span>
+<a name="line-124"></a><span class="s2">return _res;</span>
+<a name="line-125"></a><span class="s2">&quot;&quot;&quot;</span>
+<a name="line-126"></a><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/bgen/bgen/bgenGenerator.py.html#line-98">ManualGenerator</a></span><span class="p">(</span><span class="s2">&quot;PutPixMapBytes&quot;</span><span class="p">,</span> <span class="n">pixmapputbytes_body</span><span class="p">)</span>
+<a name="line-127"></a><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-3769">docstring</a></span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;(pixmap, int start, string data). Store bytes into the pixmap&quot;&quot;&quot;</span>
+<a name="line-128"></a><span class="n"><a href="/./Mac/Modules/ae/aesupport.py.html#line-213">functions</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="p">)</span>
+<a name="line-129"></a>
+<a name="line-130"></a><span class="c1"># add the populated lists to the generator groups</span>
+<a name="line-131"></a><span class="c1"># (in a different wordl the scan program would generate this)</span>
+<a name="line-132"></a><span class="k">for</span> <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="ow">in</span> <span class="n"><a href="/./Mac/Modules/ae/aesupport.py.html#line-213">functions</a></span><span class="p">:</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-163">module</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-206">add</a></span><span class="p">(</span><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="p">)</span>
+<a name="line-133"></a><span class="k">for</span> <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="ow">in</span> <span class="n"><a href="/./Include/methodobject.h.html#line-74">methods</a></span><span class="p">:</span> <span class="nb"><a href="/./Include/asdl.h.html#line-6">object</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-206">add</a></span><span class="p">(</span><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="p">)</span>
+<a name="line-134"></a>
+<a name="line-135"></a>
+<a name="line-136"></a>
+<a name="line-137"></a><span class="c1"># generate output (open the output file as late as possible)</span>
+<a name="line-138"></a><span class="n"><a href="/./Tools/bgen/bgen/bgenOutput.py.html#line-31">SetOutputFileName</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Modules/ah/ahsupport.py.html#line-15">OUTPUTFILE</a></span><span class="p">)</span>
+<a name="line-139"></a><span class="n"><a href="/./Include/Python-ast.h.html#line-163">module</a></span><span class="o">.</span><span class="n"><a href="/./Modules/cgen.py.html#line-189">generate</a></span><span class="p">()</span>
+</pre></div>
+</td></tr></table></body>
+</html>

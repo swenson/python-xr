@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a>
+<a href="#line-140">140</a>
+<a href="#line-141">141</a>
+<a href="#line-142">142</a>
+<a href="#line-143">143</a>
+<a href="#line-144">144</a>
+<a href="#line-145">145</a>
+<a href="#line-146">146</a>
+<a href="#line-147">147</a>
+<a href="#line-148">148</a>
+<a href="#line-149">149</a>
+<a href="#line-150">150</a>
+<a href="#line-151">151</a>
+<a href="#line-152">152</a>
+<a href="#line-153">153</a>
+<a href="#line-154">154</a>
+<a href="#line-155">155</a>
+<a href="#line-156">156</a>
+<a href="#line-157">157</a>
+<a href="#line-158">158</a>
+<a href="#line-159">159</a>
+<a href="#line-160">160</a>
+<a href="#line-161">161</a>
+<a href="#line-162">162</a>
+<a href="#line-163">163</a>
+<a href="#line-164">164</a>
+<a href="#line-165">165</a>
+<a href="#line-166">166</a>
+<a href="#line-167">167</a>
+<a href="#line-168">168</a>
+<a href="#line-169">169</a>
+<a href="#line-170">170</a>
+<a href="#line-171">171</a>
+<a href="#line-172">172</a>
+<a href="#line-173">173</a>
+<a href="#line-174">174</a>
+<a href="#line-175">175</a>
+<a href="#line-176">176</a>
+<a href="#line-177">177</a>
+<a href="#line-178">178</a>
+<a href="#line-179">179</a>
+<a href="#line-180">180</a>
+<a href="#line-181">181</a>
+<a href="#line-182">182</a>
+<a href="#line-183">183</a>
+<a href="#line-184">184</a>
+<a href="#line-185">185</a>
+<a href="#line-186">186</a>
+<a href="#line-187">187</a>
+<a href="#line-188">188</a>
+<a href="#line-189">189</a>
+<a href="#line-190">190</a>
+<a href="#line-191">191</a>
+<a href="#line-192">192</a>
+<a href="#line-193">193</a>
+<a href="#line-194">194</a>
+<a href="#line-195">195</a>
+<a href="#line-196">196</a>
+<a href="#line-197">197</a>
+<a href="#line-198">198</a>
+<a href="#line-199">199</a>
+<a href="#line-200">200</a>
+<a href="#line-201">201</a>
+<a href="#line-202">202</a>
+<a href="#line-203">203</a>
+<a href="#line-204">204</a>
+<a href="#line-205">205</a>
+<a href="#line-206">206</a>
+<a href="#line-207">207</a>
+<a href="#line-208">208</a>
+<a href="#line-209">209</a>
+<a href="#line-210">210</a>
+<a href="#line-211">211</a>
+<a href="#line-212">212</a>
+<a href="#line-213">213</a>
+<a href="#line-214">214</a>
+<a href="#line-215">215</a>
+<a href="#line-216">216</a>
+<a href="#line-217">217</a>
+<a href="#line-218">218</a>
+<a href="#line-219">219</a>
+<a href="#line-220">220</a>
+<a href="#line-221">221</a>
+<a href="#line-222">222</a>
+<a href="#line-223">223</a>
+<a href="#line-224">224</a>
+<a href="#line-225">225</a>
+<a href="#line-226">226</a>
+<a href="#line-227">227</a>
+<a href="#line-228">228</a>
+<a href="#line-229">229</a>
+<a href="#line-230">230</a>
+<a href="#line-231">231</a>
+<a href="#line-232">232</a>
+<a href="#line-233">233</a>
+<a href="#line-234">234</a>
+<a href="#line-235">235</a>
+<a href="#line-236">236</a>
+<a href="#line-237">237</a>
+<a href="#line-238">238</a>
+<a href="#line-239">239</a>
+<a href="#line-240">240</a>
+<a href="#line-241">241</a>
+<a href="#line-242">242</a>
+<a href="#line-243">243</a>
+<a href="#line-244">244</a>
+<a href="#line-245">245</a>
+<a href="#line-246">246</a>
+<a href="#line-247">247</a>
+<a href="#line-248">248</a>
+<a href="#line-249">249</a>
+<a href="#line-250">250</a>
+<a href="#line-251">251</a>
+<a href="#line-252">252</a>
+<a href="#line-253">253</a>
+<a href="#line-254">254</a>
+<a href="#line-255">255</a>
+<a href="#line-256">256</a>
+<a href="#line-257">257</a>
+<a href="#line-258">258</a>
+<a href="#line-259">259</a>
+<a href="#line-260">260</a>
+<a href="#line-261">261</a>
+<a href="#line-262">262</a>
+<a href="#line-263">263</a>
+<a href="#line-264">264</a>
+<a href="#line-265">265</a>
+<a href="#line-266">266</a>
+<a href="#line-267">267</a>
+<a href="#line-268">268</a>
+<a href="#line-269">269</a>
+<a href="#line-270">270</a>
+<a href="#line-271">271</a>
+<a href="#line-272">272</a>
+<a href="#line-273">273</a>
+<a href="#line-274">274</a>
+<a href="#line-275">275</a>
+<a href="#line-276">276</a>
+<a href="#line-277">277</a>
+<a href="#line-278">278</a>
+<a href="#line-279">279</a>
+<a href="#line-280">280</a>
+<a href="#line-281">281</a>
+<a href="#line-282">282</a>
+<a href="#line-283">283</a>
+<a href="#line-284">284</a>
+<a href="#line-285">285</a>
+<a href="#line-286">286</a>
+<a href="#line-287">287</a>
+<a href="#line-288">288</a>
+<a href="#line-289">289</a>
+<a href="#line-290">290</a>
+<a href="#line-291">291</a>
+<a href="#line-292">292</a>
+<a href="#line-293">293</a>
+<a href="#line-294">294</a>
+<a href="#line-295">295</a>
+<a href="#line-296">296</a>
+<a href="#line-297">297</a>
+<a href="#line-298">298</a>
+<a href="#line-299">299</a>
+<a href="#line-300">300</a>
+<a href="#line-301">301</a>
+<a href="#line-302">302</a>
+<a href="#line-303">303</a>
+<a href="#line-304">304</a>
+<a href="#line-305">305</a>
+<a href="#line-306">306</a>
+<a href="#line-307">307</a>
+<a href="#line-308">308</a>
+<a href="#line-309">309</a>
+<a href="#line-310">310</a>
+<a href="#line-311">311</a>
+<a href="#line-312">312</a>
+<a href="#line-313">313</a>
+<a href="#line-314">314</a>
+<a href="#line-315">315</a>
+<a href="#line-316">316</a>
+<a href="#line-317">317</a>
+<a href="#line-318">318</a>
+<a href="#line-319">319</a>
+<a href="#line-320">320</a>
+<a href="#line-321">321</a>
+<a href="#line-322">322</a>
+<a href="#line-323">323</a>
+<a href="#line-324">324</a>
+<a href="#line-325">325</a>
+<a href="#line-326">326</a>
+<a href="#line-327">327</a>
+<a href="#line-328">328</a>
+<a href="#line-329">329</a>
+<a href="#line-330">330</a>
+<a href="#line-331">331</a>
+<a href="#line-332">332</a>
+<a href="#line-333">333</a>
+<a href="#line-334">334</a>
+<a href="#line-335">335</a>
+<a href="#line-336">336</a>
+<a href="#line-337">337</a>
+<a href="#line-338">338</a>
+<a href="#line-339">339</a>
+<a href="#line-340">340</a>
+<a href="#line-341">341</a>
+<a href="#line-342">342</a>
+<a href="#line-343">343</a>
+<a href="#line-344">344</a>
+<a href="#line-345">345</a>
+<a href="#line-346">346</a>
+<a href="#line-347">347</a>
+<a href="#line-348">348</a>
+<a href="#line-349">349</a>
+<a href="#line-350">350</a>
+<a href="#line-351">351</a>
+<a href="#line-352">352</a>
+<a href="#line-353">353</a>
+<a href="#line-354">354</a>
+<a href="#line-355">355</a>
+<a href="#line-356">356</a>
+<a href="#line-357">357</a>
+<a href="#line-358">358</a>
+<a href="#line-359">359</a>
+<a href="#line-360">360</a>
+<a href="#line-361">361</a>
+<a href="#line-362">362</a>
+<a href="#line-363">363</a>
+<a href="#line-364">364</a>
+<a href="#line-365">365</a>
+<a href="#line-366">366</a>
+<a href="#line-367">367</a>
+<a href="#line-368">368</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/distutils/command/bdist_wininst.py</span><pre><span></span><a name="line-1"></a><span class="sd">&quot;&quot;&quot;distutils.command.bdist_wininst</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="sd">Implements the Distutils &#39;bdist_wininst&#39; command: create a windows installer</span>
+<a name="line-4"></a><span class="sd">exe-program.&quot;&quot;&quot;</span>
+<a name="line-5"></a>
+<a name="line-6"></a><span class="n"><a href="/./Lib/curses/__init__.py.html#line-13">__revision__</a></span> <span class="o">=</span> <span class="s2">&quot;$Id$&quot;</span>
+<a name="line-7"></a>
+<a name="line-8"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span>
+<a name="line-9"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span>
+<a name="line-10"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span>
+<a name="line-11"></a>
+<a name="line-12"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/distutils/command/build_ext.py.html#line-132">sysconfig</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/command/bdist_dumb.py.html#line-11">get_python_version</a></span>
+<a name="line-13"></a>
+<a name="line-14"></a><span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/cmd.py.html#line-14">Command</a></span>
+<a name="line-15"></a><span class="kn">from</span> <span class="nn">distutils.dir_util</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/command/bdist_dumb.py.html#line-15">remove_tree</a></span>
+<a name="line-16"></a><span class="kn">from</span> <span class="nn">distutils.errors</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/cmd.py.html#line-10">DistutilsOptionError</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/command/bdist.py.html#line-12">DistutilsPlatformError</a></span>
+<a name="line-17"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-246">distutils</a></span> <span class="kn">import</span> <span class="n"><a href="/./Demo/pdist/rcslib.py.html#line-48">log</a></span>
+<a name="line-18"></a><span class="kn">from</span> <span class="nn">distutils.util</span> <span class="kn">import</span> <span class="n"><a href="/./Doc/includes/test.py.html#line-206">get_platform</a></span>
+<a name="line-19"></a>
+<a name="line-20"></a><span class="k">class</span> <span class="nc"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-20">bdist_wininst</a></span> <span class="p">(</span><span class="n"><a href="/./Lib/distutils/cmd.py.html#line-14">Command</a></span><span class="p">):</span>
+<a name="line-21"></a>
+<a name="line-22"></a>    <span class="n"><a href="/./Lib/distutils/command/bdist.py.html#line-29">description</a></span> <span class="o">=</span> <span class="s2">&quot;create an executable installer for MS Windows&quot;</span>
+<a name="line-23"></a>
+<a name="line-24"></a>    <span class="n"><a href="/./Lib/distutils/cmd.py.html#line-438">user_options</a></span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;bdist-dir=&#39;</span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span>
+<a name="line-25"></a>                     <span class="s2">&quot;temporary directory for creating the distribution&quot;</span><span class="p">),</span>
+<a name="line-26"></a>                    <span class="p">(</span><span class="s1">&#39;plat-name=&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span>
+<a name="line-27"></a>                     <span class="s2">&quot;platform name to embed in generated filenames &quot;</span>
+<a name="line-28"></a>                     <span class="s2">&quot;(default: </span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="n"><a href="/./Doc/includes/test.py.html#line-206">get_platform</a></span><span class="p">()),</span>
+<a name="line-29"></a>                    <span class="p">(</span><span class="s1">&#39;keep-temp&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span>
+<a name="line-30"></a>                     <span class="s2">&quot;keep the pseudo-installation tree around after &quot;</span> <span class="o">+</span>
+<a name="line-31"></a>                     <span class="s2">&quot;creating the distribution archive&quot;</span><span class="p">),</span>
+<a name="line-32"></a>                    <span class="p">(</span><span class="s1">&#39;target-version=&#39;</span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span>
+<a name="line-33"></a>                     <span class="s2">&quot;require a specific python version&quot;</span> <span class="o">+</span>
+<a name="line-34"></a>                     <span class="s2">&quot; on the target system&quot;</span><span class="p">),</span>
+<a name="line-35"></a>                    <span class="p">(</span><span class="s1">&#39;no-target-compile&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span>
+<a name="line-36"></a>                     <span class="s2">&quot;do not compile .py to .pyc on the target system&quot;</span><span class="p">),</span>
+<a name="line-37"></a>                    <span class="p">(</span><span class="s1">&#39;no-target-optimize&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
+<a name="line-38"></a>                     <span class="s2">&quot;do not compile .py to .pyo (optimized)&quot;</span>
+<a name="line-39"></a>                     <span class="s2">&quot;on the target system&quot;</span><span class="p">),</span>
+<a name="line-40"></a>                    <span class="p">(</span><span class="s1">&#39;dist-dir=&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span>
+<a name="line-41"></a>                     <span class="s2">&quot;directory to put final built distributions in&quot;</span><span class="p">),</span>
+<a name="line-42"></a>                    <span class="p">(</span><span class="s1">&#39;bitmap=&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span>
+<a name="line-43"></a>                     <span class="s2">&quot;bitmap to use for the installer instead of python-powered logo&quot;</span><span class="p">),</span>
+<a name="line-44"></a>                    <span class="p">(</span><span class="s1">&#39;title=&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span>
+<a name="line-45"></a>                     <span class="s2">&quot;title to display on the installer background instead of default&quot;</span><span class="p">),</span>
+<a name="line-46"></a>                    <span class="p">(</span><span class="s1">&#39;skip-build&#39;</span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span>
+<a name="line-47"></a>                     <span class="s2">&quot;skip rebuilding everything (for testing/debugging)&quot;</span><span class="p">),</span>
+<a name="line-48"></a>                    <span class="p">(</span><span class="s1">&#39;install-script=&#39;</span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span>
+<a name="line-49"></a>                     <span class="s2">&quot;basename of installation script to be run after&quot;</span>
+<a name="line-50"></a>                     <span class="s2">&quot;installation or before deinstallation&quot;</span><span class="p">),</span>
+<a name="line-51"></a>                    <span class="p">(</span><span class="s1">&#39;pre-install-script=&#39;</span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span>
+<a name="line-52"></a>                     <span class="s2">&quot;Fully qualified filename of a script to be run before &quot;</span>
+<a name="line-53"></a>                     <span class="s2">&quot;any files are installed.  This script need not be in the &quot;</span>
+<a name="line-54"></a>                     <span class="s2">&quot;distribution&quot;</span><span class="p">),</span>
+<a name="line-55"></a>                    <span class="p">(</span><span class="s1">&#39;user-access-control=&#39;</span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span>
+<a name="line-56"></a>                     <span class="s2">&quot;specify Vista&#39;s UAC handling - &#39;none&#39;/default=no &quot;</span>
+<a name="line-57"></a>                     <span class="s2">&quot;handling, &#39;auto&#39;=use UAC if target Python installed for &quot;</span>
+<a name="line-58"></a>                     <span class="s2">&quot;all users, &#39;force&#39;=always use UAC&quot;</span><span class="p">),</span>
+<a name="line-59"></a>                   <span class="p">]</span>
+<a name="line-60"></a>
+<a name="line-61"></a>    <span class="n"><a href="/./Lib/distutils/command/bdist.py.html#line-51">boolean_options</a></span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;keep-temp&#39;</span><span class="p">,</span> <span class="s1">&#39;no-target-compile&#39;</span><span class="p">,</span> <span class="s1">&#39;no-target-optimize&#39;</span><span class="p">,</span>
+<a name="line-62"></a>                       <span class="s1">&#39;skip-build&#39;</span><span class="p">]</span>
+<a name="line-63"></a>
+<a name="line-64"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/cmd.py.html#line-125">initialize_options</a></span> <span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-65"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">bdist_dir</span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-66"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">plat_name</span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-67"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">keep_temp</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-68"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">no_target_compile</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-69"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">no_target_optimize</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-70"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-71"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">dist_dir</span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-72"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/msilib/__init__.py.html#line-459">bitmap</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-73"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/UserString.py.html#line-127">title</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-74"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">skip_build</span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-75"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-133">install_script</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-76"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-134">pre_install_script</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-77"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-136">user_access_control</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-78"></a>
+<a name="line-79"></a>    <span class="c1"># initialize_options()</span>
+<a name="line-80"></a>
+<a name="line-81"></a>
+<a name="line-82"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/cmd.py.html#line-138">finalize_options</a></span> <span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-83"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/cmd.py.html#line-280">set_undefined_options</a></span><span class="p">(</span><span class="s1">&#39;bdist&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;skip_build&#39;</span><span class="p">,</span> <span class="s1">&#39;skip_build&#39;</span><span class="p">))</span>
+<a name="line-84"></a>
+<a name="line-85"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">bdist_dir</span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-86"></a>            <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">skip_build</span> <span class="ow">and</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">plat_name</span><span class="p">:</span>
+<a name="line-87"></a>                <span class="c1"># If build is skipped and plat_name is overridden, bdist will</span>
+<a name="line-88"></a>                <span class="c1"># not see the correct &#39;plat_name&#39; - so set that up manually.</span>
+<a name="line-89"></a>                <span class="n"><a href="/./Lib/distutils/command/bdist.py.html#line-27">bdist</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/dist.py.html#line-833">get_command_obj</a></span><span class="p">(</span><span class="s1">&#39;bdist&#39;</span><span class="p">)</span>
+<a name="line-90"></a>                <span class="n"><a href="/./Lib/distutils/command/bdist.py.html#line-27">bdist</a></span><span class="o">.</span><span class="n">plat_name</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">plat_name</span>
+<a name="line-91"></a>                <span class="c1"># next the command will be initialized using that name</span>
+<a name="line-92"></a>            <span class="n">bdist_base</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/cmd.py.html#line-305">get_finalized_command</a></span><span class="p">(</span><span class="s1">&#39;bdist&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">bdist_base</span>
+<a name="line-93"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">bdist_dir</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n">bdist_base</span><span class="p">,</span> <span class="s1">&#39;wininst&#39;</span><span class="p">)</span>
+<a name="line-94"></a>
+<a name="line-95"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span><span class="p">:</span>
+<a name="line-96"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<a name="line-97"></a>
+<a name="line-98"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">skip_build</span> <span class="ow">and</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/build.py.html#line-137">has_ext_modules</a></span><span class="p">():</span>
+<a name="line-99"></a>            <span class="n"><a href="/./Tools/msi/msi.py.html#line-64">short_version</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/command/bdist_dumb.py.html#line-11">get_python_version</a></span><span class="p">()</span>
+<a name="line-100"></a>            <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="ow">and</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="o">!=</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-64">short_version</a></span><span class="p">:</span>
+<a name="line-101"></a>                <span class="k">raise</span> <span class="n"><a href="/./Lib/distutils/cmd.py.html#line-10">DistutilsOptionError</a></span><span class="p">,</span> \
+<a name="line-102"></a>                      <span class="s2">&quot;target version can only be </span><span class="si">%s</span><span class="s2">, or the &#39;--skip-build&#39;&quot;</span> \
+<a name="line-103"></a>                      <span class="s2">&quot; option must be specified&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n"><a href="/./Tools/msi/msi.py.html#line-64">short_version</a></span><span class="p">,)</span>
+<a name="line-104"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/msi/msi.py.html#line-64">short_version</a></span>
+<a name="line-105"></a>
+<a name="line-106"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/cmd.py.html#line-280">set_undefined_options</a></span><span class="p">(</span><span class="s1">&#39;bdist&#39;</span><span class="p">,</span>
+<a name="line-107"></a>                                   <span class="p">(</span><span class="s1">&#39;dist_dir&#39;</span><span class="p">,</span> <span class="s1">&#39;dist_dir&#39;</span><span class="p">),</span>
+<a name="line-108"></a>                                   <span class="p">(</span><span class="s1">&#39;plat_name&#39;</span><span class="p">,</span> <span class="s1">&#39;plat_name&#39;</span><span class="p">),</span>
+<a name="line-109"></a>                                  <span class="p">)</span>
+<a name="line-110"></a>
+<a name="line-111"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-133">install_script</a></span><span class="p">:</span>
+<a name="line-112"></a>            <span class="k">for</span> <span class="n"><a href="/./Demo/scripts/script.py.html#line-36">script</a></span> <span class="ow">in</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/StdSuites/AppleScript_Suite.py.html#line-1304">scripts</a></span><span class="p">:</span>
+<a name="line-113"></a>                <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-133">install_script</a></span> <span class="o">==</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/file_util.py.html#line-180">basename</a></span><span class="p">(</span><span class="n"><a href="/./Demo/scripts/script.py.html#line-36">script</a></span><span class="p">):</span>
+<a name="line-114"></a>                    <span class="k">break</span>
+<a name="line-115"></a>            <span class="k">else</span><span class="p">:</span>
+<a name="line-116"></a>                <span class="k">raise</span> <span class="n"><a href="/./Lib/distutils/cmd.py.html#line-10">DistutilsOptionError</a></span><span class="p">,</span> \
+<a name="line-117"></a>                      <span class="s2">&quot;install_script &#39;</span><span class="si">%s</span><span class="s2">&#39; not found in scripts&quot;</span> <span class="o">%</span> \
+<a name="line-118"></a>                      <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-133">install_script</a></span>
+<a name="line-119"></a>    <span class="c1"># finalize_options()</span>
+<a name="line-120"></a>
+<a name="line-121"></a>
+<a name="line-122"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/pdist/cmdfw.py.html#line-39">run</a></span> <span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-123"></a>        <span class="k">if</span> <span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/upload.py.html#line-6">platform</a></span> <span class="o">!=</span> <span class="s2">&quot;win32&quot;</span> <span class="ow">and</span>
+<a name="line-124"></a>            <span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/build.py.html#line-137">has_ext_modules</a></span><span class="p">()</span> <span class="ow">or</span>
+<a name="line-125"></a>             <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/build.py.html#line-134">has_c_libraries</a></span><span class="p">())):</span>
+<a name="line-126"></a>            <span class="k">raise</span> <span class="n"><a href="/./Lib/distutils/command/bdist.py.html#line-12">DistutilsPlatformError</a></span> \
+<a name="line-127"></a>                  <span class="p">(</span><span class="s2">&quot;distribution contains extensions and/or C libraries; &quot;</span>
+<a name="line-128"></a>                   <span class="s2">&quot;must be compiled on a Windows 32 platform&quot;</span><span class="p">)</span>
+<a name="line-129"></a>
+<a name="line-130"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">skip_build</span><span class="p">:</span>
+<a name="line-131"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pysvr/pysvr.c.html#line-344">run_command</a></span><span class="p">(</span><span class="s1">&#39;build&#39;</span><span class="p">)</span>
+<a name="line-132"></a>
+<a name="line-133"></a>        <span class="n"><a href="/./Demo/tkinter/ttk/plastik_theme.py.html#line-46">install</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/cmd.py.html#line-317">reinitialize_command</a></span><span class="p">(</span><span class="s1">&#39;install&#39;</span><span class="p">,</span> <span class="n">reinit_subcommands</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-134"></a>        <span class="n"><a href="/./Demo/tkinter/ttk/plastik_theme.py.html#line-46">install</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/samples/Balloon.py.html#line-67">root</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">bdist_dir</span>
+<a name="line-135"></a>        <span class="n"><a href="/./Demo/tkinter/ttk/plastik_theme.py.html#line-46">install</a></span><span class="o">.</span><span class="n">skip_build</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">skip_build</span>
+<a name="line-136"></a>        <span class="n"><a href="/./Demo/tkinter/ttk/plastik_theme.py.html#line-46">install</a></span><span class="o">.</span><span class="n">warn_dir</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-137"></a>        <span class="n"><a href="/./Demo/tkinter/ttk/plastik_theme.py.html#line-46">install</a></span><span class="o">.</span><span class="n">plat_name</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">plat_name</span>
+<a name="line-138"></a>
+<a name="line-139"></a>        <span class="n"><a href="/./Lib/distutils/command/install_lib.py.html#line-21">install_lib</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/cmd.py.html#line-317">reinitialize_command</a></span><span class="p">(</span><span class="s1">&#39;install_lib&#39;</span><span class="p">)</span>
+<a name="line-140"></a>        <span class="c1"># we do not want to include pyc or pyo files</span>
+<a name="line-141"></a>        <span class="n"><a href="/./Lib/distutils/command/install_lib.py.html#line-21">install_lib</a></span><span class="o">.</span><span class="n"><a href="/./Lib/_strptime.py.html#line-263">compile</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-142"></a>        <span class="n"><a href="/./Lib/distutils/command/install_lib.py.html#line-21">install_lib</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-480">optimize</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-143"></a>
+<a name="line-144"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/build.py.html#line-137">has_ext_modules</a></span><span class="p">():</span>
+<a name="line-145"></a>            <span class="c1"># If we are building an installer for a Python version other</span>
+<a name="line-146"></a>            <span class="c1"># than the one we are currently running, then we need to ensure</span>
+<a name="line-147"></a>            <span class="c1"># our build_lib reflects the other Python version rather than ours.</span>
+<a name="line-148"></a>            <span class="c1"># Note that for target_version!=sys.version, we must have skipped the</span>
+<a name="line-149"></a>            <span class="c1"># build step, so there is no issue with enforcing the build of this</span>
+<a name="line-150"></a>            <span class="c1"># version.</span>
+<a name="line-151"></a>            <span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span>
+<a name="line-152"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span><span class="p">:</span>
+<a name="line-153"></a>                <span class="k">assert</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">skip_build</span><span class="p">,</span> <span class="s2">&quot;Should have already checked this&quot;</span>
+<a name="line-154"></a>                <span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/versionpredicate.py.html#line-4">version</a></span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<a name="line-155"></a>            <span class="n">plat_specifier</span> <span class="o">=</span> <span class="s2">&quot;.</span><span class="si">%s</span><span class="s2">-</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">plat_name</span><span class="p">,</span> <span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span><span class="p">)</span>
+<a name="line-156"></a>            <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/cmd.py.html#line-305">get_finalized_command</a></span><span class="p">(</span><span class="s1">&#39;build&#39;</span><span class="p">)</span>
+<a name="line-157"></a>            <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span><span class="o">.</span><span class="n">build_lib</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span><span class="o">.</span><span class="n">build_base</span><span class="p">,</span>
+<a name="line-158"></a>                                           <span class="s1">&#39;lib&#39;</span> <span class="o">+</span> <span class="n">plat_specifier</span><span class="p">)</span>
+<a name="line-159"></a>
+<a name="line-160"></a>        <span class="c1"># Use a custom scheme for the zip-file, because we have to decide</span>
+<a name="line-161"></a>        <span class="c1"># at installation time which scheme to use.</span>
+<a name="line-162"></a>        <span class="k">for</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-243">key</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;purelib&#39;</span><span class="p">,</span> <span class="s1">&#39;platlib&#39;</span><span class="p">,</span> <span class="s1">&#39;headers&#39;</span><span class="p">,</span> <span class="s1">&#39;scripts&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">):</span>
+<a name="line-163"></a>            <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-265">value</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/matt/entry-with-shared-variable.py.html#line-32">upper</a></span><span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-243">key</a></span><span class="p">)</span>
+<a name="line-164"></a>            <span class="k">if</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-243">key</a></span> <span class="o">==</span> <span class="s1">&#39;headers&#39;</span><span class="p">:</span>
+<a name="line-165"></a>                <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-265">value</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-265">value</a></span> <span class="o">+</span> <span class="s1">&#39;/Include/$dist_name&#39;</span>
+<a name="line-166"></a>            <span class="nb">setattr</span><span class="p">(</span><span class="n"><a href="/./Demo/tkinter/ttk/plastik_theme.py.html#line-46">install</a></span><span class="p">,</span>
+<a name="line-167"></a>                    <span class="s1">&#39;install_&#39;</span> <span class="o">+</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-243">key</a></span><span class="p">,</span>
+<a name="line-168"></a>                    <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-265">value</a></span><span class="p">)</span>
+<a name="line-169"></a>
+<a name="line-170"></a>        <span class="n"><a href="/./Demo/pdist/rcslib.py.html#line-48">log</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-167">info</a></span><span class="p">(</span><span class="s2">&quot;installing to </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">bdist_dir</span><span class="p">)</span>
+<a name="line-171"></a>        <span class="n"><a href="/./Demo/tkinter/ttk/plastik_theme.py.html#line-46">install</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/cmd.py.html#line-107">ensure_finalized</a></span><span class="p">()</span>
+<a name="line-172"></a>
+<a name="line-173"></a>        <span class="c1"># avoid warning of &#39;install_lib&#39; about installing</span>
+<a name="line-174"></a>        <span class="c1"># into a directory not in sys.path</span>
+<a name="line-175"></a>        <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-131">insert</a></span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">bdist_dir</span><span class="p">,</span> <span class="s1">&#39;PURELIB&#39;</span><span class="p">))</span>
+<a name="line-176"></a>
+<a name="line-177"></a>        <span class="n"><a href="/./Demo/tkinter/ttk/plastik_theme.py.html#line-46">install</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-39">run</a></span><span class="p">()</span>
+<a name="line-178"></a>
+<a name="line-179"></a>        <span class="k">del</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a name="line-180"></a>
+<a name="line-181"></a>        <span class="c1"># And make an archive relative to the root of the</span>
+<a name="line-182"></a>        <span class="c1"># pseudo-installation tree.</span>
+<a name="line-183"></a>        <span class="kn">from</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">tempfile</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-183">mktemp</a></span>
+<a name="line-184"></a>        <span class="n">archive_basename</span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-183">mktemp</a></span><span class="p">()</span>
+<a name="line-185"></a>        <span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-548">fullname</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/dist.py.html#line-1166">get_fullname</a></span><span class="p">()</span>
+<a name="line-186"></a>        <span class="n">arcname</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/archive_util.py.html#line-193">make_archive</a></span><span class="p">(</span><span class="n">archive_basename</span><span class="p">,</span> <span class="s2">&quot;zip&quot;</span><span class="p">,</span>
+<a name="line-187"></a>                                    <span class="n">root_dir</span><span class="o">=</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">bdist_dir</span><span class="p">)</span>
+<a name="line-188"></a>        <span class="c1"># create an exe containing the zip-file</span>
+<a name="line-189"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-254">create_exe</a></span><span class="p">(</span><span class="n">arcname</span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-548">fullname</a></span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/msilib/__init__.py.html#line-459">bitmap</a></span><span class="p">)</span>
+<a name="line-190"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/build.py.html#line-137">has_ext_modules</a></span><span class="p">():</span>
+<a name="line-191"></a>            <span class="n">pyversion</span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/command/bdist_dumb.py.html#line-11">get_python_version</a></span><span class="p">()</span>
+<a name="line-192"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-193"></a>            <span class="n">pyversion</span> <span class="o">=</span> <span class="s1">&#39;any&#39;</span>
+<a name="line-194"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n">dist_files</span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">((</span><span class="s1">&#39;bdist_wininst&#39;</span><span class="p">,</span> <span class="n">pyversion</span><span class="p">,</span>
+<a name="line-195"></a>                                             <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/bdist_msi.py.html#line-734">get_installer_filename</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-548">fullname</a></span><span class="p">)))</span>
+<a name="line-196"></a>        <span class="c1"># remove the zip-file again</span>
+<a name="line-197"></a>        <span class="n"><a href="/./Demo/pdist/rcslib.py.html#line-48">log</a></span><span class="o">.</span><span class="n"><a href="/./Lib/asyncore.py.html#line-225">debug</a></span><span class="p">(</span><span class="s2">&quot;removing temporary file &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span><span class="p">,</span> <span class="n">arcname</span><span class="p">)</span>
+<a name="line-198"></a>        <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-137">remove</a></span><span class="p">(</span><span class="n">arcname</span><span class="p">)</span>
+<a name="line-199"></a>
+<a name="line-200"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">keep_temp</span><span class="p">:</span>
+<a name="line-201"></a>            <span class="n"><a href="/./Lib/distutils/command/bdist_dumb.py.html#line-15">remove_tree</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">bdist_dir</span><span class="p">,</span> <span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="o">=</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/util.py.html#line-430">dry_run</a></span><span class="p">)</span>
+<a name="line-202"></a>
+<a name="line-203"></a>    <span class="c1"># run()</span>
+<a name="line-204"></a>
+<a name="line-205"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-205">get_inidata</a></span> <span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-206"></a>        <span class="c1"># Return data describing the installation.</span>
+<a name="line-207"></a>
+<a name="line-208"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span> <span class="o">=</span> <span class="p">[]</span>
+<a name="line-209"></a>        <span class="n">metadata</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n">metadata</span>
+<a name="line-210"></a>
+<a name="line-211"></a>        <span class="c1"># Write the [metadata] section.</span>
+<a name="line-212"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;[metadata]&quot;</span><span class="p">)</span>
+<a name="line-213"></a>
+<a name="line-214"></a>        <span class="c1"># &#39;info&#39; will be displayed in the installer&#39;s dialog box,</span>
+<a name="line-215"></a>        <span class="c1"># describing the items to be installed.</span>
+<a name="line-216"></a>        <span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-167">info</a></span> <span class="o">=</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">long_description</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+<a name="line-217"></a>
+<a name="line-218"></a>        <span class="c1"># Escape newline characters</span>
+<a name="line-219"></a>        <span class="k">def</span> <span class="nf"><a href="/./Demo/cgi/wiki.py.html#line-4">escape</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">):</span>
+<a name="line-220"></a>            <span class="k">return</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/turtle/tdemo_lindenmayer_indian.py.html#line-30">replace</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">n&quot;</span><span class="p">)</span>
+<a name="line-221"></a>
+<a name="line-222"></a>        <span class="k">for</span> <span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">,</span> <span class="s2">&quot;author_email&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">,</span> <span class="s2">&quot;maintainer&quot;</span><span class="p">,</span>
+<a name="line-223"></a>                     <span class="s2">&quot;maintainer_email&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="s2">&quot;version&quot;</span><span class="p">]:</span>
+<a name="line-224"></a>            <span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span> <span class="o">=</span> <span class="nb"><a href="/./Objects/stringlib/string_format.h.html#line-232">getattr</a></span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<a name="line-225"></a>            <span class="k">if</span> <span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span><span class="p">:</span>
+<a name="line-226"></a>                <span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-167">info</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-167">info</a></span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> \
+<a name="line-227"></a>                               <span class="p">(</span><span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Lib/UserString.py.html#line-62">capitalize</a></span><span class="p">(</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">),</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-4">escape</a></span><span class="p">(</span><span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span><span class="p">)))</span>
+<a name="line-228"></a>                <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-4">escape</a></span><span class="p">(</span><span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span><span class="p">)))</span>
+<a name="line-229"></a>
+<a name="line-230"></a>        <span class="c1"># The [setup] section contains entries controlling</span>
+<a name="line-231"></a>        <span class="c1"># the installer runtime.</span>
+<a name="line-232"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[Setup]&quot;</span><span class="p">)</span>
+<a name="line-233"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-133">install_script</a></span><span class="p">:</span>
+<a name="line-234"></a>            <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;install_script=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-133">install_script</a></span><span class="p">)</span>
+<a name="line-235"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;info=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-4">escape</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-167">info</a></span><span class="p">))</span>
+<a name="line-236"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;target_compile=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="ow">not</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">no_target_compile</span><span class="p">))</span>
+<a name="line-237"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;target_optimize=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="ow">not</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">no_target_optimize</span><span class="p">))</span>
+<a name="line-238"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span><span class="p">:</span>
+<a name="line-239"></a>            <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;target_version=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span><span class="p">)</span>
+<a name="line-240"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-136">user_access_control</a></span><span class="p">:</span>
+<a name="line-241"></a>            <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;user_access_control=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-136">user_access_control</a></span><span class="p">)</span>
+<a name="line-242"></a>
+<a name="line-243"></a>        <span class="n"><a href="/./Lib/UserString.py.html#line-127">title</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/UserString.py.html#line-127">title</a></span> <span class="ow">or</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/dist.py.html#line-1166">get_fullname</a></span><span class="p">()</span>
+<a name="line-244"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;title=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-4">escape</a></span><span class="p">(</span><span class="n"><a href="/./Lib/UserString.py.html#line-127">title</a></span><span class="p">))</span>
+<a name="line-245"></a>        <span class="kn">import</span> <span class="nn"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span>
+<a name="line-246"></a>        <span class="kn">import</span> <span class="nn"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-246">distutils</a></span>
+<a name="line-247"></a>        <span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-128">build_info</a></span> <span class="o">=</span> <span class="s2">&quot;Built </span><span class="si">%s</span><span class="s2"> with distutils-</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> \
+<a name="line-248"></a>                     <span class="p">(</span><span class="n"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="o">.</span><span class="n">ctime</span><span class="p">(</span><span class="n"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/Dates.py.html#line-173">time</a></span><span class="p">()),</span> <span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-246">distutils</a></span><span class="o">.</span><span class="n"><a href="/./Lib/BaseHTTPServer.py.html#line-69">__version__</a></span><span class="p">)</span>
+<a name="line-249"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-98">append</a></span><span class="p">(</span><span class="s2">&quot;build_info=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-128">build_info</a></span><span class="p">)</span>
+<a name="line-250"></a>        <span class="k">return</span> <span class="n"><a href="/./Demo/comparisons/regextest.py.html#line-19">string</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a name="line-251"></a>
+<a name="line-252"></a>    <span class="c1"># get_inidata()</span>
+<a name="line-253"></a>
+<a name="line-254"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-254">create_exe</a></span> <span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n">arcname</span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-548">fullname</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/msilib/__init__.py.html#line-459">bitmap</a></span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">):</span>
+<a name="line-255"></a>        <span class="kn">import</span> <span class="nn"><a href="/./Demo/rpc/xdr.py.html#line-5">struct</a></span>
+<a name="line-256"></a>
+<a name="line-257"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/archive_util.py.html#line-14">mkpath</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">dist_dir</span><span class="p">)</span>
+<a name="line-258"></a>
+<a name="line-259"></a>        <span class="n">cfgdata</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-205">get_inidata</a></span><span class="p">()</span>
+<a name="line-260"></a>
+<a name="line-261"></a>        <span class="n">installer_name</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/bdist_msi.py.html#line-734">get_installer_filename</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-548">fullname</a></span><span class="p">)</span>
+<a name="line-262"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/ccompiler.py.html#line-860">announce</a></span><span class="p">(</span><span class="s2">&quot;creating </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">installer_name</span><span class="p">)</span>
+<a name="line-263"></a>
+<a name="line-264"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/msilib/__init__.py.html#line-459">bitmap</a></span><span class="p">:</span>
+<a name="line-265"></a>            <span class="n">bitmapdata</span> <span class="o">=</span> <span class="nb"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="n"><a href="/./Lib/msilib/__init__.py.html#line-459">bitmap</a></span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-225">read</a></span><span class="p">()</span>
+<a name="line-266"></a>            <span class="n">bitmaplen</span> <span class="o">=</span> <span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n">bitmapdata</span><span class="p">)</span>
+<a name="line-267"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-268"></a>            <span class="n">bitmaplen</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-269"></a>
+<a name="line-270"></a>        <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span> <span class="o">=</span> <span class="nb"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="n">installer_name</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+<a name="line-271"></a>        <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-323">get_exe_bytes</a></span><span class="p">())</span>
+<a name="line-272"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/msilib/__init__.py.html#line-459">bitmap</a></span><span class="p">:</span>
+<a name="line-273"></a>            <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span><span class="n">bitmapdata</span><span class="p">)</span>
+<a name="line-274"></a>
+<a name="line-275"></a>        <span class="c1"># Convert cfgdata from unicode to ascii, mbcs encoded</span>
+<a name="line-276"></a>        <span class="k">try</span><span class="p">:</span>
+<a name="line-277"></a>            <span class="nb"><a href="/./Include/unicodeobject.h.html#line-1004">unicode</a></span>
+<a name="line-278"></a>        <span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+<a name="line-279"></a>            <span class="k">pass</span>
+<a name="line-280"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-281"></a>            <span class="k">if</span> <span class="nb"><a href="/./Lib/xml/dom/domreg.py.html#line-5">isinstance</a></span><span class="p">(</span><span class="n">cfgdata</span><span class="p">,</span> <span class="nb"><a href="/./Include/unicodeobject.h.html#line-1004">unicode</a></span><span class="p">):</span>
+<a name="line-282"></a>                <span class="n">cfgdata</span> <span class="o">=</span> <span class="n">cfgdata</span><span class="o">.</span><span class="n"><a href="/./Lib/UserString.py.html#line-75">encode</a></span><span class="p">(</span><span class="s2">&quot;mbcs&quot;</span><span class="p">)</span>
+<a name="line-283"></a>
+<a name="line-284"></a>        <span class="c1"># Append the pre-install script</span>
+<a name="line-285"></a>        <span class="n">cfgdata</span> <span class="o">=</span> <span class="n">cfgdata</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\0</span><span class="s2">&quot;</span>
+<a name="line-286"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-134">pre_install_script</a></span><span class="p">:</span>
+<a name="line-287"></a>            <span class="n">script_data</span> <span class="o">=</span> <span class="nb"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-134">pre_install_script</a></span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-225">read</a></span><span class="p">()</span>
+<a name="line-288"></a>            <span class="n">cfgdata</span> <span class="o">=</span> <span class="n">cfgdata</span> <span class="o">+</span> <span class="n">script_data</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\0</span><span class="s2">&quot;</span>
+<a name="line-289"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-290"></a>            <span class="c1"># empty pre-install script</span>
+<a name="line-291"></a>            <span class="n">cfgdata</span> <span class="o">=</span> <span class="n">cfgdata</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\0</span><span class="s2">&quot;</span>
+<a name="line-292"></a>        <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span><span class="n">cfgdata</span><span class="p">)</span>
+<a name="line-293"></a>
+<a name="line-294"></a>        <span class="c1"># The &#39;magic number&#39; 0x1234567B is used to make sure that the</span>
+<a name="line-295"></a>        <span class="c1"># binary layout of &#39;cfgdata&#39; is what the wininst.exe binary</span>
+<a name="line-296"></a>        <span class="c1"># expects.  If the layout changes, increment that number, make</span>
+<a name="line-297"></a>        <span class="c1"># the corresponding changes to the wininst.exe sources, and</span>
+<a name="line-298"></a>        <span class="c1"># recompile them.</span>
+<a name="line-299"></a>        <span class="n"><a href="/./Mac/Demo/sound/playaiff.py.html#line-39">header</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/rpc/xdr.py.html#line-5">struct</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/MimeViewer.py.html#line-71">pack</a></span><span class="p">(</span><span class="s2">&quot;&lt;iii&quot;</span><span class="p">,</span>
+<a name="line-300"></a>                             <span class="mh">0x1234567B</span><span class="p">,</span>       <span class="c1"># tag</span>
+<a name="line-301"></a>                             <span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n">cfgdata</span><span class="p">),</span>     <span class="c1"># length</span>
+<a name="line-302"></a>                             <span class="n">bitmaplen</span><span class="p">,</span>        <span class="c1"># number of bytes in bitmap</span>
+<a name="line-303"></a>                             <span class="p">)</span>
+<a name="line-304"></a>        <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Demo/sound/playaiff.py.html#line-39">header</a></span><span class="p">)</span>
+<a name="line-305"></a>        <span class="nb"><a href="/./Demo/tkinter/guido/rmt.py.html#line-39">file</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span><span class="nb"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="n">arcname</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-225">read</a></span><span class="p">())</span>
+<a name="line-306"></a>
+<a name="line-307"></a>    <span class="c1"># create_exe()</span>
+<a name="line-308"></a>
+<a name="line-309"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/command/bdist_msi.py.html#line-734">get_installer_filename</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-548">fullname</a></span><span class="p">):</span>
+<a name="line-310"></a>        <span class="c1"># Factored out to allow overriding in subclasses</span>
+<a name="line-311"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span><span class="p">:</span>
+<a name="line-312"></a>            <span class="c1"># if we create an installer for a specific python version,</span>
+<a name="line-313"></a>            <span class="c1"># it&#39;s better to include this in the name</span>
+<a name="line-314"></a>            <span class="n">installer_name</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">dist_dir</span><span class="p">,</span>
+<a name="line-315"></a>                                          <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">-py</span><span class="si">%s</span><span class="s2">.exe&quot;</span> <span class="o">%</span>
+<a name="line-316"></a>                                           <span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-548">fullname</a></span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">plat_name</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span><span class="p">))</span>
+<a name="line-317"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-318"></a>            <span class="n">installer_name</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">dist_dir</span><span class="p">,</span>
+<a name="line-319"></a>                                          <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">.exe&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/pimp.py.html#line-548">fullname</a></span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">plat_name</span><span class="p">))</span>
+<a name="line-320"></a>        <span class="k">return</span> <span class="n">installer_name</span>
+<a name="line-321"></a>    <span class="c1"># get_installer_filename()</span>
+<a name="line-322"></a>
+<a name="line-323"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-323">get_exe_bytes</a></span> <span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-324"></a>        <span class="kn">from</span> <span class="nn">distutils.msvccompiler</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-324">get_build_version</a></span>
+<a name="line-325"></a>        <span class="c1"># If a target-version other than the current version has been</span>
+<a name="line-326"></a>        <span class="c1"># specified, then using the MSVC version from *this* build is no good.</span>
+<a name="line-327"></a>        <span class="c1"># Without actually finding and executing the target version and parsing</span>
+<a name="line-328"></a>        <span class="c1"># its sys.version, we just hard-code our knowledge of old versions.</span>
+<a name="line-329"></a>        <span class="c1"># NOTE: Possible alternative is to allow &quot;--target-version&quot; to</span>
+<a name="line-330"></a>        <span class="c1"># specify a Python executable rather than a simple version string.</span>
+<a name="line-331"></a>        <span class="c1"># We can then execute this program to obtain any info we need, such</span>
+<a name="line-332"></a>        <span class="c1"># as the real sys.version string for the build.</span>
+<a name="line-333"></a>        <span class="n">cur_version</span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/command/bdist_dumb.py.html#line-11">get_python_version</a></span><span class="p">()</span>
+<a name="line-334"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="ow">and</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="o">!=</span> <span class="n">cur_version</span><span class="p">:</span>
+<a name="line-335"></a>            <span class="c1"># If the target version is *later* than us, then we assume they</span>
+<a name="line-336"></a>            <span class="c1"># use what we use</span>
+<a name="line-337"></a>            <span class="c1"># string compares seem wrong, but are what sysconfig.py itself uses</span>
+<a name="line-338"></a>            <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="o">&gt;</span> <span class="n">cur_version</span><span class="p">:</span>
+<a name="line-339"></a>                <span class="n">bv</span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-324">get_build_version</a></span><span class="p">()</span>
+<a name="line-340"></a>            <span class="k">else</span><span class="p">:</span>
+<a name="line-341"></a>                <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./PC/bdist_wininst/install.c.html#line-126">target_version</a></span> <span class="o">&lt;</span> <span class="s2">&quot;2.4&quot;</span><span class="p">:</span>
+<a name="line-342"></a>                    <span class="n">bv</span> <span class="o">=</span> <span class="mf">6.0</span>
+<a name="line-343"></a>                <span class="k">else</span><span class="p">:</span>
+<a name="line-344"></a>                    <span class="n">bv</span> <span class="o">=</span> <span class="mf">7.1</span>
+<a name="line-345"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-346"></a>            <span class="c1"># for current version - use authoritative check.</span>
+<a name="line-347"></a>            <span class="n">bv</span> <span class="o">=</span> <span class="n"><a href="/./Lib/distutils/command/bdist_wininst.py.html#line-324">get_build_version</a></span><span class="p">()</span>
+<a name="line-348"></a>
+<a name="line-349"></a>        <span class="c1"># wininst-x.y.exe is in the same directory as this file</span>
+<a name="line-350"></a>        <span class="n"><a href="/./Lib/test/test_decimal.py.html#line-75">directory</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/file_util.py.html#line-180">dirname</a></span><span class="p">(</span><span class="n"><a href="/./Lib/idlelib/idle_test/test_grep.py.html#line-14">__file__</a></span><span class="p">)</span>
+<a name="line-351"></a>        <span class="c1"># we must use a wininst-x.y.exe built with the same C compiler</span>
+<a name="line-352"></a>        <span class="c1"># used for python.  XXX What about mingw, borland, and so on?</span>
+<a name="line-353"></a>
+<a name="line-354"></a>        <span class="c1"># if plat_name starts with &quot;win&quot; but is not &quot;win32&quot;</span>
+<a name="line-355"></a>        <span class="c1"># we want to strip &quot;win&quot; and leave the rest (e.g. -amd64)</span>
+<a name="line-356"></a>        <span class="c1"># for all other cases, we don&#39;t want any suffix</span>
+<a name="line-357"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">plat_name</span> <span class="o">!=</span> <span class="s1">&#39;win32&#39;</span> <span class="ow">and</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">plat_name</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;win&#39;</span><span class="p">:</span>
+<a name="line-358"></a>            <span class="n">sfix</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">plat_name</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+<a name="line-359"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-360"></a>            <span class="n">sfix</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<a name="line-361"></a>
+<a name="line-362"></a>        <span class="n"><a href="/./Demo/scripts/script.py.html#line-19">filename</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./Lib/test/test_decimal.py.html#line-75">directory</a></span><span class="p">,</span> <span class="s2">&quot;wininst-</span><span class="si">%.1f%s</span><span class="s2">.exe&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bv</span><span class="p">,</span> <span class="n">sfix</span><span class="p">))</span>
+<a name="line-363"></a>        <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="o">=</span> <span class="nb"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="n"><a href="/./Demo/scripts/script.py.html#line-19">filename</a></span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+<a name="line-364"></a>        <span class="k">try</span><span class="p">:</span>
+<a name="line-365"></a>            <span class="k">return</span> <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-225">read</a></span><span class="p">()</span>
+<a name="line-366"></a>        <span class="k">finally</span><span class="p">:</span>
+<a name="line-367"></a>            <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-363">close</a></span><span class="p">()</span>
+<a name="line-368"></a><span class="c1"># class bdist_wininst</span>
+</pre></div>
+</td></tr></table></body>
+</html>

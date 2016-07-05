@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1"> 1</a>
+<a href="#line-2"> 2</a>
+<a href="#line-3"> 3</a>
+<a href="#line-4"> 4</a>
+<a href="#line-5"> 5</a>
+<a href="#line-6"> 6</a>
+<a href="#line-7"> 7</a>
+<a href="#line-8"> 8</a>
+<a href="#line-9"> 9</a>
+<a href="#line-10">10</a>
+<a href="#line-11">11</a>
+<a href="#line-12">12</a>
+<a href="#line-13">13</a>
+<a href="#line-14">14</a>
+<a href="#line-15">15</a>
+<a href="#line-16">16</a>
+<a href="#line-17">17</a>
+<a href="#line-18">18</a>
+<a href="#line-19">19</a>
+<a href="#line-20">20</a>
+<a href="#line-21">21</a>
+<a href="#line-22">22</a>
+<a href="#line-23">23</a>
+<a href="#line-24">24</a>
+<a href="#line-25">25</a>
+<a href="#line-26">26</a>
+<a href="#line-27">27</a>
+<a href="#line-28">28</a>
+<a href="#line-29">29</a>
+<a href="#line-30">30</a>
+<a href="#line-31">31</a>
+<a href="#line-32">32</a>
+<a href="#line-33">33</a>
+<a href="#line-34">34</a>
+<a href="#line-35">35</a>
+<a href="#line-36">36</a>
+<a href="#line-37">37</a>
+<a href="#line-38">38</a>
+<a href="#line-39">39</a>
+<a href="#line-40">40</a>
+<a href="#line-41">41</a>
+<a href="#line-42">42</a>
+<a href="#line-43">43</a>
+<a href="#line-44">44</a>
+<a href="#line-45">45</a>
+<a href="#line-46">46</a>
+<a href="#line-47">47</a>
+<a href="#line-48">48</a>
+<a href="#line-49">49</a>
+<a href="#line-50">50</a>
+<a href="#line-51">51</a>
+<a href="#line-52">52</a>
+<a href="#line-53">53</a>
+<a href="#line-54">54</a>
+<a href="#line-55">55</a>
+<a href="#line-56">56</a>
+<a href="#line-57">57</a>
+<a href="#line-58">58</a>
+<a href="#line-59">59</a>
+<a href="#line-60">60</a></pre></div></td><td class="code"><div class="source"><span class="filename">Include/tupleobject.h</span><pre><span></span><a name="line-1"></a><span class="cm">/* Tuple object interface */</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="cp">#ifndef Py_TUPLEOBJECT_H</span>
+<a name="line-4"></a><span class="cp">#define Py_TUPLEOBJECT_H</span>
+<a name="line-5"></a><span class="cp">#ifdef __cplusplus</span>
+<a name="line-6"></a><span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
+<a name="line-7"></a><span class="cp">#endif</span>
+<a name="line-8"></a>
+<a name="line-9"></a><span class="cm">/*</span>
+<a name="line-10"></a><span class="cm">Another generally useful object type is a tuple of object pointers.</span>
+<a name="line-11"></a><span class="cm">For Python, this is an immutable type.  C code can change the tuple items</span>
+<a name="line-12"></a><span class="cm">(but not their number), and even use tuples are general-purpose arrays of</span>
+<a name="line-13"></a><span class="cm">object references, but in general only brand new tuples should be mutated,</span>
+<a name="line-14"></a><span class="cm">not ones that might already have been exposed to Python code.</span>
+<a name="line-15"></a>
+<a name="line-16"></a><span class="cm">*** WARNING *** PyTuple_SetItem does not increment the new item&#39;s reference</span>
+<a name="line-17"></a><span class="cm">count, but does decrement the reference count of the item it replaces,</span>
+<a name="line-18"></a><span class="cm">if not nil.  It does *decrement* the reference count if it is *not*</span>
+<a name="line-19"></a><span class="cm">inserted in the tuple.  Similarly, PyTuple_GetItem does not increment the</span>
+<a name="line-20"></a><span class="cm">returned item&#39;s reference count.</span>
+<a name="line-21"></a><span class="cm">*/</span>
+<a name="line-22"></a>
+<a name="line-23"></a><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+<a name="line-24"></a>    <span class="n"><a href="/./Include/object.h.html#line-96">PyObject_VAR_HEAD</a></span>
+<a name="line-25"></a>    <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="n"><a href="/./Include/listobject.h.html#line-25">ob_item</a></span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<a name="line-26"></a>
+<a name="line-27"></a>    <span class="cm">/* ob_item contains space for &#39;ob_size&#39; elements.</span>
+<a name="line-28"></a><span class="cm">     * Items must normally not be NULL, except during construction when</span>
+<a name="line-29"></a><span class="cm">     * the tuple is not yet visible outside the function that builds it.</span>
+<a name="line-30"></a><span class="cm">     */</span>
+<a name="line-31"></a><span class="p">}</span> <span class="n"><a href="/./Include/tupleobject.h.html#line-32">PyTupleObject</a></span><span class="p">;</span>
+<a name="line-32"></a>
+<a name="line-33"></a><span class="n"><a href="/./Include/pyport.h.html#line-763">PyAPI_DATA</a></span><span class="p">(</span><span class="n"><a href="/./Doc/includes/typestruct.h.html#line-76">PyTypeObject</a></span><span class="p">)</span> <span class="n"><a href="/./Objects/tupleobject.c.html#line-786">PyTuple_Type</a></span><span class="p">;</span>
+<a name="line-34"></a>
+<a name="line-35"></a><span class="cp">#define PyTuple_Check(op) \</span>
+<a name="line-36"></a><span class="cp">                 PyType_FastSubclass(Py_TYPE(op), Py_TPFLAGS_TUPLE_SUBCLASS)</span>
+<a name="line-37"></a><span class="cp">#define PyTuple_CheckExact(op) (Py_TYPE(op) == &amp;PyTuple_Type)</span>
+<a name="line-38"></a>
+<a name="line-39"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/tupleobject.c.html#line-49">PyTuple_New</a></span><span class="p">(</span><span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span> <span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-153">size</a></span><span class="p">);</span>
+<a name="line-40"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">)</span> <span class="n"><a href="/./Objects/tupleobject.c.html#line-111">PyTuple_Size</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-41"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/tupleobject.c.html#line-122">PyTuple_GetItem</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">);</span>
+<a name="line-42"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/tupleobject.c.html#line-136">PyTuple_SetItem</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">,</span> <span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-43"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Objects/tupleobject.c.html#line-426">PyTuple_GetSlice</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">);</span>
+<a name="line-44"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/tupleobject.c.html#line-837">_PyTuple_Resize</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">**</span><span class="p">,</span> <span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">);</span>
+<a name="line-45"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">)</span> <span class="n"><a href="/./Modules/_ctypes/_ctypes.c.html#line-149">PyTuple_Pack</a></span><span class="p">(</span><span class="n"><a href="/./Include/intobject.h.html#line-40">Py_ssize_t</a></span><span class="p">,</span> <span class="p">...);</span>
+<a name="line-46"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n"><a href="/./Objects/tupleobject.c.html#line-159">_PyTuple_MaybeUntrack</a></span><span class="p">(</span><span class="n"><a href="/./Include/object.h.html#line-108">PyObject</a></span> <span class="o">*</span><span class="p">);</span>
+<a name="line-47"></a>
+<a name="line-48"></a><span class="cm">/* Macro, trading safety for speed */</span>
+<a name="line-49"></a><span class="cp">#define PyTuple_GET_ITEM(op, i) (((PyTupleObject *)(op))-&gt;ob_item[i])</span>
+<a name="line-50"></a><span class="cp">#define PyTuple_GET_SIZE(op)    Py_SIZE(op)</span>
+<a name="line-51"></a>
+<a name="line-52"></a><span class="cm">/* Macro, *only* to be used to fill in brand new tuples */</span>
+<a name="line-53"></a><span class="cp">#define PyTuple_SET_ITEM(op, i, v) (((PyTupleObject *)(op))-&gt;ob_item[i] = v)</span>
+<a name="line-54"></a>
+<a name="line-55"></a><span class="n"><a href="/./Include/pyport.h.html#line-762">PyAPI_FUNC</a></span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n"><a href="/./Objects/tupleobject.c.html#line-891">PyTuple_ClearFreeList</a></span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<a name="line-56"></a>
+<a name="line-57"></a><span class="cp">#ifdef __cplusplus</span>
+<a name="line-58"></a><span class="p">}</span>
+<a name="line-59"></a><span class="cp">#endif</span>
+<a name="line-60"></a><span class="cp">#endif </span><span class="cm">/* !Py_TUPLEOBJECT_H */</span><span class="cp"></span>
+</pre></div>
+</td></tr></table></body>
+</html>

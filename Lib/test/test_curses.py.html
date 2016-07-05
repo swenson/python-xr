@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a>
+<a href="#line-140">140</a>
+<a href="#line-141">141</a>
+<a href="#line-142">142</a>
+<a href="#line-143">143</a>
+<a href="#line-144">144</a>
+<a href="#line-145">145</a>
+<a href="#line-146">146</a>
+<a href="#line-147">147</a>
+<a href="#line-148">148</a>
+<a href="#line-149">149</a>
+<a href="#line-150">150</a>
+<a href="#line-151">151</a>
+<a href="#line-152">152</a>
+<a href="#line-153">153</a>
+<a href="#line-154">154</a>
+<a href="#line-155">155</a>
+<a href="#line-156">156</a>
+<a href="#line-157">157</a>
+<a href="#line-158">158</a>
+<a href="#line-159">159</a>
+<a href="#line-160">160</a>
+<a href="#line-161">161</a>
+<a href="#line-162">162</a>
+<a href="#line-163">163</a>
+<a href="#line-164">164</a>
+<a href="#line-165">165</a>
+<a href="#line-166">166</a>
+<a href="#line-167">167</a>
+<a href="#line-168">168</a>
+<a href="#line-169">169</a>
+<a href="#line-170">170</a>
+<a href="#line-171">171</a>
+<a href="#line-172">172</a>
+<a href="#line-173">173</a>
+<a href="#line-174">174</a>
+<a href="#line-175">175</a>
+<a href="#line-176">176</a>
+<a href="#line-177">177</a>
+<a href="#line-178">178</a>
+<a href="#line-179">179</a>
+<a href="#line-180">180</a>
+<a href="#line-181">181</a>
+<a href="#line-182">182</a>
+<a href="#line-183">183</a>
+<a href="#line-184">184</a>
+<a href="#line-185">185</a>
+<a href="#line-186">186</a>
+<a href="#line-187">187</a>
+<a href="#line-188">188</a>
+<a href="#line-189">189</a>
+<a href="#line-190">190</a>
+<a href="#line-191">191</a>
+<a href="#line-192">192</a>
+<a href="#line-193">193</a>
+<a href="#line-194">194</a>
+<a href="#line-195">195</a>
+<a href="#line-196">196</a>
+<a href="#line-197">197</a>
+<a href="#line-198">198</a>
+<a href="#line-199">199</a>
+<a href="#line-200">200</a>
+<a href="#line-201">201</a>
+<a href="#line-202">202</a>
+<a href="#line-203">203</a>
+<a href="#line-204">204</a>
+<a href="#line-205">205</a>
+<a href="#line-206">206</a>
+<a href="#line-207">207</a>
+<a href="#line-208">208</a>
+<a href="#line-209">209</a>
+<a href="#line-210">210</a>
+<a href="#line-211">211</a>
+<a href="#line-212">212</a>
+<a href="#line-213">213</a>
+<a href="#line-214">214</a>
+<a href="#line-215">215</a>
+<a href="#line-216">216</a>
+<a href="#line-217">217</a>
+<a href="#line-218">218</a>
+<a href="#line-219">219</a>
+<a href="#line-220">220</a>
+<a href="#line-221">221</a>
+<a href="#line-222">222</a>
+<a href="#line-223">223</a>
+<a href="#line-224">224</a>
+<a href="#line-225">225</a>
+<a href="#line-226">226</a>
+<a href="#line-227">227</a>
+<a href="#line-228">228</a>
+<a href="#line-229">229</a>
+<a href="#line-230">230</a>
+<a href="#line-231">231</a>
+<a href="#line-232">232</a>
+<a href="#line-233">233</a>
+<a href="#line-234">234</a>
+<a href="#line-235">235</a>
+<a href="#line-236">236</a>
+<a href="#line-237">237</a>
+<a href="#line-238">238</a>
+<a href="#line-239">239</a>
+<a href="#line-240">240</a>
+<a href="#line-241">241</a>
+<a href="#line-242">242</a>
+<a href="#line-243">243</a>
+<a href="#line-244">244</a>
+<a href="#line-245">245</a>
+<a href="#line-246">246</a>
+<a href="#line-247">247</a>
+<a href="#line-248">248</a>
+<a href="#line-249">249</a>
+<a href="#line-250">250</a>
+<a href="#line-251">251</a>
+<a href="#line-252">252</a>
+<a href="#line-253">253</a>
+<a href="#line-254">254</a>
+<a href="#line-255">255</a>
+<a href="#line-256">256</a>
+<a href="#line-257">257</a>
+<a href="#line-258">258</a>
+<a href="#line-259">259</a>
+<a href="#line-260">260</a>
+<a href="#line-261">261</a>
+<a href="#line-262">262</a>
+<a href="#line-263">263</a>
+<a href="#line-264">264</a>
+<a href="#line-265">265</a>
+<a href="#line-266">266</a>
+<a href="#line-267">267</a>
+<a href="#line-268">268</a>
+<a href="#line-269">269</a>
+<a href="#line-270">270</a>
+<a href="#line-271">271</a>
+<a href="#line-272">272</a>
+<a href="#line-273">273</a>
+<a href="#line-274">274</a>
+<a href="#line-275">275</a>
+<a href="#line-276">276</a>
+<a href="#line-277">277</a>
+<a href="#line-278">278</a>
+<a href="#line-279">279</a>
+<a href="#line-280">280</a>
+<a href="#line-281">281</a>
+<a href="#line-282">282</a>
+<a href="#line-283">283</a>
+<a href="#line-284">284</a>
+<a href="#line-285">285</a>
+<a href="#line-286">286</a>
+<a href="#line-287">287</a>
+<a href="#line-288">288</a>
+<a href="#line-289">289</a>
+<a href="#line-290">290</a>
+<a href="#line-291">291</a>
+<a href="#line-292">292</a>
+<a href="#line-293">293</a>
+<a href="#line-294">294</a>
+<a href="#line-295">295</a>
+<a href="#line-296">296</a>
+<a href="#line-297">297</a>
+<a href="#line-298">298</a>
+<a href="#line-299">299</a>
+<a href="#line-300">300</a>
+<a href="#line-301">301</a>
+<a href="#line-302">302</a>
+<a href="#line-303">303</a>
+<a href="#line-304">304</a>
+<a href="#line-305">305</a>
+<a href="#line-306">306</a>
+<a href="#line-307">307</a>
+<a href="#line-308">308</a>
+<a href="#line-309">309</a>
+<a href="#line-310">310</a>
+<a href="#line-311">311</a>
+<a href="#line-312">312</a></pre></div></td><td class="code"><div class="source"><span class="filename">Lib/test/test_curses.py</span><pre><span></span><a name="line-1"></a><span class="c1">#</span>
+<a name="line-2"></a><span class="c1"># Test script for the curses module</span>
+<a name="line-3"></a><span class="c1">#</span>
+<a name="line-4"></a><span class="c1"># This script doesn&#39;t actually display anything very coherent. but it</span>
+<a name="line-5"></a><span class="c1"># does call every method and function.</span>
+<a name="line-6"></a><span class="c1">#</span>
+<a name="line-7"></a><span class="c1"># Functions not tested: {def,reset}_{shell,prog}_mode, getch(), getstr(),</span>
+<a name="line-8"></a><span class="c1"># init_color()</span>
+<a name="line-9"></a><span class="c1"># Only called, not tested: getmouse(), ungetmouse()</span>
+<a name="line-10"></a><span class="c1">#</span>
+<a name="line-11"></a>
+<a name="line-12"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">,</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">tempfile</a></span><span class="o">,</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span>
+<a name="line-13"></a>
+<a name="line-14"></a><span class="c1"># Optionally test curses module.  This currently requires that the</span>
+<a name="line-15"></a><span class="c1"># &#39;curses&#39; resource be given on the regrtest command line using the -u</span>
+<a name="line-16"></a><span class="c1"># option.  If not available, nothing after this line will be executed.</span>
+<a name="line-17"></a>
+<a name="line-18"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span>
+<a name="line-19"></a><span class="kn">from</span> <span class="nn">test.test_support</span> <span class="kn">import</span> <span class="n"><a href="/./Lib/ctypes/test/__init__.py.html#line-33">requires</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/ihooks.py.html#line-362">import_module</a></span>
+<a name="line-20"></a><span class="n"><a href="/./Lib/ctypes/test/__init__.py.html#line-33">requires</a></span><span class="p">(</span><span class="s1">&#39;curses&#39;</span><span class="p">)</span>
+<a name="line-21"></a><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/ihooks.py.html#line-362">import_module</a></span><span class="p">(</span><span class="s1">&#39;curses&#39;</span><span class="p">)</span>
+<a name="line-22"></a><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Demo/curses/ncurses.py.html#line-9">panel</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/ihooks.py.html#line-362">import_module</a></span><span class="p">(</span><span class="s1">&#39;curses.panel&#39;</span><span class="p">)</span>
+<a name="line-23"></a>
+<a name="line-24"></a>
+<a name="line-25"></a><span class="c1"># XXX: if newterm was supported we could use it instead of initscr and not exit</span>
+<a name="line-26"></a><span class="n"><a href="/./Include/graminit.h.html#line-62">term</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Lib/os.py.html#line-307">environ</a></span><span class="o">.</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-203">get</a></span><span class="p">(</span><span class="s1">&#39;TERM&#39;</span><span class="p">)</span>
+<a name="line-27"></a><span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Include/graminit.h.html#line-62">term</a></span> <span class="ow">or</span> <span class="n"><a href="/./Include/graminit.h.html#line-62">term</a></span> <span class="o">==</span> <span class="s1">&#39;unknown&#39;</span><span class="p">:</span>
+<a name="line-28"></a>    <span class="k">raise</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_ftplib.py.html#line-18">SkipTest</a></span><span class="p">,</span> <span class="s2">&quot;$TERM=</span><span class="si">%r</span><span class="s2">, calling initscr() may cause exit&quot;</span> <span class="o">%</span> <span class="n"><a href="/./Include/graminit.h.html#line-62">term</a></span>
+<a name="line-29"></a>
+<a name="line-30"></a><span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/distutils/command/upload.py.html#line-6">platform</a></span> <span class="o">==</span> <span class="s2">&quot;cygwin&quot;</span><span class="p">:</span>
+<a name="line-31"></a>    <span class="k">raise</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_ftplib.py.html#line-18">SkipTest</a></span><span class="p">(</span><span class="s2">&quot;cygwin&#39;s curses mostly just hangs&quot;</span><span class="p">)</span>
+<a name="line-32"></a>
+<a name="line-33"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_curses.py.html#line-33">window_funcs</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">):</span>
+<a name="line-34"></a>    <span class="s2">&quot;Test the methods of windows&quot;</span>
+<a name="line-35"></a>    <span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">newwin</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<a name="line-36"></a>    <span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">newwin</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<a name="line-37"></a>    <span class="n">win2</span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">newwin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<a name="line-38"></a>
+<a name="line-39"></a>    <span class="k">for</span> <span class="n"><a href="/./Lib/socket.py.html#line-227">meth</a></span> <span class="ow">in</span> <span class="p">[</span><span class="n">stdscr</span><span class="o">.</span><span class="n">addch</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">addstr</span><span class="p">]:</span>
+<a name="line-40"></a>        <span class="k">for</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">),</span>
+<a name="line-41"></a>                     <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)]:</span>
+<a name="line-42"></a>            <span class="n"><a href="/./Lib/socket.py.html#line-227">meth</a></span><span class="p">(</span><span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">)</span>
+<a name="line-43"></a>
+<a name="line-44"></a>    <span class="k">for</span> <span class="n"><a href="/./Lib/socket.py.html#line-227">meth</a></span> <span class="ow">in</span> <span class="p">[</span><span class="n">stdscr</span><span class="o">.</span><span class="n">box</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n"><a href="/./Demo/threads/sync.py.html#line-385">clear</a></span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">clrtobot</span><span class="p">,</span>
+<a name="line-45"></a>                 <span class="n">stdscr</span><span class="o">.</span><span class="n">clrtoeol</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">cursyncup</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">delch</span><span class="p">,</span>
+<a name="line-46"></a>                 <span class="n">stdscr</span><span class="o">.</span><span class="n">deleteln</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n"><a href="/./Demo/curses/life.py.html#line-81">erase</a></span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">getbegyx</span><span class="p">,</span>
+<a name="line-47"></a>                 <span class="n">stdscr</span><span class="o">.</span><span class="n">getbkgd</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">getkey</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">getmaxyx</span><span class="p">,</span>
+<a name="line-48"></a>                 <span class="n">stdscr</span><span class="o">.</span><span class="n">getparyx</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">getyx</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">inch</span><span class="p">,</span>
+<a name="line-49"></a>                 <span class="n">stdscr</span><span class="o">.</span><span class="n">insertln</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n"><a href="/./Python/compile.c.html#line-46">instr</a></span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">is_wintouched</span><span class="p">,</span>
+<a name="line-50"></a>                 <span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="o">.</span><span class="n">noutrefresh</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">redrawwin</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/AttrDialog.py.html#line-108">refresh</a></span><span class="p">,</span>
+<a name="line-51"></a>                 <span class="n">stdscr</span><span class="o">.</span><span class="n">standout</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">standend</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">syncdown</span><span class="p">,</span>
+<a name="line-52"></a>                 <span class="n">stdscr</span><span class="o">.</span><span class="n">syncup</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">touchwin</span><span class="p">,</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">untouchwin</span><span class="p">]:</span>
+<a name="line-53"></a>        <span class="n"><a href="/./Lib/socket.py.html#line-227">meth</a></span><span class="p">()</span>
+<a name="line-54"></a>
+<a name="line-55"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">addnstr</span><span class="p">(</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="line-56"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">addnstr</span><span class="p">(</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-57"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">addnstr</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="line-58"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">addnstr</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-59"></a>
+<a name="line-60"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">attron</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-61"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">attroff</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-62"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">attrset</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-63"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">bkgd</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<a name="line-64"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">bkgd</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_REVERSE</span><span class="p">)</span>
+<a name="line-65"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">bkgdset</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<a name="line-66"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">bkgdset</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_REVERSE</span><span class="p">)</span>
+<a name="line-67"></a>
+<a name="line-68"></a>    <span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="o">.</span><span class="n">border</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span>
+<a name="line-69"></a>               <span class="mi">69</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">72</span><span class="p">)</span>
+<a name="line-70"></a>    <span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="o">.</span><span class="n">border</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">,</span>
+<a name="line-71"></a>               <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<a name="line-72"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="line-73"></a>        <span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="o">.</span><span class="n">border</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span>
+<a name="line-74"></a>                   <span class="mi">69</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">72</span><span class="p">)</span>
+<a name="line-75"></a>    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<a name="line-76"></a>        <span class="k">pass</span>
+<a name="line-77"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="line-78"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">,</span> <span class="s2">&quot;Expected win.border() to raise TypeError&quot;</span>
+<a name="line-79"></a>
+<a name="line-80"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">clearok</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-81"></a>
+<a name="line-82"></a>    <span class="n">win4</span> <span class="o">=</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">derwin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<a name="line-83"></a>    <span class="n">win4</span> <span class="o">=</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">derwin</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<a name="line-84"></a>    <span class="n">win4</span><span class="o">.</span><span class="n">mvderwin</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<a name="line-85"></a>
+<a name="line-86"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">echochar</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<a name="line-87"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">echochar</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-88"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">hline</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<a name="line-89"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">hline</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-90"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">hline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<a name="line-91"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">hline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-92"></a>
+<a name="line-93"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">idcok</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-94"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">idlok</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-95"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">immedok</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-96"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">insch</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<a name="line-97"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">insdelln</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-98"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">insnstr</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="line-99"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">insnstr</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-100"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">insnstr</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="line-101"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">insnstr</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-102"></a>
+<a name="line-103"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">insstr</span><span class="p">(</span><span class="s1">&#39;def&#39;</span><span class="p">)</span>
+<a name="line-104"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">insstr</span><span class="p">(</span><span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-105"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">insstr</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;def&#39;</span><span class="p">)</span>
+<a name="line-106"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">insstr</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-107"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">is_linetouched</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-108"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">keypad</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-109"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">leaveok</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-110"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/brownian2.py.html#line-34">move</a></span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<a name="line-111"></a>    <span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="o">.</span><span class="n">mvwin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<a name="line-112"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">nodelay</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-113"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">notimeout</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-114"></a>    <span class="n">win2</span><span class="o">.</span><span class="n">overlay</span><span class="p">(</span><span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="p">)</span>
+<a name="line-115"></a>    <span class="n">win2</span><span class="o">.</span><span class="n">overwrite</span><span class="p">(</span><span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="p">)</span>
+<a name="line-116"></a>    <span class="n">win2</span><span class="o">.</span><span class="n">overlay</span><span class="p">(</span><span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="line-117"></a>    <span class="n">win2</span><span class="o">.</span><span class="n">overwrite</span><span class="p">(</span><span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="line-118"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">redrawln</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<a name="line-119"></a>
+<a name="line-120"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">scrollok</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-121"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">scroll</span><span class="p">()</span>
+<a name="line-122"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a name="line-123"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<a name="line-124"></a>
+<a name="line-125"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/brownian2.py.html#line-34">move</a></span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<a name="line-126"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">setscrreg</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+<a name="line-127"></a>    <span class="n">win3</span> <span class="o">=</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">subwin</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<a name="line-128"></a>    <span class="n">win3</span> <span class="o">=</span> <span class="n">stdscr</span><span class="o">.</span><span class="n">subwin</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<a name="line-129"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">syncok</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-130"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n"><a href="/./Lib/SocketServer.py.html#line-204">timeout</a></span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<a name="line-131"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">touchline</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<a name="line-132"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">touchline</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-133"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">vline</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="line-134"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">vline</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_STANDOUT</span><span class="p">)</span>
+<a name="line-135"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">chgat</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BLINK</span><span class="p">)</span>
+<a name="line-136"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">chgat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BOLD</span><span class="p">)</span>
+<a name="line-137"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">chgat</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_UNDERLINE</span><span class="p">)</span>
+<a name="line-138"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">chgat</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_BLINK</span><span class="p">)</span>
+<a name="line-139"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/AttrDialog.py.html#line-108">refresh</a></span><span class="p">()</span>
+<a name="line-140"></a>
+<a name="line-141"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">vline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="line-142"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">vline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">A_STANDOUT</span><span class="p">)</span>
+<a name="line-143"></a>
+<a name="line-144"></a>    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="p">,</span> <span class="s1">&#39;resize&#39;</span><span class="p">):</span>
+<a name="line-145"></a>        <span class="n">stdscr</span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/sortvisu.py.html#line-560">resize</a></span><span class="p">()</span>
+<a name="line-146"></a>    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="p">,</span> <span class="s1">&#39;enclose&#39;</span><span class="p">):</span>
+<a name="line-147"></a>        <span class="n">stdscr</span><span class="o">.</span><span class="n">enclose</span><span class="p">()</span>
+<a name="line-148"></a>
+<a name="line-149"></a>
+<a name="line-150"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_curses.py.html#line-150">module_funcs</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">):</span>
+<a name="line-151"></a>    <span class="s2">&quot;Test module-level functions&quot;</span>
+<a name="line-152"></a>
+<a name="line-153"></a>    <span class="k">for</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-264">func</a></span> <span class="ow">in</span> <span class="p">[</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">baudrate</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">beep</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">can_change_color</span><span class="p">,</span>
+<a name="line-154"></a>                 <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">cbreak</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">def_prog_mode</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">doupdate</span><span class="p">,</span>
+<a name="line-155"></a>                 <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Lib/fnmatch.py.html#line-45">filter</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib-tk/Tkinter.py.html#line-2177">flash</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">flushinp</span><span class="p">,</span>
+<a name="line-156"></a>                 <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">has_colors</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">has_ic</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">has_il</span><span class="p">,</span>
+<a name="line-157"></a>                 <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">isendwin</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">killchar</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">longname</span><span class="p">,</span>
+<a name="line-158"></a>                 <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">nocbreak</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">noecho</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">nonl</span><span class="p">,</span>
+<a name="line-159"></a>                 <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">noqiflush</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">noraw</span><span class="p">,</span>
+<a name="line-160"></a>                 <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">reset_prog_mode</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">termattrs</span><span class="p">,</span>
+<a name="line-161"></a>                 <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">termname</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">erasechar</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">getsyx</span><span class="p">]:</span>
+<a name="line-162"></a>        <span class="n"><a href="/./Include/Python-ast.h.html#line-264">func</a></span><span class="p">()</span>
+<a name="line-163"></a>
+<a name="line-164"></a>    <span class="c1"># Functions that actually need arguments</span>
+<a name="line-165"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">tigetstr</span><span class="p">(</span><span class="s2">&quot;cnorm&quot;</span><span class="p">):</span>
+<a name="line-166"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">curs_set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-167"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">delay_output</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-168"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">echo</span><span class="p">()</span> <span class="p">;</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-169"></a>
+<a name="line-170"></a>    <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">tempfile</a></span><span class="o">.</span><span class="n"><a href="/./Lib/tempfile.py.html#line-486">TemporaryFile</a></span><span class="p">()</span>
+<a name="line-171"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">putwin</span><span class="p">(</span><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="p">)</span>
+<a name="line-172"></a>    <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="o">.</span><span class="n"><a href="/./Lib/StringIO.py.html#line-95">seek</a></span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-173"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">getwin</span><span class="p">(</span><span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="p">)</span>
+<a name="line-174"></a>    <span class="n"><a href="/./Demo/parser/simple.py.html#line-1">f</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-363">close</a></span><span class="p">()</span>
+<a name="line-175"></a>
+<a name="line-176"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">halfdelay</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-177"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">intrflush</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-178"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_descr.py.html#line-4646">meta</a></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-179"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">napms</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<a name="line-180"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">newpad</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<a name="line-181"></a>    <span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">newwin</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<a name="line-182"></a>    <span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-580">win</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">newwin</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-183"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-108">nl</a></span><span class="p">()</span> <span class="p">;</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Include/Python-ast.h.html#line-108">nl</a></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-184"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">putp</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<a name="line-185"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">qiflush</span><span class="p">()</span>
+<a name="line-186"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Lib/_pyio.py.html#line-760">raw</a></span><span class="p">()</span> <span class="p">;</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Lib/_pyio.py.html#line-760">raw</a></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-187"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">setsyx</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<a name="line-188"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">tigetflag</span><span class="p">(</span><span class="s1">&#39;hc&#39;</span><span class="p">)</span>
+<a name="line-189"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">tigetnum</span><span class="p">(</span><span class="s1">&#39;co&#39;</span><span class="p">)</span>
+<a name="line-190"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">tigetstr</span><span class="p">(</span><span class="s1">&#39;cr&#39;</span><span class="p">)</span>
+<a name="line-191"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">tparm</span><span class="p">(</span><span class="s1">&#39;cr&#39;</span><span class="p">)</span>
+<a name="line-192"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">typeahead</span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n">__stdin__</span><span class="o">.</span><span class="n"><a href="/./Lib/SocketServer.py.html#line-453">fileno</a></span><span class="p">())</span>
+<a name="line-193"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Lib/curses/ascii.py.html#line-89">unctrl</a></span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<a name="line-194"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">ungetch</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<a name="line-195"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">use_env</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-196"></a>
+<a name="line-197"></a>    <span class="c1"># Functions only available on a few platforms</span>
+<a name="line-198"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">has_colors</span><span class="p">():</span>
+<a name="line-199"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Lib/curses/__init__.py.html#line-45">start_color</a></span><span class="p">()</span>
+<a name="line-200"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">init_pair</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-201"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">color_content</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-202"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">color_pair</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a name="line-203"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">pair_content</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">COLOR_PAIRS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<a name="line-204"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">pair_number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-205"></a>
+<a name="line-206"></a>        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="p">,</span> <span class="s1">&#39;use_default_colors&#39;</span><span class="p">):</span>
+<a name="line-207"></a>            <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">use_default_colors</span><span class="p">()</span>
+<a name="line-208"></a>
+<a name="line-209"></a>    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="p">,</span> <span class="s1">&#39;keyname&#39;</span><span class="p">):</span>
+<a name="line-210"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">keyname</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<a name="line-211"></a>
+<a name="line-212"></a>    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="p">,</span> <span class="s1">&#39;has_key&#39;</span><span class="p">):</span>
+<a name="line-213"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/Dbm.py.html#line-39">has_key</a></span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<a name="line-214"></a>
+<a name="line-215"></a>    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="p">,</span> <span class="s1">&#39;getmouse&#39;</span><span class="p">):</span>
+<a name="line-216"></a>        <span class="p">(</span><span class="n">availmask</span><span class="p">,</span> <span class="n">oldmask</span><span class="p">)</span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">mousemask</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">BUTTON1_PRESSED</span><span class="p">)</span>
+<a name="line-217"></a>        <span class="c1"># availmask indicates that mouse stuff not available.</span>
+<a name="line-218"></a>        <span class="k">if</span> <span class="n">availmask</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<a name="line-219"></a>            <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">mouseinterval</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a name="line-220"></a>            <span class="c1"># just verify these don&#39;t cause errors</span>
+<a name="line-221"></a>            <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">ungetmouse</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">BUTTON1_PRESSED</span><span class="p">)</span>
+<a name="line-222"></a>            <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">getmouse</span><span class="p">()</span>
+<a name="line-223"></a>
+<a name="line-224"></a>    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="p">,</span> <span class="s1">&#39;is_term_resized&#39;</span><span class="p">):</span>
+<a name="line-225"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">is_term_resized</span><span class="p">(</span><span class="o">*</span><span class="n">stdscr</span><span class="o">.</span><span class="n">getmaxyx</span><span class="p">())</span>
+<a name="line-226"></a>    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="p">,</span> <span class="s1">&#39;resizeterm&#39;</span><span class="p">):</span>
+<a name="line-227"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">resizeterm</span><span class="p">(</span><span class="o">*</span><span class="n">stdscr</span><span class="o">.</span><span class="n">getmaxyx</span><span class="p">())</span>
+<a name="line-228"></a>    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="p">,</span> <span class="s1">&#39;resize_term&#39;</span><span class="p">):</span>
+<a name="line-229"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">resize_term</span><span class="p">(</span><span class="o">*</span><span class="n">stdscr</span><span class="o">.</span><span class="n">getmaxyx</span><span class="p">())</span>
+<a name="line-230"></a>
+<a name="line-231"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_curses.py.html#line-231">unit_tests</a></span><span class="p">():</span>
+<a name="line-232"></a>    <span class="kn">from</span> <span class="nn"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/curses/ascii.py.html#line-71">ascii</a></span>
+<a name="line-233"></a>    <span class="k">for</span> <span class="n"><a href="/./Include/unicodeobject.h.html#line-1350">ch</a></span><span class="p">,</span> <span class="n"><a href="/./Include/parsetok.h.html#line-17">expected</a></span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">),</span>
+<a name="line-234"></a>                         <span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">),</span>
+<a name="line-235"></a>                         <span class="p">(</span><span class="s1">&#39;</span><span class="se">\x7f</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;^?&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;^J&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\0</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;^@&#39;</span><span class="p">),</span>
+<a name="line-236"></a>                         <span class="c1"># Meta-bit characters</span>
+<a name="line-237"></a>                         <span class="p">(</span><span class="s1">&#39;</span><span class="se">\x8a</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;!^J&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\xc1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;!A&#39;</span><span class="p">),</span>
+<a name="line-238"></a>                         <span class="p">]:</span>
+<a name="line-239"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/curses/ascii.py.html#line-71">ascii</a></span><span class="o">.</span><span class="n"><a href="/./Lib/curses/ascii.py.html#line-89">unctrl</a></span><span class="p">(</span><span class="n"><a href="/./Include/unicodeobject.h.html#line-1350">ch</a></span><span class="p">)</span> <span class="o">!=</span> <span class="n"><a href="/./Include/parsetok.h.html#line-17">expected</a></span><span class="p">:</span>
+<a name="line-240"></a>            <span class="k">print</span> <span class="s1">&#39;curses.unctrl fails on character&#39;</span><span class="p">,</span> <span class="nb"><a href="/./Demo/pdist/cmptree.py.html#line-4">repr</a></span><span class="p">(</span><span class="n"><a href="/./Include/unicodeobject.h.html#line-1350">ch</a></span><span class="p">)</span>
+<a name="line-241"></a>
+<a name="line-242"></a>
+<a name="line-243"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_curses.py.html#line-243">test_userptr_without_set</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">):</span>
+<a name="line-244"></a>    <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">newwin</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<a name="line-245"></a>    <span class="n"><a href="/./Demo/threads/sync.py.html#line-410">p</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Demo/curses/ncurses.py.html#line-9">panel</a></span><span class="o">.</span><span class="n">new_panel</span><span class="p">(</span><span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span><span class="p">)</span>
+<a name="line-246"></a>    <span class="c1"># try to access userptr() before calling set_userptr() -- segfaults</span>
+<a name="line-247"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="line-248"></a>        <span class="n"><a href="/./Demo/threads/sync.py.html#line-410">p</a></span><span class="o">.</span><span class="n">userptr</span><span class="p">()</span>
+<a name="line-249"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">,</span> <span class="s1">&#39;userptr should fail since not set&#39;</span>
+<a name="line-250"></a>    <span class="k">except</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Demo/curses/ncurses.py.html#line-9">panel</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-9">error</a></span><span class="p">:</span>
+<a name="line-251"></a>        <span class="k">pass</span>
+<a name="line-252"></a>
+<a name="line-253"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_curses.py.html#line-253">test_userptr_memory_leak</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">):</span>
+<a name="line-254"></a>    <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">newwin</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<a name="line-255"></a>    <span class="n"><a href="/./Demo/threads/sync.py.html#line-410">p</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Demo/curses/ncurses.py.html#line-9">panel</a></span><span class="o">.</span><span class="n">new_panel</span><span class="p">(</span><span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span><span class="p">)</span>
+<a name="line-256"></a>    <span class="n"><a href="/./Include/abstract.h.html#line-492">obj</a></span> <span class="o">=</span> <span class="nb"><a href="/./Include/asdl.h.html#line-6">object</a></span><span class="p">()</span>
+<a name="line-257"></a>    <span class="n">nrefs</span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n"><a href="/./Include/abstract.h.html#line-492">obj</a></span><span class="p">)</span>
+<a name="line-258"></a>    <span class="k">for</span> <span class="n"><a href="/./Lib/test/crashers/borrowed_ref_2.py.html#line-33">i</a></span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+<a name="line-259"></a>        <span class="n"><a href="/./Demo/threads/sync.py.html#line-410">p</a></span><span class="o">.</span><span class="n">set_userptr</span><span class="p">(</span><span class="n"><a href="/./Include/abstract.h.html#line-492">obj</a></span><span class="p">)</span>
+<a name="line-260"></a>
+<a name="line-261"></a>    <span class="n"><a href="/./Demo/threads/sync.py.html#line-410">p</a></span><span class="o">.</span><span class="n">set_userptr</span><span class="p">(</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">)</span>
+<a name="line-262"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n"><a href="/./Include/abstract.h.html#line-492">obj</a></span><span class="p">)</span> <span class="o">!=</span> <span class="n">nrefs</span><span class="p">:</span>
+<a name="line-263"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">,</span> <span class="s2">&quot;set_userptr leaked references&quot;</span>
+<a name="line-264"></a>
+<a name="line-265"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_curses.py.html#line-265">test_userptr_segfault</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">):</span>
+<a name="line-266"></a>    <span class="n"><a href="/./Demo/curses/ncurses.py.html#line-9">panel</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Demo/curses/ncurses.py.html#line-9">panel</a></span><span class="o">.</span><span class="n">new_panel</span><span class="p">(</span><span class="n">stdscr</span><span class="p">)</span>
+<a name="line-267"></a>    <span class="k">class</span> <span class="nc"><a href="/./Demo/turtle/tdemo_lindenmayer_indian.py.html#line-86">A</a></span><span class="p">:</span>
+<a name="line-268"></a>        <span class="k">def</span> <span class="nf"><a href="/./Demo/pdist/RCSProxy.py.html#line-36">__del__</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-269"></a>            <span class="n"><a href="/./Demo/curses/ncurses.py.html#line-9">panel</a></span><span class="o">.</span><span class="n">set_userptr</span><span class="p">(</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">)</span>
+<a name="line-270"></a>    <span class="n"><a href="/./Demo/curses/ncurses.py.html#line-9">panel</a></span><span class="o">.</span><span class="n">set_userptr</span><span class="p">(</span><span class="n"><a href="/./Demo/turtle/tdemo_lindenmayer_indian.py.html#line-86">A</a></span><span class="p">())</span>
+<a name="line-271"></a>    <span class="n"><a href="/./Demo/curses/ncurses.py.html#line-9">panel</a></span><span class="o">.</span><span class="n">set_userptr</span><span class="p">(</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">)</span>
+<a name="line-272"></a>
+<a name="line-273"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_curses.py.html#line-273">test_resize_term</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">):</span>
+<a name="line-274"></a>    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="p">,</span> <span class="s1">&#39;resizeterm&#39;</span><span class="p">):</span>
+<a name="line-275"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">LINES</span><span class="p">,</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">COLS</span>
+<a name="line-276"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">resizeterm</span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cols</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<a name="line-277"></a>
+<a name="line-278"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">LINES</span> <span class="o">!=</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-211">lines</a></span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">COLS</span> <span class="o">!=</span> <span class="n">cols</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+<a name="line-279"></a>            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">,</span> <span class="s2">&quot;Expected resizeterm to update LINES and COLS&quot;</span>
+<a name="line-280"></a>
+<a name="line-281"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/test/test_curses.py.html#line-281">test_issue6243</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">):</span>
+<a name="line-282"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">ungetch</span><span class="p">(</span><span class="mi">1025</span><span class="p">)</span>
+<a name="line-283"></a>    <span class="n">stdscr</span><span class="o">.</span><span class="n">getkey</span><span class="p">()</span>
+<a name="line-284"></a>
+<a name="line-285"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">):</span>
+<a name="line-286"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">savetty</span><span class="p">()</span>
+<a name="line-287"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="line-288"></a>        <span class="n"><a href="/./Lib/test/test_curses.py.html#line-150">module_funcs</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">)</span>
+<a name="line-289"></a>        <span class="n"><a href="/./Lib/test/test_curses.py.html#line-33">window_funcs</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">)</span>
+<a name="line-290"></a>        <span class="n"><a href="/./Lib/test/test_curses.py.html#line-243">test_userptr_without_set</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">)</span>
+<a name="line-291"></a>        <span class="n"><a href="/./Lib/test/test_curses.py.html#line-253">test_userptr_memory_leak</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">)</span>
+<a name="line-292"></a>        <span class="n"><a href="/./Lib/test/test_curses.py.html#line-265">test_userptr_segfault</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">)</span>
+<a name="line-293"></a>        <span class="n"><a href="/./Lib/test/test_curses.py.html#line-273">test_resize_term</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">)</span>
+<a name="line-294"></a>        <span class="n"><a href="/./Lib/test/test_curses.py.html#line-281">test_issue6243</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">)</span>
+<a name="line-295"></a>    <span class="k">finally</span><span class="p">:</span>
+<a name="line-296"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">resetty</span><span class="p">()</span>
+<a name="line-297"></a>
+<a name="line-298"></a><span class="k">if</span> <span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="line-299"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Include/descrobject.h.html#line-29">wrapper</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">)</span>
+<a name="line-300"></a>    <span class="n"><a href="/./Lib/test/test_curses.py.html#line-231">unit_tests</a></span><span class="p">()</span>
+<a name="line-301"></a><span class="k">else</span><span class="p">:</span>
+<a name="line-302"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n">__stdout__</span><span class="o">.</span><span class="n"><a href="/./Lib/StringIO.py.html#line-88">isatty</a></span><span class="p">():</span>
+<a name="line-303"></a>        <span class="k">raise</span> <span class="n"><a href="/./Demo/parser/test_unparse.py.html#line-1">unittest</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_ftplib.py.html#line-18">SkipTest</a></span><span class="p">(</span><span class="s2">&quot;sys.__stdout__ is not a tty&quot;</span><span class="p">)</span>
+<a name="line-304"></a>    <span class="c1"># testing setupterm() inside initscr/endwin</span>
+<a name="line-305"></a>    <span class="c1"># causes terminal breakage</span>
+<a name="line-306"></a>    <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">setupterm</span><span class="p">(</span><span class="n"><a href="/./Lib/bsddb/dbobj.py.html#line-156">fd</a></span><span class="o">=</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n">__stdout__</span><span class="o">.</span><span class="n"><a href="/./Lib/SocketServer.py.html#line-453">fileno</a></span><span class="p">())</span>
+<a name="line-307"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="line-308"></a>        <span class="n">stdscr</span> <span class="o">=</span> <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n"><a href="/./Lib/curses/__init__.py.html#line-28">initscr</a></span><span class="p">()</span>
+<a name="line-309"></a>        <span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">(</span><span class="n">stdscr</span><span class="p">)</span>
+<a name="line-310"></a>    <span class="k">finally</span><span class="p">:</span>
+<a name="line-311"></a>        <span class="n"><a href="/./Demo/curses/life.py.html#line-21">curses</a></span><span class="o">.</span><span class="n">endwin</span><span class="p">()</span>
+<a name="line-312"></a>    <span class="n"><a href="/./Lib/test/test_curses.py.html#line-231">unit_tests</a></span><span class="p">()</span>
+</pre></div>
+</td></tr></table></body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a>
+<a href="#line-140">140</a>
+<a href="#line-141">141</a>
+<a href="#line-142">142</a>
+<a href="#line-143">143</a>
+<a href="#line-144">144</a>
+<a href="#line-145">145</a>
+<a href="#line-146">146</a>
+<a href="#line-147">147</a>
+<a href="#line-148">148</a>
+<a href="#line-149">149</a>
+<a href="#line-150">150</a>
+<a href="#line-151">151</a>
+<a href="#line-152">152</a>
+<a href="#line-153">153</a>
+<a href="#line-154">154</a>
+<a href="#line-155">155</a>
+<a href="#line-156">156</a>
+<a href="#line-157">157</a>
+<a href="#line-158">158</a>
+<a href="#line-159">159</a>
+<a href="#line-160">160</a>
+<a href="#line-161">161</a>
+<a href="#line-162">162</a>
+<a href="#line-163">163</a>
+<a href="#line-164">164</a>
+<a href="#line-165">165</a>
+<a href="#line-166">166</a>
+<a href="#line-167">167</a>
+<a href="#line-168">168</a>
+<a href="#line-169">169</a>
+<a href="#line-170">170</a>
+<a href="#line-171">171</a>
+<a href="#line-172">172</a>
+<a href="#line-173">173</a>
+<a href="#line-174">174</a>
+<a href="#line-175">175</a>
+<a href="#line-176">176</a>
+<a href="#line-177">177</a>
+<a href="#line-178">178</a>
+<a href="#line-179">179</a>
+<a href="#line-180">180</a>
+<a href="#line-181">181</a>
+<a href="#line-182">182</a>
+<a href="#line-183">183</a>
+<a href="#line-184">184</a>
+<a href="#line-185">185</a>
+<a href="#line-186">186</a>
+<a href="#line-187">187</a>
+<a href="#line-188">188</a>
+<a href="#line-189">189</a>
+<a href="#line-190">190</a>
+<a href="#line-191">191</a>
+<a href="#line-192">192</a>
+<a href="#line-193">193</a>
+<a href="#line-194">194</a>
+<a href="#line-195">195</a>
+<a href="#line-196">196</a>
+<a href="#line-197">197</a>
+<a href="#line-198">198</a>
+<a href="#line-199">199</a>
+<a href="#line-200">200</a>
+<a href="#line-201">201</a>
+<a href="#line-202">202</a>
+<a href="#line-203">203</a>
+<a href="#line-204">204</a>
+<a href="#line-205">205</a>
+<a href="#line-206">206</a>
+<a href="#line-207">207</a>
+<a href="#line-208">208</a>
+<a href="#line-209">209</a>
+<a href="#line-210">210</a>
+<a href="#line-211">211</a>
+<a href="#line-212">212</a>
+<a href="#line-213">213</a>
+<a href="#line-214">214</a>
+<a href="#line-215">215</a>
+<a href="#line-216">216</a>
+<a href="#line-217">217</a>
+<a href="#line-218">218</a>
+<a href="#line-219">219</a>
+<a href="#line-220">220</a>
+<a href="#line-221">221</a>
+<a href="#line-222">222</a>
+<a href="#line-223">223</a>
+<a href="#line-224">224</a>
+<a href="#line-225">225</a>
+<a href="#line-226">226</a>
+<a href="#line-227">227</a>
+<a href="#line-228">228</a>
+<a href="#line-229">229</a></pre></div></td><td class="code"><div class="source"><span class="filename">Tools/pynche/Main.py</span><pre><span></span><a name="line-1"></a><span class="sd">&quot;&quot;&quot;Pynche -- The PYthon Natural Color and Hue Editor.</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="sd">Contact: %(AUTHNAME)s</span>
+<a name="line-4"></a><span class="sd">Email:   %(AUTHEMAIL)s</span>
+<a name="line-5"></a><span class="sd">Version: %(__version__)s</span>
+<a name="line-6"></a>
+<a name="line-7"></a><span class="sd">Pynche is based largely on a similar color editor I wrote years ago for the</span>
+<a name="line-8"></a><span class="sd">SunView window system.  That editor was called ICE: the Interactive Color</span>
+<a name="line-9"></a><span class="sd">Editor.  I&#39;d always wanted to port the editor to X but didn&#39;t feel like</span>
+<a name="line-10"></a><span class="sd">hacking X and C code to do it.  Fast forward many years, to where Python +</span>
+<a name="line-11"></a><span class="sd">Tkinter provides such a nice programming environment, with enough power, that</span>
+<a name="line-12"></a><span class="sd">I finally buckled down and implemented it.  I changed the name because these</span>
+<a name="line-13"></a><span class="sd">days, too many other systems have the acronym `ICE&#39;.</span>
+<a name="line-14"></a>
+<a name="line-15"></a><span class="sd">This program currently requires Python 2.2 with Tkinter.</span>
+<a name="line-16"></a>
+<a name="line-17"></a><span class="sd">Usage: %(PROGRAM)s [-d file] [-i file] [-X] [-v] [-h] [initialcolor]</span>
+<a name="line-18"></a>
+<a name="line-19"></a><span class="sd">Where:</span>
+<a name="line-20"></a><span class="sd">    --database file</span>
+<a name="line-21"></a><span class="sd">    -d file</span>
+<a name="line-22"></a><span class="sd">        Alternate location of a color database file</span>
+<a name="line-23"></a>
+<a name="line-24"></a><span class="sd">    --initfile file</span>
+<a name="line-25"></a><span class="sd">    -i file</span>
+<a name="line-26"></a><span class="sd">        Alternate location of the initialization file.  This file contains a</span>
+<a name="line-27"></a><span class="sd">        persistent database of the current Pynche options and color.  This</span>
+<a name="line-28"></a><span class="sd">        means that Pynche restores its option settings and current color when</span>
+<a name="line-29"></a><span class="sd">        it restarts, using this file (unless the -X option is used).  The</span>
+<a name="line-30"></a><span class="sd">        default is ~/.pynche</span>
+<a name="line-31"></a>
+<a name="line-32"></a><span class="sd">    --ignore</span>
+<a name="line-33"></a><span class="sd">    -X</span>
+<a name="line-34"></a><span class="sd">        Ignore the initialization file when starting up.  Pynche will still</span>
+<a name="line-35"></a><span class="sd">        write the current option settings to this file when it quits.</span>
+<a name="line-36"></a>
+<a name="line-37"></a><span class="sd">    --version</span>
+<a name="line-38"></a><span class="sd">    -v</span>
+<a name="line-39"></a><span class="sd">        print the version number and exit</span>
+<a name="line-40"></a>
+<a name="line-41"></a><span class="sd">    --help</span>
+<a name="line-42"></a><span class="sd">    -h</span>
+<a name="line-43"></a><span class="sd">        print this message</span>
+<a name="line-44"></a>
+<a name="line-45"></a><span class="sd">    initialcolor</span>
+<a name="line-46"></a><span class="sd">        initial color, as a color name or #RRGGBB format</span>
+<a name="line-47"></a><span class="sd">&quot;&quot;&quot;</span>
+<a name="line-48"></a>
+<a name="line-49"></a><span class="n"><a href="/./Lib/BaseHTTPServer.py.html#line-69">__version__</a></span> <span class="o">=</span> <span class="s1">&#39;1.4.1&#39;</span>
+<a name="line-50"></a>
+<a name="line-51"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span>
+<a name="line-52"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span>
+<a name="line-53"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/pdist/cmdfw.py.html#line-41">getopt</a></span>
+<a name="line-54"></a><span class="kn">import</span> <span class="nn"><a href="/./Tools/pynche/ChipViewer.py.html#line-17">ColorDB</a></span>
+<a name="line-55"></a>
+<a name="line-56"></a><span class="kn">from</span> <span class="nn"><a href="/./Tools/pynche/Main.py.html#line-56">PyncheWidget</a></span> <span class="kn">import</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-56">PyncheWidget</a></span>
+<a name="line-57"></a><span class="kn">from</span> <span class="nn"><a href="/./Tools/pynche/Main.py.html#line-57">Switchboard</a></span> <span class="kn">import</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-57">Switchboard</a></span>
+<a name="line-58"></a><span class="kn">from</span> <span class="nn"><a href="/./Tools/pynche/Main.py.html#line-58">StripViewer</a></span> <span class="kn">import</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-58">StripViewer</a></span>
+<a name="line-59"></a><span class="kn">from</span> <span class="nn"><a href="/./Tools/pynche/ChipViewer.py.html#line-80">ChipViewer</a></span> <span class="kn">import</span> <span class="n"><a href="/./Tools/pynche/ChipViewer.py.html#line-80">ChipViewer</a></span>
+<a name="line-60"></a><span class="kn">from</span> <span class="nn"><a href="/./Tools/pynche/Main.py.html#line-60">TypeinViewer</a></span> <span class="kn">import</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-60">TypeinViewer</a></span>
+<a name="line-61"></a>
+<a name="line-62"></a>
+<a name="line-63"></a>
+<a name="line-64"></a><span class="n"><a href="/./Tools/pynche/Main.py.html#line-64">PROGRAM</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a name="line-65"></a><span class="n"><a href="/./Tools/pynche/Main.py.html#line-65">AUTHNAME</a></span> <span class="o">=</span> <span class="s1">&#39;Barry Warsaw&#39;</span>
+<a name="line-66"></a><span class="n"><a href="/./Tools/pynche/Main.py.html#line-66">AUTHEMAIL</a></span> <span class="o">=</span> <span class="s1">&#39;barry@python.org&#39;</span>
+<a name="line-67"></a>
+<a name="line-68"></a><span class="c1"># Default locations of rgb.txt or other textual color database</span>
+<a name="line-69"></a><span class="n"><a href="/./Tools/pynche/Main.py.html#line-69">RGB_TXT</a></span> <span class="o">=</span> <span class="p">[</span>
+<a name="line-70"></a>    <span class="c1"># Solaris OpenWindows</span>
+<a name="line-71"></a>    <span class="s1">&#39;/usr/openwin/lib/rgb.txt&#39;</span><span class="p">,</span>
+<a name="line-72"></a>    <span class="c1"># Linux</span>
+<a name="line-73"></a>    <span class="s1">&#39;/usr/lib/X11/rgb.txt&#39;</span><span class="p">,</span>
+<a name="line-74"></a>    <span class="c1"># The X11R6.4 rgb.txt file</span>
+<a name="line-75"></a>    <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslock.py.html#line-169">join</a></span><span class="p">(</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;X/rgb.txt&#39;</span><span class="p">),</span>
+<a name="line-76"></a>    <span class="c1"># add more here</span>
+<a name="line-77"></a>    <span class="p">]</span>
+<a name="line-78"></a>
+<a name="line-79"></a>
+<a name="line-80"></a>
+<a name="line-81"></a><span class="c1"># Do this because PyncheWidget.py wants to get at the interpolated docstring</span>
+<a name="line-82"></a><span class="c1"># too, for its Help menu.</span>
+<a name="line-83"></a><span class="k">def</span> <span class="nf"><a href="/./Lib/lib-tk/turtle.py.html#line-3769">docstring</a></span><span class="p">():</span>
+<a name="line-84"></a>    <span class="k">return</span> <span class="n"><a href="/./Lib/_pyio.py.html#line-254">__doc__</a></span> <span class="o">%</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-170">globals</a></span><span class="p">()</span>
+<a name="line-85"></a>
+<a name="line-86"></a>
+<a name="line-87"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span><span class="p">(</span><span class="n"><a href="/./Include/import.h.html#line-59">code</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+<a name="line-88"></a>    <span class="k">print</span> <span class="n"><a href="/./Lib/lib-tk/turtle.py.html#line-3769">docstring</a></span><span class="p">()</span>
+<a name="line-89"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="p">:</span>
+<a name="line-90"></a>        <span class="k">print</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span>
+<a name="line-91"></a>    <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/argparse.py.html#line-2359">exit</a></span><span class="p">(</span><span class="n"><a href="/./Include/import.h.html#line-59">code</a></span><span class="p">)</span>
+<a name="line-92"></a>
+<a name="line-93"></a>
+<a name="line-94"></a>
+<a name="line-95"></a><span class="k">def</span> <span class="nf"><a href="/./Tools/pynche/Main.py.html#line-95">initial_color</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span><span class="p">):</span>
+<a name="line-96"></a>    <span class="c1"># function called on every color</span>
+<a name="line-97"></a>    <span class="k">def</span> <span class="nf"><a href="/./Tools/pynche/Main.py.html#line-97">scan_color</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span><span class="o">=</span><span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span><span class="p">):</span>
+<a name="line-98"></a>        <span class="k">try</span><span class="p">:</span>
+<a name="line-99"></a>            <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-93">find_byname</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">)</span>
+<a name="line-100"></a>        <span class="k">except</span> <span class="n"><a href="/./Tools/pynche/ChipViewer.py.html#line-17">ColorDB</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-28">BadColor</a></span><span class="p">:</span>
+<a name="line-101"></a>            <span class="k">try</span><span class="p">:</span>
+<a name="line-102"></a>                <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/ChipViewer.py.html#line-17">ColorDB</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-211">rrggbb_to_triplet</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">)</span>
+<a name="line-103"></a>            <span class="k">except</span> <span class="n"><a href="/./Tools/pynche/ChipViewer.py.html#line-17">ColorDB</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-28">BadColor</a></span><span class="p">:</span>
+<a name="line-104"></a>                <span class="k">return</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-105"></a>        <span class="k">return</span> <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span>
+<a name="line-106"></a>    <span class="c1">#</span>
+<a name="line-107"></a>    <span class="c1"># First try the passed in color</span>
+<a name="line-108"></a>    <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-97">scan_color</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">)</span>
+<a name="line-109"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-110"></a>        <span class="c1"># try the same color with &#39;#&#39; prepended, since some shells require</span>
+<a name="line-111"></a>        <span class="c1"># this to be escaped, which is a pain</span>
+<a name="line-112"></a>        <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-97">scan_color</a></span><span class="p">(</span><span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">)</span>
+<a name="line-113"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-114"></a>        <span class="k">print</span> <span class="s1">&#39;Bad initial color, using gray50:&#39;</span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>
+<a name="line-115"></a>        <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-97">scan_color</a></span><span class="p">(</span><span class="s1">&#39;gray50&#39;</span><span class="p">)</span>
+<a name="line-116"></a>    <span class="k">if</span> <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-117"></a>        <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Cannot find an initial color to use&#39;</span><span class="p">)</span>
+<a name="line-118"></a>        <span class="c1"># does not return</span>
+<a name="line-119"></a>    <span class="k">return</span> <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/grid.py.html#line-18">g</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/matt/two-radio-groups.py.html#line-103">b</a></span>
+<a name="line-120"></a>
+<a name="line-121"></a>
+<a name="line-122"></a>
+<a name="line-123"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span><span class="p">(</span><span class="n"><a href="/./Lib/doctest.py.html#line-1817">master</a></span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="n">initialcolor</span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-217">initfile</a></span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-215">ignore</a></span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span>
+<a name="line-124"></a>          <span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span><span class="o">=</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">):</span>
+<a name="line-125"></a>    <span class="c1"># create all output widgets</span>
+<a name="line-126"></a>    <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-57">Switchboard</a></span><span class="p">(</span><span class="ow">not</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-215">ignore</a></span> <span class="ow">and</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-217">initfile</a></span><span class="p">)</span>
+<a name="line-127"></a>    <span class="c1"># defer to the command line chosen color database, falling back to the one</span>
+<a name="line-128"></a>    <span class="c1"># in the .pynche file.</span>
+<a name="line-129"></a>    <span class="k">if</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-130"></a>        <span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-103">optiondb</a></span><span class="p">()</span><span class="o">.</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-203">get</a></span><span class="p">(</span><span class="s1">&#39;DBFILE&#39;</span><span class="p">)</span>
+<a name="line-131"></a>    <span class="c1"># find a parseable color database</span>
+<a name="line-132"></a>    <span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-133"></a>    <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-19">files</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-69">RGB_TXT</a></span><span class="p">[:]</span>
+<a name="line-134"></a>    <span class="k">if</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-135"></a>        <span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-19">files</a></span><span class="o">.</span><span class="n"><a href="/./Demo/turtle/tdemo_minimal_hanoi.py.html#line-39">pop</a></span><span class="p">()</span>
+<a name="line-136"></a>    <span class="k">while</span> <span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-137"></a>        <span class="k">try</span><span class="p">:</span>
+<a name="line-138"></a>            <span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/ChipViewer.py.html#line-17">ColorDB</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-179">get_colordb</a></span><span class="p">(</span><span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span><span class="p">)</span>
+<a name="line-139"></a>        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">IOError</span><span class="p">):</span>
+<a name="line-140"></a>            <span class="k">pass</span>
+<a name="line-141"></a>        <span class="k">if</span> <span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-142"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-19">files</a></span><span class="p">:</span>
+<a name="line-143"></a>                <span class="k">break</span>
+<a name="line-144"></a>            <span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-19">files</a></span><span class="o">.</span><span class="n"><a href="/./Demo/turtle/tdemo_minimal_hanoi.py.html#line-39">pop</a></span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-145"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span><span class="p">:</span>
+<a name="line-146"></a>        <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;No color database file found, see the -d option.&#39;</span><span class="p">)</span>
+<a name="line-147"></a>    <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-96">set_colordb</a></span><span class="p">(</span><span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span><span class="p">)</span>
+<a name="line-148"></a>
+<a name="line-149"></a>    <span class="c1"># create the application window decorations</span>
+<a name="line-150"></a>    <span class="n"><a href="/./Demo/tkinter/guido/rmt.py.html#line-155">app</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-56">PyncheWidget</a></span><span class="p">(</span><span class="n"><a href="/./Lib/BaseHTTPServer.py.html#line-69">__version__</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/doctest.py.html#line-1817">master</a></span><span class="o">=</span><span class="n"><a href="/./Lib/doctest.py.html#line-1817">master</a></span><span class="p">)</span>
+<a name="line-151"></a>    <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/tkinter/guido/rmt.py.html#line-155">app</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-232">window</a></span><span class="p">()</span>
+<a name="line-152"></a>
+<a name="line-153"></a>    <span class="c1"># these built-in viewers live inside the main Pynche window</span>
+<a name="line-154"></a>    <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-77">add_view</a></span><span class="p">(</span><span class="n"><a href="/./Tools/pynche/Main.py.html#line-58">StripViewer</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span><span class="p">))</span>
+<a name="line-155"></a>    <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-77">add_view</a></span><span class="p">(</span><span class="n"><a href="/./Tools/pynche/ChipViewer.py.html#line-80">ChipViewer</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span><span class="p">))</span>
+<a name="line-156"></a>    <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-77">add_view</a></span><span class="p">(</span><span class="n"><a href="/./Tools/pynche/Main.py.html#line-60">TypeinViewer</a></span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span><span class="p">))</span>
+<a name="line-157"></a>
+<a name="line-158"></a>    <span class="c1"># get the initial color as components and set the color on all views.  if</span>
+<a name="line-159"></a>    <span class="c1"># there was no initial color given on the command line, use the one that&#39;s</span>
+<a name="line-160"></a>    <span class="c1"># stored in the option database</span>
+<a name="line-161"></a>    <span class="k">if</span> <span class="n">initialcolor</span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-162"></a>        <span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-103">optiondb</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-103">optiondb</a></span><span class="p">()</span>
+<a name="line-163"></a>        <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-129">red</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-103">optiondb</a></span><span class="o">.</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-203">get</a></span><span class="p">(</span><span class="s1">&#39;RED&#39;</span><span class="p">)</span>
+<a name="line-164"></a>        <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-130">green</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-103">optiondb</a></span><span class="o">.</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-203">get</a></span><span class="p">(</span><span class="s1">&#39;GREEN&#39;</span><span class="p">)</span>
+<a name="line-165"></a>        <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-131">blue</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-103">optiondb</a></span><span class="o">.</span><span class="n"><a href="/./Demo/metaclasses/Synch.py.html#line-203">get</a></span><span class="p">(</span><span class="s1">&#39;BLUE&#39;</span><span class="p">)</span>
+<a name="line-166"></a>        <span class="c1"># but if there wasn&#39;t any stored in the database, use grey50</span>
+<a name="line-167"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-129">red</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span> <span class="ow">or</span> <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-131">blue</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span> <span class="ow">or</span> <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-130">green</a></span> <span class="ow">is</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">:</span>
+<a name="line-168"></a>            <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-129">red</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-130">green</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-131">blue</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-95">initial_color</a></span><span class="p">(</span><span class="s1">&#39;grey50&#39;</span><span class="p">,</span> <span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span><span class="p">)</span>
+<a name="line-169"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="line-170"></a>        <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-129">red</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-130">green</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-131">blue</a></span> <span class="o">=</span> <span class="n"><a href="/./Tools/pynche/Main.py.html#line-95">initial_color</a></span><span class="p">(</span><span class="n">initialcolor</span><span class="p">,</span> <span class="n"><a href="/./Tools/pynche/ColorDB.py.html#line-252">colordb</a></span><span class="p">)</span>
+<a name="line-171"></a>    <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-80">update_views</a></span><span class="p">(</span><span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-129">red</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-130">green</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/metaclasses/Enum.py.html#line-131">blue</a></span><span class="p">)</span>
+<a name="line-172"></a>    <span class="k">return</span> <span class="n"><a href="/./Demo/tkinter/guido/rmt.py.html#line-155">app</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span>
+<a name="line-173"></a>
+<a name="line-174"></a>
+<a name="line-175"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/pdist/cmdfw.py.html#line-39">run</a></span><span class="p">(</span><span class="n"><a href="/./Demo/tkinter/guido/rmt.py.html#line-155">app</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-26">s</a></span><span class="p">):</span>
+<a name="line-176"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="line-177"></a>        <span class="n"><a href="/./Demo/tkinter/guido/rmt.py.html#line-155">app</a></span><span class="o">.</span><span class="n"><a href="/./Demo/turtle/tdemo_penrose.py.html#line-128">start</a></span><span class="p">()</span>
+<a name="line-178"></a>    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<a name="line-179"></a>        <span class="k">pass</span>
+<a name="line-180"></a>
+<a name="line-181"></a>
+<a name="line-182"></a>
+<a name="line-183"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">():</span>
+<a name="line-184"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="line-185"></a>        <span class="n">opts</span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-41">getopt</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-41">getopt</a></span><span class="p">(</span>
+<a name="line-186"></a>            <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Demo/md5test/md5driver.py.html#line-3">argv</a></span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+<a name="line-187"></a>            <span class="s1">&#39;hd:i:Xv&#39;</span><span class="p">,</span>
+<a name="line-188"></a>            <span class="p">[</span><span class="s1">&#39;database=&#39;</span><span class="p">,</span> <span class="s1">&#39;initfile=&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="s1">&#39;help&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">])</span>
+<a name="line-189"></a>    <span class="k">except</span> <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-41">getopt</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-9">error</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="p">:</span>
+<a name="line-190"></a>        <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/rcsbump.html#line-32">msg</a></span><span class="p">)</span>
+<a name="line-191"></a>
+<a name="line-192"></a>    <span class="k">if</span> <span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a name="line-193"></a>        <span class="n">initialcolor</span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-194"></a>    <span class="k">elif</span> <span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a name="line-195"></a>        <span class="n">initialcolor</span> <span class="o">=</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a name="line-196"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="line-197"></a>        <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-198"></a>
+<a name="line-199"></a>    <span class="n"><a href="/./Tools/pynche/Main.py.html#line-215">ignore</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/plat-mac/bundlebuilder.py.html#line-925">False</a></span>
+<a name="line-200"></a>    <span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-201"></a>    <span class="n"><a href="/./Tools/pynche/Main.py.html#line-217">initfile</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Lib/macpath.py.html#line-125">expanduser</a></span><span class="p">(</span><span class="s1">&#39;~/.pynche&#39;</span><span class="p">)</span>
+<a name="line-202"></a>    <span class="k">for</span> <span class="n"><a href="/./Lib/getopt.py.html#line-39">opt</a></span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-365">arg</a></span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
+<a name="line-203"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/getopt.py.html#line-39">opt</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-h&#39;</span><span class="p">,</span> <span class="s1">&#39;--help&#39;</span><span class="p">):</span>
+<a name="line-204"></a>            <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-85">usage</a></span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-205"></a>        <span class="k">elif</span> <span class="n"><a href="/./Lib/getopt.py.html#line-39">opt</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--version&#39;</span><span class="p">):</span>
+<a name="line-206"></a>            <span class="k">print</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<a name="line-207"></a><span class="s2">Pynche -- The PYthon Natural Color and Hue Editor.</span>
+<a name="line-208"></a><span class="s2">Contact: </span><span class="si">%(AUTHNAME)s</span><span class="s2"></span>
+<a name="line-209"></a><span class="s2">Email:   </span><span class="si">%(AUTHEMAIL)s</span><span class="s2"></span>
+<a name="line-210"></a><span class="s2">Version: </span><span class="si">%(__version__)s</span><span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-170">globals</a></span><span class="p">()</span>
+<a name="line-211"></a>            <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">sys</a></span><span class="o">.</span><span class="n"><a href="/./Lib/argparse.py.html#line-2359">exit</a></span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-212"></a>        <span class="k">elif</span> <span class="n"><a href="/./Lib/getopt.py.html#line-39">opt</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--database&#39;</span><span class="p">):</span>
+<a name="line-213"></a>            <span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span> <span class="o">=</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-365">arg</a></span>
+<a name="line-214"></a>        <span class="k">elif</span> <span class="n"><a href="/./Lib/getopt.py.html#line-39">opt</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-X&#39;</span><span class="p">,</span> <span class="s1">&#39;--ignore&#39;</span><span class="p">):</span>
+<a name="line-215"></a>            <span class="n"><a href="/./Tools/pynche/Main.py.html#line-215">ignore</a></span> <span class="o">=</span> <span class="bp">True</span>
+<a name="line-216"></a>        <span class="k">elif</span> <span class="n"><a href="/./Lib/getopt.py.html#line-39">opt</a></span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;-i&#39;</span><span class="p">,</span> <span class="s1">&#39;--initfile&#39;</span><span class="p">):</span>
+<a name="line-217"></a>            <span class="n"><a href="/./Tools/pynche/Main.py.html#line-217">initfile</a></span> <span class="o">=</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-365">arg</a></span>
+<a name="line-218"></a>
+<a name="line-219"></a>    <span class="n"><a href="/./Demo/tkinter/guido/rmt.py.html#line-155">app</a></span><span class="p">,</span> <span class="n">sb</span> <span class="o">=</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-112">build</a></span><span class="p">(</span><span class="n">initialcolor</span><span class="o">=</span><span class="n">initialcolor</span><span class="p">,</span>
+<a name="line-220"></a>                    <span class="n"><a href="/./Tools/pynche/Main.py.html#line-217">initfile</a></span><span class="o">=</span><span class="n"><a href="/./Tools/pynche/Main.py.html#line-217">initfile</a></span><span class="p">,</span>
+<a name="line-221"></a>                    <span class="n"><a href="/./Tools/pynche/Main.py.html#line-215">ignore</a></span><span class="o">=</span><span class="n"><a href="/./Tools/pynche/Main.py.html#line-215">ignore</a></span><span class="p">,</span>
+<a name="line-222"></a>                    <span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span><span class="o">=</span><span class="n"><a href="/./Tools/pynche/Main.py.html#line-213">dbfile</a></span><span class="p">)</span>
+<a name="line-223"></a>    <span class="n"><a href="/./Demo/pdist/cmdfw.py.html#line-39">run</a></span><span class="p">(</span><span class="n"><a href="/./Demo/tkinter/guido/rmt.py.html#line-155">app</a></span><span class="p">,</span> <span class="n">sb</span><span class="p">)</span>
+<a name="line-224"></a>    <span class="n">sb</span><span class="o">.</span><span class="n"><a href="/./Tools/pynche/Switchboard.py.html#line-106">save_views</a></span><span class="p">()</span>
+<a name="line-225"></a>
+<a name="line-226"></a>
+<a name="line-227"></a>
+<a name="line-228"></a><span class="k">if</span> <span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="line-229"></a>    <span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">()</span>
+</pre></div>
+</td></tr></table></body>
+</html>

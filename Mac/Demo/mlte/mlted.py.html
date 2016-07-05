@@ -1,0 +1,832 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a>
+<a href="#line-140">140</a>
+<a href="#line-141">141</a>
+<a href="#line-142">142</a>
+<a href="#line-143">143</a>
+<a href="#line-144">144</a>
+<a href="#line-145">145</a>
+<a href="#line-146">146</a>
+<a href="#line-147">147</a>
+<a href="#line-148">148</a>
+<a href="#line-149">149</a>
+<a href="#line-150">150</a>
+<a href="#line-151">151</a>
+<a href="#line-152">152</a>
+<a href="#line-153">153</a>
+<a href="#line-154">154</a>
+<a href="#line-155">155</a>
+<a href="#line-156">156</a>
+<a href="#line-157">157</a>
+<a href="#line-158">158</a>
+<a href="#line-159">159</a>
+<a href="#line-160">160</a>
+<a href="#line-161">161</a>
+<a href="#line-162">162</a>
+<a href="#line-163">163</a>
+<a href="#line-164">164</a>
+<a href="#line-165">165</a>
+<a href="#line-166">166</a>
+<a href="#line-167">167</a>
+<a href="#line-168">168</a>
+<a href="#line-169">169</a>
+<a href="#line-170">170</a>
+<a href="#line-171">171</a>
+<a href="#line-172">172</a>
+<a href="#line-173">173</a>
+<a href="#line-174">174</a>
+<a href="#line-175">175</a>
+<a href="#line-176">176</a>
+<a href="#line-177">177</a>
+<a href="#line-178">178</a>
+<a href="#line-179">179</a>
+<a href="#line-180">180</a>
+<a href="#line-181">181</a>
+<a href="#line-182">182</a>
+<a href="#line-183">183</a>
+<a href="#line-184">184</a>
+<a href="#line-185">185</a>
+<a href="#line-186">186</a>
+<a href="#line-187">187</a>
+<a href="#line-188">188</a>
+<a href="#line-189">189</a>
+<a href="#line-190">190</a>
+<a href="#line-191">191</a>
+<a href="#line-192">192</a>
+<a href="#line-193">193</a>
+<a href="#line-194">194</a>
+<a href="#line-195">195</a>
+<a href="#line-196">196</a>
+<a href="#line-197">197</a>
+<a href="#line-198">198</a>
+<a href="#line-199">199</a>
+<a href="#line-200">200</a>
+<a href="#line-201">201</a>
+<a href="#line-202">202</a>
+<a href="#line-203">203</a>
+<a href="#line-204">204</a>
+<a href="#line-205">205</a>
+<a href="#line-206">206</a>
+<a href="#line-207">207</a>
+<a href="#line-208">208</a>
+<a href="#line-209">209</a>
+<a href="#line-210">210</a>
+<a href="#line-211">211</a>
+<a href="#line-212">212</a>
+<a href="#line-213">213</a>
+<a href="#line-214">214</a>
+<a href="#line-215">215</a>
+<a href="#line-216">216</a>
+<a href="#line-217">217</a>
+<a href="#line-218">218</a>
+<a href="#line-219">219</a>
+<a href="#line-220">220</a>
+<a href="#line-221">221</a>
+<a href="#line-222">222</a>
+<a href="#line-223">223</a>
+<a href="#line-224">224</a>
+<a href="#line-225">225</a>
+<a href="#line-226">226</a>
+<a href="#line-227">227</a>
+<a href="#line-228">228</a>
+<a href="#line-229">229</a>
+<a href="#line-230">230</a>
+<a href="#line-231">231</a>
+<a href="#line-232">232</a>
+<a href="#line-233">233</a>
+<a href="#line-234">234</a>
+<a href="#line-235">235</a>
+<a href="#line-236">236</a>
+<a href="#line-237">237</a>
+<a href="#line-238">238</a>
+<a href="#line-239">239</a>
+<a href="#line-240">240</a>
+<a href="#line-241">241</a>
+<a href="#line-242">242</a>
+<a href="#line-243">243</a>
+<a href="#line-244">244</a>
+<a href="#line-245">245</a>
+<a href="#line-246">246</a>
+<a href="#line-247">247</a>
+<a href="#line-248">248</a>
+<a href="#line-249">249</a>
+<a href="#line-250">250</a>
+<a href="#line-251">251</a>
+<a href="#line-252">252</a>
+<a href="#line-253">253</a>
+<a href="#line-254">254</a>
+<a href="#line-255">255</a>
+<a href="#line-256">256</a>
+<a href="#line-257">257</a>
+<a href="#line-258">258</a>
+<a href="#line-259">259</a>
+<a href="#line-260">260</a>
+<a href="#line-261">261</a>
+<a href="#line-262">262</a>
+<a href="#line-263">263</a>
+<a href="#line-264">264</a>
+<a href="#line-265">265</a>
+<a href="#line-266">266</a>
+<a href="#line-267">267</a>
+<a href="#line-268">268</a>
+<a href="#line-269">269</a>
+<a href="#line-270">270</a>
+<a href="#line-271">271</a>
+<a href="#line-272">272</a>
+<a href="#line-273">273</a>
+<a href="#line-274">274</a>
+<a href="#line-275">275</a>
+<a href="#line-276">276</a>
+<a href="#line-277">277</a>
+<a href="#line-278">278</a>
+<a href="#line-279">279</a>
+<a href="#line-280">280</a>
+<a href="#line-281">281</a>
+<a href="#line-282">282</a>
+<a href="#line-283">283</a>
+<a href="#line-284">284</a>
+<a href="#line-285">285</a>
+<a href="#line-286">286</a>
+<a href="#line-287">287</a>
+<a href="#line-288">288</a>
+<a href="#line-289">289</a>
+<a href="#line-290">290</a>
+<a href="#line-291">291</a>
+<a href="#line-292">292</a>
+<a href="#line-293">293</a>
+<a href="#line-294">294</a>
+<a href="#line-295">295</a>
+<a href="#line-296">296</a>
+<a href="#line-297">297</a>
+<a href="#line-298">298</a>
+<a href="#line-299">299</a>
+<a href="#line-300">300</a>
+<a href="#line-301">301</a>
+<a href="#line-302">302</a>
+<a href="#line-303">303</a>
+<a href="#line-304">304</a>
+<a href="#line-305">305</a>
+<a href="#line-306">306</a>
+<a href="#line-307">307</a>
+<a href="#line-308">308</a>
+<a href="#line-309">309</a>
+<a href="#line-310">310</a>
+<a href="#line-311">311</a>
+<a href="#line-312">312</a>
+<a href="#line-313">313</a>
+<a href="#line-314">314</a>
+<a href="#line-315">315</a>
+<a href="#line-316">316</a>
+<a href="#line-317">317</a>
+<a href="#line-318">318</a>
+<a href="#line-319">319</a>
+<a href="#line-320">320</a>
+<a href="#line-321">321</a>
+<a href="#line-322">322</a>
+<a href="#line-323">323</a>
+<a href="#line-324">324</a>
+<a href="#line-325">325</a>
+<a href="#line-326">326</a>
+<a href="#line-327">327</a>
+<a href="#line-328">328</a>
+<a href="#line-329">329</a>
+<a href="#line-330">330</a>
+<a href="#line-331">331</a>
+<a href="#line-332">332</a>
+<a href="#line-333">333</a>
+<a href="#line-334">334</a>
+<a href="#line-335">335</a>
+<a href="#line-336">336</a>
+<a href="#line-337">337</a>
+<a href="#line-338">338</a>
+<a href="#line-339">339</a>
+<a href="#line-340">340</a>
+<a href="#line-341">341</a>
+<a href="#line-342">342</a>
+<a href="#line-343">343</a>
+<a href="#line-344">344</a>
+<a href="#line-345">345</a>
+<a href="#line-346">346</a>
+<a href="#line-347">347</a>
+<a href="#line-348">348</a>
+<a href="#line-349">349</a>
+<a href="#line-350">350</a>
+<a href="#line-351">351</a>
+<a href="#line-352">352</a>
+<a href="#line-353">353</a>
+<a href="#line-354">354</a>
+<a href="#line-355">355</a>
+<a href="#line-356">356</a>
+<a href="#line-357">357</a>
+<a href="#line-358">358</a>
+<a href="#line-359">359</a>
+<a href="#line-360">360</a>
+<a href="#line-361">361</a>
+<a href="#line-362">362</a>
+<a href="#line-363">363</a>
+<a href="#line-364">364</a>
+<a href="#line-365">365</a>
+<a href="#line-366">366</a>
+<a href="#line-367">367</a>
+<a href="#line-368">368</a>
+<a href="#line-369">369</a>
+<a href="#line-370">370</a>
+<a href="#line-371">371</a>
+<a href="#line-372">372</a>
+<a href="#line-373">373</a>
+<a href="#line-374">374</a></pre></div></td><td class="code"><div class="source"><span class="filename">Mac/Demo/mlte/mlted.py</span><pre><span></span><a name="line-1"></a><span class="c1"># A minimal text editor using MLTE. Based on wed.py.</span>
+<a name="line-2"></a><span class="c1">#</span>
+<a name="line-3"></a><span class="c1"># To be done:</span>
+<a name="line-4"></a><span class="c1"># - Functionality: find, etc.</span>
+<a name="line-5"></a>
+<a name="line-6"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/idlelib/help.py.html#line-29">Menu</a></span> <span class="kn">import</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-6">DrawMenuBar</a></span>
+<a name="line-7"></a><span class="kn">from</span> <span class="nn"><a href="/./Mac/Demo/PICTbrowse/ICONbrowse.py.html#line-3">FrameWork</a></span> <span class="kn">import</span> <span class="o">*</span>
+<a name="line-8"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/macpath.py.html#line-103">Carbon</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/plat-mac/EasyDialogs.py.html#line-29">Win</a></span>
+<a name="line-9"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/macpath.py.html#line-103">Carbon</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/plat-mac/EasyDialogs.py.html#line-30">Ctl</a></span>
+<a name="line-10"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/macpath.py.html#line-103">Carbon</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/plat-mac/EasyDialogs.py.html#line-25">Qd</a></span>
+<a name="line-11"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/macpath.py.html#line-103">Carbon</a></span> <span class="kn">import</span> <span class="n"><a href="/./Lib/plat-mac/buildtools.py.html#line-12">Res</a></span>
+<a name="line-12"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/macpath.py.html#line-103">Carbon</a></span> <span class="kn">import</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-12">Scrap</a></span>
+<a name="line-13"></a><span class="kn">import</span> <span class="nn"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span>
+<a name="line-14"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/macpath.py.html#line-103">Carbon</a></span> <span class="kn">import</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-14">MacTextEditor</a></span>
+<a name="line-15"></a><span class="kn">from</span> <span class="nn"><a href="/./Lib/macpath.py.html#line-103">Carbon</a></span> <span class="kn">import</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-15">Mlte</a></span>
+<a name="line-16"></a>
+<a name="line-17"></a><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-17">UNDOLABELS</a></span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># Indexed by MLTECanUndo() value</span>
+<a name="line-18"></a>        <span class="s2">&quot;Typing&quot;</span><span class="p">,</span> <span class="s2">&quot;Cut&quot;</span><span class="p">,</span> <span class="s2">&quot;Paste&quot;</span><span class="p">,</span> <span class="s2">&quot;Clear&quot;</span><span class="p">,</span> <span class="s2">&quot;Font Change&quot;</span><span class="p">,</span> <span class="s2">&quot;Color Change&quot;</span><span class="p">,</span> <span class="s2">&quot;Size Change&quot;</span><span class="p">,</span>
+<a name="line-19"></a>        <span class="s2">&quot;Style Change&quot;</span><span class="p">,</span> <span class="s2">&quot;Align Left&quot;</span><span class="p">,</span> <span class="s2">&quot;Align Center&quot;</span><span class="p">,</span> <span class="s2">&quot;Align Right&quot;</span><span class="p">,</span> <span class="s2">&quot;Drop&quot;</span><span class="p">,</span> <span class="s2">&quot;Move&quot;</span><span class="p">]</span>
+<a name="line-20"></a>
+<a name="line-21"></a><span class="k">class</span> <span class="nc"><a href="/./Mac/Demo/mlte/mlted.py.html#line-21">MlteWindow</a></span><span class="p">(</span><span class="n"><a href="/./Demo/tkinter/guido/solitaire.py.html#line-29">Window</a></span><span class="p">):</span>
+<a name="line-22"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">,</span> <span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span><span class="p">):</span>
+<a name="line-23"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span>
+<a name="line-24"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="o">=</span> <span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span>
+<a name="line-25"></a>        <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-81">windowbounds</a></span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<a name="line-26"></a>        <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/EasyDialogs.py.html#line-29">Win</a></span><span class="o">.</span><span class="n">NewWindow</span><span class="p">(</span><span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-150">r</a></span><span class="p">,</span> <span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="line-27"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">wid</span> <span class="o">=</span> <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span>
+<a name="line-28"></a>        <span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span> <span class="o">=</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-14">MacTextEditor</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/Carbon/MacTextEditor.py.html#line-49">kTXNDrawGrowIconMask</a></span><span class="o">|</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-14">MacTextEditor</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/Carbon/MacTextEditor.py.html#line-51">kTXNWantHScrollBarMask</a></span><span class="o">|</span> \
+<a name="line-29"></a>                        <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-14">MacTextEditor</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/Carbon/MacTextEditor.py.html#line-52">kTXNWantVScrollBarMask</a></span>
+<a name="line-30"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">frameid</span> <span class="o">=</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-15">Mlte</a></span><span class="o">.</span><span class="n">TXNNewObject</span><span class="p">(</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="n"><a href="/./Include/descrobject.h.html#line-31">flags</a></span><span class="p">,</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-14">MacTextEditor</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/Carbon/MacTextEditor.py.html#line-107">kTXNTextEditStyleFrameType</a></span><span class="p">,</span>
+<a name="line-31"></a>                        <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-14">MacTextEditor</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/Carbon/MacTextEditor.py.html#line-101">kTXNTextFile</a></span><span class="p">,</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-14">MacTextEditor</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/Carbon/MacTextEditor.py.html#line-214">kTXNMacOSEncoding</a></span><span class="p">)</span>
+<a name="line-32"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNSetData</span><span class="p">(</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-14">MacTextEditor</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/Carbon/MacTextEditor.py.html#line-110">kTXNTextData</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x7fffffff</span><span class="p">)</span>
+<a name="line-33"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-34"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-761">do_postopen</a></span><span class="p">()</span>
+<a name="line-35"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-862">do_activate</a></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">)</span>
+<a name="line-36"></a>
+<a name="line-37"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-37">do_idle</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/threads/sync.py.html#line-374">event</a></span><span class="p">):</span>
+<a name="line-38"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNIdle</span><span class="p">()</span>
+<a name="line-39"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNAdjustCursor</span><span class="p">(</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">)</span>
+<a name="line-40"></a>
+<a name="line-41"></a>
+<a name="line-42"></a>
+<a name="line-43"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/plat-mac/FrameWork.py.html#line-862">do_activate</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n">onoff</span><span class="p">,</span> <span class="n">evt</span><span class="p">):</span>
+<a name="line-44"></a>        <span class="k">if</span> <span class="n">onoff</span><span class="p">:</span>
+<a name="line-45"></a><span class="c1">##                      self.ted.TXNActivate(self.frameid, 0)</span>
+<a name="line-46"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNFocus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-47"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span>
+<a name="line-48"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-49"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNFocus</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-50"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-51"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">()</span>
+<a name="line-52"></a>
+<a name="line-53"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/pdist/rcvs.py.html#line-406">do_update</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n">wid</span><span class="p">,</span> <span class="n"><a href="/./Demo/threads/sync.py.html#line-374">event</a></span><span class="p">):</span>
+<a name="line-54"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNDraw</span><span class="p">(</span><span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">)</span>
+<a name="line-55"></a>
+<a name="line-56"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/plat-mac/FrameWork.py.html#line-823">do_postresize</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/lib-tk/Tkinter.py.html#line-3354">width</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/lib-tk/Tkinter.py.html#line-3347">height</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-232">window</a></span><span class="p">):</span>
+<a name="line-57"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNResizeFrame</span><span class="p">(</span><span class="n"><a href="/./Lib/lib-tk/Tkinter.py.html#line-3354">width</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/lib-tk/Tkinter.py.html#line-3347">height</a></span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">frameid</span><span class="p">)</span>
+<a name="line-58"></a>
+<a name="line-59"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/plat-mac/FrameWork.py.html#line-841">do_contentclick</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/cmptree.py.html#line-30">local</a></span><span class="p">,</span> <span class="n">modifiers</span><span class="p">,</span> <span class="n">evt</span><span class="p">):</span>
+<a name="line-60"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNClick</span><span class="p">(</span><span class="n">evt</span><span class="p">)</span>
+<a name="line-61"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">()</span>
+<a name="line-62"></a>
+<a name="line-63"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/plat-mac/FrameWork.py.html#line-378">do_char</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Include/unicodeobject.h.html#line-1350">ch</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/threads/sync.py.html#line-374">event</a></span><span class="p">):</span>
+<a name="line-64"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNKeyDown</span><span class="p">(</span><span class="n"><a href="/./Demo/threads/sync.py.html#line-374">event</a></span><span class="p">)</span>
+<a name="line-65"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">()</span>
+<a name="line-66"></a>
+<a name="line-67"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/pdist/rcvs.py.html#line-363">close</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-68"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span><span class="p">:</span>
+<a name="line-69"></a>            <span class="n"><a href="/./Demo/tkinter/guido/ss1.py.html#line-211">save</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/EasyDialogs.py.html#line-183">AskYesNoCancel</a></span><span class="p">(</span><span class="s1">&#39;Save window &quot;</span><span class="si">%s</span><span class="s1">&quot; before closing?&#39;</span><span class="o">%</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="line-70"></a>            <span class="k">if</span> <span class="n"><a href="/./Demo/tkinter/guido/ss1.py.html#line-211">save</a></span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a name="line-71"></a>                <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-81">menu_save</a></span><span class="p">()</span>
+<a name="line-72"></a>            <span class="k">elif</span> <span class="n"><a href="/./Demo/tkinter/guido/ss1.py.html#line-211">save</a></span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<a name="line-73"></a>                <span class="k">return</span>
+<a name="line-74"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span> <span class="o">==</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">:</span>
+<a name="line-75"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-76"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNDeleteObject</span><span class="p">()</span>
+<a name="line-77"></a>        <span class="k">del</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span>
+<a name="line-78"></a><span class="c1">##              del self.tedtexthandle</span>
+<a name="line-79"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-1064">do_postclose</a></span><span class="p">()</span>
+<a name="line-80"></a>
+<a name="line-81"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-81">menu_save</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-82"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">:</span>
+<a name="line-83"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-93">menu_save_as</a></span><span class="p">()</span>
+<a name="line-84"></a>            <span class="k">return</span> <span class="c1"># Will call us recursively</span>
+<a name="line-85"></a>        <span class="n">dhandle</span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNGetData</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0x7fffffff</span><span class="p">)</span>
+<a name="line-86"></a>        <span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span> <span class="o">=</span> <span class="n">dhandle</span><span class="o">.</span><span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span>
+<a name="line-87"></a>        <span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span> <span class="o">=</span> <span class="nb"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>  <span class="c1"># NOTE: wb, because data has CR for end-of-line</span>
+<a name="line-88"></a>        <span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span><span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span><span class="p">)</span>
+<a name="line-89"></a>        <span class="k">if</span> <span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&gt;</span> <span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">:</span> <span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-7">write</a></span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)</span>
+<a name="line-90"></a>        <span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-363">close</a></span><span class="p">()</span>
+<a name="line-91"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-92"></a>
+<a name="line-93"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-93">menu_save_as</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-94"></a>        <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/EasyDialogs.py.html#line-683">AskFileForSave</a></span><span class="p">(</span><span class="n"><a href="/./Demo/scripts/mboxconvert.py.html#line-81">message</a></span><span class="o">=</span><span class="s1">&#39;Save as:&#39;</span><span class="p">)</span>
+<a name="line-95"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">:</span> <span class="k">return</span>
+<a name="line-96"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span>
+<a name="line-97"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/kill.py.html#line-6">split</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<a name="line-98"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">wid</span><span class="o">.</span><span class="n">SetWTitle</span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">)</span>
+<a name="line-99"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-81">menu_save</a></span><span class="p">()</span>
+<a name="line-100"></a>
+<a name="line-101"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-101">menu_cut</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-102"></a><span class="c1">##              self.ted.WESelView()</span>
+<a name="line-103"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNCut</span><span class="p">()</span>
+<a name="line-104"></a><span class="c1">###             Mlte.ConvertToPublicScrap()</span>
+<a name="line-105"></a><span class="c1">##              Scrap.ZeroScrap()</span>
+<a name="line-106"></a><span class="c1">##              self.ted.WECut()</span>
+<a name="line-107"></a><span class="c1">##              self.updatescrollbars()</span>
+<a name="line-108"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">()</span>
+<a name="line-109"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-110"></a>
+<a name="line-111"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-111">menu_copy</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-112"></a><span class="c1">##              Scrap.ZeroScrap()</span>
+<a name="line-113"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNCopy</span><span class="p">()</span>
+<a name="line-114"></a><span class="c1">###             Mlte.ConvertToPublicScrap()</span>
+<a name="line-115"></a><span class="c1">##              self.updatescrollbars()</span>
+<a name="line-116"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">()</span>
+<a name="line-117"></a>
+<a name="line-118"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-118">menu_paste</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-119"></a><span class="c1">###             Mlte.ConvertFromPublicScrap()</span>
+<a name="line-120"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNPaste</span><span class="p">()</span>
+<a name="line-121"></a><span class="c1">##              self.updatescrollbars()</span>
+<a name="line-122"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">()</span>
+<a name="line-123"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-124"></a>
+<a name="line-125"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-125">menu_clear</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-126"></a><span class="c1">##              self.ted.WESelView()</span>
+<a name="line-127"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNClear</span><span class="p">()</span>
+<a name="line-128"></a><span class="c1">##              self.updatescrollbars()</span>
+<a name="line-129"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">()</span>
+<a name="line-130"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-131"></a>
+<a name="line-132"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-132">menu_undo</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-133"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNUndo</span><span class="p">()</span>
+<a name="line-134"></a><span class="c1">##              self.updatescrollbars()</span>
+<a name="line-135"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">()</span>
+<a name="line-136"></a>
+<a name="line-137"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-137">menu_redo</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-138"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNRedo</span><span class="p">()</span>
+<a name="line-139"></a><span class="c1">##              self.updatescrollbars()</span>
+<a name="line-140"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/telnet.py.html#line-66">parent</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">()</span>
+<a name="line-141"></a>
+<a name="line-142"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-142">have_selection</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-143"></a>        <span class="n"><a href="/./Demo/turtle/tdemo_penrose.py.html#line-128">start</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/tkinter/guido/brownian.py.html#line-17">stop</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNGetSelection</span><span class="p">()</span>
+<a name="line-144"></a>        <span class="k">return</span> <span class="n"><a href="/./Demo/turtle/tdemo_penrose.py.html#line-128">start</a></span> <span class="o">&lt;</span> <span class="n"><a href="/./Demo/tkinter/guido/brownian.py.html#line-17">stop</a></span>
+<a name="line-145"></a>
+<a name="line-146"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-146">can_paste</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-147"></a>        <span class="k">return</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-15">Mlte</a></span><span class="o">.</span><span class="n">TXNIsScrapPastable</span><span class="p">()</span>
+<a name="line-148"></a>
+<a name="line-149"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-149">can_undo</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-150"></a>        <span class="n"><a href="/./Lib/plat-mac/macerrors.py.html#line-370">can</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/CodeWarrior_suite.py.html#line-252">which</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNCanUndo</span><span class="p">()</span>
+<a name="line-151"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Lib/plat-mac/macerrors.py.html#line-370">can</a></span><span class="p">:</span>
+<a name="line-152"></a>            <span class="k">return</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-153"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/CodeWarrior_suite.py.html#line-252">which</a></span> <span class="o">&gt;=</span> <span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-17">UNDOLABELS</a></span><span class="p">):</span>
+<a name="line-154"></a>            <span class="c1"># Unspecified undo</span>
+<a name="line-155"></a>            <span class="k">return</span> <span class="s2">&quot;Undo&quot;</span>
+<a name="line-156"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/CodeWarrior_suite.py.html#line-252">which</a></span> <span class="o">=</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-17">UNDOLABELS</a></span><span class="p">[</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/CodeWarrior_suite.py.html#line-252">which</a></span><span class="p">]</span>
+<a name="line-157"></a>
+<a name="line-158"></a>        <span class="k">return</span> <span class="s2">&quot;Undo &quot;</span><span class="o">+</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/CodeWarrior_suite.py.html#line-252">which</a></span>
+<a name="line-159"></a>
+<a name="line-160"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-160">can_redo</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-161"></a>        <span class="n"><a href="/./Lib/plat-mac/macerrors.py.html#line-370">can</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/CodeWarrior_suite.py.html#line-252">which</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">ted</span><span class="o">.</span><span class="n">TXNCanRedo</span><span class="p">()</span>
+<a name="line-162"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Lib/plat-mac/macerrors.py.html#line-370">can</a></span><span class="p">:</span>
+<a name="line-163"></a>            <span class="k">return</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-164"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/CodeWarrior_suite.py.html#line-252">which</a></span> <span class="o">&gt;=</span> <span class="nb"><a href="/./Include/object.h.html#line-167">len</a></span><span class="p">(</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-17">UNDOLABELS</a></span><span class="p">):</span>
+<a name="line-165"></a>            <span class="c1"># Unspecified undo</span>
+<a name="line-166"></a>            <span class="k">return</span> <span class="s2">&quot;Redo&quot;</span>
+<a name="line-167"></a>        <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/CodeWarrior_suite.py.html#line-252">which</a></span> <span class="o">=</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-17">UNDOLABELS</a></span><span class="p">[</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/CodeWarrior_suite.py.html#line-252">which</a></span><span class="p">]</span>
+<a name="line-168"></a>
+<a name="line-169"></a>        <span class="k">return</span> <span class="s2">&quot;Redo &quot;</span><span class="o">+</span><span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/CodeWarrior_suite.py.html#line-252">which</a></span>
+<a name="line-170"></a>
+<a name="line-171"></a><span class="k">class</span> <span class="nc"><a href="/./Mac/Demo/mlte/mlted.py.html#line-171">Mlted</a></span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-105">Application</a></span><span class="p">):</span>
+<a name="line-172"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/cgi/wiki.py.html#line-21">__init__</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-173"></a>        <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-105">Application</a></span><span class="o">.</span><span class="n"><a href="/./Demo/cgi/wiki.py.html#line-21">__init__</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">)</span>
+<a name="line-174"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_binop.py.html#line-51">num</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-175"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-176"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">()</span>
+<a name="line-177"></a>
+<a name="line-178"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/plat-mac/FrameWork.py.html#line-1087">makeusermenus</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-179"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">filemenu</span> <span class="o">=</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/idlelib/help.py.html#line-29">Menu</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">menubar</span><span class="p">,</span> <span class="s2">&quot;File&quot;</span><span class="p">)</span>
+<a name="line-180"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">newitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;New window&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">)</span>
+<a name="line-181"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">openitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Open...&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/email/test/test_email.py.html#line-50">openfile</a></span><span class="p">)</span>
+<a name="line-182"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">closeitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Close&quot;</span><span class="p">,</span> <span class="s2">&quot;W&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-289">closewin</a></span><span class="p">)</span>
+<a name="line-183"></a>        <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-593">addseparator</a></span><span class="p">()</span>
+<a name="line-184"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">saveitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Save&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/ss1.py.html#line-211">save</a></span><span class="p">)</span>
+<a name="line-185"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">saveasitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Save as...&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-301">saveas</a></span><span class="p">)</span>
+<a name="line-186"></a>        <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-593">addseparator</a></span><span class="p">()</span>
+<a name="line-187"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">quititem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Quit&quot;</span><span class="p">,</span> <span class="s2">&quot;Q&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/ftplib.py.html#line-589">quit</a></span><span class="p">)</span>
+<a name="line-188"></a>
+<a name="line-189"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">editmenu</span> <span class="o">=</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/idlelib/help.py.html#line-29">Menu</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">menubar</span><span class="p">,</span> <span class="s2">&quot;Edit&quot;</span><span class="p">)</span>
+<a name="line-190"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">undoitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Undo&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/idlelib/UndoDelegator.py.html#line-188">undo</a></span><span class="p">)</span>
+<a name="line-191"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">redoitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Redo&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/idlelib/UndoDelegator.py.html#line-185">redo</a></span><span class="p">)</span>
+<a name="line-192"></a>        <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-593">addseparator</a></span><span class="p">()</span>
+<a name="line-193"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">cutitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Cut&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/idlelib/EditorWindow.py.html#line-565">cut</a></span><span class="p">)</span>
+<a name="line-194"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">copyitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Copy&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/classes/bitvec.py.html#line-158">copy</a></span><span class="p">)</span>
+<a name="line-195"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">pasteitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Paste&quot;</span><span class="p">,</span> <span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/idlelib/EditorWindow.py.html#line-576">paste</a></span><span class="p">)</span>
+<a name="line-196"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">clearitem</span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-664">MenuItem</a></span><span class="p">(</span><span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="p">,</span> <span class="s2">&quot;Clear&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/threads/sync.py.html#line-385">clear</a></span><span class="p">)</span>
+<a name="line-197"></a>
+<a name="line-198"></a>        <span class="c1"># Groups of items enabled together:</span>
+<a name="line-199"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">windowgroup</span> <span class="o">=</span> <span class="p">[</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">closeitem</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">saveitem</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">saveasitem</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">editmenu</span><span class="p">]</span>
+<a name="line-200"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">focusgroup</span> <span class="o">=</span> <span class="p">[</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">cutitem</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">copyitem</span><span class="p">,</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">clearitem</span><span class="p">]</span>
+<a name="line-201"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">windowgroup_on</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="line-202"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">focusgroup_on</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="line-203"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">pastegroup_on</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="line-204"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">undo_label</span> <span class="o">=</span> <span class="s2">&quot;never&quot;</span>
+<a name="line-205"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">redo_label</span> <span class="o">=</span> <span class="s2">&quot;never&quot;</span>
+<a name="line-206"></a>
+<a name="line-207"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-207">updatemenubar</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">):</span>
+<a name="line-208"></a>        <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">0</span>
+<a name="line-209"></a>        <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="o">=</span> <span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span> <span class="o">&lt;&gt;</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span><span class="p">)</span>
+<a name="line-210"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="o">&lt;&gt;</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">windowgroup_on</span><span class="p">:</span>
+<a name="line-211"></a>            <span class="k">for</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="ow">in</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">windowgroup</span><span class="p">:</span>
+<a name="line-212"></a>                <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="o">.</span><span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-5">enable</a></span><span class="p">(</span><span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span><span class="p">)</span>
+<a name="line-213"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">windowgroup_on</span> <span class="o">=</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span>
+<a name="line-214"></a>            <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-215"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span><span class="p">:</span>
+<a name="line-216"></a>            <span class="c1"># only if we have an edit menu</span>
+<a name="line-217"></a>            <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-142">have_selection</a></span><span class="p">()</span>
+<a name="line-218"></a>            <span class="k">if</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="o">&lt;&gt;</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">focusgroup_on</span><span class="p">:</span>
+<a name="line-219"></a>                <span class="k">for</span> <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span> <span class="ow">in</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">focusgroup</span><span class="p">:</span>
+<a name="line-220"></a>                    <span class="n"><a href="/./Demo/newmetaclasses/Eiffel.py.html#line-93">m</a></span><span class="o">.</span><span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-5">enable</a></span><span class="p">(</span><span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span><span class="p">)</span>
+<a name="line-221"></a>                <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">focusgroup_on</span> <span class="o">=</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span>
+<a name="line-222"></a>                <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-223"></a>            <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-146">can_paste</a></span><span class="p">()</span>
+<a name="line-224"></a>            <span class="k">if</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="o">&lt;&gt;</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">pastegroup_on</span><span class="p">:</span>
+<a name="line-225"></a>                <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">pasteitem</span><span class="o">.</span><span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-5">enable</a></span><span class="p">(</span><span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span><span class="p">)</span>
+<a name="line-226"></a>                <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">pastegroup_on</span> <span class="o">=</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span>
+<a name="line-227"></a>                <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-228"></a>            <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-149">can_undo</a></span><span class="p">()</span>
+<a name="line-229"></a>            <span class="k">if</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="o">&lt;&gt;</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">undo_label</span><span class="p">:</span>
+<a name="line-230"></a>                <span class="k">if</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span><span class="p">:</span>
+<a name="line-231"></a>                    <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">undoitem</span><span class="o">.</span><span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-5">enable</a></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-232"></a>                    <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">undoitem</span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-683">settext</a></span><span class="p">(</span><span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span><span class="p">)</span>
+<a name="line-233"></a>                    <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">undo_label</span> <span class="o">=</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span>
+<a name="line-234"></a>                <span class="k">else</span><span class="p">:</span>
+<a name="line-235"></a>                    <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">undoitem</span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-683">settext</a></span><span class="p">(</span><span class="s2">&quot;Nothing to undo&quot;</span><span class="p">)</span>
+<a name="line-236"></a>                    <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">undoitem</span><span class="o">.</span><span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-5">enable</a></span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-237"></a>                <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-238"></a>            <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-160">can_redo</a></span><span class="p">()</span>
+<a name="line-239"></a>            <span class="k">if</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span> <span class="o">&lt;&gt;</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">redo_label</span><span class="p">:</span>
+<a name="line-240"></a>                <span class="k">if</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span><span class="p">:</span>
+<a name="line-241"></a>                    <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">redoitem</span><span class="o">.</span><span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-5">enable</a></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-242"></a>                    <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">redoitem</span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-683">settext</a></span><span class="p">(</span><span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span><span class="p">)</span>
+<a name="line-243"></a>                    <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">redo_label</span> <span class="o">=</span> <span class="n"><a href="/./Lib/test/test_sundry.py.html#line-77">on</a></span>
+<a name="line-244"></a>                <span class="k">else</span><span class="p">:</span>
+<a name="line-245"></a>                    <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">redoitem</span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-683">settext</a></span><span class="p">(</span><span class="s2">&quot;Nothing to redo&quot;</span><span class="p">)</span>
+<a name="line-246"></a>                    <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">redoitem</span><span class="o">.</span><span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-5">enable</a></span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-247"></a>                <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span> <span class="o">=</span> <span class="mi">1</span>
+<a name="line-248"></a>        <span class="k">if</span> <span class="n"><a href="/./Lib/lib2to3/pytree.py.html#line-164">changed</a></span><span class="p">:</span>
+<a name="line-249"></a>            <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-6">DrawMenuBar</a></span><span class="p">()</span>
+<a name="line-250"></a>
+<a name="line-251"></a>    <span class="c1">#</span>
+<a name="line-252"></a>    <span class="c1"># Apple menu</span>
+<a name="line-253"></a>    <span class="c1">#</span>
+<a name="line-254"></a>
+<a name="line-255"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/plat-mac/FrameWork.py.html#line-156">do_about</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="nb"><a href="/./Include/Python-ast.h.html#line-296">id</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-270">item</a></span><span class="p">,</span> <span class="n"><a href="/./Lib/plat-mac/lib-scriptpackages/CodeWarrior/Standard_Suite.py.html#line-232">window</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/threads/sync.py.html#line-374">event</a></span><span class="p">):</span>
+<a name="line-256"></a>        <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;A simple single-font text editor based on MacTextEditor&quot;</span><span class="p">)</span>
+<a name="line-257"></a>
+<a name="line-258"></a>    <span class="c1">#</span>
+<a name="line-259"></a>    <span class="c1"># File menu</span>
+<a name="line-260"></a>    <span class="c1">#</span>
+<a name="line-261"></a>
+<a name="line-262"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-263"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcslib.py.html#line-240">_open</a></span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-264"></a>
+<a name="line-265"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/email/test/test_email.py.html#line-50">openfile</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-266"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcslib.py.html#line-240">_open</a></span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-267"></a>
+<a name="line-268"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/pdist/rcslib.py.html#line-240">_open</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n">askfile</span><span class="p">):</span>
+<a name="line-269"></a>        <span class="k">if</span> <span class="n">askfile</span><span class="p">:</span>
+<a name="line-270"></a>            <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span> <span class="o">=</span> <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/EasyDialogs.py.html#line-631">AskFileForOpen</a></span><span class="p">(</span><span class="n">typeList</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;TEXT&#39;</span><span class="p">,))</span>
+<a name="line-271"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">:</span>
+<a name="line-272"></a>                <span class="k">return</span>
+<a name="line-273"></a>            <span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/cgi/wiki.py.html#line-3">os</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tkinter/guido/kill.py.html#line-6">split</a></span><span class="p">(</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<a name="line-274"></a>            <span class="k">try</span><span class="p">:</span>
+<a name="line-275"></a>                <span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span> <span class="o">=</span> <span class="nb"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="c1"># NOTE binary, we need cr as end-of-line</span>
+<a name="line-276"></a>                <span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span> <span class="o">=</span> <span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/FSProxy.py.html#line-225">read</a></span><span class="p">()</span>
+<a name="line-277"></a>                <span class="n"><a href="/./Demo/scripts/pp.py.html#line-122">fp</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-363">close</a></span><span class="p">()</span>
+<a name="line-278"></a>            <span class="k">except</span> <span class="ne">IOError</span><span class="p">,</span> <span class="n"><a href="/./Include/Python-ast.h.html#line-365">arg</a></span><span class="p">:</span>
+<a name="line-279"></a>                <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;IOERROR: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n"><a href="/./Include/Python-ast.h.html#line-365">arg</a></span><span class="p">,))</span>
+<a name="line-280"></a>                <span class="k">return</span>
+<a name="line-281"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-282"></a>            <span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span> <span class="o">=</span> <span class="bp"><a href="/./Lib/lib2to3/fixes/fix_exitfunc.py.html#line-35">None</a></span>
+<a name="line-283"></a>            <span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span> <span class="o">=</span> <span class="s2">&quot;Untitled </span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_binop.py.html#line-51">num</a></span>
+<a name="line-284"></a>            <span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<a name="line-285"></a>        <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span> <span class="o">=</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-21">MlteWindow</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">)</span>
+<a name="line-286"></a>        <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span><span class="o">.</span><span class="n"><a href="/./Lib/_pyio.py.html#line-44">open</a></span><span class="p">(</span><span class="n"><a href="/./Demo/tix/tixwidgets.py.html#line-15">path</a></span><span class="p">,</span> <span class="n"><a href="/./Doc/tools/extensions/pyspecific.py.html#line-159">name</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/sockets/broadcast.py.html#line-13">data</a></span><span class="p">)</span>
+<a name="line-287"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_binop.py.html#line-51">num</a></span> <span class="o">=</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/test/test_binop.py.html#line-51">num</a></span> <span class="o">+</span> <span class="mi">1</span>
+<a name="line-288"></a>
+<a name="line-289"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-289">closewin</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-290"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="p">:</span>
+<a name="line-291"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-363">close</a></span><span class="p">()</span>
+<a name="line-292"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-293"></a>            <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;No active window?&quot;</span><span class="p">)</span>
+<a name="line-294"></a>
+<a name="line-295"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/tkinter/guido/ss1.py.html#line-211">save</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-296"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="p">:</span>
+<a name="line-297"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-81">menu_save</a></span><span class="p">()</span>
+<a name="line-298"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-299"></a>            <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;No active window?&quot;</span><span class="p">)</span>
+<a name="line-300"></a>
+<a name="line-301"></a>    <span class="k">def</span> <span class="nf"><a href="/./Mac/Demo/mlte/mlted.py.html#line-301">saveas</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-302"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="p">:</span>
+<a name="line-303"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-93">menu_save_as</a></span><span class="p">()</span>
+<a name="line-304"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-305"></a>            <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;No active window?&quot;</span><span class="p">)</span>
+<a name="line-306"></a>
+<a name="line-307"></a>
+<a name="line-308"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/ftplib.py.html#line-589">quit</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-309"></a>        <span class="k">for</span> <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span> <span class="ow">in</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">_windows</span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/cvslib.py.html#line-264">values</a></span><span class="p">():</span>
+<a name="line-310"></a>            <span class="n"><a href="/./Lib/bsddb/dbshelve.py.html#line-56">w</a></span><span class="o">.</span><span class="n"><a href="/./Demo/pdist/rcvs.py.html#line-363">close</a></span><span class="p">()</span>
+<a name="line-311"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n">_windows</span><span class="p">:</span>
+<a name="line-312"></a>            <span class="k">return</span>
+<a name="line-313"></a>        <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Lib/plat-mac/FrameWork.py.html#line-139">_quit</a></span><span class="p">()</span>
+<a name="line-314"></a>
+<a name="line-315"></a>    <span class="c1">#</span>
+<a name="line-316"></a>    <span class="c1"># Edit menu</span>
+<a name="line-317"></a>    <span class="c1">#</span>
+<a name="line-318"></a>
+<a name="line-319"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/idlelib/UndoDelegator.py.html#line-188">undo</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-320"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="p">:</span>
+<a name="line-321"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-132">menu_undo</a></span><span class="p">()</span>
+<a name="line-322"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-323"></a>            <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;No active window?&quot;</span><span class="p">)</span>
+<a name="line-324"></a>
+<a name="line-325"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/idlelib/UndoDelegator.py.html#line-185">redo</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-326"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="p">:</span>
+<a name="line-327"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-137">menu_redo</a></span><span class="p">()</span>
+<a name="line-328"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-329"></a>            <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;No active window?&quot;</span><span class="p">)</span>
+<a name="line-330"></a>
+<a name="line-331"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/idlelib/EditorWindow.py.html#line-565">cut</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-332"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="p">:</span>
+<a name="line-333"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-101">menu_cut</a></span><span class="p">()</span>
+<a name="line-334"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-335"></a>            <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;No active window?&quot;</span><span class="p">)</span>
+<a name="line-336"></a>
+<a name="line-337"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/classes/bitvec.py.html#line-158">copy</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-338"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="p">:</span>
+<a name="line-339"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-111">menu_copy</a></span><span class="p">()</span>
+<a name="line-340"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-341"></a>            <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;No active window?&quot;</span><span class="p">)</span>
+<a name="line-342"></a>
+<a name="line-343"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/idlelib/EditorWindow.py.html#line-576">paste</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-344"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="p">:</span>
+<a name="line-345"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-118">menu_paste</a></span><span class="p">()</span>
+<a name="line-346"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-347"></a>            <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;No active window?&quot;</span><span class="p">)</span>
+<a name="line-348"></a>
+<a name="line-349"></a>    <span class="k">def</span> <span class="nf"><a href="/./Demo/threads/sync.py.html#line-385">clear</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="o">*</span><span class="n"><a href="/./Include/Python-ast.h.html#line-213">args</a></span><span class="p">):</span>
+<a name="line-350"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="p">:</span>
+<a name="line-351"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-125">menu_clear</a></span><span class="p">()</span>
+<a name="line-352"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-353"></a>            <span class="n"><a href="/./Lib/plat-mac/Audio_mac.py.html#line-106">EasyDialogs</a></span><span class="o">.</span><span class="n"><a href="/./Doc/includes/email-dir.py.html#line-14">Message</a></span><span class="p">(</span><span class="s2">&quot;No active window?&quot;</span><span class="p">)</span>
+<a name="line-354"></a>
+<a name="line-355"></a>    <span class="c1">#</span>
+<a name="line-356"></a>    <span class="c1"># Other stuff</span>
+<a name="line-357"></a>    <span class="c1">#</span>
+<a name="line-358"></a>
+<a name="line-359"></a>    <span class="k">def</span> <span class="nf"><a href="/./Lib/plat-mac/FrameWork.py.html#line-201">idle</a></span><span class="p">(</span><span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="p">,</span> <span class="n"><a href="/./Demo/threads/sync.py.html#line-374">event</a></span><span class="p">):</span>
+<a name="line-360"></a>        <span class="k">if</span> <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="p">:</span>
+<a name="line-361"></a>            <span class="bp"><a href="/./Include/weakrefobject.h.html#line-64">self</a></span><span class="o">.</span><span class="n"><a href="/./Modules/_hotshot.c.html#line-85">active</a></span><span class="o">.</span><span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-37">do_idle</a></span><span class="p">(</span><span class="n"><a href="/./Demo/threads/sync.py.html#line-374">event</a></span><span class="p">)</span>
+<a name="line-362"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="line-363"></a>            <span class="n"><a href="/./Lib/plat-mac/EasyDialogs.py.html#line-25">Qd</a></span><span class="o">.</span><span class="n">SetCursor</span><span class="p">(</span><span class="n"><a href="/./Lib/plat-mac/EasyDialogs.py.html#line-25">Qd</a></span><span class="o">.</span><span class="n">GetQDGlobalsArrow</span><span class="p">())</span>
+<a name="line-364"></a>
+<a name="line-365"></a><span class="k">def</span> <span class="nf"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">():</span>
+<a name="line-366"></a>    <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-15">Mlte</a></span><span class="o">.</span><span class="n">TXNInitTextension</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="line-367"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="line-368"></a>        <span class="n"><a href="/./Demo/tkinter/guido/newmenubardemo.py.html#line-7">App</a></span> <span class="o">=</span> <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-171">Mlted</a></span><span class="p">()</span>
+<a name="line-369"></a>        <span class="n"><a href="/./Demo/tkinter/guido/newmenubardemo.py.html#line-7">App</a></span><span class="o">.</span><span class="n"><a href="/./Demo/tix/samples/Balloon.py.html#line-58">mainloop</a></span><span class="p">()</span>
+<a name="line-370"></a>    <span class="k">finally</span><span class="p">:</span>
+<a name="line-371"></a>        <span class="n"><a href="/./Mac/Demo/mlte/mlted.py.html#line-15">Mlte</a></span><span class="o">.</span><span class="n">TXNTerminateTextension</span><span class="p">()</span>
+<a name="line-372"></a>
+<a name="line-373"></a><span class="k">if</span> <span class="n"><a href="/./Lib/test/test_pydoc.py.html#line-351">__name__</a></span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="line-374"></a>    <span class="n"><a href="/./Demo/cgi/cgi2.py.html#line-9">main</a></span><span class="p">()</span>
+</pre></div>
+</td></tr></table></body>
+</html>

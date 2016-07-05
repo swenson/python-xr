@@ -1,0 +1,750 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1">  1</a>
+<a href="#line-2">  2</a>
+<a href="#line-3">  3</a>
+<a href="#line-4">  4</a>
+<a href="#line-5">  5</a>
+<a href="#line-6">  6</a>
+<a href="#line-7">  7</a>
+<a href="#line-8">  8</a>
+<a href="#line-9">  9</a>
+<a href="#line-10"> 10</a>
+<a href="#line-11"> 11</a>
+<a href="#line-12"> 12</a>
+<a href="#line-13"> 13</a>
+<a href="#line-14"> 14</a>
+<a href="#line-15"> 15</a>
+<a href="#line-16"> 16</a>
+<a href="#line-17"> 17</a>
+<a href="#line-18"> 18</a>
+<a href="#line-19"> 19</a>
+<a href="#line-20"> 20</a>
+<a href="#line-21"> 21</a>
+<a href="#line-22"> 22</a>
+<a href="#line-23"> 23</a>
+<a href="#line-24"> 24</a>
+<a href="#line-25"> 25</a>
+<a href="#line-26"> 26</a>
+<a href="#line-27"> 27</a>
+<a href="#line-28"> 28</a>
+<a href="#line-29"> 29</a>
+<a href="#line-30"> 30</a>
+<a href="#line-31"> 31</a>
+<a href="#line-32"> 32</a>
+<a href="#line-33"> 33</a>
+<a href="#line-34"> 34</a>
+<a href="#line-35"> 35</a>
+<a href="#line-36"> 36</a>
+<a href="#line-37"> 37</a>
+<a href="#line-38"> 38</a>
+<a href="#line-39"> 39</a>
+<a href="#line-40"> 40</a>
+<a href="#line-41"> 41</a>
+<a href="#line-42"> 42</a>
+<a href="#line-43"> 43</a>
+<a href="#line-44"> 44</a>
+<a href="#line-45"> 45</a>
+<a href="#line-46"> 46</a>
+<a href="#line-47"> 47</a>
+<a href="#line-48"> 48</a>
+<a href="#line-49"> 49</a>
+<a href="#line-50"> 50</a>
+<a href="#line-51"> 51</a>
+<a href="#line-52"> 52</a>
+<a href="#line-53"> 53</a>
+<a href="#line-54"> 54</a>
+<a href="#line-55"> 55</a>
+<a href="#line-56"> 56</a>
+<a href="#line-57"> 57</a>
+<a href="#line-58"> 58</a>
+<a href="#line-59"> 59</a>
+<a href="#line-60"> 60</a>
+<a href="#line-61"> 61</a>
+<a href="#line-62"> 62</a>
+<a href="#line-63"> 63</a>
+<a href="#line-64"> 64</a>
+<a href="#line-65"> 65</a>
+<a href="#line-66"> 66</a>
+<a href="#line-67"> 67</a>
+<a href="#line-68"> 68</a>
+<a href="#line-69"> 69</a>
+<a href="#line-70"> 70</a>
+<a href="#line-71"> 71</a>
+<a href="#line-72"> 72</a>
+<a href="#line-73"> 73</a>
+<a href="#line-74"> 74</a>
+<a href="#line-75"> 75</a>
+<a href="#line-76"> 76</a>
+<a href="#line-77"> 77</a>
+<a href="#line-78"> 78</a>
+<a href="#line-79"> 79</a>
+<a href="#line-80"> 80</a>
+<a href="#line-81"> 81</a>
+<a href="#line-82"> 82</a>
+<a href="#line-83"> 83</a>
+<a href="#line-84"> 84</a>
+<a href="#line-85"> 85</a>
+<a href="#line-86"> 86</a>
+<a href="#line-87"> 87</a>
+<a href="#line-88"> 88</a>
+<a href="#line-89"> 89</a>
+<a href="#line-90"> 90</a>
+<a href="#line-91"> 91</a>
+<a href="#line-92"> 92</a>
+<a href="#line-93"> 93</a>
+<a href="#line-94"> 94</a>
+<a href="#line-95"> 95</a>
+<a href="#line-96"> 96</a>
+<a href="#line-97"> 97</a>
+<a href="#line-98"> 98</a>
+<a href="#line-99"> 99</a>
+<a href="#line-100">100</a>
+<a href="#line-101">101</a>
+<a href="#line-102">102</a>
+<a href="#line-103">103</a>
+<a href="#line-104">104</a>
+<a href="#line-105">105</a>
+<a href="#line-106">106</a>
+<a href="#line-107">107</a>
+<a href="#line-108">108</a>
+<a href="#line-109">109</a>
+<a href="#line-110">110</a>
+<a href="#line-111">111</a>
+<a href="#line-112">112</a>
+<a href="#line-113">113</a>
+<a href="#line-114">114</a>
+<a href="#line-115">115</a>
+<a href="#line-116">116</a>
+<a href="#line-117">117</a>
+<a href="#line-118">118</a>
+<a href="#line-119">119</a>
+<a href="#line-120">120</a>
+<a href="#line-121">121</a>
+<a href="#line-122">122</a>
+<a href="#line-123">123</a>
+<a href="#line-124">124</a>
+<a href="#line-125">125</a>
+<a href="#line-126">126</a>
+<a href="#line-127">127</a>
+<a href="#line-128">128</a>
+<a href="#line-129">129</a>
+<a href="#line-130">130</a>
+<a href="#line-131">131</a>
+<a href="#line-132">132</a>
+<a href="#line-133">133</a>
+<a href="#line-134">134</a>
+<a href="#line-135">135</a>
+<a href="#line-136">136</a>
+<a href="#line-137">137</a>
+<a href="#line-138">138</a>
+<a href="#line-139">139</a>
+<a href="#line-140">140</a>
+<a href="#line-141">141</a>
+<a href="#line-142">142</a>
+<a href="#line-143">143</a>
+<a href="#line-144">144</a>
+<a href="#line-145">145</a>
+<a href="#line-146">146</a>
+<a href="#line-147">147</a>
+<a href="#line-148">148</a>
+<a href="#line-149">149</a>
+<a href="#line-150">150</a>
+<a href="#line-151">151</a>
+<a href="#line-152">152</a>
+<a href="#line-153">153</a>
+<a href="#line-154">154</a>
+<a href="#line-155">155</a>
+<a href="#line-156">156</a>
+<a href="#line-157">157</a>
+<a href="#line-158">158</a>
+<a href="#line-159">159</a>
+<a href="#line-160">160</a>
+<a href="#line-161">161</a>
+<a href="#line-162">162</a>
+<a href="#line-163">163</a>
+<a href="#line-164">164</a>
+<a href="#line-165">165</a>
+<a href="#line-166">166</a>
+<a href="#line-167">167</a>
+<a href="#line-168">168</a>
+<a href="#line-169">169</a>
+<a href="#line-170">170</a>
+<a href="#line-171">171</a>
+<a href="#line-172">172</a>
+<a href="#line-173">173</a>
+<a href="#line-174">174</a>
+<a href="#line-175">175</a>
+<a href="#line-176">176</a>
+<a href="#line-177">177</a>
+<a href="#line-178">178</a>
+<a href="#line-179">179</a>
+<a href="#line-180">180</a>
+<a href="#line-181">181</a>
+<a href="#line-182">182</a>
+<a href="#line-183">183</a>
+<a href="#line-184">184</a>
+<a href="#line-185">185</a>
+<a href="#line-186">186</a>
+<a href="#line-187">187</a>
+<a href="#line-188">188</a>
+<a href="#line-189">189</a>
+<a href="#line-190">190</a>
+<a href="#line-191">191</a>
+<a href="#line-192">192</a>
+<a href="#line-193">193</a>
+<a href="#line-194">194</a>
+<a href="#line-195">195</a>
+<a href="#line-196">196</a>
+<a href="#line-197">197</a>
+<a href="#line-198">198</a>
+<a href="#line-199">199</a>
+<a href="#line-200">200</a>
+<a href="#line-201">201</a>
+<a href="#line-202">202</a>
+<a href="#line-203">203</a>
+<a href="#line-204">204</a>
+<a href="#line-205">205</a>
+<a href="#line-206">206</a>
+<a href="#line-207">207</a>
+<a href="#line-208">208</a>
+<a href="#line-209">209</a>
+<a href="#line-210">210</a>
+<a href="#line-211">211</a>
+<a href="#line-212">212</a>
+<a href="#line-213">213</a>
+<a href="#line-214">214</a>
+<a href="#line-215">215</a>
+<a href="#line-216">216</a>
+<a href="#line-217">217</a>
+<a href="#line-218">218</a>
+<a href="#line-219">219</a>
+<a href="#line-220">220</a>
+<a href="#line-221">221</a>
+<a href="#line-222">222</a>
+<a href="#line-223">223</a>
+<a href="#line-224">224</a>
+<a href="#line-225">225</a>
+<a href="#line-226">226</a>
+<a href="#line-227">227</a>
+<a href="#line-228">228</a>
+<a href="#line-229">229</a>
+<a href="#line-230">230</a>
+<a href="#line-231">231</a>
+<a href="#line-232">232</a>
+<a href="#line-233">233</a>
+<a href="#line-234">234</a>
+<a href="#line-235">235</a>
+<a href="#line-236">236</a>
+<a href="#line-237">237</a>
+<a href="#line-238">238</a>
+<a href="#line-239">239</a>
+<a href="#line-240">240</a>
+<a href="#line-241">241</a>
+<a href="#line-242">242</a>
+<a href="#line-243">243</a>
+<a href="#line-244">244</a>
+<a href="#line-245">245</a>
+<a href="#line-246">246</a>
+<a href="#line-247">247</a>
+<a href="#line-248">248</a>
+<a href="#line-249">249</a>
+<a href="#line-250">250</a>
+<a href="#line-251">251</a>
+<a href="#line-252">252</a>
+<a href="#line-253">253</a>
+<a href="#line-254">254</a>
+<a href="#line-255">255</a>
+<a href="#line-256">256</a>
+<a href="#line-257">257</a>
+<a href="#line-258">258</a>
+<a href="#line-259">259</a>
+<a href="#line-260">260</a>
+<a href="#line-261">261</a>
+<a href="#line-262">262</a>
+<a href="#line-263">263</a>
+<a href="#line-264">264</a>
+<a href="#line-265">265</a>
+<a href="#line-266">266</a>
+<a href="#line-267">267</a>
+<a href="#line-268">268</a>
+<a href="#line-269">269</a>
+<a href="#line-270">270</a>
+<a href="#line-271">271</a>
+<a href="#line-272">272</a>
+<a href="#line-273">273</a>
+<a href="#line-274">274</a>
+<a href="#line-275">275</a>
+<a href="#line-276">276</a>
+<a href="#line-277">277</a>
+<a href="#line-278">278</a>
+<a href="#line-279">279</a>
+<a href="#line-280">280</a>
+<a href="#line-281">281</a>
+<a href="#line-282">282</a>
+<a href="#line-283">283</a>
+<a href="#line-284">284</a>
+<a href="#line-285">285</a>
+<a href="#line-286">286</a>
+<a href="#line-287">287</a>
+<a href="#line-288">288</a>
+<a href="#line-289">289</a>
+<a href="#line-290">290</a>
+<a href="#line-291">291</a>
+<a href="#line-292">292</a>
+<a href="#line-293">293</a>
+<a href="#line-294">294</a>
+<a href="#line-295">295</a>
+<a href="#line-296">296</a>
+<a href="#line-297">297</a>
+<a href="#line-298">298</a>
+<a href="#line-299">299</a>
+<a href="#line-300">300</a>
+<a href="#line-301">301</a>
+<a href="#line-302">302</a>
+<a href="#line-303">303</a>
+<a href="#line-304">304</a>
+<a href="#line-305">305</a>
+<a href="#line-306">306</a>
+<a href="#line-307">307</a>
+<a href="#line-308">308</a>
+<a href="#line-309">309</a>
+<a href="#line-310">310</a>
+<a href="#line-311">311</a>
+<a href="#line-312">312</a>
+<a href="#line-313">313</a>
+<a href="#line-314">314</a>
+<a href="#line-315">315</a>
+<a href="#line-316">316</a>
+<a href="#line-317">317</a>
+<a href="#line-318">318</a>
+<a href="#line-319">319</a>
+<a href="#line-320">320</a>
+<a href="#line-321">321</a>
+<a href="#line-322">322</a>
+<a href="#line-323">323</a>
+<a href="#line-324">324</a>
+<a href="#line-325">325</a>
+<a href="#line-326">326</a>
+<a href="#line-327">327</a>
+<a href="#line-328">328</a>
+<a href="#line-329">329</a>
+<a href="#line-330">330</a>
+<a href="#line-331">331</a>
+<a href="#line-332">332</a>
+<a href="#line-333">333</a></pre></div></td><td class="code"><div class="source"><span class="filename">PC/os2emx/pyconfig.h</span><pre><span></span><a name="line-1"></a><span class="cp">#ifndef Py_CONFIG_H</span>
+<a name="line-2"></a><span class="cp">#define Py_CONFIG_H</span>
+<a name="line-3"></a>
+<a name="line-4"></a><span class="cm">/* config.h.</span>
+<a name="line-5"></a><span class="cm"> * At some time in the past, generated automatically by/from configure.</span>
+<a name="line-6"></a><span class="cm"> * now maintained manually.</span>
+<a name="line-7"></a><span class="cm"> */</span>
+<a name="line-8"></a>
+<a name="line-9"></a><span class="cm">/* build environment */</span>
+<a name="line-10"></a><span class="cp">#define PLATFORM	&quot;os2emx&quot;</span>
+<a name="line-11"></a><span class="cp">#define COMPILER	&quot;[EMX GCC &quot; __VERSION__ &quot;]&quot;</span>
+<a name="line-12"></a><span class="cp">#define PYOS_OS2	1</span>
+<a name="line-13"></a><span class="cp">#define PYCC_GCC	1</span>
+<a name="line-14"></a>
+<a name="line-15"></a><span class="cm">/* default location(s) */</span>
+<a name="line-16"></a><span class="cp">#ifndef PREFIX</span>
+<a name="line-17"></a><span class="cp">#define PREFIX		&quot;&quot;</span>
+<a name="line-18"></a><span class="cp">#endif</span>
+<a name="line-19"></a><span class="cp">#ifndef PYTHONPATH</span>
+<a name="line-20"></a><span class="cp">#define PYTHONPATH	&quot;./Lib;./Lib/plat-&quot; PLATFORM \</span>
+<a name="line-21"></a><span class="cp">			&quot;;./Lib/lib-dynload;./Lib/site-packages&quot;</span>
+<a name="line-22"></a><span class="cp">#endif</span>
+<a name="line-23"></a>
+<a name="line-24"></a><span class="cm">/* Debugging */</span>
+<a name="line-25"></a><span class="cp">#ifndef Py_DEBUG</span>
+<a name="line-26"></a><span class="cm">/*#define Py_DEBUG 1*/</span>
+<a name="line-27"></a><span class="cp">#endif</span>
+<a name="line-28"></a>
+<a name="line-29"></a><span class="cm">/* if building an extension or wrapper executable,</span>
+<a name="line-30"></a><span class="cm"> * mark Python API symbols &quot;extern&quot; so that symbols</span>
+<a name="line-31"></a><span class="cm"> * imported from the Python core DLL aren&#39;t duplicated.</span>
+<a name="line-32"></a><span class="cm"> */</span>
+<a name="line-33"></a><span class="cp">#ifdef Py_BUILD_CORE</span>
+<a name="line-34"></a><span class="cp">#  define PyAPI_FUNC(RTYPE)	RTYPE</span>
+<a name="line-35"></a><span class="cp">#else</span>
+<a name="line-36"></a><span class="cp">#  define PyAPI_FUNC(RTYPE)	extern RTYPE</span>
+<a name="line-37"></a><span class="cp">#endif</span>
+<a name="line-38"></a><span class="cp">#define PyAPI_DATA(RTYPE)	extern RTYPE</span>
+<a name="line-39"></a><span class="cp">#define PyMODINIT_FUNC	void</span>
+<a name="line-40"></a>
+<a name="line-41"></a><span class="cm">/* Use OS/2 flavour of threads */</span>
+<a name="line-42"></a><span class="cp">#define WITH_THREAD	1</span>
+<a name="line-43"></a><span class="cp">#define OS2_THREADS	1</span>
+<a name="line-44"></a>
+<a name="line-45"></a><span class="cm">/* We want sockets */</span>
+<a name="line-46"></a><span class="cp">#define TCPIPV4		1</span>
+<a name="line-47"></a><span class="cp">#define USE_SOCKET	1</span>
+<a name="line-48"></a><span class="cp">#define socklen_t	int</span>
+<a name="line-49"></a><span class="cp">#define FD_SETSIZE	1024</span>
+<a name="line-50"></a>
+<a name="line-51"></a><span class="cm">/* enable the Python object allocator */</span>
+<a name="line-52"></a><span class="cp">#define	WITH_PYMALLOC	1</span>
+<a name="line-53"></a>
+<a name="line-54"></a><span class="cm">/* enable the GC module */</span>
+<a name="line-55"></a><span class="cp">#define WITH_CYCLE_GC	1</span>
+<a name="line-56"></a>
+<a name="line-57"></a><span class="cm">/* Define if you want documentation strings in extension modules */</span>
+<a name="line-58"></a><span class="cp">#define WITH_DOC_STRINGS 1</span>
+<a name="line-59"></a>
+<a name="line-60"></a><span class="cm">/* Unicode related */</span>
+<a name="line-61"></a><span class="cp">#define Py_USING_UNICODE 1</span>
+<a name="line-62"></a><span class="cp">#define PY_UNICODE_TYPE	wchar_t</span>
+<a name="line-63"></a><span class="cp">#define Py_UNICODE_SIZE SIZEOF_SHORT</span>
+<a name="line-64"></a>
+<a name="line-65"></a><span class="cm">/* EMX defines ssize_t */</span>
+<a name="line-66"></a><span class="cp">#define HAVE_SSIZE_T	1</span>
+<a name="line-67"></a>
+<a name="line-68"></a><span class="cm">/* system capabilities */</span>
+<a name="line-69"></a><span class="cp">#define HAVE_TTYNAME	1</span>
+<a name="line-70"></a><span class="cp">#define HAVE_WAIT	1</span>
+<a name="line-71"></a><span class="cp">#define HAVE_GETEGID    1</span>
+<a name="line-72"></a><span class="cp">#define HAVE_GETEUID    1</span>
+<a name="line-73"></a><span class="cp">#define HAVE_GETGID     1</span>
+<a name="line-74"></a><span class="cp">#define HAVE_GETPPID    1</span>
+<a name="line-75"></a><span class="cp">#define HAVE_GETUID     1</span>
+<a name="line-76"></a><span class="cp">#define HAVE_OPENDIR    1</span>
+<a name="line-77"></a><span class="cp">#define HAVE_PIPE       1</span>
+<a name="line-78"></a><span class="cp">#define HAVE_POPEN      1</span>
+<a name="line-79"></a><span class="cp">#define HAVE_SYSTEM	1</span>
+<a name="line-80"></a><span class="cp">#define HAVE_TTYNAME	1</span>
+<a name="line-81"></a><span class="cp">#define HAVE_DYNAMIC_LOADING	1</span>
+<a name="line-82"></a>
+<a name="line-83"></a><span class="cm">/* if port of GDBM installed, it includes NDBM emulation */</span>
+<a name="line-84"></a><span class="cp">#define HAVE_NDBM_H 1</span>
+<a name="line-85"></a>
+<a name="line-86"></a><span class="cm">/* need this for spawnv code in posixmodule (cloned from WIN32 def&#39;n) */</span>
+<a name="line-87"></a><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">intptr_t</span><span class="p">;</span>
+<a name="line-88"></a>
+<a name="line-89"></a><span class="cm">/* we don&#39;t have tm_zone but do have the external array tzname */</span>
+<a name="line-90"></a><span class="cp">#define HAVE_TZNAME 1</span>
+<a name="line-91"></a>
+<a name="line-92"></a><span class="cm">/* Define as the return type of signal handlers (int or void). */</span>
+<a name="line-93"></a><span class="cp">#define RETSIGTYPE void</span>
+<a name="line-94"></a>
+<a name="line-95"></a><span class="cm">/* Define if you have the ANSI C header files. */</span>
+<a name="line-96"></a><span class="cp">#define STDC_HEADERS 1</span>
+<a name="line-97"></a>
+<a name="line-98"></a><span class="cm">/* Define if you can safely include both &lt;sys/time.h&gt; and &lt;time.h&gt;. */</span>
+<a name="line-99"></a><span class="cp">#define TIME_WITH_SYS_TIME 1</span>
+<a name="line-100"></a>
+<a name="line-101"></a><span class="cm">/* Define this if you have the type long long. */</span>
+<a name="line-102"></a><span class="cp">#define HAVE_LONG_LONG 1</span>
+<a name="line-103"></a>
+<a name="line-104"></a><span class="cm">/* Define if your compiler supports function prototypes. */</span>
+<a name="line-105"></a><span class="cp">#define HAVE_PROTOTYPES 1</span>
+<a name="line-106"></a>
+<a name="line-107"></a><span class="cm">/* Define if your compiler supports variable length function prototypes</span>
+<a name="line-108"></a><span class="cm"> * (e.g. void fprintf(FILE *, char *, ...);) *and* &lt;stdarg.h&gt;.</span>
+<a name="line-109"></a><span class="cm"> */</span>
+<a name="line-110"></a><span class="cp">#define HAVE_STDARG_PROTOTYPES 1</span>
+<a name="line-111"></a>
+<a name="line-112"></a><span class="cm">/* Define if malloc(0) returns a NULL pointer. */</span>
+<a name="line-113"></a><span class="cp">#define MALLOC_ZERO_RETURNS_NULL 1</span>
+<a name="line-114"></a>
+<a name="line-115"></a><span class="cm">/* Define to force use of thread-safe errno, h_errno, and other functions. */</span>
+<a name="line-116"></a><span class="cp">#define _REENTRANT 1</span>
+<a name="line-117"></a>
+<a name="line-118"></a><span class="cm">/* Define if you can safely include both &lt;sys/select.h&gt; and &lt;sys/time.h&gt;</span>
+<a name="line-119"></a><span class="cm"> * (which you can&#39;t on SCO ODT 3.0).</span>
+<a name="line-120"></a><span class="cm"> */</span>
+<a name="line-121"></a><span class="cp">#define SYS_SELECT_WITH_SYS_TIME 1</span>
+<a name="line-122"></a>
+<a name="line-123"></a><span class="cm">/* The number of bytes in an off_t. */</span>
+<a name="line-124"></a><span class="cp">#define SIZEOF_OFF_T 4</span>
+<a name="line-125"></a>
+<a name="line-126"></a><span class="cm">/* The number of bytes in an time_t. */</span>
+<a name="line-127"></a><span class="cp">#define SIZEOF_TIME_T 4</span>
+<a name="line-128"></a>
+<a name="line-129"></a><span class="cm">/* The number of bytes in a short. */</span>
+<a name="line-130"></a><span class="cp">#define SIZEOF_SHORT 2</span>
+<a name="line-131"></a>
+<a name="line-132"></a><span class="cm">/* The number of bytes in a int. */</span>
+<a name="line-133"></a><span class="cp">#define SIZEOF_INT 4</span>
+<a name="line-134"></a>
+<a name="line-135"></a><span class="cm">/* The number of bytes in a long. */</span>
+<a name="line-136"></a><span class="cp">#define SIZEOF_LONG 4</span>
+<a name="line-137"></a>
+<a name="line-138"></a><span class="cm">/* The number of bytes in a long long. */</span>
+<a name="line-139"></a><span class="cp">#define SIZEOF_LONG_LONG 8</span>
+<a name="line-140"></a>
+<a name="line-141"></a><span class="cm">/* The number of bytes in a void *. */</span>
+<a name="line-142"></a><span class="cp">#define SIZEOF_VOID_P 4</span>
+<a name="line-143"></a>
+<a name="line-144"></a><span class="cm">/* The number of bytes in a size_t. */</span>
+<a name="line-145"></a><span class="cp">#define SIZEOF_SIZE_T 4</span>
+<a name="line-146"></a>
+<a name="line-147"></a><span class="cm">/* Define if you have the alarm function. */</span>
+<a name="line-148"></a><span class="cp">#define HAVE_ALARM 1</span>
+<a name="line-149"></a>
+<a name="line-150"></a><span class="cm">/* Define if you have the clock function. */</span>
+<a name="line-151"></a><span class="cp">#define HAVE_CLOCK 1</span>
+<a name="line-152"></a>
+<a name="line-153"></a><span class="cm">/* Define if you have the dup2 function. */</span>
+<a name="line-154"></a><span class="cp">#define HAVE_DUP2 1</span>
+<a name="line-155"></a>
+<a name="line-156"></a><span class="cm">/* Define if you have the execv function. */</span>
+<a name="line-157"></a><span class="cp">#define HAVE_EXECV 1</span>
+<a name="line-158"></a>
+<a name="line-159"></a><span class="cm">/* Define if you have the spawnv function. */</span>
+<a name="line-160"></a><span class="cp">#define HAVE_SPAWNV 1</span>
+<a name="line-161"></a>
+<a name="line-162"></a><span class="cm">/* Define if you have the flock function. */</span>
+<a name="line-163"></a><span class="cp">#define HAVE_FLOCK 1</span>
+<a name="line-164"></a>
+<a name="line-165"></a><span class="cm">/* Define if you have the fork function. */</span>
+<a name="line-166"></a><span class="cp">#define HAVE_FORK 1</span>
+<a name="line-167"></a>
+<a name="line-168"></a><span class="cm">/* Define if you have the fsync function. */</span>
+<a name="line-169"></a><span class="cp">#define HAVE_FSYNC 1</span>
+<a name="line-170"></a>
+<a name="line-171"></a><span class="cm">/* Define if you have the ftime function. */</span>
+<a name="line-172"></a><span class="cp">#define HAVE_FTIME 1</span>
+<a name="line-173"></a>
+<a name="line-174"></a><span class="cm">/* Define if you have the ftruncate function. */</span>
+<a name="line-175"></a><span class="cp">#define HAVE_FTRUNCATE 1</span>
+<a name="line-176"></a>
+<a name="line-177"></a><span class="cm">/* Define if you have the getcwd function. */</span>
+<a name="line-178"></a><span class="cp">#define HAVE_GETCWD 1</span>
+<a name="line-179"></a>
+<a name="line-180"></a><span class="cm">/* Define if you have the getpeername function. */</span>
+<a name="line-181"></a><span class="cp">#define HAVE_GETPEERNAME 1</span>
+<a name="line-182"></a>
+<a name="line-183"></a><span class="cm">/* Define if you have the getpgrp function. */</span>
+<a name="line-184"></a><span class="cp">#define HAVE_GETPGRP 1</span>
+<a name="line-185"></a>
+<a name="line-186"></a><span class="cm">/* Define if you have the getpid function. */</span>
+<a name="line-187"></a><span class="cp">#define HAVE_GETPID 1</span>
+<a name="line-188"></a>
+<a name="line-189"></a><span class="cm">/* Define if you have the getpwent function. */</span>
+<a name="line-190"></a><span class="cp">#define HAVE_GETPWENT 1</span>
+<a name="line-191"></a>
+<a name="line-192"></a><span class="cm">/* Define if you have the gettimeofday function. */</span>
+<a name="line-193"></a><span class="cp">#define HAVE_GETTIMEOFDAY 1</span>
+<a name="line-194"></a>
+<a name="line-195"></a><span class="cm">/* Define if you have the getwd function. */</span>
+<a name="line-196"></a><span class="cp">#define HAVE_GETWD 1</span>
+<a name="line-197"></a>
+<a name="line-198"></a><span class="cm">/* Define if you have the hypot function. */</span>
+<a name="line-199"></a><span class="cp">#define HAVE_HYPOT 1</span>
+<a name="line-200"></a>
+<a name="line-201"></a><span class="cm">/* Define if you have the kill function. */</span>
+<a name="line-202"></a><span class="cp">#define HAVE_KILL 1</span>
+<a name="line-203"></a>
+<a name="line-204"></a><span class="cm">/* Define if you have the memmove function. */</span>
+<a name="line-205"></a><span class="cp">#define HAVE_MEMMOVE 1</span>
+<a name="line-206"></a>
+<a name="line-207"></a><span class="cm">/* Define if you have the mktime function. */</span>
+<a name="line-208"></a><span class="cp">#define HAVE_MKTIME 1</span>
+<a name="line-209"></a>
+<a name="line-210"></a><span class="cm">/* Define if you have the pause function. */</span>
+<a name="line-211"></a><span class="cp">#define HAVE_PAUSE 1</span>
+<a name="line-212"></a>
+<a name="line-213"></a><span class="cm">/* Define if you have the putenv function. */</span>
+<a name="line-214"></a><span class="cp">#define HAVE_PUTENV 1</span>
+<a name="line-215"></a>
+<a name="line-216"></a><span class="cm">/* Define if you have the select function. */</span>
+<a name="line-217"></a><span class="cp">#define HAVE_SELECT 1</span>
+<a name="line-218"></a>
+<a name="line-219"></a><span class="cm">/* Define if you have the setgid function. */</span>
+<a name="line-220"></a><span class="cp">#define HAVE_SETGID 1</span>
+<a name="line-221"></a>
+<a name="line-222"></a><span class="cm">/* Define if you have the setlocale function. */</span>
+<a name="line-223"></a><span class="cp">#define HAVE_SETLOCALE 1</span>
+<a name="line-224"></a>
+<a name="line-225"></a><span class="cm">/* Define if you have the setpgid function. */</span>
+<a name="line-226"></a><span class="cp">#define HAVE_SETPGID 1</span>
+<a name="line-227"></a>
+<a name="line-228"></a><span class="cm">/* Define if you have the setuid function. */</span>
+<a name="line-229"></a><span class="cp">#define HAVE_SETUID 1</span>
+<a name="line-230"></a>
+<a name="line-231"></a><span class="cm">/* Define if you have the setvbuf function. */</span>
+<a name="line-232"></a><span class="cp">#define HAVE_SETVBUF 1</span>
+<a name="line-233"></a>
+<a name="line-234"></a><span class="cm">/* Define if you have the sigaction function. */</span>
+<a name="line-235"></a><span class="cp">#define HAVE_SIGACTION 1</span>
+<a name="line-236"></a>
+<a name="line-237"></a><span class="cm">/* Define if you have the strerror function. */</span>
+<a name="line-238"></a><span class="cp">#define HAVE_STRERROR 1</span>
+<a name="line-239"></a>
+<a name="line-240"></a><span class="cm">/* Define if you have the strftime function. */</span>
+<a name="line-241"></a><span class="cp">#define HAVE_STRFTIME 1</span>
+<a name="line-242"></a>
+<a name="line-243"></a><span class="cm">/* Define if you have the tcgetpgrp function. */</span>
+<a name="line-244"></a><span class="cp">#define HAVE_TCGETPGRP 1</span>
+<a name="line-245"></a>
+<a name="line-246"></a><span class="cm">/* Define if you have the tcsetpgrp function. */</span>
+<a name="line-247"></a><span class="cp">#define HAVE_TCSETPGRP 1</span>
+<a name="line-248"></a>
+<a name="line-249"></a><span class="cm">/* Define if you have the tmpfile function.  */</span>
+<a name="line-250"></a><span class="cp">#define HAVE_TMPFILE 1</span>
+<a name="line-251"></a>
+<a name="line-252"></a><span class="cm">/* Define if you have the times function. */</span>
+<a name="line-253"></a><span class="cp">#define HAVE_TIMES 1</span>
+<a name="line-254"></a>
+<a name="line-255"></a><span class="cm">/* Define if you have the truncate function. */</span>
+<a name="line-256"></a><span class="cp">#define HAVE_TRUNCATE 1</span>
+<a name="line-257"></a>
+<a name="line-258"></a><span class="cm">/* Define if you have the uname function. */</span>
+<a name="line-259"></a><span class="cp">#define HAVE_UNAME 1</span>
+<a name="line-260"></a>
+<a name="line-261"></a><span class="cm">/* Define if you have the waitpid function. */</span>
+<a name="line-262"></a><span class="cp">#define HAVE_WAITPID 1</span>
+<a name="line-263"></a>
+<a name="line-264"></a><span class="cm">/* Define if you have the &lt;conio.h&gt; header file. */</span>
+<a name="line-265"></a><span class="cp">#undef HAVE_CONIO_H</span>
+<a name="line-266"></a>
+<a name="line-267"></a><span class="cm">/* Define to 1 if you have the `copysign&#39; function. */</span>
+<a name="line-268"></a><span class="cp">#define HAVE_COPYSIGN 1</span>
+<a name="line-269"></a>
+<a name="line-270"></a><span class="cm">/* Define if you have the &lt;direct.h&gt; header file. */</span>
+<a name="line-271"></a><span class="cp">#undef HAVE_DIRECT_H</span>
+<a name="line-272"></a>
+<a name="line-273"></a><span class="cm">/* Define if you have the &lt;dirent.h&gt; header file. */</span>
+<a name="line-274"></a><span class="cp">#define HAVE_DIRENT_H 1</span>
+<a name="line-275"></a>
+<a name="line-276"></a><span class="cm">/* Define if you have the &lt;errno.h&gt; header file. */</span>
+<a name="line-277"></a><span class="cp">#define HAVE_ERRNO_H 1</span>
+<a name="line-278"></a>
+<a name="line-279"></a><span class="cm">/* Define if you have the &lt;fcntl.h&gt; header file. */</span>
+<a name="line-280"></a><span class="cp">#define HAVE_FCNTL_H 1</span>
+<a name="line-281"></a>
+<a name="line-282"></a><span class="cm">/* Define if you have the &lt;io.h&gt; header file. */</span>
+<a name="line-283"></a><span class="cp">#undef HAVE_IO_H</span>
+<a name="line-284"></a>
+<a name="line-285"></a><span class="cm">/* Define if you have the &lt;ncurses.h&gt; header file. */</span>
+<a name="line-286"></a><span class="cp">#define HAVE_NCURSES_H 1</span>
+<a name="line-287"></a>
+<a name="line-288"></a><span class="cm">/* Define to 1 if you have the &lt;process.h&gt; header file. */</span>
+<a name="line-289"></a><span class="cp">#define HAVE_PROCESS_H 1</span>
+<a name="line-290"></a>
+<a name="line-291"></a><span class="cm">/* Define if you have the &lt;signal.h&gt; header file. */</span>
+<a name="line-292"></a><span class="cp">#define HAVE_SIGNAL_H 1</span>
+<a name="line-293"></a>
+<a name="line-294"></a><span class="cm">/* Define if you have the &lt;sys/file.h&gt; header file. */</span>
+<a name="line-295"></a><span class="cp">#define HAVE_SYS_FILE_H 1</span>
+<a name="line-296"></a>
+<a name="line-297"></a><span class="cm">/* Define if you have the &lt;sys/param.h&gt; header file. */</span>
+<a name="line-298"></a><span class="cp">#define HAVE_SYS_PARAM_H 1</span>
+<a name="line-299"></a>
+<a name="line-300"></a><span class="cm">/* Define if you have the &lt;sys/select.h&gt; header file. */</span>
+<a name="line-301"></a><span class="cp">#define HAVE_SYS_SELECT_H 1</span>
+<a name="line-302"></a>
+<a name="line-303"></a><span class="cm">/* Define if you have the &lt;sys/stat.h&gt; header file. */</span>
+<a name="line-304"></a><span class="cp">#define HAVE_SYS_STAT_H 1</span>
+<a name="line-305"></a>
+<a name="line-306"></a><span class="cm">/* Define if you have the &lt;sys/time.h&gt; header file. */</span>
+<a name="line-307"></a><span class="cp">#define HAVE_SYS_TIME_H 1</span>
+<a name="line-308"></a>
+<a name="line-309"></a><span class="cm">/* Define if you have the &lt;sys/times.h&gt; header file. */</span>
+<a name="line-310"></a><span class="cp">#define HAVE_SYS_TIMES_H 1</span>
+<a name="line-311"></a>
+<a name="line-312"></a><span class="cm">/* Define if you have the &lt;sys/types.h&gt; header file. */</span>
+<a name="line-313"></a><span class="cp">#define HAVE_SYS_TYPES_H 1</span>
+<a name="line-314"></a>
+<a name="line-315"></a><span class="cm">/* Define if you have the &lt;sys/un.h&gt; header file. */</span>
+<a name="line-316"></a><span class="cp">#define HAVE_SYS_UN_H 1</span>
+<a name="line-317"></a>
+<a name="line-318"></a><span class="cm">/* Define if you have the &lt;sys/utsname.h&gt; header file. */</span>
+<a name="line-319"></a><span class="cp">#define HAVE_SYS_UTSNAME_H 1</span>
+<a name="line-320"></a>
+<a name="line-321"></a><span class="cm">/* Define if you have the &lt;sys/wait.h&gt; header file. */</span>
+<a name="line-322"></a><span class="cp">#define HAVE_SYS_WAIT_H 1</span>
+<a name="line-323"></a>
+<a name="line-324"></a><span class="cm">/* Define if you have the &lt;unistd.h&gt; header file. */</span>
+<a name="line-325"></a><span class="cp">#define HAVE_UNISTD_H 1</span>
+<a name="line-326"></a>
+<a name="line-327"></a><span class="cm">/* Define if you have the &lt;utime.h&gt; header file. */</span>
+<a name="line-328"></a><span class="cp">#define HAVE_UTIME_H 1</span>
+<a name="line-329"></a>
+<a name="line-330"></a><span class="cm">/* EMX has an snprintf(). */</span>
+<a name="line-331"></a><span class="cp">#define HAVE_SNPRINTF 1</span>
+<a name="line-332"></a>
+<a name="line-333"></a><span class="cp">#endif </span><span class="cm">/* !Py_CONFIG_H */</span><span class="cp"></span>
+</pre></div>
+</td></tr></table></body>
+</html>

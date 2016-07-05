@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#line-1"> 1</a>
+<a href="#line-2"> 2</a>
+<a href="#line-3"> 3</a>
+<a href="#line-4"> 4</a>
+<a href="#line-5"> 5</a>
+<a href="#line-6"> 6</a>
+<a href="#line-7"> 7</a>
+<a href="#line-8"> 8</a>
+<a href="#line-9"> 9</a>
+<a href="#line-10">10</a>
+<a href="#line-11">11</a>
+<a href="#line-12">12</a>
+<a href="#line-13">13</a>
+<a href="#line-14">14</a>
+<a href="#line-15">15</a>
+<a href="#line-16">16</a>
+<a href="#line-17">17</a>
+<a href="#line-18">18</a>
+<a href="#line-19">19</a>
+<a href="#line-20">20</a>
+<a href="#line-21">21</a>
+<a href="#line-22">22</a>
+<a href="#line-23">23</a>
+<a href="#line-24">24</a>
+<a href="#line-25">25</a>
+<a href="#line-26">26</a>
+<a href="#line-27">27</a>
+<a href="#line-28">28</a>
+<a href="#line-29">29</a>
+<a href="#line-30">30</a>
+<a href="#line-31">31</a>
+<a href="#line-32">32</a>
+<a href="#line-33">33</a>
+<a href="#line-34">34</a>
+<a href="#line-35">35</a>
+<a href="#line-36">36</a>
+<a href="#line-37">37</a>
+<a href="#line-38">38</a>
+<a href="#line-39">39</a>
+<a href="#line-40">40</a>
+<a href="#line-41">41</a>
+<a href="#line-42">42</a>
+<a href="#line-43">43</a>
+<a href="#line-44">44</a>
+<a href="#line-45">45</a>
+<a href="#line-46">46</a>
+<a href="#line-47">47</a>
+<a href="#line-48">48</a>
+<a href="#line-49">49</a>
+<a href="#line-50">50</a>
+<a href="#line-51">51</a>
+<a href="#line-52">52</a>
+<a href="#line-53">53</a>
+<a href="#line-54">54</a>
+<a href="#line-55">55</a>
+<a href="#line-56">56</a>
+<a href="#line-57">57</a>
+<a href="#line-58">58</a>
+<a href="#line-59">59</a>
+<a href="#line-60">60</a>
+<a href="#line-61">61</a>
+<a href="#line-62">62</a>
+<a href="#line-63">63</a>
+<a href="#line-64">64</a>
+<a href="#line-65">65</a>
+<a href="#line-66">66</a>
+<a href="#line-67">67</a>
+<a href="#line-68">68</a>
+<a href="#line-69">69</a>
+<a href="#line-70">70</a>
+<a href="#line-71">71</a>
+<a href="#line-72">72</a>
+<a href="#line-73">73</a>
+<a href="#line-74">74</a>
+<a href="#line-75">75</a>
+<a href="#line-76">76</a>
+<a href="#line-77">77</a>
+<a href="#line-78">78</a>
+<a href="#line-79">79</a>
+<a href="#line-80">80</a>
+<a href="#line-81">81</a>
+<a href="#line-82">82</a>
+<a href="#line-83">83</a></pre></div></td><td class="code"><div class="source"><span class="filename">Tools/msi/uuids.py</span><pre><span></span><a name="line-1"></a><span class="c1"># This should be extended for each Python release.</span>
+<a name="line-2"></a><span class="c1"># The product code must change whenever the name of the MSI file</span>
+<a name="line-3"></a><span class="c1"># changes, and when new component codes are issued for existing</span>
+<a name="line-4"></a><span class="c1"># components. See &quot;Changing the Product Code&quot;. As we change the</span>
+<a name="line-5"></a><span class="c1"># component codes with every build, we need a new product code</span>
+<a name="line-6"></a><span class="c1"># each time. For intermediate (snapshot) releases, they are automatically</span>
+<a name="line-7"></a><span class="c1"># generated. For official releases, we record the product codes,</span>
+<a name="line-8"></a><span class="c1"># so people can refer to them.</span>
+<a name="line-9"></a><span class="n"><a href="/./Tools/msi/msi.py.html#line-9">product_codes</a></span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-10"></a>    <span class="s1">&#39;2.5.101&#39;</span><span class="p">:</span> <span class="s1">&#39;{bc14ce3e-5e72-4a64-ac1f-bf59a571898c}&#39;</span><span class="p">,</span> <span class="c1"># 2.5a1</span>
+<a name="line-11"></a>    <span class="s1">&#39;2.5.102&#39;</span><span class="p">:</span> <span class="s1">&#39;{5eed51c1-8e9d-4071-94c5-b40de5d49ba5}&#39;</span><span class="p">,</span> <span class="c1"># 2.5a2</span>
+<a name="line-12"></a>    <span class="s1">&#39;2.5.103&#39;</span><span class="p">:</span> <span class="s1">&#39;{73dcd966-ffec-415f-bb39-8342c1f47017}&#39;</span><span class="p">,</span> <span class="c1"># 2.5a3</span>
+<a name="line-13"></a>    <span class="s1">&#39;2.5.111&#39;</span><span class="p">:</span> <span class="s1">&#39;{c797ecf8-a8e6-4fec-bb99-526b65f28626}&#39;</span><span class="p">,</span> <span class="c1"># 2.5b1</span>
+<a name="line-14"></a>    <span class="s1">&#39;2.5.112&#39;</span><span class="p">:</span> <span class="s1">&#39;{32beb774-f625-439d-b587-7187487baf15}&#39;</span><span class="p">,</span> <span class="c1"># 2.5b2</span>
+<a name="line-15"></a>    <span class="s1">&#39;2.5.113&#39;</span><span class="p">:</span> <span class="s1">&#39;{89f23918-11cf-4f08-be13-b9b2e6463fd9}&#39;</span><span class="p">,</span> <span class="c1"># 2.5b3</span>
+<a name="line-16"></a>    <span class="s1">&#39;2.5.121&#39;</span><span class="p">:</span> <span class="s1">&#39;{8e9321bc-6b24-48a3-8fd4-c95f8e531e5f}&#39;</span><span class="p">,</span> <span class="c1"># 2.5c1</span>
+<a name="line-17"></a>    <span class="s1">&#39;2.5.122&#39;</span><span class="p">:</span> <span class="s1">&#39;{a6cd508d-9599-45da-a441-cbffa9f7e070}&#39;</span><span class="p">,</span> <span class="c1"># 2.5c2</span>
+<a name="line-18"></a>    <span class="s1">&#39;2.5.150&#39;</span><span class="p">:</span> <span class="s1">&#39;{0a2c5854-557e-48c8-835a-3b9f074bdcaa}&#39;</span><span class="p">,</span> <span class="c1"># 2.5.0</span>
+<a name="line-19"></a>    <span class="s1">&#39;2.5.1121&#39;</span><span class="p">:</span><span class="s1">&#39;{0378b43e-6184-4c2f-be1a-4a367781cd54}&#39;</span><span class="p">,</span> <span class="c1"># 2.5.1c1</span>
+<a name="line-20"></a>    <span class="s1">&#39;2.5.1150&#39;</span><span class="p">:</span><span class="s1">&#39;{31800004-6386-4999-a519-518f2d78d8f0}&#39;</span><span class="p">,</span> <span class="c1"># 2.5.1</span>
+<a name="line-21"></a>    <span class="s1">&#39;2.5.2150&#39;</span><span class="p">:</span><span class="s1">&#39;{6304a7da-1132-4e91-a343-a296269eab8a}&#39;</span><span class="p">,</span> <span class="c1"># 2.5.2c1</span>
+<a name="line-22"></a>    <span class="s1">&#39;2.5.2150&#39;</span><span class="p">:</span><span class="s1">&#39;{6b976adf-8ae8-434e-b282-a06c7f624d2f}&#39;</span><span class="p">,</span> <span class="c1"># 2.5.2</span>
+<a name="line-23"></a>    <span class="s1">&#39;2.6.101&#39;</span><span class="p">:</span> <span class="s1">&#39;{0ba82e1b-52fd-4e03-8610-a6c76238e8a8}&#39;</span><span class="p">,</span> <span class="c1"># 2.6a1</span>
+<a name="line-24"></a>    <span class="s1">&#39;2.6.102&#39;</span><span class="p">:</span> <span class="s1">&#39;{3b27e16c-56db-4570-a2d3-e9a26180c60b}&#39;</span><span class="p">,</span> <span class="c1"># 2.6a2</span>
+<a name="line-25"></a>    <span class="s1">&#39;2.6.103&#39;</span><span class="p">:</span> <span class="s1">&#39;{cd06a9c5-bde5-4bd7-9874-48933997122a}&#39;</span><span class="p">,</span> <span class="c1"># 2.6a3</span>
+<a name="line-26"></a>    <span class="s1">&#39;2.6.104&#39;</span><span class="p">:</span> <span class="s1">&#39;{dc6ed634-474a-4a50-a547-8de4b7491e53}&#39;</span><span class="p">,</span> <span class="c1"># 2.6a4</span>
+<a name="line-27"></a>    <span class="s1">&#39;2.6.111&#39;</span><span class="p">:</span> <span class="s1">&#39;{3f82079a-5bee-4c4a-8a41-8292389e24ae}&#39;</span><span class="p">,</span> <span class="c1"># 2.6b1</span>
+<a name="line-28"></a>    <span class="s1">&#39;2.6.112&#39;</span><span class="p">:</span> <span class="s1">&#39;{8a0e5970-f3e6-4737-9a2b-bc5ff0f15fb5}&#39;</span><span class="p">,</span> <span class="c1"># 2.6b2</span>
+<a name="line-29"></a>    <span class="s1">&#39;2.6.113&#39;</span><span class="p">:</span> <span class="s1">&#39;{df4f5c21-6fcc-4540-95de-85feba634e76}&#39;</span><span class="p">,</span> <span class="c1"># 2.6b3</span>
+<a name="line-30"></a>    <span class="s1">&#39;2.6.121&#39;</span><span class="p">:</span> <span class="s1">&#39;{bbd34464-ddeb-4028-99e5-f16c4a8fbdb3}&#39;</span><span class="p">,</span> <span class="c1"># 2.6c1</span>
+<a name="line-31"></a>    <span class="s1">&#39;2.6.122&#39;</span><span class="p">:</span> <span class="s1">&#39;{8f64787e-a023-4c60-bfee-25d3a3f592c6}&#39;</span><span class="p">,</span> <span class="c1"># 2.6c2</span>
+<a name="line-32"></a>    <span class="s1">&#39;2.6.150&#39;</span><span class="p">:</span> <span class="s1">&#39;{110eb5c4-e995-4cfb-ab80-a5f315bea9e8}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.0</span>
+<a name="line-33"></a>    <span class="s1">&#39;2.6.1150&#39;</span><span class="p">:</span><span class="s1">&#39;{9cc89170-000b-457d-91f1-53691f85b223}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.1</span>
+<a name="line-34"></a>    <span class="s1">&#39;2.6.2121&#39;</span><span class="p">:</span><span class="s1">&#39;{adac412b-b209-4c15-b6ab-dca1b6e47144}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.2c1</span>
+<a name="line-35"></a>    <span class="s1">&#39;2.6.2150&#39;</span><span class="p">:</span><span class="s1">&#39;{24aab420-4e30-4496-9739-3e216f3de6ae}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.2</span>
+<a name="line-36"></a>    <span class="s1">&#39;2.6.3121&#39;</span><span class="p">:</span><span class="s1">&#39;{a73e0254-dcda-4fe4-bf37-c7e1c4f4ebb6}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.3c1</span>
+<a name="line-37"></a>    <span class="s1">&#39;2.6.3150&#39;</span><span class="p">:</span><span class="s1">&#39;{3d9ac095-e115-4e94-bdef-7f7edf17697d}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.3</span>
+<a name="line-38"></a>    <span class="s1">&#39;2.6.4121&#39;</span><span class="p">:</span><span class="s1">&#39;{727de605-0359-4606-a94b-c2033652379b}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.4c1</span>
+<a name="line-39"></a>    <span class="s1">&#39;2.6.4122&#39;</span><span class="p">:</span><span class="s1">&#39;{4f7603c6-6352-4299-a398-150a31b19acc}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.4c2</span>
+<a name="line-40"></a>    <span class="s1">&#39;2.6.4150&#39;</span><span class="p">:</span><span class="s1">&#39;{e7394a0f-3f80-45b1-87fc-abcd51893246}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.4</span>
+<a name="line-41"></a>    <span class="s1">&#39;2.6.5121&#39;</span><span class="p">:</span><span class="s1">&#39;{e0e273d7-7598-4701-8325-c90c069fd5ff}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.5c1</span>
+<a name="line-42"></a>    <span class="s1">&#39;2.6.5122&#39;</span><span class="p">:</span><span class="s1">&#39;{fa227b76-0671-4dc6-b826-c2ff2a70dfd5}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.5c2</span>
+<a name="line-43"></a>    <span class="s1">&#39;2.6.5150&#39;</span><span class="p">:</span><span class="s1">&#39;{4723f199-fa64-4233-8e6e-9fccc95a18ee}&#39;</span><span class="p">,</span> <span class="c1"># 2.6.5</span>
+<a name="line-44"></a>    <span class="s1">&#39;2.7.101&#39;</span><span class="p">:</span> <span class="s1">&#39;{eca1bbef-432c-49ae-a667-c213cc7bbf22}&#39;</span><span class="p">,</span> <span class="c1"># 2.7a1</span>
+<a name="line-45"></a>    <span class="s1">&#39;2.7.102&#39;</span><span class="p">:</span> <span class="s1">&#39;{21ce16ed-73c4-460d-9b11-522f417b2090}&#39;</span><span class="p">,</span> <span class="c1"># 2.7a2</span>
+<a name="line-46"></a>    <span class="s1">&#39;2.7.103&#39;</span><span class="p">:</span> <span class="s1">&#39;{6e7dbd55-ba4a-48ac-a688-6c75db4d7500}&#39;</span><span class="p">,</span> <span class="c1"># 2.7a3</span>
+<a name="line-47"></a>    <span class="s1">&#39;2.7.104&#39;</span><span class="p">:</span> <span class="s1">&#39;{ee774ba3-74a5-48d9-b425-b35a287260c8}&#39;</span><span class="p">,</span> <span class="c1"># 2.7a4</span>
+<a name="line-48"></a>    <span class="s1">&#39;2.7.111&#39;</span><span class="p">:</span> <span class="s1">&#39;{9cfd9ec7-a9c7-4980-a1c6-054fc6493eb3}&#39;</span><span class="p">,</span> <span class="c1"># 2.7b1</span>
+<a name="line-49"></a>    <span class="s1">&#39;2.7.112&#39;</span><span class="p">:</span> <span class="s1">&#39;{9a72faf6-c304-4165-8595-9291ff30cac6}&#39;</span><span class="p">,</span> <span class="c1"># 2.7b2</span>
+<a name="line-50"></a>    <span class="s1">&#39;2.7.121&#39;</span><span class="p">:</span> <span class="s1">&#39;{f530c94a-dd53-4de9-948e-b632b9cb48d2}&#39;</span><span class="p">,</span> <span class="c1"># 2.7c1</span>
+<a name="line-51"></a>    <span class="s1">&#39;2.7.122&#39;</span><span class="p">:</span> <span class="s1">&#39;{f80905d2-dd8d-4b8e-8a40-c23c93dca07d}&#39;</span><span class="p">,</span> <span class="c1"># 2.7c2</span>
+<a name="line-52"></a>    <span class="s1">&#39;2.7.150&#39;</span><span class="p">:</span> <span class="s1">&#39;{20c31435-2a0a-4580-be8b-ac06fc243ca4}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.0</span>
+<a name="line-53"></a>    <span class="s1">&#39;2.7.1121&#39;</span><span class="p">:</span><span class="s1">&#39;{60a4036a-374c-4fd2-84b9-bfae7db03931}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.1rc1</span>
+<a name="line-54"></a>    <span class="s1">&#39;2.7.1122&#39;</span><span class="p">:</span><span class="s1">&#39;{5965e7d1-5584-4de9-b13a-694e0b2ee3a6}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.1rc2</span>
+<a name="line-55"></a>    <span class="s1">&#39;2.7.1150&#39;</span><span class="p">:</span><span class="s1">&#39;{32939827-d8e5-470a-b126-870db3c69fdf}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.1</span>
+<a name="line-56"></a>    <span class="s1">&#39;2.7.2121&#39;</span><span class="p">:</span><span class="s1">&#39;{B2E1F06E-F719-4786-972A-488A336EB2A0}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.2rc1</span>
+<a name="line-57"></a>    <span class="s1">&#39;2.7.2150&#39;</span><span class="p">:</span><span class="s1">&#39;{2E295B5B-1AD4-4d36-97C2-A316084722CF}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.2</span>
+<a name="line-58"></a>    <span class="s1">&#39;2.7.3121&#39;</span><span class="p">:</span><span class="s1">&#39;{1ACB88BF-1425-4f11-B664-6C89A3D7699C}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.3rc1</span>
+<a name="line-59"></a>    <span class="s1">&#39;2.7.3122&#39;</span><span class="p">:</span><span class="s1">&#39;{B12311BE-6364-4b2a-A49A-551EEE10F3E4}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.3rc2</span>
+<a name="line-60"></a>    <span class="s1">&#39;2.7.3150&#39;</span><span class="p">:</span><span class="s1">&#39;{C0C31BCC-56FB-42a7-8766-D29E1BD74C7C}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.3</span>
+<a name="line-61"></a>    <span class="s1">&#39;2.7.4121&#39;</span><span class="p">:</span><span class="s1">&#39;{47F45F45-72D7-4e54-AF41-26767EDE95CF}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.4rc1</span>
+<a name="line-62"></a>    <span class="s1">&#39;2.7.4150&#39;</span><span class="p">:</span><span class="s1">&#39;{84ADC96C-B7E0-4938-9D6E-2B640D5DA224}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.4</span>
+<a name="line-63"></a>    <span class="s1">&#39;2.7.5150&#39;</span><span class="p">:</span><span class="s1">&#39;{DBDD570E-0952-475f-9453-AB88F3DD5659}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.5</span>
+<a name="line-64"></a>    <span class="s1">&#39;2.7.6121&#39;</span><span class="p">:</span><span class="s1">&#39;{D1EBC07F-A7B1-4163-83DB-AE813CEF392F}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.6rc1</span>
+<a name="line-65"></a>    <span class="s1">&#39;2.7.6150&#39;</span><span class="p">:</span><span class="s1">&#39;{C3CC4DF5-39A5-4027-B136-2B3E1F5AB6E2}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.6</span>
+<a name="line-66"></a>    <span class="s1">&#39;2.7.7121&#39;</span><span class="p">:</span><span class="s1">&#39;{5E0D187D-238B-4e96-9C75-C4CF141F5385}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.7rc1</span>
+<a name="line-67"></a>    <span class="s1">&#39;2.7.7150&#39;</span><span class="p">:</span><span class="s1">&#39;{049CA433-77A0-4e48-AC76-180A282C4E10}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.7</span>
+<a name="line-68"></a>    <span class="s1">&#39;2.7.8150&#39;</span><span class="p">:</span><span class="s1">&#39;{61121B12-88BD-4261-A6EE-AB32610A56DD}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.8</span>
+<a name="line-69"></a>    <span class="s1">&#39;2.7.9121&#39;</span><span class="p">:</span><span class="s1">&#39;{AAB1E8FF-6D00-4409-8F13-BE365AB92FFE}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.9rc1</span>
+<a name="line-70"></a>    <span class="s1">&#39;2.7.9150&#39;</span><span class="p">:</span><span class="s1">&#39;{79F081BF-7454-43DB-BD8F-9EE596813232}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.9</span>
+<a name="line-71"></a>    <span class="s1">&#39;2.7.10121&#39;</span><span class="p">:</span><span class="s1">&#39;{872BE558-2E5F-4E9C-A42D-8561FA43811C}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.10rc1</span>
+<a name="line-72"></a>    <span class="s1">&#39;2.7.10150&#39;</span><span class="p">:</span><span class="s1">&#39;{E2B51919-207A-43EB-AE78-733F9C6797C2}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.10</span>
+<a name="line-73"></a>    <span class="s1">&#39;2.7.11121&#39;</span><span class="p">:</span><span class="s1">&#39;{9872896F-3558-4361-8518-23E611FCA35A}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.11rc1</span>
+<a name="line-74"></a>    <span class="s1">&#39;2.7.11150&#39;</span><span class="p">:</span><span class="s1">&#39;{16E52445-1392-469F-9ADB-FC03AF00CD61}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.11</span>
+<a name="line-75"></a>    <span class="s1">&#39;2.7.12121&#39;</span><span class="p">:</span><span class="s1">&#39;{3FC2B676-0216-4361-AFAC-73D299065CC5}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.12rc1</span>
+<a name="line-76"></a>    <span class="s1">&#39;2.7.12150&#39;</span><span class="p">:</span><span class="s1">&#39;{9DA28CE5-0AA5-429E-86D8-686ED898C665}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.12</span>
+<a name="line-77"></a>    <span class="s1">&#39;2.7.13121&#39;</span><span class="p">:</span><span class="s1">&#39;{FC03C4BD-2D42-4E0E-8B4F-FCC2FB0EC8E3}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.13rc1</span>
+<a name="line-78"></a>    <span class="s1">&#39;2.7.13150&#39;</span><span class="p">:</span><span class="s1">&#39;{4A656C6C-D24A-473F-9747-3A8D00907A03}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.13</span>
+<a name="line-79"></a>    <span class="s1">&#39;2.7.14121&#39;</span><span class="p">:</span><span class="s1">&#39;{614347BE-6269-4F2C-A34A-30AFC080C50B}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.14rc1</span>
+<a name="line-80"></a>    <span class="s1">&#39;2.7.14150&#39;</span><span class="p">:</span><span class="s1">&#39;{0398A685-FD8D-46B3-9816-C47319B0CF5E}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.14</span>
+<a name="line-81"></a>    <span class="s1">&#39;2.7.15121&#39;</span><span class="p">:</span><span class="s1">&#39;{B4B95EEC-7227-4F69-A918-043AF75653AC}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.15rc1</span>
+<a name="line-82"></a>    <span class="s1">&#39;2.7.15150&#39;</span><span class="p">:</span><span class="s1">&#39;{16CD92A4-0152-4CB7-8FD6-9788D3363616}&#39;</span><span class="p">,</span> <span class="c1"># 2.7.15</span>
+<a name="line-83"></a><span class="p">}</span>
+</pre></div>
+</td></tr></table></body>
+</html>
